@@ -27,6 +27,7 @@ jobs:
           mkdir -p _site/ai-adoption-bootcamp
           cp -r ai-adoption-bootcamp/dist/* _site/ai-adoption-bootcamp/
           cp ai-adoption-bootcamp/public/curriculum.html _site/ai-adoption-bootcamp/
+          cp ai-adoption-bootcamp/public/internal.html _site/ai-adoption-bootcamp/
 
           # Index page
           cat > _site/index.html << 'HTMLEOF'
