@@ -34,3 +34,4 @@ Push to `main` → GitHub Actions build → SCP to nginx server → `jiangren.co
 2. 改 `vite.config.ts` 的 `base` 路径
 3. 在 `deploy.yml` 中添加 build 和 copy 步骤
 4. 遵循 `DESIGN.md` 设计规范
+
