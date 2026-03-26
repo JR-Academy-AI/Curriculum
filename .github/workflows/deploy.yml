@@ -1,0 +1,84 @@
+name: Deploy Curriculum to Server
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      # Build ai-adoption-bootcamp
+      - name: Build ai-adoption-bootcamp
+        working-directory: ai-adoption-bootcamp
+        run: |
+          bun install
+          bun run build
+
+      # Assemble all courses into one output
+      - name: Assemble output
+        run: |
+          mkdir -p _site/ai-adoption-bootcamp
+          cp -r ai-adoption-bootcamp/dist/* _site/ai-adoption-bootcamp/
+          cp ai-adoption-bootcamp/public/curriculum.html _site/ai-adoption-bootcamp/
+
+          # Index page
+          cat > _site/index.html << 'HTMLEOF'
+          <!DOCTYPE html>
+          <html lang="zh">
+          <head>
+            <meta charset="UTF-8">
+            <title>JR Academy Curriculum</title>
+            <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800;900&family=DM+Sans:wght@500;600;700&family=Space+Mono:wght@700&family=Noto+Sans+SC:wght@500;700;900&display=swap" rel="stylesheet">
+            <style>
+              * { margin: 0; padding: 0; box-sizing: border-box; }
+              body { font-family: "DM Sans", "Noto Sans SC", sans-serif; background: #fff1e7; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+              .container { text-align: center; }
+              h1 { font-family: "Bricolage Grotesque", sans-serif; font-size: 48px; font-weight: 900; margin-bottom: 12px; }
+              p { font-size: 16px; color: #666; margin-bottom: 32px; }
+              .cards { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+              a { display: block; width: 280px; padding: 24px; background: #fff; text-decoration: none; color: #000; border: 3px solid #000; box-shadow: 6px 6px 0 #000; transition: all 0.15s; text-align: left; }
+              a:hover { box-shadow: none; transform: translate(4px, 4px); }
+              .tag { display: inline-block; padding: 4px 10px; font-size: 11px; font-weight: 700; font-family: "Space Mono", monospace; color: #fff; margin-bottom: 12px; }
+              .title { font-family: "Bricolage Grotesque", sans-serif; font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+              .desc { font-size: 13px; color: #666; line-height: 1.6; }
+            </style>
+          </head>
+          <body>
+            <div class="container">
+              <h1>JR Academy Curriculum</h1>
+              <p>课程大纲与详情</p>
+              <div class="cards">
+                <a href="./ai-adoption-bootcamp/">
+                  <span class="tag" style="background:#6366f1">SLIDE DECK</span>
+                  <div class="title">AI Adoption Specialist</div>
+                  <div class="desc">13 页互动演示 — 课程概览、卖点、定价</div>
+                </a>
+                <a href="./ai-adoption-bootcamp/curriculum.html">
+                  <span class="tag" style="background:#10b981">CURRICULUM</span>
+                  <div class="title">AI Adoption Specialist</div>
+                  <div class="desc">课程结构详情 — 大纲、Lab 映射、老师分工、JD 对比、Marketing 素材</div>
+                </a>
+              </div>
+            </div>
+          </body>
+          </html>
+          HTMLEOF
+
+      # Deploy to server via SCP
+      - name: Deploy to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "_site/*"
+          target: "/var/www/static/curriculum"
+          strip_components: 1
+          overwrite: true
