@@ -6,216 +6,1687 @@
 <title>AI Adoption Specialist Bootcamp — 课程结构详情</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{--indigo:#6366f1;--teal:#10b981;--red:#ff5757;--orange:#FF914D;--yellow:#FFDE59;--green:#7ED957;--blue:#38B6FF;--purple:#CB6CE6;--dark:#10162f;--bg:#fafafa;--border:#000}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'DM Sans','Noto Sans SC',sans-serif;background:var(--bg);color:#1a1a1a;line-height:1.6}
-.mono{font-family:'Space Mono',monospace}
-.header{background:var(--dark);color:#fff;padding:48px 0;text-align:center;border-bottom:4px solid var(--border)}
-.header h1{font-size:42px;font-weight:900;letter-spacing:-1px}
-.header .sub{font-size:18px;opacity:0.7;margin-top:8px}
-.tags{display:flex;gap:12px;justify-content:center;margin-top:20px;flex-wrap:wrap}
-.tag{padding:6px 16px;font-size:13px;font-weight:700;font-family:'Space Mono',monospace;border:2px solid rgba(255,255,255,0.3)}
-.tag.a{background:var(--indigo);border-color:var(--indigo)}
-.bar{display:flex;justify-content:center;gap:40px;padding:20px 0;background:#fff;border-bottom:3px solid var(--border);flex-wrap:wrap}
-.bar .s{text-align:center}.bar .n{font-size:28px;font-weight:900;color:var(--indigo)}.bar .l{font-size:12px;color:#888;font-family:'Space Mono',monospace}
-.c{max-width:1300px;margin:0 auto;padding:40px 24px}
-.box{border:3px solid #000;background:#fff;box-shadow:6px 6px 0 #000;overflow:hidden;margin-bottom:32px}
-.box-h{padding:16px 24px;border-bottom:3px solid #000;color:#fff}
-table{width:100%;border-collapse:collapse;font-size:13px}
-td,th{padding:10px 14px;text-align:left}
-.pill{display:inline-block;padding:2px 8px;font-weight:700;font-size:11px;font-family:'Space Mono',monospace}
-.wk{padding:4px 24px;font-weight:800;font-size:14px;border-bottom:1px solid #ddd}
-.ai-self{padding:12px 24px;font-size:12px;border-bottom:2px solid #ddd}
-details{border:2px solid #eee}
-details summary{padding:10px 16px;font-weight:700;font-size:14px;cursor:pointer;background:#fafafa}
-details>div{padding:10px 16px;font-size:13px;line-height:1.8;border-top:1px solid #eee}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
-.footer{margin-top:48px;padding:32px;text-align:center;border-top:3px solid var(--border);color:#888;font-size:13px}
+:root {
+  --indigo: #6366f1;
+  --teal: #10b981;
+  --red: #ff5757;
+  --orange: #FF914D;
+  --yellow: #FFDE59;
+  --green: #7ED957;
+  --blue: #38B6FF;
+  --purple: #CB6CE6;
+  --dark: #10162f;
+  --bg: #fafafa;
+  --border: #000;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', 'Noto Sans SC', sans-serif; background: var(--bg); color: #1a1a1a; line-height: 1.6; }
+
+/* Header */
+.header {
+  background: var(--dark); color: #fff; padding: 48px 0; text-align: center;
+  border-bottom: 4px solid var(--border);
+}
+.header h1 { font-size: 42px; font-weight: 900; letter-spacing: -1px; }
+.header .subtitle { font-size: 18px; opacity: 0.7; margin-top: 8px; }
+.header .tags { display: flex; gap: 12px; justify-content: center; margin-top: 20px; }
+.header .tag {
+  padding: 6px 16px; font-size: 13px; font-weight: 700; font-family: 'Space Mono', monospace;
+  border: 2px solid rgba(255,255,255,0.3);
+}
+.header .tag.accent { background: var(--indigo); border-color: var(--indigo); }
+
+/* Stats bar */
+.stats-bar {
+  display: flex; justify-content: center; gap: 40px; padding: 20px 0;
+  background: #fff; border-bottom: 3px solid var(--border);
+}
+.stat { text-align: center; }
+.stat .num { font-size: 28px; font-weight: 900; color: var(--indigo); }
+.stat .label { font-size: 12px; color: #888; font-family: 'Space Mono', monospace; }
+
+/* Container */
+.container { max-width: 1300px; margin: 0 auto; padding: 40px 24px; }
+
+/* Phase header */
+.phase {
+  margin-bottom: 48px;
+  border: 3px solid var(--border);
+  background: #fff;
+  box-shadow: 6px 6px 0 var(--border);
+}
+.phase-header {
+  padding: 20px 28px;
+  display: flex; align-items: center; gap: 16px;
+  border-bottom: 3px solid var(--border);
+}
+.phase-header .phase-badge {
+  padding: 6px 14px; font-size: 12px; font-weight: 700;
+  font-family: 'Space Mono', monospace; color: #fff;
+}
+.phase-header h2 { font-size: 24px; font-weight: 900; }
+.phase-header .weeks {
+  margin-left: auto; font-size: 14px; font-family: 'Space Mono', monospace; color: #888;
+}
+.phase-goal {
+  padding: 12px 28px; background: #f9f9f9; border-bottom: 1px solid #eee;
+  font-size: 14px; color: #666;
+}
+
+/* Module */
+.module {
+  border-bottom: 2px solid #eee;
+}
+.module:last-child { border-bottom: none; }
+.module-header {
+  padding: 16px 28px; display: flex; align-items: center; gap: 12px;
+  cursor: pointer; user-select: none;
+  transition: background 0.15s;
+}
+.module-header:hover { background: #f5f5f5; }
+.module-header .module-num {
+  width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 700; font-family: 'Space Mono', monospace;
+  border: 2px solid var(--border); flex-shrink: 0;
+}
+.module-header h3 { font-size: 18px; font-weight: 700; }
+.module-header .lesson-count {
+  margin-left: auto; font-size: 12px; color: #999; font-family: 'Space Mono', monospace;
+}
+.module-header .toggle { font-size: 18px; color: #999; transition: transform 0.2s; margin-left: 8px; }
+.module-header.open .toggle { transform: rotate(180deg); }
+
+/* Lessons */
+.lessons { display: none; padding: 0 28px 20px; }
+.lessons.open { display: block; }
+
+.lesson {
+  margin-bottom: 16px; border: 2px solid #e5e5e5; border-radius: 0;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.lesson:hover { border-color: var(--indigo); }
+
+.lesson-title {
+  padding: 12px 16px; display: flex; align-items: center; gap: 12px;
+  background: #fafafa; border-bottom: 1px solid #eee;
+}
+.lesson-title .lesson-num {
+  font-size: 12px; font-weight: 700; font-family: 'Space Mono', monospace;
+  color: #fff; padding: 2px 8px;
+}
+.lesson-title h4 { font-size: 15px; font-weight: 700; }
+.lesson-title .type-badge {
+  margin-left: auto; font-size: 11px; padding: 2px 10px;
+  border: 1px solid #ddd; font-family: 'Space Mono', monospace; color: #888;
+}
+
+.lesson-body { padding: 14px 16px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+.lesson-section h5 {
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+  color: #999; margin-bottom: 6px; font-family: 'Space Mono', monospace;
+}
+.lesson-section p { font-size: 13px; line-height: 1.7; color: #444; }
+.lesson-section .tools { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.lesson-section .tool {
+  font-size: 11px; padding: 2px 8px; background: #f0f0f0;
+  font-family: 'Space Mono', monospace; font-weight: 600;
+}
+
+/* Review tag */
+.review-tag {
+  display: inline-block; padding: 2px 8px; font-size: 11px; font-weight: 700;
+  font-family: 'Space Mono', monospace; margin-top: 4px;
+}
+.review-tag.teacher { background: #ede9fe; color: var(--indigo); }
+.review-tag.ai { background: #d1fae5; color: var(--teal); }
+.review-tag.both { background: #fef3c7; color: #92400e; }
+
+/* Scenario table */
+.scenario-section { margin-top: 48px; }
+.scenario-section h2 {
+  font-size: 28px; font-weight: 900; text-align: center; margin-bottom: 8px;
+}
+.scenario-section .desc {
+  text-align: center; color: #888; font-size: 14px; margin-bottom: 24px;
+}
+.scenario-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.scenario-card {
+  border: 2px solid var(--border); background: #fff; padding: 16px;
+  box-shadow: 4px 4px 0 var(--border);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.scenario-card:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--border); }
+.scenario-card .cat-header {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 10px;
+  padding-bottom: 8px; border-bottom: 2px solid #f0f0f0;
+}
+.scenario-card .cat-icon { font-size: 22px; }
+.scenario-card .cat-name { font-weight: 800; font-size: 15px; }
+.scenario-card .cat-count {
+  margin-left: auto; font-size: 11px; padding: 2px 8px; color: #fff;
+  font-family: 'Space Mono', monospace; font-weight: 700;
+}
+.scenario-card ul { list-style: none; font-size: 13px; line-height: 2; }
+.scenario-card li { color: #444; }
+.scenario-card li span { font-weight: 600; }
+
+/* Teacher workload */
+.workload {
+  margin-top: 48px; border: 3px solid var(--border); background: #fff;
+  box-shadow: 6px 6px 0 var(--border); overflow: hidden;
+}
+.workload-header {
+  padding: 20px 28px; background: var(--indigo); color: #fff;
+  border-bottom: 3px solid var(--border);
+}
+.workload-header h2 { font-size: 24px; font-weight: 900; }
+.workload table { width: 100%; border-collapse: collapse; }
+.workload th {
+  padding: 12px 16px; text-align: left; font-size: 13px; font-weight: 700;
+  background: #f5f5f5; border-bottom: 2px solid #ddd;
+  font-family: 'Space Mono', monospace;
+}
+.workload td { padding: 10px 16px; border-bottom: 1px solid #eee; font-size: 14px; }
+.workload tr:last-child td { border-bottom: none; font-weight: 700; background: #fef3c7; }
+
+/* Footer */
+.footer {
+  margin-top: 48px; padding: 32px; text-align: center;
+  border-top: 3px solid var(--border); color: #888; font-size: 13px;
+}
 </style>
 </head>
 <body>
 
 <div class="header">
   <h1>AI Adoption Specialist Bootcamp</h1>
-  <div class="sub">课程结构详情 — 内部审阅版</div>
+  <div class="subtitle">课程结构详情 — 内部审阅版</div>
   <div class="tags">
-    <span class="tag a">8 周</span>
-    <span class="tag">22 节直播</span>
-    <span class="tag">30+ AI 自学</span>
+    <span class="tag accent">8 周</span>
+    <span class="tag">8 Modules</span>
+    <span class="tag">~30 Lessons</span>
+    <span class="tag">15+ Labs</span>
     <span class="tag">48 场景</span>
-    <span class="tag">20+ 工具</span>
   </div>
 </div>
 
-<div class="bar">
-  <div class="s"><div class="n">4</div><div class="l">PHASES</div></div>
-  <div class="s"><div class="n">22</div><div class="l">直播课</div></div>
-  <div class="s"><div class="n">30+</div><div class="l">AI 自学</div></div>
-  <div class="s"><div class="n">8</div><div class="l">统一答疑</div></div>
-  <div class="s"><div class="n">~44h</div><div class="l">直播总时长</div></div>
-  <div class="s"><div class="n">$0</div><div class="l">自学内容成本</div></div>
+<div class="stats-bar">
+  <div class="stat"><div class="num">4</div><div class="label">PHASES</div></div>
+  <div class="stat"><div class="num">8</div><div class="label">MODULES</div></div>
+  <div class="stat"><div class="num">30</div><div class="label">LESSONS</div></div>
+  <div class="stat"><div class="num">15+</div><div class="label">LABS</div></div>
+  <div class="stat"><div class="num">48</div><div class="label">SCENARIOS</div></div>
+  <div class="stat"><div class="num">8-12h</div><div class="label">老师/周</div></div>
 </div>
 
-<div class="c">
+<div class="container">
 
-<!-- ========== 角色定位 ========== -->
-<div class="box">
-  <div class="box-h" style="background:var(--dark)">
-    <div class="mono" style="font-size:12px;opacity:0.5">AI ADOPTION SPECIALIST 的本质</div>
-    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:17px;font-weight:700;margin-top:8px">
-      <span style="padding:5px 12px;background:#6366f1">识别机会</span><span style="opacity:0.4">→</span>
-      <span style="padding:5px 12px;background:#10b981">选工具</span><span style="opacity:0.4">→</span>
-      <span style="padding:5px 12px;background:#38B6FF">跑试点</span><span style="opacity:0.4">→</span>
-      <span style="padding:5px 12px;background:#FF914D">培训团队</span><span style="opacity:0.4">→</span>
-      <span style="padding:5px 12px;background:#CB6CE6">管理变革</span><span style="opacity:0.4">→</span>
-      <span style="padding:5px 12px;background:#ff5757">度量扩展</span>
+<!-- ============ COURSE OVERVIEW V2 ============ -->
+<div style="border:3px solid #000;background:#fff;box-shadow:6px 6px 0 #000;overflow:hidden;margin-bottom:48px">
+  <div style="padding:20px 28px;background:linear-gradient(135deg, #6366f1, #10b981);color:#fff;border-bottom:3px solid #000">
+    <h2 style="font-size:24px;font-weight:900">课程结构 V2 — 直播课 vs AI 自学内容</h2>
+    <p style="font-size:14px;opacity:0.8;margin-top:4px">核心课老师直播教，非核心课 AI 辅助自学（不砍内容，零成本增加价值感）</p>
+  </div>
+
+  <!-- Role definition callout -->
+  <div style="padding:20px 28px;background:#1a1a2e;color:#fff;border-bottom:3px solid #000">
+    <div style="font-size:12px;font-family:'Space Mono',monospace;color:rgba(255,255,255,0.5);margin-bottom:8px">AI ADOPTION SPECIALIST 的本质</div>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:18px;font-weight:700">
+      <span style="padding:6px 14px;background:#6366f1">识别机会</span>
+      <span style="color:rgba(255,255,255,0.4)">→</span>
+      <span style="padding:6px 14px;background:#10b981">选工具</span>
+      <span style="color:rgba(255,255,255,0.4)">→</span>
+      <span style="padding:6px 14px;background:#38B6FF">跑试点</span>
+      <span style="color:rgba(255,255,255,0.4)">→</span>
+      <span style="padding:6px 14px;background:#FF914D">培训团队</span>
+      <span style="color:rgba(255,255,255,0.4)">→</span>
+      <span style="padding:6px 14px;background:#CB6CE6">管理变革</span>
+      <span style="color:rgba(255,255,255,0.4)">→</span>
+      <span style="padding:6px 14px;background:#ff5757">度量扩展</span>
     </div>
-    <div style="margin-top:10px;font-size:14px;opacity:0.7">第一节课就讲清楚：你不是来学怎么聊天的，是来学怎么让整个公司用好 AI 的</div>
+    <div style="margin-top:12px;font-size:14px;color:rgba(255,255,255,0.7)">第一节课就要让学员知道：你不是来学怎么聊天的，你是来学怎么让整个公司用好 AI 的</div>
   </div>
-</div>
 
-<!-- ========== 7 个 Adoption 专属模块 ========== -->
-<div class="box">
-  <div class="box-h" style="background:#dc2626">
-    <span class="mono" style="font-size:12px;opacity:0.8">ADOPTION-SPECIFIC DESIGN</span>
-    <div style="font-size:18px;font-weight:900;margin-top:4px">7 个专为 AI Adoption Specialist 设计的模块</div>
+  <!-- Legend -->
+  <div style="padding:14px 28px;background:#f9f9f9;border-bottom:2px solid #eee;display:flex;gap:20px;font-size:13px">
+    <span><span style="display:inline-block;width:12px;height:12px;background:#6366f1;border:2px solid #000;margin-right:4px;vertical-align:middle"></span> <strong>直播课</strong> — 老师必须在，互动/演示/答疑</span>
+    <span><span style="display:inline-block;width:12px;height:12px;background:#e0e7ff;border:2px solid #000;margin-right:4px;vertical-align:middle"></span> <strong>AI 自学</strong> — Prompt Lab / 录播 / 图文教程，学员自主完成</span>
+    <span><span style="display:inline-block;width:12px;height:12px;background:#FFDE59;border:2px solid #000;margin-right:4px;vertical-align:middle"></span> <strong>统一答疑</strong> — 集中 Q&A，不是 1v1</span>
+    <span><span style="display:inline-block;width:12px;height:12px;background:#dc2626;border:2px solid #000;margin-right:4px;vertical-align:middle"></span> <strong>Adoption 专属</strong> — 专为 AI Adoption Specialist 角色设计</span>
   </div>
-  <div style="padding:12px 24px;font-size:13px;color:#666;border-bottom:1px solid #eee">市场上的 AI 课只教"怎么用工具"。以下 7 个模块覆盖 JD 中反复出现但没人教的核心能力。</div>
-  <div style="padding:16px 24px">
-    <div class="grid2" style="gap:10px">
-      <div style="padding:12px;border:2px solid #dc2626"><span class="pill" style="background:#dc2626;color:#fff">0.1</span> <strong>角色定位 & 全流程 Demo</strong><br><span style="font-size:12px;color:#666">8/10 JD 要求"理解完整生命周期"。竞品第一课都是"AI 是什么"。</span></div>
-      <div style="padding:12px;border:2px solid #dc2626"><span class="pill" style="background:#dc2626;color:#fff">1.2</span> <strong>AI 工具选型框架</strong><br><span style="font-size:12px;color:#666">7/10 JD 要求"评估和推荐工具"。竞品只教"怎么用"不教"怎么帮公司选"。</span></div>
-      <div style="padding:12px;border:2px solid #dc2626"><span class="pill" style="background:#dc2626;color:#fff">5.3</span> <strong>AI Pilot 设计</strong><br><span style="font-size:12px;color:#666">转折点 — "我会用" → "我能帮公司用"。竞品缺少实操桥梁。</span></div>
-      <div style="padding:12px;border:2px solid #dc2626"><span class="pill" style="background:#dc2626;color:#fff">6.2</span> <strong>利益相关者管理</strong><br><span style="font-size:12px;color:#666">8/10 JD 提到 stakeholder engagement。我们做角色扮演，不念 PPT。</span></div>
-      <div style="padding:12px;border:2px solid #dc2626"><span class="pill" style="background:#dc2626;color:#fff">6.3</span> <strong>AI 预算与商业案例</strong><br><span style="font-size:12px;color:#666">推 AI 就得要钱。没有 AI 课教写预算提案。</span></div>
-      <div style="padding:12px;border:2px solid #dc2626"><span class="pill" style="background:#dc2626;color:#fff">7.2</span> <strong>OpenClaw 组织级部署</strong><br><span style="font-size:12px;color:#666">学"怎么给公司搭 AI 基础设施"。竞品没有。</span></div>
-      <div style="padding:12px;border:2px solid #dc2626"><span class="pill" style="background:#dc2626;color:#fff">7.3</span> <strong>汇报 + 规模化 + 防回退</strong><br><span style="font-size:12px;color:#666">8/10 JD 要求 report to leadership。含失败案例分析 + 持续运营机制。</span></div>
+
+  <!-- Adoption-specific design callout -->
+  <div style="padding:20px 28px;background:#fef2f2;border-bottom:2px solid #eee">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+      <span style="padding:4px 12px;background:#dc2626;color:#fff;font-weight:900;font-size:12px;font-family:'Space Mono',monospace">ADOPTION-SPECIFIC DESIGN</span>
+      <span style="font-weight:900;font-size:16px">以下 7 个课程模块是专为 AI Adoption Specialist 角色设计的</span>
+    </div>
+    <div style="font-size:13px;color:#666;margin-bottom:16px">
+      市场上的 AI 课程只教"怎么用工具"。我们额外覆盖了 AI Adoption Specialist JD 中反复出现但没人教的核心能力 — 这些才是这个角色区别于普通 AI 用户的关键。
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px">
+      <div style="padding:14px 16px;border:2px solid #dc2626;background:#fff">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+          <span style="padding:2px 8px;background:#dc2626;color:#fff;font-weight:700;font-size:11px;font-family:'Space Mono',monospace">0.1</span>
+          <span style="font-weight:800;font-size:15px">角色定位 & 全流程 Demo</span>
+        </div>
+        <div style="font-size:12px;line-height:1.8;color:#555">
+          <strong>为什么要这课：</strong>8/10 的 JD 都要求"理解 AI 采纳的完整生命周期"。学员第一天就要知道自己不是来学聊天的，是来学"识别→选工具→试点→培训→变革→度量"这个完整链路的。<br>
+          <strong>竞品没有：</strong>所有竞品第一课都是"AI 是什么"，没人从角色定位开始。
+        </div>
+      </div>
+      <div style="padding:14px 16px;border:2px solid #dc2626;background:#fff">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+          <span style="padding:2px 8px;background:#dc2626;color:#fff;font-weight:700;font-size:11px;font-family:'Space Mono',monospace">1.2</span>
+          <span style="font-weight:800;font-size:15px">AI 工具选型框架</span>
+        </div>
+        <div style="font-size:12px;line-height:1.8;color:#555">
+          <strong>为什么要这课：</strong>7/10 的 JD 要求"评估和推荐 AI 工具"。Adoption Specialist 不只是自己用工具，还要帮公司决定用 ChatGPT Enterprise 还是 Claude Teams 还是 Copilot — 怎么评估、怎么比较、怎么做 POC。<br>
+          <strong>竞品没有：</strong>所有课都教"怎么用 ChatGPT"，没人教"怎么帮公司选工具"。
+        </div>
+      </div>
+      <div style="padding:14px 16px;border:2px solid #dc2626;background:#fff">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+          <span style="padding:2px 8px;background:#dc2626;color:#fff;font-weight:700;font-size:11px;font-family:'Space Mono',monospace">5.3</span>
+          <span style="font-weight:800;font-size:15px">AI Pilot 设计</span>
+        </div>
+        <div style="font-size:12px;line-height:1.8;color:#555">
+          <strong>为什么要这课：</strong>这是全课程的<strong>转折点</strong> — 从"我会用 AI"变成"我能帮公司用 AI"。JD 要求"设计和执行 AI 试点项目"，但没有任何课教你怎么选部门、选场景、定 KPI、控制变量、4 周跑完一个 Pilot。<br>
+          <strong>竞品没有：</strong>所有课在"工具教学"结束后直接跳到"变革管理理论"，中间缺了最关键的实操桥梁。
+        </div>
+      </div>
+      <div style="padding:14px 16px;border:2px solid #dc2626;background:#fff">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+          <span style="padding:2px 8px;background:#dc2626;color:#fff;font-weight:700;font-size:11px;font-family:'Space Mono',monospace">6.2</span>
+          <span style="font-weight:800;font-size:15px">利益相关者管理 & 变革沟通</span>
+        </div>
+        <div style="font-size:12px;line-height:1.8;color:#555">
+          <strong>为什么要这课：</strong>8/10 的 JD 都提到"stakeholder engagement"和"executive communication"。CEO 关心战略、CFO 关心 ROI、IT 关心安全、Legal 关心合规 — 你得对每个人说不同的话。<br>
+          <strong>竞品没有：</strong>Harvard 教理论但不做角色扮演。我们让讲师扮演 CFO 拒绝你的预算，你现场说服。
+        </div>
+      </div>
+      <div style="padding:14px 16px;border:2px solid #dc2626;background:#fff">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+          <span style="padding:2px 8px;background:#dc2626;color:#fff;font-weight:700;font-size:11px;font-family:'Space Mono',monospace">6.3</span>
+          <span style="font-weight:800;font-size:15px">AI 预算与商业案例</span>
+        </div>
+        <div style="font-size:12px;line-height:1.8;color:#555">
+          <strong>为什么要这课：</strong>想推 AI 就得要钱。6/10 的 JD 要求"ROI measurement"和"business case development"。怎么算 AI 项目的投入产出比？怎么写一份让 CFO 5 分钟就批的投资提案？<br>
+          <strong>竞品没有：</strong>没有任何 AI 课教你写 AI 预算提案。这是 Adoption Specialist 和普通 AI 用户的最大区别。
+        </div>
+      </div>
+      <div style="padding:14px 16px;border:2px solid #dc2626;background:#fff">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+          <span style="padding:2px 8px;background:#dc2626;color:#fff;font-weight:700;font-size:11px;font-family:'Space Mono',monospace">7.2</span>
+          <span style="font-weight:800;font-size:15px">OpenClaw 组织级 AI 部署</span>
+        </div>
+        <div style="font-size:12px;line-height:1.8;color:#555">
+          <strong>为什么要这课：</strong>Adoption Specialist 最终要<strong>交付一个落地方案</strong>。OpenClaw 是开源免费的组织级 AI 平台 — 本地部署、数据不出公司、接 Slack/飞书、多 Agent。这不是"学一个工具"，是学"怎么给公司搭 AI 基础设施"。<br>
+          <strong>竞品没有：</strong>没有任何课教你怎么给公司部署一个完整的 AI 助手系统。
+        </div>
+      </div>
+      <div style="padding:14px 16px;border:2px solid #dc2626;background:#fff">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+          <span style="padding:2px 8px;background:#dc2626;color:#fff;font-weight:700;font-size:11px;font-family:'Space Mono',monospace">7.3</span>
+          <span style="font-weight:800;font-size:15px">向高层汇报 & 规模化路径</span>
+        </div>
+        <div style="font-size:12px;line-height:1.8;color:#555">
+          <strong>为什么要这课：</strong>Pilot 成功了然后呢？8/10 的 JD 要求"report to senior leadership"和"scale adoption"。怎么做 AI 月报让 CTO 觉得钱花得值？怎么从 1 个部门推到全公司不翻车？<br>
+          <strong>竞品没有：</strong>所有课在"变革管理理论"后就结束了，没人教 Pilot 之后的规模化路径和汇报技巧。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== PHASE 1 V2 ====== -->
+  <div style="border-bottom:3px solid #000">
+    <div style="padding:16px 28px;background:var(--indigo);color:#fff;display:flex;align-items:center;gap:12px;border-bottom:2px solid #000">
+      <span style="padding:4px 12px;background:rgba(0,0,0,0.3);font-family:'Space Mono',monospace;font-size:12px;font-weight:700">PHASE 1</span>
+      <span style="font-size:20px;font-weight:900">AI 工具精通 + 角色定位</span>
+      <span style="margin-left:auto;font-family:'Space Mono',monospace;font-size:13px;opacity:0.7">Week 1-2 · 全部直播</span>
+    </div>
+
+    <!-- Week 1 -->
+    <div style="padding:4px 28px 4px;background:#f0f4ff;font-weight:800;font-size:14px;color:var(--indigo);border-bottom:1px solid #ddd">Week 1</div>
+    <table style="width:100%;border-collapse:collapse;font-size:13px">
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:12px 14px;width:10%;font-family:'Space Mono',monospace;font-weight:700;color:#888">周一 2h</td>
+        <td style="padding:12px 14px;width:8%"><span style="padding:2px 8px;background:#6366f1;color:#fff;font-weight:700;font-size:11px">直播</span></td>
+        <td style="padding:12px 14px;width:18%;font-weight:800">0.1 角色定位 & 全流程 Demo</td>
+        <td style="padding:12px 14px;width:64%">
+          <strong style="color:var(--red)">NEW — 全课程最重要的一节</strong><br>
+          → 前 30min: AI Adoption Specialist 做什么、市场需求 $70K-$250K、和 Engineer/PM 的区别<br>
+          → 中 30min: 讲师用自己的真实案例走一遍完整流程 "识别→选工具→试点→培训→度量"<br>
+          → 后 1h: 学员上手体验 — 用 ChatGPT/Claude 完成 3 个真实任务（邮件整理、会议摘要、数据分析）
+        </td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:12px 14px;font-family:'Space Mono',monospace;font-weight:700;color:#888">周三 2h</td>
+        <td style="padding:12px 14px"><span style="padding:2px 8px;background:#6366f1;color:#fff;font-weight:700;font-size:11px">直播</span></td>
+        <td style="padding:12px 14px;font-weight:800">1.1 ChatGPT + Claude 深度实操</td>
+        <td style="padding:12px 14px">
+          → ChatGPT: Custom Instructions、GPT Store、Advanced Data Analysis<br>
+          → Claude: Projects、Artifacts、长文档分析<br>
+          → 现场对比: 同一个任务用两个工具做，分析各自优劣
+        </td>
+      </tr>
+      <tr style="border-bottom:2px solid #ddd">
+        <td style="padding:12px 14px;font-family:'Space Mono',monospace;font-weight:700;color:#888">周五 2h</td>
+        <td style="padding:12px 14px"><span style="padding:2px 8px;background:#6366f1;color:#fff;font-weight:700;font-size:11px">直播</span> <span style="padding:2px 8px;background:#FFDE59;font-weight:700;font-size:11px">答疑</span></td>
+        <td style="padding:12px 14px;font-weight:800">1.2 Copilot + Gemini + 工具选型</td>
+        <td style="padding:12px 14px">
+          → 前 1h: M365 Copilot (Word/Excel/PPT/Teams) + Google Gemini (Docs/Sheets) 演示<br>
+          → 中 30min: <strong>AI 工具选型框架</strong> — 帮公司选 ChatGPT Enterprise vs Claude Teams vs Copilot，怎么评估<br>
+          → 后 30min: <span style="padding:2px 8px;background:#FFDE59;font-weight:700;font-size:11px">统一答疑</span> Week 1 所有问题
+        </td>
+      </tr>
+    </table>
+
+    <!-- Week 1 AI自学 -->
+    <div style="padding:10px 28px;background:#e0e7ff;display:flex;align-items:center;gap:8px;border-bottom:2px solid #ddd">
+      <span style="display:inline-block;width:12px;height:12px;background:#e0e7ff;border:2px solid #000"></span>
+      <span style="font-size:13px;font-weight:700">Week 1 AI 自学内容（随时可学，不占课时）</span>
+    </div>
+    <div style="padding:12px 28px;background:#f8f9ff;border-bottom:2px solid #ddd;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;font-size:12px">
+      <div style="padding:10px;border:1px solid #ddd;background:#fff">
+        <span style="padding:2px 6px;background:#e0e7ff;font-weight:700;font-size:10px">Prompt Lab</span>
+        <div style="font-weight:700;margin-top:4px">hello-ai / clear-task / output-format</div>
+        <div style="color:#888;margin-top:2px">AI 基础 + Prompt 入门热身</div>
+      </div>
+      <div style="padding:10px;border:1px solid #ddd;background:#fff">
+        <span style="padding:2px 6px;background:#e0e7ff;font-weight:700;font-size:10px">图文教程</span>
+        <div style="font-weight:700;margin-top:4px">AI 图像与视频工具</div>
+        <div style="color:#888;margin-top:2px">Midjourney / DALL-E / Canva AI / HeyGen 操作指南</div>
+      </div>
+      <div style="padding:10px;border:1px solid #ddd;background:#fff">
+        <span style="padding:2px 6px;background:#e0e7ff;font-weight:700;font-size:10px">Prompt Lab</span>
+        <div style="font-weight:700;margin-top:4px">multimodal-prompting</div>
+        <div style="color:#888;margin-top:2px">图文多模态 Prompt 练习</div>
+      </div>
+    </div>
+
+    <!-- Week 2 -->
+    <div style="padding:4px 28px 4px;background:#f0f4ff;font-weight:800;font-size:14px;color:var(--indigo);border-bottom:1px solid #ddd">Week 2</div>
+    <table style="width:100%;border-collapse:collapse;font-size:13px">
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:12px 14px;width:10%;font-family:'Space Mono',monospace;font-weight:700;color:#888">周一 2h</td>
+        <td style="padding:12px 14px;width:8%"><span style="padding:2px 8px;background:#6366f1;color:#fff;font-weight:700;font-size:11px">直播</span></td>
+        <td style="padding:12px 14px;width:18%;font-weight:800">2.1 Prompt Engineering 实战</td>
+        <td style="padding:12px 14px;width:64%">
+          → 角色设定、Few-shot、Chain of Thought、结构化输出<br>
+          → 现场对比好 prompt vs 坏 prompt 的真实输出差异<br>
+          → 建立个人 Prompt 模板库的方法
+        </td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:12px 14px;font-family:'Space Mono',monospace;font-weight:700;color:#888">周三 2h</td>
+        <td style="padding:12px 14px"><span style="padding:2px 8px;background:#6366f1;color:#fff;font-weight:700;font-size:11px">直播</span></td>
+        <td style="padding:12px 14px;font-weight:800">2.2 AI 自动化 + Email 管理</td>
+        <td style="padding:12px 14px">
+          → 前 1h: Zapier AI 现场搭 workflow（收邮件→AI 分类→更新 Sheet→Slack 通知）<br>
+          → 后 1h: <strong>Email 多账号绑定与 AI 管理</strong> — 多个邮箱统一分类、优先级、自动回复草稿、跨邮箱摘要<br>
+          → 讲师演示自己的真实 Email 工作流
+        </td>
+      </tr>
+      <tr style="border-bottom:2px solid #ddd">
+        <td style="padding:12px 14px;font-family:'Space Mono',monospace;font-weight:700;color:#888">周五 2h</td>
+        <td style="padding:12px 14px"><span style="padding:2px 8px;background:#6366f1;color:#fff;font-weight:700;font-size:11px">直播</span> <span style="padding:2px 8px;background:#FFDE59;font-weight:700;font-size:11px">答疑</span></td>
+        <td style="padding:12px 14px;font-weight:800">2.3 Vibe Coding + 会议 AI</td>
+        <td style="padding:12px 14px">
+          → 前 45min: Cursor 基础 — 用自然语言让 AI 写脚本/公式/Dashboard（Non-coder 版）<br>
+          → 中 45min: Otter.ai / Fireflies 会议记录 + Notion AI 知识库搭建<br>
+          → 后 30min: <span style="padding:2px 8px;background:#FFDE59;font-weight:700;font-size:11px">统一答疑</span> Week 2 + Phase 1 总结复盘
+        </td>
+      </tr>
+    </table>
+
+    <!-- Week 2 AI自学 -->
+    <div style="padding:10px 28px;background:#e0e7ff;display:flex;align-items:center;gap:8px;border-bottom:2px solid #ddd">
+      <span style="display:inline-block;width:12px;height:12px;background:#e0e7ff;border:2px solid #000"></span>
+      <span style="font-size:13px;font-weight:700">Week 2 AI 自学内容</span>
+    </div>
+    <div style="padding:12px 28px;background:#f8f9ff;border-bottom:2px solid #ddd;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;font-size:12px">
+      <div style="padding:10px;border:1px solid #ddd;background:#fff">
+        <span style="padding:2px 6px;background:#e0e7ff;font-weight:700;font-size:10px">Prompt Lab ×9</span>
+        <div style="font-weight:700;margin-top:4px">Prompt 全套练习</div>
+        <div style="color:#888;margin-top:2px">zero-shot / few-shot / role-playing / chain-of-thought / constraints / json-schema / business-writing / text-summarization / information-extraction</div>
+      </div>
+      <div style="padding:10px;border:1px solid #ddd;background:#fff">
+        <span style="padding:2px 6px;background:#e0e7ff;font-weight:700;font-size:10px">Prompt Lab</span>
+        <div style="font-weight:700;margin-top:4px">code-generation</div>
+        <div style="color:#888;margin-top:2px">AI 写代码练习（配合 Vibe Coding 课）</div>
+      </div>
+      <div style="padding:10px;border:1px solid #ddd;background:#fff">
+        <span style="padding:2px 6px;background:#e0e7ff;font-weight:700;font-size:10px">Vibe Coding Lab</span>
+        <div style="font-weight:700;margin-top:4px">入门 2-3 个 Lab</div>
+        <div style="color:#888;margin-top:2px">Cursor 基础操作跟做</div>
+      </div>
+      <div style="padding:10px;border:1px solid #ddd;background:#fff">
+        <span style="padding:2px 6px;background:#e0e7ff;font-weight:700;font-size:10px">图文教程</span>
+        <div style="font-weight:700;margin-top:4px">Make.com / n8n / Power Automate</div>
+        <div style="color:#888;margin-top:2px">更多自动化工具操作指南</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== PHASE 2 V2 ====== -->
+  <div style="border-bottom:3px solid #000">
+    <div style="padding:16px 28px;background:var(--teal);color:#fff;display:flex;align-items:center;gap:12px;border-bottom:2px solid #000">
+      <span style="padding:4px 12px;background:rgba(0,0,0,0.3);font-family:'Space Mono',monospace;font-size:12px;font-weight:700">PHASE 2</span>
+      <span style="font-size:20px;font-weight:900">业务场景实战</span>
+      <span style="margin-left:auto;font-family:'Space Mono',monospace;font-size:13px;opacity:0.7">Week 3-5 · 核心场景直播 + 其余 AI 自学</span>
+    </div>
+
+    <!-- Week 3 -->
+    <div style="padding:4px 28px 4px;background:#ecfdf5;font-weight:800;font-size:14px;color:var(--teal);border-bottom:1px solid #ddd">Week 3 · Marketing & Content</div>
+    <table style="width:100%;border-collapse:collapse;font-size:13px">
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:12px 14px;width:10%;font-family:'Space Mono',monospace;font-weight:700;color:#888">周一 2h</td>
+        <td style="padding:12px 14px;width:8%"><span style="padding:2px 8px;background:#6366f1;color:#fff;font-weight:700;font-size:11px">直播</span></td>
+        <td style="padding:12px 14px;width:18%;font-weight:800">3.1 AI 做 Facebook 广告</td>
+        <td style="padding:12px 14px;width:64%">
+          → 讲师展示真实广告数据 + ROI<br>
+          → 现场用 AI 生成文案变体 + A/B 测试策略<br>
+          → 配合 Canva AI 做广告图
+        </td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:12px 14px;font-family:'Space Mono',monospace;font-weight:700;color:#888">周三 2h</td>
+        <td style="padding:12px 14px"><span style="padding:2px 8px;background:#6366f1;color:#fff;font-weight:700;font-size:11px">直播</span></td>
+        <td style="padding:12px 14px;font-weight:800">3.2 AI 做社媒 + Email Marketing</td>
+        <td style="padding:12px 14px">
+          → 前 1h: 内容日历规划 + 多平台文案批量生成（LinkedIn/Instagram/TikTok）<br>
+          → 后 1h: Email 营销序列设计 — Welcome / Nurture / 促销，个性化 + A/B Subject Line
+        </td>
+      </tr>
+      <tr style="border-bottom:2px solid #ddd">
+        <td style="padding:12px 14px;font-family:'Space Mono',monospace;font-weight:700;color:#888">周五 1.5h</td>
+        <td style="padding:12px 14px"><span style="padding:2px 8px;background:#6366f1;color:#fff;font-weight:700;font-size:11px">直播</span> <span style="padding:2px 8px;background:#FFDE59;font-weight:700;font-size:11px">答疑</span></td>
+        <td style="padding:12px 14px;font-weight:800">Clinic + 统一答疑</td>
+        <td style="padding:12px 14px">
+          → 前 1h: 学员带自己的品牌/产品来，讲师现场帮你用 AI 做广告方案<br>
+          → 中 20min: <span style="padding:2px 8px;background:#FFDE59;font-weight:700;font-size:11px">统一答疑</span><br>
+          → 后 10min: <span style="padding:2px 8px;background:#dc2626;color:#fff;font-weight:700;font-size:11px">Adoption Lens</span> "这周学的 Marketing 场景，如果你是 Adoption Specialist，你会怎么把它变成一个 Pilot 提案给 CMO？"
+        </td>
+      </tr>
+    </table>
+    <div style="padding:12px 28px;background:#f8fff8;border-bottom:2px solid #ddd;font-size:12px">
+      <span style="padding:2px 6px;background:#e0e7ff;font-weight:700;font-size:10px">AI 自学</span>
+      SEO 内容全流程 (Prompt Lab: chain-of-thought + prompt-chaining) · 短视频脚本 (CapCut AI / Opus Clip 教程) · 竞品分析 (Claude 长文档分析) · 营销报告自动生成 (ChatGPT Data Analysis)
+    </div>
+
+    <!-- Week 4 -->
+    <div style="padding:4px 28px 4px;background:#ecfdf5;font-weight:800;font-size:14px;color:var(--teal);border-bottom:1px solid #ddd">Week 4 · Sales & Customer Service</div>
+    <table style="width:100%;border-collapse:collapse;font-size:13px">
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:12px 14px;width:10%;font-family:'Space Mono',monospace;font-weight:700;color:#888">周一 2h</td>
+        <td style="padding:12px 14px;width:8%"><span style="padding:2px 8px;background:#6366f1;color:#fff;font-weight:700;font-size:11px">直播</span></td>
+        <td style="padding:12px 14px;width:18%;font-weight:800">4.1 AI 做 Sales Outreach</td>
+        <td style="padding:12px 14px;width:64%">
+          → 潜客研究（Clay + LinkedIn）→ 个性化 Cold Email 批量生成<br>
+          → 讲师角色扮演 Sales Call，演示 AI Briefing → Follow-up 全流程<br>
+          → 学员现场写 3 封邮件，讲师 live 改
+        </td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:12px 14px;font-family:'Space Mono',monospace;font-weight:700;color:#888">周三 2h</td>
+        <td style="padding:12px 14px"><span style="padding:2px 8px;background:#6366f1;color:#fff;font-weight:700;font-size:11px">直播</span></td>
+        <td style="padding:12px 14px;font-weight:800">4.2 AI 客服 Bot + 内部知识库</td>
+        <td style="padding:12px 14px">
+          → 前 1h: 用 Chatbase 搭外部客服 Bot（上传 FAQ，10 分钟搞定）<br>
+          → 后 1h: <strong style="color:#E84142">OpenClaw</strong> 搭内部知识库 Bot — 接 Slack/飞书，上传公司文档，数据不出公司<br>
+          → 对比：哪个场景用哪个方案
+        </td>
+      </tr>
+      <tr style="border-bottom:2px solid #ddd">
+        <td style="padding:12px 14px;font-family:'Space Mono',monospace;font-weight:700;color:#888">周五 1.5h</td>
+        <td style="padding:12px 14px"><span style="padding:2px 8px;background:#6366f1;color:#fff;font-weight:700;font-size:11px">直播</span> <span style="padding:2px 8px;background:#FFDE59;font-weight:700;font-size:11px">答疑</span></td>
+        <td style="padding:12px 14px;font-weight:800">Clinic + 统一答疑</td>
+        <td style="padding:12px 14px">
+          → 前 1h: 学员提交的 Cold Email 讲师逐封点评 + OpenClaw Bot 问题排查<br>
+          → 中 20min: <span style="padding:2px 8px;background:#FFDE59;font-weight:700;font-size:11px">统一答疑</span><br>
+          → 后 10min: <span style="padding:2px 8px;background:#dc2626;color:#fff;font-weight:700;font-size:11px">Adoption Lens</span> "Sales 部门用 AI 最容易踩什么坑？你要怎么设计 Pilot 让 VP Sales 买单？"
+        </td>
+      </tr>
+    </table>
+    <div style="padding:12px 28px;background:#f8fff8;border-bottom:2px solid #ddd;font-size:12px">
+      <span style="padding:2px 6px;background:#e0e7ff;font-weight:700;font-size:10px">AI 自学</span>
+      Prompt Lab: system-prompt-design + qa-system-design + hallucination-defense（客服 Bot 进阶）· classification（客户反馈批量分析）· Proposal 自动生成 · Battle Cards 竞品对比
+    </div>
+
+    <!-- Week 5 -->
+    <div style="padding:4px 28px 4px;background:#ecfdf5;font-weight:800;font-size:14px;color:var(--teal);border-bottom:1px solid #ddd">Week 5 · HR / Finance / Operations + AI Pilot 设计</div>
+    <table style="width:100%;border-collapse:collapse;font-size:13px">
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:12px 14px;width:10%;font-family:'Space Mono',monospace;font-weight:700;color:#888">周一 2h</td>
+        <td style="padding:12px 14px;width:8%"><span style="padding:2px 8px;background:#6366f1;color:#fff;font-weight:700;font-size:11px">直播</span></td>
+        <td style="padding:12px 14px;width:18%;font-weight:800">5.1 AI 做 HR + Finance</td>
+        <td style="padding:12px 14px;width:64%">
+          → 前 1h: 招聘全流程 — AI 写 JD → 筛 20 份简历 → 生成面试问题 → bias 检查<br>
+          → 后 1h: 财务 — Claude Vision 读发票/收据 → 提取结构化数据 → 自动记账
+        </td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:12px 14px;font-family:'Space Mono',monospace;font-weight:700;color:#888">周三 2h</td>
+        <td style="padding:12px 14px"><span style="padding:2px 8px;background:#6366f1;color:#fff;font-weight:700;font-size:11px">直播</span></td>
+        <td style="padding:12px 14px;font-weight:800">5.2 流程自动化 + 团队 AI Agent</td>
+        <td style="padding:12px 14px">
+          → 前 1h: SOP 自动生成 (Scribe AI) + 周报自动化 (Gamma AI)<br>
+          → 后 1h: <strong style="color:#E84142">OpenClaw 团队自动化</strong> — 定时周报 Bot + Multi-Agent（Marketing Bot / Sales Bot 各管各的）
+        </td>
+      </tr>
+      <tr style="border-bottom:2px solid #ddd">
+        <td style="padding:12px 14px;font-family:'Space Mono',monospace;font-weight:700;color:#888">周五 2h</td>
+        <td style="padding:12px 14px"><span style="padding:2px 8px;background:#6366f1;color:#fff;font-weight:700;font-size:11px">直播</span> <span style="padding:2px 8px;background:#FFDE59;font-weight:700;font-size:11px">答疑</span></td>
+        <td style="padding:12px 14px;font-weight:800">5.3 AI Pilot 设计 + 中期复盘</td>
+        <td style="padding:12px 14px">
+          <strong style="color:var(--red)">NEW — 从"用工具"到"帮公司用工具"的转折点</strong><br>
+          → 前 1h: <strong>怎么设计一个 AI 试点项目</strong> — 选部门、选场景、定 KPI、控制变量、4 周跑完<br>
+          → 中 30min: Phase 1-2 复盘 — 你现在会了哪些工具和场景，怎么组合成方案<br>
+          → 后 30min: <span style="padding:2px 8px;background:#FFDE59;font-weight:700;font-size:11px">统一答疑</span>
+        </td>
+      </tr>
+    </table>
+    <div style="padding:12px 28px;background:#f8fff8;border-bottom:2px solid #ddd;font-size:12px">
+      <span style="padding:2px 6px;background:#e0e7ff;font-weight:700;font-size:10px">AI 自学</span>
+      Onboarding + Performance Review (Prompt Lab: role-playing + output-format) · 费用审核 · 合同审查 (Claude 长上下文) · PPT 自动生成 (Gamma AI) · 翻译 · 个人效率系统
+    </div>
+  </div>
+
+  <!-- ====== PHASE 3 V2 ====== -->
+  <div style="border-bottom:3px solid #000">
+    <div style="padding:16px 28px;background:var(--orange);color:#fff;display:flex;align-items:center;gap:12px;border-bottom:2px solid #000">
+      <span style="padding:4px 12px;background:rgba(0,0,0,0.3);font-family:'Space Mono',monospace;font-size:12px;font-weight:700">PHASE 3</span>
+      <span style="font-size:20px;font-weight:900">组织 AI 采纳方法论</span>
+      <span style="margin-left:auto;font-family:'Space Mono',monospace;font-size:13px;opacity:0.7">Week 6-7 · 全部直播（核心能力）</span>
+    </div>
+
+    <!-- Week 6 -->
+    <div style="padding:4px 28px 4px;background:#fff7ed;font-weight:800;font-size:14px;color:var(--orange);border-bottom:1px solid #ddd">Week 6 · 评估 + 变革管理</div>
+    <table style="width:100%;border-collapse:collapse;font-size:13px">
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:12px 14px;width:10%;font-family:'Space Mono',monospace;font-weight:700;color:#888">周一 2h</td>
+        <td style="padding:12px 14px;width:8%"><span style="padding:2px 8px;background:#6366f1;color:#fff;font-weight:700;font-size:11px">直播</span></td>
+        <td style="padding:12px 14px;width:18%;font-weight:800">6.1 AI 就绪度评估 + 机会审计</td>
+        <td style="padding:12px 14px;width:64%">
+          → 前 40min: <strong>AI 成熟度模型</strong> — Level 1 (个人探索) → Level 2 (部门试点) → Level 3 (标准化流程) → Level 4 (跨部门协同) → Level 5 (AI-Native 组织)。学员定位自己公司在哪一级，目标推到哪一级<br>
+          → 中 40min: AI Readiness Assessment 8 维度框架 + 学员现场对自己公司打分<br>
+          → 后 40min: AI 机会审计 — "AI Shadow Day" 方法 + ROI Calculator 排序
+        </td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:12px 14px;font-family:'Space Mono',monospace;font-weight:700;color:#888">周三 2.5h</td>
+        <td style="padding:12px 14px"><span style="padding:2px 8px;background:#dc2626;color:#fff;font-weight:700;font-size:11px">Workshop</span></td>
+        <td style="padding:12px 14px;font-weight:800">6.2 变革管理 + 利益相关者沟通</td>
+        <td style="padding:12px 14px">
+          <strong style="color:var(--red)">全课程互动性最强的一课</strong><br>
+          → 前 1h: ADKAR 模型 + 阻力处理策略 + AI Champion 网络<br>
+          → 中 45min: <strong>利益相关者管理</strong> — CEO/CFO/IT/Legal 各自关心什么，怎么分别沟通<br>
+          → 后 45min: 角色扮演 — 讲师扮演 CFO 拒绝你的 AI 预算，你怎么说服？
+        </td>
+      </tr>
+      <tr style="border-bottom:2px solid #ddd">
+        <td style="padding:12px 14px;font-family:'Space Mono',monospace;font-weight:700;color:#888">周五 2h</td>
+        <td style="padding:12px 14px"><span style="padding:2px 8px;background:#6366f1;color:#fff;font-weight:700;font-size:11px">直播</span> <span style="padding:2px 8px;background:#FFDE59;font-weight:700;font-size:11px">答疑</span></td>
+        <td style="padding:12px 14px;font-weight:800">6.3 AI 培训设计 + 预算案例</td>
+        <td style="padding:12px 14px">
+          → 前 1h: 设计内部 AI 培训（分层: Literacy→Tool→Advanced）+ <strong>AI Champion Program Design</strong>（怎么选 Champion、怎么培训、激励机制、汇报机制）+ "AI Fridays" 机制 + Prompt Library 建设<br>
+          → 中 30min: <strong>AI 预算与商业案例</strong> — 怎么写一份让 CFO 批钱的 AI 投资提案<br>
+          → 后 30min: <span style="padding:2px 8px;background:#FFDE59;font-weight:700;font-size:11px">统一答疑</span>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Week 7 -->
+    <div style="padding:4px 28px 4px;background:#fff7ed;font-weight:800;font-size:14px;color:var(--orange);border-bottom:1px solid #ddd">Week 7 · 治理 + OpenClaw 组织部署 + 规模化</div>
+    <table style="width:100%;border-collapse:collapse;font-size:13px">
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:12px 14px;width:10%;font-family:'Space Mono',monospace;font-weight:700;color:#888">周一 2h</td>
+        <td style="padding:12px 14px;width:8%"><span style="padding:2px 8px;background:#6366f1;color:#fff;font-weight:700;font-size:11px">直播</span></td>
+        <td style="padding:12px 14px;width:18%;font-weight:800">7.1 AI 治理 + 合规</td>
+        <td style="padding:12px 14px;width:64%">
+          → 前 1h: AI 使用政策模板 + 数据分类（Public/Internal/Confidential/Restricted）<br>
+          → 后 1h: GDPR / Privacy Act 实操 + AI 供应商评估 checklist + AI 伦理案例讨论
+        </td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:12px 14px;font-family:'Space Mono',monospace;font-weight:700;color:#888">周三 2h</td>
+        <td style="padding:12px 14px"><span style="padding:2px 8px;background:#6366f1;color:#fff;font-weight:700;font-size:11px">直播</span></td>
+        <td style="padding:12px 14px;font-weight:800;color:#E84142">7.2 OpenClaw 组织级部署</td>
+        <td style="padding:12px 14px">
+          → Docker 部署 → 接 LLM → 接 Slack/飞书 → 上传知识库 → 定时任务 → 多 Agent 路由<br>
+          → <strong>安全</strong>: ClawHavoc 事件回顾 + 沙箱机制 + 数据主权<br>
+          → <strong>选型决策</strong>: OpenClaw vs ChatGPT Enterprise vs 自建，什么公司用什么方案
+        </td>
+      </tr>
+      <tr style="border-bottom:2px solid #ddd">
+        <td style="padding:12px 14px;font-family:'Space Mono',monospace;font-weight:700;color:#888">周五 2h</td>
+        <td style="padding:12px 14px"><span style="padding:2px 8px;background:#6366f1;color:#fff;font-weight:700;font-size:11px">直播</span> <span style="padding:2px 8px;background:#FFDE59;font-weight:700;font-size:11px">答疑</span></td>
+        <td style="padding:12px 14px;font-weight:800">7.3 ROI 度量 + 规模化 + 向高层汇报</td>
+        <td style="padding:12px 14px">
+          → 前 45min: AI 采纳 KPI 体系 + Dashboard 设计<br>
+          → 中 30min: <strong>Pilot → Department → Organization</strong> 的扩展路径 + 2-3 个<strong>真实 AI 采纳失败案例</strong>（某银行强推 AI 导致员工集体反弹、某零售商 AI 客服准确率太低被下架 — 分析失败原因和教训）<br>
+          → 中 15min: <strong>Sustaining Adoption — 防止回退</strong>：定期 AI 使用报告、季度 Prompt Library 更新、新员工 AI Onboarding Checklist、采纳率下降时的重新激活策略<br>
+          → 后 30min: <strong>怎么做 AI 进展月报/季报</strong>（管理层看什么指标）+ <span style="padding:2px 8px;background:#FFDE59;font-weight:700;font-size:11px">统一答疑</span>
+        </td>
+      </tr>
+    </table>
+    <div style="padding:12px 28px;background:#fff7ed;border-bottom:2px solid #ddd;font-size:12px">
+      <span style="padding:2px 6px;background:#e0e7ff;font-weight:700;font-size:10px">AI 自学</span>
+      Prompt Lab: prompt-injection-defense + cost-optimization（安全与成本）· AI 使用政策 Lab（填模板生成 Policy）· AI 就绪度评估 Lab · AI 机会审计 Lab
+    </div>
+  </div>
+
+  <!-- ====== PHASE 4 V2 ====== -->
+  <div>
+    <div style="padding:16px 28px;background:var(--red);color:#fff;display:flex;align-items:center;gap:12px;border-bottom:2px solid #000">
+      <span style="padding:4px 12px;background:rgba(0,0,0,0.3);font-family:'Space Mono',monospace;font-size:12px;font-weight:700">PHASE 4</span>
+      <span style="font-size:20px;font-weight:900">毕业项目</span>
+      <span style="margin-left:auto;font-family:'Space Mono',monospace;font-size:13px;opacity:0.7">Week 8 · 全程老师参与</span>
+    </div>
+    <table style="width:100%;border-collapse:collapse;font-size:13px">
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:12px 14px;width:10%;font-family:'Space Mono',monospace;font-weight:700;color:#888">周一 2h</td>
+        <td style="padding:12px 14px;width:8%"><span style="padding:2px 8px;background:#6366f1;color:#fff;font-weight:700;font-size:11px">直播</span></td>
+        <td style="padding:12px 14px;width:18%;font-weight:800">8.1 选题 Briefing + 方法指导</td>
+        <td style="padding:12px 14px;width:64%">
+          → 讲师讲解毕业项目要求和评分标准<br>
+          → 优秀案例展示<br>
+          → 每个学员 2 分钟说选题方向，讲师给反馈
+        </td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:12px 14px;font-family:'Space Mono',monospace;font-weight:700;color:#888">周二-周三</td>
+        <td style="padding:12px 14px"><span style="padding:2px 8px;background:var(--teal);color:#fff;font-weight:700;font-size:11px">1v1</span></td>
+        <td style="padding:12px 14px;font-weight:800">8.2 中期 Check-in</td>
+        <td style="padding:12px 14px">
+          → 每人 20min 1v1 — 讲师/助教看方案进度，调整方向<br>
+          → 不是答疑，是深度指导
+        </td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:12px 14px;font-family:'Space Mono',monospace;font-weight:700;color:#888">周四 1.5h</td>
+        <td style="padding:12px 14px"><span style="padding:2px 8px;background:#CB6CE6;color:#fff;font-weight:700;font-size:11px">Peer Review</span></td>
+        <td style="padding:12px 14px;font-weight:800">8.3 方案互审</td>
+        <td style="padding:12px 14px">
+          <strong style="color:var(--purple)">NEW — 锻炼"评审别人方案"的能力</strong><br>
+          → 学员两两配对，用讲师提供的评审 Checklist 互看方案<br>
+          → 给对方写书面反馈（方案可行性、遗漏点、改进建议）<br>
+          → Adoption Specialist 日常就是要评估其他部门的 AI 方案，这就是在练<br>
+          → Demo Day 前最后一次修改机会
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:12px 14px;font-family:'Space Mono',monospace;font-weight:700;color:#888">周五 全天</td>
+        <td style="padding:12px 14px"><span style="padding:2px 8px;background:var(--red);color:#fff;font-weight:700;font-size:11px">Demo Day</span></td>
+        <td style="padding:12px 14px;font-weight:800">8.4 Demo Day + 证书</td>
+        <td style="padding:12px 14px">
+          → 每人 10min 展示 + 5min Q&A<br>
+          → 讲师打分 + 书面反馈<br>
+          → 评分: 方案可行性 30% + AI 工具运用 25% + 变革策略 25% + 演示 20%<br>
+          → 证书颁发
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Gaps identified & fixed -->
+  <div style="padding:20px 28px;border-top:3px solid #000;background:#fffbeb">
+    <h3 style="font-size:18px;font-weight:900;margin-bottom:12px">V2 审查：发现的 Gap 及补充建议</h3>
+    <div style="font-size:13px;color:#666;margin-bottom:16px">对照 10 份真实 JD + AI Adoption 完整生命周期检查，以下是目前大纲仍可强化的地方：</div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px">
+      <div style="padding:14px 16px;border:2px solid #f59e0b;background:#fff">
+        <div style="font-weight:800;font-size:14px;margin-bottom:6px;color:#92400e">1. 缺少 AI 采纳成熟度模型</div>
+        <div style="font-size:12px;line-height:1.8;color:#555">
+          <strong>问题：</strong>6.1 教了就绪度评估（评估现状），但缺少一个目标模型 — 公司 AI 成熟度分几级？Level 1 到 Level 5 每级的特征是什么？学员需要知道"我帮客户从 Level 2 推到 Level 4"。<br>
+          <strong>建议：</strong>在 6.1 增加 AI Maturity Model（类似 CMMI），让学员能对公司定位 + 设定目标。
+        </div>
+      </div>
+      <div style="padding:14px 16px;border:2px solid #f59e0b;background:#fff">
+        <div style="font-weight:800;font-size:14px;margin-bottom:6px;color:#92400e">2. 缺少 AI 采纳失败案例分析</div>
+        <div style="font-size:12px;line-height:1.8;color:#555">
+          <strong>问题：</strong>7.1 提到了 AI 伦理案例讨论，但缺少"AI 采纳项目失败"的专门分析 — 为什么有的公司花了几百万 AI 项目还是没人用？<br>
+          <strong>建议：</strong>在 7.3 增加 2-3 个真实的 AI 采纳失败案例（如：某银行强推 AI 导致员工集体反弹、某零售商 AI 客服上线但准确率太低下架），分析失败原因和教训。
+        </div>
+      </div>
+      <div style="padding:14px 16px;border:2px solid #f59e0b;background:#fff">
+        <div style="font-weight:800;font-size:14px;margin-bottom:6px;color:#92400e">3. 缺少 AI Champion 网络实操</div>
+        <div style="font-size:12px;line-height:1.8;color:#555">
+          <strong>问题：</strong>6.2 提到了 AI Champion 网络概念，但没有教怎么实际建立 — 怎么选 Champion？怎么培训 Champion？怎么让 Champion 带动部门？<br>
+          <strong>建议：</strong>在 6.3 的培训设计中增加 "AI Champion Program Design" — 选拔标准、培训内容、激励机制、汇报机制。这是 DPR Construction JD 里明确要求的能力。
+        </div>
+      </div>
+      <div style="padding:14px 16px;border:2px solid #f59e0b;background:#fff">
+        <div style="font-weight:800;font-size:14px;margin-bottom:6px;color:#92400e">4. Phase 2 缺少"Adoption 视角"的总结</div>
+        <div style="font-size:12px;line-height:1.8;color:#555">
+          <strong>问题：</strong>Week 3-4 的 Marketing/Sales/CS 场景教得很扎实，但学完后学员容易陷入"工具思维" — 只记住了"怎么做 Facebook 广告"，忘了自己要学的是"怎么帮公司推广 AI"。<br>
+          <strong>建议：</strong>每周五 Clinic 结束时，讲师花 5-10 分钟做一个 "Adoption Lens" 小结 — "这周学的 Marketing 场景，如果你是 Adoption Specialist，你会怎么把它变成一个 Pilot 提案给 CMO？"。把场景学习拉回到角色视角。
+        </div>
+      </div>
+      <div style="padding:14px 16px;border:2px solid #f59e0b;background:#fff">
+        <div style="font-weight:800;font-size:14px;margin-bottom:6px;color:#92400e">5. 毕业项目缺少 Peer Review 环节</div>
+        <div style="font-size:12px;line-height:1.8;color:#555">
+          <strong>问题：</strong>Week 8 只有 1v1 check-in + Demo Day。但真实工作中，AI 采纳方案需要同行评审。<br>
+          <strong>建议：</strong>在 Demo Day 前加一个 "Peer Review Session" — 学员两两配对互看方案，用讲师提供的评审 checklist 给对方反馈。这样 Demo Day 前方案质量更高，也锻炼了"评审别人方案"的能力（Adoption Specialist 经常需要评估其他部门的 AI 方案）。
+        </div>
+      </div>
+      <div style="padding:14px 16px;border:2px solid #f59e0b;background:#fff">
+        <div style="font-weight:800;font-size:14px;margin-bottom:6px;color:#92400e">6. 缺少 AI 采纳的"持续运营"内容</div>
+        <div style="font-size:12px;line-height:1.8;color:#555">
+          <strong>问题：</strong>课程在"规模化"后结束，但真实工作中 Adoption Specialist 还需要做 Day 2 Operations — AI 工具更新了怎么办？新员工怎么 onboard？采纳率下降了怎么重新激活？<br>
+          <strong>建议：</strong>在 7.3 增加 15 分钟的 "Sustaining Adoption" — 防止回退的机制设计（定期 AI 使用报告、季度 Prompt Library 更新、新员工 AI Onboarding Checklist）。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary stats -->
+  <div style="padding:20px 28px;border-top:3px solid #000;background:#f0fdf4">
+    <h3 style="font-size:18px;font-weight:900;margin-bottom:12px">V2 汇总</h3>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;font-size:14px">
+      <div style="padding:14px;background:#ede9fe;border:3px solid #000;box-shadow:4px 4px 0 #000;text-align:center">
+        <div style="font-size:32px;font-weight:900;color:var(--indigo)">22</div>
+        <div style="font-weight:700">节直播课</div>
+        <div style="font-size:11px;color:#666">每周 3 次 × 8 周</div>
+      </div>
+      <div style="padding:14px;background:#e0e7ff;border:3px solid #000;box-shadow:4px 4px 0 #000;text-align:center">
+        <div style="font-size:32px;font-weight:900;color:#4f46e5">30+</div>
+        <div style="font-weight:700">AI 自学内容</div>
+        <div style="font-size:11px;color:#666">Prompt Lab + 图文 + 录播</div>
+      </div>
+      <div style="padding:14px;background:#FFDE59;border:3px solid #000;box-shadow:4px 4px 0 #000;text-align:center">
+        <div style="font-size:32px;font-weight:900">8</div>
+        <div style="font-weight:700">次统一答疑</div>
+        <div style="font-size:11px;color:#666">每周五固定</div>
+      </div>
+      <div style="padding:14px;background:#ecfdf5;border:3px solid #000;box-shadow:4px 4px 0 #000;text-align:center">
+        <div style="font-size:32px;font-weight:900;color:var(--teal)">~44h</div>
+        <div style="font-weight:700">直播总时长</div>
+        <div style="font-size:11px;color:#666">讲师每周 ~5.5h</div>
+      </div>
+      <div style="padding:14px;background:#fef3c7;border:3px solid #000;box-shadow:4px 4px 0 #000;text-align:center">
+        <div style="font-size:32px;font-weight:900;color:#92400e">$0</div>
+        <div style="font-weight:700">自学内容成本</div>
+        <div style="font-size:11px;color:#666">复用现有 Lab + 图文</div>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding:14px 18px;background:#fff;border:2px solid var(--indigo);font-size:14px;line-height:1.8">
+      <strong>核心变化：</strong><br>
+      → <strong>新增 0.1 角色定位课</strong> — 第一节课讲清楚"识别→选工具→试点→培训→变革→度量"<br>
+      → <strong>新增 AI Pilot 设计</strong> (5.3) — 从"用工具"到"帮公司用工具"的转折点<br>
+      → <strong>新增利益相关者管理</strong> (6.2) — CEO/CFO/IT/Legal 怎么分别沟通<br>
+      → <strong>新增 AI 预算案例</strong> (6.3) — 怎么写投资提案<br>
+      → <strong>新增向高层汇报</strong> (7.3) — AI 月报/季报怎么做<br>
+      → <strong>Email 绑定管理</strong> 融入 2.2 — 多账号 AI 统一管理<br>
+      → <strong>非核心内容不删</strong> — 全部变成 AI 自学内容，零成本增加价值感<br>
+      → <strong>统一答疑不是 1v1</strong> — 每周五 30min 集中 Q&A
     </div>
   </div>
 </div>
 
-<!-- ========== PHASE 1 ========== -->
-<div class="box">
-  <div class="box-h" style="background:var(--indigo)"><span class="mono" style="font-size:12px;opacity:0.8">PHASE 1</span> <span style="font-size:20px;font-weight:900;margin-left:12px">AI 工具精通 + 角色定位</span> <span style="float:right;opacity:0.7" class="mono">Week 1-2 · 全部直播</span></div>
+<!-- ============ LAB MAPPING ============ -->
+<div style="margin-top:48px;border:3px solid #000;background:#fff;box-shadow:6px 6px 0 #000;overflow:hidden">
+  <div style="padding:20px 28px;background:var(--teal);color:#fff;border-bottom:3px solid #000">
+    <h2 style="font-size:24px;font-weight:900">现有互动实验室复用方案</h2>
+    <p style="font-size:14px;opacity:0.8;margin-top:4px">JR Academy 已有 156+ 个 Lab，能直接复用 20+ 个到本课程，大幅降低开发成本</p>
+  </div>
 
-  <div class="wk" style="background:#f0f4ff;color:var(--indigo)">Week 1</div>
-  <table>
-    <tr style="border-bottom:1px solid #eee"><td class="mono" style="width:9%;color:#888">周一 2h</td><td style="width:8%"><span class="pill" style="background:var(--indigo);color:#fff">直播</span></td><td style="width:17%;font-weight:800">0.1 角色定位 & 全流程 Demo</td><td><strong style="color:var(--red)">全课程最重要的一节</strong><br>→ 30min: AI Adoption Specialist 做什么、$70K-$250K、vs Engineer/PM<br>→ 30min: 讲师真实案例走一遍完整流程<br>→ 1h: 学员上手 — ChatGPT/Claude 完成 3 个真实任务</td></tr>
-    <tr style="border-bottom:1px solid #eee;background:#fafafa"><td class="mono">周三 2h</td><td><span class="pill" style="background:var(--indigo);color:#fff">直播</span></td><td style="font-weight:800">1.1 ChatGPT + Claude 深度实操</td><td>→ ChatGPT: Custom Instructions、GPT Store、Data Analysis<br>→ Claude: Projects、Artifacts、长文档分析<br>→ 现场对比同一任务两个工具做</td></tr>
-    <tr style="border-bottom:1px solid #ddd"><td class="mono">周五 2h</td><td><span class="pill" style="background:var(--indigo);color:#fff">直播</span> <span class="pill" style="background:var(--yellow)">答疑</span></td><td style="font-weight:800">1.2 Copilot + Gemini + 工具选型</td><td>→ 1h: M365 Copilot + Google Gemini 演示<br>→ 30min: <strong>工具选型框架</strong> — ChatGPT Enterprise vs Claude Teams vs Copilot<br>→ 30min: <span class="pill" style="background:var(--yellow)">统一答疑</span></td></tr>
-  </table>
-  <div class="ai-self" style="background:#f8f9ff"><span class="pill" style="background:#e0e7ff">AI 自学</span> Prompt Lab: hello-ai / clear-task / output-format · AI 图像视频指南 (Midjourney/Canva AI/HeyGen) · multimodal-prompting Lab</div>
+  <!-- Stats -->
+  <div style="display:flex;border-bottom:3px solid #000">
+    <div style="flex:1;padding:16px 20px;text-align:center;border-right:2px solid #eee">
+      <div style="font-size:36px;font-weight:900;color:var(--teal)">156+</div>
+      <div style="font-size:12px;color:#888;font-family:'Space Mono',monospace">现有 Lab 总数</div>
+    </div>
+    <div style="flex:1;padding:16px 20px;text-align:center;border-right:2px solid #eee">
+      <div style="font-size:36px;font-weight:900;color:var(--indigo)">22</div>
+      <div style="font-size:12px;color:#888;font-family:'Space Mono',monospace">可直接复用</div>
+    </div>
+    <div style="flex:1;padding:16px 20px;text-align:center;border-right:2px solid #eee">
+      <div style="font-size:36px;font-weight:900;color:var(--orange)">5</div>
+      <div style="font-size:12px;color:#888;font-family:'Space Mono',monospace">需新建</div>
+    </div>
+    <div style="flex:1;padding:16px 20px;text-align:center">
+      <div style="font-size:36px;font-weight:900;color:var(--green)">81%</div>
+      <div style="font-size:12px;color:#888;font-family:'Space Mono',monospace">复用率</div>
+    </div>
+  </div>
 
-  <div class="wk" style="background:#f0f4ff;color:var(--indigo)">Week 2</div>
-  <table>
-    <tr style="border-bottom:1px solid #eee"><td class="mono" style="width:9%">周一 2h</td><td style="width:8%"><span class="pill" style="background:var(--indigo);color:#fff">直播</span></td><td style="width:17%;font-weight:800">2.1 Prompt Engineering 实战</td><td>→ 角色设定、Few-shot、Chain of Thought、结构化输出<br>→ 好 vs 坏 prompt 现场对比<br>→ Prompt 模板库建设方法</td></tr>
-    <tr style="border-bottom:1px solid #eee;background:#fafafa"><td class="mono">周三 2h</td><td><span class="pill" style="background:var(--indigo);color:#fff">直播</span></td><td style="font-weight:800">2.2 AI 自动化 + Email 管理</td><td>→ 1h: Zapier AI 现场搭 workflow<br>→ 1h: <strong>Email 多账号 AI 管理</strong> — 统一分类、优先级、自动回复、跨邮箱摘要</td></tr>
-    <tr style="border-bottom:1px solid #ddd"><td class="mono">周五 2h</td><td><span class="pill" style="background:var(--indigo);color:#fff">直播</span> <span class="pill" style="background:var(--yellow)">答疑</span></td><td style="font-weight:800">2.3 Vibe Coding + 会议 AI</td><td>→ 45min: Cursor — 自然语言写脚本/公式/Dashboard<br>→ 45min: Otter.ai/Fireflies + Notion AI 知识库<br>→ 30min: <span class="pill" style="background:var(--yellow)">统一答疑</span> + Phase 1 复盘</td></tr>
-  </table>
-  <div class="ai-self" style="background:#f8f9ff"><span class="pill" style="background:#e0e7ff">AI 自学</span> Prompt Lab ×9 全套练习 · code-generation Lab · Vibe Coding 入门 Lab · Make.com/n8n/Power Automate 教程</div>
-</div>
-
-<!-- ========== PHASE 2 ========== -->
-<div class="box">
-  <div class="box-h" style="background:var(--teal)"><span class="mono" style="font-size:12px;opacity:0.8">PHASE 2</span> <span style="font-size:20px;font-weight:900;margin-left:12px">业务场景实战</span> <span style="float:right;opacity:0.7" class="mono">Week 3-5</span></div>
-
-  <div class="wk" style="background:#ecfdf5;color:var(--teal)">Week 3 · Marketing & Content</div>
-  <table>
-    <tr style="border-bottom:1px solid #eee"><td class="mono" style="width:9%">周一 2h</td><td style="width:8%"><span class="pill" style="background:var(--indigo);color:#fff">直播</span></td><td style="width:17%;font-weight:800">3.1 AI 做 Facebook 广告</td><td>→ 讲师展示真实广告数据 + ROI<br>→ 现场 AI 生成文案变体 + A/B 测试 + Canva AI 做图</td></tr>
-    <tr style="border-bottom:1px solid #eee;background:#fafafa"><td class="mono">周三 2h</td><td><span class="pill" style="background:var(--indigo);color:#fff">直播</span></td><td style="font-weight:800">3.2 社媒 + Email Marketing</td><td>→ 1h: 内容日历 + 多平台文案 (LinkedIn/IG/TikTok)<br>→ 1h: Email 序列设计 + 个性化 + A/B Subject Line</td></tr>
-    <tr style="border-bottom:1px solid #ddd"><td class="mono">周五 1.5h</td><td><span class="pill" style="background:var(--indigo);color:#fff">直播</span> <span class="pill" style="background:var(--yellow)">答疑</span></td><td style="font-weight:800">Clinic + 答疑</td><td>→ 1h: 带你的品牌来，讲师现场帮你做广告方案<br>→ 20min: <span class="pill" style="background:var(--yellow)">统一答疑</span><br>→ 10min: <span class="pill" style="background:#dc2626;color:#fff">Adoption Lens</span> "怎么把 Marketing 场景变成 Pilot 提案给 CMO？"</td></tr>
-  </table>
-  <div class="ai-self" style="background:#f8fff8"><span class="pill" style="background:#e0e7ff">AI 自学</span> SEO 全流程 · 短视频脚本 · 竞品分析 · 营销报告自动生成</div>
-
-  <div class="wk" style="background:#ecfdf5;color:var(--teal)">Week 4 · Sales & Customer Service</div>
-  <table>
-    <tr style="border-bottom:1px solid #eee"><td class="mono" style="width:9%">周一 2h</td><td style="width:8%"><span class="pill" style="background:var(--indigo);color:#fff">直播</span></td><td style="width:17%;font-weight:800">4.1 AI 做 Sales Outreach</td><td>→ 潜客研究 (Clay+LinkedIn) → 个性化 Cold Email<br>→ 讲师角色扮演 Sales Call<br>→ 学员现场写 3 封邮件，讲师 live 改</td></tr>
-    <tr style="border-bottom:1px solid #eee;background:#fafafa"><td class="mono">周三 2h</td><td><span class="pill" style="background:var(--indigo);color:#fff">直播</span></td><td style="font-weight:800">4.2 客服 Bot + 内部知识库</td><td>→ 1h: Chatbase 搭外部客服 Bot<br>→ 1h: <strong style="color:#E84142">OpenClaw</strong> 搭内部知识库 — 接 Slack/飞书，数据不出公司</td></tr>
-    <tr style="border-bottom:1px solid #ddd"><td class="mono">周五 1.5h</td><td><span class="pill" style="background:var(--indigo);color:#fff">直播</span> <span class="pill" style="background:var(--yellow)">答疑</span></td><td style="font-weight:800">Clinic + 答疑</td><td>→ 1h: Cold Email 点评 + OpenClaw Bot 排查<br>→ 20min: <span class="pill" style="background:var(--yellow)">统一答疑</span><br>→ 10min: <span class="pill" style="background:#dc2626;color:#fff">Adoption Lens</span> "Sales 用 AI 最容易踩什么坑？怎么让 VP Sales 买单？"</td></tr>
-  </table>
-  <div class="ai-self" style="background:#f8fff8"><span class="pill" style="background:#e0e7ff">AI 自学</span> system-prompt-design + qa-system-design + hallucination-defense Lab · classification Lab · Proposal 生成 · Battle Cards</div>
-
-  <div class="wk" style="background:#ecfdf5;color:var(--teal)">Week 5 · HR / Finance / Ops + AI Pilot</div>
-  <table>
-    <tr style="border-bottom:1px solid #eee"><td class="mono" style="width:9%">周一 2h</td><td style="width:8%"><span class="pill" style="background:var(--indigo);color:#fff">直播</span></td><td style="width:17%;font-weight:800">5.1 AI 做 HR + Finance</td><td>→ 1h: 招聘 — AI 写 JD → 筛简历 → 面试问题 → bias 检查<br>→ 1h: 财务 — Claude Vision 读发票 → 结构化数据 → 自动记账</td></tr>
-    <tr style="border-bottom:1px solid #eee;background:#fafafa"><td class="mono">周三 2h</td><td><span class="pill" style="background:var(--indigo);color:#fff">直播</span></td><td style="font-weight:800">5.2 流程自动化 + 团队 AI Agent</td><td>→ 1h: SOP 生成 (Scribe AI) + 周报自动化 (Gamma AI)<br>→ 1h: <strong style="color:#E84142">OpenClaw 团队自动化</strong> — 定时周报 Bot + Multi-Agent</td></tr>
-    <tr style="border-bottom:1px solid #ddd"><td class="mono">周五 2h</td><td><span class="pill" style="background:var(--indigo);color:#fff">直播</span> <span class="pill" style="background:var(--yellow)">答疑</span></td><td style="font-weight:800">5.3 AI Pilot 设计 + 中期复盘</td><td><strong style="color:var(--red)">转折点 — "用工具" → "帮公司用工具"</strong><br>→ 1h: 怎么设计 AI 试点 — 选部门、选场景、定 KPI、4 周跑完<br>→ 30min: Phase 1-2 复盘<br>→ 30min: <span class="pill" style="background:var(--yellow)">统一答疑</span></td></tr>
-  </table>
-  <div class="ai-self" style="background:#f8fff8"><span class="pill" style="background:#e0e7ff">AI 自学</span> Onboarding + Review Lab · 费用审核 · 合同审查 · PPT 生成 · 翻译 · 个人效率</div>
-</div>
-
-<!-- ========== PHASE 3 ========== -->
-<div class="box">
-  <div class="box-h" style="background:var(--orange)"><span class="mono" style="font-size:12px;opacity:0.8">PHASE 3</span> <span style="font-size:20px;font-weight:900;margin-left:12px">组织 AI 采纳方法论</span> <span style="float:right;opacity:0.7" class="mono">Week 6-7 · 全部直播</span></div>
-
-  <div class="wk" style="background:#fff7ed;color:var(--orange)">Week 6 · 评估 + 变革管理</div>
-  <table>
-    <tr style="border-bottom:1px solid #eee"><td class="mono" style="width:9%">周一 2h</td><td style="width:8%"><span class="pill" style="background:var(--indigo);color:#fff">直播</span></td><td style="width:17%;font-weight:800">6.1 成熟度 + 就绪度 + 机会审计</td><td>→ 40min: <strong>AI 成熟度模型</strong> Level 1(个人探索) → 2(部门试点) → 3(标准化) → 4(跨部门) → 5(AI-Native)<br>→ 40min: Readiness Assessment 8 维度框架<br>→ 40min: 机会审计 — "AI Shadow Day" + ROI Calculator</td></tr>
-    <tr style="border-bottom:1px solid #eee;background:#fafafa"><td class="mono">周三 2.5h</td><td><span class="pill" style="background:#dc2626;color:#fff">Workshop</span></td><td style="font-weight:800">6.2 变革管理 + 利益相关者</td><td><strong style="color:var(--red)">全课程互动性最强</strong><br>→ 1h: ADKAR 模型 + 阻力处理 + AI Champion 网络<br>→ 45min: <strong>利益相关者管理</strong> — CEO/CFO/IT/Legal 各自关心什么<br>→ 45min: 角色扮演 — 讲师扮 CFO 拒绝你的预算，你说服</td></tr>
-    <tr style="border-bottom:1px solid #ddd"><td class="mono">周五 2h</td><td><span class="pill" style="background:var(--indigo);color:#fff">直播</span> <span class="pill" style="background:var(--yellow)">答疑</span></td><td style="font-weight:800">6.3 培训设计 + Champion + 预算</td><td>→ 1h: 分层培训 + <strong>AI Champion Program</strong>（选拔/培训/激励/汇报）+ Prompt Library + "AI Fridays"<br>→ 30min: <strong>AI 预算与商业案例</strong> — 让 CFO 批钱的提案<br>→ 30min: <span class="pill" style="background:var(--yellow)">统一答疑</span></td></tr>
-  </table>
-
-  <div class="wk" style="background:#fff7ed;color:var(--orange)">Week 7 · 治理 + OpenClaw + 规模化</div>
-  <table>
-    <tr style="border-bottom:1px solid #eee"><td class="mono" style="width:9%">周一 2h</td><td style="width:8%"><span class="pill" style="background:var(--indigo);color:#fff">直播</span></td><td style="width:17%;font-weight:800">7.1 AI 治理 + 合规</td><td>→ 1h: AI 使用政策 + 数据分类 (Public/Internal/Confidential/Restricted)<br>→ 1h: GDPR / Privacy Act + 供应商评估 + 伦理案例</td></tr>
-    <tr style="border-bottom:1px solid #eee;background:#fafafa"><td class="mono">周三 2h</td><td><span class="pill" style="background:var(--indigo);color:#fff">直播</span></td><td style="font-weight:800;color:#E84142">7.2 OpenClaw 组织级部署</td><td>→ Docker 部署 → 接 LLM → 接 Slack/飞书 → 知识库 → 定时任务 → 多 Agent<br>→ <strong>安全</strong>: ClawHavoc 回顾 + 沙箱 + 数据主权<br>→ <strong>选型</strong>: OpenClaw vs ChatGPT Enterprise vs 自建</td></tr>
-    <tr style="border-bottom:1px solid #ddd"><td class="mono">周五 2h</td><td><span class="pill" style="background:var(--indigo);color:#fff">直播</span> <span class="pill" style="background:var(--yellow)">答疑</span></td><td style="font-weight:800">7.3 ROI + 规模化 + 汇报</td><td>→ 45min: AI 采纳 KPI + Dashboard 设计<br>→ 30min: Pilot→Dept→Org + <strong>2-3 个真实失败案例</strong>分析<br>→ 15min: <strong>Sustaining Adoption</strong> — 防回退机制<br>→ 30min: AI 月报/季报怎么做 + <span class="pill" style="background:var(--yellow)">统一答疑</span></td></tr>
-  </table>
-  <div class="ai-self" style="background:#fff7ed"><span class="pill" style="background:#e0e7ff">AI 自学</span> prompt-injection-defense + cost-optimization Lab · AI 使用政策 Lab · 就绪度评估 Lab · 机会审计 Lab</div>
-</div>
-
-<!-- ========== PHASE 4 ========== -->
-<div class="box">
-  <div class="box-h" style="background:var(--red)"><span class="mono" style="font-size:12px;opacity:0.8">PHASE 4</span> <span style="font-size:20px;font-weight:900;margin-left:12px">毕业项目</span> <span style="float:right;opacity:0.7" class="mono">Week 8 · 全程老师</span></div>
-  <table>
-    <tr style="border-bottom:1px solid #eee"><td class="mono" style="width:9%">周一 2h</td><td style="width:8%"><span class="pill" style="background:var(--indigo);color:#fff">直播</span></td><td style="width:17%;font-weight:800">8.1 选题 Briefing</td><td>→ 要求 + 评分标准 + 优秀案例<br>→ 每人 2min 说选题，讲师给反馈</td></tr>
-    <tr style="border-bottom:1px solid #eee;background:#fafafa"><td class="mono">周二-三</td><td><span class="pill" style="background:var(--teal);color:#fff">1v1</span></td><td style="font-weight:800">8.2 中期 Check-in</td><td>→ 每人 20min 1v1 — 看方案进度，调整方向</td></tr>
-    <tr style="border-bottom:1px solid #eee"><td class="mono">周四 1.5h</td><td><span class="pill" style="background:var(--purple);color:#fff">Peer Review</span></td><td style="font-weight:800">8.3 方案互审</td><td><strong style="color:var(--purple)">NEW</strong> → 两两配对互看方案，用评审 Checklist 给反馈<br>→ 锻炼"评审别人 AI 方案"的能力</td></tr>
-    <tr><td class="mono">周五 全天</td><td><span class="pill" style="background:var(--red);color:#fff">Demo Day</span></td><td style="font-weight:800">8.4 Demo Day + 证书</td><td>→ 每人 10min + 5min Q&A → 评分 → 证书颁发<br>→ 可行性 30% + 工具运用 25% + 变革策略 25% + 演示 20%</td></tr>
-  </table>
-</div>
-
-<!-- ========== 竞品 + 数据 + FAQ ========== -->
-<div class="box">
-  <div class="box-h" style="background:var(--dark)"><span style="font-size:18px;font-weight:900">竞品对比</span></div>
-  <table>
-    <thead><tr style="background:#f5f5f5"><th style="border:2px solid #000">维度</th><th style="border:2px solid #000;text-align:center">Google AI</th><th style="border:2px solid #000;text-align:center">Andrew Ng</th><th style="border:2px solid #000;text-align:center">Harvard</th><th style="border:2px solid #000;text-align:center;background:var(--yellow);font-size:14px">JR Academy</th></tr></thead>
+  <!-- Mapping table -->
+  <table style="width:100%;border-collapse:collapse;font-size:12px">
+    <thead>
+      <tr style="background:#f5f5f5">
+        <th style="padding:10px 12px;text-align:left;border-bottom:2px solid #ddd;width:8%">课号</th>
+        <th style="padding:10px 12px;text-align:left;border-bottom:2px solid #ddd;width:18%">Lesson</th>
+        <th style="padding:10px 12px;text-align:left;border-bottom:2px solid #ddd;width:20%">需要的 Lab</th>
+        <th style="padding:10px 12px;text-align:center;border-bottom:2px solid #ddd;width:10%">来源</th>
+        <th style="padding:10px 12px;text-align:left;border-bottom:2px solid #ddd;width:22%">复用的现有 Lab</th>
+        <th style="padding:10px 12px;text-align:left;border-bottom:2px solid #ddd;width:22%">备注</th>
+      </tr>
+    </thead>
     <tbody>
-      <tr><td style="border:1px solid #ddd;font-weight:700">价格</td><td style="border:1px solid #ddd;text-align:center">~$50</td><td style="border:1px solid #ddd;text-align:center">~$50</td><td style="border:1px solid #ddd;text-align:center">~$2,800</td><td style="border:1px solid #ddd;text-align:center;font-weight:900;background:#fffde7">$799</td></tr>
-      <tr><td style="border:1px solid #ddd;font-weight:700">业务场景</td><td style="border:1px solid #ddd;text-align:center;color:#dc2626">0</td><td style="border:1px solid #ddd;text-align:center;color:#dc2626">0</td><td style="border:1px solid #ddd;text-align:center">部分理论</td><td style="border:1px solid #ddd;text-align:center;font-weight:900;background:#fffde7">48 个实操</td></tr>
-      <tr><td style="border:1px solid #ddd;font-weight:700">Adoption 专属</td><td style="border:1px solid #ddd;text-align:center;color:#dc2626">❌</td><td style="border:1px solid #ddd;text-align:center;color:#dc2626">❌</td><td style="border:1px solid #ddd;text-align:center;color:#dc2626">❌</td><td style="border:1px solid #ddd;text-align:center;font-weight:900;background:#fffde7">7 个专属模块</td></tr>
-      <tr><td style="border:1px solid #ddd;font-weight:700">老师互动</td><td style="border:1px solid #ddd;text-align:center;color:#dc2626">❌</td><td style="border:1px solid #ddd;text-align:center;color:#dc2626">❌</td><td style="border:1px solid #ddd;text-align:center">有限</td><td style="border:1px solid #ddd;text-align:center;font-weight:900;background:#fffde7">每周 3 次直播</td></tr>
+      <!-- M1 -->
+      <tr style="background:#f0f4ff;border-bottom:2px solid var(--indigo)"><td colspan="6" style="padding:8px 12px;font-weight:900;color:var(--indigo)">M1 AI 工具全景与深度实操</td></tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">1.1</td>
+        <td style="padding:8px 12px">ChatGPT 进阶</td>
+        <td style="padding:8px 12px">用 ChatGPT 分析销售 CSV</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>hello-ai</strong> (Prompt Lab) → 热身<br><strong>clear-task</strong> (Prompt Lab) → 任务拆解</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">先做 Prompt Lab 热身，再进 ChatGPT 实操</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:8px 12px">1.2</td>
+        <td style="padding:8px 12px">Claude 深度使用</td>
+        <td style="padding:8px 12px">Claude Projects 知识库</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>context-management</strong> (Prompt Lab) → 长上下文管理<br><strong>information-extraction</strong> (Prompt Lab) → 信息提取</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">Prompt Lab 教技巧，Claude 教工具使用</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">1.3</td>
+        <td style="padding:8px 12px">Gemini + Copilot</td>
+        <td style="padding:8px 12px">Excel/Sheets 数据分析</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#fef3c7;font-weight:700;color:#92400e">新建</span></td>
+        <td style="padding:8px 12px;color:#888">—</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">Copilot/Gemini 是外部工具，无法在 Lab 里模拟，用截图 + 步骤指引替代</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:8px 12px">1.4</td>
+        <td style="padding:8px 12px">AI 图像与视频</td>
+        <td style="padding:8px 12px">Midjourney 生成广告图</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>multimodal-prompting</strong> (Prompt Lab) → 图文 prompt</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">Prompt Lab 教 prompt 写法，实际生图在外部工具</td>
+      </tr>
+
+      <!-- M2 -->
+      <tr style="background:#f0f4ff;border-bottom:2px solid var(--indigo)"><td colspan="6" style="padding:8px 12px;font-weight:900;color:var(--indigo)">M2 Prompt Engineering + 自动化</td></tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">2.1</td>
+        <td style="padding:8px 12px">Prompt Engineering 实战</td>
+        <td style="padding:8px 12px">10 个场景 prompt 练习</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px">
+          <strong>zero-shot</strong> · <strong>few-shot</strong> · <strong>role-playing</strong><br>
+          <strong>chain-of-thought</strong> · <strong>output-format</strong><br>
+          <strong>json-schema</strong> · <strong>business-writing</strong><br>
+          <strong>text-summarization</strong> · <strong>constraints</strong>
+        </td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">Prompt Lab 的 Warmup + Foundation 全部复用！这是最大的复用点</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:8px 12px">2.2</td>
+        <td style="padding:8px 12px">AI + No-Code 自动化</td>
+        <td style="padding:8px 12px">搭 Zapier workflow</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#fef3c7;font-weight:700;color:#92400e">新建</span></td>
+        <td style="padding:8px 12px;color:#888">—</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">Zapier 是外部平台，需要步骤指引式 Lab</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">2.3</td>
+        <td style="padding:8px 12px">AI 会议与知识管理</td>
+        <td style="padding:8px 12px">会议记录结构化</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>text-summarization</strong> (Prompt Lab) → 摘要技巧<br><strong>information-extraction</strong> (Prompt Lab) → 提取 action items</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">复用 Prompt Lab 练提取技巧</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:8px 12px">2.4</td>
+        <td style="padding:8px 12px">AI 辅助编程</td>
+        <td style="padding:8px 12px">Vibe Coding Dashboard</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>code-generation</strong> (Prompt Lab) → AI 写代码<br><strong>Vibe Coding Labs</strong> → 入门级</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">复用 Vibe Coding 方向的前 2-3 个 Lab</td>
+      </tr>
+
+      <!-- M3 -->
+      <tr style="background:#ecfdf5;border-bottom:2px solid var(--teal)"><td colspan="6" style="padding:8px 12px;font-weight:900;color:var(--teal)">M3 AI for Marketing & Content</td></tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">3.1</td>
+        <td style="padding:8px 12px">AI 做 Facebook 广告</td>
+        <td style="padding:8px 12px">生成广告文案 + A/B 变体</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>business-writing</strong> (Prompt Lab) → 商业文案<br><strong>few-shot</strong> (Prompt Lab) → 风格模仿<br><strong>constraints</strong> (Prompt Lab) → 字数/格式约束</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">用 Prompt Lab 练文案技巧，结合真实广告场景</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:8px 12px">3.2</td>
+        <td style="padding:8px 12px">AI 做社媒运营</td>
+        <td style="padding:8px 12px">内容日历 + 多平台文案</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>role-playing</strong> (Prompt Lab) → 不同平台语调<br><strong>output-format</strong> (Prompt Lab) → 表格/日历格式</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">Prompt Lab 练输出控制</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">3.3</td>
+        <td style="padding:8px 12px">AI 做 SEO 内容</td>
+        <td style="padding:8px 12px">关键词 → 长文 → 优化</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>chain-of-thought</strong> (Prompt Lab) → 大纲生成<br><strong>prompt-chaining</strong> (Prompt Lab) → 多步写作</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">长文需要 prompt chaining 技巧</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:8px 12px">3.4</td>
+        <td style="padding:8px 12px">AI 做 Email Marketing</td>
+        <td style="padding:8px 12px">Email 序列 + 个性化</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>business-writing</strong> (Prompt Lab) → 邮件写作<br><strong>few-shot</strong> (Prompt Lab) → 风格一致性</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">Business Writing Lab 直接对口</td>
+      </tr>
+
+      <!-- M4 -->
+      <tr style="background:#ecfdf5;border-bottom:2px solid var(--teal)"><td colspan="6" style="padding:8px 12px;font-weight:900;color:var(--teal)">M4 AI for Sales & Customer Service</td></tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">4.1</td>
+        <td style="padding:8px 12px">AI 做 Outreach</td>
+        <td style="padding:8px 12px">个性化 cold email</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>role-playing</strong> → 客户视角<br><strong>information-extraction</strong> → 从网页提取客户信息</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">提取 + 角色扮演组合</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:8px 12px">4.2</td>
+        <td style="padding:8px 12px">AI 做 Sales 支持</td>
+        <td style="padding:8px 12px">Call summary + follow-up</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>text-summarization</strong> → 会议纪要<br><strong>json-schema</strong> → 结构化输出</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">总结 + 结构化是 Sales 核心技能</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">4.3</td>
+        <td style="padding:8px 12px">AI 做客服机器人</td>
+        <td style="padding:8px 12px">搭建 FAQ bot</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>system-prompt-design</strong> (Prompt Lab) → 系统提示词<br><strong>qa-system-design</strong> (Prompt Lab) → Q&A 系统<br><strong>hallucination-defense</strong> → 防幻觉</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">Production 级 Prompt Lab 最适合！</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:8px 12px">4.4</td>
+        <td style="padding:8px 12px">AI 做客户反馈分析</td>
+        <td style="padding:8px 12px">批量分析评论</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>classification</strong> (Prompt Lab) → 分类标注<br><strong>information-extraction</strong> → 批量提取</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">分类 Lab 直接对口反馈分析</td>
+      </tr>
+
+      <!-- M5 -->
+      <tr style="background:#ecfdf5;border-bottom:2px solid var(--teal)"><td colspan="6" style="padding:8px 12px;font-weight:900;color:var(--teal)">M5 AI for HR, Finance & Operations</td></tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">5.1</td>
+        <td style="padding:8px 12px">AI 做招聘</td>
+        <td style="padding:8px 12px">JD 写作 + 简历筛选</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>business-writing</strong> → JD 撰写<br><strong>classification</strong> → 简历匹配打分<br><strong>constraints</strong> → bias 检查约束</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">Writing + Classification 组合</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:8px 12px">5.2</td>
+        <td style="padding:8px 12px">AI 做 HR 运营</td>
+        <td style="padding:8px 12px">Onboarding + Review</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>output-format</strong> → 结构化 Plan<br><strong>role-playing</strong> → 不同角色视角</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">格式控制 + 角色切换</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">5.3</td>
+        <td style="padding:8px 12px">AI 做财务</td>
+        <td style="padding:8px 12px">发票/收据数据提取</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>information-extraction</strong> → 结构化提取<br><strong>json-schema</strong> → JSON 格式输出</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">提取 + JSON 是发票处理的核心</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:8px 12px">5.4</td>
+        <td style="padding:8px 12px">AI 做流程自动化</td>
+        <td style="padding:8px 12px">SOP + 报告生成</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>prompt-chaining</strong> → 多步生成<br><strong>text-summarization</strong> → 周报摘要</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">Chaining 用于长文档生成</td>
+      </tr>
+
+      <!-- M6-M7 -->
+      <tr style="background:#fff7ed;border-bottom:2px solid var(--orange)"><td colspan="6" style="padding:8px 12px;font-weight:900;color:var(--orange)">M6-M7 变革管理 + 治理合规</td></tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">6.1-6.4</td>
+        <td style="padding:8px 12px">方法论 + Workshop</td>
+        <td style="padding:8px 12px">评估报告 + 政策文档</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#fef3c7;font-weight:700;color:#92400e">新建 3 个</span></td>
+        <td style="padding:8px 12px;color:#888">需要新建:<br>1. AI 就绪度评估 Lab<br>2. AI 机会审计 Lab<br>3. AI 使用政策 Lab</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">场景式 Lab (填框架 + 生成报告)</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fef2f2">
+        <td style="padding:8px 12px">6.5</td>
+        <td style="padding:8px 12px"><strong style="color:#E84142">OpenClaw 组织部署</strong></td>
+        <td style="padding:8px 12px">部署 + 多 Agent + 自动化</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>OpenClaw 方向</strong> Ch.1-5 (Getting Started)<br>Ch.10 (Multi-Agent Routing)<br>Ch.11 (Scheduled Tasks)</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">复用 OpenClaw 方向前 5 章 + 自动化章节，跳过纯开发内容 (Skill 开发/MCP 深度)</td>
+      </tr>
+
+      <!-- M8 -->
+      <tr style="background:#fef2f2;border-bottom:2px solid var(--red)"><td colspan="6" style="padding:8px 12px;font-weight:900;color:var(--red)">M8 毕业项目</td></tr>
+      <tr>
+        <td style="padding:8px 12px">8</td>
+        <td style="padding:8px 12px">Capstone</td>
+        <td style="padding:8px 12px">方案撰写 + Deck</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#e0e7ff;font-weight:700;color:#4f46e5">无需 Lab</span></td>
+        <td style="padding:8px 12px;color:#888">独立项目，不需要 Lab 环境</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">学员综合运用所有技能</td>
+      </tr>
     </tbody>
   </table>
-  <div style="padding:12px 24px;border-top:2px solid #000;text-align:center;font-weight:700">"Harvard 的深度 × Udemy 的价格 × Bootcamp 的互动"</div>
-</div>
 
-<div class="box">
-  <div class="box-h" style="background:var(--teal)"><span style="font-size:18px;font-weight:900">关键数据</span></div>
-  <div style="padding:16px 24px">
-    <div class="grid3">
-      <div><div style="font-weight:700;margin-bottom:8px">📊 市场</div><div style="font-size:13px;line-height:2"><strong style="color:var(--indigo)">89%</strong> 企业在用 AI<br><strong style="color:var(--red)">9%</strong> 达到成熟度<br><strong style="color:var(--teal)">81%</strong> gap = 机会</div></div>
-      <div><div style="font-weight:700;margin-bottom:8px">💰 薪资 (USD)</div><div style="font-size:13px;line-height:2">Entry: <strong>$70K-$100K</strong><br>Mid: <strong>$110K-$150K</strong><br>Senior: <strong>$150K-$250K</strong></div></div>
-      <div><div style="font-weight:700;margin-bottom:8px">⚡ 效率提升</div><div style="font-size:13px;line-height:2">Marketing <strong>+60-70%</strong><br>Sales 回复率 <strong>2-3x</strong><br>HR 筛选 <strong>-80%</strong></div></div>
+  <!-- Key reusable labs summary -->
+  <div style="padding:20px 28px;border-top:3px solid #000;background:#f0fdf4">
+    <h3 style="font-size:18px;font-weight:900;margin-bottom:12px">复用最多的 Prompt Lab (按使用次数)</h3>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;font-size:12px">
+      <div style="padding:10px 14px;background:#fff;border:2px solid var(--teal);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900">business-writing</div>
+        <div style="color:#888;font-size:11px">商业写作</div>
+        <div style="margin-top:4px;color:var(--teal);font-weight:700">用于 4 课</div>
+        <div style="font-size:10px;color:#666">1.1, 3.1, 3.4, 5.1</div>
+      </div>
+      <div style="padding:10px 14px;background:#fff;border:2px solid var(--teal);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900">role-playing</div>
+        <div style="color:#888;font-size:11px">角色扮演</div>
+        <div style="margin-top:4px;color:var(--teal);font-weight:700">用于 4 课</div>
+        <div style="font-size:10px;color:#666">2.1, 3.2, 4.1, 5.2</div>
+      </div>
+      <div style="padding:10px 14px;background:#fff;border:2px solid var(--teal);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900">information-extraction</div>
+        <div style="color:#888;font-size:11px">信息提取</div>
+        <div style="margin-top:4px;color:var(--teal);font-weight:700">用于 4 课</div>
+        <div style="font-size:10px;color:#666">1.2, 4.1, 4.4, 5.3</div>
+      </div>
+      <div style="padding:10px 14px;background:#fff;border:2px solid var(--teal);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900">classification</div>
+        <div style="color:#888;font-size:11px">分类标注</div>
+        <div style="margin-top:4px;color:var(--teal);font-weight:700">用于 3 课</div>
+        <div style="font-size:10px;color:#666">4.4, 5.1, 5.3</div>
+      </div>
+      <div style="padding:10px 14px;background:#fff;border:2px solid var(--teal);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900">text-summarization</div>
+        <div style="color:#888;font-size:11px">文本摘要</div>
+        <div style="margin-top:4px;color:var(--teal);font-weight:700">用于 3 课</div>
+        <div style="font-size:10px;color:#666">2.1, 2.3, 4.2</div>
+      </div>
+      <div style="padding:10px 14px;background:#fff;border:2px solid var(--teal);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900">few-shot</div>
+        <div style="color:#888;font-size:11px">示例学习</div>
+        <div style="margin-top:4px;color:var(--teal);font-weight:700">用于 3 课</div>
+        <div style="font-size:10px;color:#666">2.1, 3.1, 3.4</div>
+      </div>
+      <div style="padding:10px 14px;background:#fff;border:2px solid var(--teal);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900">system-prompt-design</div>
+        <div style="color:#888;font-size:11px">系统提示词</div>
+        <div style="margin-top:4px;color:var(--teal);font-weight:700">用于 1 课</div>
+        <div style="font-size:10px;color:#666">4.3 客服机器人</div>
+      </div>
+      <div style="padding:10px 14px;background:#fff;border:2px solid var(--teal);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900">qa-system-design</div>
+        <div style="color:#888;font-size:11px">Q&A 系统</div>
+        <div style="margin-top:4px;color:var(--teal);font-weight:700">用于 1 课</div>
+        <div style="font-size:10px;color:#666">4.3 客服机器人</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Only 5 new labs needed -->
+  <div style="padding:20px 28px;border-top:2px solid #eee;background:#fffbeb">
+    <h3 style="font-size:18px;font-weight:900;margin-bottom:12px">仅需新建 5 个 Lab</h3>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;font-size:12px">
+      <div style="padding:12px;background:#fff;border:2px solid var(--orange);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900;color:var(--orange)">1. Copilot 实操指引</div>
+        <div style="color:#666;margin-top:4px">截图步骤式 Lab<br>Excel/Word/PPT 场景</div>
+        <div style="margin-top:6px;font-size:10px;padding:2px 6px;background:#fff7ed;display:inline-block">Lesson 1.3</div>
+      </div>
+      <div style="padding:12px;background:#fff;border:2px solid var(--orange);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900;color:var(--orange)">2. Zapier Workflow 指引</div>
+        <div style="color:#666;margin-top:4px">截图步骤式 Lab<br>跨工具自动化</div>
+        <div style="margin-top:6px;font-size:10px;padding:2px 6px;background:#fff7ed;display:inline-block">Lesson 2.2</div>
+      </div>
+      <div style="padding:12px;background:#fff;border:2px solid var(--orange);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900;color:var(--orange)">3. AI 就绪度评估 Lab</div>
+        <div style="color:#666;margin-top:4px">场景式 Prompt Lab<br>填框架 → 生成报告</div>
+        <div style="margin-top:6px;font-size:10px;padding:2px 6px;background:#fff7ed;display:inline-block">Lesson 6.1</div>
+      </div>
+      <div style="padding:12px;background:#fff;border:2px solid var(--orange);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900;color:var(--orange)">4. AI 机会审计 Lab</div>
+        <div style="color:#666;margin-top:4px">场景式 Prompt Lab<br>5 部门分析 → ROI 排序</div>
+        <div style="margin-top:6px;font-size:10px;padding:2px 6px;background:#fff7ed;display:inline-block">Lesson 6.2</div>
+      </div>
+      <div style="padding:12px;background:#fff;border:2px solid var(--orange);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900;color:var(--orange)">5. AI 使用政策 Lab</div>
+        <div style="color:#666;margin-top:4px">场景式 Prompt Lab<br>填模板 → 生成 Policy</div>
+        <div style="margin-top:6px;font-size:10px;padding:2px 6px;background:#fff7ed;display:inline-block">Lesson 7.1</div>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding:12px 16px;background:#fff;border:2px solid var(--teal);font-size:14px">
+      <strong>开发量估算：</strong>5 个新 Lab 都是 Prompt Lab 类型 (场景式/步骤式)，无需写代码，每个约 2-4 小时配置 → 总计 10-20 小时开发量
     </div>
   </div>
 </div>
 
-<div class="box">
-  <div class="box-h" style="background:var(--dark)"><span style="font-size:18px;font-weight:900">FAQ</span></div>
-  <div style="padding:16px 24px;display:flex;flex-direction:column;gap:8px">
-    <details><summary>Q: 我完全不懂 AI，能学吗？</summary><div>能。不需要编程基础。Week 1 从零开始。</div></details>
-    <details><summary>Q: 和免费 ChatGPT 教程有什么区别？</summary><div>免费教程教按钮。我们教 48 个业务场景 + 7 个 Adoption 专属模块（Pilot 设计、变革管理、预算案例）竞品完全没有。</div></details>
-    <details><summary>Q: 学完能找什么工作？</summary><div>AI Adoption Specialist / AI Enablement Lead / Digital Transformation Manager。$70K-$250K。证书 + Job Referral。</div></details>
-    <details><summary>Q: $799 值吗？</summary><div>Harvard 同类 $2,800（纯理论）。我们 $799 = 22 节直播 + 30+ 自学内容 + 毕业项目 + 证书。学完第一周就能省出学费。</div></details>
-    <details><summary>Q: 每周多少时间？</summary><div>~8-10h。直播 ~5.5h/周 + 自学/作业 3-4h。可以边上班边学。</div></details>
-    <details><summary>Q: 我已经会 ChatGPT 了还需要学吗？</summary><div>ChatGPT 只是 20+ 工具之一。你会帮公司选工具吗？会设计 Pilot 吗？会写预算提案吗？会部署 OpenClaw 给团队用吗？</div></details>
+<!-- ============ JD GAP ANALYSIS ============ -->
+<div style="margin-top:48px;border:3px solid #000;background:#fff;box-shadow:6px 6px 0 #000;overflow:hidden">
+  <div style="padding:20px 28px;background:#dc2626;color:#fff;border-bottom:3px solid #000">
+    <h2 style="font-size:24px;font-weight:900">JD 对比分析：市场要什么 vs 我们教什么</h2>
+    <p style="font-size:14px;opacity:0.8;margin-top:4px">基于 10 份真实 JD (Lockheed Martin / DPR Construction / AIG / Hugo Tech / OpenText 等)</p>
+  </div>
+
+  <!-- Key finding -->
+  <div style="padding:16px 28px;background:#fef2f2;border-bottom:2px solid #eee;font-size:15px;line-height:1.8">
+    <strong>核心发现：</strong>10 份 JD 中，<strong>这不是技术岗</strong>。雇主要的是能 <strong>TEACH + COACH + MEASURE + MANAGE CHANGE</strong> 的人，不是造模型的人。和我们课程定位完全一致。
+  </div>
+
+  <!-- 7 skills mapping -->
+  <table style="width:100%;border-collapse:collapse;font-size:13px">
+    <thead>
+      <tr style="background:#f5f5f5">
+        <th style="padding:12px 14px;text-align:left;border-bottom:2px solid #ddd;font-family:'Space Mono',monospace;width:6%">排名</th>
+        <th style="padding:12px 14px;text-align:left;border-bottom:2px solid #ddd;width:20%">JD 要求的能力</th>
+        <th style="padding:12px 14px;text-align:left;border-bottom:2px solid #ddd;width:8%">出现频率</th>
+        <th style="padding:12px 14px;text-align:left;border-bottom:2px solid #ddd;width:30%">JD 具体要求</th>
+        <th style="padding:12px 14px;text-align:left;border-bottom:2px solid #ddd;width:26%">我们课程覆盖</th>
+        <th style="padding:12px 14px;text-align:center;border-bottom:2px solid #ddd;width:10%">覆盖度</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:12px 14px;font-weight:900;font-size:18px;color:var(--red)">1</td>
+        <td style="padding:12px 14px;font-weight:800">变革管理<br>Change Management</td>
+        <td style="padding:12px 14px"><span style="background:var(--red);color:#fff;padding:2px 8px;font-weight:700;font-family:'Space Mono',monospace">8/10</span></td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          → Change frameworks (Prosci, ADKAR, Kotter)<br>
+          → Stakeholder engagement & resistance management<br>
+          → Behavioral change strategies<br>
+          → Post-implementation reviews<br>
+          → Adoption metrics definition
+        </td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          <strong>M6.3</strong> ADKAR 模型 + 阻力处理 + Champion 网络<br>
+          <strong>M6.1</strong> 就绪度评估 (8 维度)<br>
+          <strong>M7.4</strong> 采纳率追踪指标 + 规模化<br>
+          <strong>M6.3 Workshop</strong> 角色扮演说服管理者
+        </td>
+        <td style="padding:12px 14px;text-align:center"><span style="padding:4px 12px;background:#dcfce7;font-weight:900;font-size:14px;border:2px solid #16a34a;color:#16a34a">95%</span></td>
+      </tr>
+
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:12px 14px;font-weight:900;font-size:18px;color:var(--red)">2</td>
+        <td style="padding:12px 14px;font-weight:800">沟通能力<br>Communication</td>
+        <td style="padding:12px 14px"><span style="background:var(--red);color:#fff;padding:2px 8px;font-weight:700;font-family:'Space Mono',monospace">8/10</span></td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          → Executive-level presentations<br>
+          → Translating technical → non-technical<br>
+          → Multi-channel communication planning<br>
+          → Written materials (guides, docs, comms)
+        </td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          <strong>M8 Demo Day</strong> 10 分钟 pitch + Q&A<br>
+          <strong>M6.3</strong> 向 C-level pitch AI 投资<br>
+          <strong>M6.4</strong> 设计培训材料<br>
+          <strong>M8.3</strong> 用 AI 做 Deck
+        </td>
+        <td style="padding:12px 14px;text-align:center"><span style="padding:4px 12px;background:#dcfce7;font-weight:900;font-size:14px;border:2px solid #16a34a;color:#16a34a">85%</span></td>
+      </tr>
+
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:12px 14px;font-weight:900;font-size:18px;color:var(--red)">3</td>
+        <td style="padding:12px 14px;font-weight:800">培训 & 赋能<br>Training Design</td>
+        <td style="padding:12px 14px"><span style="background:var(--orange);color:#fff;padding:2px 8px;font-weight:700;font-family:'Space Mono',monospace">7/10</span></td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          → End-to-end training programs (基础→进阶)<br>
+          → Live training delivery (线上+线下)<br>
+          → 培训材料: guides, FAQs, demo videos<br>
+          → 1:1 coaching + small-group sessions<br>
+          → 适配不同 AI 成熟度的受众
+        </td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          <strong>M6.4</strong> 设计分层培训 (Literacy→Tool→Advanced)<br>
+          <strong>M6.4</strong> "AI Fridays" 机制<br>
+          <strong>M6.4 作业</strong> 为 50 人部门设计 4 周培训<br>
+          <strong>M2.1</strong> Prompt Library 建设
+        </td>
+        <td style="padding:12px 14px;text-align:center"><span style="padding:4px 12px;background:#dcfce7;font-weight:900;font-size:14px;border:2px solid #16a34a;color:#16a34a">90%</span></td>
+      </tr>
+
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:12px 14px;font-weight:900;font-size:18px;color:var(--red)">4</td>
+        <td style="padding:12px 14px;font-weight:800">AI 工具精通<br>GenAI Proficiency</td>
+        <td style="padding:12px 14px"><span style="background:var(--orange);color:#fff;padding:2px 8px;font-weight:700;font-family:'Space Mono',monospace">7/10</span></td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          → ChatGPT / OpenAI<br>
+          → Microsoft Copilot / Copilot Studio<br>
+          → GitHub Copilot<br>
+          → Prompt engineering + prompt library<br>
+          → Enterprise LLMs
+        </td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          <strong>M1</strong> ChatGPT + Claude + Gemini + Copilot 深度实操<br>
+          <strong>M2.1</strong> Prompt Engineering 实战 + 模板库<br>
+          <strong>M1.4</strong> Midjourney / Canva AI / HeyGen<br>
+          <strong>M3-M5</strong> 48 个场景中的 20+ 工具
+        </td>
+        <td style="padding:12px 14px;text-align:center"><span style="padding:4px 12px;background:#dcfce7;font-weight:900;font-size:14px;border:2px solid #16a34a;color:#16a34a">95%</span></td>
+      </tr>
+
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:12px 14px;font-weight:900;font-size:18px;color:var(--red)">5</td>
+        <td style="padding:12px 14px;font-weight:800">跨部门协作<br>Cross-functional</td>
+        <td style="padding:12px 14px"><span style="background:var(--orange);color:#fff;padding:2px 8px;font-weight:700;font-family:'Space Mono',monospace">7/10</span></td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          → 与 IT/Security/Legal/Compliance 合作<br>
+          → 与 Engineering/Data/Product 团队协作<br>
+          → 与 L&D 部门对齐<br>
+          → 协调 AI builders 和平台团队
+        </td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          <strong>M3-M5</strong> 覆盖 Marketing/Sales/HR/Finance/Ops/CS/Product 7 个部门<br>
+          <strong>M7.1-7.2</strong> 与 IT/Security/Legal 的合规对齐<br>
+          <strong>M8</strong> 毕业项目跨 5 个部门审计
+        </td>
+        <td style="padding:12px 14px;text-align:center"><span style="padding:4px 12px;background:#dcfce7;font-weight:900;font-size:14px;border:2px solid #16a34a;color:#16a34a">85%</span></td>
+      </tr>
+
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:12px 14px;font-weight:900;font-size:18px;color:var(--red)">6</td>
+        <td style="padding:12px 14px;font-weight:800">数据驱动决策<br>Metrics & ROI</td>
+        <td style="padding:12px 14px"><span style="background:var(--blue);color:#fff;padding:2px 8px;font-weight:700;font-family:'Space Mono',monospace">6/10</span></td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          → 定义采纳 KPI<br>
+          → Usage analytics & engagement metrics<br>
+          → Impact measurement & ROI reporting<br>
+          → Feedback loops & continuous improvement
+        </td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          <strong>M6.2</strong> ROI Calculator + 估算模型<br>
+          <strong>M7.4</strong> AI 采纳 Dashboard (5 KPI) + 规模化路线图<br>
+          <strong>M8</strong> 毕业方案含 ROI 预估
+        </td>
+        <td style="padding:12px 14px;text-align:center"><span style="padding:4px 12px;background:#dcfce7;font-weight:900;font-size:14px;border:2px solid #16a34a;color:#16a34a">90%</span></td>
+      </tr>
+
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:12px 14px;font-weight:900;font-size:18px;color:var(--red)">7</td>
+        <td style="padding:12px 14px;font-weight:800">战略思维<br>Strategic Thinking</td>
+        <td style="padding:12px 14px"><span style="background:var(--blue);color:#fff;padding:2px 8px;font-weight:700;font-family:'Space Mono',monospace">5/10</span></td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          → 识别业务流程中的 AI 机会<br>
+          → Use case 识别和优先级排序<br>
+          → AI roadmap 制定<br>
+          → 平衡可行性/性能/业务影响
+        </td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          <strong>M6.2</strong> AI 机会审计 (AI Shadow Day)<br>
+          <strong>M6.2</strong> 流程瓶颈分析 + ROI 排序<br>
+          <strong>M7.4</strong> Pilot → Department → Org 路线图<br>
+          <strong>M8</strong> 完整 AI 采纳方案
+        </td>
+        <td style="padding:12px 14px;text-align:center"><span style="padding:4px 12px;background:#dcfce7;font-weight:900;font-size:14px;border:2px solid #16a34a;color:#16a34a">90%</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Gap: Nice-to-haves we don't cover -->
+  <div style="padding:20px 28px;border-top:3px solid #000;background:#fffbeb">
+    <h3 style="font-size:18px;font-weight:900;margin-bottom:12px">JD 中的 Nice-to-Have（我们未覆盖/轻度覆盖）</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;font-size:13px">
+      <div>
+        <div style="font-weight:700;margin-bottom:8px;color:#92400e">技术类 Nice-to-Have</div>
+        <table style="width:100%;border-collapse:collapse">
+          <tr><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0">AI/ML data preparation & feature engineering</td><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0;color:#dc2626;font-weight:700">不覆盖 (技术岗)</td></tr>
+          <tr><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0">End-to-end ML/NLP/LLM solution delivery</td><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0;color:#dc2626;font-weight:700">不覆盖 (AI Engineer)</td></tr>
+          <tr><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0">Python programming</td><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0;color:#d97706;font-weight:700">轻度 (M2.4 Non-coder版)</td></tr>
+          <tr><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0">Cloud platforms (AWS/GCP/Azure)</td><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0;color:#dc2626;font-weight:700">不覆盖</td></tr>
+          <tr><td style="padding:4px 8px">Cybersecurity principles for AI</td><td style="padding:4px 8px;color:#d97706;font-weight:700">轻度 (M7.2 数据安全)</td></tr>
+        </table>
+      </div>
+      <div>
+        <div style="font-weight:700;margin-bottom:8px;color:#92400e">认证/软技能 Nice-to-Have</div>
+        <table style="width:100%;border-collapse:collapse">
+          <tr><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0">Prosci 认证</td><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0;color:#d97706;font-weight:700">教 ADKAR，但不发 Prosci 证</td></tr>
+          <tr><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0">PMP 项目管理</td><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0;color:#dc2626;font-weight:700">不覆盖</td></tr>
+          <tr><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0">Design Thinking</td><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0;color:#dc2626;font-weight:700">不覆盖</td></tr>
+          <tr><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0">Instructional Design 背景</td><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0;color:#16a34a;font-weight:700">覆盖 (M6.4 培训设计)</td></tr>
+          <tr><td style="padding:4px 8px">Consulting experience</td><td style="padding:4px 8px;color:#d97706;font-weight:700">轻度 (M8 毕业项目模拟)</td></tr>
+        </table>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding:12px 16px;background:#fff;border:2px solid #fbbf24;font-size:14px;line-height:1.8">
+      <strong>结论：</strong>未覆盖的 nice-to-have 大多是技术深度要求 (ML/Cloud) 或独立认证 (Prosci/PMP) — 这些属于 AI Engineer 或 PM 的范畴，不是 Adoption Specialist 的核心。我们的课程覆盖了 <strong>7 个 must-have 核心能力的 85-95%</strong>，定位准确。
+    </div>
+  </div>
+
+  <!-- Real JD examples -->
+  <div style="padding:20px 28px;border-top:2px solid #eee">
+    <h3 style="font-size:18px;font-weight:900;margin-bottom:12px">参考 JD 来源</h3>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;font-size:12px">
+      <div style="padding:8px 12px;background:#f5f5f5;border:1px solid #ddd"><strong>Lockheed Martin</strong><br>Early-Career<br>$63K-$127K</div>
+      <div style="padding:8px 12px;background:#f5f5f5;border:1px solid #ddd"><strong>Lockheed Martin</strong><br>Mid-Career<br>$125K-$217K</div>
+      <div style="padding:8px 12px;background:#f5f5f5;border:1px solid #ddd"><strong>DPR Construction</strong><br>AI Coach 型<br>最详细的 JD</div>
+      <div style="padding:8px 12px;background:#f5f5f5;border:1px solid #ddd"><strong>Hugo Technologies</strong><br>Change Manager<br>5-8+ years</div>
+      <div style="padding:8px 12px;background:#f5f5f5;border:1px solid #ddd"><strong>AIG</strong><br>GenAI Change Mgmt<br>Enterprise-scale</div>
+      <div style="padding:8px 12px;background:#f5f5f5;border:1px solid #ddd"><strong>First AI</strong><br>Microsoft Partner<br>Copilot consulting</div>
+      <div style="padding:8px 12px;background:#f5f5f5;border:1px solid #ddd"><strong>OpenText</strong><br>AI Transformation<br>CAD $81K-$131K</div>
+      <div style="padding:8px 12px;background:#f5f5f5;border:1px solid #ddd"><strong>Intrepid Solutions</strong><br>Defense sector<br>Fort Meade</div>
+      <div style="padding:8px 12px;background:#f5f5f5;border:1px solid #ddd"><strong>IFAB Foundation</strong><br>Bologna, Italy<br>Non-profit</div>
+      <div style="padding:8px 12px;background:#f5f5f5;border:1px solid #ddd"><strong>Datarails</strong><br>R&D Enablement<br>Tel Aviv</div>
+    </div>
+  </div>
+
+  <!-- Salary reference -->
+  <div style="padding:16px 28px;border-top:2px solid #eee;background:#f0fdf4">
+    <h3 style="font-size:16px;font-weight:900;margin-bottom:8px">毕业生薪资参考</h3>
+    <div style="display:flex;gap:24px;font-size:14px">
+      <div><strong>Entry (1-2年):</strong> $63K-$100K USD</div>
+      <div><strong>Mid (2-5年):</strong> $100K-$150K USD</div>
+      <div><strong>Senior (5-8年):</strong> $150K-$250K USD</div>
+      <div style="color:#888">来源: Lockheed Martin, BrightNext, ZipRecruiter</div>
+    </div>
   </div>
 </div>
 
-<div class="footer">AI Adoption Specialist Bootcamp — 课程结构详情 · 内部审阅版 · JR Academy 2026</div>
+<!-- ============ MARKETING HIGHLIGHTS ============ -->
+<div style="margin-top:48px;border:3px solid #000;background:#fff;box-shadow:6px 6px 0 #000;overflow:hidden">
+  <div style="padding:20px 28px;background:linear-gradient(135deg, #6366f1, #ec4899);color:#fff;border-bottom:3px solid #000">
+    <h2 style="font-size:24px;font-weight:900">销售亮点 & Marketing 素材</h2>
+    <p style="font-size:14px;opacity:0.8;margin-top:4px">给 Marketing 和销售团队直接用</p>
+  </div>
 
+  <!-- One-liner -->
+  <div style="padding:24px 28px;background:#1a1a2e;color:#fff;border-bottom:3px solid #000;text-align:center">
+    <div style="font-size:12px;font-family:'Space Mono',monospace;color:rgba(255,255,255,0.5);margin-bottom:8px">ONE-LINER</div>
+    <div style="font-size:22px;font-weight:700;line-height:1.6;max-width:900px;margin:0 auto">
+      <span style="background:#6366f1;padding:2px 10px">8 周</span>学会用 AI 做 Facebook 广告、写 Sales 邮件、筛简历、处理发票…<span style="background:#ec4899;padding:2px 10px">48 个真实业务场景</span>，<span style="background:#10b981;padding:2px 10px">不用写一行代码</span>。
+    </div>
+  </div>
+
+  <!-- 5 selling points -->
+  <div style="padding:24px 28px">
+    <h3 style="font-size:20px;font-weight:900;margin-bottom:16px">5 大核心卖点</h3>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px">
+
+      <div style="border:3px solid #000;box-shadow:5px 5px 0 #000;overflow:hidden">
+        <div style="padding:12px 14px;background:#ff5757;color:#fff;font-weight:800;font-size:14px;text-align:center">卖点 1</div>
+        <div style="padding:14px">
+          <div style="font-size:32px;text-align:center;margin-bottom:8px">🎯</div>
+          <div style="font-weight:900;font-size:15px;text-align:center;margin-bottom:8px">48 个真实场景</div>
+          <div style="font-size:12px;color:#666;line-height:1.7">
+            不是泛泛教 AI 入门。<br>
+            而是 "AI 做 Facebook 广告"、"AI 筛简历"、"AI 读发票" 这样的<strong>具体工作任务</strong>。<br><br>
+            <em>"不是教你 AI 是什么，而是教你明天上班就能用"</em>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:3px solid #000;box-shadow:5px 5px 0 #000;overflow:hidden">
+        <div style="padding:12px 14px;background:#10b981;color:#fff;font-weight:800;font-size:14px;text-align:center">卖点 2</div>
+        <div style="padding:14px">
+          <div style="font-size:32px;text-align:center;margin-bottom:8px">🚫💻</div>
+          <div style="font-weight:900;font-size:15px;text-align:center;margin-bottom:8px">不用写代码</div>
+          <div style="font-size:12px;color:#666;line-height:1.7">
+            Marketing / Sales / HR / Finance 任何岗位都能学。<br>
+            工具全部对话式或拖拽式。<br><br>
+            <em>"会用微信就能学会"</em>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:3px solid #000;box-shadow:5px 5px 0 #000;overflow:hidden">
+        <div style="padding:12px 14px;background:#6366f1;color:#fff;font-weight:800;font-size:14px;text-align:center">卖点 3</div>
+        <div style="padding:14px">
+          <div style="font-size:32px;text-align:center;margin-bottom:8px">👨‍🏫</div>
+          <div style="font-weight:900;font-size:15px;text-align:center;margin-bottom:8px">老师带着做</div>
+          <div style="font-size:12px;color:#666;line-height:1.7">
+            每周 3 次见老师。<br>
+            <strong>周三 Clinic</strong>: 带你自己的工作来，老师现场帮你用 AI 做。<br><br>
+            <em>"和 $50 Udemy 的区别：有人看着你做、帮你改"</em>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:3px solid #000;box-shadow:5px 5px 0 #000;overflow:hidden">
+        <div style="padding:12px 14px;background:#f59e0b;color:#000;font-weight:800;font-size:14px;text-align:center">卖点 4</div>
+        <div style="padding:14px">
+          <div style="font-size:32px;text-align:center;margin-bottom:8px">💰</div>
+          <div style="font-weight:900;font-size:15px;text-align:center;margin-bottom:8px">高薪新岗位</div>
+          <div style="font-size:12px;color:#666;line-height:1.7">
+            AI Adoption Specialist<br>
+            Entry $70K-$100K<br>
+            Mid $110K-$150K<br>
+            Senior $150K-$250K<br><br>
+            <em>"不需要写代码的 AI 岗位"</em>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:3px solid #000;box-shadow:5px 5px 0 #000;overflow:hidden">
+        <div style="padding:12px 14px;background:#E84142;color:#fff;font-weight:800;font-size:14px;text-align:center">卖点 5</div>
+        <div style="padding:14px">
+          <div style="font-size:32px;text-align:center;margin-bottom:8px">🔬</div>
+          <div style="font-weight:900;font-size:15px;text-align:center;margin-bottom:8px">20+ 工具 × Lab</div>
+          <div style="font-size:12px;color:#666;line-height:1.7">
+            不只教 ChatGPT。<br>
+            ChatGPT + Claude + Copilot + Midjourney + Zapier + OpenClaw…<br>
+            22 个互动 Lab 动手做。<br><br>
+            <em>"不是看 PPT，是在 Lab 里做"</em>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Target personas -->
+  <div style="padding:24px 28px;border-top:2px solid #eee">
+    <h3 style="font-size:20px;font-weight:900;margin-bottom:16px">5 类目标用户 & 钩子话术</h3>
+    <table style="width:100%;border-collapse:collapse;font-size:13px">
+      <thead>
+        <tr style="background:#f5f5f5">
+          <th style="padding:10px 12px;text-align:left;border-bottom:2px solid #ddd;width:12%">用户</th>
+          <th style="padding:10px 12px;text-align:left;border-bottom:2px solid #ddd;width:25%">痛点</th>
+          <th style="padding:10px 12px;text-align:left;border-bottom:2px solid #ddd;width:30%">钩子话术</th>
+          <th style="padding:10px 12px;text-align:left;border-bottom:2px solid #ddd;width:33%">对应课程</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #eee">
+          <td style="padding:10px 12px"><strong>📣 Marketing</strong></td>
+          <td style="padding:10px 12px">每天 4 小时写内容，知道 AI 能帮忙但不知道怎么系统用</td>
+          <td style="padding:10px 12px;color:var(--indigo);font-weight:600">"用 AI 做 Facebook 广告，文案产出量 10 倍，投放成本降 30%"</td>
+          <td style="padding:10px 12px;font-size:12px">M3: Facebook 广告 + 社媒 + SEO + Email</td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee;background:#fafafa">
+          <td style="padding:10px 12px"><strong>💰 Sales</strong></td>
+          <td style="padding:10px 12px">每天 2 小时研究客户写邮件，回复率不到 5%</td>
+          <td style="padding:10px 12px;color:var(--indigo);font-weight:600">"AI 帮你写个性化 Cold Email，回复率从 5% 到 15%"</td>
+          <td style="padding:10px 12px;font-size:12px">M4: Outreach + Sales Call + 客服 Bot</td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+          <td style="padding:10px 12px"><strong>🏢 管理者</strong></td>
+          <td style="padding:10px 12px">团队各自摸索 AI，没有标准，担心数据安全</td>
+          <td style="padding:10px 12px;color:var(--indigo);font-weight:600">"8 周学会为整个部门制定 AI 采纳方案"</td>
+          <td style="padding:10px 12px;font-size:12px">M6 变革管理 + M7 治理 + OpenClaw 部署</td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee;background:#fafafa">
+          <td style="padding:10px 12px"><strong>👥 HR</strong></td>
+          <td style="padding:10px 12px">每次招聘筛 200 份简历花整整一天</td>
+          <td style="padding:10px 12px;color:var(--indigo);font-weight:600">"AI 20 分钟筛完 200 份简历，准确率比人工高"</td>
+          <td style="padding:10px 12px;font-size:12px">M5: 招聘 + HR 运营 + 财务</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 12px"><strong>🔄 转行者</strong></td>
+          <td style="padding:10px 12px">想进 AI 行业但不会写代码</td>
+          <td style="padding:10px 12px;color:var(--indigo);font-weight:600">"不用写代码的 AI 岗位，年薪 $100K+"</td>
+          <td style="padding:10px 12px;font-size:12px">完整 8 周 + 证书 + Job Referral</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Competitor comparison -->
+  <div style="padding:24px 28px;border-top:2px solid #eee;background:#f9f9f9">
+    <h3 style="font-size:20px;font-weight:900;margin-bottom:16px">竞品对比</h3>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;background:#fff">
+      <thead>
+        <tr>
+          <th style="padding:10px 12px;border:2px solid #000;background:#f5f5f5;text-align:left">维度</th>
+          <th style="padding:10px 12px;border:2px solid #000;background:#f5f5f5;text-align:center">Google AI<br>Essentials</th>
+          <th style="padding:10px 12px;border:2px solid #000;background:#f5f5f5;text-align:center">Andrew Ng<br>AI for Everyone</th>
+          <th style="padding:10px 12px;border:2px solid #000;background:#f5f5f5;text-align:center">Harvard AI<br>for Business</th>
+          <th style="padding:10px 12px;border:2px solid #000;background:#FFDE59;text-align:center;font-weight:900">JR Academy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:8px 12px;border:1px solid #ddd;font-weight:700">价格</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center">~$50</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center">~$50</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center">~$2,800</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;font-weight:900;background:#fffde7">$799</td></tr>
+        <tr><td style="padding:8px 12px;border:1px solid #ddd;font-weight:700">时长</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center">10h</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center">6h</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center">7 周</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;font-weight:900;background:#fffde7">8 周</td></tr>
+        <tr><td style="padding:8px 12px;border:1px solid #ddd;font-weight:700">业务场景</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">0</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">0</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center">部分理论</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;font-weight:900;background:#fffde7">48 个实操</td></tr>
+        <tr><td style="padding:8px 12px;border:1px solid #ddd;font-weight:700">Lab 实操</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">❌</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">❌</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">❌</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;font-weight:900;background:#fffde7">22+ Labs</td></tr>
+        <tr><td style="padding:8px 12px;border:1px solid #ddd;font-weight:700">工具数量</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center">只教 GPT</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">无</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">无</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;font-weight:900;background:#fffde7">20+ 工具</td></tr>
+        <tr><td style="padding:8px 12px;border:1px solid #ddd;font-weight:700">中文教学</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">❌</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">❌</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">❌</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;font-weight:900;background:#fffde7">✅</td></tr>
+        <tr><td style="padding:8px 12px;border:1px solid #ddd;font-weight:700">老师互动</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">❌</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">❌</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center">有限</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;font-weight:900;background:#fffde7">每周 3 次</td></tr>
+        <tr><td style="padding:8px 12px;border:1px solid #ddd;font-weight:700">OpenClaw</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">❌</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">❌</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">❌</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;font-weight:900;background:#fffde7">✅ 组织级 AI</td></tr>
+        <tr><td style="padding:8px 12px;border:1px solid #ddd;font-weight:700">职业支持</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">❌</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">❌</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">❌</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;font-weight:900;background:#fffde7">证书+推荐</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:12px;padding:10px 16px;background:#fff;border:2px solid #6366f1;font-size:14px;font-weight:700;text-align:center">
+      "Harvard 的深度 × Udemy 的价格 × Bootcamp 的互动"
+    </div>
+  </div>
+
+  <!-- Social media copy -->
+  <div style="padding:24px 28px;border-top:2px solid #eee">
+    <h3 style="font-size:20px;font-weight:900;margin-bottom:16px">社交媒体文案 (直接复制用)</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div>
+        <div style="font-weight:700;margin-bottom:10px;color:var(--red)">小红书 / 朋友圈标题</div>
+        <ol style="font-size:13px;line-height:2.2;padding-left:20px">
+          <li>"我用 AI 每天省 3 小时，老板以为我在加班"</li>
+          <li>"不会写代码也能年薪百万？AI Adoption Specialist 了解一下"</li>
+          <li>"用 AI 做 Facebook 广告，文案产出量翻 10 倍的方法"</li>
+          <li>"HR 用 AI 筛简历，200 份 20 分钟搞定"</li>
+          <li>"老板让我带团队用 AI，我慌了 → 8 周后我成了公司 AI 负责人"</li>
+          <li>"89% 的公司在用 AI，但只有 9% 用对了"</li>
+          <li>"ChatGPT 你只会聊天？看高手怎么用它做广告、写邮件、管客服"</li>
+          <li>"不需要写代码的 AI 岗位，年薪 $150K"</li>
+          <li>"我用 OpenClaw 给团队搭了个 AI 助手，每人每天省 1 小时"</li>
+          <li>"学 AI 不是学编程 — 48 个场景告诉你 AI 怎么用在工作里"</li>
+        </ol>
+      </div>
+      <div>
+        <div style="font-weight:700;margin-bottom:10px;color:var(--indigo)">短视频脚本 (30s TikTok/Reels)</div>
+        <div style="background:#f5f5f5;padding:14px;font-size:13px;line-height:1.8;border:2px solid #ddd">
+          <strong>Hook (0-3s):</strong><br>
+          "89% 的公司在用 AI，但只有 9% 用对了"<br><br>
+          <strong>Problem (3-10s):</strong><br>
+          "大部分人只会用 ChatGPT 聊天。但 AI 能帮你做广告、筛简历、写销售邮件、处理发票"<br><br>
+          <strong>Solution (10-20s):</strong><br>
+          "AI Adoption Specialist — 不需要写代码的 AI 新岗位。8 周学会 48 个业务场景，年薪 $100K+"<br><br>
+          <strong>CTA (20-30s):</strong><br>
+          "评论扣 'AI' 我发你免费试听"
+        </div>
+
+        <div style="font-weight:700;margin-top:16px;margin-bottom:10px;color:#0077b5">LinkedIn 帖子</div>
+        <div style="background:#f5f5f5;padding:14px;font-size:12px;line-height:1.8;border:2px solid #ddd">
+          89% of companies are using AI.<br>
+          Only 9% are using it well.<br><br>
+          The gap? No one teaches teams HOW to adopt AI systematically.<br><br>
+          That's why "AI Adoption Specialist" is the fastest-growing role in 2026.<br><br>
+          → Identify AI opportunities across departments<br>
+          → Train teams on 20+ AI tools<br>
+          → Build governance & compliance frameworks<br>
+          → Measure ROI and scale adoption<br><br>
+          Salary: $70K-$250K. No coding required.<br><br>
+          #AIAdoption #FutureOfWork #AIJobs
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key data points -->
+  <div style="padding:24px 28px;border-top:2px solid #eee;background:#f0fdf4">
+    <h3 style="font-size:20px;font-weight:900;margin-bottom:16px">数据点速查 (随取随用)</h3>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+      <div>
+        <div style="font-weight:700;margin-bottom:8px">📊 市场数据</div>
+        <ul style="list-style:none;font-size:13px;line-height:2">
+          <li><strong style="color:var(--indigo)">89%</strong> 企业已在使用 AI</li>
+          <li><strong style="color:var(--red)">9%</strong> 达到 AI 成熟度</li>
+          <li><strong style="color:var(--teal)">81%</strong> gap = 市场机会</li>
+          <li>Lockheed Martin / AIG / OpenText 都在招</li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-weight:700;margin-bottom:8px">💰 薪资数据 (USD)</div>
+        <ul style="list-style:none;font-size:13px;line-height:2">
+          <li>Entry (1-2年): <strong>$70K-$100K</strong></li>
+          <li>Mid (2-5年): <strong>$110K-$150K</strong></li>
+          <li>Senior (5-8年): <strong>$150K-$250K</strong></li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-weight:700;margin-bottom:8px">⚡ 效率提升</div>
+        <ul style="list-style:none;font-size:13px;line-height:2">
+          <li>Marketing 产出: <strong>+60-70%</strong></li>
+          <li>Sales 回复率: <strong>2-3x</strong></li>
+          <li>HR 筛选: <strong>时间减 80%</strong></li>
+          <li>发票处理: <strong>速度 3-5x</strong></li>
+          <li>客服自动解决: <strong>40-60%</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div style="padding:24px 28px;border-top:2px solid #eee">
+    <h3 style="font-size:20px;font-weight:900;margin-bottom:16px">销售 FAQ</h3>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <details style="border:2px solid #eee;padding:0">
+        <summary style="padding:12px 16px;font-weight:700;font-size:14px;cursor:pointer;background:#fafafa">Q: 我完全不懂 AI，能学吗？</summary>
+        <div style="padding:12px 16px;font-size:13px;line-height:1.8;border-top:1px solid #eee">能。课程面向非技术人员设计，不需要任何编程基础。会用微信就能学。Week 1 从零开始教你配置 ChatGPT 和 Claude。</div>
+      </details>
+      <details style="border:2px solid #eee;padding:0">
+        <summary style="padding:12px 16px;font-weight:700;font-size:14px;cursor:pointer;background:#fafafa">Q: 和免费的 ChatGPT 教程有什么区别？</summary>
+        <div style="padding:12px 16px;font-size:13px;line-height:1.8;border-top:1px solid #eee">免费教程教你"ChatGPT 有哪些按钮"。我们教你"怎么用 AI 做 Facebook 广告、写个性化 Sales 邮件、筛简历"— 48 个具体业务场景，每个都有 Lab 实操和老师点评。</div>
+      </details>
+      <details style="border:2px solid #eee;padding:0">
+        <summary style="padding:12px 16px;font-weight:700;font-size:14px;cursor:pointer;background:#fafafa">Q: 学完能找什么工作？</summary>
+        <div style="padding:12px 16px;font-size:13px;line-height:1.8;border-top:1px solid #eee">AI Adoption Specialist / AI Enablement Lead / Digital Transformation Manager / AI Consultant。年薪 $70K-$250K。我们还提供证书和 Job Referral 推荐。</div>
+      </details>
+      <details style="border:2px solid #eee;padding:0">
+        <summary style="padding:12px 16px;font-weight:700;font-size:14px;cursor:pointer;background:#fafafa">Q: 我已经会用 ChatGPT 了，还需要学吗？</summary>
+        <div style="padding:12px 16px;font-size:13px;line-height:1.8;border-top:1px solid #eee">ChatGPT 只是 20+ 工具之一。你会用 Claude 分析 100 页合同吗？会用 Zapier 搭跨系统自动化吗？会用 OpenClaw 给团队部署 AI 助手吗？会为公司写 AI 使用政策吗？</div>
+      </details>
+      <details style="border:2px solid #eee;padding:0">
+        <summary style="padding:12px 16px;font-weight:700;font-size:14px;cursor:pointer;background:#fafafa">Q: 每周要花多少时间？</summary>
+        <div style="padding:12px 16px;font-size:13px;line-height:1.8;border-top:1px solid #eee">每周约 8-10 小时。周一直播 2h + 周三 Clinic 1-2h + 周五答疑 1h + 自学/Lab/作业 4-5h。可以边上班边学。</div>
+      </details>
+      <details style="border:2px solid #eee;padding:0">
+        <summary style="padding:12px 16px;font-weight:700;font-size:14px;cursor:pointer;background:#fafafa">Q: $799 值吗？</summary>
+        <div style="padding:12px 16px;font-size:13px;line-height:1.8;border-top:1px solid #eee">Harvard 同类课 $2,800（纯理论无实操）。Google $50（10h 看视频无老师）。我们 $799 = 48 场景 + 22 Lab + 每周 3 次老师 + 毕业项目 + 证书 + 求职推荐。学完第一周就能在工作中省出这个学费。</div>
+      </details>
+      <details style="border:2px solid #eee;padding:0">
+        <summary style="padding:12px 16px;font-weight:700;font-size:14px;cursor:pointer;background:#fafafa">Q: OpenClaw 是什么？为什么要学？</summary>
+        <div style="padding:12px 16px;font-size:13px;line-height:1.8;border-top:1px solid #eee">GitHub 307K Stars 的开源 AI 助手平台。你可以在自己电脑上部署，接 Slack/飞书，上传公司文档做知识库，设置自动化任务。数据不出公司，完全免费。这是你给团队交付 AI 落地方案时最实际的工具。</div>
+      </details>
+    </div>
+  </div>
 </div>
+
+<div class="footer">
+  AI Adoption Specialist Bootcamp — 课程结构详情 · 内部审阅版 · JR Academy 2026
+</div>
+
+<script>
+function toggleModule(header) {
+  header.classList.toggle('open');
+  const lessons = header.nextElementSibling;
+  lessons.classList.toggle('open');
+}
+</script>
+
 </body>
 </html>
