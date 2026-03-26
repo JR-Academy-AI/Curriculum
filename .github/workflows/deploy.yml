@@ -27,6 +27,11 @@ jobs:
           mkdir -p _site/ai-adoption-bootcamp
           cp -r ai-adoption-bootcamp/dist/* _site/ai-adoption-bootcamp/
           cp ai-adoption-bootcamp/public/curriculum.html _site/ai-adoption-bootcamp/
+          cp ai-adoption-bootcamp/public/phase1.html _site/ai-adoption-bootcamp/
+          cp ai-adoption-bootcamp/public/phase2.html _site/ai-adoption-bootcamp/
+          cp ai-adoption-bootcamp/public/phase3.html _site/ai-adoption-bootcamp/
+          cp ai-adoption-bootcamp/public/phase4.html _site/ai-adoption-bootcamp/
+          cp ai-adoption-bootcamp/public/styles.css _site/ai-adoption-bootcamp/
           cp ai-adoption-bootcamp/public/internal.html _site/ai-adoption-bootcamp/
 
           # Index page
