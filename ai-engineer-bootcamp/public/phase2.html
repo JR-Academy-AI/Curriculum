@@ -11,7 +11,7 @@
 
 <div class="header">
   <h1>Phase 2: RAG 系统全栈开发</h1>
-  <div class="sub">Week 4-6 · 直播 + 项目 · 从 Embedding 到 Production RAG</div>
+  <div class="sub">Week 4-6 · 直播 + 项目 · 从 Embedding 到 GraphRAG</div>
   <div class="nav"><a href="phase1.html">← Phase 1</a> | <a href="curriculum.html">课程总览</a> | <a href="phase3.html">Phase 3 →</a></div>
 </div>
 
@@ -234,7 +234,7 @@
       <div class="ai-self-card">
         <span class="lab-tag">VIDEO</span>
         <div class="lab-name">LLMs Overview</div>
-        <div class="lab-desc">主流 LLM 对比：GPT-4o、Claude、Gemini、Llama、Mistral</div>
+        <div class="lab-desc">主流 LLM 对比：GPT-4.1、Claude 4、Gemini 2.5、Llama 4、Mistral Large</div>
       </div>
       <div class="ai-self-card">
         <span class="lab-tag">INFO</span>
@@ -248,13 +248,47 @@
 <!-- ===== Week 6 ===== -->
 <div class="box">
   <div class="box-h" style="background:var(--teal)">
-    <span style="font-size:18px;font-weight:900">Week 6 · RAG 评估 + LangChain RAG 项目</span>
+    <span style="font-size:18px;font-weight:900">Week 6 · GraphRAG + RAG 评估 + 综合项目</span>
     <span style="float:right;opacity:0.7" class="mono">直播 + 项目</span>
   </div>
 
   <div class="lesson">
     <div class="lesson-head">
       <span class="pill" style="background:var(--teal);color:#fff">6.1</span>
+      <h4>GraphRAG + 混合检索</h4>
+      <span class="pill" style="background:var(--teal);color:#fff">直播</span>
+    </div>
+    <div class="lesson-body">
+      <div>
+        <h5>📖 教学内容</h5>
+        <p><strong>为什么需要 GraphRAG</strong> — 纯向量检索的局限：无法捕捉实体关系、无法做多跳推理。比如问"张三的老板的老板是谁"，纯 Embedding 检索根本搞不定<br><br>
+        <strong>Knowledge Graph 构建</strong>：从非结构化文本自动提取实体和关系，用 LLM 做 NER + Relation Extraction<br><br>
+        <strong>GraphRAG 架构</strong>：Query → Graph Traversal + Vector Search → 融合排序 → LLM 生成<br><br>
+        <strong>混合检索策略</strong>：Vector Search (语义) + BM25 (关键词) + Graph Traversal (关系) — 三路召回，用 RRF (Reciprocal Rank Fusion) 融合排序<br><br>
+        <strong>工具选型</strong>：Neo4j / Nebula Graph（生产级图数据库） vs 纯 Python networkx（原型验证）</p>
+        <div class="tools"><span class="tool">Neo4j</span><span class="tool">LangChain</span><span class="tool">networkx</span></div>
+      </div>
+      <div>
+        <h5>🔬 Lab 实操</h5>
+        <p>1. 用 LangChain + Neo4j 构建 GraphRAG pipeline — 文档 → 实体抽取 → 图存储 → 图检索<br>
+        2. 对比纯向量 RAG vs GraphRAG 在多跳问题上的表现（准备 10 个多跳测试问题）<br>
+        3. 实现混合检索：三路召回 + RRF 融合 — Vector + BM25 + Graph 结果合并排序</p>
+        <span class="review teacher">👨‍🏫 架构设计 Review</span>
+      </div>
+      <div>
+        <h5>📋 作业</h5>
+        <p>为 ISA 项目添加 GraphRAG 能力：<br>
+        1. 对项目知识库做实体关系抽取，构建 Knowledge Graph<br>
+        2. 实现 Graph + Vector 混合检索<br><br>
+        提交：GraphRAG vs Vector RAG 对比评测报告 — 在多跳问题和单跳问题上分别跑 10 个 case</p>
+        <span class="review teacher">👨‍🏫 架构设计 Review</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-head">
+      <span class="pill" style="background:var(--teal);color:#fff">6.2</span>
       <h4>RAG Evaluation</h4>
       <span class="pill" style="background:var(--teal);color:#fff">直播</span>
     </div>
@@ -267,21 +301,20 @@
         - Answer Relevancy — 答案和问题的相关性<br>
         - Faithfulness — 答案是否忠实于检索到的上下文<br><br>
         <strong>RAGAS Framework</strong> — 自动化 RAG 评估<br>
-        <strong>Langfuse</strong> — 开源 LLM 可观测平台</p>
+        <strong>Langfuse</strong> — 开源 LLM 可观测平台，和 LangSmith 互补</p>
         <div class="tools"><span class="tool">RAGAS</span><span class="tool">Langfuse</span><span class="tool">LangSmith Eval</span></div>
       </div>
       <div>
         <h5>🔬 Lab 实操</h5>
-        <p>1. 用 RAGAS 评估 Week 4-5 的 RAG 应用<br>
+        <p>1. 用 RAGAS 评估 Week 4-6 的 RAG 应用（包括 GraphRAG）<br>
         2. 接入 Langfuse — 对比 LangSmith vs Langfuse<br>
-        3. 根据评估结果优化 RAG 管线（调 Chunking / Retrieval / Prompt）<br><br>
-        <strong>Vibe Coding 环节</strong>：用 AI 辅助快速迭代优化代码</p>
+        3. 根据评估结果优化 RAG 管线（调 Chunking / Retrieval / Prompt）</p>
         <span class="review ai">🤖 RAGAS 分数自动评测</span>
       </div>
       <div>
         <h5>📋 作业</h5>
         <p>提交 RAG 评估报告：<br>
-        - 4 个指标的基线分数 + 优化后分数<br>
+        - GraphRAG vs Naive RAG 的 4 个指标对比<br>
         - 每个优化步骤的 diff + 效果<br>
         - 最终 RAGAS 综合得分</p>
         <span class="review teacher">👨‍🏫 评估报告 Review</span>
@@ -291,7 +324,7 @@
 
   <div class="lesson">
     <div class="lesson-head">
-      <span class="pill" style="background:var(--teal);color:#fff">6.2</span>
+      <span class="pill" style="background:var(--teal);color:#fff">6.3</span>
       <h4>Project: LangChain RAG QA Application</h4>
       <span class="pill" style="background:var(--teal);color:#fff">直播</span>
     </div>
@@ -299,18 +332,18 @@
       <div>
         <h5>📖 教学内容</h5>
         <p>综合 Phase 2 所有知识，用 LangChain 构建完整 RAG QA 系统：<br><br>
-        <strong>架构</strong>：LangChain + ChromaDB + LangSmith + Streamlit<br>
-        <strong>功能</strong>：多文档上传、对话式 QA、来源引用、历史记录<br>
+        <strong>架构</strong>：LangChain + ChromaDB/Neo4j + LangSmith + Streamlit<br>
+        <strong>功能</strong>：多文档上传、GraphRAG 支持、对话式 QA、来源引用、历史记录<br>
         <strong>监控</strong>：LangSmith tracing + Langfuse metrics<br>
         <strong>评估</strong>：RAGAS 自动评测 + 人工抽检</p>
-        <div class="tools"><span class="tool">LangChain</span><span class="tool">ChromaDB</span><span class="tool">Streamlit</span><span class="tool">LangSmith</span></div>
+        <div class="tools"><span class="tool">LangChain</span><span class="tool">ChromaDB</span><span class="tool">Neo4j</span><span class="tool">Streamlit</span><span class="tool">LangSmith</span></div>
       </div>
       <div>
         <h5>🔬 Lab 实操</h5>
         <p><strong>Project: Building your First RAG QA Application with LangChain</strong><br><br>
         从零到一完成完整应用：<br>
         1. 项目结构搭建<br>
-        2. 文档 ingestion 管线<br>
+        2. 文档 ingestion 管线（支持 Vector + Graph 双路索引）<br>
         3. Retrieval + Generation chain<br>
         4. Streamlit UI<br>
         5. Monitoring 接入<br>
@@ -342,6 +375,11 @@
         <span class="lab-tag">INFO</span>
         <div class="lab-name">RAG Evaluation Toolbox</div>
         <div class="lab-desc">RAG 评估工具全景：RAGAS、Langfuse、TruLens、DeepEval</div>
+      </div>
+      <div class="ai-self-card">
+        <span class="lab-tag">INFO</span>
+        <div class="lab-name">GraphRAG 技术全景</div>
+        <div class="lab-desc">GraphRAG vs RAPTOR vs HippoRAG — 三种图增强 RAG 方案的架构差异和适用场景</div>
       </div>
       <div class="ai-self-card">
         <span class="lab-tag">INFO</span>

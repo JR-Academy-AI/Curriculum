@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Phase 1: GenAI 基础 + Prompt Engineering — AI Engineer Bootcamp</title>
+<title>Phase 1: GenAI 基础 + Context Engineering — AI Engineer Bootcamp</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <div class="header">
-  <h1>Phase 1: GenAI 基础 + Prompt Engineering</h1>
+  <h1>Phase 1: GenAI 基础 + Context Engineering</h1>
   <div class="sub">Week 1-3 · 直播 + 录播 · 奠定 AI 工程理论基础</div>
   <div class="nav"><a href="curriculum.html">← 返回课程总览</a> | <a href="phase2.html">Phase 2 →</a></div>
 </div>
@@ -102,12 +102,12 @@
         <p>GenAI 全景图：LLM 产业链、API Provider 生态、开源 vs 闭源模型对比<br><br>
         AI Engineer vs ML Engineer vs Data Scientist — 角色区分和技术栈差异<br><br>
         LLM Ops 概念：模型选择 → 部署 → 监控 → 评估 → 优化的完整生命周期</p>
-        <div class="tools"><span class="tool">OpenAI</span><span class="tool">Claude</span><span class="tool">AWS Bedrock</span></div>
+        <div class="tools"><span class="tool">OpenAI</span><span class="tool">Claude</span><span class="tool">DeepSeek</span><span class="tool">Qwen</span><span class="tool">AWS Bedrock</span></div>
       </div>
       <div>
         <h5>🔬 Lab 实操</h5>
         <p>动手调用 3 个不同 LLM Provider 的 API<br>
-        对比同一个 Prompt 在 GPT-4o / Claude / Bedrock 上的输出差异<br>
+        对比同一个 Prompt 在 GPT-4o / Claude / DeepSeek / Qwen / Bedrock 上的输出差异<br>
         记录 latency、token 用量、cost 对比</p>
         <span class="review ai">🤖 API 调用验证</span>
       </div>
@@ -271,39 +271,38 @@
 <!-- ===== Week 3 ===== -->
 <div class="box">
   <div class="box-h" style="background:var(--indigo)">
-    <span style="font-size:18px;font-weight:900">Week 3 · Prompt Engineering</span>
+    <span style="font-size:18px;font-weight:900">Week 3 · Context Engineering + Vibe Coding</span>
     <span style="float:right;opacity:0.7" class="mono">直播 + 项目</span>
   </div>
 
   <div class="lesson">
     <div class="lesson-head">
       <span class="pill" style="background:var(--indigo);color:#fff">3.1</span>
-      <h4>Prompt Engineering: Best Practices</h4>
+      <h4>Context Engineering: From Prompts to Systems</h4>
       <span class="pill" style="background:var(--indigo);color:#fff">直播</span>
     </div>
     <div class="lesson-body">
       <div>
         <h5>📖 教学内容</h5>
-        <p><strong>Prompt 设计原则</strong>：Clear instructions、Structured output、Few-shot examples、Chain-of-Thought<br><br>
-        <strong>System Prompt 设计</strong>：角色设定、约束条件、输出格式控制<br><br>
-        <strong>Prompt 反模式</strong>：过长 prompt、矛盾指令、模糊意图 — 真实案例拆解</p>
-        <div class="tools"><span class="tool">OpenAI Playground</span><span class="tool">Claude</span></div>
+        <p><strong>Context Engineering 定义</strong>：不只是写 Prompt，而是设计整个 LLM 信息输入架构。Gartner 2026 数据显示 57% 的 Agent 失败源于上下文设计失败<br><br>
+        <strong>四层上下文设计</strong>：System Context（角色/规则）→ Retrieved Context（RAG/搜索结果）→ Memory Context（对话历史/长期记忆）→ Task Context（当前任务指令）<br><br>
+        <strong>Prompt Engineering 作为子集</strong>：Clear instructions、Structured output、Few-shot examples、Chain-of-Thought — 这些技术在四层架构中各归其位<br><br>
+        <strong>Context Window 管理</strong>：1M+ token 时代的信息筛选和优先级策略，什么该放、什么该丢、什么动态加载</p>
+        <div class="tools"><span class="tool">OpenAI Playground</span><span class="tool">Claude</span><span class="tool">Cursor</span></div>
       </div>
       <div>
         <h5>🔬 Lab 实操</h5>
-        <p><strong>Prompt 迭代实验：</strong><br>
-        1. 写一个初始 Prompt<br>
-        2. 用 A/B 测试方法对比不同版本<br>
-        3. 记录每次改进的原因和效果<br><br>
-        至少迭代 5 个版本，形成 Prompt 优化日志</p>
-        <span class="review ai">🤖 Prompt 评分系统</span>
+        <p><strong>4 层上下文架构设计实验：</strong><br>
+        给同一个任务，对比纯 Prompt vs 完整 Context Engineering 的效果差异<br><br>
+        量化对比：准确率、一致性、幻觉率<br><br>
+        记录每一层上下文的具体内容和设计决策</p>
+        <span class="review ai">🤖 Context 效果对比评测</span>
       </div>
       <div>
         <h5>📋 作业</h5>
-        <p>为 ISA 项目写完整的 System Prompt<br>
-        包含：角色定义、能力边界、输出格式、fallback 策略<br><br>
-        提交 Prompt 版本历史（至少 3 个版本 + 改进原因）</p>
-        <span class="review teacher">👨‍🏫 老师点评 Prompt 质量</span>
+        <p>为 ISA 项目设计完整的 Context Engineering 方案：System Prompt + 检索策略 + 记忆管理 + 输出控制<br><br>
+        提交 Context 版本历史（至少 3 个版本 + 改进原因和量化效果）</p>
+        <span class="review teacher">👨‍🏫 老师点评 Context 设计</span>
       </div>
     </div>
   </div>
@@ -311,31 +310,33 @@
   <div class="lesson">
     <div class="lesson-head">
       <span class="pill" style="background:var(--indigo);color:#fff">3.2</span>
-      <h4>Prompt Iteration through a User Interface</h4>
+      <h4>Vibe Coding: AI-Assisted Development</h4>
       <span class="pill" style="background:var(--indigo);color:#fff">直播</span>
     </div>
     <div class="lesson-body">
       <div>
         <h5>📖 教学内容</h5>
-        <p><strong>Playground vs Code</strong>：什么时候用 UI 迭代，什么时候写代码<br><br>
-        OpenAI Playground、Anthropic Console、AWS Bedrock Playground 对比<br><br>
-        <strong>Prompt 版本管理</strong>：如何在团队中管理和共享 Prompt</p>
-        <div class="tools"><span class="tool">OpenAI Playground</span><span class="tool">Anthropic Console</span></div>
+        <p><strong>Vibe Coding 工作流</strong>：用 AI 编程工具加速开发，不是替代编程能力<br><br>
+        <strong>三大工具对比</strong>：Cursor（inline edit + composer）vs Claude Code（terminal agent + MCP）vs GitHub Copilot（autocomplete + chat）<br><br>
+        <strong>项目级 AI 配置</strong>：CLAUDE.md / .cursorrules / Copilot instructions — 告诉 AI 你的项目规范和约束<br><br>
+        <strong>Context Engineering 在 Vibe Coding 中的应用</strong>：怎么给 AI 编程工具提供最优上下文<br><br>
+        <strong>常见陷阱</strong>：过度依赖 AI 生成、不 review 代码、忽略测试</p>
+        <div class="tools"><span class="tool">Cursor</span><span class="tool">Claude Code</span><span class="tool">GitHub Copilot</span></div>
       </div>
       <div>
         <h5>🔬 Lab 实操</h5>
-        <p>在 Playground 中完成：<br>
-        1. 文本分类任务 — Few-shot + JSON output<br>
-        2. 信息提取任务 — 从合同文本中提取关键条款<br>
-        3. 代码生成任务 — 用 Prompt 生成 Python 脚本</p>
-        <span class="review ai">🤖 任务完成度自动评测</span>
+        <p>用 Cursor + Claude Code 分别完成同一个 Python 项目搭建<br><br>
+        配置项目级 AI 指令文件（.cursorrules / CLAUDE.md）<br><br>
+        对比两个工具的开发效率和代码质量</p>
+        <span class="review ai">🤖 代码质量自动评测</span>
       </div>
       <div>
         <h5>📋 作业</h5>
-        <p><strong>Project: GPT Store App</strong><br>
-        构建并发布你的第一个 Custom GPT 到 OpenAI GPT Store<br><br>
-        要求：有明确的使用场景、System Prompt、Knowledge 文件上传</p>
-        <span class="review teacher">👨‍🏫 老师评审 GPT 设计</span>
+        <p><strong>Project: Context-Driven App</strong><br>
+        用 Vibe Coding 构建一个 Context Engineering 驱动的 AI 应用<br><br>
+        要求：有 System Context 设计、Few-shot examples、输出格式控制<br>
+        用 Cursor 或 Claude Code 开发，提交 AI 交互记录</p>
+        <span class="review teacher">👨‍🏫 老师评审 App 设计 + Vibe Coding 工作流</span>
       </div>
     </div>
   </div>
@@ -350,8 +351,13 @@
       </div>
       <div class="ai-self-card">
         <span class="lab-tag">INFO</span>
-        <div class="lab-name">ChatGPT Prompt Set</div>
-        <div class="lab-desc">50+ 高质量 Prompt 模板集合</div>
+        <div class="lab-name">Context Engineering Playbook</div>
+        <div class="lab-desc">上下文设计模式全集：四层架构、信息筛选策略、版本迭代方法论</div>
+      </div>
+      <div class="ai-self-card">
+        <span class="lab-tag">INFO</span>
+        <div class="lab-name">Vibe Coding 工具对比</div>
+        <div class="lab-desc">Cursor vs Claude Code vs Copilot — 功能、场景、配置详细对比</div>
       </div>
       <div class="ai-self-card">
         <span class="lab-tag">INFO</span>
