@@ -62,6 +62,32 @@
 .sec-nav{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0;padding:16px;background:#fff;border:2px solid #eee}
 .sec-nav a{padding:6px 14px;font-size:12px;font-weight:700;font-family:'Space Mono',monospace;border:2px solid #000;box-shadow:3px 3px 0 #000;transition:all 0.15s;color:#000}
 .sec-nav a:hover{box-shadow:none;transform:translate(2px,2px);text-decoration:none}
+/* Day schedule */
+.day{display:grid;grid-template-columns:80px 1fr;border-bottom:1px solid #eee;min-height:48px}
+.day:last-child{border-bottom:none}
+.day-label{padding:10px 12px;font-weight:900;font-size:12px;font-family:'Space Mono',monospace;border-right:2px solid #eee;display:flex;align-items:center}
+.day-content{padding:8px 12px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.act{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;font-size:12px;border:1.5px solid #ddd;background:#fff;line-height:1.4}
+.act-live{border-color:var(--indigo);background:#f0f4ff}
+.act-live .act-tag{background:var(--indigo);color:#fff}
+.act-lab{border-color:var(--teal);background:#ecfdf5}
+.act-lab .act-tag{background:var(--teal);color:#fff}
+.act-rec{border-color:var(--purple);background:#faf5ff}
+.act-rec .act-tag{background:var(--purple);color:#fff}
+.act-self{border-color:#ddd;background:#f9fafb}
+.act-self .act-tag{background:#888;color:#fff}
+.act-hw{border-color:var(--orange);background:#fff7ed}
+.act-hw .act-tag{background:var(--orange);color:#fff}
+.act-new{border-color:var(--red);border-style:dashed}
+.act-tag{padding:1px 5px;font-size:9px;font-weight:800;font-family:'Space Mono',monospace;flex-shrink:0}
+.act-name{font-weight:600}
+.act-dur{font-size:10px;color:#888;font-family:'Space Mono',monospace}
+.day-rest{background:#fafafa}
+.day-rest .day-label{color:#888}
+/* Week build needs */
+.build-needs{padding:12px 16px;background:#fffbeb;border-top:2px solid #eee;font-size:12px}
+.build-needs summary{font-weight:800;font-size:13px;cursor:pointer;padding:4px 0}
+.build-needs .ck{margin:4px 0}
 </style>
 </head>
 <body>
@@ -129,87 +155,67 @@
 <div class="box" id="week1">
   <div class="box-h" style="background:var(--indigo)">
     <span style="font-size:18px;font-weight:900">Week 1 · AI 工具入门 + 角色定位</span>
-    <span style="float:right;opacity:0.7" class="mono">3 直播 · ~6h 课时 + 自学</span>
+    <span style="float:right;opacity:0.7" class="mono">Phase 1 · 每天都有安排</span>
   </div>
-  <table class="wtable">
-    <thead>
-      <tr>
-        <th style="width:5%">课号</th>
-        <th style="width:16%">课名</th>
-        <th style="width:6%">方式</th>
-        <th style="width:22%">已有资源</th>
-        <th style="width:22%">待建内容</th>
-        <th style="width:16%">作业</th>
-        <th style="width:6%">评审</th>
-        <th style="width:7%">状态</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- 0.1 -->
-      <tr>
-        <td><strong>0.1</strong></td>
-        <td><strong>角色定位 & 全流程 Demo</strong><br><span style="font-size:10px;color:var(--red)">Adoption 专属</span></td>
-        <td><span class="st st-live">直播</span></td>
-        <td>
-          <span class="exist">Prompt Lab: hello-ai</span><br>
-          <span style="font-size:11px;color:#666">第一次和 AI 对话</span>
-        </td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: 角色定位 + 市场数据</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>3 个课堂任务素材 (邮件/会议/CSV)</span></label>
-        </td>
-        <td style="font-size:11px">"AI 在我的工作中 5 个应用机会" 清单</td>
-        <td><span class="review teacher" style="margin:0">老师</span></td>
-        <td><span class="status-partial">部分</span></td>
-      </tr>
-      <!-- 1.1 -->
-      <tr>
-        <td><strong>1.1</strong></td>
-        <td><strong>ChatGPT + Claude 深度实操</strong></td>
-        <td><span class="st st-live">直播</span></td>
-        <td>
-          <span class="exist">Prompt Lab: clear-task</span><br>
-          <span class="exist">Prompt Lab: output-format</span><br>
-          <span style="font-size:11px;color:#666">任务清晰度 + 输出格式</span>
-        </td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: ChatGPT vs Claude 对比</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>练习素材: 销售 CSV + PDF 合同</span></label>
-        </td>
-        <td style="font-size:11px">ChatGPT Custom Instructions + Claude 分析 PDF 合同</td>
-        <td><span class="review both" style="margin:0">混合</span></td>
-        <td><span class="status-partial">部分</span></td>
-      </tr>
-      <!-- 1.2 -->
-      <tr>
-        <td><strong>1.2</strong></td>
-        <td><strong>Copilot + Gemini + 工具选型框架</strong><br><span style="font-size:10px;color:var(--red)">Adoption 专属</span></td>
-        <td><span class="st st-live">直播</span></td>
-        <td>
-          <span class="exist">Prompt Lab: context-management</span><br>
-          <span style="font-size:11px;color:#666">高效管理上下文窗口</span>
-        </td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: 工具选型框架 + 对比矩阵</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>模板: 工具选型对比报告模板</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>新建 Lab: Copilot 实操指引 (截图步骤式)</span></label>
-        </td>
-        <td style="font-size:11px">三工具对比报告 (ChatGPT/Claude/Copilot)</td>
-        <td><span class="review teacher" style="margin:0">老师</span></td>
-        <td><span class="status-partial">部分</span></td>
-      </tr>
-    </tbody>
-  </table>
-  <!-- Week 1 自学 -->
-  <div class="ai-self">
-    <strong>Week 1 AI 自学内容</strong>
-    <div class="ai-self-grid">
-      <div class="ai-self-card"><span class="lab-tag" style="background:#dcfce7;color:#16a34a">已有</span><div class="lab-name">Prompt Lab: hello-ai</div><div class="lab-desc">AI 基础入门热身</div></div>
-      <div class="ai-self-card"><span class="lab-tag" style="background:#dcfce7;color:#16a34a">已有</span><div class="lab-name">Prompt Lab: clear-task / output-format</div><div class="lab-desc">任务清晰度 + 输出格式</div></div>
-      <div class="ai-self-card"><span class="lab-tag" style="background:#dcfce7;color:#16a34a">已有</span><div class="lab-name">Prompt Lab: multimodal-prompting</div><div class="lab-desc">图文多模态 Prompt</div></div>
-      <div class="ai-self-card"><span class="lab-tag" style="background:#fef3c7;color:#92400e">待建</span><div class="lab-name">图文教程: AI 图像与视频工具</div><div class="lab-desc">Midjourney / DALL-E / Canva AI / HeyGen 操作指南</div></div>
+  <div class="day">
+    <div class="day-label" style="color:var(--indigo)">周一</div>
+    <div class="day-content">
+      <div class="act act-live"><span class="act-tag">直播</span><span class="act-name">0.1 角色定位 & 全流程 Demo</span><span class="act-dur">2h</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: hello-ai</span><span class="act-dur">课上做</span></div>
+      <div style="font-size:11px;color:#666;padding:2px 6px">课堂 3 任务: 邮件整理 + 会议摘要 + CSV 分析</div>
     </div>
   </div>
+  <div class="day">
+    <div class="day-label">周二</div>
+    <div class="day-content">
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: clear-task</span><span class="act-dur">30min</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: output-format</span><span class="act-dur">30min</span></div>
+      <div class="act act-self"><span class="act-tag">复习</span><span class="act-name">重做课上 3 个任务，对比改进</span><span class="act-dur">1h</span></div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label" style="color:var(--indigo)">周三</div>
+    <div class="day-content">
+      <div class="act act-live"><span class="act-tag">直播</span><span class="act-name">1.1 ChatGPT + Claude 深度实操</span><span class="act-dur">2h</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: clear-task (深化)</span><span class="act-dur">课上做</span></div>
+      <div style="font-size:11px;color:#666;padding:2px 6px">ChatGPT 分析销售 CSV + Claude Projects 建知识库</div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label">周四</div>
+    <div class="day-content">
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: multimodal-prompting</span><span class="act-dur">30min</span></div>
+      <div class="act act-rec act-new"><span class="act-tag">图文</span><span class="act-name">AI 图像工具: Midjourney / DALL-E / Canva AI</span><span class="act-dur">1h · 待建</span></div>
+      <div class="act act-hw"><span class="act-tag">作业</span><span class="act-name">写 ChatGPT Custom Instructions + Claude 分析 PDF</span></div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label" style="color:var(--indigo)">周五</div>
+    <div class="day-content">
+      <div class="act act-live"><span class="act-tag">直播</span><span class="act-name">1.2 Copilot + Gemini + 工具选型框架</span><span class="act-dur">2h</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: context-management</span><span class="act-dur">课上做</span></div>
+      <div class="act act-live"><span class="act-tag">答疑</span><span class="act-name">Week 1 统一答疑</span><span class="act-dur">30min</span></div>
+    </div>
+  </div>
+  <div class="day day-rest">
+    <div class="day-label">周末</div>
+    <div class="day-content">
+      <div class="act act-hw"><span class="act-tag">作业</span><span class="act-name">三工具对比报告 (ChatGPT/Claude/Copilot)</span></div>
+      <div class="act act-hw"><span class="act-tag">作业</span><span class="act-name">"AI 在我工作中 5 个应用机会" 清单</span></div>
+      <div style="font-size:11px;color:#888;padding:2px 6px">→ AI 评分 + 老师点评（了解每个学员背景）</div>
+    </div>
+  </div>
+  <details class="build-needs">
+    <summary><span class="pri pri-0">P0</span> + <span class="pri pri-1">P1</span> Week 1 待建内容</summary>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: 角色定位 + 市场数据 + 全流程 Demo</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: ChatGPT vs Claude 深度对比</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: Copilot + Gemini + 工具选型框架</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>课堂素材: 邮件数据 + 会议录音 + 销售 CSV</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>练习素材: 销售 CSV + 20 页 PDF 合同</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>新建 Lab: Copilot 实操指引 (截图步骤式)</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>模板: 工具选型对比报告模板</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>图文教程: AI 图像与视频工具</span></label>
+  </details>
 </div>
 
 <!-- ============================================================ -->
@@ -218,84 +224,67 @@
 <div class="box" id="week2">
   <div class="box-h" style="background:var(--indigo)">
     <span style="font-size:18px;font-weight:900">Week 2 · Prompt Engineering + 自动化 + Vibe Coding</span>
-    <span style="float:right;opacity:0.7" class="mono">3 直播 · ~6h 课时 + 自学</span>
+    <span style="float:right;opacity:0.7" class="mono">Phase 1 · 每天都有安排</span>
   </div>
-  <table class="wtable">
-    <thead>
-      <tr>
-        <th style="width:5%">课号</th>
-        <th style="width:16%">课名</th>
-        <th style="width:6%">方式</th>
-        <th style="width:22%">已有资源</th>
-        <th style="width:22%">待建内容</th>
-        <th style="width:16%">作业</th>
-        <th style="width:6%">评审</th>
-        <th style="width:7%">状态</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- 2.1 -->
-      <tr>
-        <td><strong>2.1</strong></td>
-        <td><strong>Prompt Engineering 实战</strong></td>
-        <td><span class="st st-live">直播</span></td>
-        <td>
-          <span class="exist">Prompt Lab ×9:</span><br>
-          <span style="font-size:11px;color:#666">zero-shot · few-shot · role-playing · chain-of-thought · output-format · json-schema · business-writing · text-summarization · constraints</span>
-        </td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: Prompt 技巧 + 好坏对比</span></label>
-        </td>
-        <td style="font-size:11px">10 条 Prompt 个人模板库</td>
-        <td><span class="review teacher" style="margin:0">老师</span></td>
-        <td><span class="status-partial">部分</span></td>
-      </tr>
-      <!-- 2.2 -->
-      <tr>
-        <td><strong>2.2</strong></td>
-        <td><strong>AI 自动化 + Email 管理</strong></td>
-        <td><span class="st st-live">直播</span></td>
-        <td>
-          <span class="exist">Prompt Lab: information-extraction</span><br>
-          <span style="font-size:11px;color:#666">从邮件提取结构化信息</span>
-        </td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: Zapier/Make/n8n + Email AI</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>新建 Lab: Zapier Workflow 指引 (截图步骤式)</span></label>
-        </td>
-        <td style="font-size:11px">3 个自动化 workflow 设计 + Email AI 配置</td>
-        <td><span class="review both" style="margin:0">混合</span></td>
-        <td><span class="status-partial">部分</span></td>
-      </tr>
-      <!-- 2.3 -->
-      <tr>
-        <td><strong>2.3</strong></td>
-        <td><strong>Vibe Coding + 会议 AI + Phase 1 复盘</strong></td>
-        <td><span class="st st-live">直播</span></td>
-        <td>
-          <span class="exist">Prompt Lab: code-generation</span><br>
-          <span class="exist">Vibe Coding Labs (入门 2-3 个)</span><br>
-          <span class="exist">Prompt Lab: text-summarization</span>
-        </td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: Cursor + Otter.ai + Notion AI</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>模拟会议录音 (30min 音频素材)</span></label>
-        </td>
-        <td style="font-size:11px">AI 自动化脚本 + 团队 AI 知识库 demo</td>
-        <td><span class="review both" style="margin:0">混合</span></td>
-        <td><span class="status-partial">部分</span></td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="ai-self">
-    <strong>Week 2 AI 自学内容</strong>
-    <div class="ai-self-grid">
-      <div class="ai-self-card"><span class="lab-tag" style="background:#dcfce7;color:#16a34a">已有</span><div class="lab-name">Prompt Lab ×9 (全套)</div><div class="lab-desc">zero-shot / few-shot / role-playing / CoT / constraints / json / writing / summary / extraction</div></div>
-      <div class="ai-self-card"><span class="lab-tag" style="background:#dcfce7;color:#16a34a">已有</span><div class="lab-name">Prompt Lab: code-generation</div><div class="lab-desc">AI 写代码练习（配合 Vibe Coding）</div></div>
-      <div class="ai-self-card"><span class="lab-tag" style="background:#dcfce7;color:#16a34a">已有</span><div class="lab-name">Vibe Coding Lab ×2-3</div><div class="lab-desc">Cursor 基础操作跟做</div></div>
-      <div class="ai-self-card"><span class="lab-tag" style="background:#fef3c7;color:#92400e">待建</span><div class="lab-name">图文教程: Make/n8n/Power Automate</div><div class="lab-desc">更多自动化工具操作指南</div></div>
+  <div class="day">
+    <div class="day-label" style="color:var(--indigo)">周一</div>
+    <div class="day-content">
+      <div class="act act-live"><span class="act-tag">直播</span><span class="act-name">2.1 Prompt Engineering 实战</span><span class="act-dur">2h</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: zero-shot · few-shot · role-playing</span><span class="act-dur">课上做 3-4 个</span></div>
+      <div style="font-size:11px;color:#666;padding:2px 6px">现场对比: 好 prompt vs 坏 prompt 输出差异</div>
     </div>
   </div>
+  <div class="day">
+    <div class="day-label">周二</div>
+    <div class="day-content">
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: chain-of-thought</span><span class="act-dur">30min</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: constraints</span><span class="act-dur">30min</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: json-schema</span><span class="act-dur">30min</span></div>
+      <div class="act act-hw"><span class="act-tag">作业</span><span class="act-name">开始构建 10 条 Prompt 个人模板库</span></div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label" style="color:var(--indigo)">周三</div>
+    <div class="day-content">
+      <div class="act act-live"><span class="act-tag">直播</span><span class="act-name">2.2 AI 自动化 + Email 多账号管理</span><span class="act-dur">2h</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: information-extraction</span><span class="act-dur">课上做</span></div>
+      <div style="font-size:11px;color:#666;padding:2px 6px">现场搭 Zapier workflow: 邮件→AI 分类→Sheet→Slack</div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label">周四</div>
+    <div class="day-content">
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: business-writing · text-summarization</span><span class="act-dur">1h</span></div>
+      <div class="act act-rec act-new"><span class="act-tag">图文</span><span class="act-name">Make.com / n8n / Power Automate 操作指南</span><span class="act-dur">1h · 待建</span></div>
+      <div class="act act-hw"><span class="act-tag">作业</span><span class="act-name">设计 3 个自动化 workflow + 配置 Email AI</span></div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label" style="color:var(--indigo)">周五</div>
+    <div class="day-content">
+      <div class="act act-live"><span class="act-tag">直播</span><span class="act-name">2.3 Vibe Coding + 会议 AI</span><span class="act-dur">2h</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: code-generation</span><span class="act-dur">课上做</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Vibe Coding Lab: Cursor 基础</span><span class="act-dur">课上做</span></div>
+      <div class="act act-live"><span class="act-tag">答疑</span><span class="act-name">Phase 1 总结复盘</span><span class="act-dur">30min</span></div>
+    </div>
+  </div>
+  <div class="day day-rest">
+    <div class="day-label">周末</div>
+    <div class="day-content">
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Vibe Coding Lab: 入门 2-3 个</span><span class="act-dur">1.5h</span></div>
+      <div class="act act-hw"><span class="act-tag">作业</span><span class="act-name">完善 Prompt 模板库 (10 条) + AI 脚本 + 知识库 demo</span></div>
+      <div style="font-size:11px;color:#888;padding:2px 6px">→ 老师逐条点评 Prompt 模板库</div>
+    </div>
+  </div>
+  <details class="build-needs">
+    <summary><span class="pri pri-0">P0</span> + <span class="pri pri-1">P1</span> Week 2 待建内容</summary>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: Prompt Engineering 技巧 + 好坏对比</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: Zapier/Make/n8n + Email AI 管理</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: Cursor + Otter.ai + Notion AI</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>新建 Lab: Zapier Workflow 指引 (截图步骤式)</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>图文教程: Make/n8n/Power Automate</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>素材: 模拟会议录音 30min</span></label>
+  </details>
 </div>
 
 <!-- ============================================================ -->
@@ -304,103 +293,67 @@
 <div class="box" id="week3">
   <div class="box-h" style="background:var(--teal)">
     <span style="font-size:18px;font-weight:900">Week 3 · AI for Marketing & Content</span>
-    <span style="float:right;opacity:0.7" class="mono">1 直播 + 3 录播/Lab + Clinic</span>
+    <span style="float:right;opacity:0.7" class="mono">Phase 2 · 直播+录播+Lab 穿插</span>
   </div>
-  <table class="wtable">
-    <thead>
-      <tr>
-        <th style="width:5%">课号</th>
-        <th style="width:16%">课名</th>
-        <th style="width:6%">方式</th>
-        <th style="width:22%">已有资源</th>
-        <th style="width:22%">待建内容</th>
-        <th style="width:16%">作业</th>
-        <th style="width:6%">评审</th>
-        <th style="width:7%">状态</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>3.1</strong></td>
-        <td><strong>AI 做 Facebook/IG 广告</strong></td>
-        <td><span class="st st-live">直播</span></td>
-        <td>
-          <span class="exist">Prompt Lab: business-writing</span><br>
-          <span class="exist">Prompt Lab: few-shot</span><br>
-          <span class="exist">Prompt Lab: constraints</span>
-        </td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: Facebook 广告实战</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>模板: 广告方案模板</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>素材: 虚拟电商品牌 brief</span></label>
-        </td>
-        <td style="font-size:11px">完整广告方案 (5 文案 + 3 图 + 投放策略)</td>
-        <td><span class="review teacher" style="margin:0">老师</span></td>
-        <td><span class="status-partial">部分</span></td>
-      </tr>
-      <tr>
-        <td><strong>3.2</strong></td>
-        <td><strong>AI 做社交媒体运营</strong></td>
-        <td><span class="st st-rec">录播</span></td>
-        <td>
-          <span class="exist">Prompt Lab: role-playing</span><br>
-          <span class="exist">Prompt Lab: output-format</span>
-        </td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>录播视频: 社媒运营全流程</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>模板: 月度内容日历模板</span></label>
-        </td>
-        <td style="font-size:11px">一个月社交媒体内容日历</td>
-        <td><span class="review both" style="margin:0">混合</span></td>
-        <td><span class="status-partial">部分</span></td>
-      </tr>
-      <tr>
-        <td><strong>3.3</strong></td>
-        <td><strong>AI 做 Email Marketing</strong></td>
-        <td><span class="st st-rec">录播</span></td>
-        <td>
-          <span class="exist">Prompt Lab: business-writing</span><br>
-          <span class="exist">Prompt Lab: few-shot</span><br>
-          <span class="exist">Prompt Lab: constraints</span>
-        </td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>录播视频: Email Marketing 序列</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>模板: Email 序列设计模板</span></label>
-        </td>
-        <td style="font-size:11px">5 封 welcome email 序列 + segment 策略</td>
-        <td><span class="review both" style="margin:0">混合</span></td>
-        <td><span class="status-partial">部分</span></td>
-      </tr>
-      <tr>
-        <td><strong>3.4</strong></td>
-        <td><strong>AI 做 SEO 内容</strong></td>
-        <td><span class="st st-rec">录播</span></td>
-        <td>
-          <span class="exist">Prompt Lab: chain-of-thought</span><br>
-          <span class="exist">Prompt Lab: prompt-chaining</span>
-        </td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>录播视频: SEO 全流程</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>模板: SEO 文章 + 关键词分析模板</span></label>
-        </td>
-        <td style="font-size:11px">可发布 SEO 文章 + 关键词分析报告</td>
-        <td><span class="review teacher" style="margin:0">老师</span></td>
-        <td><span class="status-partial">部分</span></td>
-      </tr>
-      <tr style="background:#fffde7">
-        <td><strong>周五</strong></td>
-        <td><strong>Clinic + 答疑 + Adoption Lens</strong></td>
-        <td><span class="st st-live">直播</span></td>
-        <td><span style="font-size:11px;color:#888">无需 Lab</span></td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>Adoption Lens 引导问题卡</span></label>
-        </td>
-        <td style="font-size:11px;color:#888">Clinic 现场点评</td>
-        <td><span class="review teacher" style="margin:0">老师</span></td>
-        <td><span class="status-todo">待建</span></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="day">
+    <div class="day-label" style="color:var(--indigo)">周一</div>
+    <div class="day-content">
+      <div class="act act-live"><span class="act-tag">直播</span><span class="act-name">3.1 AI 做 Facebook/IG 广告</span><span class="act-dur">2h</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: business-writing</span><span class="act-dur">课上做</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: few-shot · constraints</span><span class="act-dur">课上做</span></div>
+      <div style="font-size:11px;color:#666;padding:2px 6px">综合练习: 为虚拟电商创建一组 Facebook 广告</div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label">周二</div>
+    <div class="day-content">
+      <div class="act act-rec act-new"><span class="act-tag">录播</span><span class="act-name">3.2 AI 做社交媒体运营</span><span class="act-dur">1h · 待建</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: role-playing (平台语调切换)</span><span class="act-dur">30min</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: output-format (日历格式)</span><span class="act-dur">30min</span></div>
+      <div class="act act-hw"><span class="act-tag">练习</span><span class="act-name">一周社交内容 (LinkedIn 3 + IG 5 + TikTok 2)</span></div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label">周三</div>
+    <div class="day-content">
+      <div class="act act-rec act-new"><span class="act-tag">录播</span><span class="act-name">3.3 AI 做 Email Marketing</span><span class="act-dur">1h · 待建</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: business-writing (邮件写作)</span><span class="act-dur">30min</span></div>
+      <div class="act act-hw"><span class="act-tag">练习</span><span class="act-name">5 封 welcome email 序列 + A/B subject line</span></div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label">周四</div>
+    <div class="day-content">
+      <div class="act act-rec act-new"><span class="act-tag">录播</span><span class="act-name">3.4 AI 做 SEO 内容</span><span class="act-dur">1h · 待建</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: chain-of-thought (大纲生成)</span><span class="act-dur">30min</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: prompt-chaining (多步长文)</span><span class="act-dur">30min</span></div>
+      <div class="act act-hw"><span class="act-tag">作业</span><span class="act-name">完整广告方案 + 内容日历 + Email 序列 + SEO 文章</span></div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label" style="color:var(--indigo)">周五</div>
+    <div class="day-content">
+      <div class="act act-live"><span class="act-tag">Clinic</span><span class="act-name">学员带自己的品牌做广告方案 · live 点评</span><span class="act-dur">1h</span></div>
+      <div class="act act-live"><span class="act-tag">答疑</span><span class="act-name">Week 3 统一答疑</span><span class="act-dur">20min</span></div>
+      <div class="act act-live" style="border-color:var(--red)"><span class="act-tag" style="background:var(--red)">Lens</span><span class="act-name">Adoption Lens: "Marketing 场景怎么变成 Pilot 提案给 CMO？"</span><span class="act-dur">10min</span></div>
+    </div>
+  </div>
+  <div class="day day-rest">
+    <div class="day-label">周末</div>
+    <div class="day-content">
+      <div class="act act-hw"><span class="act-tag">提交</span><span class="act-name">完整广告方案 + 月度内容日历 + Email 方案 + SEO 文章</span></div>
+      <div style="font-size:11px;color:#888;padding:2px 6px">→ 广告方案: 老师 Review · 其余: AI 评分 + 老师抽查</div>
+    </div>
+  </div>
+  <details class="build-needs">
+    <summary><span class="pri pri-0">P0</span> + <span class="pri pri-2">P2</span> Week 3 待建内容</summary>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: Facebook 广告实战</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>录播视频: 社媒运营全流程</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>录播视频: Email Marketing 序列</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>录播视频: SEO 全流程</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>模板: 广告方案 + 内容日历 + Email 序列 + SEO 报告</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>素材: 虚拟电商品牌 brief</span></label>
+  </details>
 </div>
 
 <!-- ============================================================ -->
@@ -409,104 +362,68 @@
 <div class="box" id="week4">
   <div class="box-h" style="background:var(--teal)">
     <span style="font-size:18px;font-weight:900">Week 4 · AI for Sales & Customer Service</span>
-    <span style="float:right;opacity:0.7" class="mono">1 直播 + 3 录播/Lab + Clinic</span>
+    <span style="float:right;opacity:0.7" class="mono">Phase 2 · 直播+录播+Lab 穿插</span>
   </div>
-  <table class="wtable">
-    <thead>
-      <tr>
-        <th style="width:5%">课号</th>
-        <th style="width:16%">课名</th>
-        <th style="width:6%">方式</th>
-        <th style="width:22%">已有资源</th>
-        <th style="width:22%">待建内容</th>
-        <th style="width:16%">作业</th>
-        <th style="width:6%">评审</th>
-        <th style="width:7%">状态</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>4.1</strong></td>
-        <td><strong>AI 做潜客研究 & Outreach</strong></td>
-        <td><span class="st st-live">直播</span></td>
-        <td>
-          <span class="exist">Prompt Lab: role-playing</span><br>
-          <span class="exist">Prompt Lab: information-extraction</span>
-        </td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: Sales Outreach + 角色扮演</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>素材: 10 个虚拟目标客户数据</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>模板: Cold Email + 跟进计划模板</span></label>
-        </td>
-        <td style="font-size:11px">10 客户研究 + 10 封个性化 cold email + 跟进计划</td>
-        <td><span class="review teacher" style="margin:0">老师</span></td>
-        <td><span class="status-partial">部分</span></td>
-      </tr>
-      <tr>
-        <td><strong>4.2</strong></td>
-        <td><strong>AI 客服 Bot + OpenClaw 知识库</strong></td>
-        <td><span class="st st-rec">录播</span></td>
-        <td>
-          <span class="exist">Prompt Lab: system-prompt-design</span><br>
-          <span class="exist">Prompt Lab: qa-system-design</span><br>
-          <span class="exist">Prompt Lab: hallucination-defense</span>
-        </td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>录播视频: Chatbase + OpenClaw 搭建</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>素材: 虚拟产品 FAQ 文档</span></label>
-        </td>
-        <td style="font-size:11px">外部客服 Bot + 内部知识库 Bot + 对比报告</td>
-        <td><span class="review both" style="margin:0">混合</span></td>
-        <td><span class="status-partial">部分</span></td>
-      </tr>
-      <tr>
-        <td><strong>4.3</strong></td>
-        <td><strong>AI 做 Sales 支持</strong></td>
-        <td><span class="st st-rec">录播</span></td>
-        <td>
-          <span class="exist">Prompt Lab: text-summarization</span><br>
-          <span class="exist">Prompt Lab: json-schema</span>
-        </td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>录播视频: Sales AI 全链路</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>素材: 模拟 Sales Call 录音</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>模板: Call Prep + Summary + Proposal</span></label>
-        </td>
-        <td style="font-size:11px">全套 Sales 支持材料 (prep + summary + email + proposal)</td>
-        <td><span class="review both" style="margin:0">混合</span></td>
-        <td><span class="status-partial">部分</span></td>
-      </tr>
-      <tr>
-        <td><strong>4.4</strong></td>
-        <td><strong>AI 做客户反馈分析</strong></td>
-        <td><span class="st st-rec">录播</span></td>
-        <td>
-          <span class="exist">Prompt Lab: classification</span><br>
-          <span class="exist">Prompt Lab: information-extraction</span>
-        </td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>录播视频: 反馈分析方法</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>素材: 100 条模拟客户评论 CSV</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>模板: 客户反馈分析报告模板</span></label>
-        </td>
-        <td style="font-size:11px">客户反馈分析报告 (top 5 问题 + 趋势 + 建议)</td>
-        <td><span class="review both" style="margin:0">混合</span></td>
-        <td><span class="status-partial">部分</span></td>
-      </tr>
-      <tr style="background:#fffde7">
-        <td><strong>周五</strong></td>
-        <td><strong>Clinic + 答疑 + Adoption Lens</strong></td>
-        <td><span class="st st-live">直播</span></td>
-        <td><span style="font-size:11px;color:#888">无需 Lab</span></td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>Adoption Lens: Sales 部门 Pilot 设计引导</span></label>
-        </td>
-        <td style="font-size:11px;color:#888">Clinic 现场点评</td>
-        <td><span class="review teacher" style="margin:0">老师</span></td>
-        <td><span class="status-todo">待建</span></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="day">
+    <div class="day-label" style="color:var(--indigo)">周一</div>
+    <div class="day-content">
+      <div class="act act-live"><span class="act-tag">直播</span><span class="act-name">4.1 AI 做潜客研究 & Outreach</span><span class="act-dur">2h</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: role-playing (客户视角)</span><span class="act-dur">课上做</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: information-extraction</span><span class="act-dur">课上做</span></div>
+      <div style="font-size:11px;color:#666;padding:2px 6px">讲师角色扮演 Sales Call · 学员现场写 3 封邮件</div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label">周二</div>
+    <div class="day-content">
+      <div class="act act-rec act-new"><span class="act-tag">录播</span><span class="act-name">4.2 AI 客服 Bot + OpenClaw 知识库</span><span class="act-dur">1h · 待建</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: system-prompt-design</span><span class="act-dur">30min</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: qa-system-design</span><span class="act-dur">30min</span></div>
+      <div class="act act-hw"><span class="act-tag">练习</span><span class="act-name">用 Chatbase 搭外部客服 Bot + OpenClaw 搭内部知识库</span></div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label">周三</div>
+    <div class="day-content">
+      <div class="act act-rec act-new"><span class="act-tag">录播</span><span class="act-name">4.3 AI 做 Sales 支持</span><span class="act-dur">1h · 待建</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: text-summarization (会议纪要)</span><span class="act-dur">30min</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: json-schema (结构化输出)</span><span class="act-dur">30min</span></div>
+      <div class="act act-hw"><span class="act-tag">练习</span><span class="act-name">从模拟 Sales Call 提取 key points → follow-up email</span></div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label">周四</div>
+    <div class="day-content">
+      <div class="act act-rec act-new"><span class="act-tag">录播</span><span class="act-name">4.4 AI 做客户反馈分析</span><span class="act-dur">1h · 待建</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: classification (分类标注)</span><span class="act-dur">30min</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: hallucination-defense (防幻觉)</span><span class="act-dur">30min</span></div>
+      <div class="act act-hw"><span class="act-tag">作业</span><span class="act-name">10 封 cold email + 客服 Bot + Sales 材料 + 反馈分析</span></div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label" style="color:var(--indigo)">周五</div>
+    <div class="day-content">
+      <div class="act act-live"><span class="act-tag">Clinic</span><span class="act-name">Cold Email 逐封点评 + OpenClaw Bot 排查</span><span class="act-dur">1h</span></div>
+      <div class="act act-live"><span class="act-tag">答疑</span><span class="act-name">Week 4 统一答疑</span><span class="act-dur">20min</span></div>
+      <div class="act act-live" style="border-color:var(--red)"><span class="act-tag" style="background:var(--red)">Lens</span><span class="act-name">"Sales 部门最容易踩什么坑？怎么设计 Pilot 让 VP Sales 买单？"</span><span class="act-dur">10min</span></div>
+    </div>
+  </div>
+  <div class="day day-rest">
+    <div class="day-label">周末</div>
+    <div class="day-content">
+      <div class="act act-hw"><span class="act-tag">提交</span><span class="act-name">Outreach 策略 + 客服 Bot + Sales 全套 + 反馈报告</span></div>
+      <div style="font-size:11px;color:#888;padding:2px 6px">→ Cold email: 老师逐封点评 · 其余: AI 评分 + 老师抽查</div>
+    </div>
+  </div>
+  <details class="build-needs">
+    <summary><span class="pri pri-0">P0</span> + <span class="pri pri-2">P2</span> Week 4 待建内容</summary>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: Sales Outreach + 角色扮演</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>录播视频: Chatbase + OpenClaw 搭建</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>录播视频: Sales AI 全链路</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>录播视频: 客户反馈分析方法</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>模板: Cold Email + 跟进计划 + Sales 全套 + 反馈报告</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>素材: 10 客户数据 + FAQ 文档 + Sales Call 录音 + 100 条评论 CSV</span></label>
+  </details>
 </div>
 
 <!-- ============================================================ -->
@@ -515,81 +432,67 @@
 <div class="box" id="week5">
   <div class="box-h" style="background:var(--teal)">
     <span style="font-size:18px;font-weight:900">Week 5 · AI for HR / Finance / Ops + AI Pilot 设计</span>
-    <span style="float:right;opacity:0.7" class="mono">2 直播 + 1 录播 + 答疑</span>
+    <span style="float:right;opacity:0.7" class="mono">Phase 2 · 转折周</span>
   </div>
-  <table class="wtable">
-    <thead>
-      <tr>
-        <th style="width:5%">课号</th>
-        <th style="width:16%">课名</th>
-        <th style="width:6%">方式</th>
-        <th style="width:22%">已有资源</th>
-        <th style="width:22%">待建内容</th>
-        <th style="width:16%">作业</th>
-        <th style="width:6%">评审</th>
-        <th style="width:7%">状态</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>5.1</strong></td>
-        <td><strong>AI 做招聘 + 财务</strong></td>
-        <td><span class="st st-live">直播</span></td>
-        <td>
-          <span class="exist">Prompt Lab: classification</span><br>
-          <span class="exist">Prompt Lab: information-extraction</span><br>
-          <span class="exist">Prompt Lab: json-schema</span>
-        </td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: 招聘 + 财务全流程</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>素材: 20 份模拟简历 + 5 张收据图片</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>模板: 招聘 AI 方案模板</span></label>
-        </td>
-        <td style="font-size:11px">招聘 AI 方案 + 发票处理 + 月度费用汇总</td>
-        <td><span class="review teacher" style="margin:0">老师</span></td>
-        <td><span class="status-partial">部分</span></td>
-      </tr>
-      <tr>
-        <td><strong>5.2</strong></td>
-        <td><strong>AI 做流程自动化 + 团队 Agent</strong></td>
-        <td><span class="st st-rec">录播</span></td>
-        <td>
-          <span class="exist">Prompt Lab: prompt-chaining</span><br>
-          <span class="exist">Prompt Lab: text-summarization</span><br>
-          <span class="exist">OpenClaw Ch.1-5 (Getting Started)</span><br>
-          <span class="exist">OpenClaw Ch.10-11 (Multi-Agent + Cron)</span>
-        </td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>录播视频: Scribe AI + Gamma AI + OpenClaw 自动化</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>模板: 团队自动化方案模板</span></label>
-        </td>
-        <td style="font-size:11px">SOP + 周报 PPT + OpenClaw Bot + 自动化方案</td>
-        <td><span class="review both" style="margin:0">混合</span></td>
-        <td><span class="status-partial">部分</span></td>
-      </tr>
-      <tr style="background:#fef2f2">
-        <td><strong>5.3</strong></td>
-        <td><strong>AI Pilot 设计 + 中期复盘</strong><br><span style="font-size:10px;color:var(--red)">Adoption 专属 · 转折点</span></td>
-        <td><span class="st st-live">直播</span></td>
-        <td><span style="font-size:11px;color:#888">无需 Lab（现场练习）</span></td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: Pilot 设计方法论</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>模板: AI Pilot 提案模板 (1 页)</span></label>
-        </td>
-        <td style="font-size:11px">完整 AI Pilot 提案 (Week 8 毕业项目的基础)</td>
-        <td><span class="review teacher" style="margin:0">老师</span></td>
-        <td><span class="status-todo">待建</span></td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="ai-self">
-    <strong>Week 5 AI 自学内容</strong>
-    <div class="ai-self-grid">
-      <div class="ai-self-card"><span class="lab-tag" style="background:#dcfce7;color:#16a34a">已有</span><div class="lab-name">Prompt Lab: role-playing + output-format</div><div class="lab-desc">Onboarding Plan + Performance Review</div></div>
-      <div class="ai-self-card"><span class="lab-tag" style="background:#fef3c7;color:#92400e">待建</span><div class="lab-name">录播: 费用审核 + 合同审查</div><div class="lab-desc">AI 费用分类 + Claude 长上下文合同分析</div></div>
-      <div class="ai-self-card"><span class="lab-tag" style="background:#fef3c7;color:#92400e">待建</span><div class="lab-name">录播: PPT + 翻译 + 个人效率</div><div class="lab-desc">Gamma AI / AI 翻译 / 生产力系统</div></div>
+  <div class="day">
+    <div class="day-label" style="color:var(--indigo)">周一</div>
+    <div class="day-content">
+      <div class="act act-live"><span class="act-tag">直播</span><span class="act-name">5.1 AI 做招聘 + 财务</span><span class="act-dur">2h</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: classification (简历匹配)</span><span class="act-dur">课上做</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: information-extraction (发票)</span><span class="act-dur">课上做</span></div>
+      <div style="font-size:11px;color:#666;padding:2px 6px">前 1h 招聘全流程 · 后 1h Claude Vision 读发票</div>
     </div>
   </div>
+  <div class="day">
+    <div class="day-label">周二</div>
+    <div class="day-content">
+      <div class="act act-rec act-new"><span class="act-tag">录播</span><span class="act-name">5.2 AI 流程自动化 + 团队 Agent</span><span class="act-dur">1h · 待建</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: prompt-chaining (多步生成)</span><span class="act-dur">30min</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">OpenClaw Ch.1-5 (Getting Started)</span><span class="act-dur">1h</span></div>
+      <div class="act act-hw"><span class="act-tag">练习</span><span class="act-name">Scribe AI 生成 SOP + Gamma AI 做周报 PPT</span></div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label">周三</div>
+    <div class="day-content">
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: role-playing (Onboarding)</span><span class="act-dur">30min</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">OpenClaw Ch.10-11 (Multi-Agent + Cron)</span><span class="act-dur">1h</span></div>
+      <div class="act act-rec act-new"><span class="act-tag">录播</span><span class="act-name">费用审核 + 合同审查</span><span class="act-dur">45min · 待建</span></div>
+      <div class="act act-hw"><span class="act-tag">作业</span><span class="act-name">招聘方案 + 发票处理 + SOP + OpenClaw Bot</span></div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label">周四</div>
+    <div class="day-content">
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: json-schema (结构化发票数据)</span><span class="act-dur">30min</span></div>
+      <div class="act act-rec act-new"><span class="act-tag">录播</span><span class="act-name">PPT + 翻译 + 个人效率系统</span><span class="act-dur">45min · 待建</span></div>
+      <div class="act act-self"><span class="act-tag">准备</span><span class="act-name">回顾 Week 1 "5 个应用机会"清单，选 1 个准备做 Pilot</span></div>
+    </div>
+  </div>
+  <div class="day" style="background:#fef2f2">
+    <div class="day-label" style="color:var(--red)">周五</div>
+    <div class="day-content">
+      <div class="act act-live" style="border-color:var(--red)"><span class="act-tag" style="background:var(--red)">直播</span><span class="act-name">5.3 AI Pilot 设计 — 从"用工具"到"帮公司用工具"</span><span class="act-dur">2h</span></div>
+      <div class="act act-live"><span class="act-tag">答疑</span><span class="act-name">Phase 1-2 中期复盘 + 统一答疑</span><span class="act-dur">30min</span></div>
+      <div style="font-size:11px;color:var(--red);font-weight:700;padding:2px 6px">全课程转折点: 后面所有内容从 Adoption Specialist 视角出发</div>
+    </div>
+  </div>
+  <div class="day day-rest">
+    <div class="day-label">周末</div>
+    <div class="day-content">
+      <div class="act act-hw"><span class="act-tag">提交</span><span class="act-name">招聘方案 + 发票处理 + 自动化方案 + AI Pilot 提案 (1 页)</span></div>
+      <div style="font-size:11px;color:#888;padding:2px 6px">→ Pilot 提案: 老师深度点评 (Week 8 毕业项目的基础)</div>
+    </div>
+  </div>
+  <details class="build-needs">
+    <summary><span class="pri pri-0">P0</span> + <span class="pri pri-2">P2</span> Week 5 待建内容</summary>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: 招聘 + 财务全流程</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: AI Pilot 设计方法论</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>模板: AI Pilot 提案模板 (1 页)</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-2">P2</span>录播: 流程自动化 + 费用审核 + PPT/翻译/效率</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>素材: 20 份模拟简历 + 5 张收据</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>模板: 招聘方案 + 团队自动化方案</span></label>
+  </details>
 </div>
 
 <!-- ============================================================ -->
@@ -598,70 +501,63 @@
 <div class="box" id="week6">
   <div class="box-h" style="background:var(--orange)">
     <span style="font-size:18px;font-weight:900">Week 6 · 评估 + 变革管理</span>
-    <span style="float:right;opacity:0.7" class="mono">3 直播 · 全部需要老师</span>
+    <span style="float:right;opacity:0.7" class="mono">Phase 3 · 全部直播 + Lab 穿插</span>
   </div>
-  <table class="wtable">
-    <thead>
-      <tr>
-        <th style="width:5%">课号</th>
-        <th style="width:16%">课名</th>
-        <th style="width:6%">方式</th>
-        <th style="width:22%">已有资源</th>
-        <th style="width:22%">待建内容</th>
-        <th style="width:16%">作业</th>
-        <th style="width:6%">评审</th>
-        <th style="width:7%">状态</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>6.1</strong></td>
-        <td><strong>成熟度模型 + 就绪度评估 + 机会审计</strong><br><span style="font-size:10px;color:var(--red)">Adoption 专属</span></td>
-        <td><span class="st st-live">直播</span></td>
-        <td><span style="font-size:11px;color:#888">无已有 Lab</span></td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: 成熟度模型 + 评估框架</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>新建 Lab: AI 就绪度评估 Lab (场景式)</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>新建 Lab: AI 机会审计 Lab (场景式)</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>模板: 就绪度评估报告 + ROI Calculator</span></label>
-        </td>
-        <td style="font-size:11px">成熟度定位 + 就绪度评估报告 + 机会审计 Top 10</td>
-        <td><span class="review teacher" style="margin:0">老师</span></td>
-        <td><span class="status-todo">待建</span></td>
-      </tr>
-      <tr style="background:#fce7f3">
-        <td><strong>6.2</strong></td>
-        <td><strong>变革管理 (ADKAR) + 利益相关者</strong><br><span style="font-size:10px;color:var(--red)">Adoption 专属 · Workshop</span></td>
-        <td><span class="st st-ws">Workshop</span></td>
-        <td><span style="font-size:11px;color:#888">无需 Lab（现场角色扮演）</span></td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>Workshop PPT: ADKAR + 利益相关者管理</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>角色扮演场景卡 (CFO/CTO/HR Director)</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>模板: 利益相关者分析表 + 沟通策略模板</span></label>
-        </td>
-        <td style="font-size:11px">变革沟通计划 (stakeholder 分析 + 阻力应对)</td>
-        <td><span class="review teacher" style="margin:0">老师</span></td>
-        <td><span class="status-todo">待建</span></td>
-      </tr>
-      <tr>
-        <td><strong>6.3</strong></td>
-        <td><strong>培训设计 + Champion + 预算</strong><br><span style="font-size:10px;color:var(--red)">Adoption 专属</span></td>
-        <td><span class="st st-live">直播</span></td>
-        <td>
-          <span class="exist">Prompt Lab: business-writing</span><br>
-          <span style="font-size:11px;color:#666">提案文档写作</span>
-        </td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: 培训设计 + Champion + 预算</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>模板: AI 培训计划模板 (4 周)</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>模板: AI 投资提案模板 (1-2 页)</span></label>
-        </td>
-        <td style="font-size:11px">50 人部门 AI 培训计划 + AI 投资提案</td>
-        <td><span class="review teacher" style="margin:0">老师</span></td>
-        <td><span class="status-todo">待建</span></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="day">
+    <div class="day-label" style="color:var(--indigo)">周一</div>
+    <div class="day-content">
+      <div class="act act-live"><span class="act-tag">直播</span><span class="act-name">6.1 成熟度模型 + 就绪度评估 + 机会审计</span><span class="act-dur">2h</span></div>
+      <div style="font-size:11px;color:#666;padding:2px 6px">现场对自己公司打分 · AI Shadow Day 方法 · ROI Calculator</div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label">周二</div>
+    <div class="day-content">
+      <div class="act act-lab act-new"><span class="act-tag">新Lab</span><span class="act-name">AI 就绪度评估 Lab (场景式: 逐维度评分→生成报告)</span><span class="act-dur">1h · 待建</span></div>
+      <div class="act act-lab act-new"><span class="act-tag">新Lab</span><span class="act-name">AI 机会审计 Lab (5 部门分析→ROI 排序)</span><span class="act-dur">1h · 待建</span></div>
+      <div class="act act-hw"><span class="act-tag">作业</span><span class="act-name">成熟度定位 + 就绪度评估报告 + 机会审计 Top 10</span></div>
+    </div>
+  </div>
+  <div class="day" style="background:#fce7f3">
+    <div class="day-label" style="color:#be185d">周三</div>
+    <div class="day-content">
+      <div class="act act-live" style="border-color:#be185d"><span class="act-tag" style="background:#be185d">Workshop</span><span class="act-name">6.2 ADKAR 变革管理 + 利益相关者管理 + 角色扮演</span><span class="act-dur">2.5h</span></div>
+      <div style="font-size:11px;color:#666;padding:2px 6px">讲师扮演 CFO 拒绝你的预算，学员轮流上场 pitch</div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label">周四</div>
+    <div class="day-content">
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: business-writing (提案文档)</span><span class="act-dur">30min</span></div>
+      <div class="act act-self"><span class="act-tag">练习</span><span class="act-name">画利益相关者地图 + 写沟通策略</span><span class="act-dur">1.5h</span></div>
+      <div class="act act-hw"><span class="act-tag">作业</span><span class="act-name">变革沟通计划 (stakeholder 分析 + 阻力应对)</span></div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label" style="color:var(--indigo)">周五</div>
+    <div class="day-content">
+      <div class="act act-live"><span class="act-tag">直播</span><span class="act-name">6.3 培训设计 + AI Champion + 预算案例</span><span class="act-dur">2h</span></div>
+      <div class="act act-live"><span class="act-tag">答疑</span><span class="act-name">Week 6 统一答疑</span><span class="act-dur">30min</span></div>
+      <div style="font-size:11px;color:#666;padding:2px 6px">小组讨论: 为不同部门设计 AI 培训大纲</div>
+    </div>
+  </div>
+  <div class="day day-rest">
+    <div class="day-label">周末</div>
+    <div class="day-content">
+      <div class="act act-hw"><span class="act-tag">提交</span><span class="act-name">就绪度报告 + 变革沟通计划 + 4 周培训计划 + AI 投资提案</span></div>
+      <div style="font-size:11px;color:#888;padding:2px 6px">→ 全部老师深度点评 (核心能力输出)</div>
+    </div>
+  </div>
+  <details class="build-needs">
+    <summary><span class="pri pri-0">P0</span> Week 6 待建内容 (全部核心)</summary>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: 成熟度模型 + 评估框架</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>Workshop PPT: ADKAR + 利益相关者管理</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: 培训设计 + Champion + 预算</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>新建 Lab: AI 就绪度评估 Lab (场景式)</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>新建 Lab: AI 机会审计 Lab (场景式)</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>角色扮演场景卡 (CFO/CTO/HR Director)</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>模板: 就绪度报告 + ROI Calculator + 沟通策略 + 培训计划 + 投资提案</span></label>
+  </details>
 </div>
 
 <!-- ============================================================ -->
@@ -670,87 +566,62 @@
 <div class="box" id="week7">
   <div class="box-h" style="background:var(--orange)">
     <span style="font-size:18px;font-weight:900">Week 7 · 治理 + OpenClaw 部署 + 规模化</span>
-    <span style="float:right;opacity:0.7" class="mono">3 直播 · 全部需要老师</span>
+    <span style="float:right;opacity:0.7" class="mono">Phase 3 · 全部直播 + Lab 穿插</span>
   </div>
-  <table class="wtable">
-    <thead>
-      <tr>
-        <th style="width:5%">课号</th>
-        <th style="width:16%">课名</th>
-        <th style="width:6%">方式</th>
-        <th style="width:22%">已有资源</th>
-        <th style="width:22%">待建内容</th>
-        <th style="width:16%">作业</th>
-        <th style="width:6%">评审</th>
-        <th style="width:7%">状态</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>7.1</strong></td>
-        <td><strong>AI 治理 + 合规</strong></td>
-        <td><span class="st st-live">直播</span></td>
-        <td>
-          <span class="exist">Prompt Lab: prompt-injection-defense</span><br>
-          <span style="font-size:11px;color:#666">AI 安全防护</span>
-        </td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: AI 治理 + 合规框架</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>新建 Lab: AI 使用政策 Lab (场景式)</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>模板: AI 使用政策文档模板</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>模板: 供应商安全评估 Checklist</span></label>
-        </td>
-        <td style="font-size:11px">AI 使用政策文档 + 供应商评估 + AI 风险清单</td>
-        <td><span class="review teacher" style="margin:0">老师</span></td>
-        <td><span class="status-todo">待建</span></td>
-      </tr>
-      <tr style="background:#fef2f2">
-        <td><strong>7.2</strong></td>
-        <td><strong>OpenClaw 组织级部署</strong><br><span style="font-size:10px;color:var(--red)">Adoption 专属</span></td>
-        <td><span class="st st-live">直播</span></td>
-        <td>
-          <span class="exist">OpenClaw Ch.1-5 (Getting Started)</span><br>
-          <span class="exist">OpenClaw Ch.10 (Multi-Agent)</span><br>
-          <span class="exist">OpenClaw Ch.11 (Scheduled Tasks)</span>
-        </td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: OpenClaw 组织部署方案</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>模板: OpenClaw 部署方案模板</span></label>
-        </td>
-        <td style="font-size:11px">OpenClaw 部署方案 + 截图证明跑通</td>
-        <td><span class="review teacher" style="margin:0">老师</span></td>
-        <td><span class="status-partial">部分</span></td>
-      </tr>
-      <tr>
-        <td><strong>7.3</strong></td>
-        <td><strong>ROI 度量 + 规模化 + 向高层汇报</strong><br><span style="font-size:10px;color:var(--red)">Adoption 专属</span></td>
-        <td><span class="st st-live">直播</span></td>
-        <td>
-          <span class="exist">Prompt Lab: cost-optimization</span><br>
-          <span style="font-size:11px;color:#666">AI 成本优化策略</span>
-        </td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: ROI + 规模化 + 失败案例</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>模板: AI 采纳 Dashboard 设计模板</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>模板: AI 进展月报模板 (给 CTO)</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>模板: Pilot→全公司推广路线图模板</span></label>
-        </td>
-        <td style="font-size:11px">Dashboard 设计 + 推广路线图 + 月报模板</td>
-        <td><span class="review teacher" style="margin:0">老师</span></td>
-        <td><span class="status-todo">待建</span></td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="ai-self">
-    <strong>Week 6-7 AI 自学内容</strong>
-    <div class="ai-self-grid">
-      <div class="ai-self-card"><span class="lab-tag" style="background:#dcfce7;color:#16a34a">已有</span><div class="lab-name">Prompt Lab: prompt-injection-defense</div><div class="lab-desc">AI 安全防护练习</div></div>
-      <div class="ai-self-card"><span class="lab-tag" style="background:#dcfce7;color:#16a34a">已有</span><div class="lab-name">Prompt Lab: cost-optimization</div><div class="lab-desc">AI 成本优化策略</div></div>
-      <div class="ai-self-card"><span class="lab-tag" style="background:#fef3c7;color:#92400e">待建</span><div class="lab-name">AI 就绪度评估 Lab</div><div class="lab-desc">场景式: 填框架 → 生成评估报告</div></div>
-      <div class="ai-self-card"><span class="lab-tag" style="background:#fef3c7;color:#92400e">待建</span><div class="lab-name">AI 机会审计 Lab</div><div class="lab-desc">场景式: 5 部门分析 → ROI 排序</div></div>
-      <div class="ai-self-card"><span class="lab-tag" style="background:#fef3c7;color:#92400e">待建</span><div class="lab-name">AI 使用政策 Lab</div><div class="lab-desc">场景式: 填模板 → 生成 Policy</div></div>
+  <div class="day">
+    <div class="day-label" style="color:var(--indigo)">周一</div>
+    <div class="day-content">
+      <div class="act act-live"><span class="act-tag">直播</span><span class="act-name">7.1 AI 治理 + 合规</span><span class="act-dur">2h</span></div>
+      <div style="font-size:11px;color:#666;padding:2px 6px">AI 使用政策模板 + GDPR/Privacy Act + 供应商评估 + 伦理案例</div>
     </div>
   </div>
+  <div class="day">
+    <div class="day-label">周二</div>
+    <div class="day-content">
+      <div class="act act-lab act-new"><span class="act-tag">新Lab</span><span class="act-name">AI 使用政策 Lab (填模板→检查覆盖→生成 Policy)</span><span class="act-dur">1h · 待建</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: prompt-injection-defense</span><span class="act-dur">30min</span></div>
+      <div class="act act-self"><span class="act-tag">练习</span><span class="act-name">对 3 个工具做供应商安全评估对比</span><span class="act-dur">1h</span></div>
+      <div class="act act-hw"><span class="act-tag">作业</span><span class="act-name">AI 使用政策文档 + 供应商评估 + 风险清单</span></div>
+    </div>
+  </div>
+  <div class="day" style="background:#fef2f2">
+    <div class="day-label" style="color:var(--red)">周三</div>
+    <div class="day-content">
+      <div class="act act-live" style="border-color:var(--red)"><span class="act-tag" style="background:var(--red)">直播</span><span class="act-name">7.2 OpenClaw 组织级部署</span><span class="act-dur">2h</span></div>
+      <div style="font-size:11px;color:#666;padding:2px 6px">讲师 Live Demo + 学员跟做: Docker 部署→连 LLM→接 Slack→上传文档→Cron→Multi-Agent</div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label">周四</div>
+    <div class="day-content">
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">OpenClaw Ch.1-5 (复习 + 深化)</span><span class="act-dur">1h</span></div>
+      <div class="act act-lab"><span class="act-tag">Lab</span><span class="act-name">Prompt Lab: cost-optimization</span><span class="act-dur">30min</span></div>
+      <div class="act act-hw"><span class="act-tag">作业</span><span class="act-name">OpenClaw 部署方案文档 + 截图证明跑通</span></div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label" style="color:var(--indigo)">周五</div>
+    <div class="day-content">
+      <div class="act act-live"><span class="act-tag">直播</span><span class="act-name">7.3 ROI 度量 + 规模化 + 失败案例 + 向高层汇报</span><span class="act-dur">2h</span></div>
+      <div class="act act-live"><span class="act-tag">答疑</span><span class="act-name">Week 7 统一答疑 + 毕业项目选题预告</span><span class="act-dur">30min</span></div>
+      <div style="font-size:11px;color:#666;padding:2px 6px">现场练习: 设计 AI 采纳 Dashboard + 写 CTO 月报</div>
+    </div>
+  </div>
+  <div class="day day-rest">
+    <div class="day-label">周末</div>
+    <div class="day-content">
+      <div class="act act-hw"><span class="act-tag">提交</span><span class="act-name">AI 政策 + OpenClaw 方案 + Dashboard + 推广路线图 + 月报</span></div>
+      <div style="font-size:11px;color:#888;padding:2px 6px">→ 全部老师深度点评 · 开始准备毕业项目选题</div>
+    </div>
+  </div>
+  <details class="build-needs">
+    <summary><span class="pri pri-0">P0</span> Week 7 待建内容</summary>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: AI 治理 + 合规框架</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: OpenClaw 组织级部署</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: ROI + 规模化 + 失败案例</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>新建 Lab: AI 使用政策 Lab (场景式)</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-1">P1</span>模板: 政策文档 + 供应商 Checklist + 部署方案 + Dashboard + 月报 + 路线图</span></label>
+  </details>
 </div>
 
 <!-- ============================================================ -->
@@ -759,75 +630,65 @@
 <div class="box" id="week8">
   <div class="box-h" style="background:var(--red)">
     <span style="font-size:18px;font-weight:900">Week 8 · Capstone Project + Demo Day</span>
-    <span style="float:right;opacity:0.7" class="mono">全程老师 · 1v1 + Peer Review + Demo Day</span>
+    <span style="float:right;opacity:0.7" class="mono">Phase 4 · 迷你咨询项目</span>
   </div>
-  <table class="wtable">
-    <thead>
-      <tr>
-        <th style="width:5%">课号</th>
-        <th style="width:16%">课名</th>
-        <th style="width:6%">方式</th>
-        <th style="width:22%">已有资源</th>
-        <th style="width:22%">待建内容</th>
-        <th style="width:16%">作业</th>
-        <th style="width:6%">评审</th>
-        <th style="width:7%">状态</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>8.1</strong></td>
-        <td><strong>选题 Briefing + 方法指导</strong></td>
-        <td><span class="st st-live">直播</span></td>
-        <td><span style="font-size:11px;color:#888">无需 Lab</span></td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: 毕业项目要求 + 评分标准</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>模板: 毕业项目 Brief 模板 (1 页)</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>2-3 个优秀案例参考 (往期/模拟)</span></label>
-        </td>
-        <td style="font-size:11px">项目 Brief (公司背景 + 成熟度 + 目标 + 范围)</td>
-        <td><span class="review teacher" style="margin:0">老师</span></td>
-        <td><span class="status-todo">待建</span></td>
-      </tr>
-      <tr>
-        <td><strong>8.2</strong></td>
-        <td><strong>中期 Check-in</strong></td>
-        <td><span class="st st-1v1">1v1</span></td>
-        <td><span style="font-size:11px;color:#888">无需 Lab</span></td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>方案检查清单 (8 板块 Checklist)</span></label>
-        </td>
-        <td style="font-size:11px">10-15 页完整方案初稿</td>
-        <td><span class="review teacher" style="margin:0">老师 1v1</span></td>
-        <td><span class="status-todo">待建</span></td>
-      </tr>
-      <tr style="background:#f5f0ff">
-        <td><strong>8.3</strong></td>
-        <td><strong>方案互审 Peer Review</strong><br><span style="font-size:10px;color:var(--purple)">Adoption 专属</span></td>
-        <td><span class="st st-live">直播</span></td>
-        <td><span style="font-size:11px;color:#888">无需 Lab</span></td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>评审 Checklist (方案/工具/ROI/变革/风险)</span></label>
-        </td>
-        <td style="font-size:11px">书面评审反馈 + 方案终稿 + 演示 Deck</td>
-        <td><span class="review teacher" style="margin:0">助教</span></td>
-        <td><span class="status-todo">待建</span></td>
-      </tr>
-      <tr style="background:#fef2f2">
-        <td><strong>8.4</strong></td>
-        <td><strong>Demo Day + 证书颁发</strong></td>
-        <td><span class="st st-demo">Demo Day</span></td>
-        <td><span style="font-size:11px;color:#888">无需 Lab</span></td>
-        <td>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>评分表 (可行性30 + 工具25 + 变革25 + 演示20)</span></label>
-          <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>证书设计 (电子版)</span></label>
-        </td>
-        <td style="font-size:11px">10min 展示 + 5min Q&A</td>
-        <td><span class="review teacher" style="margin:0">老师</span></td>
-        <td><span class="status-todo">待建</span></td>
-      </tr>
-    </tbody>
-  </table>
+  <div style="padding:12px 16px;background:#fef2f2;border-bottom:2px solid #eee;font-size:13px;line-height:1.7">
+    <strong style="color:var(--red)">这周不是"上课"，是做一个完整的 AI 采纳咨询项目。</strong>
+    产出 10-15 页方案 + 演示 Deck，模拟真实咨询交付。Week 1-7 学的所有技能在这里汇合。
+  </div>
+  <div class="day">
+    <div class="day-label" style="color:var(--indigo)">周一</div>
+    <div class="day-content">
+      <div class="act act-live"><span class="act-tag">直播</span><span class="act-name">8.1 选题 Briefing + 方法指导 + 优秀案例展示</span><span class="act-dur">2h</span></div>
+      <div class="act act-self"><span class="act-tag">现场</span><span class="act-name">每人 2min 说选题方向，讲师即时反馈</span></div>
+      <div class="act act-hw"><span class="act-tag">交付</span><span class="act-name">项目 Brief (1 页): 公司背景 + 成熟度 + 目标 + 范围</span></div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label">周二</div>
+    <div class="day-content">
+      <div class="act act-self"><span class="act-tag">撰写</span><span class="act-name">方案撰写: 现状评估 + AI 机会审计 + 优先级排序</span><span class="act-dur">3-4h</span></div>
+      <div style="font-size:11px;color:#666;padding:2px 6px">综合运用: Week 5 Pilot 提案 + Week 6 评估框架 + Week 7 治理</div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label" style="color:var(--orange)">周二-三</div>
+    <div class="day-content">
+      <div class="act act-live" style="border-color:var(--orange)"><span class="act-tag" style="background:var(--orange)">1v1</span><span class="act-name">8.2 中期 Check-in · 每人 20min 深度指导</span></div>
+      <div style="font-size:11px;color:#666;padding:2px 6px">不是答疑: 讲师检查方案逻辑、ROI 合理性、变革策略可行性</div>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-label">周三</div>
+    <div class="day-content">
+      <div class="act act-self"><span class="act-tag">撰写</span><span class="act-name">方案撰写: 实施路线图 + 预算 + 培训计划 + ROI 预估</span><span class="act-dur">3-4h</span></div>
+      <div class="act act-self"><span class="act-tag">根据</span><span class="act-name">1v1 反馈修改方案</span></div>
+    </div>
+  </div>
+  <div class="day" style="background:#f5f0ff">
+    <div class="day-label" style="color:var(--purple)">周四</div>
+    <div class="day-content">
+      <div class="act act-live" style="border-color:var(--purple)"><span class="act-tag" style="background:var(--purple)">直播</span><span class="act-name">8.3 方案互审 Peer Review · 两两配对 · 评审 Checklist</span><span class="act-dur">1.5h</span></div>
+      <div class="act act-self"><span class="act-tag">晚上</span><span class="act-name">根据 Peer 反馈最终修改 + 用 Gamma AI/Copilot 制作演示 Deck</span></div>
+      <div style="font-size:11px;color:var(--purple);padding:2px 6px">锻炼"评审别人 AI 方案"的能力 — 这是 Adoption Specialist 日常工作</div>
+    </div>
+  </div>
+  <div class="day" style="background:#fef2f2">
+    <div class="day-label" style="color:var(--red)">周五</div>
+    <div class="day-content">
+      <div class="act act-live" style="border-color:var(--red);border-width:2px"><span class="act-tag" style="background:var(--red)">Demo Day</span><span class="act-name">8.4 每人 10min 展示 + 5min Q&A + 评审打分 + 证书颁发</span><span class="act-dur">全天</span></div>
+      <div style="font-size:11px;color:#666;padding:2px 6px">评分: 可行性 30% + AI 工具 25% + 变革策略 25% + 演示能力 20%</div>
+    </div>
+  </div>
+  <details class="build-needs">
+    <summary><span class="pri pri-0">P0</span> Week 8 待建内容 (全部 P0)</summary>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>直播 PPT: 毕业项目要求 + 评分标准</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>模板: 毕业项目 Brief (1 页)</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>2-3 个优秀案例参考</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>方案检查清单 (8 板块 Checklist)</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>Peer Review 评审 Checklist</span></label>
+    <label class="ck"><input type="checkbox"><span><span class="pri pri-0">P0</span>Demo Day 评分表 + 证书设计</span></label>
+  </details>
 </div>
 
 <!-- ============================================================ -->

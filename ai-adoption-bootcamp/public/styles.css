@@ -54,4 +54,42 @@ a{color:var(--indigo);text-decoration:none}a:hover{text-decoration:underline}
 details{border:2px solid #eee;margin-bottom:6px}
 details summary{padding:10px 16px;font-weight:700;font-size:14px;cursor:pointer;background:#fafafa}
 details>div{padding:10px 16px;font-size:13px;line-height:1.8;border-top:1px solid #eee}
+/* Learning resources path */
+.learn-path{margin:0 24px 16px;border:2px solid #e5e5e5;font-size:12px}
+.learn-path-head{padding:8px 14px;background:#f8f9fa;border-bottom:1px solid #eee;font-weight:800;font-size:12px;display:flex;align-items:center;gap:8px}
+.learn-path-head .lp-goal{font-weight:400;color:#666;font-size:11px}
+.learn-path-body{padding:0}
+.lp-item{display:flex;align-items:flex-start;gap:8px;padding:8px 14px;border-bottom:1px solid #f0f0f0}
+.lp-item:last-child{border-bottom:none}
+.lp-item:hover{background:#fafafa}
+.lp-num{width:20px;height:20px;border-radius:50%;background:var(--teal);color:#fff;font-size:10px;font-weight:900;font-family:'Space Mono',monospace;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.lp-tag{display:inline-block;padding:1px 6px;font-size:10px;font-weight:700;font-family:'Space Mono',monospace;flex-shrink:0}
+.lp-live{background:var(--indigo);color:#fff}
+.lp-lab{background:#d1fae5;color:#065f46}
+.lp-ai{background:#fce7f3;color:#be185d}
+.lp-text{background:#e0e7ff;color:#3730a3}
+.lp-video{background:var(--purple);color:#fff}
+.lp-hw{background:#fff7ed;color:#9a3412}
+.lp-oc{background:#E84142;color:#fff}
+.lp-vibe{background:var(--blue);color:#fff}
+.lp-desc{flex:1;line-height:1.6}
+.lp-desc strong{font-weight:700}
+.lp-time{font-size:10px;color:#888;font-family:'Space Mono',monospace;flex-shrink:0}
+.lp-exist{font-size:9px;padding:1px 4px;background:#dcfce7;color:#16a34a;font-weight:700;font-family:'Space Mono',monospace}
+/* Weekly schedule bar */
+.week-schedule{display:grid;grid-template-columns:repeat(7,1fr);border-bottom:3px solid #000;font-size:11px}
+.week-schedule .ws-day{padding:8px 6px;text-align:center;border-right:1px solid #eee}
+.week-schedule .ws-day:last-child{border-right:none}
+.week-schedule .ws-day .ws-label{font-weight:900;font-family:'Space Mono',monospace;font-size:10px;margin-bottom:3px}
+.week-schedule .ws-day .ws-act{display:block;padding:2px 4px;margin:2px 0;font-size:10px;line-height:1.4}
+.ws-live{background:var(--indigo);color:#fff}
+.ws-lab{background:#d1fae5;color:#065f46}
+.ws-rec{background:#e0e7ff;color:#3730a3}
+.ws-self{background:#f3f4f6;color:#374151}
+.ws-hw{background:#fff7ed;color:#9a3412}
+.ws-clinic{background:#fef3c7;color:#92400e}
+.ws-demo{background:var(--red);color:#fff}
+.ws-1v1{background:var(--purple);color:#fff}
+.ws-rest{background:#fafafa}
+@media(max-width:768px){.week-schedule{grid-template-columns:repeat(3,1fr)}}
 .footer{margin-top:40px;padding:24px;text-align:center;border-top:3px solid var(--border);color:#888;font-size:13px}
