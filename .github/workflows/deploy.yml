@@ -21,6 +21,13 @@ jobs:
           bun install
           bun run build
 
+      # Build ai-engineer-bootcamp
+      - name: Build ai-engineer-bootcamp
+        working-directory: ai-engineer-bootcamp
+        run: |
+          bun install
+          bun run build
+
       # Assemble all courses into one output
       - name: Assemble output
         run: |
@@ -34,6 +41,17 @@ jobs:
           cp ai-adoption-bootcamp/public/styles.css _site/ai-adoption-bootcamp/
           cp ai-adoption-bootcamp/public/internal.html _site/ai-adoption-bootcamp/
 
+          mkdir -p _site/ai-engineer-bootcamp
+          cp -r ai-engineer-bootcamp/dist/* _site/ai-engineer-bootcamp/
+          cp ai-engineer-bootcamp/public/curriculum.html _site/ai-engineer-bootcamp/
+          cp ai-engineer-bootcamp/public/outline.html _site/ai-engineer-bootcamp/
+          cp ai-engineer-bootcamp/public/phase1.html _site/ai-engineer-bootcamp/
+          cp ai-engineer-bootcamp/public/phase2.html _site/ai-engineer-bootcamp/
+          cp ai-engineer-bootcamp/public/phase3.html _site/ai-engineer-bootcamp/
+          cp ai-engineer-bootcamp/public/phase4.html _site/ai-engineer-bootcamp/
+          cp ai-engineer-bootcamp/public/styles.css _site/ai-engineer-bootcamp/
+          cp ai-engineer-bootcamp/public/internal.html _site/ai-engineer-bootcamp/
+
           # Index page
           cat > _site/index.html << 'HTMLEOF'
           <!DOCTYPE html>
@@ -44,10 +62,12 @@ jobs:
             <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800;900&family=DM+Sans:wght@500;600;700&family=Space+Mono:wght@700&family=Noto+Sans+SC:wght@500;700;900&display=swap" rel="stylesheet">
             <style>
               * { margin: 0; padding: 0; box-sizing: border-box; }
-              body { font-family: "DM Sans", "Noto Sans SC", sans-serif; background: #fff1e7; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-              .container { text-align: center; }
+              body { font-family: "DM Sans", "Noto Sans SC", sans-serif; background: #fff1e7; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+              .container { text-align: center; max-width: 1200px; }
               h1 { font-family: "Bricolage Grotesque", sans-serif; font-size: 48px; font-weight: 900; margin-bottom: 12px; }
               p { font-size: 16px; color: #666; margin-bottom: 32px; }
+              .section { margin-bottom: 32px; }
+              .section-title { font-family: "Space Mono", monospace; font-size: 13px; font-weight: 700; color: #888; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 2px; }
               .cards { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
               a { display: block; width: 280px; padding: 24px; background: #fff; text-decoration: none; color: #000; border: 3px solid #000; box-shadow: 6px 6px 0 #000; transition: all 0.15s; text-align: left; }
               a:hover { box-shadow: none; transform: translate(4px, 4px); }
@@ -60,17 +80,52 @@ jobs:
             <div class="container">
               <h1>JR Academy Curriculum</h1>
               <p>课程大纲与详情</p>
-              <div class="cards">
-                <a href="./ai-adoption-bootcamp/">
-                  <span class="tag" style="background:#6366f1">SLIDE DECK</span>
-                  <div class="title">AI Adoption Specialist</div>
-                  <div class="desc">13 页互动演示 — 课程概览、卖点、定价</div>
-                </a>
-                <a href="./ai-adoption-bootcamp/curriculum.html">
-                  <span class="tag" style="background:#10b981">CURRICULUM</span>
-                  <div class="title">AI Adoption Specialist</div>
-                  <div class="desc">课程结构详情 — 大纲、Lab 映射、老师分工、JD 对比、Marketing 素材</div>
-                </a>
+
+              <div class="section">
+                <div class="section-title">AI Adoption Specialist Bootcamp · 8 周</div>
+                <div class="cards">
+                  <a href="./ai-adoption-bootcamp/">
+                    <span class="tag" style="background:#6366f1">SLIDE DECK</span>
+                    <div class="title">AI Adoption Specialist</div>
+                    <div class="desc">13 页互动演示 — 课程概览、卖点、定价</div>
+                  </a>
+                  <a href="./ai-adoption-bootcamp/curriculum.html">
+                    <span class="tag" style="background:#10b981">CURRICULUM</span>
+                    <div class="title">AI Adoption Specialist</div>
+                    <div class="desc">课程结构详情 — 大纲、Phase 详情</div>
+                  </a>
+                  <a href="./ai-adoption-bootcamp/internal.html">
+                    <span class="tag" style="background:#dc2626">INTERNAL</span>
+                    <div class="title">AI Adoption 内部资料</div>
+                    <div class="desc">Lab 映射、老师分工、JD 对比、Marketing 素材</div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="section">
+                <div class="section-title">AI Engineer Bootcamp · 12 周</div>
+                <div class="cards">
+                  <a href="./ai-engineer-bootcamp/">
+                    <span class="tag" style="background:#6366f1">SLIDE DECK</span>
+                    <div class="title">AI Engineer</div>
+                    <div class="desc">13 页互动演示 — 课程概览、卖点、定价</div>
+                  </a>
+                  <a href="./ai-engineer-bootcamp/curriculum.html">
+                    <span class="tag" style="background:#10b981">CURRICULUM</span>
+                    <div class="title">AI Engineer</div>
+                    <div class="desc">课程结构详情 — 95 节课、4 Phase、7 项目</div>
+                  </a>
+                  <a href="./ai-engineer-bootcamp/outline.html">
+                    <span class="tag" style="background:#FF914D">OUTLINE</span>
+                    <div class="title">AI Engineer 完整大纲</div>
+                    <div class="desc">95 节课详细列表 — Lesson/Video/Info/Project</div>
+                  </a>
+                  <a href="./ai-engineer-bootcamp/internal.html">
+                    <span class="tag" style="background:#dc2626">INTERNAL</span>
+                    <div class="title">AI Engineer 内部资料</div>
+                    <div class="desc">Lab 映射、老师分工、JD 对比、Marketing 素材</div>
+                  </a>
+                </div>
               </div>
             </div>
           </body>

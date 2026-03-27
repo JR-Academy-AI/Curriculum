@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Engineer Bootcamp — 内部团队资料</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--indigo:#6366f1;--teal:#10b981;--red:#ff5757;--orange:#FF914D;--yellow:#FFDE59;--green:#7ED957;--blue:#38B6FF;--purple:#CB6CE6;--dark:#10162f;--bg:#fafafa;--border:#000}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Noto Sans SC',sans-serif;background:var(--bg);color:#1a1a1a;line-height:1.6}
+.header{background:var(--dark);color:#fff;padding:32px 0;text-align:center;border-bottom:4px solid var(--border)}
+.header h1{font-size:32px;font-weight:900}
+.header .sub{font-size:14px;opacity:0.7;margin-top:8px}
+.header a{color:#fff;text-decoration:underline;opacity:0.8}
+.c{max-width:1300px;margin:0 auto;padding:40px 24px}
+.footer{margin-top:48px;padding:32px;text-align:center;border-top:3px solid var(--border);color:#888;font-size:13px}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>AI Engineer Bootcamp — 内部团队资料</h1>
+  <div class="sub"><a href="curriculum.html">← 返回课程大纲</a> · Lab 映射、老师分工、JD 对比、Marketing 素材</div>
+</div>
+
+<div class="c">
+
+<!-- ============ LAB MAPPING ============ -->
+<div style="margin-top:48px;border:3px solid #000;background:#fff;box-shadow:6px 6px 0 #000;overflow:hidden">
+  <div style="padding:20px 28px;background:var(--teal);color:#fff;border-bottom:3px solid #000">
+    <h2 style="font-size:24px;font-weight:900">现有互动实验室复用方案</h2>
+    <p style="font-size:14px;opacity:0.8;margin-top:4px">JR Academy 已有 156+ 个 Lab，AI Engineer 课程可复用 Prompt Lab + Vibe Coding Lab + AWS Lab 中的相关内容</p>
+  </div>
+
+  <!-- Stats -->
+  <div style="display:flex;border-bottom:3px solid #000">
+    <div style="flex:1;padding:16px 20px;text-align:center;border-right:2px solid #eee">
+      <div style="font-size:36px;font-weight:900;color:var(--teal)">156+</div>
+      <div style="font-size:12px;color:#888;font-family:'Space Mono',monospace">现有 Lab 总数</div>
+    </div>
+    <div style="flex:1;padding:16px 20px;text-align:center;border-right:2px solid #eee">
+      <div style="font-size:36px;font-weight:900;color:var(--indigo)">12</div>
+      <div style="font-size:12px;color:#888;font-family:'Space Mono',monospace">可直接复用</div>
+    </div>
+    <div style="flex:1;padding:16px 20px;text-align:center;border-right:2px solid #eee">
+      <div style="font-size:36px;font-weight:900;color:var(--orange)">15</div>
+      <div style="font-size:12px;color:#888;font-family:'Space Mono',monospace">需新建</div>
+    </div>
+    <div style="flex:1;padding:16px 20px;text-align:center">
+      <div style="font-size:36px;font-weight:900;color:var(--green)">44%</div>
+      <div style="font-size:12px;color:#888;font-family:'Space Mono',monospace">复用率</div>
+    </div>
+  </div>
+
+  <div style="padding:16px 28px;background:#fffbeb;border-bottom:2px solid #eee;font-size:14px;line-height:1.8">
+    <strong>说明：</strong>AI Engineer 课程以代码实操为主（Python + LangChain + LangGraph + MCP），现有 Lab 偏前端/Prompt/AWS 基础操作，复用率低于 AI Adoption。大部分 Lab 需要新建 <strong>Python Lab</strong> 类型（Jupyter Notebook 或 Python 脚本在线执行）。
+  </div>
+
+  <!-- Mapping table -->
+  <table style="width:100%;border-collapse:collapse;font-size:12px">
+    <thead>
+      <tr style="background:#f5f5f5">
+        <th style="padding:10px 12px;text-align:left;border-bottom:2px solid #ddd;width:8%">课号</th>
+        <th style="padding:10px 12px;text-align:left;border-bottom:2px solid #ddd;width:18%">Lesson</th>
+        <th style="padding:10px 12px;text-align:left;border-bottom:2px solid #ddd;width:20%">需要的 Lab</th>
+        <th style="padding:10px 12px;text-align:center;border-bottom:2px solid #ddd;width:10%">来源</th>
+        <th style="padding:10px 12px;text-align:left;border-bottom:2px solid #ddd;width:22%">复用的现有 Lab</th>
+        <th style="padding:10px 12px;text-align:left;border-bottom:2px solid #ddd;width:22%">备注</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Phase 1 -->
+      <tr style="background:#f0f4ff;border-bottom:2px solid var(--indigo)"><td colspan="6" style="padding:8px 12px;font-weight:900;color:var(--indigo)">Phase 1: GenAI 基础 + Prompt Engineering (Week 1-3)</td></tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">1.1</td>
+        <td style="padding:8px 12px">GenAI Overview + Ops</td>
+        <td style="padding:8px 12px">3 个 LLM API 调用对比</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#fef3c7;font-weight:700;color:#92400e">新建</span></td>
+        <td style="padding:8px 12px;color:#888">—</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">需新建 Python Lab：调用 OpenAI / Claude / Bedrock API，对比 latency + cost</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:8px 12px">2.1</td>
+        <td style="padding:8px 12px">Transformer Architecture + API</td>
+        <td style="padding:8px 12px">Attention 可视化 + API 参数调优</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#fef3c7;font-weight:700;color:#92400e">新建</span></td>
+        <td style="padding:8px 12px;color:#888">—</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">Jupyter Notebook：Attention Matrix 可视化 + temperature 调参实验</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">2.2</td>
+        <td style="padding:8px 12px">Four Prototyping Patterns</td>
+        <td style="padding:8px 12px">四种模式最简实现对比</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#fef3c7;font-weight:700;color:#92400e">新建</span></td>
+        <td style="padding:8px 12px;color:#888">—</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">Python Lab：同一任务用 Prompting / RAG / FT / Agent 四种方式实现</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:8px 12px">3.1</td>
+        <td style="padding:8px 12px">Prompt Engineering Best Practices</td>
+        <td style="padding:8px 12px">Prompt 迭代 + A/B 测试</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>zero-shot</strong> · <strong>few-shot</strong> · <strong>chain-of-thought</strong><br><strong>output-format</strong> · <strong>json-schema</strong> (Prompt Lab)</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">Prompt Lab Foundation 全部复用，但需加 Python API 调用版</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">3.2</td>
+        <td style="padding:8px 12px">Prompt Iteration through UI</td>
+        <td style="padding:8px 12px">GPT Store App 构建</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>system-prompt-design</strong> (Prompt Lab)<br><strong>qa-system-design</strong> (Prompt Lab)</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">System Prompt 设计 Lab 直接复用</td>
+      </tr>
+
+      <!-- Phase 2 -->
+      <tr style="background:#ecfdf5;border-bottom:2px solid var(--teal)"><td colspan="6" style="padding:8px 12px;font-weight:900;color:var(--teal)">Phase 2: RAG 系统全栈开发 (Week 4-6)</td></tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">4.1</td>
+        <td style="padding:8px 12px">Introduction to Embeddings</td>
+        <td style="padding:8px 12px">Embedding API + 向量检索 + t-SNE</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#fef3c7;font-weight:700;color:#92400e">新建</span></td>
+        <td style="padding:8px 12px;color:#888">—</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">Jupyter Notebook：Embedding API 调用 + Cosine Similarity + t-SNE 可视化</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:8px 12px">4.2</td>
+        <td style="padding:8px 12px">Introduction to RAG</td>
+        <td style="padding:8px 12px">RAG from Scratch 全流程</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#fef3c7;font-weight:700;color:#92400e">新建</span></td>
+        <td style="padding:8px 12px;color:#888">—</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">Python Lab：纯 Python + FAISS，无框架，每步手写。课程核心 Lab</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">5.1</td>
+        <td style="padding:8px 12px">Building Production-Ready RAG</td>
+        <td style="padding:8px 12px">PDF 解析 + Streamlit UI + Rate Limiting</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#fef3c7;font-weight:700;color:#92400e">新建</span></td>
+        <td style="padding:8px 12px;color:#888">—</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">完整项目模板 Lab：Streamlit + pdfplumber + tiktoken + cost tracking</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:8px 12px">5.2</td>
+        <td style="padding:8px 12px">LangChain Core Constructs</td>
+        <td style="padding:8px 12px">LCEL Chain + Memory</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#fef3c7;font-weight:700;color:#92400e">新建</span></td>
+        <td style="padding:8px 12px;color:#888">—</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">Python Lab：LangChain LCEL pipe 语法 + ConversationBufferMemory</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">5.3</td>
+        <td style="padding:8px 12px">LangSmith Monitoring</td>
+        <td style="padding:8px 12px">Tracing 接入 + 评测</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#fef3c7;font-weight:700;color:#92400e">新建</span></td>
+        <td style="padding:8px 12px;color:#888">—</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">步骤式 Lab：LangSmith API Key 配置 → Trace 接入 → Evaluate 跑评测</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:8px 12px">6.1</td>
+        <td style="padding:8px 12px">RAG Evaluation</td>
+        <td style="padding:8px 12px">RAGAS + Langfuse 评估</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#fef3c7;font-weight:700;color:#92400e">新建</span></td>
+        <td style="padding:8px 12px;color:#888">—</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">Jupyter Notebook：RAGAS 四个指标计算 + Langfuse Dashboard 接入</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">6.2</td>
+        <td style="padding:8px 12px">LangChain RAG QA Application</td>
+        <td style="padding:8px 12px">完整 RAG QA 项目</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#e0e7ff;font-weight:700;color:#4f46e5">项目</span></td>
+        <td style="padding:8px 12px;color:#888">—</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">项目交付，不需要 Lab 环境。学员在本地 / Colab 完成</td>
+      </tr>
+
+      <!-- Phase 3 -->
+      <tr style="background:#fff7ed;border-bottom:2px solid var(--orange)"><td colspan="6" style="padding:8px 12px;font-weight:900;color:var(--orange)">Phase 3: Agents + MCP (Week 7-9)</td></tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">7.1</td>
+        <td style="padding:8px 12px">Agents 基础</td>
+        <td style="padding:8px 12px">ReAct 循环 + Function Calling</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#fef3c7;font-weight:700;color:#92400e">新建</span></td>
+        <td style="padding:8px 12px;color:#888">—</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">Python Lab：手写 ReAct 循环 + OpenAI Function Calling API</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:8px 12px">7.2</td>
+        <td style="padding:8px 12px">Agentic RAG</td>
+        <td style="padding:8px 12px">Agent + RAG 融合</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#e0e7ff;font-weight:700;color:#4f46e5">项目</span></td>
+        <td style="padding:8px 12px;color:#888">—</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">在 Phase 2 RAG 基础上升级，项目交付</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">8.1</td>
+        <td style="padding:8px 12px">Multi-Agent Architectures</td>
+        <td style="padding:8px 12px">LangGraph StateGraph</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#fef3c7;font-weight:700;color:#92400e">新建</span></td>
+        <td style="padding:8px 12px;color:#888">—</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">Python Lab：LangGraph 状态图构建 + 条件路由 + 可视化</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:8px 12px">8.2</td>
+        <td style="padding:8px 12px">Agent Ops + Multi-Agent Frameworks</td>
+        <td style="padding:8px 12px">AutoGen vs CrewAI 对比</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#fef3c7;font-weight:700;color:#92400e">新建</span></td>
+        <td style="padding:8px 12px;color:#888">—</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">Notebook Lab：同一任务用 LangGraph / AutoGen / CrewAI 三框架实现</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">9.1</td>
+        <td style="padding:8px 12px">MCP Server 构建</td>
+        <td style="padding:8px 12px">MCP Server 开发</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>Vibe Coding Lab</strong> — MCP/Claude Code 相关章节<br><strong>AI Engineer Learn</strong> — MCP 方向内容</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">复用 Vibe Coding 方向的 MCP 入门 Lab + Learn 方向 MCP 章节</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:8px 12px">9.2</td>
+        <td style="padding:8px 12px">MCP 进阶 + Deep Agents</td>
+        <td style="padding:8px 12px">多 MCP Server + 安全认证</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>Vibe Coding Lab</strong> — Claude Code Skills 章节<br><strong>AI Engineer Learn</strong> — Agent 进阶</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">复用 Skills 范式 + Context Engineering 内容</td>
+      </tr>
+
+      <!-- Phase 4 -->
+      <tr style="background:#fef2f2;border-bottom:2px solid var(--red)"><td colspan="6" style="padding:8px 12px;font-weight:900;color:var(--red)">Phase 4: Fine-Tuning + 毕业项目 (Week 10-12)</td></tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">10.1</td>
+        <td style="padding:8px 12px">Synthetic Data Generation</td>
+        <td style="padding:8px 12px">SDG pipeline</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#fef3c7;font-weight:700;color:#92400e">新建</span></td>
+        <td style="padding:8px 12px;color:#888">—</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">Jupyter Notebook：GPT-4 生成训练数据 + 质量过滤 + Evol-Instruct</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:8px 12px">10.2</td>
+        <td style="padding:8px 12px">Embedding Fine-Tuning</td>
+        <td style="padding:8px 12px">Sentence Transformers 微调</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#fef3c7;font-weight:700;color:#92400e">新建</span></td>
+        <td style="padding:8px 12px;color:#888">—</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">Colab Notebook：下载开源 Embedding → 准备数据 → 微调 → MTEB 评测</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">11.1-11.2</td>
+        <td style="padding:8px 12px">PEFT + QLoRA Fine-Tuning</td>
+        <td style="padding:8px 12px">Llama 3.1 微调全流程</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>LLM Lab</strong> — Fine-Tuning 相关章节<br>(如果 LLM Lab 已有 PEFT/QLoRA 内容)</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">LLM Lab 有则复用，无则用 Colab Notebook 新建</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:8px 12px">12.1</td>
+        <td style="padding:8px 12px">小组项目 Demo Day</td>
+        <td style="padding:8px 12px">—</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#e0e7ff;font-weight:700;color:#4f46e5">无需 Lab</span></td>
+        <td style="padding:8px 12px;color:#888">独立项目展示</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">学员综合运用所有技能</td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:8px 12px">12.2</td>
+        <td style="padding:8px 12px">AWS Agentcore + 职业路径</td>
+        <td style="padding:8px 12px">AWS 部署 Agent</td>
+        <td style="padding:8px 12px;text-align:center"><span style="padding:2px 8px;background:#dcfce7;font-weight:700;color:#16a34a">复用</span></td>
+        <td style="padding:8px 12px"><strong>AWS Lab</strong> — Lambda / Bedrock 部署相关<br><strong>AI Engineer Learn</strong> — 部署章节</td>
+        <td style="padding:8px 12px;font-size:11px;color:#666">AWS Lab 的 Bedrock + Lambda 步骤可直接复用</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Key reusable labs summary -->
+  <div style="padding:20px 28px;border-top:3px solid #000;background:#f0fdf4">
+    <h3 style="font-size:18px;font-weight:900;margin-bottom:12px">可复用的现有 Lab (按来源)</h3>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;font-size:12px">
+      <div style="padding:10px 14px;background:#fff;border:2px solid var(--teal);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900">Prompt Lab</div>
+        <div style="color:#888;font-size:11px">Prompt Engineering</div>
+        <div style="margin-top:4px;color:var(--teal);font-weight:700">复用 7 个</div>
+        <div style="font-size:10px;color:#666">zero-shot, few-shot, CoT, output-format, json-schema, system-prompt, qa-system</div>
+      </div>
+      <div style="padding:10px 14px;background:#fff;border:2px solid var(--teal);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900">Vibe Coding Lab</div>
+        <div style="color:#888;font-size:11px">MCP + Claude Code</div>
+        <div style="margin-top:4px;color:var(--teal);font-weight:700">复用 2 个</div>
+        <div style="font-size:10px;color:#666">MCP 入门, Claude Code Skills</div>
+      </div>
+      <div style="padding:10px 14px;background:#fff;border:2px solid var(--teal);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900">AWS Lab</div>
+        <div style="color:#888;font-size:11px">Cloud 部署</div>
+        <div style="margin-top:4px;color:var(--teal);font-weight:700">复用 2 个</div>
+        <div style="font-size:10px;color:#666">Bedrock 推理, Lambda 部署</div>
+      </div>
+      <div style="padding:10px 14px;background:#fff;border:2px solid var(--teal);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900">LLM Lab</div>
+        <div style="color:#888;font-size:11px">模型微调</div>
+        <div style="margin-top:4px;color:var(--teal);font-weight:700">复用 1 个</div>
+        <div style="font-size:10px;color:#666">PEFT/QLoRA Fine-Tuning (待确认)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- New labs needed -->
+  <div style="padding:20px 28px;border-top:2px solid #eee;background:#fffbeb">
+    <h3 style="font-size:18px;font-weight:900;margin-bottom:12px">需新建 15 个 Lab</h3>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;font-size:12px">
+      <div style="padding:12px;background:#fff;border:2px solid var(--orange);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900;color:var(--orange)">1. LLM API 对比</div>
+        <div style="color:#666;margin-top:4px">Python Lab<br>OpenAI/Claude/Bedrock</div>
+        <div style="margin-top:6px;font-size:10px;padding:2px 6px;background:#fff7ed;display:inline-block">L1.1</div>
+      </div>
+      <div style="padding:12px;background:#fff;border:2px solid var(--orange);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900;color:var(--orange)">2. Attention 可视化</div>
+        <div style="color:#666;margin-top:4px">Jupyter Notebook<br>Transformer 原理</div>
+        <div style="margin-top:6px;font-size:10px;padding:2px 6px;background:#fff7ed;display:inline-block">L2.1</div>
+      </div>
+      <div style="padding:12px;background:#fff;border:2px solid var(--orange);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900;color:var(--orange)">3. 四模式对比</div>
+        <div style="color:#666;margin-top:4px">Python Lab<br>Prompt/RAG/FT/Agent</div>
+        <div style="margin-top:6px;font-size:10px;padding:2px 6px;background:#fff7ed;display:inline-block">L2.2</div>
+      </div>
+      <div style="padding:12px;background:#fff;border:2px solid var(--orange);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900;color:var(--orange)">4. Embedding 检索</div>
+        <div style="color:#666;margin-top:4px">Jupyter Notebook<br>向量检索 + t-SNE</div>
+        <div style="margin-top:6px;font-size:10px;padding:2px 6px;background:#fff7ed;display:inline-block">L4.1</div>
+      </div>
+      <div style="padding:12px;background:#fff;border:2px solid var(--orange);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900;color:var(--orange)">5. RAG from Scratch</div>
+        <div style="color:#666;margin-top:4px">Python Lab<br>纯 Python + FAISS</div>
+        <div style="margin-top:6px;font-size:10px;padding:2px 6px;background:#fff7ed;display:inline-block">L4.2</div>
+      </div>
+      <div style="padding:12px;background:#fff;border:2px solid var(--orange);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900;color:var(--orange)">6. Production RAG</div>
+        <div style="color:#666;margin-top:4px">Python Lab<br>Streamlit + PDF</div>
+        <div style="margin-top:6px;font-size:10px;padding:2px 6px;background:#fff7ed;display:inline-block">L5.1</div>
+      </div>
+      <div style="padding:12px;background:#fff;border:2px solid var(--orange);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900;color:var(--orange)">7. LangChain LCEL</div>
+        <div style="color:#666;margin-top:4px">Python Lab<br>Chain + Memory</div>
+        <div style="margin-top:6px;font-size:10px;padding:2px 6px;background:#fff7ed;display:inline-block">L5.2</div>
+      </div>
+      <div style="padding:12px;background:#fff;border:2px solid var(--orange);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900;color:var(--orange)">8. LangSmith Tracing</div>
+        <div style="color:#666;margin-top:4px">步骤式 Lab<br>Tracing + Evaluate</div>
+        <div style="margin-top:6px;font-size:10px;padding:2px 6px;background:#fff7ed;display:inline-block">L5.3</div>
+      </div>
+      <div style="padding:12px;background:#fff;border:2px solid var(--orange);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900;color:var(--orange)">9. RAGAS 评估</div>
+        <div style="color:#666;margin-top:4px">Jupyter Notebook<br>4 指标 + Langfuse</div>
+        <div style="margin-top:6px;font-size:10px;padding:2px 6px;background:#fff7ed;display:inline-block">L6.1</div>
+      </div>
+      <div style="padding:12px;background:#fff;border:2px solid var(--orange);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900;color:var(--orange)">10. ReAct Agent</div>
+        <div style="color:#666;margin-top:4px">Python Lab<br>手写 ReAct 循环</div>
+        <div style="margin-top:6px;font-size:10px;padding:2px 6px;background:#fff7ed;display:inline-block">L7.1</div>
+      </div>
+      <div style="padding:12px;background:#fff;border:2px solid var(--orange);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900;color:var(--orange)">11. LangGraph</div>
+        <div style="color:#666;margin-top:4px">Python Lab<br>StateGraph + 路由</div>
+        <div style="margin-top:6px;font-size:10px;padding:2px 6px;background:#fff7ed;display:inline-block">L8.1</div>
+      </div>
+      <div style="padding:12px;background:#fff;border:2px solid var(--orange);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900;color:var(--orange)">12. 框架对比</div>
+        <div style="color:#666;margin-top:4px">Notebook Lab<br>AutoGen vs CrewAI</div>
+        <div style="margin-top:6px;font-size:10px;padding:2px 6px;background:#fff7ed;display:inline-block">L8.2</div>
+      </div>
+      <div style="padding:12px;background:#fff;border:2px solid var(--orange);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900;color:var(--orange)">13. SDG Pipeline</div>
+        <div style="color:#666;margin-top:4px">Jupyter Notebook<br>数据生成 + 过滤</div>
+        <div style="margin-top:6px;font-size:10px;padding:2px 6px;background:#fff7ed;display:inline-block">L10.1</div>
+      </div>
+      <div style="padding:12px;background:#fff;border:2px solid var(--orange);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900;color:var(--orange)">14. Embedding 微调</div>
+        <div style="color:#666;margin-top:4px">Colab Notebook<br>Sentence Transformers</div>
+        <div style="margin-top:6px;font-size:10px;padding:2px 6px;background:#fff7ed;display:inline-block">L10.2</div>
+      </div>
+      <div style="padding:12px;background:#fff;border:2px solid var(--orange);box-shadow:3px 3px 0 #000">
+        <div style="font-weight:900;color:var(--orange)">15. QLoRA 微调</div>
+        <div style="color:#666;margin-top:4px">Colab Notebook<br>Llama 3.1 PEFT</div>
+        <div style="margin-top:6px;font-size:10px;padding:2px 6px;background:#fff7ed;display:inline-block">L11.2</div>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding:12px 16px;background:#fff;border:2px solid var(--orange);font-size:14px">
+      <strong>开发量估算：</strong>15 个新 Lab 分为 Jupyter Notebook 类 (7 个，各 4-8h) + Python 脚本 Lab 类 (5 个，各 6-10h) + 步骤指引类 (3 个，各 2-4h) → 总计约 <strong>80-120 小时</strong>开发量。建议按 Phase 顺序优先开发 Phase 1-2 的 Lab。
+    </div>
+  </div>
+</div>
+
+<!-- ============ TEACHER ASSIGNMENT ============ -->
+<div style="margin-top:48px;border:3px solid #000;background:#fff;box-shadow:6px 6px 0 #000;overflow:hidden">
+  <div style="padding:20px 28px;background:var(--indigo);color:#fff;border-bottom:3px solid #000">
+    <h2 style="font-size:24px;font-weight:900">老师分工建议</h2>
+    <p style="font-size:14px;opacity:0.8;margin-top:4px">按 Phase 分配，每个 Phase 需要不同技术背景的老师</p>
+  </div>
+
+  <table style="width:100%;border-collapse:collapse;font-size:13px">
+    <thead>
+      <tr style="background:#f5f5f5">
+        <th style="padding:12px 14px;text-align:left;border-bottom:2px solid #ddd;width:15%">Phase</th>
+        <th style="padding:12px 14px;text-align:left;border-bottom:2px solid #ddd;width:20%">核心技能要求</th>
+        <th style="padding:12px 14px;text-align:left;border-bottom:2px solid #ddd;width:25%">教学内容</th>
+        <th style="padding:12px 14px;text-align:left;border-bottom:2px solid #ddd;width:20%">老师画像</th>
+        <th style="padding:12px 14px;text-align:center;border-bottom:2px solid #ddd;width:20%">工作量</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:12px 14px;font-weight:900;color:var(--indigo)">Phase 1<br><span style="font-size:11px;font-weight:400">Week 1-3</span></td>
+        <td style="padding:12px 14px">GenAI 全景<br>Transformer 原理<br>Prompt Engineering</td>
+        <td style="padding:12px 14px;font-size:12px">6 节直播 + 8 个录播/自学<br>ISA 项目启动 + GPT Store App</td>
+        <td style="padding:12px 14px;font-size:12px">熟悉 AI/ML 理论<br>有 LLM API 实操经验<br>能讲清 Transformer</td>
+        <td style="padding:12px 14px;text-align:center"><span style="padding:4px 12px;background:#f0f4ff;font-weight:700;color:var(--indigo);border:2px solid var(--indigo)">12h 直播</span></td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:12px 14px;font-weight:900;color:var(--teal)">Phase 2<br><span style="font-size:11px;font-weight:400">Week 4-6</span></td>
+        <td style="padding:12px 14px">RAG 架构<br>LangChain / LangSmith<br>向量数据库</td>
+        <td style="padding:12px 14px;font-size:12px">8 节直播 + 7 个录播/自学<br>3 个 RAG 项目</td>
+        <td style="padding:12px 14px;font-size:12px">有 RAG 生产经验<br>熟悉 LangChain 生态<br>能讲评估方法论</td>
+        <td style="padding:12px 14px;text-align:center"><span style="padding:4px 12px;background:#ecfdf5;font-weight:700;color:var(--teal);border:2px solid var(--teal)">16h 直播</span></td>
+      </tr>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:12px 14px;font-weight:900;color:var(--orange)">Phase 3<br><span style="font-size:11px;font-weight:400">Week 7-9</span></td>
+        <td style="padding:12px 14px">Agent 架构<br>LangGraph<br>MCP 协议</td>
+        <td style="padding:12px 14px;font-size:12px">8 节直播 + 7 个录播/自学<br>Agentic RAG + Multi-Agent + MCP ×2</td>
+        <td style="padding:12px 14px;font-size:12px">有 Multi-Agent 经验<br>熟悉 MCP SDK<br>懂 Claude Code 生态</td>
+        <td style="padding:12px 14px;text-align:center"><span style="padding:4px 12px;background:#fff7ed;font-weight:700;color:var(--orange);border:2px solid var(--orange)">16h 直播</span></td>
+      </tr>
+      <tr>
+        <td style="padding:12px 14px;font-weight:900;color:var(--red)">Phase 4<br><span style="font-size:11px;font-weight:400">Week 10-12</span></td>
+        <td style="padding:12px 14px">Fine-Tuning<br>PEFT / QLoRA<br>模型部署</td>
+        <td style="padding:12px 14px;font-size:12px">6 节直播 + 11 个录播/自学<br>Fine-Tuning 项目 + Demo Day</td>
+        <td style="padding:12px 14px;font-size:12px">有模型微调经验<br>熟悉 HuggingFace 生态<br>GPU 训练实操</td>
+        <td style="padding:12px 14px;text-align:center"><span style="padding:4px 12px;background:#fef2f2;font-weight:700;color:var(--red);border:2px solid var(--red)">12h 直播</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="padding:16px 28px;border-top:2px solid #eee;background:#f0fdf4;font-size:14px;line-height:1.8">
+    <strong>总计：</strong>~56h 直播教学 + 录播录制 + 作业批改。建议至少 <strong>2 位老师</strong>分工 (Phase 1-2 一位 + Phase 3-4 一位)，或 <strong>4 位老师</strong>每人负责一个 Phase。
+  </div>
+</div>
+
+<!-- ============ JD GAP ANALYSIS ============ -->
+<div style="margin-top:48px;border:3px solid #000;background:#fff;box-shadow:6px 6px 0 #000;overflow:hidden">
+  <div style="padding:20px 28px;background:#dc2626;color:#fff;border-bottom:3px solid #000">
+    <h2 style="font-size:24px;font-weight:900">JD 对比分析：市场要什么 vs 我们教什么</h2>
+    <p style="font-size:14px;opacity:0.8;margin-top:4px">基于 10 份真实 AI Engineer / LLM Engineer JD (OpenAI / Anthropic / Google / Meta / Amazon / Startup)</p>
+  </div>
+
+  <div style="padding:16px 28px;background:#fef2f2;border-bottom:2px solid #eee;font-size:15px;line-height:1.8">
+    <strong>核心发现：</strong>2025 年 AI Engineer JD 的关键词从 "ML pipelines" 转向了 <strong>RAG + Agents + MCP + LLM Ops</strong>。雇主要的是能用 LLM API 构建生产级应用的工程师，不是训练模型的研究员。我们课程精准命中。
+  </div>
+
+  <!-- 7 skills mapping -->
+  <table style="width:100%;border-collapse:collapse;font-size:13px">
+    <thead>
+      <tr style="background:#f5f5f5">
+        <th style="padding:12px 14px;text-align:left;border-bottom:2px solid #ddd;font-family:'Space Mono',monospace;width:6%">排名</th>
+        <th style="padding:12px 14px;text-align:left;border-bottom:2px solid #ddd;width:20%">JD 要求的能力</th>
+        <th style="padding:12px 14px;text-align:left;border-bottom:2px solid #ddd;width:8%">出现频率</th>
+        <th style="padding:12px 14px;text-align:left;border-bottom:2px solid #ddd;width:30%">JD 具体要求</th>
+        <th style="padding:12px 14px;text-align:left;border-bottom:2px solid #ddd;width:26%">我们课程覆盖</th>
+        <th style="padding:12px 14px;text-align:center;border-bottom:2px solid #ddd;width:10%">覆盖度</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:12px 14px;font-weight:900;font-size:18px;color:var(--red)">1</td>
+        <td style="padding:12px 14px;font-weight:800">RAG 系统构建<br>RAG Architecture</td>
+        <td style="padding:12px 14px"><span style="background:var(--red);color:#fff;padding:2px 8px;font-weight:700;font-family:'Space Mono',monospace">9/10</span></td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          → 构建端到端 RAG pipeline<br>
+          → Vector DB 选型和优化 (Pinecone/Chroma/Weaviate)<br>
+          → Chunking 策略、Re-ranking、Hybrid Search<br>
+          → RAG 评估指标 (Context Recall/Precision/Faithfulness)<br>
+          → 处理 PDF/表格/图片等非结构化数据
+        </td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          <strong>Phase 2 完整覆盖 (3 周)</strong><br>
+          <strong>W4</strong> RAG from Scratch (纯 Python + FAISS)<br>
+          <strong>W5</strong> Production RAG + LangChain + PDF Parsing<br>
+          <strong>W6</strong> RAGAS 评估 + Langfuse 监控<br>
+          <strong>3 个递进项目</strong>从零到生产
+        </td>
+        <td style="padding:12px 14px;text-align:center"><span style="padding:4px 12px;background:#dcfce7;font-weight:900;font-size:14px;border:2px solid #16a34a;color:#16a34a">95%</span></td>
+      </tr>
+
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:12px 14px;font-weight:900;font-size:18px;color:var(--red)">2</td>
+        <td style="padding:12px 14px;font-weight:800">LLM API 集成<br>Prompt Engineering</td>
+        <td style="padding:12px 14px"><span style="background:var(--red);color:#fff;padding:2px 8px;font-weight:700;font-family:'Space Mono',monospace">9/10</span></td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          → OpenAI / Anthropic / AWS Bedrock API<br>
+          → Prompt engineering + prompt management<br>
+          → Token 优化 + cost management<br>
+          → Multi-provider fallback + rate limiting<br>
+          → Structured output (JSON mode)
+        </td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          <strong>Phase 1 完整覆盖 (3 周)</strong><br>
+          <strong>W1</strong> 3 家 API 对比 + LLM Ops 概念<br>
+          <strong>W2</strong> API 参数调优 + Token 计数 + Cost tracking<br>
+          <strong>W3</strong> Prompt Engineering + System Prompt 设计<br>
+          <strong>W5</strong> Rate Limiting + 成本管理
+        </td>
+        <td style="padding:12px 14px;text-align:center"><span style="padding:4px 12px;background:#dcfce7;font-weight:900;font-size:14px;border:2px solid #16a34a;color:#16a34a">95%</span></td>
+      </tr>
+
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:12px 14px;font-weight:900;font-size:18px;color:var(--red)">3</td>
+        <td style="padding:12px 14px;font-weight:800">Agent 开发<br>Agentic Systems</td>
+        <td style="padding:12px 14px"><span style="background:var(--red);color:#fff;padding:2px 8px;font-weight:700;font-family:'Space Mono',monospace">8/10</span></td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          → ReAct / Function Calling / Tool Use<br>
+          → Multi-Agent 系统 (LangGraph/CrewAI/AutoGen)<br>
+          → Agent Ops — 监控、评估、Guardrails<br>
+          → Human-in-the-loop 设计<br>
+          → MCP 协议 (2025 新增高频关键词)
+        </td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          <strong>Phase 3 完整覆盖 (3 周)</strong><br>
+          <strong>W7</strong> ReAct + Function Calling + Agentic RAG<br>
+          <strong>W8</strong> Multi-Agent + LangGraph + AutoGen + CrewAI<br>
+          <strong>W9</strong> MCP Server ×2 + Deep Agents<br>
+          <strong>Agent Ops</strong> LangSmith 全链路监控
+        </td>
+        <td style="padding:12px 14px;text-align:center"><span style="padding:4px 12px;background:#dcfce7;font-weight:900;font-size:14px;border:2px solid #16a34a;color:#16a34a">95%</span></td>
+      </tr>
+
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:12px 14px;font-weight:900;font-size:18px;color:var(--red)">4</td>
+        <td style="padding:12px 14px;font-weight:800">LLM Ops 可观测<br>Monitoring & Eval</td>
+        <td style="padding:12px 14px"><span style="background:var(--orange);color:#fff;padding:2px 8px;font-weight:700;font-family:'Space Mono',monospace">7/10</span></td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          → LLM tracing + observability<br>
+          → Evaluation frameworks (offline + online)<br>
+          → A/B testing for prompts/models<br>
+          → Cost monitoring + budget alerts<br>
+          → Hallucination detection + quality metrics
+        </td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          <strong>W5.3</strong> LangSmith Tracing + Debugging<br>
+          <strong>W6.1</strong> RAGAS 评估 (4 指标)<br>
+          <strong>W6.1</strong> Langfuse 可观测平台<br>
+          <strong>W8.2</strong> Agent Ops 三大支柱<br>
+          贯穿每个项目的监控接入
+        </td>
+        <td style="padding:12px 14px;text-align:center"><span style="padding:4px 12px;background:#dcfce7;font-weight:900;font-size:14px;border:2px solid #16a34a;color:#16a34a">90%</span></td>
+      </tr>
+
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:12px 14px;font-weight:900;font-size:18px;color:var(--red)">5</td>
+        <td style="padding:12px 14px;font-weight:800">Python 工程能力<br>Python + Backend</td>
+        <td style="padding:12px 14px"><span style="background:var(--orange);color:#fff;padding:2px 8px;font-weight:700;font-family:'Space Mono',monospace">7/10</span></td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          → Python 3.10+ 异步编程<br>
+          → FastAPI / Flask REST API<br>
+          → Docker 容器化<br>
+          → Git + CI/CD<br>
+          → 代码质量 (typing, testing, linting)
+        </td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          <strong>先修要求</strong> Python + API + Git 基础<br>
+          课程代码全部 Python<br>
+          每个项目都有 GitHub 仓库要求<br>
+          <span style="color:var(--red);font-weight:700">Docker/CI 覆盖较浅</span>
+        </td>
+        <td style="padding:12px 14px;text-align:center"><span style="padding:4px 12px;background:#fef3c7;font-weight:900;font-size:14px;border:2px solid #d97706;color:#d97706">75%</span></td>
+      </tr>
+
+      <tr style="border-bottom:1px solid #eee;background:#fafafa">
+        <td style="padding:12px 14px;font-weight:900;font-size:18px;color:var(--red)">6</td>
+        <td style="padding:12px 14px;font-weight:800">模型微调<br>Fine-Tuning</td>
+        <td style="padding:12px 14px"><span style="background:var(--blue);color:#fff;padding:2px 8px;font-weight:700;font-family:'Space Mono',monospace">5/10</span></td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          → LoRA / QLoRA / PEFT<br>
+          → 数据准备 + 质量控制<br>
+          → Evaluation (perplexity, task metrics)<br>
+          → HuggingFace 生态<br>
+          → 开源模型部署 (vLLM, TGI)
+        </td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          <strong>Phase 4 完整覆盖 (3 周)</strong><br>
+          <strong>W10</strong> SDG + Embedding Fine-Tuning<br>
+          <strong>W11</strong> PEFT + QLoRA + Llama 3.1 微调<br>
+          HuggingFace Hub 上传 + 评测
+        </td>
+        <td style="padding:12px 14px;text-align:center"><span style="padding:4px 12px;background:#dcfce7;font-weight:900;font-size:14px;border:2px solid #16a34a;color:#16a34a">90%</span></td>
+      </tr>
+
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:12px 14px;font-weight:900;font-size:18px;color:var(--red)">7</td>
+        <td style="padding:12px 14px;font-weight:800">云平台部署<br>Cloud / MLOps</td>
+        <td style="padding:12px 14px"><span style="background:var(--blue);color:#fff;padding:2px 8px;font-weight:700;font-family:'Space Mono',monospace">6/10</span></td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          → AWS (Bedrock, Lambda, SageMaker)<br>
+          → GCP (Vertex AI)<br>
+          → Azure (Azure AI)<br>
+          → Kubernetes / Docker 部署<br>
+          → Serverless 架构
+        </td>
+        <td style="padding:12px 14px;font-size:12px;line-height:1.8">
+          <strong>W1.1</strong> AWS Bedrock API 调用<br>
+          <strong>W12.2</strong> AWS Agentcore<br>
+          <strong>录播</strong> 用 AWS 构建 RAG 应用<br>
+          <span style="color:var(--red);font-weight:700">GCP/Azure/K8s 不覆盖</span>
+        </td>
+        <td style="padding:12px 14px;text-align:center"><span style="padding:4px 12px;background:#fef3c7;font-weight:900;font-size:14px;border:2px solid #d97706;color:#d97706">60%</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Gap analysis -->
+  <div style="padding:20px 28px;border-top:3px solid #000;background:#fffbeb">
+    <h3 style="font-size:18px;font-weight:900;margin-bottom:12px">JD 中的 Nice-to-Have（我们未覆盖/轻度覆盖）</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;font-size:13px">
+      <div>
+        <div style="font-weight:700;margin-bottom:8px;color:#92400e">技术类 Nice-to-Have</div>
+        <table style="width:100%;border-collapse:collapse">
+          <tr><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0">Kubernetes / Docker Compose 编排</td><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0;color:#dc2626;font-weight:700">不覆盖</td></tr>
+          <tr><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0">GCP Vertex AI / Azure OpenAI</td><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0;color:#dc2626;font-weight:700">不覆盖 (只教 AWS)</td></tr>
+          <tr><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0">GraphRAG / Knowledge Graphs</td><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0;color:#dc2626;font-weight:700">不覆盖</td></tr>
+          <tr><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0">vLLM / TGI 本地部署</td><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0;color:#d97706;font-weight:700">轻度 (Colab 推理)</td></tr>
+          <tr><td style="padding:4px 8px">Multimodal (Vision + Audio)</td><td style="padding:4px 8px;color:#dc2626;font-weight:700">不覆盖</td></tr>
+        </table>
+      </div>
+      <div>
+        <div style="font-weight:700;margin-bottom:8px;color:#92400e">软技能 / 认证</div>
+        <table style="width:100%;border-collapse:collapse">
+          <tr><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0">系统设计 (System Design)</td><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0;color:#d97706;font-weight:700">轻度 (项目中涉及)</td></tr>
+          <tr><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0">ML 研究论文阅读</td><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0;color:#d97706;font-weight:700">轻度 (Transformer 论文)</td></tr>
+          <tr><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0">AWS AI Practitioner 认证</td><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0;color:#16a34a;font-weight:700">可配合 JR 认证课</td></tr>
+          <tr><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0">Data Engineering (Spark/Kafka)</td><td style="padding:4px 8px;border-bottom:1px solid #f0e4c0;color:#dc2626;font-weight:700">不覆盖 (DE 岗)</td></tr>
+          <tr><td style="padding:4px 8px">传统 ML (XGBoost/Scikit-learn)</td><td style="padding:4px 8px;color:#dc2626;font-weight:700">不覆盖 (DS 岗)</td></tr>
+        </table>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding:12px 16px;background:#fff;border:2px solid #fbbf24;font-size:14px;line-height:1.8">
+      <strong>结论：</strong>未覆盖的 nice-to-have 主要是云多平台 (GCP/Azure)、容器编排 (K8s)、和传统 ML — 这些属于 DevOps 或 Data Scientist 的范畴。课程覆盖了 <strong>AI Engineer 核心 4 大能力 (RAG + Agent + MCP + LLM Ops) 的 90-95%</strong>，和 JD 需求高度对齐。
+    </div>
+  </div>
+
+  <!-- Salary reference -->
+  <div style="padding:16px 28px;border-top:2px solid #eee;background:#f0fdf4">
+    <h3 style="font-size:16px;font-weight:900;margin-bottom:8px">毕业生薪资参考 (AI Engineer)</h3>
+    <div style="display:flex;gap:24px;font-size:14px;flex-wrap:wrap">
+      <div><strong>Junior (0-2年):</strong> $100K-$150K USD</div>
+      <div><strong>Mid (2-5年):</strong> $150K-$220K USD</div>
+      <div><strong>Senior (5+年):</strong> $220K-$350K+ USD</div>
+      <div style="color:#888">来源: levels.fyi, Glassdoor, LinkedIn 2025</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MARKETING HIGHLIGHTS ============ -->
+<div style="margin-top:48px;border:3px solid #000;background:#fff;box-shadow:6px 6px 0 #000;overflow:hidden">
+  <div style="padding:20px 28px;background:linear-gradient(135deg, #6366f1, #ec4899);color:#fff;border-bottom:3px solid #000">
+    <h2 style="font-size:24px;font-weight:900">销售亮点 & Marketing 素材</h2>
+    <p style="font-size:14px;opacity:0.8;margin-top:4px">给 Marketing 和销售团队直接用</p>
+  </div>
+
+  <!-- One-liner -->
+  <div style="padding:24px 28px;background:#1a1a2e;color:#fff;border-bottom:3px solid #000;text-align:center">
+    <div style="font-size:12px;font-family:'Space Mono',monospace;color:rgba(255,255,255,0.5);margin-bottom:8px">ONE-LINER</div>
+    <div style="font-size:22px;font-weight:700;line-height:1.6;max-width:900px;margin:0 auto">
+      <span style="background:#6366f1;padding:2px 10px">12 周</span>从 Prompt Engineering 到 Fine-Tuning Llama 3.1，<span style="background:#ec4899;padding:2px 10px">7 个可部署项目</span>，<span style="background:#10b981;padding:2px 10px">15+ 生产工具</span>，毕业即可应聘 AI Engineer。
+    </div>
+  </div>
+
+  <!-- 5 selling points -->
+  <div style="padding:24px 28px">
+    <h3 style="font-size:20px;font-weight:900;margin-bottom:16px">5 大核心卖点</h3>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px">
+
+      <div style="border:3px solid #000;box-shadow:5px 5px 0 #000;overflow:hidden">
+        <div style="padding:12px 14px;background:#ff5757;color:#fff;font-weight:800;font-size:14px;text-align:center">卖点 1</div>
+        <div style="padding:14px">
+          <div style="font-size:15px;font-weight:900;text-align:center;margin-bottom:8px">7 个生产级项目</div>
+          <div style="font-size:12px;color:#666;line-height:1.7">
+            不是 Notebook 跑 Demo。<br>
+            RAG from Scratch → Production RAG → Agentic RAG → Multi-Agent → MCP Server → Fine-Tuning → ISA 全栈。<br><br>
+            <em>"每个项目都能部署到线上，放进简历"</em>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:3px solid #000;box-shadow:5px 5px 0 #000;overflow:hidden">
+        <div style="padding:12px 14px;background:#10b981;color:#fff;font-weight:800;font-size:14px;text-align:center">卖点 2</div>
+        <div style="padding:14px">
+          <div style="font-size:15px;font-weight:900;text-align:center;margin-bottom:8px">全栈 AI 工程能力</div>
+          <div style="font-size:12px;color:#666;line-height:1.7">
+            Prompt → RAG → Agent → MCP → Fine-Tuning。<br>
+            市面上的课只教其中 1-2 个。<br><br>
+            <em>"其他课教你调 API，我们教你从零到生产"</em>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:3px solid #000;box-shadow:5px 5px 0 #000;overflow:hidden">
+        <div style="padding:12px 14px;background:#6366f1;color:#fff;font-weight:800;font-size:14px;text-align:center">卖点 3</div>
+        <div style="padding:14px">
+          <div style="font-size:15px;font-weight:900;text-align:center;margin-bottom:8px">MCP 协议 (2025 热门)</div>
+          <div style="font-size:12px;color:#666;line-height:1.7">
+            Anthropic 的 Model Context Protocol。<br>
+            2025 年 AI Engineer JD 高频关键词。<br>
+            课上直接构建 2 个 MCP Server。<br><br>
+            <em>"别人还在学 API，你已经会写 MCP"</em>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:3px solid #000;box-shadow:5px 5px 0 #000;overflow:hidden">
+        <div style="padding:12px 14px;background:#f59e0b;color:#000;font-weight:800;font-size:14px;text-align:center">卖点 4</div>
+        <div style="padding:14px">
+          <div style="font-size:15px;font-weight:900;text-align:center;margin-bottom:8px">高薪岗位 $150K+</div>
+          <div style="font-size:12px;color:#666;line-height:1.7">
+            AI Engineer 是 2025 增长最快的技术岗。<br>
+            Junior $100K-$150K<br>
+            Mid $150K-$220K<br>
+            Senior $220K-$350K+<br><br>
+            <em>"用 12 周换一个高薪新赛道"</em>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:3px solid #000;box-shadow:5px 5px 0 #000;overflow:hidden">
+        <div style="padding:12px 14px;background:#E84142;color:#fff;font-weight:800;font-size:14px;text-align:center">卖点 5</div>
+        <div style="padding:14px">
+          <div style="font-size:15px;font-weight:900;text-align:center;margin-bottom:8px">中文授课 + 英文实操</div>
+          <div style="font-size:12px;color:#666;line-height:1.7">
+            直播中文讲解，代码和文档全英文。<br>
+            降低理解门槛，不降低技术标准。<br><br>
+            <em>"听得懂中文解释，写得出英文代码"</em>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Target personas -->
+  <div style="padding:24px 28px;border-top:2px solid #eee">
+    <h3 style="font-size:20px;font-weight:900;margin-bottom:16px">5 类目标用户 & 钩子话术</h3>
+    <table style="width:100%;border-collapse:collapse;font-size:13px">
+      <thead>
+        <tr style="background:#f5f5f5">
+          <th style="padding:10px 12px;text-align:left;border-bottom:2px solid #ddd;width:12%">用户</th>
+          <th style="padding:10px 12px;text-align:left;border-bottom:2px solid #ddd;width:25%">痛点</th>
+          <th style="padding:10px 12px;text-align:left;border-bottom:2px solid #ddd;width:30%">钩子话术</th>
+          <th style="padding:10px 12px;text-align:left;border-bottom:2px solid #ddd;width:33%">对应课程</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #eee">
+          <td style="padding:10px 12px"><strong>Backend Dev</strong></td>
+          <td style="padding:10px 12px">会写 CRUD API，不知道怎么转型 AI 方向</td>
+          <td style="padding:10px 12px;color:var(--indigo);font-weight:600">"你会写 API 就能学 AI Engineer — 12 周从 CRUD 到 RAG + Agent"</td>
+          <td style="padding:10px 12px;font-size:12px">全课程：先修只要 Python + API + Git</td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee;background:#fafafa">
+          <td style="padding:10px 12px"><strong>Data Scientist</strong></td>
+          <td style="padding:10px 12px">会训练模型，但不会构建生产级 LLM 应用</td>
+          <td style="padding:10px 12px;color:var(--indigo);font-weight:600">"从 Jupyter Notebook 到生产部署 — DS 转 AI Engineer 的捷径"</td>
+          <td style="padding:10px 12px;font-size:12px">Phase 2-3 RAG + Agent 工程化</td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+          <td style="padding:10px 12px"><strong>DevOps/SRE</strong></td>
+          <td style="padding:10px 12px">负责 AI 应用部署但不懂 LLM 原理</td>
+          <td style="padding:10px 12px;color:var(--indigo);font-weight:600">"理解 LLM 才能做好 AI Infra — 从 Transformer 到 LLM Ops"</td>
+          <td style="padding:10px 12px;font-size:12px">Phase 1 理论 + Phase 2-3 监控评估</td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee;background:#fafafa">
+          <td style="padding:10px 12px"><strong>CS 毕业生</strong></td>
+          <td style="padding:10px 12px">学校教的 ML 和市场要的 AI Engineer 差距大</td>
+          <td style="padding:10px 12px;color:var(--indigo);font-weight:600">"学校教 PyTorch，企业要 LangChain — 7 个项目补上工程化短板"</td>
+          <td style="padding:10px 12px;font-size:12px">全课程 + 7 个简历项目</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 12px"><strong>创业者/CTO</strong></td>
+          <td style="padding:10px 12px">想给产品加 AI 功能但团队没有 AI 能力</td>
+          <td style="padding:10px 12px;color:var(--indigo);font-weight:600">"12 周搭出你的 AI MVP — 从 RAG 到 MCP 全栈落地"</td>
+          <td style="padding:10px 12px;font-size:12px">Phase 2-3 Production RAG + MCP</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Competitor comparison -->
+  <div style="padding:24px 28px;border-top:2px solid #eee;background:#f9f9f9">
+    <h3 style="font-size:20px;font-weight:900;margin-bottom:16px">竞品对比</h3>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;background:#fff">
+      <thead>
+        <tr>
+          <th style="padding:10px 12px;border:2px solid #000;background:#f5f5f5;text-align:left">维度</th>
+          <th style="padding:10px 12px;border:2px solid #000;background:#f5f5f5;text-align:center">Andrew Ng<br>ML Specialization</th>
+          <th style="padding:10px 12px;border:2px solid #000;background:#f5f5f5;text-align:center">LLM University<br>(Cohere)</th>
+          <th style="padding:10px 12px;border:2px solid #000;background:#f5f5f5;text-align:center">Full Stack LLM<br>(Udemy/各类)</th>
+          <th style="padding:10px 12px;border:2px solid #000;background:#FFDE59;text-align:center;font-weight:900">JR Academy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:8px 12px;border:1px solid #ddd;font-weight:700">价格</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center">~$50/月</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center">免费</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center">$20-$200</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;font-weight:900;background:#fffde7">$1,499</td></tr>
+        <tr><td style="padding:8px 12px;border:1px solid #ddd;font-weight:700">时长</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center">3-6 月</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center">自学</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center">20-40h</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;font-weight:900;background:#fffde7">12 周 ~60h 直播</td></tr>
+        <tr><td style="padding:8px 12px;border:1px solid #ddd;font-weight:700">RAG 深度</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">不覆盖</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center">基础</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center">1-2 节</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;font-weight:900;background:#fffde7">3 周 + 3 项目</td></tr>
+        <tr><td style="padding:8px 12px;border:1px solid #ddd;font-weight:700">Agent / MCP</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">不覆盖</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">不覆盖</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">极少</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;font-weight:900;background:#fffde7">3 周 + MCP ×2</td></tr>
+        <tr><td style="padding:8px 12px;border:1px solid #ddd;font-weight:700">Fine-Tuning</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center">理论</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">不覆盖</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center">1 节 Demo</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;font-weight:900;background:#fffde7">3 周 QLoRA 实战</td></tr>
+        <tr><td style="padding:8px 12px;border:1px solid #ddd;font-weight:700">生产项目</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center">练习题</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center">Notebook</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center">1-2 个</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;font-weight:900;background:#fffde7">7 个可部署</td></tr>
+        <tr><td style="padding:8px 12px;border:1px solid #ddd;font-weight:700">中文教学</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">英文</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">英文</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center">部分中文</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;font-weight:900;background:#fffde7">中文直播</td></tr>
+        <tr><td style="padding:8px 12px;border:1px solid #ddd;font-weight:700">老师互动</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">论坛</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">无</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;color:#dc2626">无</td><td style="padding:8px 12px;border:1px solid #ddd;text-align:center;font-weight:900;background:#fffde7">每周直播 + Review</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:12px;padding:10px 16px;background:#fff;border:2px solid #6366f1;font-size:14px;font-weight:700;text-align:center">
+      "Coursera 的理论深度 × Bootcamp 的项目密度 × 中文母语的理解效率"
+    </div>
+  </div>
+
+  <!-- Social media copy -->
+  <div style="padding:24px 28px;border-top:2px solid #eee">
+    <h3 style="font-size:20px;font-weight:900;margin-bottom:16px">社交媒体文案 (直接复制用)</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div>
+        <div style="font-weight:700;margin-bottom:10px;color:var(--red)">小红书 / 朋友圈标题</div>
+        <ol style="font-size:13px;line-height:2.2;padding-left:20px">
+          <li>"AI Engineer 年薪 $150K+，只需要 12 周"</li>
+          <li>"会写 CRUD 就能转型 AI Engineer？是的"</li>
+          <li>"别人还在调 ChatGPT，我已经在写 MCP Server 了"</li>
+          <li>"从零构建 RAG 系统，面试直接聊项目"</li>
+          <li>"用 QLoRA 微调 Llama 3.1，不需要 A100 也能跑"</li>
+          <li>"7 个可部署项目 vs Udemy 的 Notebook Demo，差距在哪"</li>
+          <li>"LangChain + LangGraph + MCP — 2025 AI Engineer 三件套"</li>
+          <li>"Data Scientist 转 AI Engineer 最快的路"</li>
+          <li>"后端开发的 AI 转型之路：12 周实操指南"</li>
+          <li>"简历写 RAG + Agent + MCP 经验，HR 直接约面"</li>
+        </ol>
+      </div>
+      <div>
+        <div style="font-weight:700;margin-bottom:10px;color:var(--indigo)">短视频脚本 (30s TikTok/Reels)</div>
+        <div style="background:#f5f5f5;padding:14px;font-size:13px;line-height:1.8;border:2px solid #ddd">
+          <strong>Hook (0-3s):</strong><br>
+          "AI Engineer 年薪 $150K，只要 12 周？"<br><br>
+          <strong>Problem (3-10s):</strong><br>
+          "Coursera 教你 PyTorch 写论文，企业要你用 LangChain 搭 RAG + Agent。中间差了一个 Bootcamp。"<br><br>
+          <strong>Solution (10-20s):</strong><br>
+          "12 周 7 个项目：RAG → Agent → MCP → Fine-Tuning。全部可部署到生产环境。"<br><br>
+          <strong>CTA (20-30s):</strong><br>
+          "评论扣 'AI' 看课程大纲"
+        </div>
+
+        <div style="font-weight:700;margin-top:16px;margin-bottom:10px;color:#0077b5">LinkedIn 帖子</div>
+        <div style="background:#f5f5f5;padding:14px;font-size:12px;line-height:1.8;border:2px solid #ddd">
+          The AI Engineer role didn't exist 2 years ago.<br>
+          Now it's the fastest-growing tech job on LinkedIn.<br><br>
+          What companies actually want:<br>
+          → Build RAG systems from scratch<br>
+          → Ship Multi-Agent apps with LangGraph<br>
+          → Write MCP Servers for tool integration<br>
+          → Fine-tune Llama 3.1 with QLoRA<br>
+          → Monitor everything with LangSmith<br><br>
+          Not "prompt engineering". Not "Jupyter notebooks".<br>
+          Production-grade AI applications.<br><br>
+          12 weeks. 7 deployable projects. One career shift.<br><br>
+          #AIEngineer #LangChain #MCP #RAG #LLM
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  JR Academy · AI Engineer Bootcamp · 内部资料 · 请勿外传
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phase 4: Fine-Tuning + 毕业项目 — AI Engineer Bootcamp</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>Phase 4: Fine-Tuning + 毕业项目</h1>
+  <div class="sub">Week 10-12 · 直播 + 项目 · 模型微调 + 小组项目展示</div>
+  <div class="nav"><a href="phase3.html">← Phase 3</a> | <a href="curriculum.html">课程总览</a></div>
+</div>
+
+<div class="c">
+
+<!-- ===== Week 10 ===== -->
+<div class="box">
+  <div class="box-h" style="background:var(--red)">
+    <span style="font-size:18px;font-weight:900">Week 10 · Synthetic Data Generation + Embedding 微调</span>
+    <span style="float:right;opacity:0.7" class="mono">直播</span>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-head">
+      <span class="pill" style="background:var(--red);color:#fff">10.1</span>
+      <h4>Synthetic Data Generation (SDG)</h4>
+      <span class="pill" style="background:var(--red);color:#fff">直播</span>
+    </div>
+    <div class="lesson-body">
+      <div>
+        <h5>📖 教学内容</h5>
+        <p><strong>为什么需要 SDG</strong>：真实标注数据贵且慢，用 LLM 生成训练数据<br><br>
+        <strong>SDG for Fine-Tuning</strong>：<br>
+        - Prompt-Based Data Generation — 用 GPT-4 生成 instruction-following 数据<br>
+        - Self-Instruct / Evol-Instruct 方法<br>
+        - 数据质量过滤和去重<br><br>
+        <strong>SDG for RAG Evaluation</strong>：<br>
+        - Test Data Generation for RAG — 自动生成 QA 对<br>
+        - In-Depth Evolution — 让测试问题越来越难<br>
+        - Custom Synthetic Test Data — 针对特定领域定制</p>
+        <div class="tools"><span class="tool">OpenAI API</span><span class="tool">RAGAS</span><span class="tool">Python</span></div>
+      </div>
+      <div>
+        <h5>🔬 Lab 实操</h5>
+        <p>1. 用 GPT-4 生成 500 条 Fine-Tuning 数据<br>
+        2. 实现数据质量过滤 pipeline<br>
+        3. 为 RAG 系统生成评估测试集<br>
+        4. 用 Evolution 方法生成不同难度的测试问题</p>
+        <span class="review ai">🤖 数据质量评分</span>
+      </div>
+      <div>
+        <h5>📋 作业</h5>
+        <p>为 ISA 项目生成：<br>
+        1. 1000 条 Fine-Tuning 训练数据<br>
+        2. 100 条 RAG 评估测试数据<br><br>
+        提交数据集 + 质量分析报告</p>
+        <span class="review teacher">👨‍🏫 数据质量 Review</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-head">
+      <span class="pill" style="background:var(--red);color:#fff">10.2</span>
+      <h4>Embedding Fine-Tuning</h4>
+      <span class="pill" style="background:var(--red);color:#fff">直播</span>
+    </div>
+    <div class="lesson-body">
+      <div>
+        <h5>📖 教学内容</h5>
+        <p><strong>为什么微调 Embedding</strong>：通用 Embedding 在特定领域表现不佳<br><br>
+        <strong>MTEB (Massive Text Embedding Benchmark)</strong>：<br>
+        - 如何评估 Embedding 模型质量<br>
+        - 选择基础模型的标准<br><br>
+        <strong>Sentence Transformers</strong>：<br>
+        - 训练框架和 Loss 函数<br>
+        - Contrastive Learning / Triplet Loss<br>
+        - Fine-Tuning Embeddings for RAG — 让检索质量显著提升</p>
+        <div class="tools"><span class="tool">Sentence Transformers</span><span class="tool">HuggingFace</span></div>
+      </div>
+      <div>
+        <h5>🔬 Lab 实操</h5>
+        <p>1. 下载开源 Embedding 模型<br>
+        2. 准备训练数据（positive/negative pairs）<br>
+        3. 用 Sentence Transformers 微调<br>
+        4. 对比微调前后的 RAG 检索质量（Recall@5、MRR）</p>
+        <span class="review ai">🤖 Embedding 质量对比</span>
+      </div>
+      <div>
+        <h5>📋 作业</h5>
+        <p>为 ISA 微调 Embedding 模型：<br>
+        - 用领域数据训练<br>
+        - MTEB 评测结果<br>
+        - 在 RAG 系统中替换 Embedding，对比效果</p>
+        <span class="review teacher">👨‍🏫 微调效果 Review</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ai-self">
+    <strong>📹 Week 10 自学内容</strong>
+    <div class="ai-self-grid">
+      <div class="ai-self-card">
+        <span class="lab-tag">INFO</span>
+        <div class="lab-name">SDG Toolkit</div>
+        <div class="lab-desc">合成数据生成工具全景：Self-Instruct、Evol-Instruct、Alpaca</div>
+      </div>
+      <div class="ai-self-card">
+        <span class="lab-tag">INFO</span>
+        <div class="lab-name">Embedding Fine-Tuning Toolkit</div>
+        <div class="lab-desc">Embedding 微调工具链和最佳实践</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Week 11 ===== -->
+<div class="box">
+  <div class="box-h" style="background:var(--red)">
+    <span style="font-size:18px;font-weight:900">Week 11 · LLM Fine-Tuning: PEFT + QLoRA</span>
+    <span style="float:right;opacity:0.7" class="mono">直播 + 项目</span>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-head">
+      <span class="pill" style="background:var(--red);color:#fff">11.1</span>
+      <h4>Fine-Tuning 基础</h4>
+      <span class="pill" style="background:var(--red);color:#fff">直播</span>
+    </div>
+    <div class="lesson-body">
+      <div>
+        <h5>📖 教学内容</h5>
+        <p><strong>Fine-Tuning 的三大角色</strong>：<br>
+        1. <strong>Style/Format</strong> — 控制输出风格和格式<br>
+        2. <strong>Knowledge</strong> — 注入领域知识<br>
+        3. <strong>Capability</strong> — 增强特定能力（代码、推理）<br><br>
+        <strong>何时 Fine-Tuning vs RAG vs Prompt</strong>：<br>
+        - RAG: 知识更新频繁、需要引用来源<br>
+        - Fine-Tuning: 固定模式、低延迟、特定风格<br>
+        - 两者结合: Fine-Tuned Model + RAG</p>
+      </div>
+      <div>
+        <h5>🔬 Lab 实操</h5>
+        <p><strong>Downloading Open-Source Model Weights</strong>：<br>
+        - HuggingFace Hub 模型下载和管理<br>
+        - Model Card 怎么看、License 怎么选<br><br>
+        <strong>Loading LMs on GPU</strong>：<br>
+        - GPU 显存计算：参数量 × 精度 = 显存需求<br>
+        - FP32/FP16/BF16/INT8/INT4 的区别<br>
+        - Google Colab T4 能跑多大的模型</p>
+        <span class="review ai">🤖 模型加载验证</span>
+      </div>
+      <div>
+        <h5>📋 作业</h5>
+        <p>在 Google Colab 上：<br>
+        1. 下载 Llama 3.1 8B 模型<br>
+        2. 用 INT4 量化加载<br>
+        3. 运行推理测试<br>
+        4. 记录显存占用和推理速度</p>
+        <span class="review ai">🤖 Colab notebook 验证</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-head">
+      <span class="pill" style="background:var(--red);color:#fff">11.2</span>
+      <h4>PEFT + Quantization + QLoRA</h4>
+      <span class="pill" style="background:var(--red);color:#fff">直播</span>
+    </div>
+    <div class="lesson-body">
+      <div>
+        <h5>📖 教学内容</h5>
+        <p><strong>PEFT (Parameter Efficient Fine-Tuning)</strong>：<br>
+        - Full Fine-Tuning vs LoRA vs QLoRA<br>
+        - LoRA 原理：低秩分解，只训练 A×B 矩阵<br>
+        - rank、alpha、target_modules 参数选择<br><br>
+        <strong>Quantization 量化</strong>：<br>
+        - GPTQ、AWQ、bitsandbytes<br>
+        - 4-bit NormalFloat (NF4) — QLoRA 核心<br><br>
+        <strong>QLoRA = Quantization + LoRA</strong>：<br>
+        在 4-bit 量化模型上做 LoRA 微调 — 消费级 GPU 可用</p>
+        <div class="tools"><span class="tool">PEFT</span><span class="tool">bitsandbytes</span><span class="tool">HuggingFace Transformers</span></div>
+      </div>
+      <div>
+        <h5>🔬 Lab 实操</h5>
+        <p><strong>Project: Fine-Tuning Llama 3.1 with PEFT-QLoRA</strong><br><br>
+        在 Google Colab 或 AWS EC2 上：<br>
+        1. 加载 Llama 3.1 8B (4-bit quantized)<br>
+        2. 准备训练数据（Week 10 生成的 SDG 数据）<br>
+        3. 配置 LoRA (rank=16, alpha=32)<br>
+        4. 训练 3 epochs<br>
+        5. 评估：perplexity、task-specific metrics<br>
+        6. 合并权重并导出</p>
+        <span class="review teacher">👨‍🏫 Fine-Tuning 结果 Review</span>
+      </div>
+      <div>
+        <h5>📋 作业</h5>
+        <p>提交 Fine-Tuning 完整报告：<br>
+        - 训练配置（hyperparameters）<br>
+        - Loss 曲线<br>
+        - 微调前后的对比评测<br>
+        - 模型上传到 HuggingFace Hub<br><br>
+        为 ISA 部署微调后的模型</p>
+        <span class="review teacher">👨‍🏫 老师评审</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Week 12 ===== -->
+<div class="box">
+  <div class="box-h" style="background:var(--red)">
+    <span style="font-size:18px;font-weight:900">Week 12 · 小组项目展示 + 职业发展</span>
+    <span style="float:right;opacity:0.7" class="mono">直播 · Demo Day</span>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-head">
+      <span class="pill" style="background:var(--red);color:#fff">12.1</span>
+      <h4>小组 AI 项目展示</h4>
+      <span class="pill" style="background:var(--red);color:#fff">直播 · Demo Day</span>
+    </div>
+    <div class="lesson-body">
+      <div>
+        <h5>📖 展示内容</h5>
+        <p>每组 15-20 分钟展示：<br><br>
+        1. <strong>问题定义</strong> — 解决什么问题、为什么重要<br>
+        2. <strong>技术架构</strong> — 用了哪些技术、为什么这么选<br>
+        3. <strong>Live Demo</strong> — 现场演示核心功能<br>
+        4. <strong>技术亮点</strong> — 最有技术含量的部分<br>
+        5. <strong>反思</strong> — 踩了什么坑、如何改进</p>
+      </div>
+      <div>
+        <h5>🔬 评审标准</h5>
+        <p><strong>技术 (40%)</strong>：架构设计、代码质量、工程化程度<br><br>
+        <strong>产品 (30%)</strong>：解决真实问题、用户体验<br><br>
+        <strong>展示 (20%)</strong>：清晰表达、Demo 流畅度<br><br>
+        <strong>创新 (10%)</strong>：有没有做出竞品没有的东西</p>
+        <span class="review teacher">👨‍🏫 老师 + 嘉宾评审</span>
+      </div>
+      <div>
+        <h5>📋 提交</h5>
+        <p>- GitHub 仓库（含 README）<br>
+        - Demo URL 或视频<br>
+        - 技术文档<br>
+        - 演示 PPT<br><br>
+        优秀项目有机会作为 JR Academy showcase 展示</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-head">
+      <span class="pill" style="background:var(--red);color:#fff">12.2</span>
+      <h4>AWS Agentcore + AI Engineer 职业路径</h4>
+      <span class="pill" style="background:var(--red);color:#fff">直播</span>
+    </div>
+    <div class="lesson-body">
+      <div>
+        <h5>📖 教学内容</h5>
+        <p><strong>AWS Agentcore</strong>：<br>
+        - 企业级 Agent 基础设施<br>
+        - Agent 部署、监控、扩展的最佳实践<br><br>
+        <strong>AI Engineer 职业路径</strong>：<br>
+        - Junior → Senior → Staff AI Engineer 的技能地图<br>
+        - 薪资范围和市场需求数据<br>
+        - 面试准备：常见 AI Engineer 面试题型</p>
+      </div>
+      <div>
+        <h5>🔬 互动环节</h5>
+        <p><strong>LinkedIn & CV Workshop</strong>：<br>
+        - 如何在简历中展示 AI 项目<br>
+        - LinkedIn profile 优化<br>
+        - 用 12 周学到的技术重写简历技术栈<br><br>
+        1v1 简历点评（时间允许的情况下）</p>
+        <span class="review teacher">👨‍🏫 简历 Review</span>
+      </div>
+      <div>
+        <h5>📋 毕业产出</h5>
+        <p>完成 12 周后，你拥有：<br>
+        - 7 个 GitHub 实战项目<br>
+        - ISA 全栈 AI 应用（Prompt + RAG + Agent + MCP + Fine-Tuning）<br>
+        - 小组项目作品<br>
+        - 更新后的技术简历<br>
+        - AI Engineer 技能证书</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ai-self">
+    <strong>📹 补充学习材料</strong>
+    <div class="ai-self-grid">
+      <div class="ai-self-card">
+        <span class="lab-tag">VIDEO</span>
+        <div class="lab-name">LinkedIn & CV 2024.12.08</div>
+        <div class="lab-desc">LinkedIn profile 优化和 AI Engineer 简历写法</div>
+      </div>
+      <div class="ai-self-card">
+        <span class="lab-tag">VIDEO</span>
+        <div class="lab-name">自拟小组 AI 项目介绍</div>
+        <div class="lab-desc">往期优秀小组项目案例分享</div>
+      </div>
+      <div class="ai-self-card">
+        <span class="lab-tag">INFO</span>
+        <div class="lab-name">AI 模型对比参考</div>
+        <div class="lab-desc">GPT-4o vs Claude vs Gemini vs Llama — 最新性能对比</div>
+      </div>
+      <div class="ai-self-card">
+        <span class="lab-tag">INFO</span>
+        <div class="lab-name">LLM API 入门</div>
+        <div class="lab-desc">各家 LLM API 快速入门指南</div>
+      </div>
+      <div class="ai-self-card">
+        <span class="lab-tag">INFO</span>
+        <div class="lab-name">Prompt Engineering</div>
+        <div class="lab-desc">Prompt Engineering 方法论总结</div>
+      </div>
+      <div class="ai-self-card">
+        <span class="lab-tag">INFO</span>
+        <div class="lab-name">RAG 系统入门</div>
+        <div class="lab-desc">RAG 系统设计和实现参考</div>
+      </div>
+      <div class="ai-self-card">
+        <span class="lab-tag">INFO</span>
+        <div class="lab-name">Chain-of-Thought (CoT)</div>
+        <div class="lab-desc">CoT 推理原理和应用场景</div>
+      </div>
+      <div class="ai-self-card">
+        <span class="lab-tag">INFO</span>
+        <div class="lab-name">ReAct 介绍</div>
+        <div class="lab-desc">ReAct 框架详解：推理 + 行动</div>
+      </div>
+      <div class="ai-self-card">
+        <span class="lab-tag">INFO</span>
+        <div class="lab-name">Evaluation & Quality Monitoring</div>
+        <div class="lab-desc">LLM 应用评估和质量监控体系</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <a href="phase3.html">← Phase 3: Agents + MCP</a> &nbsp;|&nbsp; <a href="curriculum.html">课程总览</a>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phase 3: Agents + MCP — AI Engineer Bootcamp</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>Phase 3: Agents + MCP</h1>
+  <div class="sub">Week 7-9 · 直播 + 项目 · Agent 工程化 + MCP 协议</div>
+  <div class="nav"><a href="phase2.html">← Phase 2</a> | <a href="curriculum.html">课程总览</a> | <a href="phase4.html">Phase 4 →</a></div>
+</div>
+
+<div class="c">
+
+<!-- ===== Week 7 ===== -->
+<div class="box">
+  <div class="box-h" style="background:var(--orange)">
+    <span style="font-size:18px;font-weight:900">Week 7 · Agent 基础 + Agentic RAG</span>
+    <span style="float:right;opacity:0.7" class="mono">直播 + 项目</span>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-head">
+      <span class="pill" style="background:var(--orange);color:#fff">7.1</span>
+      <h4>Agents 基础</h4>
+      <span class="pill" style="background:var(--orange);color:#fff">直播</span>
+    </div>
+    <div class="lesson-body">
+      <div>
+        <h5>📖 教学内容</h5>
+        <p><strong>什么是 Agent</strong> — LLM + 推理 + 工具调用 + 记忆的组合<br><br>
+        <strong>ReAct Framework</strong>：Reasoning + Action 交替执行<br>
+        - Thought → Action → Observation → Thought → ...<br>
+        - 为什么 ReAct 比纯 Prompt 更可靠<br><br>
+        <strong>Function Calling / Tool Use</strong>：<br>
+        - OpenAI function calling API<br>
+        - 如何定义 Tool Schema<br>
+        - Search + Retrieval + Calculator 工具实现</p>
+        <div class="tools"><span class="tool">LangChain Agents</span><span class="tool">OpenAI Functions</span></div>
+      </div>
+      <div>
+        <h5>🔬 Lab 实操</h5>
+        <p>1. 实现 ReAct Agent — 从零写 Thought/Action/Observation 循环<br>
+        2. 用 Function Calling 给 Agent 加工具：<br>
+        &nbsp;&nbsp;- Web Search（Tavily/SerpAPI）<br>
+        &nbsp;&nbsp;- Calculator<br>
+        &nbsp;&nbsp;- RAG Retriever（Week 4-6 的成果）<br>
+        3. Agent 自主决策：给一个复杂问题，观察 Agent 如何分步推理</p>
+        <span class="review ai">🤖 Agent 任务完成率评测</span>
+      </div>
+      <div>
+        <h5>📋 作业</h5>
+        <p><strong>Agent 详解：构建第一个 Agent</strong><br><br>
+        用 LangChain Agent + 至少 3 个工具，构建一个能：<br>
+        1. 搜索网络获取实时信息<br>
+        2. 检索本地知识库<br>
+        3. 做数据计算<br><br>
+        的综合 Agent 应用</p>
+        <span class="review teacher">👨‍🏫 Agent 设计 Review</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-head">
+      <span class="pill" style="background:var(--orange);color:#fff">7.2</span>
+      <h4>Project: Production-grade Agentic RAG</h4>
+      <span class="pill" style="background:var(--orange);color:#fff">直播</span>
+    </div>
+    <div class="lesson-body">
+      <div>
+        <h5>📖 教学内容</h5>
+        <p><strong>Agentic RAG vs Naive RAG</strong>：<br>
+        - Naive RAG: Query → Retrieve → Generate（固定管线）<br>
+        - Agentic RAG: Agent 自主决策何时检索、用什么工具、是否需要追问<br><br>
+        <strong>路由决策</strong>：Agent 根据 query 类型选择不同策略<br>
+        <strong>错误恢复</strong>：检索失败时的 fallback 机制<br>
+        <strong>生产化</strong>：Rate limiting、Caching、Error handling、Logging</p>
+        <div class="tools"><span class="tool">LangChain</span><span class="tool">LangSmith</span></div>
+      </div>
+      <div>
+        <h5>🔬 Lab 实操</h5>
+        <p><strong>Project: Building a Production-grade Agentic RAG Application</strong><br><br>
+        在 Phase 2 的 RAG 基础上升级：<br>
+        1. 添加 Agent 层 — 自主决策检索策略<br>
+        2. 多工具路由 — 不同类型问题走不同管线<br>
+        3. 错误恢复 — 检索失败自动切换策略<br>
+        4. LangSmith 全链路监控</p>
+        <span class="review teacher">👨‍🏫 项目 Demo + 架构 Review</span>
+      </div>
+      <div>
+        <h5>📋 作业</h5>
+        <p>为 ISA 升级 Agent 能力：<br>
+        - 自主选择知识库 vs 网络搜索<br>
+        - 多轮推理能力（follow-up questions）<br>
+        - 部署并测试 10 个真实场景<br><br>
+        提交 LangSmith Trace 截图</p>
+        <span class="review teacher">👨‍🏫 ISA Agent Review</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Week 8 ===== -->
+<div class="box">
+  <div class="box-h" style="background:var(--orange)">
+    <span style="font-size:18px;font-weight:900">Week 8 · Multi-Agent + LangGraph</span>
+    <span style="float:right;opacity:0.7" class="mono">直播 + 项目</span>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-head">
+      <span class="pill" style="background:var(--orange);color:#fff">8.1</span>
+      <h4>Multi-Agent Architectures</h4>
+      <span class="pill" style="background:var(--orange);color:#fff">直播</span>
+    </div>
+    <div class="lesson-body">
+      <div>
+        <h5>📖 教学内容</h5>
+        <p><strong>三种多 Agent 架构</strong>：<br>
+        1. <strong>Hierarchical</strong> — Boss Agent 分配任务给 Worker Agents<br>
+        2. <strong>Collaborative</strong> — Agent 之间平等协作，共享上下文<br>
+        3. <strong>Supervised</strong> — Supervisor 监控 Agent 行为，可以打断和修正<br><br>
+        <strong>何时用 Multi-Agent</strong>：任务复杂度决策矩阵<br>
+        <strong>状态管理</strong>：Agent 之间如何传递上下文和中间结果</p>
+        <div class="tools"><span class="tool">LangGraph</span><span class="tool">AutoGen</span><span class="tool">CrewAI</span></div>
+      </div>
+      <div>
+        <h5>🔬 Lab 实操</h5>
+        <p>1. 用 LangGraph 实现 Hierarchical Agent 系统<br>
+        2. 状态图可视化 — 观察 Agent 之间的消息传递<br>
+        3. 对比 AutoGen vs CrewAI vs LangGraph 的设计理念和 API</p>
+        <span class="review ai">🤖 Multi-Agent 任务验证</span>
+      </div>
+      <div>
+        <h5>📋 作业</h5>
+        <p>设计一个 Multi-Agent 系统：<br>
+        - Research Agent：搜索信息<br>
+        - Analysis Agent：分析数据<br>
+        - Writer Agent：生成报告<br>
+        - Supervisor：协调三个 Agent<br><br>
+        画出架构图 + 状态流转图</p>
+        <span class="review teacher">👨‍🏫 架构设计 Review</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-head">
+      <span class="pill" style="background:var(--orange);color:#fff">8.2</span>
+      <h4>Agent Operations (Agent Ops) with LangSmith</h4>
+      <span class="pill" style="background:var(--orange);color:#fff">直播</span>
+    </div>
+    <div class="lesson-body">
+      <div>
+        <h5>📖 教学内容</h5>
+        <p><strong>Agent Ops 三大支柱</strong>：<br>
+        1. <strong>Observability</strong> — Trace 每个 Agent 的推理过程<br>
+        2. <strong>Evaluation</strong> — Agent 输出质量评估（task completion rate、hallucination rate）<br>
+        3. <strong>Guardrails</strong> — 限制 Agent 行为边界、防止 prompt injection<br><br>
+        <strong>Multi-Agent Frameworks 对比</strong>：AutoGen vs CrewAI 实操</p>
+        <div class="tools"><span class="tool">LangSmith</span><span class="tool">AutoGen</span><span class="tool">CrewAI</span></div>
+      </div>
+      <div>
+        <h5>🔬 Lab 实操</h5>
+        <p>1. LangSmith 多 Agent Trace — 追踪跨 Agent 的完整调用链<br>
+        2. 用 AutoGen 实现同一个 Multi-Agent 任务<br>
+        3. 用 CrewAI 实现同一个任务<br>
+        4. 对比三个框架的 DevX、性能、可观测性</p>
+        <span class="review ai">🤖 框架对比报告生成</span>
+      </div>
+      <div>
+        <h5>📋 作业</h5>
+        <p>为你的 Multi-Agent 系统添加完整的 Agent Ops：<br>
+        - LangSmith tracing<br>
+        - 自动化评估 pipeline<br>
+        - Input/Output guardrails</p>
+        <span class="review teacher">👨‍🏫 Agent Ops Review</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-head">
+      <span class="pill" style="background:var(--orange);color:#fff">8.3</span>
+      <h4>Project: Multi-Agent RAG with LangGraph</h4>
+      <span class="pill" style="background:var(--orange);color:#fff">直播</span>
+    </div>
+    <div class="lesson-body">
+      <div>
+        <h5>📖 教学内容</h5>
+        <p><strong>LangGraph 深度实操</strong>：<br>
+        - StateGraph — 定义 Agent 状态和转换<br>
+        - Nodes — 每个 Agent 是一个 Node<br>
+        - Edges — 条件路由（conditional edges）<br>
+        - Checkpointing — 长时间运行的 Agent 状态保存</p>
+        <div class="tools"><span class="tool">LangGraph</span><span class="tool">LangSmith</span></div>
+      </div>
+      <div>
+        <h5>🔬 Lab 实操</h5>
+        <p><strong>Project: Building a Multi-Agent RAG Application with LangGraph</strong><br><br>
+        构建完整多 Agent RAG 系统：<br>
+        1. Query Router Agent — 判断问题类型<br>
+        2. Retrieval Agent — 多源检索（文档 + Web）<br>
+        3. Generation Agent — 综合回答<br>
+        4. Evaluation Agent — 自动评估答案质量<br>
+        5. StateGraph 编排 + 条件路由</p>
+        <span class="review teacher">👨‍🏫 项目 Demo Day</span>
+      </div>
+      <div>
+        <h5>📋 作业</h5>
+        <p>部署 Multi-Agent RAG 到云端<br><br>
+        提交：<br>
+        - GitHub 仓库<br>
+        - LangGraph 状态图可视化<br>
+        - LangSmith Trace 分析报告<br>
+        - Demo URL</p>
+        <span class="review teacher">👨‍🏫 部署验证</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ai-self">
+    <strong>📹 Week 8 自学内容</strong>
+    <div class="ai-self-grid">
+      <div class="ai-self-card">
+        <span class="lab-tag">INFO</span>
+        <div class="lab-name">Multi-Agent Application Toolbox</div>
+        <div class="lab-desc">Multi-Agent 框架全景：LangGraph、AutoGen、CrewAI、Semantic Kernel</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Week 9 ===== -->
+<div class="box">
+  <div class="box-h" style="background:var(--orange)">
+    <span style="font-size:18px;font-weight:900">Week 9 · MCP 协议 + Deep Agents</span>
+    <span style="float:right;opacity:0.7" class="mono">直播 + 项目</span>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-head">
+      <span class="pill" style="background:var(--orange);color:#fff">9.1</span>
+      <h4>Model Context Protocol (MCP)</h4>
+      <span class="pill" style="background:var(--orange);color:#fff">直播</span>
+    </div>
+    <div class="lesson-body">
+      <div>
+        <h5>📖 教学内容</h5>
+        <p><strong>MCP 是什么</strong> — Anthropic 提出的标准化协议，让 AI 模型可以安全地连接外部数据源和工具<br><br>
+        <strong>MCP 架构</strong>：Client (Claude/Cursor) → Server (你的工具) → Resources/Tools/Prompts<br><br>
+        <strong>为什么 MCP 重要</strong>：每个 AI Agent 都需要连接外部世界，MCP 是 2025 年的标准方式<br><br>
+        <strong>源码解读</strong>：MCP TypeScript SDK 核心源码分析</p>
+        <div class="tools"><span class="tool">MCP SDK</span><span class="tool">TypeScript</span><span class="tool">Claude Code</span></div>
+      </div>
+      <div>
+        <h5>🔬 Lab 实操</h5>
+        <p><strong>Build MCP Server</strong>：<br>
+        1. 用 TypeScript 实现一个 MCP Server<br>
+        2. 暴露 Resources（数据源）和 Tools（操作）<br>
+        3. 在 Claude Code / Cursor 中连接并测试<br><br>
+        <strong>Integrating MCP into AI Engineering</strong>：<br>
+        将 MCP Server 集成到已有的 Agent 系统中</p>
+        <span class="review teacher">👨‍🏫 MCP Server Review</span>
+      </div>
+      <div>
+        <h5>📋 作业</h5>
+        <p><strong>Project: Building a MCP Project 01</strong><br>
+        构建一个实用的 MCP Server：<br>
+        - 连接真实数据源（数据库/API/文件系统）<br>
+        - 暴露至少 3 个 Tools<br>
+        - 在 Claude Code 中集成测试</p>
+        <span class="review teacher">👨‍🏫 MCP 项目 Review</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-head">
+      <span class="pill" style="background:var(--orange);color:#fff">9.2</span>
+      <h4>MCP Project 02 + Deep Agents</h4>
+      <span class="pill" style="background:var(--orange);color:#fff">直播</span>
+    </div>
+    <div class="lesson-body">
+      <div>
+        <h5>📖 教学内容</h5>
+        <p><strong>MCP 进阶</strong>：多 MCP Server 编排、安全认证、生产部署<br><br>
+        <strong>Deep Agents 01</strong>：<br>
+        - Agent-as-a-Service 架构<br>
+        - Long-running Agents — 超过单次 API 调用的长任务<br>
+        - Human-in-the-loop — 何时需要人类介入<br><br>
+        <strong>Deep Agents 02</strong>：<br>
+        - AWS Agentcore — 云端 Agent 基础设施<br>
+        - AI Engineer 职业路径和技能发展</p>
+        <div class="tools"><span class="tool">MCP SDK</span><span class="tool">AWS Agentcore</span><span class="tool">Claude Code</span></div>
+      </div>
+      <div>
+        <h5>🔬 Lab 实操</h5>
+        <p><strong>Project: Building a MCP Project 02</strong><br>
+        构建更复杂的 MCP 应用：<br>
+        1. 多 MCP Server 协作<br>
+        2. 安全 — OAuth/API Key 认证<br>
+        3. 部署到服务器<br><br>
+        <strong>Claude Code Skills 最佳实践</strong>：<br>
+        建立你自己的 AI 开发技能库</p>
+        <span class="review teacher">👨‍🏫 项目 Demo</span>
+      </div>
+      <div>
+        <h5>📋 作业</h5>
+        <p>为 ISA 集成 MCP 能力：<br>
+        1. 构建 ISA 专属 MCP Server<br>
+        2. 在 Claude Code 中通过 MCP 调用 ISA<br>
+        3. 部署并分享<br><br>
+        准备 Phase 3 回顾 + Phase 4 预习</p>
+        <span class="review teacher">👨‍🏫 ISA + MCP Review</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ai-self">
+    <strong>📹 Week 9 录播/自学</strong>
+    <div class="ai-self-grid">
+      <div class="ai-self-card">
+        <span class="lab-tag">VIDEO</span>
+        <div class="lab-name">Introducing the Model Context Protocol (MCP)</div>
+        <div class="lab-desc">MCP 协议概览：为什么需要标准化 AI 工具连接</div>
+      </div>
+      <div class="ai-self-card">
+        <span class="lab-tag">VIDEO</span>
+        <div class="lab-name">解读 MCP 源码</div>
+        <div class="lab-desc">TypeScript SDK 核心实现分析</div>
+      </div>
+      <div class="ai-self-card">
+        <span class="lab-tag">INFO</span>
+        <div class="lab-name">Context Engineering Fundamentals</div>
+        <div class="lab-desc">上下文工程：如何设计最优的 LLM 输入</div>
+      </div>
+      <div class="ai-self-card">
+        <span class="lab-tag">INFO</span>
+        <div class="lab-name">Agent 框架对比参考</div>
+        <div class="lab-desc">LangGraph vs AutoGen vs CrewAI vs Semantic Kernel</div>
+      </div>
+      <div class="ai-self-card">
+        <span class="lab-tag">INFO</span>
+        <div class="lab-name">MCP 发布指南</div>
+        <div class="lab-desc">如何发布你的 MCP Server 到 npm/PyPI</div>
+      </div>
+      <div class="ai-self-card">
+        <span class="lab-tag">INFO</span>
+        <div class="lab-name">Claude Code 技术原理</div>
+        <div class="lab-desc">上下文管理与记忆机制深度解析</div>
+      </div>
+      <div class="ai-self-card">
+        <span class="lab-tag">INFO</span>
+        <div class="lab-name">Skills 范式：从 Agent 到技能库</div>
+        <div class="lab-desc">如何用 Skills 模式组织可复用的 Agent 能力</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <a href="phase2.html">← Phase 2: RAG 系统</a> &nbsp;|&nbsp; <a href="curriculum.html">课程总览</a> &nbsp;|&nbsp; <a href="phase4.html">Phase 4: Fine-Tuning + 毕业 →</a>
+</div>
+
+</div>
+</body>
+</html>
