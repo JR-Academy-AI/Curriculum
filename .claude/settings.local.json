@@ -1,0 +1,11 @@
+{
+  "enabledMcpjsonServers": [
+    "jracademy",
+    "jr-data"
+  ],
+  "permissions": {
+    "allow": [
+      "Bash(open:*)"
+    ]
+  }
+}
