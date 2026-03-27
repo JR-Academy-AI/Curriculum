@@ -40,6 +40,7 @@ jobs:
           cp ai-adoption-bootcamp/public/phase4.html _site/ai-adoption-bootcamp/
           cp ai-adoption-bootcamp/public/styles.css _site/ai-adoption-bootcamp/
           cp ai-adoption-bootcamp/public/internal.html _site/ai-adoption-bootcamp/
+          cp ai-adoption-bootcamp/public/learning-plan.html _site/ai-adoption-bootcamp/
 
           mkdir -p _site/ai-engineer-bootcamp
           cp -r ai-engineer-bootcamp/dist/* _site/ai-engineer-bootcamp/
@@ -52,6 +53,7 @@ jobs:
           cp ai-engineer-bootcamp/public/styles.css _site/ai-engineer-bootcamp/
           cp ai-engineer-bootcamp/public/internal.html _site/ai-engineer-bootcamp/
           cp ai-engineer-bootcamp/public/jd-mapping.html _site/ai-engineer-bootcamp/
+          cp ai-engineer-bootcamp/public/learning-plan.html _site/ai-engineer-bootcamp/
 
           # Index page
           cat > _site/index.html << 'HTMLEOF'
@@ -94,6 +96,11 @@ jobs:
                     <span class="tag" style="background:#10b981">CURRICULUM</span>
                     <div class="title">AI Adoption Specialist</div>
                     <div class="desc">课程结构详情 — 大纲、Phase 详情</div>
+                  </a>
+                  <a href="./ai-adoption-bootcamp/learning-plan.html">
+                    <span class="tag" style="background:#FF914D">LEARNING PLAN</span>
+                    <div class="title">AI Adoption 学习方案</div>
+                    <div class="desc">完整学习路径、资源清单、待建 Checklist</div>
                   </a>
                   <a href="./ai-adoption-bootcamp/internal.html">
                     <span class="tag" style="background:#dc2626">INTERNAL</span>
