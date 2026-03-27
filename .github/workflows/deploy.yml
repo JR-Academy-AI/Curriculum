@@ -51,6 +51,7 @@ jobs:
           cp ai-engineer-bootcamp/public/phase4.html _site/ai-engineer-bootcamp/
           cp ai-engineer-bootcamp/public/styles.css _site/ai-engineer-bootcamp/
           cp ai-engineer-bootcamp/public/internal.html _site/ai-engineer-bootcamp/
+          cp ai-engineer-bootcamp/public/jd-mapping.html _site/ai-engineer-bootcamp/
 
           # Index page
           cat > _site/index.html << 'HTMLEOF'
