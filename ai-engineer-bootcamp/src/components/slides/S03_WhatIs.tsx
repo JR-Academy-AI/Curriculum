@@ -27,7 +27,7 @@ export default function S03_WhatIs() {
 						</Card>
 						<Card bg={colors.yellow}>
 							<div style={{ fontFamily: fonts.heading, fontWeight: 800, fontSize: 16, marginBottom: 8 }}>核心技能栈</div>
-							<BulletList items={['LangChain + RAG 系统', 'Agents + MCP 协议', 'Fine-Tuning + 评估体系']} />
+							<BulletList items={['Context Engineering + RAG + GraphRAG', 'Agent SDK + Multi-Agent', 'Fine-Tuning + AI Eval Engineering']} />
 						</Card>
 					</div>
 				</Half>

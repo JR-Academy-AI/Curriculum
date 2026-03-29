@@ -38,7 +38,7 @@ export default function S13_CTA() {
 					transition={{ delay: 0.5 }}
 					style={{ fontSize: 22, color: 'rgba(255,255,255,0.7)', marginTop: 28, lineHeight: 1.8 }}
 				>
-					12 周 · 7 个项目 · 从 Prompt 到 Production
+					12 周课程 + 12 周 P3 · 7 个项目 · Context Engineering → Production
 				</motion.p>
 
 				<motion.div
@@ -70,7 +70,7 @@ export default function S13_CTA() {
 				>
 					{[
 						{ num: '7', label: '实战项目' },
-						{ num: '15+', label: '工具' },
+						{ num: '20+', label: '工具' },
 						{ num: '30+', label: '直播课时' },
 						{ num: '12', label: '周完成' },
 					].map((s, i) => (

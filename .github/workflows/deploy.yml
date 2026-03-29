@@ -33,6 +33,7 @@ jobs:
         run: |
           mkdir -p _site/ai-adoption-bootcamp
           cp -r ai-adoption-bootcamp/dist/* _site/ai-adoption-bootcamp/
+          cp ai-adoption-bootcamp/public/index.html _site/ai-adoption-bootcamp/
           cp ai-adoption-bootcamp/public/curriculum.html _site/ai-adoption-bootcamp/
           cp ai-adoption-bootcamp/public/phase1.html _site/ai-adoption-bootcamp/
           cp ai-adoption-bootcamp/public/phase2.html _site/ai-adoption-bootcamp/
@@ -88,14 +89,14 @@ jobs:
                 <div class="section-title">AI Adoption Specialist Bootcamp · 8 周</div>
                 <div class="cards">
                   <a href="./ai-adoption-bootcamp/">
-                    <span class="tag" style="background:#6366f1">SLIDE DECK</span>
-                    <div class="title">AI Adoption Specialist</div>
-                    <div class="desc">13 页互动演示 — 课程概览、卖点、定价</div>
-                  </a>
-                  <a href="./ai-adoption-bootcamp/curriculum.html">
                     <span class="tag" style="background:#10b981">CURRICULUM</span>
                     <div class="title">AI Adoption Specialist</div>
                     <div class="desc">课程结构详情 — 大纲、Phase 详情</div>
+                  </a>
+                  <a href="./ai-adoption-bootcamp/slides.html">
+                    <span class="tag" style="background:#6366f1">SLIDE DECK</span>
+                    <div class="title">AI Adoption Specialist</div>
+                    <div class="desc">13 页互动演示 — 课程概览、卖点、定价</div>
                   </a>
                   <a href="./ai-adoption-bootcamp/learning-plan.html">
                     <span class="tag" style="background:#FF914D">LEARNING PLAN</span>

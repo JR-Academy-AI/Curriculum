@@ -1,13 +1,13 @@
 import { Slide, Inner, Title, Divider, CardSm, Stagger, StaggerItem, colors, fonts } from '../ui';
 
 const projects = [
-	{ name: 'ISA (Capstone)', desc: '贯穿全课程的综合项目，从 Prompt 到 Production', phase: '全程', color: colors.indigo },
-	{ name: 'GPT Store App', desc: '构建并发布一个 Custom GPT 应用', phase: 'Phase 1', color: colors.indigo },
-	{ name: 'RAG from Scratch', desc: '不用框架，纯 Python 实现检索增强生成', phase: 'Phase 2', color: colors.teal },
-	{ name: 'Production RAG', desc: '生产级 RAG 系统：分块、向量库、评估、监控', phase: 'Phase 2', color: colors.teal },
-	{ name: 'LangChain RAG QA', desc: '用 LangChain + LangSmith 搭建文档问答系统', phase: 'Phase 2', color: colors.teal },
-	{ name: 'Agentic RAG', desc: '带工具调用的智能 RAG Agent', phase: 'Phase 3', color: colors.orange },
-	{ name: 'Multi-Agent RAG', desc: 'LangGraph 编排多 Agent 协作系统', phase: 'Phase 3', color: colors.orange },
+	{ name: 'P1: ISA Capstone', desc: '贯穿全课程的综合项目，从 Context Engineering 到 Production', phase: '全程', color: colors.indigo },
+	{ name: 'P2: Context-Driven App', desc: '构建 Context Engineering 驱动的智能应用', phase: 'Phase 1', color: colors.indigo },
+	{ name: 'P3: RAG from Scratch', desc: '不用框架，纯 Python 实现检索增强生成', phase: 'Phase 2', color: colors.teal },
+	{ name: 'P4: Production RAG + GraphRAG', desc: '生产级 RAG + GraphRAG 混合检索系统', phase: 'Phase 2', color: colors.teal },
+	{ name: 'P5: Multi-Agent RAG', desc: '用 Agent SDK 构建多 Agent 协作 RAG 系统', phase: 'Phase 3', color: colors.orange },
+	{ name: 'P6: Production Agent System', desc: 'A2A + MCP 驱动的生产级 Agent 系统', phase: 'Phase 3', color: colors.orange },
+	{ name: 'P7: Fine-Tuned + Eval', desc: 'QLoRA 微调模型 + 完整 Eval Pipeline', phase: 'Phase 4', color: colors.red },
 ];
 
 export default function S06_Projects() {

@@ -2,6 +2,43 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+---
+
+## 给运营 / Marketing 同事的快速指南
+
+你不需要懂代码！直接用中文告诉 Claude 你想做什么就行。以下是你最常用的命令：
+
+### 常用命令（输入后回车即可）
+
+| 命令 | 作用 | 例子 |
+|------|------|------|
+| `/list-pages` | 查看所有页面地址 | 直接输入即可 |
+| `/update-page` | 修改页面内容 | `/update-page ai-adoption phase2 把第3课标题改成"AI写商业计划书"` |
+| `/deploy` | 发布到线上 | `/deploy 更新了课程内容` |
+| `/preview` | 本地预览 | `/preview ai-adoption-bootcamp` |
+| `/check-deploy` | 检查发布状态 | 直接输入即可 |
+| `/curriculum-review` | 审查课程完整性 | `/curriculum-review ai-adoption-bootcamp` |
+
+### 用自然语言也行
+
+你也可以直接用中文描述需求，不用记命令：
+
+- "帮我看一下 AI Adoption 的 Phase 2 页面"
+- "把 AI Engineer 课程大纲里第5课的描述改成xxx"
+- "在 Phase 3 加一节新课，主题是 AI 做数据分析"
+- "帮我发布到线上"
+- "最近一次部署成功了吗？"
+- "所有课程页面的网址是什么？"
+
+### 注意事项
+
+- 改完内容后记得用 `/deploy` 发布，否则线上看不到
+- 发布后等 2-3 分钟线上才会更新
+- 如果不确定改对没有，先用 `/preview` 本地看看
+- **不要删除已有内容**，只加不减
+
+---
+
 ## What This Repo Is
 
 Static curriculum site for JR Academy bootcamps. Each bootcamp is a standalone Vite + React 19 + TypeScript app that builds to static HTML. The site is served at `jiangren.com.au/curriculum/`.

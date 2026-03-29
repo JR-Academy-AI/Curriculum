@@ -3,11 +3,11 @@ import { Slide, Inner, Title, Divider, colors, fonts, border, shadow } from '../
 
 const steps = [
 	{ icon: '🔍', title: '发现', desc: '/learn/ai-engineer\n免费章节体验', color: '#e0e7ff' },
-	{ icon: '📝', title: '注册', desc: '解锁免费章节\n动手写第一个 RAG', color: '#c7d2fe' },
 	{ icon: '💳', title: '报名', desc: 'Bootcamp\n选择付费方案', color: colors.indigo },
-	{ icon: '📚', title: '学习 12 周', desc: '直播 + Lab + 项目\n老师 + AI 双重辅导', color: colors.teal },
-	{ icon: '🎓', title: '毕业', desc: 'Demo Day + 证书\n7 个项目作品集', color: colors.green },
-	{ icon: '🚀', title: '求职', desc: 'AI Engineer\n求职推荐 + 社群', color: colors.yellow },
+	{ icon: '📚', title: '12 周课程', desc: '直播 + Lab + 7 项目\n老师 + AI 双重辅导', color: colors.teal },
+	{ icon: '🏗️', title: '12 周 P3', desc: 'P3 职业孵化器\n真实项目实战', color: colors.purple },
+	{ icon: '💼', title: '求职落地', desc: '简历 → 面试 → Offer\nJobPin AI + 模拟面试', color: colors.orange },
+	{ icon: '🚀', title: '入职', desc: 'AI Engineer\n社群持续支持', color: colors.yellow },
 ];
 
 export default function S12_Journey() {
@@ -23,7 +23,7 @@ export default function S12_Journey() {
 								border, background: s.color, boxShadow: shadow, padding: '20px 14px',
 								textAlign: 'center', minHeight: 160,
 								display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-								color: (s.color === colors.indigo || s.color === colors.teal) ? '#fff' : colors.black,
+								color: (s.color === colors.indigo || s.color === colors.teal || s.color === colors.purple) ? '#fff' : colors.black,
 							}}>
 								<div style={{ fontSize: 32, marginBottom: 8 }}>{s.icon}</div>
 								<div style={{ fontFamily: fonts.heading, fontWeight: 800, fontSize: 16, marginBottom: 6 }}>{s.title}</div>
@@ -35,12 +35,15 @@ export default function S12_Journey() {
 						</motion.div>
 					))}
 				</div>
-				<div style={{ marginTop: 28, display: 'flex', gap: 20, fontSize: 14 }}>
+				<div style={{ marginTop: 28, display: 'flex', gap: 16, fontSize: 14 }}>
 					<div style={{ border, background: '#fff', boxShadow: shadow, padding: '10px 18px' }}>
-						<strong>免费引流</strong>: /learn/ai-engineer (免费章节)
+						<strong>12 周课程</strong>: 直播 + 7 项目 + Demo Day
 					</div>
 					<div style={{ border, background: '#fff', boxShadow: shadow, padding: '10px 18px' }}>
-						<strong>付费 Bootcamp</strong>: /program-course/ai-engineer-bootcamp
+						<strong>12 周 P3</strong>: 真实项目 + 团队协作
+					</div>
+					<div style={{ border, background: '#fff', boxShadow: shadow, padding: '10px 18px' }}>
+						<strong>求职落地</strong>: 简历 + 面试 + Offer
 					</div>
 				</div>
 			</Inner>

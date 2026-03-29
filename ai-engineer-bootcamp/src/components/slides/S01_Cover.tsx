@@ -59,13 +59,13 @@ export default function S01_Cover() {
 
 				<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} style={{ marginTop: 32 }}>
 					<p style={{ fontFamily: fonts.heading, fontSize: 'clamp(18px, 2.5vw, 28px)', fontWeight: 700, color: 'rgba(255,255,255,0.9)', borderLeft: `5px solid ${colors.teal}`, paddingLeft: 16 }}>
-						从 Prompt 到 Production — 12 周掌握全栈 AI 工程能力
+						Context Engineering → RAG + GraphRAG → Agent SDK → AI Evals
 					</p>
 				</motion.div>
 
 				<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }} style={{ marginTop: 32, display: 'flex', gap: 16 }}>
 					<span style={{ padding: '10px 24px', background: colors.teal, border: `3px solid ${colors.black}`, boxShadow: `4px 4px 0 ${colors.black}`, fontFamily: fonts.mono, fontSize: 16, fontWeight: 700 }}>7 实战项目</span>
-					<span style={{ padding: '10px 24px', background: colors.white, border: `3px solid ${colors.black}`, boxShadow: `4px 4px 0 ${colors.black}`, fontFamily: fonts.mono, fontSize: 16, fontWeight: 700 }}>15+ 工具</span>
+					<span style={{ padding: '10px 24px', background: colors.white, border: `3px solid ${colors.black}`, boxShadow: `4px 4px 0 ${colors.black}`, fontFamily: fonts.mono, fontSize: 16, fontWeight: 700 }}>20+ 工具</span>
 					<span style={{ padding: '10px 24px', border: `3px solid ${colors.white}`, color: colors.white, fontFamily: fonts.mono, fontSize: 16, fontWeight: 700 }}>12 周完成</span>
 				</motion.div>
 			</div>
