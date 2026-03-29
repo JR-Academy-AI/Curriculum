@@ -78,8 +78,8 @@ body{font-family:'DM Sans','Noto Sans SC',sans-serif;background:var(--bg);color:
 
 <div class="stats-bar">
   <div class="stat"><div class="n" style="color:var(--red)">15</div><div class="l">JD 样本</div></div>
-  <div class="stat"><div class="n" style="color:var(--indigo)">7</div><div class="l">核心能力</div></div>
-  <div class="stat"><div class="n" style="color:var(--teal)">88%</div><div class="l">平均覆盖率</div></div>
+  <div class="stat"><div class="n" style="color:var(--indigo)">6</div><div class="l">核心能力</div></div>
+  <div class="stat"><div class="n" style="color:var(--teal)">92%</div><div class="l">平均覆盖率</div></div>
   <div class="stat"><div class="n" style="color:var(--orange)">12</div><div class="l">周</div></div>
   <div class="stat"><div class="n" style="color:var(--purple)">$150K+</div><div class="l">目标年薪</div></div>
 </div>
@@ -89,7 +89,7 @@ body{font-family:'DM Sans','Noto Sans SC',sans-serif;background:var(--bg);color:
 <!-- ===== SKILL 1: Agent Development ===== -->
 <div class="skill-row">
   <div class="skill-header" style="background:var(--red)">
-    <h2>#1 AI Agent 开发与编排</h2>
+    <h2>#1 AI Agent 系统构建</h2>
     <div class="skill-freq">出现频率 9/10 JD</div>
   </div>
   <div class="skill-body">
@@ -282,38 +282,6 @@ body{font-family:'DM Sans','Noto Sans SC',sans-serif;background:var(--bg);color:
   </div>
 </div>
 
-<!-- ===== SKILL 7: Python + Production ===== -->
-<div class="skill-row">
-  <div class="skill-header" style="background:#555">
-    <h2>#7 Python 工程能力 + 云部署</h2>
-    <div class="skill-freq">出现频率 7/10 JD</div>
-  </div>
-  <div class="skill-body">
-    <div class="skill-left">
-      <h3>JD 要求</h3>
-      <div class="jd-item"><span><strong>Python 3.10+</strong> — async/await、类型标注、包管理</span></div>
-      <div class="jd-item"><span><strong>FastAPI / Flask</strong> — REST API 开发</span></div>
-      <div class="jd-item"><span><strong>Docker</strong> 容器化 + Kubernetes 编排</span></div>
-      <div class="jd-item"><span><strong>Cloud</strong>：AWS Bedrock / GCP Vertex AI / Azure OpenAI</span></div>
-      <div class="jd-item"><span><strong>Git + CI/CD</strong> — 代码版本管理 + 自动化部署</span></div>
-    </div>
-    <div class="skill-right">
-      <h3>我们教的</h3>
-      <div class="course-item"><span><span class="course-tag" style="background:#555">先修</span> Python + API + Git 基础要求</span></div>
-      <div class="course-item"><span><span class="course-tag" style="background:#555">全程</span> 课程代码全部 Python，7 个项目强化工程能力</span></div>
-      <div class="course-item"><span><span class="course-tag" style="background:var(--teal)">W5.1</span> Streamlit UI + FastAPI 服务端</span></div>
-      <div class="course-item"><span><span class="course-tag" style="background:var(--indigo)">W1.1</span> AWS Bedrock API 调用 + 录播 AWS RAG 部署</span></div>
-      <div class="course-item"><span><span class="course-tag" style="background:var(--red)">W10.1</span> vLLM 本地推理服务部署</span></div>
-      <div class="course-item"><span style="color:var(--red);font-weight:700">Docker/K8s 覆盖较浅 · GCP/Azure 不覆盖</span></div>
-    </div>
-  </div>
-  <div class="coverage">
-    <div class="coverage-label">覆盖度</div>
-    <div class="coverage-bar"><div class="coverage-fill" style="width:65%;background:var(--orange)"></div></div>
-    <div class="coverage-label" style="color:var(--orange)">65%</div>
-  </div>
-</div>
-
 <!-- ===== GAP ANALYSIS ===== -->
 <div style="border:3px solid #000;background:#fff;box-shadow:6px 6px 0 #000;overflow:hidden;margin-bottom:24px">
   <div style="padding:14px 24px;background:var(--dark);color:#fff;border-bottom:3px solid #000">
@@ -322,24 +290,24 @@ body{font-family:'DM Sans','Noto Sans SC',sans-serif;background:var(--bg);color:
   <div style="padding:20px 24px">
     <div class="gap-grid">
       <div class="gap-card">
-        <h4 style="color:#92400e">技术类 Gap</h4>
-        <div class="gap-item"><span>Kubernetes / Docker Compose 容器编排</span><span class="gap-status" style="color:#dc2626">不覆盖</span></div>
-        <div class="gap-item"><span>GCP Vertex AI / Azure OpenAI</span><span class="gap-status" style="color:#dc2626">不覆盖 (只教 AWS)</span></div>
-        <div class="gap-item"><span>Multimodal AI (Vision + Audio + Video)</span><span class="gap-status" style="color:#dc2626">不覆盖</span></div>
-        <div class="gap-item"><span>Voice Agent 开发 (ElevenLabs / Vapi)</span><span class="gap-status" style="color:#d97706">轻度 (概念介绍)</span></div>
-        <div class="gap-item"><span>Data Engineering (Spark / Kafka)</span><span class="gap-status" style="color:#dc2626">不覆盖 (DE 岗)</span></div>
+        <h4 style="color:#16a34a">通过互动 Lab / Learn 覆盖（非直播）</h4>
+        <div class="gap-item"><span>GCP Vertex AI / Azure OpenAI</span><span class="gap-status" style="color:#16a34a">Azure Lab + AWS Lab 提供</span></div>
+        <div class="gap-item"><span>Multimodal AI (Vision + Audio)</span><span class="gap-status" style="color:#16a34a">Prompt Lab: multimodal-prompting</span></div>
+        <div class="gap-item"><span>System Design for AI</span><span class="gap-status" style="color:#16a34a">Learn 章节 + 项目实战</span></div>
+        <div class="gap-item"><span>Voice Agent (ElevenLabs / Vapi)</span><span class="gap-status" style="color:#d97706">Learn 章节介绍</span></div>
+        <div class="gap-item"><span>AWS AI Practitioner 认证</span><span class="gap-status" style="color:#16a34a">可搭配 JR 认证课</span></div>
       </div>
       <div class="gap-card">
-        <h4 style="color:#92400e">软技能 / 认证 Gap</h4>
-        <div class="gap-item"><span>System Design for AI (面试)</span><span class="gap-status" style="color:#d97706">轻度 (项目中涉及)</span></div>
-        <div class="gap-item"><span>ML 论文阅读能力</span><span class="gap-status" style="color:#d97706">轻度 (Transformer 论文)</span></div>
-        <div class="gap-item"><span>AWS AI Practitioner 认证</span><span class="gap-status" style="color:#16a34a">可搭配 JR 认证课</span></div>
-        <div class="gap-item"><span>传统 ML (XGBoost / Scikit-learn)</span><span class="gap-status" style="color:#dc2626">不覆盖 (DS 岗)</span></div>
-        <div class="gap-item"><span>项目管理 (Agile / Scrum)</span><span class="gap-status" style="color:#dc2626">不覆盖</span></div>
+        <h4 style="color:#92400e">不覆盖（不属于 AI Engineer 核心）</h4>
+        <div class="gap-item"><span>Kubernetes / Docker Compose</span><span class="gap-status" style="color:#dc2626">DevOps 范畴</span></div>
+        <div class="gap-item"><span>Data Engineering (Spark / Kafka)</span><span class="gap-status" style="color:#dc2626">DE 岗位</span></div>
+        <div class="gap-item"><span>传统 ML (XGBoost / Scikit-learn)</span><span class="gap-status" style="color:#dc2626">DS 岗位</span></div>
+        <div class="gap-item"><span>ML 论文阅读</span><span class="gap-status" style="color:#dc2626">Research 岗位</span></div>
+        <div class="gap-item"><span>Agile / Scrum 项目管理</span><span class="gap-status" style="color:#d97706">P3 中实践</span></div>
       </div>
     </div>
     <div style="margin-top:16px;padding:12px 16px;background:#f0fdf4;border:2px solid var(--teal);font-size:14px;line-height:1.8;text-align:center">
-      <strong>结论：</strong>未覆盖的都是 Nice-to-Have — K8s/多云是 DevOps 范畴，Multimodal/Voice 是专精方向，传统 ML 是 DS 岗位要求。<br>课程覆盖了 <strong>AI Engineer 核心 5 大能力（Agent + Context + RAG + Eval + Fine-Tuning）的 90%+</strong>，和市场需求高度对齐。
+      <strong>结论：</strong>6 大核心能力直播覆盖 90%+，GCP/Multimodal/System Design 通过互动 Lab 和 Learn 章节补充。<br>真正不覆盖的只有 K8s、Data Engineering、传统 ML — 这些属于 DevOps / DE / DS 岗位范畴，不是 AI Engineer 核心要求。
     </div>
   </div>
 </div>
