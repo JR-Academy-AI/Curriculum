@@ -184,3 +184,65 @@ bootcamp-name/
 ### Design Spec
 
 See `DESIGN.md` for the complete presentation design system including color palette, component catalog, slide layout patterns (cover, stats, split, grid, CTA), and SlideEngine keyboard/touch interactions.
+
+---
+
+## 🚨 CRITICAL: 课程设计原则
+
+### 所有学习内容都是平等的 Lesson
+
+平台上 Video、Info（图文）、Lesson（直播/互动）都是 lesson，只是 type 不同。课程大纲 = lesson 数组。
+
+**录播和自学不是二等公民。** 它们和直播课一样，都应该有完整的 step 序列（教学内容→练习→验证）。不要把录播/图文当成"附属品"或"自学堆砌"。
+
+| Lesson Type | 含义 | 例子 |
+|-------------|------|------|
+| **Lesson** | 互动课（直播/Lab） | 直播课、Workshop、Clinic |
+| **Video** | 录播视频 | 工具演示、案例拆解、操作步骤 |
+| **Info** | 图文内容 | 操作指南、模板说明、Wiki 知识 |
+
+### 多通道学习：围绕学习目标，不围绕直播课
+
+直播课只是学习方式之一。**最终目的是学员掌握技能**，不管通过哪种通道。每节课的"掌握路径"要列出所有可用的学习资源：
+
+1. **直播课** — 老师讲解 + 现场演示
+2. **Prompt Lab** — 平台已有的互动练习（22+ 个，标"已有"）
+3. **AI Tutor** — AI 一对一带练、答疑、纠正、模拟角色扮演
+4. **录播视频** — 工具演示、案例分析（独立 lesson，不是附属品）
+5. **图文教程** — 操作步骤指南（独立 lesson）
+6. **Vibe Coding Lab** — AI 编程练习（已有）
+7. **OpenClaw 章节** — Ch.1-5, Ch.10-11（已有）
+8. **Roadmap** — 可视化学习路径
+9. **Wiki** — 知识库文章（适合放"找不到老师教但需要了解"的内容，如 Power Automate）
+10. **作业** — 综合运用
+
+### 学员自主节奏
+
+- 学员按自己节奏完成各项学习资源
+- **不要绑定具体哪天**（不做"周二做这个周四做那个"的日程表）
+- Lab 不是"课后马上做"，是学员自主安排的学习内容
+- 掌握路径只标**推荐顺序**，不标具体日期
+
+### 必须整合的 JR 平台现有资源
+
+设计课程时必须查看并整合已有的资源生态，能复用就复用：
+
+| 资源 | 路由 | 说明 |
+|------|------|------|
+| **Prompt Lab** | `/study-center?tab=learn&mode=prompt-lab` | 22+ 个互动练习 |
+| **Vibe Coding Hub** | `/learn/vibe-coding/hub` | AI 编程学习中心 |
+| **AI 学习方向** | `/learn/ai-adoption` 等 | AI 学习中心各方向 |
+| **Roadmaps** | `/roadmaps` | 可视化学习路径 |
+| **Videos** | `/videos` | 教学视频库 |
+| **Wiki** | `/wiki` | 知识库文章 |
+| **Free Resources** | `/free-resources` | 免费工具/认证/课程 |
+| **Mock Interview** | `/job-interview` | 面试模拟 |
+| **Career Planning** | `/study/career-planning` | AI 职业规划 |
+| **JobPin AI** | `/study-center?tab=jobpin-ai` | AI 简历编辑 |
+
+### 只加不删
+
+- **绝对不要简化或删除已有内容**
+- 新页面的详细程度必须 >= 现有页面
+- 如果做了更详细的版本，用它来**反推扩展**已有页面，不是反过来精简
+- 遇到"太长了要不要精简"的想法 → 不要精简，保持详细

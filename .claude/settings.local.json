@@ -1,11 +1,16 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(open:*)",
+      "Bash(sed -n '694,1226p' /Users/lightman/Documents/sites/jr-academy-ai/curriculum/ai-adoption-bootcamp/public/learning-plan.html)",
+      "Read(//tmp/**)",
+      "Bash(grep -n '</div>$' /Users/lightman/Documents/sites/jr-academy-ai/curriculum/ai-adoption-bootcamp/public/curriculum.html)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  },
   "enabledMcpjsonServers": [
     "jracademy",
     "jr-data"
-  ],
-  "permissions": {
-    "allow": [
-      "Bash(open:*)"
-    ]
-  }
+  ]
 }
