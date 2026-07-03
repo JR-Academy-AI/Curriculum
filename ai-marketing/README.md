@@ -14,6 +14,8 @@
 curriculum/ai-marketing/
 ├── README.md           ← 你正在看
 ├── FUNNEL_PLAN.md      ← 漏斗高 level（决策 + 状态 + 日志）
+├── PERSONAS.md         ← 目标用户画像 SoT（5 persona × 10 字段，GT 覆盖率 20-25%）
+├── PROMOTION_PLAN.md   ← 推广方案（渠道矩阵 + T-21→D+30 时间轴，2026-07-03 首次生成）
 │
 ├── public/             ← 学员看的对外页面
 │   ├── outline.json    主课 64 lessons 数据源
