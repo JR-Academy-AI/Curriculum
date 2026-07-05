@@ -15,6 +15,10 @@ const components: { icon: string; label: string }[] = [
 	{ icon: '👤', label: 'Avatar' },
 	{ icon: '☰', label: 'Hamburger Menu' },
 	{ icon: '🪗', label: 'Accordion' },
+	{ icon: '🔔', label: 'Toast' },
+	{ icon: '📭', label: 'Empty State' },
+	{ icon: '🗂️', label: 'Tabs' },
+	{ icon: '🔘', label: 'Toggle' },
 ];
 
 // 每个组件的实际长相 —— 不是线框图，是真的渲染出来的样子
@@ -143,6 +147,58 @@ function ComponentSample({ label }: { label: string }) {
 							{i === 0 && <div style={{ padding: '9px 12px', fontSize: 11, color: '#555', borderTop: '1px solid #eee' }}>点开才展开——省空间，一次只看一条。</div>}
 						</div>
 					))}
+				</div>
+			);
+		case 'Toast':
+			return (
+				<div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+					<div style={{ display: 'flex', alignItems: 'center', gap: 10, background: colors.green, color: colors.black, border, boxShadow: shadow, padding: '10px 16px' }}>
+						<span style={{ fontSize: 18 }}>✓</span>
+						<span style={{ fontSize: 13, fontWeight: 900 }}>客户保存成功</span>
+					</div>
+					<div style={{ display: 'flex', alignItems: 'center', gap: 10, background: colors.red, color: colors.white, border, boxShadow: shadow, padding: '10px 16px' }}>
+						<span style={{ fontSize: 18 }}>✕</span>
+						<span style={{ fontSize: 13, fontWeight: 900 }}>保存失败，请重试</span>
+					</div>
+				</div>
+			);
+		case 'Empty State':
+			return (
+				<div style={{ width: 260, background: colors.white, border, boxShadow: shadow, padding: '30px 20px', textAlign: 'center' }}>
+					<div style={{ fontSize: 36 }}>📭</div>
+					<div style={{ marginTop: 10, fontSize: 14, fontWeight: 900, color: colors.black }}>还没有客户</div>
+					<div style={{ marginTop: 4, fontSize: 11.5, color: '#888' }}>新增第一个客户开始使用</div>
+					<div style={{ marginTop: 12, display: 'inline-block', background: colors.green, border, padding: '6px 16px', fontSize: 12, fontWeight: 900 }}>+ 新建客户</div>
+				</div>
+			);
+		case 'Tabs':
+			return (
+				<div style={{ width: 300, background: colors.white, border, boxShadow: shadow }}>
+					<div style={{ display: 'flex', borderBottom: `3px solid ${colors.black}` }}>
+						{['基本信息', '订单', '跟进记录'].map((t, i) => (
+							<div key={t} style={{ flex: 1, textAlign: 'center', padding: '10px 6px', fontSize: 12.5, fontWeight: 900, background: i === 0 ? colors.yellow : '#fff', borderRight: i < 2 ? '2px solid #000' : 'none' }}>
+								{t}
+							</div>
+						))}
+					</div>
+					<div style={{ padding: 16, fontSize: 12, color: '#555' }}>当前显示"基本信息" tab 的内容...</div>
+				</div>
+			);
+		case 'Toggle':
+			return (
+				<div style={{ display: 'flex', gap: 24, alignItems: 'center' }}>
+					<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8 }}>
+						<div style={{ width: 52, height: 28, background: colors.green, border, borderRadius: 999, position: 'relative' }}>
+							<div style={{ position: 'absolute', right: 2, top: 2, width: 20, height: 20, borderRadius: 999, background: colors.white, border: `2px solid ${colors.black}` }} />
+						</div>
+						<span style={{ fontSize: 12, fontWeight: 900 }}>启用</span>
+					</div>
+					<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8 }}>
+						<div style={{ width: 52, height: 28, background: '#ddd', border, borderRadius: 999, position: 'relative' }}>
+							<div style={{ position: 'absolute', left: 2, top: 2, width: 20, height: 20, borderRadius: 999, background: colors.white, border: `2px solid ${colors.black}` }} />
+						</div>
+						<span style={{ fontSize: 12, fontWeight: 900 }}>禁用</span>
+					</div>
 				</div>
 			);
 		default:

@@ -3,21 +3,20 @@ import { motion } from 'framer-motion';
 
 const steps = [
 	{ n: '01', t: '先写一句话需求', d: '为谁 / 解决什么痛 / 成功标准 / 不做什么', color: colors.red },
-	{ n: '02', t: '再填 PRD 五块', d: '目标、输入、输出、模块拆解、红线验收', color: colors.blue },
+	{ n: '02', t: '再填 PRD 六块', d: '目标&范围、页面&流程、数据&输入、模块拆解、红线验收、Action', color: colors.blue },
 	{ n: '03', t: '同桌互审 2 分钟', d: '对方读完不用追问，才算能交给 agent', color: colors.green },
 ];
 
 const worksheet = `## Lab: 我的 PRD
 
 我为【谁】解决【什么真痛】。
+Must-have【一个核心动作】。Nice-to-have【锦上添花】。
 
-今晚 MVP 只做【一个核心动作】。
+Pages【列出页面，标 CRUD 类型】。
+核心 Flow【A → B → C】。
 
-用户输入【什么】。
-系统输出【什么】。
-
-需要依赖的真实资料 / SoT:
-- 【文件 / 链接 / 数据来源】
+数据字段【需要哪些字段】+ 关系【1对1/1对多/多对多】。
+真实资料 / SoT: 【文件 / 链接 / 数据来源】。
 
 这版明确不做:
 - 【砍掉的功能】
