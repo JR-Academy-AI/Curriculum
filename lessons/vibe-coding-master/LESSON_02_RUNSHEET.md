@@ -91,6 +91,15 @@
 - 状态写在 PRD header 里：`Status: Draft / Ready / In Progress / Review / Done / Dropped`。
 - 不用 `active/`、`done/`、`dropped/` 文件夹搬文件；PRD 是长期做的，搬目录会让引用、历史和 agent 上下文变乱。
 
+**Repo Strategy：Monorepo vs Polyrepo（投屏 + 讲）**：
+- **Monorepo**：所有模块代码在一个 repo 下，通常以 `/frontend`、`/backend`、`/models`、`/infra` 子目录划分。
+  - 优点：全局统一依赖、AI 易于理解全局语义、便于一次性部署。
+  - 缺点：repo 过大、管理复杂、权限不易控制。
+- **Polyrepo with submodules**：多个独立 repo，通过 submodule 或工作区组合。
+  - 优点：各模块独立维护、利于团队分工、权限清晰、AI 可模块化理解。
+  - 缺点：跨模块重构不方便、依赖更新需手动管理、AI 理解需要递归处理多个 repo。
+- 课堂建议：个人小项目先用 Monorepo；公司级项目 / 多团队协作再考虑 Polyrepo + submodules。
+
 ---
 
 ## 3. 产品分析：自己发现需求（~45min · 为 PRD 收集判断依据）
@@ -274,7 +283,7 @@
 
 ---
 
-## 9. 配套 framework slide（少而精，封面 + 25 张）
+## 9. 配套 framework slide（少而精，封面 + 22 张）
 
 1. **ADLC 闭环图**：需求→PRD→开发→部署→分析→迭代（复用 L1 的 `S16d_ADLCFlow` 概念，去掉「预告」字样，作为本节主框架）
 2. **整份 PRD 交给 agent vs 拆 user story**：一句话对比（复用 S16d 底部点睛）
@@ -282,19 +291,21 @@
 4. **合格 PRD 的 6 个硬指标**：用户场景 / 真痛成功标准 / 输入事实 / 输出形态 / 范围边界 / 验收方式（§2）
 5. **PRD 之后准备 Rules / Docs / Repo Context**：PRD 只是第一步，第二步要让 agent 读懂项目和约定（§2）
 6. **Rules List**：SOLID / DRY / KISS / Readability + Prompt / Audit / Refine 使用循环（§2）
-7. **Rules 文件结构**：README / architecture / frontend / backend / workflow / code-quality（§2）
-8. **PRD 文件夹结构**：按功能维护长期 PRD，状态写进文档 header，不靠搬文件夹（§2）
-9. **产品思维·天花板金句**：「把需求写成代码 → 把问题定义成需求」（§3）
-10. **想法不是需求**：想法 / 功能 / 需求 / MVP 四层区分（§3）
-11. **分析 Digital Product**：把一个产品拆成 Pages / Actions / Data / Rules（§3）
-12. **页面收敛成 5 种套路**：CRUD 页面模式（§3）
-13. **页面拆完 → 拆组件**：Header / Sidebar / Form / Table / Modal / Empty State（§3）
-14. **光有页面不够，还要有 Flow**：从页面清单走到用户路径与状态流转（§3）
-15. **需求 X 光机·五问**：谁是用户 / 真痛 / 不做会怎样 / 怎么算成功 / 边界（§3，贴墙参考）
-16. **Design System = 视觉 SoT**：DESIGN.md / design tokens / 视觉一致性约束（§3）
-17. **如何管理多个 PRD**：PRD Backlog / 优先级 / 状态 / 版本 / 一次只喂一个 Ready PRD（§4）
-18. **agent 卡住破局清单**：回滚 / 先讲根因 / 缩范围 / 写进 rules（§4）
-19. **部署 checklist**：手机能打开 URL = 过关（§5）
+7. **Rules Checklist**：13 条可执行代码规则（§2）
+8. **Rules 文件结构**：README / architecture / frontend / backend / workflow / code-quality（§2）
+9. **PRD 文件夹结构**：按功能维护长期 PRD，状态写进文档 header，不靠搬文件夹（§2）
+10. **Repo Strategy**：Monorepo vs Polyrepo with submodules（§2）
+11. **产品思维·天花板金句**：「把需求写成代码 → 把问题定义成需求」（§3）
+12. **想法不是需求**：想法 / 功能 / 需求 / MVP 四层区分（§3）
+13. **分析 Digital Product**：把一个产品拆成 Pages / Actions / Data / Rules（§3）
+14. **页面收敛成 5 种套路**：CRUD 页面模式（§3）
+15. **页面拆完 → 拆组件**：Header / Sidebar / Form / Table / Modal / Empty State（§3）
+16. **光有页面不够，还要有 Flow**：从页面清单走到用户路径与状态流转（§3）
+17. **需求 X 光机·五问**：谁是用户 / 真痛 / 不做会怎样 / 怎么算成功 / 边界（§3，贴墙参考）
+18. **Design System = 视觉 SoT**：DESIGN.md / design tokens / 视觉一致性约束（§3）
+19. **如何管理多个 PRD**：PRD Backlog / 优先级 / 状态 / 版本 / 一次只喂一个 Ready PRD（§4）
+20. **agent 卡住破局清单**：回滚 / 先讲根因 / 缩范围 / 写进 rules（§4）
+21. **部署 checklist**：手机能打开 URL = 过关（§5）
 
 > 下一节课再展开：Product Thinking Canvas、Business Model、Business Logic、工程师如何把 Product Thinking / Business Model / Business Logic 翻译成 PRD、用户行为改变、MVP 砍刀、产品验证路径。
 

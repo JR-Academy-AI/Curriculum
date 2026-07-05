@@ -43,10 +43,10 @@ export default function App() {
 			<L2P04b />{/* PRD 必须具备什么 */}
 			<L2P04d />{/* PRD 之后要准备 Rules / Docs / Repo Context */}
 			<L2P04e />{/* Rules List: SOLID / DRY / KISS / Readability */}
-				<L2P04h />{/* 13 条可执行 Rules Checklist */}
-				<L2P04f />{/* Rules 文件结构 */}
-				<L2P04g />{/* PRD 文件夹结构 */}
-				<L2P04i />{/* Monorepo vs Polyrepo */}
+			<L2P04h />{/* 13 条可执行 Rules Checklist */}
+			<L2P04f />{/* Rules 文件结构 */}
+			<L2P04g />{/* PRD 文件夹结构 */}
+			<L2P04i />{/* Monorepo vs Polyrepo */}
 
 			{/* 再讲产品分析：需求从哪里来，怎么判断值不值得做 */}
 			<L2P01 />{/* 天花板金句 */}
