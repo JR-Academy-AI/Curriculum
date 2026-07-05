@@ -159,6 +159,34 @@ curriculum/{slug}/agent-outputs/
 
 ---
 
+## 🚨 Lesson Deck / PPT 必须登记到 lessons.html
+
+每次新增、重做、迁移或显著更新单节课 deck / PPT，必须在同一次修改里更新：
+
+- `curriculum/lessons.html`
+
+适用范围：
+- `curriculum/lessons/{slug}/` 下的 React SlideEngine / Slidev / Static HTML deck
+- `{bootcamp}/public/lesson*.html` 这类单节课 deck
+- 公开讲座 deck、课程解读会 deck、内部培训 deck
+
+登记卡片必须包含：
+1. 标题与定位
+2. Deck 形态 / 技术栈
+3. 讲师、预计时长、slide 数
+4. 跨课复用映射
+5. 打开 slides 的入口链接
+6. 源码、PRD 或 runsheet 链接（如果存在）
+
+执行规则：
+- 新 deck 不允许只创建在目录里却不登记；否则之后根本找不到。
+- 替换旧 deck 时，旧卡片先标 `Legacy`，不要直接删除，除非用户明确要求清理。
+- 尚未部署也要登记，但状态必须标清楚（Draft / Local / 已部署）。
+- Final 前确认入口路径本地存在；React/Vite/Slidev deck 跑对应 `build`。
+- 有实际修改时同步更新根目录 `CHANGELOG.md`。
+
+---
+
 ## What This Repo Is
 
 Static curriculum site for JR Academy bootcamps. Each bootcamp is a standalone Vite + React 19 + TypeScript app that builds to static HTML. The site is served at `jiangren.com.au/curriculum/`.

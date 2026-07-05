@@ -91,6 +91,20 @@ jobs:
           bun install
           bun run build
 
+      # Build lessons/vibe-coding-master (Vibe Coding 大师课 · 第一节课 · 个人 AI OS + SoT)
+      - name: Build lessons/vibe-coding-master
+        working-directory: lessons/vibe-coding-master
+        run: |
+          bun install
+          bun run build
+
+      # Build lessons/vibe-coding-master-l2 (Vibe Coding 大师课 · 第二节课 · 产品思维 + PRD + ADLC 工作坊)
+      - name: Build lessons/vibe-coding-master-l2
+        working-directory: lessons/vibe-coding-master-l2
+        run: |
+          bun install
+          bun run build
+
       # Build lessons/vibe-coding — Slidev deck (跨课复用 Lesson · Lightman 120 min)
       # Slidev/Vue 在 bun 下偶有 install 问题，沿用 npm 保守
       # base 已写进 package.json: --base /curriculum/lessons/vibe-coding/
@@ -357,6 +371,18 @@ jobs:
           if [ -d lessons/claude-code-for-everyone/dist ]; then
             mkdir -p _site/lessons/claude-code-for-everyone
             cp -r lessons/claude-code-for-everyone/dist/* _site/lessons/claude-code-for-everyone/
+          fi
+
+          # lessons/vibe-coding-master: Vibe Coding 大师课 · 第一节课（React + Vite）
+          if [ -d lessons/vibe-coding-master/dist ]; then
+            mkdir -p _site/lessons/vibe-coding-master
+            cp -r lessons/vibe-coding-master/dist/* _site/lessons/vibe-coding-master/
+          fi
+
+          # lessons/vibe-coding-master-l2: Vibe Coding 大师课 · 第二节课（React + Vite）
+          if [ -d lessons/vibe-coding-master-l2/dist ]; then
+            mkdir -p _site/lessons/vibe-coding-master-l2
+            cp -r lessons/vibe-coding-master-l2/dist/* _site/lessons/vibe-coding-master-l2/
           fi
 
           # ai-engineer-resume-interview · 3h 内部学员讲座（slide deck + public/ zip 下载）
