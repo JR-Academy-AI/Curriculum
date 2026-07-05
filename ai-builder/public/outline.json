@@ -7,14 +7,14 @@
   "level": "中级",
   "type": "training",
   "targetAudience": "有编程基础的开发者、全栈工程师、DevOps、想用 AI 提升开发效率的技术人员",
-  "totalLessons": 112,
-  "totalSteps": 145,
-  "liveClasses": 22,
-  "estimatedHours": 105.8,
-  "totalInteractiveLabs": 34,
+  "totalLessons": 111,
+  "totalSteps": 142,
+  "liveClasses": 21,
+  "estimatedHours": 107.3,
+  "totalInteractiveLabs": 32,
   "title_en": "Vibe Coding Masterclass",
   "description_en": "Build full-stack apps with Claude Code, Cursor, and Codex. From PRD to Skills/MCP/Agent to deployment. For developers with programming experience.",
-  "timeLength": "8 周（110 节课）",
+  "timeLength": "8 周（111 节课）",
   "courseObjective": "建立从个人到企业的 AI 操作系统：用 Source of Truth 把你的经验/规范结构化成 AI 可读的第二大脑，用 ADLC 把整份 PRD 交给 Agent 端到端开发并部署，把重复流程交给 Agent 自动跑，最终能同时指挥多个 Agent 并行工作。",
   "courseObjective_en": "Master Claude Code Skills, MCP Server building, Agent architecture, and multi-model collaboration. Ship a full-stack project from PRD to deployment with AI.",
   "suitable": "有 Python/JS 基础的软件工程师\n全栈开发者想用 AI 10x 开发效率\nDevOps 工程师想了解 AI 开发工具\n技术创业者想快速出产品",
@@ -103,21 +103,13 @@
         },
         {
           "code": "L02",
-          "title": "Lab: AI 基础概念 — 5 分钟搞懂大模型",
+          "title": "自学：AI 基础概念 — 5 分钟搞懂大模型",
           "description": "了解什么是大语言模型、Token 的概念、System/User Prompt 的区别，以及主流 AI 模型的定位。",
-          "type": "InteractiveLab",
+          "type": "Information",
           "isLive": false,
-          "isInteractiveLab": true,
-          "interactiveLabType": "prompt",
-          "interactiveLabSlug": "ai-basics",
           "duration": 30,
           "steps": [],
-          "labs": [
-            {
-              "source": "prompt-lab",
-              "slug": "ai-basics"
-            }
-          ],
+          "labs": [],
           "learns": [],
           "_id": "69dc419976e3e0c1b3c53e16"
         },
@@ -198,21 +190,13 @@
         },
         {
           "code": "L05",
-          "title": "Lab: Cursor 入门 — Vibe Coding 的代名词",
+          "title": "自学：Cursor 入门 — Vibe Coding 的代名词",
           "description": "认识目前最流行的 AI IDE——Cursor。掌握 Composer 多文件编辑、@ 引用上下文、Tab 补全，以及如何用 .cursorrules 让 AI 记住你的项目规矩。",
-          "type": "InteractiveLab",
+          "type": "Information",
           "isLive": false,
-          "isInteractiveLab": true,
-          "interactiveLabType": "prompt",
-          "interactiveLabSlug": "vibe-cursor-intro",
           "duration": 30,
           "steps": [],
-          "labs": [
-            {
-              "source": "prompt-lab",
-              "slug": "vibe-cursor-intro"
-            }
-          ],
+          "labs": [],
           "learns": [],
           "_id": "69dc419a76e3e0c1b3c53e26"
         },
@@ -430,55 +414,49 @@
         },
         {
           "code": "L11",
-          "title": "产品思维：自己发现需求 → 把问题定义成需求（PRD 起点）",
-          "description": "AI 把实现打到地板价，工程师的天花板上移到「定义对的需求」。这节课用需求 X 光机·五问拷问一个想法，从供给驱动切到需求驱动，把模糊想法收敛成一句可执行的需求，作为 PRD 的输入。",
+          "title": "从需求到 PRD：AI 产品设计流程与 Claude 模块拆解",
+          "description": "把模糊想法收敛成一句可执行需求，再用 Claude 生成完整 PRD：目标、输入、输出、模块拆解、红线验收。重点不是把 PRD 拆成一堆人类 user story，而是写到 Agent 读完能端到端开干。",
           "type": "Lesson",
           "isLive": true,
-          "duration": 90,
+          "duration": 120,
           "steps": [
             {
               "order": 1,
               "type": "LIVE",
-              "title": "PRD 设计流程",
-              "description": "需求 → 功能列表 → 模块拆解 → 优先级",
+              "title": "需求 X 光机",
+              "description": "用五问把模糊想法收敛成一句可执行需求",
               "duration": 30
             },
             {
               "order": 2,
-              "type": "LAB",
-              "title": "Prompt Lab: 明确任务",
-              "description": "把需求描述拆成 AI 能执行的指令",
-              "duration": 15,
-              "labSlug": "clear-task"
+              "type": "LIVE",
+              "title": "Claude 生成 PRD",
+              "description": "从需求生成目标、输入、输出、模块拆解、红线验收",
+              "duration": 35
             },
             {
               "order": 3,
               "type": "SCENARIO",
-              "title": "为你的项目写需求",
-              "description": "选定项目方向并列出核心功能",
-              "duration": 30
+              "title": "模块拆解与验收标准",
+              "description": "把产品拆成 Agent 可执行的前端、后端、数据与集成模块",
+              "duration": 35
             },
             {
               "order": 4,
               "type": "PROJECT",
-              "title": "产品方向确定",
-              "description": "提交项目方向和功能列表",
-              "duration": 15
+              "title": "提交完整 PRD",
+              "description": "提交经过 Claude 辅助生成并人工审核修改的 PRD",
+              "duration": 20
             }
           ],
-          "labs": [
-            {
-              "source": "prompt-lab",
-              "slug": "clear-task"
-            }
-          ],
+          "labs": [],
           "learns": [
             {
               "direction": "ai-builder",
               "slug": "idea-to-prd"
             }
           ],
-          "learningMaterial": "<h2>学习目标</h2><ul><li>理解 AI 把「实现」打到地板价后，工程师的天花板为什么上移到「定义对的需求」</li><li>会用需求 X 光机·五问拷问任何一个想法，挖到真痛而不是停在嘴上要的功能</li><li>分清供给驱动（我想做什么）和需求驱动（真正要解决什么）两种思路</li><li>把一个模糊想法收敛成一句话需求：为谁解决什么真痛、做到什么算成功、这版不做什么——作为 PRD 的输入</li></ul><h2>核心概念</h2><h3>天花板上移了一层</h3><p>工程师只会「实现」是天花板。AI 把「实现」打到地板价后，值钱的整体上移一层：<strong>从「你能不能写出来」变成「你能不能定义出对的东西让它写」。</strong>会写 prompt 不算本事——需求本身错了或模糊，AI 执行越快，你错得越彻底。Garbage in, garbage out 在 AI 时代直接变成你的职业天花板。</p><p>一句话钉死：过去工程师的价值是「把需求写成代码」；AI 时代是「把问题定义成需求」——代码 AI 替你写，但要解决什么问题，只能你自己看见。这也对应传统 SDLC 里最上游、最值钱的角色 BA／PO（定义需求的人）；下游实现角色（前端／后端／测试／部署）AI 正在接管，你要站到上游。</p><h3>需求 X 光机·五问</h3><p>拿任何一个想法过这五问，挖到 X 光级别的真相：</p><ol><li><strong>谁是真正的用户？</strong>牵扯几类人、利益冲不冲突——很可能就是你自己／你同事。</li><li><strong>真痛是什么？</strong>（不是嘴上要的功能）连问三次「为什么」挖到真痛，别停在「我想要个功能」。</li><li><strong>不做会怎样？</strong>代价小的需求，最好的实现是不做——先砍掉伪需求。</li><li><strong>怎么算成功？</strong>哪个动作／数字变好了才算成？没有指标的需求是耍流氓。</li><li><strong>边界在哪？</strong>这版明确不做什么——把三个月的想法砍成今晚能做完的 MVP。</li></ol><h3>供给驱动 vs 需求驱动</h3><p>一句对比说清两种人：没产品思维 = 从「我想做什么」往外列功能（<strong>供给驱动</strong>）；有产品思维 = 从「真正要解决什么」往回倒推（<strong>需求驱动</strong>）。三个最常见的卡点：① 需求是假的——「想学一下／想试试」不是痛，换一个你每天真烦的事；② 范围太大——砍到「今晚能跑通的一个核心动作」；③ 把方案当需求——说「我要一个 dashboard」时追问「你要这个 dashboard，到底想解决什么问题」。</p><h3>收敛成一句话需求 = PRD 的输入</h3><p>五问过完，把结果压成一句话：<strong>为【谁】解决【什么真痛】，做到【什么】算成功，这版不做【什么】。</strong>说不清就别往下走——需求没磨利，后面 agent 做得越快错得越远。这一句话，就是下一步写 PRD 时「目标」那一块的输入。需求来源不是等别人派活，是你自己用这套 X 光机从生活／工作里挖出来的。</p><h2>动手练习</h2><ol><li>挑一个你每天真烦的小事（解决你自己或你公司一个真问题的小东西），写成最初的一句话想法。</li><li>对它过五问，照模板填：谁是真用户／真痛（连问三次为什么）／不做会怎样／怎么算成功（给一个具体动作或数字）／边界（这版不做什么）。</li><li>查「把方案当需求」陷阱：如果你写的是「我要一个 X（某功能／某页面）」，回头追问「我要这个 X 是想解决什么」，把答案换成真痛。</li><li>把五问结果收敛成一句话需求：为谁解决什么真痛、做到什么算成功、这版不做什么。</li><li>自检过关线：这一句话里「成功标准」是可判断的（能说出哪个数字／动作变好），「边界」砍到了今晚能做完的一个核心动作。说不清就回到第 2 步重挖。</li></ol><h2>小结</h2><p>AI 替你写代码之后，你唯一不可替代的支点是「看见并定义对的需求」。需求 X 光机五问把一个模糊想法逼成一句可执行的需求：为谁、什么真痛、成功标准、边界。从供给驱动（我想做什么）切到需求驱动（真正要解决什么），你就从「等需求的人」变成「定义需求的人」。这一句话需求是下一步 PRD 的输入——把问题定义对了，才轮到 ADLC 把整份 PRD 交给一个 agent 端到端做出来。</p>",
+          "learningMaterial": "<h2>学习目标</h2><ul><li>理解 AI 把「实现」打到地板价后，工程师的天花板为什么上移到「定义对的需求」</li><li>会用需求 X 光机·五问拷问任何一个想法，挖到真痛而不是停在嘴上要的功能</li><li>分清供给驱动（我想做什么）和需求驱动（真正要解决什么）两种思路</li><li>把一个模糊想法收敛成一句话需求：为谁解决什么真痛、做到什么算成功、这版不做什么——作为 PRD 的输入</li></ul><h2>核心概念</h2><h3>天花板上移了一层</h3><p>工程师只会「实现」是天花板。AI 把「实现」打到地板价后，值钱的整体上移一层：<strong>从「你能不能写出来」变成「你能不能定义出对的东西让它写」。</strong>会写 prompt 不算本事——需求本身错了或模糊，AI 执行越快，你错得越彻底。Garbage in, garbage out 在 AI 时代直接变成你的职业天花板。</p><p>一句话钉死：过去工程师的价值是「把需求写成代码」；AI 时代是「把问题定义成需求」——代码 AI 替你写，但要解决什么问题，只能你自己看见。这也对应传统 SDLC 里最上游、最值钱的角色 BA／PO（定义需求的人）；下游实现角色（前端／后端／测试／部署）AI 正在接管，你要站到上游。</p><h3>需求 X 光机·五问</h3><p>拿任何一个想法过这五问，挖到 X 光级别的真相：</p><ol><li><strong>谁是真正的用户？</strong>牵扯几类人、利益冲不冲突——很可能就是你自己／你同事。</li><li><strong>真痛是什么？</strong>（不是嘴上要的功能）连问三次「为什么」挖到真痛，别停在「我想要个功能」。</li><li><strong>不做会怎样？</strong>代价小的需求，最好的实现是不做——先砍掉伪需求。</li><li><strong>怎么算成功？</strong>哪个动作／数字变好了才算成？没有指标的需求是耍流氓。</li><li><strong>边界在哪？</strong>这版明确不做什么——把三个月的想法砍成今晚能做完的 MVP。</li></ol><h3>供给驱动 vs 需求驱动</h3><p>一句对比说清两种人：没产品思维 = 从「我想做什么」往外列功能（<strong>供给驱动</strong>）；有产品思维 = 从「真正要解决什么」往回倒推（<strong>需求驱动</strong>）。三个最常见的卡点：① 需求是假的——「想学一下／想试试」不是痛，换一个你每天真烦的事；② 范围太大——砍到「今晚能跑通的一个核心动作」；③ 把方案当需求——说「我要一个 dashboard」时追问「你要这个 dashboard，到底想解决什么问题」。</p><h3>收敛成一句话需求 = PRD 的输入</h3><p>五问过完，把结果压成一句话：<strong>为【谁】解决【什么真痛】，做到【什么】算成功，这版不做【什么】。</strong>说不清就别往下走——需求没磨利，后面 agent 做得越快错得越远。这一句话，就是下一步写 PRD 时「目标」那一块的输入。需求来源不是等别人派活，是你自己用这套 X 光机从生活／工作里挖出来的。</p><h2>动手练习</h2><ol><li>挑一个你每天真烦的小事（解决你自己或你公司一个真问题的小东西），写成最初的一句话想法。</li><li>对它过五问，照模板填：谁是真用户／真痛（连问三次为什么）／不做会怎样／怎么算成功（给一个具体动作或数字）／边界（这版不做什么）。</li><li>查「把方案当需求」陷阱：如果你写的是「我要一个 X（某功能／某页面）」，回头追问「我要这个 X 是想解决什么」，把答案换成真痛。</li><li>把五问结果收敛成一句话需求：为谁解决什么真痛、做到什么算成功、这版不做什么。</li><li>自检过关线：这一句话里「成功标准」是可判断的（能说出哪个数字／动作变好），「边界」砍到了今晚能做完的一个核心动作。说不清就回到第 2 步重挖。</li></ol><h2>Claude 生成 PRD 与模块拆解</h2><p>需求收敛后，下一步不是把它拆成十几张人类工单，而是让 Claude 生成一份 Agent 能直接执行的 PRD。提示词的核心结构是：读这一句话需求，生成目标、输入、输出、模块拆解、红线验收五块；先收敛 MVP 必须做的 1-2 个核心动作；遇到事实缺口先提问，不要脑补。</p><h3>PRD 五块</h3><ol><li><strong>目标</strong>：为谁解决什么真痛，做到什么算成功。</li><li><strong>输入</strong>：真实事实、数据、参考材料，最好指向你的 SoT，不让 Agent 猜。</li><li><strong>输出</strong>：用户看到什么、有哪些功能，标清 MVP 必须和可选。</li><li><strong>模块拆解</strong>：前端、后端、数据、集成、权限、部署等模块边界，这是给 Agent 看的执行结构，不是分给人的 user story。</li><li><strong>红线验收</strong>：不能做什么，以及怎么判断这版做对了。</li></ol><h3>ADLC 视角</h3><p>ADLC = Agent Development Lifecycle：需求 → PRD → 开发 → 部署 → 分析 feedback → 迭代。传统 SDLC 把 PRD 拆给 BA、设计、前端、后端、QA、DevOps；ADLC 是把自洽的 PRD 交给一个 Agent 端到端跑，你负责方向和验收。</p><h3>课堂实操</h3><ol><li>把上一段一句话需求交给 Claude，让它生成 PRD 五块。</li><li>检查 Claude 有没有编造输入、扩大范围、漏掉验收标准。</li><li>把模块拆解改成 Agent 能执行的结构：页面、API、数据表、权限、部署。</li><li>用一句指令启动：读这份 PRD，先实现 MVP 必须项，遇到不确定先问我。</li></ol><h2>小结</h2><p>AI 替你写代码之后，你唯一不可替代的支点是「看见并定义对的需求」。需求 X 光机五问把一个模糊想法逼成一句可执行的需求：为谁、什么真痛、成功标准、边界。从供给驱动（我想做什么）切到需求驱动（真正要解决什么），你就从「等需求的人」变成「定义需求的人」。这一句话需求是下一步 PRD 的输入——把问题定义对了，才轮到 ADLC 把整份 PRD 交给一个 agent 端到端做出来。</p>",
           "_id": "69db3dc376e3e0c1b3b66d24"
         },
         {
@@ -517,52 +495,6 @@
             }
           ],
           "_id": "69dc419b76e3e0c1b3c53e51"
-        },
-        {
-          "code": "L14",
-          "title": "ADLC：把整份 PRD 交给一个 Agent 端到端做出来",
-          "description": "ADLC = Agent Development Lifecycle：需求→PRD→开发→部署→分析 feedback→迭代的闭环。和 SDLC 把 PRD 拆成 user story 分给一堆人不同，ADLC 把整份 PRD 直接交给一个 agent 端到端跑，你给方向 + 把关。",
-          "type": "Lesson",
-          "isLive": true,
-          "duration": 120,
-          "steps": [
-            {
-              "order": 1,
-              "type": "LIVE",
-              "title": "Claude 自动生成 PRD",
-              "description": "一条 Prompt 生成完整 PRD：功能模块 + Schema + API + 页面结构",
-              "duration": 40
-            },
-            {
-              "order": 2,
-              "type": "LAB",
-              "title": "Prompt Lab: Prompt Chaining",
-              "description": "多步串联：需求→模块→Schema→API",
-              "duration": 15,
-              "labSlug": "prompt-chaining"
-            },
-            {
-              "order": 3,
-              "type": "PROJECT",
-              "title": "提交完整 PRD",
-              "description": "经过 Claude 辅助生成并审核修改的 PRD",
-              "duration": 35
-            }
-          ],
-          "labs": [
-            {
-              "source": "prompt-lab",
-              "slug": "prompt-chaining"
-            }
-          ],
-          "learns": [
-            {
-              "direction": "ai-builder",
-              "slug": "idea-to-prd"
-            }
-          ],
-          "learningMaterial": "<h2>学习目标</h2><ul><li>说清 ADLC（Agent Development Lifecycle）的闭环：需求 → PRD → 开发 → 部署 → 分析 feedback → 迭代</li><li>讲清 ADLC 和传统 SDLC 的本质区别：SDLC 把 PRD 拆成 user story 分给一堆人，ADLC 把整份 PRD 直接交给一个 agent 端到端跑</li><li>明确自己在 ADLC 里的角色：PO + 架构师——给方向 + 把关，不拆活不分活</li><li>会照 PRD 五块写一份 agent 读完不用追问就能开干的 PRD：目标／输入／输出／模块拆解／红线验收</li></ul><h2>核心概念</h2><h3>ADLC 闭环</h3><p>ADLC = Agent Development Lifecycle，是一个循环，不是一条直线：</p><pre><code>需求 → 写 PRD → 开发 → 部署 → 分析 feedback → 回到需求（持续迭代）</code></pre><p>真实产品就是这样一圈圈转出来的：你做完自己用一遍，找出最别扭的 1-2 个点，写成新需求，回到 PRD 改一行，让 agent 改——又转了一圈。</p><h3>和传统 SDLC 的本质区别</h3><p>这是最重要的一句：</p><ul><li><strong>传统 SDLC</strong>：把 PRD 拆成一个个 user story，分给一整排角色一个个做——Stakeholder 提需求 → BA 写需求 → UI Designer → Product Owner → 前端／后端程序员 → QA／Tester → DevOps／SRE → Data Engineer → Data Analyst。需求在人之间层层传递、层层失真，周期长。</li><li><strong>ADLC</strong>：把整份 PRD 直接交给一个 agent，端到端跑完开发→测试→部署。你不拆活、不分活，你给方向 + 把关。那一整排实现角色，被你 + AI OS 收进来。</li></ul><p>所以你在 ADLC 里的角色是 PO + 架构师：agent 是你的开发，你做的是「把需求说清楚 + 审 agent 的产出」——审产出，而不是替它写。</p><h3>PRD 五块</h3><p>把整份 PRD 交给 agent，前提是这份 PRD 自洽到 agent 读完不用再追问。五块：</p><ol><li><strong>目标</strong>：这个产品要解决什么、给谁、做到什么算成功（= 产品思维五问的收敛结果）。</li><li><strong>输入</strong>：agent 开发时能依赖的真实事实／数据／已有素材——指向你的 SoT（第二大脑），别让 agent 脑补。</li><li><strong>输出</strong>：要做出什么——用户看到什么、有哪些功能，按优先级标 MVP 必须 vs 可选。</li><li><strong>模块拆解</strong>：把产品拆成几块（前端／后端／数据／集成…）。注意——这是给 agent 看的结构，不是分给人的 user story。</li><li><strong>红线／验收</strong>：绝对不能做的（不编数据、不超范围）+ 怎么算「做对了」（具体到能判断成没成的验收标准）。</li></ol><p>用 Markdown 写，因为 agent 读 md 最顺。喂的时候一句话：<code>读这份 PRD，按它端到端把这个产品搭出来，先搭 MVP 那几块，遇到不确定的先问我再做</code>。</p><h3>agent 卡住怎么破 + 怎么盯</h3><p>盯的方式是看 agent 的计划对不对、改的文件对不对，审产出而不是替它写。卡住／改不动死循环是最高频的坑，四步破局：① 别在烂状态上继续叠 prompt，回滚到上一个能跑的状态重新描述；② 让 agent 先讲根因再改，禁止它瞎改；③ 缩小范围，把问题隔离成最小复现再喂；④ 修好后把教训写进 <code>CLAUDE.md</code> ／ rules，让它别再犯。判断 agent 在瞎编：让它写个测试 ／ 解释为什么这么改有效，别盲信。</p><h2>动手练习</h2><ol><li>拿你上一步收敛的那一句话需求，照 PRD 五块写成一个 Markdown 文件：目标／输入／输出／模块拆解／红线验收。</li><li>输出那块标清优先级：这一版只做哪 1-2 个核心功能（MVP 必须），其余标可选；把含糊的「做个好用的工具」改写成「用户点 X，看到 Y」。</li><li>验收那块写具体：写出一条能判断「做对了没」的标准（例：手机打开某 URL 能看到某结果）。</li><li>把整份 PRD 一次性喂给 agent：<code>读这份 PRD，按它端到端把这个产品搭出来，先搭 MVP 那几块，遇到不确定的先问我再做</code>，然后盯它的计划和改的文件，审产出不替它写。</li><li>agent 改不动死循环时按四步破局：回滚 → 让它先讲根因 → 缩小到最小复现 → 把教训写进 CLAUDE.md／rules。跑出第一个能动的版本（哪怕只有一个核心功能能用）。</li></ol><h2>小结</h2><p>ADLC 把传统 SDLC 一整排角色（BA、程序员、QA、DevOps）的活，压成「你 + 一个 agent」：你给方向 + 把关，把整份 PRD 直接交给 agent 端到端跑，不拆 user story。能不能这么干，全看 PRD 五块写得够不够自洽——目标、输入（指向你的 SoT）、输出（标 MVP）、模块拆解（给 agent 看的结构）、红线验收（具体到能判断）。需求 → PRD → 开发 → 部署 → feedback → 迭代是个循环；你今晚转完第一圈，真实产品就是一圈圈转出来的。</p>",
-          "_id": "69db3dc376e3e0c1b3b66d2c"
         },
         {
           "code": "L15",

@@ -7,7 +7,7 @@
 
 用 Claude Code、Cursor、Codex 做全栈开发。从 PRD 到 Skills/MCP/Agent 到部署上线，面向有编程基础的开发者
 
-**级别** 中级 · **类型** training · **时长** 8 周（110 节课） · **总课时** 110 · **步骤** 145 · **直播** 20 · **互动 Lab** 34 · **预计学时** 105.8
+**级别** 中级 · **类型** training · **时长** 8 周（111 节课） · **总课时** 111 · **步骤** 142 · **直播** 21 · **互动 Lab** 32 · **预计学时** 107.3
 
 **适合**：有编程基础的开发者、全栈工程师、DevOps、想用 AI 提升开发效率的技术人员
 
@@ -17,23 +17,22 @@
 
 ## Phase 1 — Vibe Coding 入门 & PRD
 
-_Week 1-2，9 节课_
+_Week 1-2，33 节课_
 
 - **什么是 Vibe Coding？未来的开发范式** — 60 分钟 · 🔴直播
-- **Lab: AI 基础概念 — 5 分钟搞懂大模型** — 30 分钟
+- **自学：AI 基础概念 — 5 分钟搞懂大模型** — 30 分钟
 - **自学：Vibe Coding 是什么** — 30 分钟
 - **安装与配置 Claude、Cursor、Codex CLI** — 120 分钟 · 🔴直播
-- **Lab: Cursor 入门 — Vibe Coding 的代名词** — 30 分钟
+- **自学：Cursor 入门 — Vibe Coding 的代名词** — 30 分钟
 - **自学：安装 Cursor 与环境准备** — 30 分钟
 - **Quest 实战：装好 Claude Code + Cursor + Codex 完整工具链** — 35 分钟
 - **Claude、Codex、Cursor、Gemini 对比指南** — 120 分钟
 - **Lab: 模型与参数 — Temperature、Top-P 和模型选择** — 30 分钟
 - **自学：工具与模型最新动态** — 30 分钟
 - **自学：AI 模型对比参考** — 30 分钟
-- **从需求到 PRD 的 AI 产品设计流程（Product Requirement Document）** — 90 分钟 · 🔴直播
+- **从需求到 PRD：AI 产品设计流程与 Claude 模块拆解** — 120 分钟 · 🔴直播
 - **Lab: 明确任务 — 让 AI 准确理解你的需求** — 30 分钟
 - **自学：从想法到 PRD（用 AI 写 PRD）** — 30 分钟
-- **用 Claude 自动生成 PRD 与模块拆解** — 120 分钟 · 🔴直播
 - **Lab: Prompt Chaining — 多步骤编排** — 30 分钟
 - **PRD 模板与 Claude Prompt（提示词）参考** — 120 分钟
 - **Lab: 输出格式 — 让 AI 按你要的格式回答** — 30 分钟
