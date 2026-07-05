@@ -8,12 +8,12 @@ const prdRules = [
 	{ n: '4', t: '管版本', d: 'PRD v1 做 MVP，v2 改反馈，v3 再加范围。不要在同一份 PRD 里无限改目标。', color: colors.orange },
 ];
 
-const board = [
-	['Draft', '想法还没磨利'],
-	['Ready', '能交给 agent 出 plan'],
-	['In Progress', 'agent 正在实现'],
-	['Review', '按验收标准检查'],
-	['Done / Dropped', '完成或明确砍掉'],
+// Mini CRM 的真实 backlog 长这样（状态定义见前面 PRD 文件夹结构那页）
+const backlog: { t: string; status: string; color: string }[] = [
+	{ t: '客户管理 CRUD', status: 'Done', color: colors.green },
+	{ t: '订单管理 CRUD', status: 'Ready', color: colors.yellow },
+	{ t: '跟进记录时间线', status: 'Draft', color: '#e5e7eb' },
+	{ t: '数据导出 Excel', status: 'Dropped', color: '#e5e7eb' },
 ];
 
 // 管理多个 PRD：你不是管理“循环”，而是管理需求文档队列和版本
@@ -51,13 +51,13 @@ export default function L2P05a_ManageADLC() {
 						transition={{ ...springIn.transition, delay: 0.28 }}
 						style={{ background: colors.dark, color: colors.white, border, boxShadow: shadow, padding: '22px 22px', display: 'flex', flexDirection: 'column' }}
 					>
-						<div style={{ fontFamily: fonts.mono, fontSize: 14, color: colors.yellow, fontWeight: 900 }}>PRD 看板</div>
-						<div style={{ marginTop: 12, fontFamily: fonts.heading, fontSize: 30, fontWeight: 900, lineHeight: 1.1 }}>每个 PRD 都要有状态</div>
+						<div style={{ fontFamily: fonts.mono, fontSize: 14, color: colors.yellow, fontWeight: 900 }}>Mini CRM 的 Backlog</div>
+						<div style={{ marginTop: 12, fontFamily: fonts.heading, fontSize: 26, fontWeight: 900, lineHeight: 1.15 }}>同一个项目，4 个 PRD 排队</div>
 						<div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginTop: 18 }}>
-							{board.map(([status, desc], i) => (
-								<div key={status} style={{ background: i === 1 ? colors.yellow : '#fff', color: colors.black, border, padding: '11px 14px' }}>
-									<div style={{ fontSize: 17, fontWeight: 900 }}>{status}</div>
-									<div style={{ fontSize: 13.5, fontWeight: 750, color: '#374151', marginTop: 2 }}>{desc}</div>
+							{backlog.map((item) => (
+								<div key={item.t} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#fff', color: colors.black, border, padding: '11px 14px' }}>
+									<span style={{ fontSize: 15.5, fontWeight: 900 }}>{item.t}</span>
+									<span style={{ background: item.color, border: `2px solid ${colors.black}`, padding: '3px 10px', fontSize: 12.5, fontWeight: 900, fontFamily: fonts.mono }}>{item.status}</span>
 								</div>
 							))}
 						</div>
