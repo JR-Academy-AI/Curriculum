@@ -20,8 +20,10 @@ import L2P04 from './components/slides/L2P04_PRDFive';        // PRD 五块模�
 import L2P04b from './components/slides/L2P04b_PRDQuality';    // 合格 PRD 的 6 个硬指标
 import L2P04d from './components/slides/L2P04d_PRDToRules';     // PRD 之后准备 rules/docs/repo context
 import L2P04e from './components/slides/L2P04e_RulesList';      // Rules List: SOLID/DRY/KISS/readability
+import L2P04h from './components/slides/L2P04h_RulesChecklist'; // 13 条可执行 Rules Checklist
 import L2P04f from './components/slides/L2P04f_RulesFileStructure'; // Rules 文件结构
 import L2P04g from './components/slides/L2P04g_PRDFolderStructure'; // PRD 文件夹结构
+import L2P04i from './components/slides/L2P04i_RepoStrategy';   // Monorepo vs Polyrepo
 import L2P05 from './components/slides/L2P05_Unstuck';        // agent 卡住破局清单
 import L2P05a from './components/slides/L2P05a_ManageADLC';    // 如何管理多个 PRD
 import L2P06 from './components/slides/L2P06_Deploy';         // 部署 checklist
@@ -41,8 +43,10 @@ export default function App() {
 			<L2P04b />{/* PRD 必须具备什么 */}
 			<L2P04d />{/* PRD 之后要准备 Rules / Docs / Repo Context */}
 			<L2P04e />{/* Rules List: SOLID / DRY / KISS / Readability */}
-			<L2P04f />{/* Rules 文件结构 */}
-			<L2P04g />{/* PRD 文件夹结构 */}
+				<L2P04h />{/* 13 条可执行 Rules Checklist */}
+				<L2P04f />{/* Rules 文件结构 */}
+				<L2P04g />{/* PRD 文件夹结构 */}
+				<L2P04i />{/* Monorepo vs Polyrepo */}
 
 			{/* 再讲产品分析：需求从哪里来，怎么判断值不值得做 */}
 			<L2P01 />{/* 天花板金句 */}
