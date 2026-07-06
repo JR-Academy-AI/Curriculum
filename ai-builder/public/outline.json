@@ -13,7 +13,7 @@
   "estimatedHours": 107.3,
   "totalInteractiveLabs": 32,
   "title_en": "Vibe Coding Masterclass",
-  "description_en": "Build full-stack apps with Claude Code, Cursor, and Codex. From PRD to Skills/MCP/Agent to deployment. For developers with programming experience.",
+  "description_en": "Build full-stack apps with Claude Code and Codex. From PRD to Skills/MCP/Agent to deployment. For developers with programming experience.",
   "timeLength": "8 周（111 节课）",
   "courseObjective": "建立从个人到企业的 AI 操作系统：用 Source of Truth 把你的经验/规范结构化成 AI 可读的第二大脑，用 ADLC 把整份 PRD 交给 Agent 端到端开发并部署，把重复流程交给 Agent 自动跑，最终能同时指挥多个 Agent 并行工作。",
   "courseObjective_en": "Master Claude Code Skills, MCP Server building, Agent architecture, and multi-model collaboration. Ship a full-stack project from PRD to deployment with AI.",
@@ -31,7 +31,7 @@
   ],
   "highlights_en": [
     "Three core modules: Claude Code Skills + MCP Server + Agent Architecture",
-    "Deep comparison of Claude / Cursor / Codex / Gemini",
+    "Deep comparison of Claude / Codex / Gemini",
     "108 lessons from PRD to Skills to MCP to Agent to full-stack deployment",
     "Context Engineering in practice — beyond prompts, designing the entire context",
     "Graduate with a deployable AI full-stack project + Demo"
@@ -132,8 +132,8 @@
         },
         {
           "code": "L04",
-          "title": "安装与配置 Claude、Cursor、Codex CLI",
-          "description": "三大工具安装配置：Claude Code（Anthropic 官方 CLI，最强的 Agent 编程工具）、Cursor（VS Code 改的 AI 编辑器，补全和对话都好用）、Codex CLI（OpenAI 的命令行工具）。这节课从安装到配置 API Key 到第一次运行，三个工具都跑通。环境配好后面才能专注内容。",
+          "title": "安装与配置 Claude、Codex CLI",
+          "description": "两大工具安装配置：Claude Code（Anthropic 官方 CLI，最强的 Agent 编程工具）、Codex CLI（OpenAI 的命令行工具）。这节课从安装到配置 API Key 到第一次运行，两个工具都跑通。环境配好后面才能专注内容。",
           "type": "Lesson",
           "isLive": true,
           "duration": 120,
@@ -141,8 +141,8 @@
             {
               "order": 1,
               "type": "LIVE",
-              "title": "三大工具安装配置",
-              "description": "Claude Code CLI + Cursor + Codex CLI 从安装到跑通",
+              "title": "两大工具安装配置",
+              "description": "Claude Code CLI + Codex CLI 从安装到跑通",
               "duration": 60
             },
             {
@@ -151,28 +151,9 @@
               "title": "验证环境",
               "description": "每个工具执行一个简单任务验证可用",
               "duration": 30
-            },
-            {
-              "order": 3,
-              "type": "LEARN",
-              "title": "Cursor 安装详细指南",
-              "description": "图文步骤参考",
-              "duration": 30
             }
           ],
-          "labs": [
-            {
-              "source": "prompt-lab",
-              "slug": "vibe-cursor-intro"
-            }
-          ],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "install-cursor"
-            }
-          ],
-          "learningMaterial": "<h2>学习目标</h2><ul><li>完成 Claude Code CLI、Cursor、Codex CLI 三个工具的安装和 API Key 配置</li><li>每个工具成功执行一个简单任务，验证环境可用</li><li>理解三个工具的运行模式差异：终端 Agent vs 编辑器 vs CLI 单次执行</li></ul><h2>核心概念</h2><h3>Claude Code 安装（Anthropic 官方 CLI Agent）</h3><p>Claude Code 是 Anthropic 官方的 CLI 工具，直接在终端运行，以 Agent 模式自主完成任务。</p><pre><code># 安装（需要 Node.js 18+）\nnpm install -g @anthropic-ai/claude-code\n\n# 首次运行，会引导你登录 Anthropic 账号\nclaude\n\n# 验证安装\nclaude --version\n\n# 在项目目录启动\ncd your-project\nclaude</code></pre><p>Claude Code 启动后会自动扫描项目结构，读取 CLAUDE.md（如果有），建立项目上下文。它能直接读写文件、执行 shell 命令、跑测试。</p><h3>Cursor 安装（AI 编辑器）</h3><p>Cursor 是基于 VS Code 的 AI 编辑器，下载地址：<code>cursor.com</code>。安装后打开 Settings → Models，配置你的 API Key（支持 Anthropic、OpenAI）。核心功能：Tab 补全、Cmd+K 内联编辑、Cmd+L 侧边对话、Composer 多文件编辑。</p><h3>Codex CLI 安装（OpenAI 命令行）</h3><pre><code># 安装\nnpm install -g @openai/codex\n\n# 配置 API Key\nexport OPENAI_API_KEY=\"sk-...\"\n\n# 使用\ncodex \"给这个项目添加 ESLint 配置\"</code></pre><h3>三工具运行模式对比</h3><p>Claude Code：Agent 模式，持续运行，自主决定下一步操作。Cursor：编辑器模式，你在写代码时实时辅助。Codex：单次执行模式，一条命令做一件事。三种模式互补，不冲突。</p><h3>常见安装问题</h3><p>Claude Code 安装失败常见原因：Node.js 版本低于 18（用 <code>node --version</code> 检查）、npm 全局权限不够（macOS 用 <code>sudo npm install -g</code> 或配置 nvm）。Cursor 安装后如果 Tab 补全不工作，检查 Settings → Features → Copilot++ 是否开启。Codex CLI 需要 OpenAI API Key 有余额才能调用。</p><h3>API Key 安全提醒</h3><p>API Key 不要写在代码里或提交到 Git。用环境变量：<code>export ANTHROPIC_API_KEY=sk-ant-...</code>，或写入 <code>~/.zshrc</code>。Claude Code 首次登录后会自动管理 token，不需要手动设置环境变量。</p><h2>操作步骤</h2><ol><li>安装 Claude Code 并在一个项目目录中启动，让它「读取项目结构并总结」</li><li>安装 Cursor 并打开同一个项目，用 Cmd+K 让它「给某个函数加注释」</li><li>安装 Codex CLI 并执行一个简单命令，比如「列出项目中所有 TODO 注释」</li><li>三个工具都跑通后，截图记录</li></ol><h2>小结</h2><p>三个工具各有不同的交互模式。Claude Code 是你的 AI 结对编程搭档（Agent），Cursor 是你的智能编辑器（实时辅助），Codex 是快捷命令行工具。后续课程会深入每个工具的高级功能。</p>",
+          "learningMaterial": "<h2>学习目标</h2><ul><li>完成 Claude Code CLI、Codex CLI 两个工具的安装和 API Key 配置</li><li>每个工具成功执行一个简单任务，验证环境可用</li><li>理解两个工具的运行模式差异：终端 Agent vs CLI 单次执行</li></ul><h2>核心概念</h2><h3>Claude Code 安装（Anthropic 官方 CLI Agent）</h3><p>Claude Code 是 Anthropic 官方的 CLI 工具，直接在终端运行，以 Agent 模式自主完成任务。</p><pre><code># 安装（需要 Node.js 18+）\nnpm install -g @anthropic-ai/claude-code\n\n# 首次运行，会引导你登录 Anthropic 账号\nclaude\n\n# 验证安装\nclaude --version\n\n# 在项目目录启动\ncd your-project\nclaude</code></pre><p>Claude Code 启动后会自动扫描项目结构，读取 CLAUDE.md（如果有），建立项目上下文。它能直接读写文件、执行 shell 命令、跑测试。</p><h3>Codex CLI 安装（OpenAI 命令行）</h3><pre><code># 安装\nnpm install -g @openai/codex\n\n# 配置 API Key\nexport OPENAI_API_KEY=\"sk-...\"\n\n# 使用\ncodex \"给这个项目添加 ESLint 配置\"</code></pre><h3>两工具运行模式对比</h3><p>Claude Code：Agent 模式，持续运行，自主决定下一步操作。Codex：单次执行模式，一条命令做一件事。两种模式互补，不冲突。</p><h3>常见安装问题</h3><p>Claude Code 安装失败常见原因：Node.js 版本低于 18（用 <code>node --version</code> 检查）、npm 全局权限不够（macOS 用 <code>sudo npm install -g</code> 或配置 nvm）。Codex CLI 需要 OpenAI API Key 有余额才能调用。</p><h3>API Key 安全提醒</h3><p>API Key 不要写在代码里或提交到 Git。用环境变量：<code>export ANTHROPIC_API_KEY=sk-ant-...</code>，或写入 <code>~/.zshrc</code>。Claude Code 首次登录后会自动管理 token，不需要手动设置环境变量。</p><h2>操作步骤</h2><ol><li>安装 Claude Code 并在一个项目目录中启动，让它「读取项目结构并总结」</li><li>安装 Codex CLI 并执行一个简单命令，比如「列出项目中所有 TODO 注释」</li><li>两个工具都跑通后，截图记录</li></ol><h2>小结</h2><p>两个工具各有不同的交互模式。Claude Code 是你的 AI 结对编程搭档（Agent），Codex 是快捷命令行工具。后续课程会深入每个工具的高级功能。</p>",
           "_id": "69db3dc376e3e0c1b3b66d12"
         },
         {
@@ -219,29 +200,24 @@
         },
         {
           "code": "Q01",
-          "title": "Quest 实战：装好 Claude Code + Cursor + Codex 完整工具链",
+          "title": "Quest 实战：装好 Claude Code + Codex 完整工具链",
           "type": "Quest",
           "duration": 35,
           "isLive": false,
-          "description": "<h3>🎯 这节课解决什么问题</h3><p>L04-L06 讲了 Claude Code、Cursor、Codex CLI 是什么。但很多有经验的开发者「装过 Cursor」≠「装过完整工具链」，更没体验过三个工具协作的开发流。这节 Quest 由小花老师主动引导你在自己电脑上把 Claude Code、Cursor、Codex CLI 三个全部装好、配好 API Key、跑通第一个 Hello World 项目，让你真切感受到「Vibe Coding 工具链」是什么。</p><h3>📖 你将学到</h3><ul><li><strong>装好三大工具</strong> — Claude Code 终端版 + Cursor IDE + Codex CLI 配齐</li><li><strong>配置 API Key 和环境变量</strong> — 不是看截图，是自己跑通认证</li><li><strong>跑通三个工具的第一个项目</strong> — 让 Claude Code init、Cursor 打开、Codex CLI 跑命令</li></ul><h3>💡 适合谁</h3><p>有 Python/JS 基础但还没用过 Claude Code 或者只用过 Cursor 的开发者。这一节让你在 30 分钟内补齐工具栈。</p><h3>📦 课程包含</h3><ul><li>1 个 AI Tutor Quest（5 步：装 Node + Claude Code → 装 Cursor → 装 Codex CLI → 配 API Key → 跑通第一个项目）</li><li>约 35 分钟</li><li>完成后你电脑上有完整 Vibe Coding 工具链，能切换使用</li></ul><h3>✅ 学完能做什么</h3><p>后面 Phase 2-4 的所有 Skills、MCP、Agent、全栈项目实战都建立在这套工具链上。这一节没装好后面只能干看演示。</p>",
+          "description": "<h3>🎯 这节课解决什么问题</h3><p>L04-L06 讲了 Claude Code、Codex CLI 是什么。但很多有经验的开发者「读过文档」≠「装过完整工具链」，更没体验过多个工具协作的开发流。这节 Quest 由小花老师主动引导你在自己电脑上把 Claude Code、Codex CLI 全部装好、配好 API Key、跑通第一个 Hello World 项目，让你真切感受到「Vibe Coding 工具链」是什么。</p><h3>📖 你将学到</h3><ul><li><strong>装好两大工具</strong> — Claude Code 终端版 + Codex CLI 配齐</li><li><strong>配置 API Key 和环境变量</strong> — 不是看截图，是自己跑通认证</li><li><strong>跑通两个工具的第一个项目</strong> — 让 Claude Code init、Codex CLI 跑命令</li></ul><h3>💡 适合谁</h3><p>有 Python/JS 基础但还没用过 Claude Code 的开发者。这一节让你在 30 分钟内补齐工具栈。</p><h3>📦 课程包含</h3><ul><li>1 个 AI Tutor Quest（4 步：装 Node + Claude Code → 装 Codex CLI → 配 API Key → 跑通第一个项目）</li><li>约 35 分钟</li><li>完成后你电脑上有完整 Vibe Coding 工具链，能切换使用</li></ul><h3>✅ 学完能做什么</h3><p>后面 Phase 2-4 的所有 Skills、MCP、Agent、全栈项目实战都建立在这套工具链上。这一节没装好后面只能干看演示。</p>",
           "quest": {
-            "title": "装好 Claude Code + Cursor + Codex CLI 三件套",
-            "description": "从零安装到三个工具都跑通第一个 Hello World 项目",
+            "title": "装好 Claude Code + Codex CLI 两件套",
+            "description": "从零安装到两个工具都跑通第一个 Hello World 项目",
             "difficulty": "intermediate",
             "estimatedMinutes": 35,
-            "learningGoal": "学员能在自己电脑上独立装好 Claude Code、Cursor、Codex CLI 三个工具，配好 API Key，并用三个工具分别完成一个最小验证",
-            "successCriteria": "学员能 1) claude --version 显示版本号；2) cursor 命令能打开 IDE；3) codex --version 显示版本号；4) 用 claude code 在某个目录跑通一次 init",
+            "learningGoal": "学员能在自己电脑上独立装好 Claude Code、Codex CLI 两个工具，配好 API Key，并用两个工具分别完成一个最小验证",
+            "successCriteria": "学员能 1) claude --version 显示版本号；2) codex --version 显示版本号；3) 用 claude code 在某个目录跑通一次 init",
             "uiMode": "chat",
             "visualMode": "flow",
-            "context": "用户是有经验的开发者（Python/JS 基础），熟悉终端操作。引导时不用解释什么是 npm，但要提醒 Mac 用户 brew 装 node、Windows 用户用 WSL2。Claude Code 装在 npm 全局，Cursor 装 GUI 应用，Codex CLI 用 npm 全局。重点是引导用户配 API Key——Claude Code 用 Anthropic Key，Codex CLI 用 OpenAI Key，让用户去对应的官网申请。最后让用户在同一个项目目录用三个工具分别跑一次，体验差异：Claude Code 在终端、Cursor 在 IDE、Codex 在终端但偏 OpenAI 风格。",
+            "context": "用户是有经验的开发者（Python/JS 基础），熟悉终端操作。引导时不用解释什么是 npm，但要提醒 Mac 用户 brew 装 node、Windows 用户用 WSL2。Claude Code 和 Codex CLI 都装在 npm 全局。重点是引导用户配 API Key——Claude Code 用 Anthropic Key，Codex CLI 用 OpenAI Key，让用户去对应的官网申请。最后让用户在同一个项目目录用两个工具分别跑一次，体验差异：Claude Code 是 Agent 模式持续运行，Codex 是单次执行偏 OpenAI 风格。",
             "systemStylePrompt": "说话像一个有经验的 staff engineer 师兄。直接给命令不啰嗦，遇到报错先问环境再给解决方案。",
-            "customGuardrails": "如果用户问「这三个我都需要装吗？」回答「至少装 Claude Code 和 Cursor，Codex 可选但后面 Phase 3 多模型对比要用」。如果用户没有 Anthropic API Key，引导去 console.anthropic.com 申请，提示有免费额度。",
+            "customGuardrails": "如果用户问「这两个我都需要装吗？」回答「至少装 Claude Code，Codex 可选但后面 Phase 3 多模型对比要用」。如果用户没有 Anthropic API Key，引导去 console.anthropic.com 申请，提示有免费额度。",
             "linkedResources": [
-              {
-                "type": "learn",
-                "ref": "vibe-coding/install-cursor",
-                "description": "Cursor 详细安装文档"
-              },
               {
                 "type": "wiki",
                 "ref": "claude-code-install",
@@ -264,13 +240,6 @@
                 "expectedEvidence": "语义化版本号"
               },
               {
-                "title": "装 Cursor IDE",
-                "description": "去 cursor.com 下载安装，第一次打开登录账号",
-                "verificationType": "self-confirm",
-                "verificationHint": "AI 追问：Cursor 启动后看到欢迎界面了吗？登录账号了吗？",
-                "expectedEvidence": ""
-              },
-              {
                 "title": "装 Codex CLI 并配 API Key",
                 "description": "npm install -g @openai/codex，配置 OPENAI_API_KEY 环境变量",
                 "verificationType": "text-evidence",
@@ -279,9 +248,9 @@
               },
               {
                 "title": "跑通第一个 Vibe Coding 项目",
-                "description": "新建一个空文件夹，cd 进去，跑 claude /init，让 Claude Code 帮你生成 CLAUDE.md，然后用 Cursor 打开同一个目录看效果",
+                "description": "新建一个空文件夹，cd 进去，跑 claude /init，让 Claude Code 帮你生成 CLAUDE.md，然后用 Codex CLI 在同一个目录跑一条命令看效果",
                 "verificationType": "self-confirm",
-                "verificationHint": "AI 追问：CLAUDE.md 生成了吗？里面写了什么？三个工具都能打开同一个项目了吗？",
+                "verificationHint": "AI 追问：CLAUDE.md 生成了吗？里面写了什么？两个工具都能操作同一个项目了吗？",
                 "expectedEvidence": ""
               }
             ],
@@ -293,7 +262,6 @@
             "targetPlatform": "browser+local-terminal",
             "tags": [
               "claude-code",
-              "cursor",
               "codex",
               "tooling",
               "phase1-real"
@@ -303,8 +271,8 @@
         },
         {
           "code": "L07",
-          "title": "Claude、Codex、Cursor、Gemini 对比指南",
-          "description": "Claude Code 擅长大项目多文件编辑和 Agent 式自主完成任务；Cursor 擅长实时补全和快速迭代单文件；Codex CLI 擅长命令行一条指令搞定；Gemini 在 Google 生态和多模态场景有优势。这节课做同一个任务的四工具对比实验，让你知道什么场景用什么工具，不是「选一个用到底」。",
+          "title": "Claude、Codex、Gemini 对比指南",
+          "description": "Claude Code 擅长大项目多文件编辑和 Agent 式自主完成任务；Codex CLI 擅长命令行一条指令搞定；Gemini 在 Google 生态和多模态场景有优势。这节课做同一个任务的三工具对比实验，让你知道什么场景用什么工具，不是「选一个用到底」。",
           "type": "Information",
           "isLive": false,
           "duration": 120,
@@ -312,14 +280,14 @@
             {
               "order": 1,
               "type": "CONCEPT",
-              "title": "四大工具特点",
-              "description": "Claude Code = Agent, Cursor = 编辑器, Codex = CLI, Gemini = 多模态",
+              "title": "三大工具特点",
+              "description": "Claude Code = Agent, Codex = CLI, Gemini = 多模态",
               "duration": 30
             },
             {
               "order": 2,
               "type": "SCENARIO",
-              "title": "同任务四工具对比",
+              "title": "同任务三工具对比",
               "description": "写同一个组件，对比输出质量和速度",
               "duration": 40
             },
@@ -355,7 +323,7 @@
               "slug": "ai-model-comparison"
             }
           ],
-          "learningMaterial": "<h2>学习目标</h2><ul><li>理解四大 AI 编程工具的定位差异：Claude Code = Agent，Cursor = 编辑器，Codex = CLI，Gemini 2.5 = 多模态</li><li>用同一个任务对比四个工具的输出质量、速度、适用场景</li><li>建立「什么场景用什么工具」的决策框架</li></ul><h2>核心概念</h2><h3>四大工具定位</h3><table><tr><th>工具</th><th>定位</th><th>擅长</th><th>短板</th></tr><tr><td>Claude Code</td><td>Agent（自主执行）</td><td>多文件编辑、复杂重构、端到端任务</td><td>需要终端环境</td></tr><tr><td>Cursor</td><td>编辑器（实时辅助）</td><td>单文件快速迭代、代码补全、内联修改</td><td>跨文件协调不如 Agent</td></tr><tr><td>Codex CLI</td><td>命令行（单次执行）</td><td>快速脚本、一条命令搞定简单任务</td><td>不适合复杂交互</td></tr><tr><td>Gemini 2.5</td><td>多模态</td><td>截图转代码、设计稿实现、长上下文</td><td>Agent 能力不如 Claude</td></tr></table><h3>同任务对比实验：写一个 React 组件</h3><p>任务：写一个带搜索过滤功能的用户列表组件。</p><pre><code># Claude Code（Agent 模式）\n# 直接在终端说需求，Claude 自动：\n# 1. 读取项目现有组件结构\n# 2. 创建新文件 UserList.tsx\n# 3. 写完整组件 + 类型定义\n# 4. 自动添加到路由\n# 5. 跑一遍 lint 确认没报错\n\n# Cursor（编辑器模式）\n# Cmd+L 打开对话框，描述需求\n# Cursor 生成代码到当前文件\n# 需要你手动创建文件、添加路由\n\n# Codex CLI\ncodex \"在 src/components/ 下创建 UserList 组件\"\n# 生成单个文件，不会自动集成\n\n# Gemini 2.5\n# 可以给它一张设计稿截图 + 描述\n# 从视觉还原度角度最好</code></pre><h3>工具选型决策树</h3><p>要改多个文件？→ Claude Code。要快速迭代单文件？→ Cursor。要一条命令搞定？→ Codex。有设计稿要还原？→ Gemini 2.5。实际工作中通常组合使用：Cursor 写代码 + Claude Code 做重构/部署。</p><h3>实际项目中的组合策略</h3><p>大多数团队不会只用一个工具。推荐组合：日常编码用 Cursor（实时补全效率最高），复杂重构和新模块开发用 Claude Code（Agent 能力最强），快速脚本和一次性任务用 Codex CLI，设计稿转代码用 Gemini 2.5。关键原则：选工具看任务类型，不看个人偏好。</p><h2>动手练习</h2><ol><li>选一个你熟悉的功能（比如 TODO List），分别用四个工具实现</li><li>记录每个工具的：生成时间、代码质量（1-5分）、需要手动修改的比例</li><li>画出你的个人工具选型决策表：什么场景优先用哪个工具</li></ol><h2>小结</h2><p>没有「最好」的工具，只有最合适的场景。Claude Code 适合需要 Agent 自主完成的复杂任务，Cursor 适合写代码时的实时辅助，Codex 适合快速脚本，Gemini 2.5 适合多模态场景。</p>",
+          "learningMaterial": "<h2>学习目标</h2><ul><li>理解三大 AI 编程工具的定位差异：Claude Code = Agent，Codex = CLI，Gemini 2.5 = 多模态</li><li>用同一个任务对比三个工具的输出质量、速度、适用场景</li><li>建立「什么场景用什么工具」的决策框架</li></ul><h2>核心概念</h2><h3>三大工具定位</h3><table><tr><th>工具</th><th>定位</th><th>擅长</th><th>短板</th></tr><tr><td>Claude Code</td><td>Agent（自主执行）</td><td>多文件编辑、复杂重构、端到端任务</td><td>需要终端环境</td></tr><tr><td>Codex CLI</td><td>命令行（单次执行）</td><td>快速脚本、一条命令搞定简单任务</td><td>不适合复杂交互</td></tr><tr><td>Gemini 2.5</td><td>多模态</td><td>截图转代码、设计稿实现、长上下文</td><td>Agent 能力不如 Claude</td></tr></table><h3>同任务对比实验：写一个 React 组件</h3><p>任务：写一个带搜索过滤功能的用户列表组件。</p><pre><code># Claude Code（Agent 模式）\n# 直接在终端说需求，Claude 自动：\n# 1. 读取项目现有组件结构\n# 2. 创建新文件 UserList.tsx\n# 3. 写完整组件 + 类型定义\n# 4. 自动添加到路由\n# 5. 跑一遍 lint 确认没报错\n\n# Codex CLI\ncodex \"在 src/components/ 下创建 UserList 组件\"\n# 生成单个文件，不会自动集成\n\n# Gemini 2.5\n# 可以给它一张设计稿截图 + 描述\n# 从视觉还原度角度最好</code></pre><h3>工具选型决策树</h3><p>要改多个文件、做端到端任务？→ Claude Code。要一条命令搞定？→ Codex。有设计稿要还原？→ Gemini 2.5。实际工作中通常组合使用：Claude Code 写代码和做重构，Gemini 2.5 处理设计稿转代码。</p><h3>实际项目中的组合策略</h3><p>大多数团队不会只用一个工具。推荐组合：日常编码和复杂重构用 Claude Code（Agent 能力最强），快速脚本和一次性任务用 Codex CLI，设计稿转代码用 Gemini 2.5。关键原则：选工具看任务类型，不看个人偏好。</p><h2>动手练习</h2><ol><li>选一个你熟悉的功能（比如 TODO List），分别用三个工具实现</li><li>记录每个工具的：生成时间、代码质量（1-5分）、需要手动修改的比例</li><li>画出你的个人工具选型决策表：什么场景优先用哪个工具</li></ol><h2>小结</h2><p>没有「最好」的工具，只有最合适的场景。Claude Code 适合需要 Agent 自主完成的复杂任务，Codex 适合快速脚本，Gemini 2.5 适合多模态场景。</p>",
           "_id": "69db3dc376e3e0c1b3b66d1c"
         },
         {
@@ -627,7 +595,7 @@
         {
           "code": "L20",
           "title": "Claude Prompt Engineering 与 Context Engineering（上下文工程）实践",
-          "description": "Prompt Engineering 管的是单条指令的质量，Context Engineering 管的是 AI 能看到的所有信息。同一条 Prompt 在不同 Context 下输出完全不同。这节课讲 Context Engineering 的核心：CLAUDE.md 文件写什么（项目规范和约束）、.cursorrules 怎么配（编码风格和模式）、什么信息放上下文什么不放、怎么设计项目结构让 AI 更好理解你的代码。",
+          "description": "Prompt Engineering 管的是单条指令的质量，Context Engineering 管的是 AI 能看到的所有信息。同一条 Prompt 在不同 Context 下输出完全不同。这节课讲 Context Engineering 的核心：CLAUDE.md 文件写什么（项目规范和约束）、.claude/rules/ 怎么按领域拆分（编码风格和模式）、什么信息放上下文什么不放、怎么设计项目结构让 AI 更好理解你的代码。",
           "type": "Lesson",
           "isLive": true,
           "duration": 90,
@@ -636,7 +604,7 @@
               "order": 1,
               "type": "LIVE",
               "title": "Context Engineering 核心",
-              "description": "CLAUDE.md + .cursorrules + 项目结构 = AI 的工作环境",
+              "description": "CLAUDE.md + .claude/rules/ + 项目结构 = AI 的工作环境",
               "duration": 30
             },
             {
@@ -658,7 +626,7 @@
               "order": 4,
               "type": "PROJECT",
               "title": "Context 配置完成",
-              "description": "CLAUDE.md + .cursorrules 写好",
+              "description": "CLAUDE.md + .claude/rules/ 写好",
               "duration": 15
             }
           ],
@@ -666,23 +634,15 @@
             {
               "source": "prompt-lab",
               "slug": "context-engineering"
-            },
-            {
-              "source": "prompt-lab",
-              "slug": "vibe-cursorrules-design"
             }
           ],
           "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "cursor-rules"
-            },
             {
               "direction": "ai-engineer",
               "slug": "context-fundamentals"
             }
           ],
-          "learningMaterial": "<h2>学习目标</h2><ul><li>区分 Prompt Engineering 和 Context Engineering：前者管单条指令质量，后者管 AI 能看到的所有信息</li><li>掌握 CLAUDE.md 的写法：项目规范、代码约定、禁止事项</li><li>掌握 .cursorrules 的配置：编码风格、偏好模式</li><li>理解项目结构设计对 AI 理解力的影响</li></ul><h2>核心概念</h2><h3>Prompt Engineering vs Context Engineering</h3><p>Prompt Engineering：优化你给 AI 的单条指令。\"帮我写一个函数\" vs \"帮我写一个函数，参数为 string，返回 Result 类型，包含错误处理\"——后者是更好的 Prompt。</p><p>Context Engineering：优化 AI 在执行任务时能看到的所有信息。同一条 Prompt，在空项目和有完整 CLAUDE.md 的项目中，输出质量差 10 倍。Context 包括：CLAUDE.md、.cursorrules、项目文件结构、已有代码风格、README、类型定义。</p><h3>CLAUDE.md 怎么写</h3><pre><code># CLAUDE.md 示例\n## 项目概述\nNext.js 14 + TypeScript + MongoDB 的课程平台\n\n## 代码规范\n- 使用 TypeScript strict mode\n- 接口命名用 I 前缀：IUser, ICourse\n- 函数用 camelCase，组件用 PascalCase\n- 缩进用 Tab，宽度 4\n\n## 禁止事项\n- 不使用 any 类型\n- 不使用 Material UI\n- 不在 service 中直接返回 Response\n\n## 项目结构\nsrc/\n├── modules/     # 业务模块\n├── common/      # 公共工具\n└── models/      # 数据模型</code></pre><h3>.cursorrules 配置</h3><pre><code># .cursorrules\n- Always use TypeScript, never JavaScript\n- Use functional components with hooks\n- Error handling: use Result type, not try-catch\n- Import order: external → internal → types → styles</code></pre><h3>项目结构也是 Context</h3><p>清晰的目录结构让 AI 更容易找到相关文件。<code>src/modules/user/user.service.ts</code> 比 <code>src/services/s1.ts</code> 对 AI 友好得多。命名规范、文件组织都是 Context 的一部分。</p><h2>操作步骤</h2><ol><li>为你的项目创建 CLAUDE.md：写入项目概述、代码规范、禁止事项、项目结构</li><li>创建 .cursorrules：写入编码偏好</li><li>在 Claude Code 中测试：有/无 CLAUDE.md 的情况下生成同一段代码，对比差异</li></ol><h2>小结</h2><p>Prompt Engineering 是「说什么」，Context Engineering 是「AI 能看到什么」。在 Vibe Coding 中，Context Engineering 的影响力远大于单条 Prompt。CLAUDE.md 和 .cursorrules 是你的 AI 工作环境配置文件。</p>",
+          "learningMaterial": "<h2>学习目标</h2><ul><li>区分 Prompt Engineering 和 Context Engineering：前者管单条指令质量，后者管 AI 能看到的所有信息</li><li>掌握 CLAUDE.md 的写法：项目规范、代码约定、禁止事项</li><li>掌握 .claude/rules/ 的配置：按领域拆分编码风格、偏好模式</li><li>理解项目结构设计对 AI 理解力的影响</li></ul><h2>核心概念</h2><h3>Prompt Engineering vs Context Engineering</h3><p>Prompt Engineering：优化你给 AI 的单条指令。\"帮我写一个函数\" vs \"帮我写一个函数，参数为 string，返回 Result 类型，包含错误处理\"——后者是更好的 Prompt。</p><p>Context Engineering：优化 AI 在执行任务时能看到的所有信息。同一条 Prompt，在空项目和有完整 CLAUDE.md 的项目中，输出质量差 10 倍。Context 包括：CLAUDE.md、.claude/rules/、项目文件结构、已有代码风格、README、类型定义。</p><h3>CLAUDE.md 怎么写</h3><pre><code># CLAUDE.md 示例\n## 项目概述\nNext.js 14 + TypeScript + MongoDB 的课程平台\n\n## 代码规范\n- 使用 TypeScript strict mode\n- 接口命名用 I 前缀：IUser, ICourse\n- 函数用 camelCase，组件用 PascalCase\n- 缩进用 Tab，宽度 4\n\n## 禁止事项\n- 不使用 any 类型\n- 不使用 Material UI\n- 不在 service 中直接返回 Response\n\n## 项目结构\nsrc/\n├── modules/     # 业务模块\n├── common/      # 公共工具\n└── models/      # 数据模型</code></pre><h3>.claude/rules/ 配置</h3><pre><code># .claude/rules/code-style.md\n- Always use TypeScript, never JavaScript\n- Use functional components with hooks\n- Error handling: use Result type, not try-catch\n- Import order: external → internal → types → styles</code></pre><h3>项目结构也是 Context</h3><p>清晰的目录结构让 AI 更容易找到相关文件。<code>src/modules/user/user.service.ts</code> 比 <code>src/services/s1.ts</code> 对 AI 友好得多。命名规范、文件组织都是 Context 的一部分。</p><h2>操作步骤</h2><ol><li>为你的项目创建 CLAUDE.md：写入项目概述、代码规范、禁止事项、项目结构</li><li>创建 .claude/rules/：写入编码偏好</li><li>在 Claude Code 中测试：有/无 CLAUDE.md 的情况下生成同一段代码，对比差异</li></ol><h2>小结</h2><p>Prompt Engineering 是「说什么」，Context Engineering 是「AI 能看到什么」。在 Vibe Coding 中，Context Engineering 的影响力远大于单条 Prompt。CLAUDE.md 和 .claude/rules/ 是你的 AI 工作环境配置文件。</p>",
           "_id": "69db3dc376e3e0c1b3b66d3c"
         },
         {
@@ -761,29 +721,24 @@
         },
         {
           "code": "Q02",
-          "title": "Quest 实战：给你的真实项目写一套 .cursorrules + CLAUDE.md",
+          "title": "Quest 实战：给你的真实项目写一套 CLAUDE.md + 工具规则文件",
           "type": "Quest",
           "duration": 40,
           "isLive": false,
-          "description": "<h3>🎯 这节课解决什么问题</h3><p>L20-L24 讲了 Context Engineering 是 AI 协作的核心、.cursorrules 怎么写、CLAUDE.md 干什么用。但「读完文档」≠「能给自己项目写出来」。这节 Quest 由小花老师带你拿你自己的真实项目（不管是工作 repo 还是 side project），写出一套实际有效的 .cursorrules 和 CLAUDE.md 配置——告诉 AI 你的代码风格、技术栈、禁止做的事。做完后 Cursor 和 Claude Code 在你这个项目里就能按你的规矩干活。</p><h3>📖 你将学到</h3><ul><li><strong>识别项目里值得告诉 AI 的关键约定</strong> — 不是写「请写好代码」，是写「禁止用 any、必须 strict TypeScript」</li><li><strong>把 .cursorrules 和 CLAUDE.md 分工写</strong> — 一个给 Cursor 看，一个给 Claude Code 看</li><li><strong>验证 AI 真的按规矩干活</strong> — 故意让 AI 写一段，看它有没有遵守</li></ul><h3>💡 适合谁</h3><p>已经在用 Cursor 但每次都觉得 AI 不懂你项目的工程师。这一节让你的 AI 真正变成「了解你项目」的协作者。</p><h3>📦 课程包含</h3><ul><li>1 个 AI Tutor Quest（5 步：选项目 → 列约定 → 写 .cursorrules → 写 CLAUDE.md → 验证 AI 遵守）</li><li>约 40 分钟</li><li>完成后你的项目里有真实可用的 Context Engineering 配置</li></ul><h3>✅ 学完能做什么</h3><p>你的所有后续 AI 协作都基于这套配置——AI 不会再写 any 类型、不会再用错的库、不会再忽略你的命名规范。这是 Vibe Coding 提升 10x 效率的关键。</p>",
+          "description": "<h3>🎯 这节课解决什么问题</h3><p>L20-L24 讲了 Context Engineering 是 AI 协作的核心、CLAUDE.md 怎么写、.claude/rules/ 怎么配。但「读完文档」≠「能给自己项目写出来」。这节 Quest 由小花老师带你拿你自己的真实项目（不管是工作 repo 还是 side project），写出一套实际有效的 CLAUDE.md + .claude/rules/ 配置——告诉 AI 你的代码风格、技术栈、禁止做的事。做完后 Claude Code 在这个项目里就能按你的规矩干活。</p><h3>📖 你将学到</h3><ul><li><strong>识别项目里值得告诉 AI 的关键约定</strong> — 不是写「请写好代码」，是写「禁止用 any、必须 strict TypeScript」</li><li><strong>把 CLAUDE.md 和 .claude/rules/ 分工写</strong> — CLAUDE.md 放全局规范，.claude/rules/ 按领域拆分细则</li><li><strong>验证 AI 真的按规矩干活</strong> — 故意让 AI 写一段，看它有没有遵守</li></ul><h3>💡 适合谁</h3><p>已经在用 Claude Code 但每次都觉得 AI 不懂你项目的工程师。这一节让你的 AI 真正变成「了解你项目」的协作者。</p><h3>📦 课程包含</h3><ul><li>1 个 AI Tutor Quest（5 步：选项目 → 列约定 → 写 CLAUDE.md → 写 .claude/rules/ → 验证 AI 遵守）</li><li>约 40 分钟</li><li>完成后你的项目里有真实可用的 Context Engineering 配置</li></ul><h3>✅ 学完能做什么</h3><p>你的所有后续 AI 协作都基于这套配置——AI 不会再写 any 类型、不会再用错的库、不会再忽略你的命名规范。这是 Vibe Coding 提升 10x 效率的关键。</p>",
           "quest": {
-            "title": "为你的真实项目写一套 .cursorrules + CLAUDE.md",
+            "title": "为你的真实项目写一套 CLAUDE.md + .claude/rules/",
             "description": "选项目 → 列约定 → 写配置 → 验证 AI 真的按规矩干活",
             "difficulty": "intermediate",
             "estimatedMinutes": 40,
-            "learningGoal": "学员能给自己的真实项目写出有效的 .cursorrules 和 CLAUDE.md，让 AI 在该项目内按团队约定干活",
-            "successCriteria": "学员的项目根目录下有 .cursorrules 文件（包含技术栈、代码规范、禁止项至少各 2 条）和 CLAUDE.md 文件（包含项目目标、模块结构、关键命令），并且能演示 AI 按规则生成代码",
+            "learningGoal": "学员能给自己的真实项目写出有效的 CLAUDE.md 和 .claude/rules/，让 Claude Code 在该项目内按团队约定干活",
+            "successCriteria": "学员的项目根目录下有 CLAUDE.md 文件（包含项目目标、模块结构、关键命令）和 .claude/rules/ 目录（包含技术栈、代码规范、禁止项至少各 2 条），并且能演示 AI 按规则生成代码",
             "uiMode": "chat",
             "visualMode": "flow",
-            "context": "用户是有项目的工程师。引导用户先选一个真实项目（工作的或自己的 side project），然后引导他列出 5-10 条「以前 AI 总是搞错的事」——比如「老用 axios 而我们用 ky」、「老写 any 而我们 strict」、「文件名用 PascalCase 而我们 kebab-case」等等。把这些约定写到 .cursorrules（给 Cursor）和 CLAUDE.md（给 Claude Code）里。最后引导用户故意让 AI 写一段代码，看它有没有遵守这些规则——遵守了就成功，没遵守就调规则。",
+            "context": "用户是有项目的工程师。引导用户先选一个真实项目（工作的或自己的 side project），然后引导他列出 5-10 条「以前 AI 总是搞错的事」——比如「老用 axios 而我们用 ky」、「老写 any 而我们 strict」、「文件名用 PascalCase 而我们 kebab-case」等等。把这些约定写到 CLAUDE.md（全局规范）和 .claude/rules/（按领域拆分细则）里。最后引导用户故意让 AI 写一段代码，看它有没有遵守这些规则——遵守了就成功，没遵守就调规则。",
             "systemStylePrompt": "说话像一个有架构经验的 tech lead。多用「这条规则是不是够明确？」「AI 看到这句会怎么理解？」这种引导思考的语气。",
             "customGuardrails": "如果用户没有真实项目，引导用一个空 Next.js 或 Hono 项目模板。如果用户写的规则太宽泛（「请写好代码」），引导他写具体的（「禁止用 console.log，必须用 logger.info」）。",
             "linkedResources": [
-              {
-                "type": "learn",
-                "ref": "vibe-coding/cursor-rules",
-                "description": "Cursor Rules 编写指南"
-              },
               {
                 "type": "learn",
                 "ref": "ai-engineer/context-fundamentals",
@@ -800,41 +755,41 @@
               },
               {
                 "title": "列出 AI 总搞错的 5-10 条约定",
-                "description": "回想你以前用 Cursor 时它老写错的事，列出来",
+                "description": "回想你以前用 AI coding 工具时它老写错的事，列出来",
                 "verificationType": "text-evidence",
                 "verificationHint": "让用户贴 5-10 条约定列表",
                 "expectedEvidence": "至少 5 条具体约定（不是空话）"
               },
               {
-                "title": "写 .cursorrules 文件",
-                "description": "在项目根目录创建 .cursorrules，把约定按 Cursor 格式写进去（角色 + 技术栈 + 规则 + 禁止项）",
-                "verificationType": "text-evidence",
-                "verificationHint": "让用户贴 .cursorrules 内容",
-                "expectedEvidence": "包含技术栈描述 + 至少 5 条具体规则"
-              },
-              {
                 "title": "写 CLAUDE.md 文件",
-                "description": "创建 CLAUDE.md，按 Claude Code 格式写（项目目标 + 模块结构 + 命令 + 编码规范）",
+                "description": "创建 CLAUDE.md（项目目标 + 模块结构 + 命令 + 编码规范），这份所有 AI coding 工具都读得到",
                 "verificationType": "text-evidence",
                 "verificationHint": "让用户贴 CLAUDE.md 大纲",
                 "expectedEvidence": "包含项目目标 + 模块结构 + 命令"
               },
               {
+                "title": "写 .claude/rules/",
+                "description": "在项目根目录创建 .claude/rules/，把约定按领域拆分成文件写进去（角色 + 技术栈 + 规则 + 禁止项）",
+                "verificationType": "text-evidence",
+                "verificationHint": "让用户贴规则文件内容",
+                "expectedEvidence": "包含技术栈描述 + 至少 5 条具体规则"
+              },
+              {
                 "title": "故意让 AI 违反规则验证",
-                "description": "让 Cursor 或 Claude Code 写一段代码（比如「写一个 fetch 用户的函数」），看它有没有遵守你的规则",
+                "description": "让 Claude Code 写一段代码（比如「写一个 fetch 用户的函数」），看它有没有遵守你的规则",
                 "verificationType": "self-confirm",
                 "verificationHint": "AI 追问：AI 生成的代码有遵守规则吗？哪些遵守了哪些没？没遵守的部分你打算怎么调规则？",
                 "expectedEvidence": ""
               }
             ],
             "prerequisites": [
-              "已完成 Q01（装好 Claude Code + Cursor）",
+              "已完成 Q01（装好 Claude Code）",
               "有一个真实的项目代码库（工作或个人都行）"
             ],
             "targetPlatform": "browser+local-terminal",
             "tags": [
               "context-engineering",
-              "cursor-rules",
+              "claude-rules",
               "claude-md",
               "phase1-real"
             ]
@@ -844,7 +799,7 @@
         {
           "code": "L25",
           "title": "Claude 协助 Debug：从报错到修复的完整流程",
-          "description": "代码报错了，怎么让 AI 帮你修？不是直接粘贴报错信息就行。这节课讲 Claude 辅助 Debug 的最佳实践：1）给完整的错误堆栈不要截断；2）说清楚你在做什么操作触发了这个错误；3）附上相关代码文件的上下文；4）让 Claude 先分析原因再给方案。还有 Cursor 的 inline debug 和 Claude Code 的 /debug 命令对比。",
+          "description": "代码报错了，怎么让 AI 帮你修？不是直接粘贴报错信息就行。这节课讲 Claude 辅助 Debug 的最佳实践：1）给完整的错误堆栈不要截断；2）说清楚你在做什么操作触发了这个错误；3）附上相关代码文件的上下文；4）让 Claude 先分析原因再给方案。",
           "type": "Lesson",
           "isLive": true,
           "duration": 120,
@@ -868,7 +823,7 @@
               "order": 3,
               "type": "SCENARIO",
               "title": "修复 3 个真实 Bug",
-              "description": "Cursor inline debug vs Claude Code /debug 对比",
+              "description": "用「先分析再修复」流程修复 3 个真实 Bug",
               "duration": 30
             },
             {
@@ -895,7 +850,7 @@
               "slug": "debug-with-ai"
             }
           ],
-          "learningMaterial": "<h2>学习目标</h2><ul><li>掌握 Claude 辅助 Debug 的最佳实践：完整错误堆栈 + 操作上下文 + 先分析再修复</li><li>对比 Cursor inline debug 和 Claude Code 的 Debug 方式</li><li>学会判断不同报错类型应该用哪种 Debug 策略</li></ul><h2>核心概念</h2><h3>Debug 三要素</h3><p>AI Debug 效果取决于你给的信息质量。三个必须提供的要素：</p><pre><code># 要素 1：完整错误堆栈（不要截断！）\nTypeError: Cannot read properties of undefined (reading 'map')\n    at UserList (src/components/UserList.tsx:23:15)\n    at renderWithHooks (node_modules/react-dom/...)\n    at mountIndeterminateComponent (...)\n\n# 要素 2：你在做什么操作\n\"我在 UserList 组件中调用 API 获取用户列表，\n API 返回成功但组件渲染时报错\"\n\n# 要素 3：相关代码上下文\n# 不只是报错那一行，还有数据来源、类型定义</code></pre><h3>Cursor inline Debug vs Claude Code Debug</h3><p>Cursor 方式：选中报错代码 → Cmd+K → 描述问题 → Cursor 在当前文件内联修复。适合单文件内的简单 bug。</p><p>Claude Code 方式：把错误堆栈粘贴到终端 → Claude 自动读取相关文件 → 分析根因 → 可能修改多个文件。适合跨文件的复杂 bug。</p><pre><code># Claude Code 的 Debug 对话示例\n你：这个报错怎么修？[粘贴完整错误堆栈]\n\n# Claude 会自动：\n# 1. 读取报错文件 UserList.tsx\n# 2. 读取 API 返回的类型定义\n# 3. 发现 API 返回的 data 可能是 null\n# 4. 修改代码添加空值检查\n# 5. 如果类型定义不准确，还会修改 interface</code></pre><h3>先分析再修复</h3><p>不要让 AI 直接 \"修这个 bug\"。让它先分析：</p><pre><code># 差：直接让修\n\"修复这个 TypeError\"\n\n# 好：先分析\n\"分析这个 TypeError 的根因。不要直接修复，\n先告诉我：\n1. 哪个变量是 undefined？\n2. 为什么它是 undefined？\n3. 你建议的修复方案是什么？\n确认方案后再修改代码。\"</code></pre><h2>动手练习</h2><ol><li>找你项目中一个已知的 bug（或故意制造一个），分别用 Cursor 和 Claude Code Debug</li><li>对比两种方式的效率：定位时间、修复准确率、是否引入新 bug</li><li>练习「先分析再修复」的 Debug 流程，养成不让 AI 盲目修的习惯</li></ol><h2>小结</h2><p>AI Debug 的关键不是 AI 多聪明，而是你给的信息够不够。完整错误堆栈 + 操作上下文 + 先分析后修复，这三步能解决 90% 的 Debug 场景。简单 bug 用 Cursor，跨文件复杂 bug 用 Claude Code。</p>",
+          "learningMaterial": "<h2>学习目标</h2><ul><li>掌握 Claude 辅助 Debug 的最佳实践：完整错误堆栈 + 操作上下文 + 先分析再修复</li><li>掌握「先分析根因，再动手修复」的 Debug 思维</li><li>学会判断不同报错类型应该用哪种 Debug 策略</li></ul><h2>核心概念</h2><h3>Debug 三要素</h3><p>AI Debug 效果取决于你给的信息质量。三个必须提供的要素：</p><pre><code># 要素 1：完整错误堆栈（不要截断！）\nTypeError: Cannot read properties of undefined (reading 'map')\n    at UserList (src/components/UserList.tsx:23:15)\n    at renderWithHooks (node_modules/react-dom/...)\n    at mountIndeterminateComponent (...)\n\n# 要素 2：你在做什么操作\n\"我在 UserList 组件中调用 API 获取用户列表，\n API 返回成功但组件渲染时报错\"\n\n# 要素 3：相关代码上下文\n# 不只是报错那一行，还有数据来源、类型定义</code></pre><h3>Claude Code Debug 方式</h3><p>把错误堆栈粘贴到终端 → Claude 自动读取相关文件 → 分析根因 → 可能修改多个文件。适合跨文件的复杂 bug，也能处理单文件的简单 bug。</p><pre><code># Claude Code 的 Debug 对话示例\n你：这个报错怎么修？[粘贴完整错误堆栈]\n\n# Claude 会自动：\n# 1. 读取报错文件 UserList.tsx\n# 2. 读取 API 返回的类型定义\n# 3. 发现 API 返回的 data 可能是 null\n# 4. 修改代码添加空值检查\n# 5. 如果类型定义不准确，还会修改 interface</code></pre><h3>先分析再修复</h3><p>不要让 AI 直接 \"修这个 bug\"。让它先分析：</p><pre><code># 差：直接让修\n\"修复这个 TypeError\"\n\n# 好：先分析\n\"分析这个 TypeError 的根因。不要直接修复，\n先告诉我：\n1. 哪个变量是 undefined？\n2. 为什么它是 undefined？\n3. 你建议的修复方案是什么？\n确认方案后再修改代码。\"</code></pre><h2>动手练习</h2><ol><li>找你项目中一个已知的 bug（或故意制造一个），用 Claude Code Debug</li><li>记录 Debug 效率：定位时间、修复准确率、是否引入新 bug</li><li>练习「先分析再修复」的 Debug 流程，养成不让 AI 盲目修的习惯</li></ol><h2>小结</h2><p>AI Debug 的关键不是 AI 多聪明，而是你给的信息够不够。完整错误堆栈 + 操作上下文 + 先分析后修复，这三步能解决 90% 的 Debug 场景。无论简单还是跨文件的复杂 bug，都适用这套流程。</p>",
           "_id": "69db3dc476e3e0c1b3b66d44"
         },
         {
@@ -1114,7 +1069,7 @@
         {
           "code": "L33",
           "title": "Lab: Claude Code 入门 — 终端里的 AI 程序员",
-          "description": "认识 Anthropic 官方出品的终端 AI 编程工具 Claude Code。理解它和 Cursor 的本质区别，掌握 CLAUDE.md 配置和权限模式的选择策略。",
+          "description": "认识 Anthropic 官方出品的终端 AI 编程工具 Claude Code。理解它的 Agent 工作模式，掌握 CLAUDE.md 配置和权限模式的选择策略。",
           "type": "InteractiveLab",
           "isLive": false,
           "isInteractiveLab": true,
@@ -1376,7 +1331,7 @@
               "slug": "claude-code-full-guide"
             }
           ],
-          "learningMaterial": "<h2>学习目标</h2><ul><li>掌握 .claude/ 目录的完整结构：settings.json、commands/、CLAUDE.md 的组织方式</li><li>了解 Anthropic 官方文档中 Skills 相关的参考资料</li><li>建立 Skills 配置的查阅习惯——这节课是工具书，不是听课</li></ul><h2>核心概念</h2><h3>.claude/ 目录结构详解</h3><pre><code>project-root/\n├── CLAUDE.md                    # 项目级 Context（Claude 每次启动都会读）\n├── .claude/\n│   ├── settings.json            # Claude Code 配置\n│   │   ├── permissions          # 工具权限控制\n│   │   ├── hooks                # 前后置脚本\n│   │   └── mcpServers           # MCP Server 注册\n│   └── commands/                # 自定义 Slash Commands\n│       ├── review.md            # /review\n│       ├── deploy.md            # /deploy\n│       └── test.md              # /test\n└── .cursorrules                 # Cursor 的项目配置（可选）</code></pre><h3>settings.json 关键字段</h3><pre><code>{\n  \"permissions\": {\n    \"allow\": [\"Read\", \"Write\", \"Bash\"],\n    \"deny\": [\"Bash(rm *)\"]       // 禁止危险命令\n  },\n  \"hooks\": {\n    \"postToolExecution\": [...]\n  },\n  \"mcpServers\": {\n    \"my-server\": {\n      \"command\": \"node\",\n      \"args\": [\"mcp-server.js\"],\n      \"transport\": \"stdio\"\n    }\n  }\n}</code></pre><h3>CLAUDE.md vs .claude/commands/ 的分工</h3><p>CLAUDE.md：全局规范和约束，每次对话都生效。<code>.claude/commands/</code>：特定任务的执行指令，只在调用对应命令时生效。不要把所有内容都塞进 CLAUDE.md——常驻信息放 CLAUDE.md，任务指令放 commands/。</p><h3>Anthropic 官方参考资料</h3><ul><li>Claude Code 文档：<code>docs.anthropic.com/claude-code</code></li><li>Skills 配置指南：<code>docs.anthropic.com/claude-code/skills</code></li><li>MCP 规范：<code>modelcontextprotocol.io</code></li><li>Claude Code GitHub：<code>github.com/anthropics/claude-code</code></li></ul><h2>操作步骤</h2><ol><li>检查你项目中的 .claude/ 目录，确认 settings.json 和 commands/ 的组织方式</li><li>把这节课的目录结构图保存为你的参考手册</li><li>访问 Anthropic 官方文档，收藏 Skills 和 MCP 的文档页面</li></ol><h2>小结</h2><p>这节课是参考资料，不需要一次记住所有配置项。核心记住：CLAUDE.md 放全局规范，.claude/commands/ 放任务指令，settings.json 放工具配置。配置 Skills 时随时回来查。</p>",
+          "learningMaterial": "<h2>学习目标</h2><ul><li>掌握 .claude/ 目录的完整结构：settings.json、commands/、CLAUDE.md 的组织方式</li><li>了解 Anthropic 官方文档中 Skills 相关的参考资料</li><li>建立 Skills 配置的查阅习惯——这节课是工具书，不是听课</li></ul><h2>核心概念</h2><h3>.claude/ 目录结构详解</h3><pre><code>project-root/\n├── CLAUDE.md                    # 项目级 Context（Claude 每次启动都会读）\n├── .claude/\n│   ├── settings.json            # Claude Code 配置\n│   │   ├── permissions          # 工具权限控制\n│   │   ├── hooks                # 前后置脚本\n│   │   └── mcpServers           # MCP Server 注册\n│   └── commands/                # 自定义 Slash Commands\n│       ├── review.md            # /review\n│       ├── deploy.md            # /deploy\n│       └── test.md              # /test</code></pre><h3>settings.json 关键字段</h3><pre><code>{\n  \"permissions\": {\n    \"allow\": [\"Read\", \"Write\", \"Bash\"],\n    \"deny\": [\"Bash(rm *)\"]       // 禁止危险命令\n  },\n  \"hooks\": {\n    \"postToolExecution\": [...]\n  },\n  \"mcpServers\": {\n    \"my-server\": {\n      \"command\": \"node\",\n      \"args\": [\"mcp-server.js\"],\n      \"transport\": \"stdio\"\n    }\n  }\n}</code></pre><h3>CLAUDE.md vs .claude/commands/ 的分工</h3><p>CLAUDE.md：全局规范和约束，每次对话都生效。<code>.claude/commands/</code>：特定任务的执行指令，只在调用对应命令时生效。不要把所有内容都塞进 CLAUDE.md——常驻信息放 CLAUDE.md，任务指令放 commands/。</p><h3>Anthropic 官方参考资料</h3><ul><li>Claude Code 文档：<code>docs.anthropic.com/claude-code</code></li><li>Skills 配置指南：<code>docs.anthropic.com/claude-code/skills</code></li><li>MCP 规范：<code>modelcontextprotocol.io</code></li><li>Claude Code GitHub：<code>github.com/anthropics/claude-code</code></li></ul><h2>操作步骤</h2><ol><li>检查你项目中的 .claude/ 目录，确认 settings.json 和 commands/ 的组织方式</li><li>把这节课的目录结构图保存为你的参考手册</li><li>访问 Anthropic 官方文档，收藏 Skills 和 MCP 的文档页面</li></ol><h2>小结</h2><p>这节课是参考资料，不需要一次记住所有配置项。核心记住：CLAUDE.md 放全局规范，.claude/commands/ 放任务指令，settings.json 放工具配置。配置 Skills 时随时回来查。</p>",
           "_id": "69db3dc576e3e0c1b3b66d70"
         },
         {
@@ -1513,7 +1468,7 @@
               "slug": "mcp-setup"
             }
           ],
-          "learningMaterial": "<h2>学习目标</h2><ul><li>理解 MCP（Model Context Protocol）的 Client-Server 架构</li><li>区分 MCP 中的 Tool 和 Resource 两种概念</li><li>了解 Transport 层的工作方式（stdio / SSE）</li></ul><h2>核心概念</h2><h3>MCP 是什么</h3><p>MCP（Model Context Protocol）是 Anthropic 推出的开放协议，定义 AI 模型如何调用外部工具和访问外部数据。简单说：Claude 要查数据库、读文件系统、调第三方 API，都通过 MCP。</p><h3>Client-Server 架构</h3><pre><code># MCP 架构图\n┌─────────────┐     MCP Protocol     ┌─────────────┐\n│  MCP Client │ ◄──────────────────► │  MCP Server │\n│ (Claude Code│     JSON-RPC 2.0    │ (你写的服务) │\n│  / Cursor)  │                     │             │\n└─────────────┘                     └─────────────┘\n                                         │\n                                    ┌────┴────┐\n                                    │ 外部资源 │\n                                    │ DB/API/FS│\n                                    └─────────┘\n\n# Client = AI 工具端（Claude Code、Cursor）\n# Server = 你开发的服务端（提供 Tool 和 Resource）\n# Protocol = JSON-RPC 2.0 格式的消息</code></pre><h3>Tool vs Resource</h3><p>Tool（工具）：有副作用的操作。执行后会改变外部状态。比如「发邮件」「写数据库」「创建文件」。AI 在需要执行动作时调用 Tool。</p><p>Resource（资源）：只读的数据访问。不改变任何状态。比如「读取配置」「查询用户信息」「获取天气数据」。AI 在需要信息时访问 Resource。</p><pre><code># Tool 示例\n{\n  \"name\": \"send_email\",\n  \"description\": \"发送邮件\",\n  \"inputSchema\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"to\": { \"type\": \"string\" },\n      \"subject\": { \"type\": \"string\" },\n      \"body\": { \"type\": \"string\" }\n    }\n  }\n}\n\n# Resource 示例\n{\n  \"uri\": \"config://app-settings\",\n  \"name\": \"应用配置\",\n  \"mimeType\": \"application/json\"\n}</code></pre><h3>Transport 层</h3><p>MCP 支持两种 Transport：stdio（标准输入输出，本地进程通信）和 SSE（Server-Sent Events，HTTP 长连接，远程通信）。本地开发用 stdio 最简单，部署到远程服务器用 SSE。</p><h2>动手练习</h2><ol><li>画出 MCP 的 Client-Server 架构图，标注 Client、Server、Transport 的位置</li><li>列出 5 个你项目中可能用到的 Tool（有副作用的操作）和 5 个 Resource（只读数据）</li><li>回答：为什么需要 MCP？直接调 API 不行吗？（提示：标准化 + AI 可发现）</li></ol><h2>小结</h2><p>MCP 是 AI 调用外部工具的标准协议。Client（AI 端）发请求，Server（你的服务）执行操作。Tool 有副作用（写操作），Resource 只读（查操作）。Transport 用 stdio（本地）或 SSE（远程）。</p>",
+          "learningMaterial": "<h2>学习目标</h2><ul><li>理解 MCP（Model Context Protocol）的 Client-Server 架构</li><li>区分 MCP 中的 Tool 和 Resource 两种概念</li><li>了解 Transport 层的工作方式（stdio / SSE）</li></ul><h2>核心概念</h2><h3>MCP 是什么</h3><p>MCP（Model Context Protocol）是 Anthropic 推出的开放协议，定义 AI 模型如何调用外部工具和访问外部数据。简单说：Claude 要查数据库、读文件系统、调第三方 API，都通过 MCP。</p><h3>Client-Server 架构</h3><pre><code># MCP 架构图\n┌─────────────┐     MCP Protocol     ┌─────────────┐\n│  MCP Client │ ◄──────────────────► │  MCP Server │\n│ (Claude Code│     JSON-RPC 2.0    │ (你写的服务) │\n│    CLI)     │                     │             │\n└─────────────┘                     └─────────────┘\n                                         │\n                                    ┌────┴────┐\n                                    │ 外部资源 │\n                                    │ DB/API/FS│\n                                    └─────────┘\n\n# Client = AI 工具端（Claude Code）\n# Server = 你开发的服务端（提供 Tool 和 Resource）\n# Protocol = JSON-RPC 2.0 格式的消息</code></pre><h3>Tool vs Resource</h3><p>Tool（工具）：有副作用的操作。执行后会改变外部状态。比如「发邮件」「写数据库」「创建文件」。AI 在需要执行动作时调用 Tool。</p><p>Resource（资源）：只读的数据访问。不改变任何状态。比如「读取配置」「查询用户信息」「获取天气数据」。AI 在需要信息时访问 Resource。</p><pre><code># Tool 示例\n{\n  \"name\": \"send_email\",\n  \"description\": \"发送邮件\",\n  \"inputSchema\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"to\": { \"type\": \"string\" },\n      \"subject\": { \"type\": \"string\" },\n      \"body\": { \"type\": \"string\" }\n    }\n  }\n}\n\n# Resource 示例\n{\n  \"uri\": \"config://app-settings\",\n  \"name\": \"应用配置\",\n  \"mimeType\": \"application/json\"\n}</code></pre><h3>Transport 层</h3><p>MCP 支持两种 Transport：stdio（标准输入输出，本地进程通信）和 SSE（Server-Sent Events，HTTP 长连接，远程通信）。本地开发用 stdio 最简单，部署到远程服务器用 SSE。</p><h2>动手练习</h2><ol><li>画出 MCP 的 Client-Server 架构图，标注 Client、Server、Transport 的位置</li><li>列出 5 个你项目中可能用到的 Tool（有副作用的操作）和 5 个 Resource（只读数据）</li><li>回答：为什么需要 MCP？直接调 API 不行吗？（提示：标准化 + AI 可发现）</li></ol><h2>小结</h2><p>MCP 是 AI 调用外部工具的标准协议。Client（AI 端）发请求，Server（你的服务）执行操作。Tool 有副作用（写操作），Resource 只读（查操作）。Transport 用 stdio（本地）或 SSE（远程）。</p>",
           "_id": "69db3dc576e3e0c1b3b66d82"
         },
         {
@@ -1663,7 +1618,7 @@
           "labs": [],
           "learns": [],
           "_id": "69dc41a376e3e0c1b3c53ee0",
-          "learningMaterial": "<h2>学习目标</h2><ul><li>理解 MCP Server 如何把工具（tool）和资源（resource）暴露给 Claude / Cursor</li><li>掌握模型调用 MCP 工具的完整链路：发现 → 选择 → 调用 → 回填结果</li><li>为一个真实 MCP 工具设计 schema、错误处理和权限边界</li></ul><h2>核心概念</h2><h3>MCP 集成的四个环节</h3><pre><code>1. 发现 Discovery：Client 启动时请求 tools/list，拿到可用工具清单\n2. 选择 Selection：模型根据用户意图和工具 description 决定调用哪个\n3. 调用 Invocation：Client 发送 tools/call（名称 + 参数），Server 执行\n4. 回填 Result：Server 返回结构化结果，模型据此继续推理或再次调用</code></pre><h3>Tool vs Resource</h3><ul><li><strong>Tool</strong>：模型主动调用的动作（查数据库、发请求、跑命令），有副作用</li><li><strong>Resource</strong>：模型按需读取的只读上下文（文件、文档、schema），无副作用</li></ul><h3>一个 tool 定义长什么样</h3><pre><code>{\n  \"name\": \"query_orders\",\n  \"description\": \"按用户 ID 查询最近订单，只读\",\n  \"inputSchema\": {\n    \"type\": \"object\",\n    \"properties\": { \"userId\": { \"type\": \"string\" } },\n    \"required\": [\"userId\"]\n  }\n}</code></pre><h2>课堂练习</h2><ol><li>给你项目里的一个内部 API 写一个 MCP tool 定义（name + description + inputSchema）</li><li>把 description 写清楚——这是模型判断“要不要用它”的唯一依据</li><li>设计失败返回：参数错误、无权限、超时分别返回什么，让模型能自我修正</li></ol><h2>小结</h2><p>MCP 集成的难点不在协议本身，而在工具的 description 和 schema 写得够不够清楚。写得含糊，模型就选错工具、传错参数。把工具当成给模型看的 API 文档来写。</p>"
+          "learningMaterial": "<h2>学习目标</h2><ul><li>理解 MCP Server 如何把工具（tool）和资源（resource）暴露给 Claude Code</li><li>掌握模型调用 MCP 工具的完整链路：发现 → 选择 → 调用 → 回填结果</li><li>为一个真实 MCP 工具设计 schema、错误处理和权限边界</li></ul><h2>核心概念</h2><h3>MCP 集成的四个环节</h3><pre><code>1. 发现 Discovery：Client 启动时请求 tools/list，拿到可用工具清单\n2. 选择 Selection：模型根据用户意图和工具 description 决定调用哪个\n3. 调用 Invocation：Client 发送 tools/call（名称 + 参数），Server 执行\n4. 回填 Result：Server 返回结构化结果，模型据此继续推理或再次调用</code></pre><h3>Tool vs Resource</h3><ul><li><strong>Tool</strong>：模型主动调用的动作（查数据库、发请求、跑命令），有副作用</li><li><strong>Resource</strong>：模型按需读取的只读上下文（文件、文档、schema），无副作用</li></ul><h3>一个 tool 定义长什么样</h3><pre><code>{\n  \"name\": \"query_orders\",\n  \"description\": \"按用户 ID 查询最近订单，只读\",\n  \"inputSchema\": {\n    \"type\": \"object\",\n    \"properties\": { \"userId\": { \"type\": \"string\" } },\n    \"required\": [\"userId\"]\n  }\n}</code></pre><h2>课堂练习</h2><ol><li>给你项目里的一个内部 API 写一个 MCP tool 定义（name + description + inputSchema）</li><li>把 description 写清楚——这是模型判断“要不要用它”的唯一依据</li><li>设计失败返回：参数错误、无权限、超时分别返回什么，让模型能自我修正</li></ol><h2>小结</h2><p>MCP 集成的难点不在协议本身，而在工具的 description 和 schema 写得够不够清楚。写得含糊，模型就选错工具、传错参数。把工具当成给模型看的 API 文档来写。</p>"
         },
         {
           "code": "L50",
@@ -1770,7 +1725,7 @@
           "type": "Quest",
           "duration": 50,
           "isLive": false,
-          "description": "<h3>🎯 这节课解决什么问题</h3><p>L44-L52 讲了 MCP 是什么、怎么调外部工具、Anthropic 的官方协议长什么样。但所有人都看完文档还不敢自己写一个 MCP Server——怕协议复杂、怕调不通、怕不知道从哪开始。这节 Quest 由小花老师带你用 TypeScript 从零搭一个最小可用的 MCP Server（一个能查天气或者搜本地文件的工具），然后接到 Claude Code 里实际调用一次。做完你就真正理解 MCP 不是黑盒。</p><h3>📖 你将学到</h3><ul><li><strong>从零写一个 MCP Server</strong> — TypeScript + @modelcontextprotocol/sdk，不到 100 行代码</li><li><strong>定义一个 Tool 让 AI 能调用</strong> — 输入参数、输出结构、错误处理</li><li><strong>把 Server 接到 Claude Code 实际跑</strong> — 在 Claude 对话里看到你的 tool 被调用</li></ul><h3>💡 适合谁</h3><p>已经看完 MCP 模块所有 Lab 但还没自己写过 Server 的工程师。这一节让你从「会用 MCP」毕业到「能造 MCP」。</p><h3>📦 课程包含</h3><ul><li>1 个 AI Tutor Quest（5 步：初始化项目 → 装 SDK → 写 Tool → 配 Claude → 实际调用）</li><li>约 50 分钟</li><li>完成后你 GitHub 上有一个能跑的 MCP Server</li></ul><h3>✅ 学完能做什么</h3><p>你能给任何业务系统包装一个 MCP Server，让 Claude / Cursor 直接调用。这是把 AI 接入企业工作流的关键能力——不是聊天，是动手干活。</p>",
+          "description": "<h3>🎯 这节课解决什么问题</h3><p>L44-L52 讲了 MCP 是什么、怎么调外部工具、Anthropic 的官方协议长什么样。但所有人都看完文档还不敢自己写一个 MCP Server——怕协议复杂、怕调不通、怕不知道从哪开始。这节 Quest 由小花老师带你用 TypeScript 从零搭一个最小可用的 MCP Server（一个能查天气或者搜本地文件的工具），然后接到 Claude Code 里实际调用一次。做完你就真正理解 MCP 不是黑盒。</p><h3>📖 你将学到</h3><ul><li><strong>从零写一个 MCP Server</strong> — TypeScript + @modelcontextprotocol/sdk，不到 100 行代码</li><li><strong>定义一个 Tool 让 AI 能调用</strong> — 输入参数、输出结构、错误处理</li><li><strong>把 Server 接到 Claude Code 实际跑</strong> — 在 Claude 对话里看到你的 tool 被调用</li></ul><h3>💡 适合谁</h3><p>已经看完 MCP 模块所有 Lab 但还没自己写过 Server 的工程师。这一节让你从「会用 MCP」毕业到「能造 MCP」。</p><h3>📦 课程包含</h3><ul><li>1 个 AI Tutor Quest（5 步：初始化项目 → 装 SDK → 写 Tool → 配 Claude → 实际调用）</li><li>约 50 分钟</li><li>完成后你 GitHub 上有一个能跑的 MCP Server</li></ul><h3>✅ 学完能做什么</h3><p>你能给任何业务系统包装一个 MCP Server，让 Claude Code 直接调用。这是把 AI 接入企业工作流的关键能力——不是聊天，是动手干活。</p>",
           "quest": {
             "title": "用 TypeScript 写一个能跑的 MCP Server 并接到 Claude",
             "description": "初始化项目 → 写 Tool → 配 Claude Code → 真实调用验证",
@@ -2228,6 +2183,7 @@
           "learns": [],
           "isInteractiveLab": true,
           "interactiveLabSlug": "vibe-context-engineering-intro",
+          "interactiveLabType": "prompt",
           "learningMaterial": "<h2>学习目标</h2><ul><li>通过互动练习综合检验 Agent 架构、多 Tool 编排、错误处理的理解</li><li>完成 Agent 设计的完整实战：给定场景 → 设计 Agent → 定义 Tools → 规划执行流程</li><li>评估自己对 Phase 2 全部内容的掌握程度</li></ul><h2>核心概念</h2><h3>Agent Lab 练习结构</h3><p>综合练习课。Lab 给你真实的开发场景，你需要设计完整的 Agent 方案。</p><pre><code># 场景示例：自动修复 CI 失败\n\n你需要设计一个 Agent，在 CI 失败时自动：\n1. 获取 CI 失败日志\n2. 分析失败原因（编译错误 / 测试失败 / lint 不通过）\n3. 根据原因自动修复\n4. 重新验证\n\n# 你需要回答：\n# Q1: Agent 的 System Prompt 怎么写？\n# Q2: 需要哪些 Tools？\n# Q3: 执行流程图（包含条件分支）\n# Q4: 错误恢复策略\n# Q5: 退出条件是什么？</code></pre><h3>设计模板</h3><pre><code># Agent 设计模板\n\n## 1. System Prompt\n角色：[你是什么角色]\n目标：[要完成什么]\n约束：[不能做什么]\n\n## 2. Tools 清单\n| Tool | 用途 | 输入 | 输出 |\n|------|------|------|------|\n| read_ci_log | 获取CI日志 | build_id | log text |\n| run_lint | 执行lint | file_path | lint result |\n| run_test | 执行测试 | test_path | test result |\n| edit_file | 修改文件 | path+content | success/fail |\n\n## 3. 执行流程\n[依赖图：哪些串行、哪些并行]\n\n## 4. 错误恢复\n[每个 Tool 失败时的处理策略]\n\n## 5. 退出条件\n[什么时候算完成 / 什么时候放弃]</code></pre><h3>自评标准</h3><ul><li>能否正确区分 Skills / ToolUse / MCP 三层？</li><li>能否设计 MCP Server 的 Tool Schema？</li><li>能否根据场景判断用 Hook / Command / Agent？</li><li>能否画出多 Tool 依赖图并标注串行/并行？</li><li>能否为每个失败点设计恢复策略？</li></ul><h3>Phase 2 知识图谱</h3><pre><code># 你应该掌握的完整知识链\nSkills 基础（L10-L11）\n  → Skills 高级：Sub-agents + Hooks（L12-L13）\n    → Skills Lab 验证（L14）\n      → MCP 原理（L15）\n        → Skills + ToolUse + MCP 三层（L16）\n          → MCP Server 开发（L17-L18）\n            → MCP Lab 验证（L19）\n              → Agentic Workflow（L20）\n                → 多 Tool 编排（L21）\n                  → Agent 搭建（L22）\n                    → 多工具执行分析（L23）\n                      → Agent Lab 综合验证（L24）</code></pre><p>如果某个环节不清楚，回到对应课程复习。每个环节都是下一个的基础。</p><h2>动手练习</h2><ol><li>完成 Vibe Coding Lab 中的 Agent 综合练习</li><li>选一个你实际工作中的复杂任务，按设计模板写一个完整的 Agent 方案</li><li>在 Claude Code 中实现并测试这个 Agent</li><li>对照自评标准检查自己的掌握程度，记录薄弱点</li></ol><h2>小结</h2><p>Phase 2 的核心能力链：Skills（定义能力）→ MCP（工具协议）→ Agent（自主执行）。这三者组合起来，让你能构建 AI 自动化的开发工作流。Agent Lab 是检验你是否真正掌握这条能力链的最终测试。</p>",
           "_id": "69db3dc776e3e0c1b3b66ddb"
         },
@@ -2465,6 +2421,7 @@
           "learns": [],
           "isInteractiveLab": true,
           "interactiveLabSlug": "vibe-tool-selection",
+          "interactiveLabType": "prompt",
           "learningMaterial": "<h2>学习目标</h2><ul><li>根据具体开发场景选择最合适的 AI 模型</li><li>针对选定模型编写优化过的 Prompt</li><li>在实际练习中验证模型选择策略</li></ul><h2>核心概念</h2><h3>场景决策矩阵</h3><p>选择模型不是凭感觉，而是按任务特征匹配：</p><table><tr><th>场景特征</th><th>推荐模型</th><th>原因</th></tr><tr><td>需要分析整个项目架构</td><td>Claude</td><td>200K 长上下文 + 强推理</td></tr><tr><td>快速原型 / UI 生成</td><td>Gemini 2.5 Flash</td><td>速度快、多模态支持</td></tr><tr><td>在已有代码库做小修改</td><td>Codex</td><td>贴合现有代码风格</td></tr><tr><td>截图还原为代码</td><td>Gemini 2.5 Pro</td><td>多模态理解能力强</td></tr><tr><td>复杂调试 / 根因分析</td><td>Claude</td><td>推理链条深</td></tr><tr><td>批量生成测试用例</td><td>Gemini Flash</td><td>速度快、成本低</td></tr></table><h3>Lab 练习结构</h3><p>每道题给出一个开发场景描述，你需要：(1) 选择模型并说明理由 (2) 编写该模型偏好格式的 Prompt (3) 预测输出质量。</p><h3>示例场景</h3><p>场景：\"团队接手了一个 3 万行的 Express 项目，没有文档，需要理解整体架构并写出 API 文档。\"</p><p>参考答案：选 Claude — 需要长上下文处理大量代码文件，需要强推理能力梳理模块依赖关系。Prompt 用 XML 标签分别传入各模块的入口文件。</p><h2>动手练习</h2><ol><li>完成 5 个场景的模型选择判断</li><li>为其中 2 个场景编写完整的模型特化 Prompt</li><li>实际调用验证，记录是否符合预期</li></ol><h2>小结</h2><p>模型选择是 Vibe Coding 的核心技能之一。通过反复练习场景判断，你会逐渐形成直觉——看到任务就知道该用哪个模型、怎么写 Prompt。这种直觉比记住任何规则都有用。</p>",
           "_id": "69db3dc776e3e0c1b3b66dfe"
         },
@@ -2801,6 +2758,7 @@
           "learns": [],
           "isInteractiveLab": true,
           "interactiveLabSlug": "vibe-prompt-iteration",
+          "interactiveLabType": "prompt",
           "learningMaterial": "<h2>学习目标</h2><ul><li>在实际场景中运用 Codex CLI 完成编码任务</li><li>练习编写高质量的 Codex Prompt</li><li>体验 Prompt 优化前后的输出质量差异</li></ul><h2>核心概念</h2><h3>Lab 练习结构</h3><p>本节是动手练习课，包含 4 个递进难度的 Codex 实战场景。每个场景提供基础代码和需求描述，你需要编写 Prompt 让 Codex 完成任务。</p><h3>场景 1：Bug 修复</h3><p>给定一个有 3 个 bug 的 Express 路由文件（未 await 异步调用、缺少错误处理、SQL 注入风险），用 Codex 一次性找出并修复。</p><p>关键：Prompt 中要求 Codex \"列出所有问题，然后逐个修复，保留注释说明修复了什么\"。</p><h3>场景 2：功能生成</h3><p>从零生成一个文件上传中间件：支持多文件、限制大小和类型、返回上传结果数组。Prompt 要指定所有边界条件。</p><h3>场景 3：重构挑战</h3><p>给一个 200 行的\"上帝函数\"（同时做验证、数据库操作、发邮件、日志），让 Codex 拆分成 4 个独立函数。Prompt 要说清楚拆分策略。</p><h3>场景 4：测试生成</h3><p>给定一个 Service 文件，让 Codex 生成完整的单元测试，覆盖正常路径、边界场景、错误处理。用 Few-shot 模板给一个测试示例。</p><h3>评估标准</h3><p>每个场景从四个角度自评：(1) Codex 输出是否直接可用 (2) 需要人工修改多少 (3) Prompt 写了几次才拿到满意结果 (4) 总耗时 vs 纯手写耗时。</p><h2>动手练习</h2><ol><li>完成上述 4 个场景，记录每个场景的 Prompt 和输出</li><li>对比你的第一版 Prompt 和优化后的版本</li><li>选一个场景用 Claude Code 重做，对比工具差异</li></ol><h2>小结</h2><p>Prompt Lab 的目的不是\"做完题\"，而是建立写 Prompt 的肌肉记忆。你会发现：需求描述越具体、边界条件越明确、输出格式越清楚，Codex 的输出就越接近直接可用。这个规律适用于所有 AI 编码工具。</p>",
           "_id": "69db3dc876e3e0c1b3b66e7f"
         },
@@ -3583,7 +3541,7 @@
           "type": "Quest",
           "duration": 60,
           "isLive": false,
-          "description": "<h3>🎯 这节课解决什么问题</h3><p>L84-Q05 讲了 Claude 写前端、写后端、连数据库、部署到 Cloudflare/Vercel 的全流程。但听完 25 节课不等于能自己跑通一遍。这节 Quest 是整门课的毕业项目——由小花老师带你用 Claude Code 从 PRD 出发，一步步完成前端 UI、后端 API、数据库、部署上线，最后拿到一个真实可访问的 URL。这是 Vibe Coding 大师课的「真实战」时刻。</p><h3>📖 你将学到</h3><ul><li><strong>从 PRD 到部署的完整 Vibe Coding 流程</strong> — 不是片段练习，是端到端实战</li><li><strong>用 Sub-agents / MCP / Cursor Rules 协作</strong> — 把前面学的工具组合用</li><li><strong>真实部署到 Cloudflare Workers 或 Vercel</strong> — 拿到 URL，能发给别人</li></ul><h3>💡 适合谁</h3><p>所有完成 Q01-Q04 + Phase 4 学习的学员。这是检验你「学会了 Vibe Coding 大师课」的唯一标准——能不能自己端到端做一个产品。</p><h3>📦 课程包含</h3><ul><li>1 个 AI Tutor Quest（6 步：写 PRD → 前端 → 后端 → 数据库 → 部署 → 拿到 URL）</li><li>约 60 分钟（取决于项目复杂度）</li><li>完成后你的 GitHub 上有一个可上线的全栈项目，并有真实访问 URL</li></ul><h3>✅ 学完能做什么</h3><p>你能独立用 Claude Code 完成一个生产级别的全栈小项目。这是 Vibe Coding 大师课的毕业证——能上线的产品 = 你真的学会了。</p>",
+          "description": "<h3>🎯 这节课解决什么问题</h3><p>L84-Q05 讲了 Claude 写前端、写后端、连数据库、部署到 Cloudflare/Vercel 的全流程。但听完 25 节课不等于能自己跑通一遍。这节 Quest 是整门课的毕业项目——由小花老师带你用 Claude Code 从 PRD 出发，一步步完成前端 UI、后端 API、数据库、部署上线，最后拿到一个真实可访问的 URL。这是 Vibe Coding 大师课的「真实战」时刻。</p><h3>📖 你将学到</h3><ul><li><strong>从 PRD 到部署的完整 Vibe Coding 流程</strong> — 不是片段练习，是端到端实战</li><li><strong>用 Sub-agents / MCP 协作</strong> — 把前面学的工具组合用</li><li><strong>真实部署到 Cloudflare Workers 或 Vercel</strong> — 拿到 URL，能发给别人</li></ul><h3>💡 适合谁</h3><p>所有完成 Q01-Q04 + Phase 4 学习的学员。这是检验你「学会了 Vibe Coding 大师课」的唯一标准——能不能自己端到端做一个产品。</p><h3>📦 课程包含</h3><ul><li>1 个 AI Tutor Quest（6 步：写 PRD → 前端 → 后端 → 数据库 → 部署 → 拿到 URL）</li><li>约 60 分钟（取决于项目复杂度）</li><li>完成后你的 GitHub 上有一个可上线的全栈项目，并有真实访问 URL</li></ul><h3>✅ 学完能做什么</h3><p>你能独立用 Claude Code 完成一个生产级别的全栈小项目。这是 Vibe Coding 大师课的毕业证——能上线的产品 = 你真的学会了。</p>",
           "quest": {
             "title": "用 Claude Code 完成全栈毕业项目从 PRD 到上线",
             "description": "一节课走完 PRD → 前端 → 后端 → 数据库 → 部署 → 真实 URL 的全流程",
@@ -3593,7 +3551,7 @@
             "successCriteria": "学员能给出一个真实的项目 URL（.vercel.app 或 .workers.dev），从浏览器打开能看到前端，前端能调用后端 API，后端能读写数据库",
             "uiMode": "chat",
             "visualMode": "flow",
-            "context": "用户已完成 Q01-Q04 和 Phase 4 全部内容。引导用户选一个最小可上线的项目（推荐：URL 短链生成器、个人书签收藏夹、简单的 todo 列表带账号），不要做太大。然后按顺序：1) 用 Claude Code 写 PRD（30 行以内）；2) 用 Cursor 让 AI 生成 Next.js / Hono 前端框架；3) 用 Claude Code 加后端 API（建议 Hono on Cloudflare Workers）；4) 接 D1 / Supabase 数据库；5) 部署到 Cloudflare 或 Vercel；6) 测试 URL。整个过程让用户用前面 Quest 学的工具组合（Sub-agents 拆任务、MCP 加增强、Cursor Rules 控质量）。重点不是教技术细节，是让用户感受「我真的能端到端做产品」。",
+            "context": "用户已完成 Q01-Q04 和 Phase 4 全部内容。引导用户选一个最小可上线的项目（推荐：URL 短链生成器、个人书签收藏夹、简单的 todo 列表带账号），不要做太大。然后按顺序：1) 用 Claude Code 写 PRD（30 行以内）；2) 用 Claude Code 生成 Next.js / Hono 前端框架；3) 用 Claude Code 加后端 API（建议 Hono on Cloudflare Workers）；4) 接 D1 / Supabase 数据库；5) 部署到 Cloudflare 或 Vercel；6) 测试 URL。整个过程让用户用前面 Quest 学的工具组合（Sub-agents 拆任务、MCP 加增强）。重点不是教技术细节，是让用户感受「我真的能端到端做产品」。",
             "systemStylePrompt": "说话像一个手把手带 junior 上线项目的 tech lead。鼓励但不放水，每一步都要让用户给出真实证据（URL、截图描述、命令输出）。",
             "customGuardrails": "如果用户想做的项目太大（「我想做一个 Twitter」），引导他缩成 MVP（「先做能发推 + 看推 + 删推就行，不要登录、不要点赞」）。如果某一步遇到部署失败，引导用户把报错给 AI 自己修，不要跳过。",
             "linkedResources": [
