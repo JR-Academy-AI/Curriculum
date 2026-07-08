@@ -2022,7 +2022,8 @@
               "direction": "ai-engineer",
               "slug": "prompt-engineering"
             }
-          ]
+          ],
+          "_id": "6a4df32ea77d455038a25177"
         },
         {
           "code": "L35",
@@ -2354,7 +2355,8 @@
               "direction": "ai-engineer",
               "slug": "context-fundamentals"
             }
-          ]
+          ],
+          "_id": "6a4df32fa77d455038a2518a"
         },
         {
           "code": "L38",
@@ -2566,7 +2568,8 @@
               "direction": "ai-engineer",
               "slug": "system-prompt-design"
             }
-          ]
+          ],
+          "_id": "6a4df330a77d455038a25199"
         },
         {
           "code": "L41b",
@@ -2590,7 +2593,8 @@
               "direction": "ai-engineer",
               "slug": "system-prompt-cases"
             }
-          ]
+          ],
+          "_id": "6a4df331a77d455038a251a4"
         },
         {
           "code": "L42",
