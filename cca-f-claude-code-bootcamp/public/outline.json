@@ -3,7 +3,7 @@
   "slug": "cca-f-claude-code-bootcamp",
   "name": "Claude 架构师认证 · Claude Code 实战冲刺班",
   "name_en": "CCA-F + Claude Code Bootcamp",
-  "description": "在<strong>考试直通包</strong>的基础上加一整套 <strong>Claude Code 实战培训</strong>：从装机、CLAUDE.md 项目规则、hooks / slash commands / subagents，到 MCP 工具接入、多智能体架构、上下文管理，全部在<strong>真实终端里手把手带你跑通</strong>，再对齐 CCA-F 5 大考纲 domain 冲刺过考。含 1 个 Anthropic 官方 CCA-F 考试名额（个人无法自行报名，匠人 Claude Partner 通道帮你开通）。直播小班 + 自学混合，4-6 周冲刺。",
+  "description": "在<strong>考试直通包</strong>的基础上加一整套 <strong>Claude Code 实战培训</strong>：从装机、CLAUDE.md 项目规则、hooks / slash commands / subagents，到 MCP 工具接入、多智能体架构、上下文管理，全部在<strong>真实终端里手把手带你跑通</strong>，再对齐 CCA-F 5 大考纲 domain 冲刺过考。含 1 个 Anthropic 官方 CCA-F 考试名额（个人无法自行报名，匠人 Claude Partner Network 通道帮你开通）。直播小班 + 自学混合，4-6 周冲刺。",
   "description_en": "Everything in the exam pack plus hands-on Claude Code training in a real terminal — CLAUDE.md, hooks, slash commands, subagents, MCP, multi-agent architecture, context management — aligned to all 5 CCA-F domains. Includes one official exam seat.",
   "level": "中级进阶",
   "type": "training",
@@ -20,7 +20,7 @@
   "suitable": "🧑‍💻 你会写代码、想把 Claude Code 用到生产级水准，不只是玩玩\n🏗 你要给团队/客户搭 Claude 工作流，需要真懂 MCP、subagents、hooks、上下文管理\n🎓 你想要一张 Anthropic 官方架构师认证背书，但个人报不了名\n💼 你是技术顾问/外包，认证 + 实战能力两样都要，好进 Anthropic Services Partner Directory 拿单",
   "suitable_en": "Developers and architects who want real production Claude Code skills plus the official credential.",
   "cardDescription": "Claude Code 从装机到多智能体/MCP 生产级实战 + CCA-F 5 大 domain 冲刺 + 1 个官方考试名额。真实终端手把手，直播小班。",
-  "promoDescription": "只背考点能过考，但过完考你还是不会真正搭东西。这门冲刺班把两件事合在一起：<strong>先在真实终端里把 Claude Code 玩到生产级</strong>——CLAUDE.md 项目规则、hooks 自动化、slash commands 复用、subagents 并行、MCP 工具接入、多智能体编排、上下文与成本管理，全部有直播老师带 + AI 陪练跑通；<strong>再对齐 CCA-F 5 大考纲 domain 冲刺</strong>，配场景题拆解和 2 套全真模拟。含 1 个官方考试名额——CCA-F 个人无法自行报名，匠人是官方 Claude Partner，报名门槛我们帮你搞定。学完你手里有真实作品 + 一张官方认证。",
+  "promoDescription": "只背考点能过考，但过完考你还是不会真正搭东西。这门冲刺班把两件事合在一起：<strong>先在真实终端里把 Claude Code 玩到生产级</strong>——CLAUDE.md 项目规则、hooks 自动化、slash commands 复用、subagents 并行、MCP 工具接入、多智能体编排、上下文与成本管理，全部有直播老师带 + AI 陪练跑通；<strong>再对齐 CCA-F 5 大考纲 domain 冲刺</strong>，配场景题拆解和 2 套全真模拟。含 1 个官方考试名额——CCA-F 个人无法自行报名，匠人已注册加入 Claude Partner Network，报名门槛我们帮你搞定。学完你手里有真实作品 + 一张官方认证。",
   "prerequisiteknowledge": "有任一门语言的编程基础、用过命令行/终端、装过 Node.js、用过 Git。不要求你已经会 Claude Code——课程从装机教起。完全零编程基础的学员建议先上 AI 必修课或 Claude Code 非技术友好版。",
   "highlights": [
     "含 1 个 Anthropic 官方 CCA-F 考试名额（个人报不了，Partner 通道帮你开）",
@@ -76,7 +76,7 @@
           "duration": 60,
           "steps": [
             { "order": 1, "type": "LIVE", "title": "认证定位与含金量", "description": "Anthropic 首个官方技术认证；归属个人；可进 Services Partner Directory。", "duration": 20 },
-            { "order": 2, "type": "LIVE", "title": "为什么个人报不了名", "description": "考试锁在 Partner Network；匠人 Partner 通道是合规入口。", "duration": 15 },
+            { "order": 2, "type": "LIVE", "title": "为什么个人报不了名", "description": "考试锁在 Partner Network；匠人 CPN 通道是合规入口。", "duration": 15 },
             { "order": 3, "type": "LIVE", "title": "本班路线：实战 + 冲刺双线", "description": "前半程练 Claude Code 生产级实战，后半程对齐 5 domain 冲刺。", "duration": 25 }
           ]
         },
@@ -97,7 +97,7 @@
         {
           "code": "L03",
           "title": "实战：领取并激活你的考试名额",
-          "description": "走通匠人 Partner 通道 → Anthropic Partner Academy → Pearson 账号，确认名额到账可预约。",
+          "description": "走通匠人 CPN 通道 → Anthropic Partner Academy → Pearson 账号，确认名额到账可预约。",
           "type": "Quest",
           "isLive": false,
           "duration": 30,
@@ -108,7 +108,7 @@
             "difficulty": "beginner",
             "estimatedMinutes": 30,
             "uiMode": "chat",
-            "context": "学员刚入班，需走通『匠人 Partner 通道 → Partner Academy → Pearson 账号』。AI 逐步带：(1) 确认收到匠人发的 Partner Academy 邀请（常进垃圾箱）；(2) 完成报名触发 Pearson 凭证；(3) 登录 pearsonvue.com/anthropic 确认 CCA-F 可预约；(4) 核对姓名与证件完全一致。AI 主动带节奏，遇卡引导联系课程顾问。",
+            "context": "学员刚入班，需走通『匠人 CPN 通道 → Partner Academy → Pearson 账号』。AI 逐步带：(1) 确认收到匠人发的 Partner Academy 邀请（常进垃圾箱）；(2) 完成报名触发 Pearson 凭证；(3) 登录 pearsonvue.com/anthropic 确认 CCA-F 可预约；(4) 核对姓名与证件完全一致。AI 主动带节奏，遇卡引导联系课程顾问。",
             "stepSkeleton": [
               { "title": "确认收到 Partner Academy 邀请", "verificationType": "self-confirm", "expectedEvidence": "邮箱有匠人/Anthropic 报名链接" },
               { "title": "完成报名触发 Pearson 凭证", "verificationType": "self-confirm", "expectedEvidence": "收到 Pearson 账号邮件" },

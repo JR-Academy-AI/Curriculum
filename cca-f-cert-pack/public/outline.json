@@ -3,7 +3,7 @@
   "slug": "cca-f-cert-pack",
   "name": "Claude 架构师认证 · 考试直通包",
   "name_en": "CCA-F Certification Fast-Track Pack",
-  "description": "Anthropic 官方 Claude Certified Architect – Foundations (CCA-F) 认证的<strong>考试直通包</strong>：一个官方考试名额 + 系统化备考资料 + 全程报名答疑。<strong>关键</strong>——CCA-F 是 Anthropic 首个官方技术认证，<strong>个人无法自行报名</strong>，必须通过 Claude Partner Network 成员开通。匠人是官方 Claude Partner，本包就是你拿到考试资格的合规通道，同时把散落在 Anthropic Academy 的 13 门课编成一条清晰备考路线，配 2 套全真模拟题和场景题拆解，帮你一次过。",
+  "description": "Anthropic 官方 Claude Certified Architect – Foundations (CCA-F) 认证的<strong>考试直通包</strong>：一个官方考试名额 + 系统化备考资料 + 全程报名答疑。<strong>关键</strong>——CCA-F 是 Anthropic 首个官方技术认证，<strong>个人无法自行报名</strong>，必须通过 Claude Partner Network 成员开通。匠人已注册加入 Claude Partner Network，本包就是你拿到考试资格的合规通道，同时把散落在 Anthropic Academy 的 13 门课编成一条清晰备考路线，配 2 套全真模拟题和场景题拆解，帮你一次过。",
   "description_en": "Fast-track pack for Anthropic's official Claude Certified Architect – Foundations (CCA-F) certification: one official exam seat, a structured study path, and end-to-end registration support.",
   "level": "中级",
   "type": "training",
@@ -19,12 +19,12 @@
   "courseObjective_en": "Get CCA-F exam access and prepare systematically across all 5 domains, master the scenario-based question framework, complete 2 full mock exams, and pass the proctored Pearson VUE test.",
   "suitable": "🧑‍💻 你已经在用 Claude / Claude Code / MCP 做真实项目，想要一张官方认证背书\n🚪 你发现 CCA-F 个人根本报不了名——它锁在 Claude Partner Network 里，需要合规通道\n⏱ 你不需要人从零教你，只想要一条最短备考路线 + 模拟题 + 报名协助，自己冲刺过考\n💼 你是技术顾问 / 外包团队成员，需要认证进入 Anthropic Services Partner Directory 拿单",
   "suitable_en": "Developers and solution architects already building with Claude who want the official credential, need Partner-gated exam access, and prefer to self-study with a curated path plus mocks.",
-  "cardDescription": "1 个官方 CCA-F 考试名额 + 5 大 domain 考点精析 + 2 套全真模拟 + 报名全程协助。个人报不了名，匠人 Partner 通道帮你搞定。",
-  "promoDescription": "CCA-F 是 Anthropic 2026 年 3 月推出的<strong>首个官方技术认证</strong>，含金量高，但有个门槛：<strong>个人无法直接报名</strong>——考试锁在 Claude Partner Network 里。匠人是官方 Claude Partner，这个直通包就是你的合规入口。你付的钱买到三样实打实的东西：① <strong>1 个官方考试名额</strong>（Pearson VUE 监考，价值不菲）；② 我们把 Anthropic Academy 13 门散课编成的<strong>一条 5-domain 备考路线</strong>，省你自己摸索的几十小时；③ 原创的<strong>场景题拆解 + 2 套全真模拟 + 考前清单</strong>。全程报名、预约、改期、重考规则有人答疑。不是卖资料——是帮你走通一条你一个人走不通的路。",
+  "cardDescription": "1 个官方 CCA-F 考试名额 + 5 大 domain 考点精析 + 2 套全真模拟 + 报名全程协助。个人报不了名，匠人 Claude Partner Network 通道帮你搞定。",
+  "promoDescription": "CCA-F 是 Anthropic 2026 年 3 月推出的<strong>首个官方技术认证</strong>，含金量高，但有个门槛：<strong>个人无法直接报名</strong>——考试锁在 Claude Partner Network 里。匠人已注册加入 Claude Partner Network，这个直通包就是你的合规入口。你付的钱买到三样实打实的东西：① <strong>1 个官方考试名额</strong>（Pearson VUE 监考，价值不菲）；② 我们把 Anthropic Academy 13 门散课编成的<strong>一条 5-domain 备考路线</strong>，省你自己摸索的几十小时；③ 原创的<strong>场景题拆解 + 2 套全真模拟 + 考前清单</strong>。全程报名、预约、改期、重考规则有人答疑。不是卖资料——是帮你走通一条你一个人走不通的路。",
   "prerequisiteknowledge": "有用 Claude API / Claude Code / MCP 做过真实项目的经验；理解 Agent、工具调用、Prompt 工程基本概念。不适合完全没接触过 Claude 开发的新手（那种情况建议先上「+ Claude Code 实战班」）。",
   "highlights": [
     "含 1 个 Anthropic 官方 CCA-F 考试名额（Pearson VUE 监考）",
-    "个人报不了名——匠人 Claude Partner 合规通道帮你开通资格",
+    "个人报不了名——匠人 Claude Partner Network 合规通道帮你开通资格",
     "把 Anthropic Academy 13 门免费课编成一条 5-domain 最短备考路线",
     "5 大考纲 domain 逐个考点精析，对齐官方 blueprint",
     "6 类场景题逐个拆解 + 答题框架（考试随机抽 4 类）",
@@ -76,7 +76,7 @@
           "steps": [
             { "order": 1, "type": "CONCEPT", "title": "CCA-F 的定位", "description": "2026-03 推出，面向用 Claude 构建生产级应用的解决方案架构师；考的是架构决策，不是参数背诵。", "duration": 8 },
             { "order": 2, "type": "CONCEPT", "title": "含金量与归属", "description": "认证归属个人；已有超 1 万名顾问获得 Claude 认证；可进入 Anthropic Services Partner Directory 被企业买家找到。", "duration": 7 },
-            { "order": 3, "type": "CONCEPT", "title": "为什么个人报不了名", "description": "考试资格锁在 Claude Partner Network；匠人是官方 Partner，本包是你的合规入口。", "duration": 8 },
+            { "order": 3, "type": "CONCEPT", "title": "为什么个人报不了名", "description": "考试资格锁在 Claude Partner Network；匠人已注册加入 CPN，本包是你的合规入口。", "duration": 8 },
             { "order": 4, "type": "MCQ", "title": "自测：这个认证适合你吗", "description": "判断你的背景是否匹配（有无 Claude/MCP 实战经验）。", "duration": 7 }
           ]
         },
@@ -104,13 +104,13 @@
           "duration": 30,
           "quest": {
             "title": "领取并激活你的 CCA-F 官方考试名额",
-            "description": "从匠人 Partner 通道拿到 Anthropic Partner Academy 访问 → 收到 Pearson 凭证 → 登录 Pearson 账号确认名额到账。",
+            "description": "从匠人 CPN 通道拿到 Anthropic Partner Academy 访问 → 收到 Pearson 凭证 → 登录 Pearson 账号确认名额到账。",
             "learningGoal": "学完你在 Pearson VUE 有一个已激活、可预约的 CCA-F 考试名额，且清楚自己的报名身份信息。",
             "successCriteria": "登录 Pearson 账号能看到 Claude Certified Architect – Foundations 可预约；姓名/邮箱与证件一致。",
             "difficulty": "beginner",
             "estimatedMinutes": 30,
             "uiMode": "chat",
-            "context": "学员刚买了考试直通包，需要走通『匠人 Partner 通道 → Anthropic Partner Academy → Pearson VUE 账号』的激活链路。AI 要逐步带：(1) 确认已收到匠人发来的 Partner Academy 访问/报名邀请邮件，没收到就引导联系课程顾问；(2) 在 Partner Academy 完成报名，触发 Pearson 凭证邮件；(3) 登录 Pearson VUE（pearsonvue.com/anthropic）确认账号里出现 CCA-F 可预约；(4) 核对姓名拼写与证件完全一致（OnVUE 会查证件，名字对不上进不了考场）。关键坑：Partner 邀请邮件常进垃圾箱；Pearson 账号邮箱要和收邀请的邮箱一致；名字中英文/拼音顺序要和护照/驾照一致。AI 全程主动带节奏，不确定的地方让学员贴截图文字描述。",
+            "context": "学员刚买了考试直通包，需要走通『匠人 CPN 通道 → Anthropic Partner Academy → Pearson VUE 账号』的激活链路。AI 要逐步带：(1) 确认已收到匠人发来的 Partner Academy 访问/报名邀请邮件，没收到就引导联系课程顾问；(2) 在 Partner Academy 完成报名，触发 Pearson 凭证邮件；(3) 登录 Pearson VUE（pearsonvue.com/anthropic）确认账号里出现 CCA-F 可预约；(4) 核对姓名拼写与证件完全一致（OnVUE 会查证件，名字对不上进不了考场）。关键坑：Partner 邀请邮件常进垃圾箱；Pearson 账号邮箱要和收邀请的邮箱一致；名字中英文/拼音顺序要和护照/驾照一致。AI 全程主动带节奏，不确定的地方让学员贴截图文字描述。",
             "stepSkeleton": [
               { "title": "确认收到匠人 Partner Academy 访问邀请", "verificationType": "self-confirm", "expectedEvidence": "邮箱里有 Anthropic Partner Academy / 匠人课程顾问发的报名链接" },
               { "title": "在 Partner Academy 完成报名，触发 Pearson 凭证", "verificationType": "self-confirm", "expectedEvidence": "收到 Pearson VUE 账号凭证邮件" },

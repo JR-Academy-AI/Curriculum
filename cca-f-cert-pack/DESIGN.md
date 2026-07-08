@@ -20,7 +20,7 @@ themeColor `#C15F3C`（Claude 珊瑚色的深色调，区别于实战班的 `#D9
 
 ### 支柱 1 · 考试资格本身你拿不到（最强钩子，一定要打头）
 - CCA-F 是 Anthropic 首个官方技术认证，**考试锁在 Claude Partner Network 里，个人无法自行注册报名**。
-- 匠人是**官方 Claude Partner**。这个包=一个**官方考试名额**（Pearson VUE 监考，价值不菲）+ 由匠人 Partner 通道帮你把报名门槛走通。
+- 匠人已注册加入 **Anthropic Claude Partner Network（CPN）**。这个包=一个**官方考试名额**（Pearson VUE 监考，价值不菲）+ 由匠人 CPN 通道帮你把报名门槛走通。
 - 话术：**"这不是卖资料，是卖一张你在别处买不到的门票。"**
 - ⚠️ 合规底线：不要写"保过/稳过/必过"（红线 3）。写"帮你一次过""冲刺过考"可以，"保证通过"不行。
 
@@ -75,11 +75,22 @@ themeColor `#C15F3C`（Claude 珊瑚色的深色调，区别于实战班的 `#D9
 ## ✍️ 可直接复用的 landing 首屏话术
 
 > **标题**：Claude 架构师认证 · 考试直通包
-> **副标题**：CCA-F 个人报不了名。匠人官方 Partner 通道，帮你拿到名额、走通最短备考路线、两套全真模拟冲刺过考。
+> **副标题**：CCA-F 个人报不了名。匠人 Claude Partner Network 报名通道，帮你拿到名额、走通最短备考路线、两套全真模拟冲刺过考。
 > **三个 bullet**：
 > - ✅ 含 1 个 Anthropic 官方 CCA-F 考试名额（Pearson VUE 监考）
-> - 🚪 个人无法自行报名——匠人 Claude Partner 合规通道帮你开通资格
+> - 🚪 个人无法自行报名——匠人 Claude Partner Network 合规通道帮你开通资格
 > - 🎯 5 domain 考点精析 + 6 类场景题拆解 + 2 套全真模拟 + 报名全程陪跑
+
+---
+
+## 📣 宣传口号（Lightman 2026-07-08 拍板）
+
+> **「成为全球华人首批 CCA-F 持证人」**
+
+- 依据：CCA-F 2026-03 才推出、2026-06-30 迁 Pearson VUE，中文市场几乎空白——"首批"窗口真实存在，但会关闭，趁早用。
+- **句式必须是"成为 / 跻身 / 加入"召唤式**（邀请学员成为首批）。在没有真实持证学员之前，**不能**写成既成事实（❌"我们已培养出全球华人首批持证人"）。
+- 首期学员过考后（取得授权），用证书截图 + domain 成绩单把口号升级为实证版："首批华人 CCA-F 持证人来自匠人"。
+- 渠道变体：小红书「全球华人首批 Claude 官方认证架构师，现在上车还来得及」/ 公众号「Anthropic 首个官方认证，华人首批持证窗口正在关闭」/ landing hero 副标可挂同款。
 
 ---
 
@@ -88,3 +99,4 @@ themeColor `#C15F3C`（Claude 珊瑚色的深色调，区别于实战班的 `#D9
 - 官方**已确认**：Pearson VUE 承办、OnVUE/线下、闭卷监考、认证归个人、Partner 门槛、重考 4 次(14/30/90 天)。
 - 社区口径**未经官方正式公布**（60 题/120 分/720 分/6 抽 4）：对外可写"约 60 题""社区口径"，**不要**说成"官方规定 60 题"。
 - **绝不**承诺"保过/稳过/必过"（红线 3）。
+- **🚨 Partner 身份口径（2026-07-08 起强制）**：匠人在 Claude Partner Network 目前是 **Registered 级（on-ramp，不算正式 partner）**——对外**禁止**自称"官方 Claude Partner"、禁止使用 Partner badge / brand assets（依据 CPN Program Guide）。✅ 允许的说法："匠人已注册加入 Claude Partner Network""通过 CPN 合规通道为学员开通考试报名资格"。升 Select（需 ≥10 名 active certified individuals 等三门槛，2026-10-01 有特例加审）拿到 badge 后，话术方可升级。

@@ -16,7 +16,7 @@ themeColor `#D97757`（Claude 品牌珊瑚色，浅调传达"陪练/上手"，�
 
 1. **真实环境实战，不是看录播**：11 个 Quest 全部在**学员自己的终端/项目**里做，AI 主动带练 + 验证——装 Claude Code、跑第一个任务、写 CLAUDE.md、配 hooks、做 slash command、亲手搭 MCP server、用 subagents 多智能体、设计上下文方案。
 2. **实战直接对齐考纲**：每个 Quest 都标了对应 domain（如"配 hooks"= Domain 3 考点）。练的就是考的，考的就是能用的。
-3. **含官方考试名额**：和直通包一样，个人报不了名，匠人 Partner 通道帮开通。
+3. **含官方考试名额**：和直通包一样，个人报不了名，匠人 CPN（Claude Partner Network）通道帮开通。
 4. **直播小班带节奏 + 答疑社群**：8 场直播覆盖 5 domain 核心 + 考前串讲；4-6 周冲刺，有人盯进度。
 
 ---
@@ -56,3 +56,4 @@ themeColor `#D97757`（Claude 品牌珊瑚色，浅调传达"陪练/上手"，�
 ## 数据准确性红线
 
 - 同 cca-f-cert-pack/DESIGN.md：官方已确认项 vs 社区口径要分清；60题/120分/720/6抽4 标"社区口径"；**绝不**承诺"保过"（红线 3）。
+- **🚨 Partner 身份口径**：同 cca-f-cert-pack/DESIGN.md——匠人当前为 CPN **Registered 级**，对外**禁止**自称"官方 Claude Partner"/ 用 Partner badge；只说"已注册加入 Claude Partner Network / CPN 合规通道开通报名资格"。升 Select 后话术方可升级。
