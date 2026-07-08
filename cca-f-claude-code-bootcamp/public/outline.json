@@ -1,0 +1,762 @@
+{
+  "themeColor": "#D97757",
+  "slug": "cca-f-claude-code-bootcamp",
+  "name": "Claude 架构师认证 · Claude Code 实战冲刺班",
+  "name_en": "CCA-F + Claude Code Bootcamp",
+  "description": "在<strong>考试直通包</strong>的基础上加一整套 <strong>Claude Code 实战培训</strong>：从装机、CLAUDE.md 项目规则、hooks / slash commands / subagents，到 MCP 工具接入、多智能体架构、上下文管理，全部在<strong>真实终端里手把手带你跑通</strong>，再对齐 CCA-F 5 大考纲 domain 冲刺过考。含 1 个 Anthropic 官方 CCA-F 考试名额（个人无法自行报名，匠人 Claude Partner 通道帮你开通）。直播小班 + 自学混合，4-6 周冲刺。",
+  "description_en": "Everything in the exam pack plus hands-on Claude Code training in a real terminal — CLAUDE.md, hooks, slash commands, subagents, MCP, multi-agent architecture, context management — aligned to all 5 CCA-F domains. Includes one official exam seat.",
+  "level": "中级进阶",
+  "type": "training",
+  "targetAudience": "有编程基础、想真正学会用 Claude Code 构建生产级 AI 应用并顺带拿下官方 CCA-F 认证的开发者、解决方案架构师、技术顾问、AI 工程师、技术团队 lead",
+  "totalLessons": 40,
+  "totalSteps": 64,
+  "liveClasses": 8,
+  "estimatedHours": 40,
+  "totalInteractiveLabs": 0,
+  "title_en": "CCA-F + Claude Code Bootcamp",
+  "timeLength": "4-6 周冲刺 · 40 节课（9 直播 + 录播 + 自学 + 真实环境实战）+ 1 个官方考试名额",
+  "courseObjective": "两个目标一次拿下：① 真正学会用 Claude Code 构建、配置、调试生产级 Claude 应用（CLAUDE.md / hooks / slash commands / subagents / MCP / 多智能体 / 上下文管理）；② 系统对齐 CCA-F 5 大 domain 并通过官方认证考试。",
+  "courseObjective_en": "Master production Claude Code workflows and multi-agent architecture, and pass the official CCA-F exam.",
+  "suitable": "🧑‍💻 你会写代码、想把 Claude Code 用到生产级水准，不只是玩玩\n🏗 你要给团队/客户搭 Claude 工作流，需要真懂 MCP、subagents、hooks、上下文管理\n🎓 你想要一张 Anthropic 官方架构师认证背书，但个人报不了名\n💼 你是技术顾问/外包，认证 + 实战能力两样都要，好进 Anthropic Services Partner Directory 拿单",
+  "suitable_en": "Developers and architects who want real production Claude Code skills plus the official credential.",
+  "cardDescription": "Claude Code 从装机到多智能体/MCP 生产级实战 + CCA-F 5 大 domain 冲刺 + 1 个官方考试名额。真实终端手把手，直播小班。",
+  "promoDescription": "只背考点能过考，但过完考你还是不会真正搭东西。这门冲刺班把两件事合在一起：<strong>先在真实终端里把 Claude Code 玩到生产级</strong>——CLAUDE.md 项目规则、hooks 自动化、slash commands 复用、subagents 并行、MCP 工具接入、多智能体编排、上下文与成本管理，全部有直播老师带 + AI 陪练跑通；<strong>再对齐 CCA-F 5 大考纲 domain 冲刺</strong>，配场景题拆解和 2 套全真模拟。含 1 个官方考试名额——CCA-F 个人无法自行报名，匠人是官方 Claude Partner，报名门槛我们帮你搞定。学完你手里有真实作品 + 一张官方认证。",
+  "prerequisiteknowledge": "有任一门语言的编程基础、用过命令行/终端、装过 Node.js、用过 Git。不要求你已经会 Claude Code——课程从装机教起。完全零编程基础的学员建议先上 AI 必修课或 Claude Code 非技术友好版。",
+  "highlights": [
+    "含 1 个 Anthropic 官方 CCA-F 考试名额（个人报不了，Partner 通道帮你开）",
+    "真实终端手把手：从装 Claude Code 到跑通第一个 AI 辅助项目",
+    "CLAUDE.md / hooks / slash commands / subagents 逐个实战",
+    "亲手搭一个 MCP server 并接进 Claude Code",
+    "多智能体编排 + 上下文/成本管理生产级设计",
+    "每个 domain 配场景题拆解，对齐官方 blueprint",
+    "2 套全真模拟（60 题/120 分钟）+ 考前冲刺",
+    "直播小班 + AI 陪练 + 答疑社群，4-6 周冲刺过考"
+  ],
+  "highlights_en": [
+    "Includes 1 official CCA-F exam seat (Partner-gated access opened for you)",
+    "Hands-on in a real terminal from install to first AI-assisted project",
+    "CLAUDE.md, hooks, slash commands, subagents — each practiced live",
+    "Build and connect your own MCP server",
+    "Production multi-agent orchestration and context/cost management",
+    "Per-domain scenario drills aligned to the blueprint",
+    "2 full mock exams plus a final sprint"
+  ],
+  "features": [
+    "直播小班（8-12 人）+ 自学混合，自主节奏 + 每周直播带节奏",
+    "hands-on 全程在真实环境（Quest 模式，AI 主动带练 + 验证）",
+    "考试名额随班发放，报名门槛我们搞定",
+    "含考试直通包全部备考资料 + 模拟题",
+    "考不过按官方重考规则协助二刷"
+  ],
+  "program": {
+    "name": "CCA-F + Claude Code 实战冲刺班 · 第一期",
+    "programPhase": 1,
+    "commenceCourseDate": "2026-08-18",
+    "completeDate": "2026-09-29",
+    "cohortStatus": "RECRUITING",
+    "tuition": 1699,
+    "promoTuition": 1299
+  },
+  "curriculumPages": {
+    "pages": ["curriculum.html"],
+    "defaultPage": "curriculum.html"
+  },
+  "phases": [
+    {
+      "name": "Phase 0 — 认证 + 报名 + 装机",
+      "color": "#D97757",
+      "summary": "5 节 — 搞懂考什么 + 拿到考试资格 + 装好 Claude Code",
+      "lessons": [
+        {
+          "code": "L01",
+          "title": "CCA-F 认证全景 + 本班怎么帮你两样都拿下",
+          "description": "CCA-F 是什么、含金量、为什么锁在 Claude Partner Network、本班『实战 + 认证』双目标怎么达成。",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 60,
+          "steps": [
+            { "order": 1, "type": "LIVE", "title": "认证定位与含金量", "description": "Anthropic 首个官方技术认证；归属个人；可进 Services Partner Directory。", "duration": 20 },
+            { "order": 2, "type": "LIVE", "title": "为什么个人报不了名", "description": "考试锁在 Partner Network；匠人 Partner 通道是合规入口。", "duration": 15 },
+            { "order": 3, "type": "LIVE", "title": "本班路线：实战 + 冲刺双线", "description": "前半程练 Claude Code 生产级实战，后半程对齐 5 domain 冲刺。", "duration": 25 }
+          ]
+        },
+        {
+          "code": "L02",
+          "title": "考试形式全解 — 题型/时长/及格线/重考规则",
+          "description": "Pearson VUE 监考、OnVUE 或考场、约 60 题 120 分钟、720/1000、闭卷禁 AI、6 抽 4 场景、重考规则。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 30,
+          "steps": [
+            { "order": 1, "type": "CONCEPT", "title": "承办与交付", "description": "Pearson VUE；OnVUE 线上或线下；闭卷监考禁 AI。", "duration": 8 },
+            { "order": 2, "type": "CONCEPT", "title": "题量/时长/及格线", "description": "约 60 题 120 分钟；720/1000；官方未正式公布数字，以 Pearson 说明为准。", "duration": 8 },
+            { "order": 3, "type": "CONCEPT", "title": "场景题与权重", "description": "6 抽 4；Agentic Architecture 与 Claude Code 权重最高。", "duration": 7 },
+            { "order": 4, "type": "CONCEPT", "title": "重考规则", "description": "12 个月 4 次；14/30/90 天间隔。", "duration": 7 }
+          ]
+        },
+        {
+          "code": "L03",
+          "title": "实战：领取并激活你的考试名额",
+          "description": "走通匠人 Partner 通道 → Anthropic Partner Academy → Pearson 账号，确认名额到账可预约。",
+          "type": "Quest",
+          "isLive": false,
+          "duration": 30,
+          "quest": {
+            "title": "领取并激活你的 CCA-F 官方考试名额",
+            "learningGoal": "在 Pearson VUE 有一个已激活、可预约的 CCA-F 名额，报名信息与证件一致。",
+            "successCriteria": "Pearson 账号里 CCA-F 可预约；姓名/邮箱与证件一致。",
+            "difficulty": "beginner",
+            "estimatedMinutes": 30,
+            "uiMode": "chat",
+            "context": "学员刚入班，需走通『匠人 Partner 通道 → Partner Academy → Pearson 账号』。AI 逐步带：(1) 确认收到匠人发的 Partner Academy 邀请（常进垃圾箱）；(2) 完成报名触发 Pearson 凭证；(3) 登录 pearsonvue.com/anthropic 确认 CCA-F 可预约；(4) 核对姓名与证件完全一致。AI 主动带节奏，遇卡引导联系课程顾问。",
+            "stepSkeleton": [
+              { "title": "确认收到 Partner Academy 邀请", "verificationType": "self-confirm", "expectedEvidence": "邮箱有匠人/Anthropic 报名链接" },
+              { "title": "完成报名触发 Pearson 凭证", "verificationType": "self-confirm", "expectedEvidence": "收到 Pearson 账号邮件" },
+              { "title": "登录 Pearson 确认 CCA-F 可预约", "verificationType": "text-evidence", "expectedEvidence": "账号里 CCA-F 可 schedule" },
+              { "title": "核对姓名/邮箱与证件一致", "verificationType": "self-confirm", "expectedEvidence": "档案姓名与证件一致" }
+            ],
+            "prerequisites": ["已入班"],
+            "targetPlatform": "browser",
+            "tags": ["cca-f", "registration"]
+          }
+        },
+        {
+          "code": "L04",
+          "title": "实战：预约考试 + OnVUE 环境自检",
+          "description": "选 OnVUE 或考场、预约时间、跑 OnVUE 系统测试、准备合规考场环境。",
+          "type": "Quest",
+          "isLive": false,
+          "duration": 30,
+          "quest": {
+            "title": "预约 CCA-F 考试并通过 OnVUE 环境自检",
+            "learningGoal": "有确定的考试预约时间；（线上）OnVUE 系统测试通过、环境合规。",
+            "successCriteria": "Pearson 显示已预约；OnVUE system test 通过。",
+            "difficulty": "beginner",
+            "estimatedMinutes": 30,
+            "uiMode": "chat",
+            "context": "学员已激活名额要预约。AI 带：权衡 OnVUE vs 线下；在 Pearson 预约（提醒 24 小时前才可免费改期）；跑 OnVUE system test；准备无他人、桌面清空、证件备好的房间；讲清当天流程。坑：第二屏幕/耳机/手机零容忍，网络不稳改线下。",
+            "stepSkeleton": [
+              { "title": "选 OnVUE 或线下考场", "verificationType": "self-confirm", "expectedEvidence": "说明选择及原因" },
+              { "title": "在 Pearson 预约时间", "verificationType": "text-evidence", "expectedEvidence": "账号显示已预约" },
+              { "title": "（线上）通过 OnVUE system test", "verificationType": "self-confirm", "expectedEvidence": "网络/摄像头/麦克风通过" },
+              { "title": "确认环境与证件就绪", "verificationType": "self-confirm", "expectedEvidence": "独立房间+证件一致" }
+            ],
+            "prerequisites": ["L03 完成"],
+            "targetPlatform": "browser",
+            "tags": ["cca-f", "onvue"]
+          }
+        },
+        {
+          "code": "L05",
+          "title": "实战：在你电脑上装好 Claude Code",
+          "description": "在本机装好 Node + Claude Code + 认证，完成第一次成功运行，为后面所有实战打好底。",
+          "type": "Quest",
+          "isLive": false,
+          "duration": 30,
+          "quest": {
+            "title": "装好 Claude Code 并完成第一次运行",
+            "learningGoal": "本机装好 Claude Code、完成登录/认证、在一个项目目录里成功启动并对话。",
+            "successCriteria": "终端里 claude 能启动并回应；在一个真实项目目录里能读文件。",
+            "difficulty": "beginner",
+            "estimatedMinutes": 30,
+            "uiMode": "chat",
+            "context": "学员有编程基础但可能第一次装 Claude Code。AI 逐步带：(1) 检查 Node 版本（需 v18+，建议 v20+），没有就装；(2) 按官方方式安装 Claude Code CLI；(3) 完成登录/认证；(4) 在一个真实项目目录启动 claude 并让它读一个文件。坑：Node 版本过低；Windows 用 PowerShell/WSL 的差异；认证浏览器回调；权限模式第一次会问。AI 主动带节奏并帮排错。",
+            "stepSkeleton": [
+              { "title": "检查 Node 版本", "verificationType": "text-evidence", "expectedEvidence": "node --version 输出 v18+（建议 v20+）" },
+              { "title": "安装 Claude Code CLI", "verificationType": "text-evidence", "expectedEvidence": "claude --version 有输出" },
+              { "title": "完成登录/认证", "verificationType": "self-confirm", "expectedEvidence": "claude 启动不再要求登录" },
+              { "title": "在项目目录里成功对话并读文件", "verificationType": "text-evidence", "expectedEvidence": "claude 能读出项目里某个文件的内容" }
+            ],
+            "prerequisites": ["装了 Node 18+", "有一个真实项目目录"],
+            "targetPlatform": "local-terminal",
+            "tags": ["claude-code", "setup"]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Phase 1 — Claude Code 基础实战",
+      "color": "#E08A6B",
+      "summary": "6 节 — 终端不怕 + CLAUDE.md 项目规则 + 核心工作流",
+      "test": { "questions": 10, "passRate": 0.7, "unlocks": "Phase 2" },
+      "lessons": [
+        {
+          "code": "L06",
+          "title": "Claude Code 核心工作流（直播）",
+          "description": "Claude Code 的心智模型：它怎么读代码库、怎么规划、怎么改文件、权限模式、什么时候该 plan、什么时候该放手。",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 90,
+          "steps": [
+            { "order": 1, "type": "LIVE", "title": "Claude Code 心智模型", "description": "agentic coding：读→规划→改→验证的循环。", "duration": 30 },
+            { "order": 2, "type": "LIVE", "title": "权限模式与安全", "description": "什么操作会问你、怎么配权限、破坏性操作的护栏。", "duration": 30 },
+            { "order": 3, "type": "LIVE", "title": "现场演示：改一个真实项目", "description": "老师现场用 Claude Code 完成一个真实修改。", "duration": 30 }
+          ]
+        },
+        {
+          "code": "L07",
+          "title": "实战：跑通你的第一个 AI 辅助任务",
+          "description": "在自己的项目里，用 Claude Code 完成一个真实小任务（改一批文件 / 加一个功能 / 修一个 bug），走完读→规划→改→验证全流程。",
+          "type": "Quest",
+          "isLive": false,
+          "duration": 40,
+          "quest": {
+            "title": "用 Claude Code 完成第一个真实任务",
+            "learningGoal": "在真实项目里独立用 Claude Code 完成一个有验证标准的小任务。",
+            "successCriteria": "任务完成且能验证（测试通过/输出正确/文件按预期改动），并 git diff 审阅过。",
+            "difficulty": "beginner",
+            "estimatedMinutes": 40,
+            "uiMode": "chat",
+            "context": "学员刚装好 Claude Code，第一次独立用它干活。AI 带：(1) 帮学员把一个模糊需求说清成可验证任务；(2) 用 plan 先看 Claude Code 的方案再放行；(3) 让它改，学员审 git diff；(4) 验证结果。坑：一次给太大任务、不看 diff 就接受、不写验证标准。AI 主动强调『先规划再动手』『改完必看 diff』。",
+            "stepSkeleton": [
+              { "title": "把需求说成可验证任务", "verificationType": "self-confirm", "expectedEvidence": "任务有明确完成标准" },
+              { "title": "先让它规划再放行", "verificationType": "self-confirm", "expectedEvidence": "看过 plan 再执行" },
+              { "title": "执行并审阅 git diff", "verificationType": "text-evidence", "expectedEvidence": "git diff 显示预期改动" },
+              { "title": "验证结果", "verificationType": "text-evidence", "expectedEvidence": "测试/输出证明任务完成" }
+            ],
+            "prerequisites": ["L05 完成"],
+            "targetPlatform": "local-terminal",
+            "tags": ["claude-code", "workflow"]
+          }
+        },
+        {
+          "code": "L08",
+          "title": "实战：给项目写一份 CLAUDE.md 项目规则",
+          "description": "写一份 CLAUDE.md，把项目约定、技术栈、禁区、风格教给 Claude Code，让它每次都按你的规矩办事。这是 Domain 3 的核心考点。",
+          "type": "Quest",
+          "isLive": false,
+          "duration": 40,
+          "quest": {
+            "title": "为你的项目写一份高质量 CLAUDE.md",
+            "learningGoal": "产出一份能真正约束 Claude Code 行为的 CLAUDE.md，覆盖技术栈、约定、禁区。",
+            "successCriteria": "CLAUDE.md 就位，Claude Code 在后续任务中遵守了其中至少一条规则。",
+            "difficulty": "intermediate",
+            "estimatedMinutes": 40,
+            "uiMode": "chat",
+            "context": "教学员写 CLAUDE.md（对应考试 Domain 3）。AI 带：(1) 讲 CLAUDE.md 的作用和加载机制；(2) 帮学员列出项目技术栈/命令/风格/禁区；(3) 写进 CLAUDE.md；(4) 跑一个任务验证 Claude Code 是否遵守。坑：写太泛没约束力、把该进 settings 的权限写进 CLAUDE.md、规则互相矛盾。强调规则要具体可执行。",
+            "stepSkeleton": [
+              { "title": "理解 CLAUDE.md 的作用", "verificationType": "self-confirm", "expectedEvidence": "能说清它如何影响行为" },
+              { "title": "列出项目约定/禁区/命令", "verificationType": "self-confirm", "expectedEvidence": "有一份要点清单" },
+              { "title": "写出 CLAUDE.md", "verificationType": "text-evidence", "expectedEvidence": "项目根有 CLAUDE.md" },
+              { "title": "跑任务验证被遵守", "verificationType": "self-confirm", "expectedEvidence": "Claude Code 遵守了某条规则" }
+            ],
+            "prerequisites": ["L07 完成"],
+            "targetPlatform": "local-terminal",
+            "tags": ["claude-code", "claude-md", "domain-3"]
+          }
+        },
+        {
+          "code": "L09",
+          "title": "Claude Code 常用工作流录播合集",
+          "description": "录播演示：多文件重构、跨仓搜索、写测试、review diff、用 plan mode 等高频工作流，可反复看。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 40,
+          "steps": [
+            { "order": 1, "type": "VIDEO", "title": "多文件重构 + 跨仓搜索", "description": "怎么让它安全地大范围改。", "duration": 13 },
+            { "order": 2, "type": "VIDEO", "title": "写测试 + review diff", "description": "让 AI 补测试、你来审。", "duration": 13 },
+            { "order": 3, "type": "VIDEO", "title": "plan mode 与放手边界", "description": "什么时候先规划、什么时候直接干。", "duration": 14 }
+          ]
+        },
+        {
+          "code": "L10",
+          "title": "自学：终端与 Git 基础补齐",
+          "description": "给终端/Git 不熟的同学补齐：常用命令、分支、diff、commit，够用即可，保证后面实战不卡在这。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 30,
+          "steps": [
+            { "order": 1, "type": "CONCEPT", "title": "终端常用命令", "description": "cd/ls/文件操作、跨平台差异。", "duration": 15 },
+            { "order": 2, "type": "CONCEPT", "title": "Git 够用四件套", "description": "status/diff/add/commit + 分支概念。", "duration": 15 }
+          ]
+        },
+        {
+          "code": "L11",
+          "title": "基础闯关自测",
+          "description": "一组小题检验你对 Claude Code 心智模型、权限、CLAUDE.md 的掌握，过了才进 Domain 深水区。",
+          "type": "Quiz",
+          "isLive": false,
+          "duration": 20,
+          "steps": [
+            { "order": 1, "type": "MCQ", "title": "基础自测 10 题", "description": "覆盖工作流/权限/CLAUDE.md。", "duration": 20 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 2 — Domain 1：Agentic Architecture",
+      "color": "#C15F3C",
+      "summary": "5 节 — 多智能体架构（考试权重最高）",
+      "test": { "questions": 8, "passRate": 0.72, "unlocks": "Phase 3" },
+      "lessons": [
+        {
+          "code": "L12",
+          "title": "Agentic Architecture 设计（直播）",
+          "description": "single vs multi-agent、orchestrator-worker、评估器-优化器、agent 何时自主何时升级人工、可靠性设计——考试权重最高的 domain。",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 90,
+          "steps": [
+            { "order": 1, "type": "LIVE", "title": "单 vs 多 agent 的取舍", "description": "什么时候真的需要拆 agent，什么时候是过度工程。", "duration": 30 },
+            { "order": 2, "type": "LIVE", "title": "编排模式", "description": "orchestrator-worker、pipeline、评估器-优化器。", "duration": 30 },
+            { "order": 3, "type": "LIVE", "title": "自主 vs 升级人工 + 可靠性", "description": "升级人工判断、重试/超时/护栏/降级。", "duration": 30 }
+          ]
+        },
+        {
+          "code": "L13",
+          "title": "实战：用 subagents 搭一个多智能体任务",
+          "description": "在 Claude Code 里用 subagents 把一个任务拆成并行子任务跑通，亲手体会编排与结果汇总。",
+          "type": "Quest",
+          "isLive": false,
+          "duration": 45,
+          "quest": {
+            "title": "用 Claude Code subagents 完成一个可并行的任务",
+            "learningGoal": "把一个可分解任务用 subagents 并行完成并汇总，理解多智能体编排的实际取舍。",
+            "successCriteria": "任务通过 subagents 并行完成，学员能说清为什么这个任务适合拆、成本/收益如何。",
+            "difficulty": "intermediate",
+            "estimatedMinutes": 45,
+            "uiMode": "chat",
+            "context": "对应 Domain 1。AI 带学员选一个真适合并行的任务（如多文件独立审查/多来源搜集），用 subagents 跑，再反思『这个任务值不值得多 agent』。坑：给不该并行的任务硬拆、忽略汇总成本、以为多 agent 总是更好。强调考试常考『何时不该多 agent』。",
+            "stepSkeleton": [
+              { "title": "选一个适合并行的任务", "verificationType": "self-confirm", "expectedEvidence": "任务的子项相互独立" },
+              { "title": "用 subagents 并行执行", "verificationType": "text-evidence", "expectedEvidence": "多个 subagent 产出结果" },
+              { "title": "汇总并评估取舍", "verificationType": "self-confirm", "expectedEvidence": "能说清成本/收益" }
+            ],
+            "prerequisites": ["Phase 1 完成"],
+            "targetPlatform": "local-terminal",
+            "tags": ["multi-agent", "domain-1"]
+          }
+        },
+        {
+          "code": "L14",
+          "title": "自学：多智能体架构参考案例",
+          "description": "拆解几个真实多智能体系统（客服升级、研究型 agent、代码审查流水线）的架构决策，作为场景题素材。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 40,
+          "steps": [
+            { "order": 1, "type": "CONCEPT", "title": "客服自主 vs 升级人工案例", "description": "边界怎么定。", "duration": 13 },
+            { "order": 2, "type": "CONCEPT", "title": "研究型 agent 编排案例", "description": "fan-out/汇总模式。", "duration": 13 },
+            { "order": 3, "type": "CONCEPT", "title": "代码审查流水线案例", "description": "多维度评审 + 汇总。", "duration": 14 }
+          ]
+        },
+        {
+          "code": "L15",
+          "title": "Domain 1 场景题拆解",
+          "description": "用四步答题框架带练多智能体场景题，识别『过度工程』『不必要多 agent』这类陷阱选项。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 40,
+          "steps": [
+            { "order": 1, "type": "SCENARIO", "title": "带练两道 Domain 1 场景题", "description": "抓约束→定 domain→排除→选最优。", "duration": 25 },
+            { "order": 2, "type": "CONCEPT", "title": "陷阱选项识别", "description": "多 agent 万能论、忽略成本、忽略升级人工。", "duration": 15 }
+          ]
+        },
+        {
+          "code": "L16",
+          "title": "Domain 1 小测",
+          "description": "8 题检验 Agentic Architecture 掌握度，低于 72% 回炉。",
+          "type": "Quiz",
+          "isLive": false,
+          "duration": 20,
+          "steps": [
+            { "order": 1, "type": "MCQ", "title": "Domain 1 自测 8 题", "description": "多智能体架构专项。", "duration": 20 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 3 — Domain 2：Tool Design & MCP",
+      "color": "#B54A2E",
+      "summary": "6 节 — 工具设计 + 亲手搭 MCP server",
+      "test": { "questions": 8, "passRate": 0.72, "unlocks": "Phase 4" },
+      "lessons": [
+        {
+          "code": "L17",
+          "title": "Tool Design & MCP（直播）",
+          "description": "工具粒度/命名/描述如何影响模型选对工具、工具选择歧义调试、MCP server/client/transport 架构、何时用 MCP vs 直接函数调用。",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 90,
+          "steps": [
+            { "order": 1, "type": "LIVE", "title": "工具设计原则", "description": "粒度、命名、描述；工具太多/含糊的坑。", "duration": 30 },
+            { "order": 2, "type": "LIVE", "title": "MCP 架构", "description": "server/client/transport；MCP 解决什么。", "duration": 30 },
+            { "order": 3, "type": "LIVE", "title": "工具选择调试", "description": "选错工具时定位是描述问题还是架构问题。", "duration": 30 }
+          ]
+        },
+        {
+          "code": "L18",
+          "title": "实战：搭一个 MCP server 并接进 Claude Code",
+          "description": "亲手写一个最小 MCP server（暴露 1-2 个工具），接进 Claude Code 并成功调用，彻底搞懂 MCP 不再是黑盒。",
+          "type": "Quest",
+          "isLive": false,
+          "duration": 50,
+          "quest": {
+            "title": "构建并接入你的第一个 MCP server",
+            "learningGoal": "写一个最小 MCP server 暴露工具，配置进 Claude Code，让 Claude 成功调用该工具。",
+            "successCriteria": "Claude Code 能列出并成功调用你的 MCP 工具，返回预期结果。",
+            "difficulty": "intermediate",
+            "estimatedMinutes": 50,
+            "uiMode": "chat",
+            "context": "对应 Domain 2。AI 带：(1) 用官方 MCP SDK 起一个最小 server，定义 1-2 个工具（如查天气/读本地数据）；(2) 写清工具描述（强调描述质量决定模型选不选它）；(3) 在 Claude Code 配置该 MCP server；(4) 让 Claude 调用验证。坑：工具描述含糊导致模型不用、transport/配置路径写错、权限没放行。强调『工具描述就是给模型的 prompt』。",
+            "stepSkeleton": [
+              { "title": "用 MCP SDK 起最小 server", "verificationType": "text-evidence", "expectedEvidence": "server 能启动" },
+              { "title": "定义带清晰描述的工具", "verificationType": "text-evidence", "expectedEvidence": "工具有明确 name/description/schema" },
+              { "title": "在 Claude Code 配置 MCP server", "verificationType": "self-confirm", "expectedEvidence": "Claude Code 能列出该工具" },
+              { "title": "成功调用工具", "verificationType": "text-evidence", "expectedEvidence": "Claude 调用返回预期结果" }
+            ],
+            "prerequisites": ["Phase 1 完成", "Node 或 Python 环境"],
+            "targetPlatform": "local-terminal",
+            "tags": ["mcp", "tool-design", "domain-2"]
+          }
+        },
+        {
+          "code": "L19",
+          "title": "自学：MCP 生态与何时该上 MCP",
+          "description": "现成 MCP server 生态、企业接入 MCP 的取舍、MCP vs 内置工具 vs 直接 API 的决策，作为场景题素材。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 35,
+          "steps": [
+            { "order": 1, "type": "CONCEPT", "title": "MCP 生态概览", "description": "常见现成 server 与用途。", "duration": 17 },
+            { "order": 2, "type": "CONCEPT", "title": "MCP vs 直接函数调用", "description": "什么时候值得引入 MCP。", "duration": 18 }
+          ]
+        },
+        {
+          "code": "L20",
+          "title": "Domain 2 场景题拆解",
+          "description": "带练工具选择/MCP 架构场景题，识别『工具太多』『描述含糊』『该不该上 MCP』类陷阱。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 40,
+          "steps": [
+            { "order": 1, "type": "SCENARIO", "title": "带练两道 Domain 2 场景题", "description": "工具选择调试 + MCP 架构决策。", "duration": 25 },
+            { "order": 2, "type": "CONCEPT", "title": "陷阱选项识别", "description": "过度接 MCP、忽略工具描述质量。", "duration": 15 }
+          ]
+        },
+        {
+          "code": "L21",
+          "title": "MCP 工具设计录播案例",
+          "description": "录播拆解几个设计良好 vs 糟糕的工具集，直观看到描述与粒度对模型行为的影响。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30,
+          "steps": [
+            { "order": 1, "type": "VIDEO", "title": "好工具 vs 坏工具对比", "description": "同一需求两种设计的差异。", "duration": 30 }
+          ]
+        },
+        {
+          "code": "L22",
+          "title": "Domain 2 小测",
+          "description": "8 题检验 Tool Design & MCP 掌握度。",
+          "type": "Quiz",
+          "isLive": false,
+          "duration": 20,
+          "steps": [
+            { "order": 1, "type": "MCQ", "title": "Domain 2 自测 8 题", "description": "工具设计与 MCP 专项。", "duration": 20 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 4 — Domain 3：Claude Code Configuration",
+      "color": "#A34327",
+      "summary": "6 节 — hooks / slash commands / settings / subagents（考试权重最高）",
+      "test": { "questions": 8, "passRate": 0.72, "unlocks": "Phase 5" },
+      "lessons": [
+        {
+          "code": "L23",
+          "title": "Claude Code 配置深潜（直播）",
+          "description": "settings.json 层级与权限、hooks 自动化、slash commands 复用、subagents、MCP 接入、团队级配置——自学者最易失分、考试权重最高的 domain。",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 90,
+          "steps": [
+            { "order": 1, "type": "LIVE", "title": "settings 层级与权限", "description": "user/project/local 层级、allow/deny、权限模式。", "duration": 30 },
+            { "order": 2, "type": "LIVE", "title": "hooks 自动化", "description": "什么行为该用 hook 自动跑（格式化/校验/通知）。", "duration": 30 },
+            { "order": 3, "type": "LIVE", "title": "slash commands + subagents + MCP", "description": "复用 prompt、并行、扩展能力的组合拳。", "duration": 30 }
+          ]
+        },
+        {
+          "code": "L24",
+          "title": "实战：给项目配一套 hooks",
+          "description": "为项目配一个 hook（例如改完自动跑测试/格式化/发通知），理解 hook 何时触发、和权限的关系。",
+          "type": "Quest",
+          "isLive": false,
+          "duration": 40,
+          "quest": {
+            "title": "为项目配置一个可靠的 hook",
+            "learningGoal": "配置一个在特定事件触发的 hook，并验证它真的自动执行。",
+            "successCriteria": "触发对应事件时 hook 自动运行并产生预期效果（如自动格式化/跑测试）。",
+            "difficulty": "intermediate",
+            "estimatedMinutes": 40,
+            "uiMode": "chat",
+            "context": "对应 Domain 3 核心。AI 带：(1) 讲 hook 事件类型与配置位置；(2) 选一个真实自动化需求；(3) 写进 settings 配置 hook；(4) 触发验证。坑：hook 命令跨平台差异、和权限模式的交互、hook 失败静默。强调『自动化行为靠 hook，不是靠 memory/prompt』——这是考点。",
+            "stepSkeleton": [
+              { "title": "选一个自动化需求", "verificationType": "self-confirm", "expectedEvidence": "明确要在什么事件做什么" },
+              { "title": "配置 hook", "verificationType": "text-evidence", "expectedEvidence": "settings 里有 hook 配置" },
+              { "title": "触发并验证", "verificationType": "text-evidence", "expectedEvidence": "事件触发后 hook 自动执行" }
+            ],
+            "prerequisites": ["L08 完成"],
+            "targetPlatform": "local-terminal",
+            "tags": ["hooks", "domain-3"]
+          }
+        },
+        {
+          "code": "L25",
+          "title": "实战：把常用 prompt 沉成 slash command",
+          "description": "把你反复用的 prompt（如生成 commit / 写 PR 描述 / code review）做成自定义 slash command，一键复用。",
+          "type": "Quest",
+          "isLive": false,
+          "duration": 35,
+          "quest": {
+            "title": "创建 2 个自定义 slash command",
+            "learningGoal": "把重复 prompt 沉成 slash command 并成功调用，理解命令复用与团队共享。",
+            "successCriteria": "至少 2 个自定义 slash command 可用并产出预期结果。",
+            "difficulty": "beginner",
+            "estimatedMinutes": 35,
+            "uiMode": "chat",
+            "context": "对应 Domain 3。AI 带：(1) 找出学员反复敲的 prompt；(2) 做成 slash command（含参数）；(3) 调用验证；(4) 讲怎么进 project 目录被团队共享。坑：命令路径/格式、参数占位、和 subagent 的区别。",
+            "stepSkeleton": [
+              { "title": "找出可复用 prompt", "verificationType": "self-confirm", "expectedEvidence": "列出 2 个" },
+              { "title": "创建 slash command", "verificationType": "text-evidence", "expectedEvidence": "命令文件就位" },
+              { "title": "调用验证", "verificationType": "self-confirm", "expectedEvidence": "命令按预期工作" }
+            ],
+            "prerequisites": ["L23 完成"],
+            "targetPlatform": "local-terminal",
+            "tags": ["slash-commands", "domain-3"]
+          }
+        },
+        {
+          "code": "L26",
+          "title": "自学：团队级 Claude Code 配置与安全",
+          "description": "把 CLAUDE.md + settings + hooks + 权限组合成一套团队工作流，兼顾效率与安全（禁区、破坏性操作护栏）。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 35,
+          "steps": [
+            { "order": 1, "type": "CONCEPT", "title": "团队配置组合", "description": "哪些进 project、哪些进 user、哪些进 local。", "duration": 18 },
+            { "order": 2, "type": "CONCEPT", "title": "安全与护栏", "description": "权限 deny、破坏性操作确认。", "duration": 17 }
+          ]
+        },
+        {
+          "code": "L27",
+          "title": "Domain 3 场景题拆解",
+          "description": "带练配置类场景题：给定团队需求选对 hooks/权限/subagent/命令组合，识别『该用 hook 却用 prompt』类陷阱。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 40,
+          "steps": [
+            { "order": 1, "type": "SCENARIO", "title": "带练两道 Domain 3 场景题", "description": "团队工作流配置决策。", "duration": 25 },
+            { "order": 2, "type": "CONCEPT", "title": "陷阱选项识别", "description": "自动化该用 hook、权限该进 settings、复用该用 command。", "duration": 15 }
+          ]
+        },
+        {
+          "code": "L28",
+          "title": "Domain 3 小测",
+          "description": "8 题检验 Claude Code Configuration 掌握度。",
+          "type": "Quiz",
+          "isLive": false,
+          "duration": 20,
+          "steps": [
+            { "order": 1, "type": "MCQ", "title": "Domain 3 自测 8 题", "description": "配置专项。", "duration": 20 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 5 — Domain 4：Prompt Engineering",
+      "color": "#D97757",
+      "summary": "4 节 — 生产级 Prompt 设计与评估",
+      "lessons": [
+        {
+          "code": "L29",
+          "title": "生产级 Prompt Engineering（直播）",
+          "description": "系统提示设计、角色/约束/输出格式、Claude 偏好的 XML 结构、few-shot、思维链、以及 prompt 的系统化评估与迭代——放在架构语境下，不是背模板。",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 90,
+          "steps": [
+            { "order": 1, "type": "LIVE", "title": "系统提示与结构", "description": "角色/约束/输出格式；XML 结构。", "duration": 30 },
+            { "order": 2, "type": "LIVE", "title": "few-shot 与思维链", "description": "何时用示例、何时让它思考。", "duration": 30 },
+            { "order": 3, "type": "LIVE", "title": "Prompt 评估与迭代", "description": "系统化评估，不凭感觉调。", "duration": 30 }
+          ]
+        },
+        {
+          "code": "L30",
+          "title": "实战：为一个真实功能迭代出可靠 prompt",
+          "description": "挑一个真实功能（分类/抽取/改写），设计系统提示、建小评估集、迭代到稳定，体会『改 prompt vs 改架构』的判断。",
+          "type": "Quest",
+          "isLive": false,
+          "duration": 45,
+          "quest": {
+            "title": "为一个真实任务设计并评估 prompt",
+            "learningGoal": "为一个真实任务写出系统提示、建立小评估集、迭代到稳定输出。",
+            "successCriteria": "在小评估集上通过率明显提升，学员能说清哪次改动带来提升。",
+            "difficulty": "intermediate",
+            "estimatedMinutes": 45,
+            "uiMode": "chat",
+            "context": "对应 Domain 4。AI 带：(1) 选一个可评估任务（分类/抽取/改写）；(2) 写系统提示（角色/约束/XML 输出）；(3) 建 5-10 条评估样本；(4) 迭代并对比通过率；(5) 讨论何时该改 prompt、何时问题在架构。坑：没有评估集凭感觉、一次改太多说不清归因、把架构问题当 prompt 问题硬调。",
+            "stepSkeleton": [
+              { "title": "选可评估任务并建评估集", "verificationType": "self-confirm", "expectedEvidence": "有 5-10 条样本与期望输出" },
+              { "title": "写系统提示", "verificationType": "text-evidence", "expectedEvidence": "结构化系统提示就位" },
+              { "title": "迭代并对比通过率", "verificationType": "self-confirm", "expectedEvidence": "通过率提升且能归因" }
+            ],
+            "prerequisites": ["Phase 1 完成"],
+            "targetPlatform": "any",
+            "tags": ["prompt-engineering", "domain-4"]
+          }
+        },
+        {
+          "code": "L31",
+          "title": "Domain 4 场景题拆解",
+          "description": "带练 prompt 类场景题，重点区分『改 prompt 还是改架构』，识别过度依赖 prompt 的陷阱。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 35,
+          "steps": [
+            { "order": 1, "type": "SCENARIO", "title": "带练两道 Domain 4 场景题", "description": "可靠性问题该动 prompt 还是架构。", "duration": 22 },
+            { "order": 2, "type": "CONCEPT", "title": "陷阱选项识别", "description": "prompt 万能论、忽略评估。", "duration": 13 }
+          ]
+        },
+        {
+          "code": "L32",
+          "title": "Domain 4 小测",
+          "description": "8 题检验 Prompt Engineering 掌握度。",
+          "type": "Quiz",
+          "isLive": false,
+          "duration": 20,
+          "steps": [
+            { "order": 1, "type": "MCQ", "title": "Domain 4 自测 8 题", "description": "提示工程专项。", "duration": 20 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 6 — Domain 5：Context Management",
+      "color": "#C15F3C",
+      "summary": "4 节 — 上下文/记忆/成本管理",
+      "lessons": [
+        {
+          "code": "L33",
+          "title": "Context Management（直播）",
+          "description": "上下文窗口预算、放什么进上下文、检索/RAG vs 塞满、记忆与状态、长会话压缩、context 与成本/延迟的权衡。",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 90,
+          "steps": [
+            { "order": 1, "type": "LIVE", "title": "上下文预算与策略", "description": "放什么、压缩/截断。", "duration": 30 },
+            { "order": 2, "type": "LIVE", "title": "检索 vs 塞满上下文", "description": "何时用 RAG/检索。", "duration": 30 },
+            { "order": 3, "type": "LIVE", "title": "记忆、状态与成本", "description": "长会话记忆与成本/延迟权衡。", "duration": 30 }
+          ]
+        },
+        {
+          "code": "L34",
+          "title": "实战：给长会话应用设计上下文与记忆",
+          "description": "为一个多轮应用设计上下文管理方案（放什么、怎么压缩、要不要检索、成本预算），产出一份可评审的设计。",
+          "type": "Quest",
+          "isLive": false,
+          "duration": 45,
+          "quest": {
+            "title": "设计一个长会话应用的上下文管理方案",
+            "learningGoal": "产出一份上下文管理设计：上下文预算、压缩策略、检索取舍、成本估算。",
+            "successCriteria": "设计文档覆盖预算/压缩/检索/成本四项，且取舍有依据。",
+            "difficulty": "intermediate",
+            "estimatedMinutes": 45,
+            "uiMode": "chat",
+            "context": "对应 Domain 5。AI 带学员为一个真实多轮场景（客服/助手）设计：放什么进上下文、怎么压缩历史、何时检索外部知识、成本/延迟怎么控。坑：无脑塞满上下文、忽略成本、该检索时不检索。产出一份设计文档。",
+            "stepSkeleton": [
+              { "title": "定上下文预算与内容", "verificationType": "self-confirm", "expectedEvidence": "明确放什么、多少 token" },
+              { "title": "设计压缩/检索策略", "verificationType": "self-confirm", "expectedEvidence": "有压缩与检索取舍" },
+              { "title": "估算成本与产出设计文档", "verificationType": "text-evidence", "expectedEvidence": "设计文档四项齐全" }
+            ],
+            "prerequisites": ["Phase 1 完成"],
+            "targetPlatform": "any",
+            "tags": ["context-management", "domain-5"]
+          }
+        },
+        {
+          "code": "L35",
+          "title": "Domain 5 场景题拆解",
+          "description": "带练上下文/成本场景题，识别『无脑塞满』『忽略成本』『该检索不检索』类陷阱。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 35,
+          "steps": [
+            { "order": 1, "type": "SCENARIO", "title": "带练两道 Domain 5 场景题", "description": "长会话记忆与成本权衡。", "duration": 22 },
+            { "order": 2, "type": "CONCEPT", "title": "陷阱选项识别", "description": "上下文与成本的经典错误项。", "duration": 13 }
+          ]
+        },
+        {
+          "code": "L36",
+          "title": "Domain 5 小测",
+          "description": "8 题检验 Context Management 掌握度。",
+          "type": "Quiz",
+          "isLive": false,
+          "duration": 20,
+          "steps": [
+            { "order": 1, "type": "MCQ", "title": "Domain 5 自测 8 题", "description": "上下文管理专项。", "duration": 20 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 7 — 全真模拟 & 考试冲刺",
+      "color": "#8C3A24",
+      "summary": "4 节 — 2 套全真模拟 + 考前串讲 + 考前清单",
+      "test": { "questions": 60, "passRate": 0.72, "unlocks": "考试" },
+      "lessons": [
+        {
+          "code": "L37",
+          "title": "全真模拟考 A（60 题 / 120 分钟）",
+          "description": "严格按真实题量时长的模拟卷 A，闭卷限时做，出 domain 得分分布定位差距。",
+          "type": "Quiz",
+          "isLive": false,
+          "duration": 130,
+          "steps": [
+            { "order": 1, "type": "PROJECT", "title": "闭卷限时做模拟 A", "description": "60 题 120 分钟，不查资料不用 AI。", "duration": 120 },
+            { "order": 2, "type": "CONCEPT", "title": "看 domain 得分分布", "description": "找出低于 72% 的 domain。", "duration": 10 }
+          ]
+        },
+        {
+          "code": "L38",
+          "title": "考前串讲（直播）+ 模拟 A 逐题详解",
+          "description": "直播过模拟 A 的高频错题，把 5 大 domain 的易错点和场景题陷阱再串一遍。",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 90,
+          "steps": [
+            { "order": 1, "type": "LIVE", "title": "模拟 A 高频错题精讲", "description": "按 domain 过错题。", "duration": 45 },
+            { "order": 2, "type": "LIVE", "title": "5 domain 易错点串讲", "description": "考前最后一遍梳理。", "duration": 45 }
+          ]
+        },
+        {
+          "code": "L39",
+          "title": "全真模拟考 B（60 题 / 120 分钟）+ 详解",
+          "description": "第二套全真模拟，重点覆盖你的薄弱点，确认稳定在 720 以上再去约考。",
+          "type": "Quiz",
+          "isLive": false,
+          "duration": 130,
+          "steps": [
+            { "order": 1, "type": "PROJECT", "title": "闭卷限时做模拟 B", "description": "60 题 120 分钟。", "duration": 120 },
+            { "order": 2, "type": "CONCEPT", "title": "确认稳定过线", "description": "两套都 720+ 再约考。", "duration": 10 }
+          ]
+        },
+        {
+          "code": "L40",
+          "title": "考前 48 小时清单 + 应试策略 + 重考规划",
+          "description": "设备/证件/环境复检、120 分钟时间分配、场景题先易后难与标记复查、不确定题处理、以及万一没过的重考安排。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 30,
+          "steps": [
+            { "order": 1, "type": "CONCEPT", "title": "考前 48 小时清单", "description": "OnVUE 自检、证件、房间、提前登录。", "duration": 8 },
+            { "order": 2, "type": "CONCEPT", "title": "时间分配与应试策略", "description": "先易后难、标记复查。", "duration": 8 },
+            { "order": 3, "type": "CONCEPT", "title": "不确定题的处理", "description": "排除法 + 贴合约束。", "duration": 7 },
+            { "order": 4, "type": "CONCEPT", "title": "重考规划", "description": "12 个月 4 次、14/30/90 天。", "duration": 7 }
+          ]
+        }
+      ]
+    }
+  ]
+}

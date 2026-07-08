@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Claude 架构师认证 · Claude Code 实战冲刺班 · 真实环境实战 + CCA-F 官方考试名额</title>
+  <meta name="description" content="在考试直通包基础上加一整套 Claude Code 真实环境实战：装机 / CLAUDE.md / hooks / slash commands / subagents / 亲手搭 MCP server / 多智能体 / 上下文管理，全部在真实终端手把手带你跑通，再对齐 CCA-F 5 大 domain 冲刺过考。含 1 个 Anthropic 官方考试名额。直播小班 + 自学混合，4-6 周。">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    .header{background:linear-gradient(135deg,#B54A2E 0%,#D97757 100%)}
+    .header h1{font-size:42px;line-height:1.15;letter-spacing:-1px}
+    .header .sub{font-size:17px;opacity:0.94;margin-top:12px;max-width:820px;margin-left:auto;margin-right:auto;line-height:1.6}
+    @media(max-width:768px){.header h1{font-size:24px}.header .sub{font-size:13px}}
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="c">
+    <h1>Claude 架构师认证 · Claude Code 实战冲刺班</h1>
+    <div class="sub">只背考点能过考，但过完你还是不会搭东西。这门课<strong>先在真实终端里把 Claude Code 玩到生产级</strong>，再对齐 CCA-F 5 大 domain 冲刺——学完你有<strong>真实作品 + 一张官方认证</strong>。</div>
+    <div class="tags">
+      <span class="tag a">直播小班 + 自学 · 4-6 周</span>
+      <span class="tag b">含 1 个官方考试名额</span>
+    </div>
+    <div class="nav">
+      <a href="#diff">和直通包的区别</a> ·
+      <a href="#agenda">课程大纲</a> ·
+      <a href="#exam">考试信息</a> ·
+      <a href="#who">适合谁</a> ·
+      <a href="#faq">FAQ</a>
+    </div>
+  </div>
+</header>
+
+<div class="hero-banner">
+  <div class="hero-banner-inner">
+    <div class="hero-fact"><span class="label">形式</span><span class="v">直播小班 + 自学 <small>/ 8 场直播 · 4-6 周</small></span></div>
+    <div class="hero-fact"><span class="label">实战</span><span class="v">11 个 Quest <small>/ 真实终端手把手</small></span></div>
+    <div class="hero-fact"><span class="label">内容</span><span class="v">40 节 <small>/ 8 Phase · ~40h</small></span></div>
+    <div class="hero-fact"><span class="label">考试</span><span class="v">含 1 名额 <small>/ Pearson VUE 监考</small></span></div>
+    <a class="hero-cta" href="#cta">报名冲刺班</a>
+  </div>
+</div>
+
+<main class="c">
+
+  <!-- 和直通包的区别 -->
+  <section id="diff" class="box">
+    <div class="box-h cc">🆚 和"考试直通包"的区别 —— 这门课多了"真学会"</div>
+    <div class="box-body">
+      <p style="margin-bottom:14px;font-size:14px;color:#444">两门课都<strong>含官方考试名额</strong>、都帮你搞定报名门槛。区别在于：直通包是<strong>纯自学备考</strong>，这门冲刺班在它之上加了一整套 <strong>Claude Code 真实环境实战</strong>。</p>
+      <table class="compare-table">
+        <thead><tr><th></th><th>考试直通包（US$220）</th><th>🔥 Claude Code 实战冲刺班</th></tr></thead>
+        <tbody>
+          <tr><td class="label">卖点</td><td>通道 + 最短路线 + 过考</td><td>真学会 Claude Code + 顺带拿证</td></tr>
+          <tr><td class="label">有无培训</td><td>❌ 无培训，纯自学资料</td><td>✅ 8 场直播 + 11 个真实环境实战 Quest</td></tr>
+          <tr><td class="label">实战</td><td>模拟题 + 场景题拆解</td><td>装机 / CLAUDE.md / hooks / slash command / <strong>亲手搭 MCP server</strong> / subagents / 上下文设计</td></tr>
+          <tr><td class="label">适合</td><td>已会 Claude/MCP，只差张证</td><td>想真正学会搭生产级 Claude 应用</td></tr>
+          <tr><td class="label">毕业带走</td><td>一张证</td><td>真实作品（含你自己的 MCP server / CLAUDE.md / hooks）+ 一张证</td></tr>
+          <tr><td class="label">价格</td><td>US$220</td><td>待定</td></tr>
+        </tbody>
+      </table>
+      <div class="callout" style="margin-top:14px">
+        已经是 Claude Code 老手、只想拿证？<a href="../cca-f-cert-pack/curriculum.html">看考试直通包更划算</a>。
+      </div>
+    </div>
+  </section>
+
+  <!-- 课程大纲 -->
+  <section id="agenda" class="box">
+    <div class="box-h indigo">📚 课程大纲 · 40 节 / 8 Phase / 约 40 小时 / 4-6 周</div>
+    <div class="box-body">
+      <p style="margin-bottom:18px;font-size:14px;color:#444">教学设计：<strong>Claude Code 实操全在真实终端里做（Quest 模式，AI 主动带练 + 验证）</strong>。每个 domain 配直播精讲 + 真实环境 Quest + 场景题拆解 + 小测。</p>
+      <table class="agenda">
+        <thead><tr><th>Phase</th><th>课时</th><th>真实环境产出</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="t-time">P0<br/><small>认证+报名+装机</small></td>
+            <td>
+              <div class="t-title">认证 + 报名 + 装机</div>
+              <div class="t-sub">L01 认证全景（直播）· L02 考试形式全解 · L03 <strong>实战</strong>激活名额 · L04 <strong>实战</strong>预约+OnVUE 自检 · L05 <strong>实战</strong>装好 Claude Code</div>
+            </td>
+            <td class="t-do">名额到手 + 本机能跑 Claude Code</td>
+          </tr>
+          <tr>
+            <td class="t-time">P1<br/><small>基础实战</small></td>
+            <td>
+              <div class="t-title">Claude Code 基础实战</div>
+              <div class="t-sub">L06 核心工作流（直播）· L07 <strong>实战</strong>第一个 AI 辅助任务 · L08 <strong>实战</strong>写 CLAUDE.md · L09 常用工作流录播 · L10 终端/Git 补齐 · L11 基础自测</div>
+            </td>
+            <td class="t-do">跑通首个任务 + 一份项目规则 CLAUDE.md</td>
+          </tr>
+          <tr>
+            <td class="t-time">P2<br/><small>Domain 1</small></td>
+            <td>
+              <div class="t-title">Agentic Architecture（权重最高）</div>
+              <div class="t-sub">L12 多智能体架构（直播）· L13 <strong>实战</strong>用 subagents 跑并行任务 · L14 参考案例 · L15 场景题拆解 · L16 小测</div>
+            </td>
+            <td class="t-do">用 subagents 跑通一个并行任务并评估取舍</td>
+          </tr>
+          <tr>
+            <td class="t-time">P3<br/><small>Domain 2</small></td>
+            <td>
+              <div class="t-title">Tool Design &amp; MCP</div>
+              <div class="t-sub">L17 工具设计 + MCP（直播）· L18 <strong>实战 · 亲手搭一个 MCP server 接进 Claude Code</strong> · L19 MCP 生态 · L20 场景题拆解 · L21 工具设计录播 · L22 小测</div>
+            </td>
+            <td class="t-do">一个能被 Claude 调用的自建 MCP server</td>
+          </tr>
+          <tr>
+            <td class="t-time">P4<br/><small>Domain 3</small></td>
+            <td>
+              <div class="t-title">Claude Code Configuration（权重最高）</div>
+              <div class="t-sub">L23 配置深潜（直播）· L24 <strong>实战</strong>配 hooks · L25 <strong>实战</strong>做 2 个 slash command · L26 团队配置与安全 · L27 场景题拆解 · L28 小测</div>
+            </td>
+            <td class="t-do">配好 hooks + 2 个可复用 slash command</td>
+          </tr>
+          <tr>
+            <td class="t-time">P5<br/><small>Domain 4</small></td>
+            <td>
+              <div class="t-title">Prompt Engineering</div>
+              <div class="t-sub">L29 生产级 Prompt（直播）· L30 <strong>实战</strong>为真实功能迭代出可靠 prompt · L31 场景题拆解 · L32 小测</div>
+            </td>
+            <td class="t-do">一个带评估集、迭代到稳定的 prompt</td>
+          </tr>
+          <tr>
+            <td class="t-time">P6<br/><small>Domain 5</small></td>
+            <td>
+              <div class="t-title">Context Management</div>
+              <div class="t-sub">L33 上下文/记忆/成本（直播）· L34 <strong>实战</strong>为长会话应用设计上下文方案 · L35 场景题拆解 · L36 小测</div>
+            </td>
+            <td class="t-do">一份长会话上下文管理设计</td>
+          </tr>
+          <tr>
+            <td class="t-time">P7<br/><small>冲刺</small></td>
+            <td>
+              <div class="t-title">全真模拟 &amp; 考试冲刺</div>
+              <div class="t-sub">L37 全真模拟 A（60 题/120 分钟）· L38 考前串讲（直播）+ 模拟 A 详解 · L39 全真模拟 B + 详解 · L40 考前 48 小时清单 + 应试策略 + 重考规划</div>
+            </td>
+            <td class="t-do">两套模拟稳定 720+ 进考场</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 考试信息 -->
+  <section id="exam" class="box">
+    <div class="box-h teal">📝 CCA-F 考试信息（官方 + 社区口径已分清）</div>
+    <div class="box-body">
+      <table class="compare-table">
+        <thead><tr><th>项目</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td class="label">承办 / 交付</td><td>Pearson VUE · OnVUE 线上远程监考 或 线下考场（<strong>官方确认</strong>）</td></tr>
+          <tr><td class="label">形式</td><td>闭卷 · 有人监考 · 不允许 AI 辅助（<strong>官方确认</strong>）</td></tr>
+          <tr><td class="label">题量 / 时长</td><td>约 60 题 / 120 分钟（<em>社区口径，官方未正式公布</em>）</td></tr>
+          <tr><td class="label">及格线</td><td>720 / 1000（<em>社区口径</em>）· Agentic Architecture 与 Claude Code 权重最高</td></tr>
+          <tr><td class="label">场景题</td><td>题库 6 个场景随机抽 4 个（<em>社区口径</em>）</td></tr>
+          <tr><td class="label">重考</td><td>12 个月内最多 4 次；间隔 14 / 30 / 90 天（<strong>官方确认</strong>）</td></tr>
+          <tr><td class="label">报名资格</td><td>锁在 Claude Partner Network，个人无法自行报名——本课提供合规通道（<strong>官方确认</strong>）</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 适合谁 -->
+  <section id="who" class="box">
+    <div class="box-h purple">👥 适合谁</div>
+    <div class="box-body">
+      <div class="grid2">
+        <div class="pain-card">
+          <span class="icon">🧑‍💻</span>
+          <h4>适合你，如果……</h4>
+          <p>你会写代码、想把 Claude Code 用到<strong>生产级</strong>不只是玩玩；你要给团队/客户搭 Claude 工作流，需要真懂 MCP、subagents、hooks、上下文管理；你想要官方认证背书但个人报不了名；你是技术顾问 / 外包，实战能力 + 认证两样都要。</p>
+        </div>
+        <div class="pain-card">
+          <span class="icon">📋</span>
+          <h4>前置要求</h4>
+          <p>有任一门语言的编程基础、用过命令行、装过 Node.js、用过 Git。<strong>不要求你已经会 Claude Code</strong>——从装机教起。完全零编程基础请先上 AI 必修课或 Claude Code 非技术友好版。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="box">
+    <div class="box-h indigo">❓ 常见问题</div>
+    <div class="box-body">
+      <details>
+        <summary>我已经会用 Claude Code 了，还需要这门课吗？</summary>
+        <div>如果你已经熟练，只想拿证，<a href="../cca-f-cert-pack/curriculum.html">考试直通包（US$220）</a>更划算。这门冲刺班是给"想真正学会 + 顺带拿证"的人——如果你还没亲手搭过 MCP server、没配过 hooks、没做过多智能体，这门课的实战部分对你有价值。</div>
+      </details>
+      <details>
+        <summary>实战是看录播还是真的动手？</summary>
+        <div>真的动手。11 个 Quest 全部在<strong>你自己的终端 / 项目</strong>里做，AI 主动带练 + 逐步验证——装 Claude Code、跑第一个任务、写 CLAUDE.md、配 hooks、做 slash command、亲手搭 MCP server、用 subagents、设计上下文方案。学完这些都是你带得走的真实产出。</div>
+      </details>
+      <details>
+        <summary>考试名额也包含在内吗？</summary>
+        <div>包含。和直通包一样含 1 个官方 CCA-F 考试名额，报名门槛由匠人 Claude Partner 通道帮你搞定。</div>
+      </details>
+      <details>
+        <summary>你们保证过考吗？</summary>
+        <div>不做"保过"承诺。我们承诺真实环境实战 + 系统对齐 5 大 domain + 2 套全真模拟 + 直播答疑，帮你把握最大化。没过按官方重考规则协助二刷。</div>
+      </details>
+      <details>
+        <summary>价格多少？</summary>
+        <div>价格待定，定稿后更新。定价锚点：直通包 US$220 已含名额，本课在其之上加 8 场直播 + 40h 真实环境实战 + 答疑。</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" class="cta-block">
+    <h2>真学会 Claude Code · 顺带拿下官方架构师认证</h2>
+    <p class="sub">8 场直播 + 11 个真实环境实战 + 2 套全真模拟 · 含 1 个官方考试名额</p>
+    <div class="price">价格待定 <small>· 含考试名额</small></div>
+    <div style="margin-top:14px">
+      <a href="#" class="hero-cta" style="background:#FFDE59;color:#B54A2E">🎯 预约报名 / 咨询</a>
+      <!-- TODO: 报名链接 + 定价 -->
+      <a href="../cca-f-cert-pack/curriculum.html" class="hero-cta secondary" style="background:#8C3A24;color:#fff;margin-left:8px">只想拿证？看 US$220 直通包</a>
+    </div>
+    <p style="margin-top:14px;font-size:12px;opacity:0.65;font-family:'Space Mono',monospace">开班日期、报名链接、定价公布中 · 直播小班限额</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  © Claude 架构师认证 · Claude Code 实战冲刺班 · 由 <a href="https://jiangren.com.au">匠人学院</a>（官方 Claude Partner）出品<br/>
+  <small>CCA-F 为 Anthropic 官方认证 · 本课提供合规报名通道 + Claude Code 实战培训 · 不承诺"保过" · 考试数字以 Pearson 官方说明为准</small>
+</footer>
+
+</body>
+</html>

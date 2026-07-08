@@ -339,6 +339,18 @@ jobs:
             cp -r business-analyst/public/* _site/business-analyst/
           fi
 
+          # cca-f-cert-pack (Claude 架构师认证 · 考试直通包 · CCA-F 官方考试名额 + 纯自学备考 · US$220): static HTML only
+          if [ -d cca-f-cert-pack/public ]; then
+            mkdir -p _site/cca-f-cert-pack
+            cp -r cca-f-cert-pack/public/* _site/cca-f-cert-pack/
+          fi
+
+          # cca-f-claude-code-bootcamp (Claude 架构师认证 · Claude Code 实战冲刺班 · CCA-F 名额 + Claude Code 真实环境实战): static HTML only
+          if [ -d cca-f-claude-code-bootcamp/public ]; then
+            mkdir -p _site/cca-f-claude-code-bootcamp
+            cp -r cca-f-claude-code-bootcamp/public/* _site/cca-f-claude-code-bootcamp/
+          fi
+
           # lessons/ai-new-jobs-talk: 60-min 公开讲座 slide deck (React + Vite · 40 张 slide)
           # 跨课复用 lesson · 数据源 jiangren.com.au/ai-new-jobs + /career-impact-map
           # Vite build 已 copy public/ 到 dist/，outline.json 也在 dist 里
@@ -787,6 +799,22 @@ jobs:
                     <span class="tag" style="background:#0f1a2e;color:#FFDE59">CURRICULUM · 1day 非技术版</span>
                     <div class="title">Claude Code 1day · 非技术友好版</div>
                     <div class="desc">墨/悉/布里斯班 线下小班 8-12 人 · A$299 早鸟 / A$399 全价 · 10:00-17:00 含午餐 · 1:5 助教救场 · 上午装机 + 终端入门，下午用你真实素材跑 3 个办公自动化（批量改文件 / Excel + 邮件 + PPT / 爬资料写报告）· 销售 / 行政 / 律师 / 会计 / HR / 小老板 / 内容创作者 / 转行学员 — 完全不需要会代码</div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="section">
+                <div class="section-title">Claude 架构师认证 CCA-F · Anthropic 官方认证 · 匠人 Partner 通道 · 两档</div>
+                <div class="cards">
+                  <a href="./cca-f-cert-pack/curriculum.html">
+                    <span class="tag" style="background:#C15F3C">直通包 · US$220</span>
+                    <div class="title">CCA-F 考试直通包（纯自学）</div>
+                    <div class="desc">含 1 个 Anthropic 官方 CCA-F 考试名额 · 个人报不了名，匠人 Claude Partner 通道帮你开通 · 16 节自学 · 5 大 domain 考点精析 + 6 类场景题拆解 + 2 套全真模拟 + 报名/OnVUE 全程陪跑 · 适合已会 Claude/MCP、只差张证的人</div>
+                  </a>
+                  <a href="./cca-f-claude-code-bootcamp/curriculum.html">
+                    <span class="tag" style="background:#D97757">实战冲刺班 · 价格待定</span>
+                    <div class="title">CCA-F + Claude Code 实战冲刺班</div>
+                    <div class="desc">直通包全部 + 一整套 Claude Code 真实环境实战 · 40 节 / 8 直播 / 11 个 Quest · 装机 / CLAUDE.md / hooks / slash command / 亲手搭 MCP server / subagents / 上下文管理 · 含 1 个官方考试名额 · 直播小班 4-6 周 · 学完有真实作品 + 一张证</div>
                   </a>
                 </div>
               </div>
