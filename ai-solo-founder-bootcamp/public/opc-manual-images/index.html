@@ -1,0 +1,1216 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OPC Manual WeChat Images</title>
+  <style>
+    :root {
+      --ink: #102033;
+      --muted: #5e6f83;
+      --blue: #1357d8;
+      --navy: #0b234a;
+      --emerald: #11a77a;
+      --aqua: #dff7f0;
+      --paper: #ffffff;
+      --line: #d8e3ee;
+      --warm: #f7b955;
+      --soft: #f4f8fc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #d9e5f0;
+      color: var(--ink);
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+    }
+
+    .page {
+      display: grid;
+      gap: 32px;
+      padding: 32px;
+    }
+
+    .poster {
+      position: relative;
+      width: 900px;
+      overflow: hidden;
+      background: var(--paper);
+      isolation: isolate;
+    }
+
+    .cover {
+      height: 1200px;
+      padding: 66px 64px;
+      background:
+        radial-gradient(circle at 78% 8%, rgba(17, 167, 122, 0.22), transparent 26%),
+        radial-gradient(circle at 10% 10%, rgba(19, 87, 216, 0.16), transparent 30%),
+        linear-gradient(145deg, #fafdff 0%, #edf6ff 55%, #e8f8f2 100%);
+    }
+
+    .inline {
+      min-height: 620px;
+      padding: 54px 60px;
+      border-radius: 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 18px;
+      border-radius: 999px;
+      background: rgba(19, 87, 216, 0.1);
+      color: var(--blue);
+      font-size: 23px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--emerald);
+    }
+
+    h1, h2, h3, p {
+      margin: 0;
+    }
+
+    h1 {
+      margin-top: 58px;
+      font-size: 80px;
+      line-height: 1.12;
+      letter-spacing: 0;
+      color: var(--navy);
+      font-weight: 900;
+    }
+
+    h1 .accent {
+      color: var(--emerald);
+    }
+
+    .subtitle {
+      margin-top: 32px;
+      max-width: 720px;
+      font-size: 34px;
+      line-height: 1.5;
+      color: #34475d;
+      font-weight: 600;
+    }
+
+    .cover .subtitle {
+      max-width: 500px;
+    }
+
+    .keyword-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 54px;
+    }
+
+    .keyword {
+      min-height: 88px;
+      display: grid;
+      place-items: center;
+      border: 2px solid rgba(19, 87, 216, 0.14);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.76);
+      color: var(--navy);
+      font-size: 25px;
+      font-weight: 800;
+    }
+
+    .desk {
+      position: absolute;
+      left: 70px;
+      right: 70px;
+      bottom: 72px;
+      height: 318px;
+      border-radius: 38px;
+      background: linear-gradient(180deg, #ffffff, #edf5fb);
+      border: 2px solid rgba(16, 32, 51, 0.08);
+      box-shadow: 0 22px 52px rgba(10, 42, 90, 0.14);
+    }
+
+    .laptop {
+      position: absolute;
+      left: 78px;
+      bottom: 66px;
+      width: 318px;
+      height: 190px;
+      border-radius: 18px 18px 8px 8px;
+      background: #0f2443;
+      box-shadow: inset 0 0 0 14px #172f52;
+    }
+
+    .screen-card {
+      position: absolute;
+      left: 32px;
+      top: 34px;
+      width: 254px;
+      height: 112px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #e8fbf6, #d9e8ff);
+      padding: 18px;
+    }
+
+    .screen-line {
+      height: 12px;
+      border-radius: 8px;
+      background: #1357d8;
+      margin-bottom: 12px;
+      opacity: 0.9;
+    }
+
+    .screen-line.short {
+      width: 56%;
+      background: #11a77a;
+    }
+
+    .laptop-base {
+      position: absolute;
+      left: 54px;
+      bottom: 42px;
+      width: 368px;
+      height: 22px;
+      border-radius: 0 0 22px 22px;
+      background: #c9d8e8;
+    }
+
+    .founder {
+      position: absolute;
+      right: 108px;
+      bottom: 72px;
+      width: 208px;
+      height: 232px;
+    }
+
+    .head {
+      position: absolute;
+      left: 70px;
+      top: 0;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: #f0bd8a;
+    }
+
+    .body {
+      position: absolute;
+      left: 42px;
+      top: 78px;
+      width: 126px;
+      height: 142px;
+      border-radius: 52px 52px 20px 20px;
+      background: linear-gradient(160deg, #1357d8, #0b234a);
+    }
+
+    .arm {
+      position: absolute;
+      top: 102px;
+      width: 88px;
+      height: 24px;
+      border-radius: 20px;
+      background: #f0bd8a;
+    }
+
+    .arm.left {
+      left: 0;
+      transform: rotate(18deg);
+    }
+
+    .arm.right {
+      right: 0;
+      transform: rotate(-18deg);
+    }
+
+    .float-card {
+      position: absolute;
+      width: 140px;
+      min-height: 92px;
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 2px solid rgba(19, 87, 216, 0.12);
+      box-shadow: 0 12px 28px rgba(16, 32, 51, 0.1);
+      color: var(--navy);
+      font-size: 22px;
+      line-height: 1.25;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .float-card.one { right: 56px; top: 502px; }
+    .float-card.two { right: 210px; top: 414px; }
+    .float-card.three { display: none; }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 34px;
+    }
+
+    .section-title h2 {
+      font-size: 48px;
+      line-height: 1.16;
+      font-weight: 900;
+      color: var(--navy);
+      letter-spacing: 0;
+    }
+
+    .tag {
+      flex: none;
+      padding: 9px 16px;
+      border-radius: 999px;
+      color: var(--emerald);
+      background: var(--aqua);
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .lead {
+      font-size: 28px;
+      line-height: 1.55;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 34px;
+    }
+
+    .scene-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .scene-panel {
+      border-radius: 28px;
+      background: linear-gradient(145deg, #eef6ff, #ffffff);
+      border: 2px solid rgba(19, 87, 216, 0.1);
+      padding: 28px;
+      min-height: 300px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mini-browser {
+      border-radius: 22px;
+      background: #ffffff;
+      border: 2px solid #dbe8f3;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(11, 35, 74, 0.08);
+    }
+
+    .browser-top {
+      height: 42px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding-left: 18px;
+      background: #eef4fb;
+    }
+
+    .browser-top span {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #9fb4c8;
+    }
+
+    .browser-body {
+      padding: 22px;
+    }
+
+    .code-row,
+    .list-row {
+      height: 16px;
+      border-radius: 999px;
+      background: #d7e5f2;
+      margin-bottom: 14px;
+    }
+
+    .code-row:nth-child(2),
+    .list-row:nth-child(2) {
+      width: 68%;
+      background: #bdeadd;
+    }
+
+    .code-row:nth-child(3),
+    .list-row:nth-child(3) {
+      width: 84%;
+    }
+
+    .ai-chip {
+      position: absolute;
+      right: 30px;
+      bottom: 30px;
+      width: 118px;
+      height: 118px;
+      border-radius: 34px;
+      background: var(--navy);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      font-size: 42px;
+      font-weight: 900;
+      box-shadow: 0 16px 36px rgba(11, 35, 74, 0.2);
+    }
+
+    .city {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      height: 96px;
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .building {
+      width: 38px;
+      border-radius: 8px 8px 0 0;
+      background: rgba(19, 87, 216, 0.2);
+    }
+
+    .building:nth-child(2) { height: 74px; }
+    .building:nth-child(3) { height: 52px; background: rgba(17, 167, 122, 0.24); }
+    .building:nth-child(4) { height: 88px; }
+    .building:nth-child(5) { height: 64px; background: rgba(247, 185, 85, 0.36); }
+
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .compare-card {
+      min-height: 356px;
+      padding: 30px;
+      border-radius: 28px;
+      border: 2px solid var(--line);
+      background: #ffffff;
+    }
+
+    .compare-card.primary {
+      border-color: rgba(17, 167, 122, 0.38);
+      background: linear-gradient(180deg, #f2fffb, #ffffff);
+      box-shadow: 0 18px 42px rgba(17, 167, 122, 0.1);
+    }
+
+    .compare-card h3 {
+      font-size: 35px;
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .bullet {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 25px;
+      line-height: 1.38;
+      font-weight: 700;
+      color: #31445a;
+      margin: 18px 0;
+    }
+
+    .check {
+      flex: none;
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--aqua);
+      color: var(--emerald);
+      font-size: 18px;
+      font-weight: 900;
+      margin-top: 2px;
+    }
+
+    .invoice {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .invoice-card {
+      border-radius: 30px;
+      background: #ffffff;
+      border: 2px solid #d8e3ee;
+      box-shadow: 0 18px 40px rgba(16, 32, 51, 0.09);
+      padding: 28px;
+      min-height: 360px;
+    }
+
+    .invoice-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 28px;
+      color: var(--navy);
+      font-size: 25px;
+      font-weight: 900;
+    }
+
+    .invoice-lines div {
+      height: 16px;
+      border-radius: 999px;
+      background: #d7e5f2;
+      margin-bottom: 18px;
+    }
+
+    .invoice-lines div:nth-child(2) {
+      width: 72%;
+    }
+
+    .invoice-lines div:nth-child(3) {
+      width: 88%;
+      background: #bdeadd;
+    }
+
+    .total {
+      margin-top: 34px;
+      padding: 16px;
+      border-radius: 18px;
+      background: #eff8ff;
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--blue);
+      text-align: right;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 17px;
+    }
+
+    .checklist .bullet {
+      margin: 0;
+      padding: 15px 18px;
+      border-radius: 18px;
+      background: #f4f8fc;
+      font-size: 24px;
+    }
+
+    .rdti-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .card-stack {
+      position: relative;
+      height: 372px;
+    }
+
+    .rdti-card {
+      position: absolute;
+      inset: 46px 42px 24px 42px;
+      border-radius: 34px;
+      background: linear-gradient(145deg, #0b234a, #1357d8);
+      color: #ffffff;
+      padding: 38px;
+      box-shadow: 0 24px 52px rgba(11, 35, 74, 0.22);
+      transform: rotate(-3deg);
+    }
+
+    .rdti-card::before,
+    .rdti-card::after {
+      content: "";
+      position: absolute;
+      border-radius: 34px;
+      inset: 0;
+      z-index: -1;
+    }
+
+    .rdti-card::before {
+      background: #bdeadd;
+      transform: translate(24px, 28px) rotate(7deg);
+    }
+
+    .rdti-card::after {
+      background: #f8dc9a;
+      transform: translate(-22px, -22px) rotate(-7deg);
+    }
+
+    .rdti-card .big {
+      font-size: 72px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .rdti-card .small {
+      margin-top: 22px;
+      font-size: 28px;
+      line-height: 1.35;
+      font-weight: 800;
+    }
+
+    .rule-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .rule {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 16px;
+      align-items: center;
+      padding: 18px;
+      border-radius: 22px;
+      background: #f4f8fc;
+      font-size: 24px;
+      line-height: 1.32;
+      font-weight: 750;
+      color: #31445a;
+    }
+
+    .num {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: #e3efff;
+      color: var(--blue);
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .week {
+      min-height: 350px;
+      padding: 24px;
+      border-radius: 28px;
+      background: #ffffff;
+      border: 2px solid #d8e3ee;
+    }
+
+    .week .label {
+      width: fit-content;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: #e3efff;
+      color: var(--blue);
+      font-size: 21px;
+      font-weight: 900;
+      margin-bottom: 22px;
+    }
+
+    .week p {
+      font-size: 24px;
+      line-height: 1.38;
+      color: #31445a;
+      font-weight: 800;
+    }
+
+    .week strong {
+      color: var(--navy);
+    }
+
+    .week:nth-child(2) .label,
+    .week:nth-child(4) .label {
+      background: var(--aqua);
+      color: var(--emerald);
+    }
+
+    .cta {
+      min-height: 760px;
+      background:
+        linear-gradient(135deg, #0b234a, #1357d8 58%, #11a77a);
+      color: #ffffff;
+      padding: 58px 60px;
+    }
+
+    .cta h2 {
+      font-size: 58px;
+      line-height: 1.15;
+      font-weight: 900;
+      letter-spacing: 0;
+      max-width: 600px;
+    }
+
+    .cta .copy {
+      margin-top: 24px;
+      font-size: 30px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.86);
+      font-weight: 700;
+      max-width: 660px;
+    }
+
+    .cta-bottom {
+      display: grid;
+      grid-template-columns: 1fr 270px;
+      gap: 34px;
+      align-items: end;
+      margin-top: 56px;
+    }
+
+    .pack {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .pack div {
+      min-height: 92px;
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 23px;
+      line-height: 1.25;
+      font-weight: 800;
+    }
+
+    .qr {
+      width: 270px;
+      height: 270px;
+      border-radius: 28px;
+      background: #ffffff;
+      padding: 18px;
+      display: grid;
+      gap: 10px;
+      place-items: center;
+      color: var(--navy);
+      font-weight: 900;
+      box-shadow: 0 22px 44px rgba(0, 0, 0, 0.18);
+    }
+
+    .qr-grid {
+      width: 160px;
+      height: 160px;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-rows: repeat(7, 1fr);
+      gap: 6px;
+    }
+
+    .qr-grid span {
+      background: #102033;
+      border-radius: 3px;
+    }
+
+    .qr-grid span:nth-child(3n) {
+      background: transparent;
+    }
+
+    .qr-text {
+      font-size: 23px;
+      text-align: center;
+    }
+
+    .notice {
+      margin-top: 22px;
+      padding: 18px 22px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.14);
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 22px;
+      line-height: 1.4;
+      font-weight: 650;
+    }
+
+    .gst-detail {
+      min-height: 900px;
+      padding: 54px 58px;
+      background:
+        radial-gradient(circle at 88% 8%, rgba(17, 167, 122, 0.18), transparent 28%),
+        linear-gradient(145deg, #ffffff 0%, #f1f7ff 58%, #eefbf6 100%);
+    }
+
+    .gst-hero {
+      display: grid;
+      grid-template-columns: 1fr 242px;
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    .gst-detail h2 {
+      font-size: 52px;
+      line-height: 1.18;
+      color: var(--navy);
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .threshold-card {
+      min-height: 178px;
+      border-radius: 30px;
+      padding: 28px 22px;
+      background: linear-gradient(160deg, var(--blue), var(--emerald));
+      color: #ffffff;
+      box-shadow: 0 22px 44px rgba(19, 87, 216, 0.18);
+      text-align: center;
+    }
+
+    .threshold-card .amount {
+      font-size: 54px;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .threshold-card .desc {
+      margin-top: 14px;
+      font-size: 23px;
+      line-height: 1.28;
+      font-weight: 800;
+    }
+
+    .answer-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .answer-box {
+      padding: 22px 24px;
+      border-radius: 24px;
+      background: #ffffff;
+      border: 2px solid #d8e3ee;
+      min-height: 128px;
+    }
+
+    .answer-box strong {
+      display: block;
+      color: var(--navy);
+      font-size: 27px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+      font-weight: 900;
+    }
+
+    .answer-box span {
+      color: #40556b;
+      font-size: 23px;
+      line-height: 1.38;
+      font-weight: 700;
+    }
+
+    .gst-flow {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .flow-item {
+      position: relative;
+      min-height: 122px;
+      padding: 22px 18px;
+      border-radius: 24px;
+      background: #0b234a;
+      color: #ffffff;
+      overflow: hidden;
+    }
+
+    .flow-item:nth-child(2) {
+      background: #1357d8;
+    }
+
+    .flow-item:nth-child(3) {
+      background: #11a77a;
+    }
+
+    .flow-item .label {
+      font-size: 22px;
+      font-weight: 850;
+      opacity: 0.78;
+      margin-bottom: 8px;
+    }
+
+    .flow-item .value {
+      font-size: 30px;
+      line-height: 1.18;
+      font-weight: 900;
+    }
+
+    .invoice-detail-panel {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .invoice-preview {
+      border-radius: 30px;
+      background: #ffffff;
+      border: 2px solid #d8e3ee;
+      padding: 24px;
+      box-shadow: 0 18px 40px rgba(16, 32, 51, 0.08);
+    }
+
+    .invoice-preview .title {
+      display: flex;
+      justify-content: space-between;
+      color: var(--navy);
+      font-size: 27px;
+      font-weight: 900;
+      margin-bottom: 24px;
+    }
+
+    .invoice-preview .field {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 13px 0;
+      border-bottom: 2px solid #edf3f8;
+      color: #40556b;
+      font-size: 21px;
+      line-height: 1.24;
+      font-weight: 700;
+    }
+
+    .invoice-preview .field b {
+      color: var(--blue);
+      white-space: nowrap;
+    }
+
+    .must-have {
+      display: grid;
+      gap: 12px;
+    }
+
+    .must-row {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 13px;
+      align-items: start;
+      padding: 15px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.84);
+      border: 2px solid rgba(216, 227, 238, 0.86);
+      color: #34475d;
+      font-size: 22px;
+      line-height: 1.32;
+      font-weight: 760;
+    }
+
+    .must-row .tick {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: var(--aqua);
+      color: var(--emerald);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 21px;
+    }
+
+    .gst-warning {
+      margin-top: 22px;
+      padding: 18px 22px;
+      border-radius: 22px;
+      background: #fff7e6;
+      border: 2px solid #f6d38a;
+      color: #5d4212;
+      font-size: 21px;
+      line-height: 1.38;
+      font-weight: 750;
+    }
+
+    .footer-mark {
+      position: absolute;
+      left: 60px;
+      bottom: 38px;
+      color: rgba(16, 32, 51, 0.42);
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .cover .footer-mark {
+      color: rgba(16, 32, 51, 0.46);
+    }
+
+    .cta .footer-mark {
+      color: rgba(255, 255, 255, 0.62);
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="poster cover" id="cover">
+      <div class="eyebrow"><span class="dot"></span>2026 澳洲 OPC 一人公司指南</div>
+      <h1>在澳洲<br />一个人开公司<br /><span class="accent">到底怎么弄？</span></h1>
+      <p class="subtitle">从注册主体、GST、合规发票到 RDTI 研发退税，把地基一次搭对。</p>
+      <div class="keyword-row">
+        <div class="keyword">ABN</div>
+        <div class="keyword">GST</div>
+        <div class="keyword">Pty Ltd</div>
+        <div class="keyword">RDTI</div>
+        <div class="keyword">发票</div>
+      </div>
+      <div class="float-card one">30 天<br />落地清单</div>
+      <div class="float-card two">免费<br />资料包</div>
+      <div class="float-card three">AI<br />小生意</div>
+      <div class="desk">
+        <div class="laptop"><div class="screen-card"><div class="screen-line"></div><div class="screen-line short"></div></div></div>
+        <div class="laptop-base"></div>
+        <div class="founder">
+          <div class="head"></div>
+          <div class="body"></div>
+          <div class="arm left"></div>
+          <div class="arm right"></div>
+        </div>
+      </div>
+      <div class="footer-mark">KSUG.AI / JR Academy · Australia</div>
+    </section>
+
+    <section class="poster inline" id="intro">
+      <div class="section-title">
+        <h2>下班后，用 AI 跑起自己的小生意</h2>
+        <div class="tag">开篇配图</div>
+      </div>
+      <p class="lead">产品可以慢慢打磨，但收款、开票、税务和公司主体需要先放在正确轨道上。</p>
+      <div class="scene-grid">
+        <div class="scene-panel">
+          <div class="mini-browser">
+            <div class="browser-top"><span></span><span></span><span></span></div>
+            <div class="browser-body">
+              <div class="code-row"></div>
+              <div class="code-row"></div>
+              <div class="code-row"></div>
+              <div class="code-row" style="width: 54%"></div>
+            </div>
+          </div>
+          <div class="ai-chip">AI</div>
+        </div>
+        <div class="scene-panel">
+          <div class="city">
+            <div class="building" style="height: 46px"></div>
+            <div class="building"></div>
+            <div class="building"></div>
+            <div class="building"></div>
+            <div class="building"></div>
+          </div>
+          <div class="float-card" style="left: 34px; top: 36px; width: 180px;">ABN<br />收款</div>
+          <div class="float-card" style="right: 34px; top: 128px; width: 190px;">合规<br />发票</div>
+        </div>
+      </div>
+      <div class="footer-mark">适合放在第一段正文后</div>
+    </section>
+
+    <section class="poster inline" id="structure">
+      <div class="section-title">
+        <h2>Sole Trader 还是 Pty Ltd？</h2>
+        <div class="tag">主体选择</div>
+      </div>
+      <div class="compare">
+        <div class="compare-card">
+          <h3>Sole Trader</h3>
+          <div class="bullet"><span class="check">✓</span><span>注册简单，通常先拿 ABN 就能开始</span></div>
+          <div class="bullet"><span class="check">!</span><span>个人和生意不分家，风险追到个人资产</span></div>
+          <div class="bullet"><span class="check">%</span><span>利润并入个人收入，按个人税率交税</span></div>
+        </div>
+        <div class="compare-card primary">
+          <h3>Pty Ltd</h3>
+          <div class="bullet"><span class="check">✓</span><span>公司是独立法人，个人资产隔离更清晰</span></div>
+          <div class="bullet"><span class="check">25</span><span>小公司通常适用 25% 公司税率</span></div>
+          <div class="bullet"><span class="check">R</span><span>只有公司主体才能申请 RDTI</span></div>
+        </div>
+      </div>
+      <div class="footer-mark">文章第一部分：注册主体</div>
+    </section>
+
+    <section class="poster inline" id="invoice">
+      <div class="section-title">
+        <h2>GST 和 Tax Invoice，别等客户催了再补</h2>
+        <div class="tag">$75,000 线</div>
+      </div>
+      <div class="invoice">
+        <div class="invoice-card">
+          <div class="invoice-head"><span>Tax invoice</span><span>ABN</span></div>
+          <div class="invoice-lines">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div style="width: 61%"></div>
+          </div>
+          <div class="total">GST included</div>
+        </div>
+        <div class="checklist">
+          <div class="bullet"><span class="check">✓</span><span>年营业额达到或预计达到 $75,000，需要注册 GST</span></div>
+          <div class="bullet"><span class="check">✓</span><span>发票写清名称、ABN、日期、服务描述</span></div>
+          <div class="bullet"><span class="check">✓</span><span>金额满 $1,000，补上买方名称或 ABN</span></div>
+          <div class="bullet"><span class="check">✓</span><span>按季度 BAS 申报，保留进项 GST 记录</span></div>
+        </div>
+      </div>
+      <div class="footer-mark">文章第二部分：税务 & GST</div>
+    </section>
+
+    <section class="poster gst-detail" id="gst-detail">
+      <div class="gst-hero">
+        <div>
+          <div class="eyebrow"><span class="dot"></span>税务 & GST</div>
+          <h2 style="margin-top: 24px;">$75,000 是那条线</h2>
+        </div>
+        <div class="threshold-card">
+          <div class="amount">$75,000</div>
+          <div class="desc">年营业额达到<br />或预计会达到</div>
+        </div>
+      </div>
+
+      <div class="answer-strip">
+        <div class="answer-box">
+          <strong>没到线</strong>
+          <span>一般不强制注册 GST，但仍要把收入和成本记录清楚。</span>
+        </div>
+        <div class="answer-box">
+          <strong>到了线</strong>
+          <span>必须注册 GST，开票、BAS、GST credits 都要一起管起来。</span>
+        </div>
+      </div>
+
+      <div class="gst-flow">
+        <div class="flow-item">
+          <div class="label">开票</div>
+          <div class="value">加 10% GST</div>
+        </div>
+        <div class="flow-item">
+          <div class="label">申报</div>
+          <div class="value">季度 BAS</div>
+        </div>
+        <div class="flow-item">
+          <div class="label">抵扣</div>
+          <div class="value">GST credits</div>
+        </div>
+      </div>
+
+      <div class="invoice-detail-panel">
+        <div class="invoice-preview">
+          <div class="title"><span>Tax invoice</span><span>ABN</span></div>
+          <div class="field"><span>开票日期</span><b>必填</b></div>
+          <div class="field"><span>你的名称 + ABN</span><b>必填</b></div>
+          <div class="field"><span>商品 / 服务描述</span><b>必填</b></div>
+          <div class="field"><span>GST 金额或含 GST</span><b>必填</b></div>
+          <div class="field"><span>金额 ≥ $1,000</span><b>写买方名称 / ABN</b></div>
+        </div>
+
+        <div class="must-have">
+          <div class="must-row"><span class="tick">✓</span><span>发票上要有 “Tax invoice” 字样</span></div>
+          <div class="must-row"><span class="tick">✓</span><span>写清你的名称、ABN、开票日期</span></div>
+          <div class="must-row"><span class="tick">✓</span><span>描述商品或服务，列出 GST 金额或注明“含 GST”</span></div>
+          <div class="must-row"><span class="tick">✓</span><span>金额 ≥ $1,000 时，补上买方名称或 ABN</span></div>
+          <div class="gst-warning">不规范的 tax invoice 会影响客户做账，也容易拖慢付款。</div>
+        </div>
+      </div>
+
+      <div class="footer-mark">文章第二部分：GST 注册与合规发票</div>
+    </section>
+
+    <section class="poster inline" id="rdti">
+      <div class="section-title">
+        <h2>一人公司的隐藏牌：RDTI</h2>
+        <div class="tag">研发税务激励</div>
+      </div>
+      <div class="rdti-layout">
+        <div class="card-stack">
+          <div class="rdti-card">
+            <div class="big">RDTI</div>
+            <div class="small">研发投入<br />可能转化为<br />可退还税务抵免</div>
+          </div>
+        </div>
+        <div class="rule-list">
+          <div class="rule"><div class="num">01</div><div>只有公司主体能申请，Sole Trader 不适用</div></div>
+          <div class="rule"><div class="num">02</div><div>一般需要至少 $20,000 合格研发支出</div></div>
+          <div class="rule"><div class="num">03</div><div>财年结束后 10 个月内完成 AusIndustry 注册</div></div>
+          <div class="rule"><div class="num">04</div><div>能否申请以 ATO 规则和会计师评估为准</div></div>
+        </div>
+      </div>
+      <div class="footer-mark">文章第三部分：补贴 & 退税</div>
+    </section>
+
+    <section class="poster inline" id="timeline">
+      <div class="section-title">
+        <h2>30 天，把公司跑起来</h2>
+        <div class="tag">落地清单</div>
+      </div>
+      <p class="lead">顺序比努力更重要。先把主体、账户、收款和凭证系统搭起来。</p>
+      <div class="timeline">
+        <div class="week">
+          <div class="label">第 1 周</div>
+          <p><strong>定主体</strong><br />ASIC 注册公司<br />申请 ABN / TFN</p>
+        </div>
+        <div class="week">
+          <div class="label">第 2 周</div>
+          <p><strong>开账户</strong><br />对公银行账户<br />判断 GST</p>
+        </div>
+        <div class="week">
+          <div class="label">第 3 周</div>
+          <p><strong>配收款</strong><br />Stripe / 收单<br />发票模板<br />记账工具</p>
+        </div>
+        <div class="week">
+          <div class="label">第 4 周</div>
+          <p><strong>跑闭环</strong><br />第一张发票<br />第一笔钱<br />研发证据归档</p>
+        </div>
+      </div>
+      <div class="footer-mark">文章第四部分：30 天流程</div>
+    </section>
+
+    <section class="poster cta" id="cta">
+      <h2>免费领《2026 澳洲 OPC 一人公司指南》</h2>
+      <p class="copy">主体对照表、合规发票模板、补贴申请清单、30 天落地打勾清单，一次打包。</p>
+      <div class="cta-bottom">
+        <div>
+          <div class="pack">
+            <div>主体选择<br />对照表</div>
+            <div>Tax invoice<br />模板</div>
+            <div>补贴申请<br />清单</div>
+            <div>30 天落地<br />Checklist</div>
+          </div>
+          <div class="notice">扫码 / 私信顾问，回复「OPC」，领资料包 + 进创业者专属群</div>
+        </div>
+        <div class="qr">
+          <div class="qr-grid">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="qr-text">放 sales 二维码</div>
+        </div>
+      </div>
+      <div class="footer-mark">CTA 尾图</div>
+    </section>
+  </main>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const asset = params.get("asset");
+    if (asset) {
+      document.body.style.background = "#ffffff";
+      document.querySelector(".page").style.padding = "0";
+      document.querySelector(".page").style.gap = "0";
+      document.querySelectorAll(".poster").forEach((poster) => {
+        poster.style.display = poster.id === asset ? "block" : "none";
+      });
+    }
+  </script>
+</body>
+</html>
