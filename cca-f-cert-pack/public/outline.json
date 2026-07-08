@@ -54,7 +54,8 @@
     "completeDate": "2026-12-31",
     "cohortStatus": "RECRUITING",
     "currency": "USD",
-    "tuition": 220
+    "tuition": 399,
+    "promoTuition": 299
   },
   "curriculumPages": {
     "pages": ["curriculum.html"],
