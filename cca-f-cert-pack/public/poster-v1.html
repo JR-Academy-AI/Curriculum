@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claude 官方架构师认证 · 宣传海报 v1</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #ece3d8;
+      font-family: Inter, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: #221915;
+    }
+
+    .poster {
+      position: relative;
+      width: 1242px;
+      height: 1660px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.95) 0 17%, transparent 38%),
+        radial-gradient(circle at 78% 64%, rgba(193, 95, 60, 0.18) 0 18%, transparent 42%),
+        linear-gradient(145deg, #fff8ee 0%, #f6e9d9 52%, #fffaf1 100%);
+      box-shadow: 0 26px 70px rgba(54, 35, 24, 0.24);
+      isolation: isolate;
+    }
+
+    .poster::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(193, 95, 60, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(193, 95, 60, 0.08) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, transparent 0%, #000 28%, #000 74%, transparent 100%);
+      z-index: -3;
+    }
+
+    .poster::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 11% 8%, rgba(193, 95, 60, 0.16) 0 3px, transparent 4px),
+        radial-gradient(circle at 89% 10%, rgba(193, 95, 60, 0.14) 0 3px, transparent 4px);
+      background-size: 34px 34px;
+      opacity: 0.72;
+      z-index: -2;
+    }
+
+    .ring {
+      position: absolute;
+      border: 1px solid rgba(193, 95, 60, 0.18);
+      border-radius: 999px;
+      z-index: -1;
+    }
+
+    .ring.one {
+      width: 780px;
+      height: 780px;
+      left: -260px;
+      top: 580px;
+    }
+
+    .ring.two {
+      width: 640px;
+      height: 640px;
+      right: -220px;
+      top: 470px;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+      padding-top: 70px;
+    }
+
+    .logo {
+      height: 72px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .eyebrow {
+      margin: 64px auto 22px;
+      width: max-content;
+      padding: 12px 24px;
+      border: 1px solid rgba(193, 95, 60, 0.28);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      color: #9a482e;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0 auto;
+      max-width: 1010px;
+      text-align: center;
+      font-size: 116px;
+      line-height: 1.08;
+      letter-spacing: 0;
+      font-weight: 950;
+      color: #221915;
+    }
+
+    .highlight {
+      width: max-content;
+      max-width: 980px;
+      margin: 34px auto 0;
+      padding: 20px 42px 24px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, #c15f3c 0%, #a94b31 100%);
+      color: white;
+      font-size: 58px;
+      font-weight: 950;
+      line-height: 1;
+      box-shadow: 0 20px 42px rgba(193, 95, 60, 0.28);
+    }
+
+    .subline {
+      margin: 28px auto 0;
+      width: 1000px;
+      text-align: center;
+      font-size: 32px;
+      line-height: 1.6;
+      color: #4f3b32;
+      font-weight: 750;
+    }
+
+    .subline b {
+      color: #b55336;
+    }
+
+    .visual {
+      position: relative;
+      width: 1010px;
+      height: 430px;
+      margin: 70px auto 0;
+    }
+
+    .certificate {
+      position: absolute;
+      left: 258px;
+      top: 0;
+      width: 510px;
+      height: 330px;
+      border-radius: 34px;
+      border: 1px solid rgba(120, 86, 64, 0.22);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(255, 246, 233, 0.9)),
+        repeating-linear-gradient(45deg, transparent 0 18px, rgba(193, 95, 60, 0.025) 18px 20px);
+      box-shadow: 0 24px 70px rgba(69, 44, 31, 0.22);
+      padding: 48px 52px;
+    }
+
+    .certificate::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(193, 95, 60, 0.18);
+      border-radius: 24px;
+    }
+
+    .certificate .small {
+      position: relative;
+      color: #8d4b33;
+      font-size: 22px;
+      font-weight: 850;
+    }
+
+    .certificate .title {
+      position: relative;
+      margin-top: 30px;
+      font-size: 44px;
+      line-height: 1.15;
+      font-weight: 950;
+      color: #2a1b15;
+    }
+
+    .certificate .seal {
+      position: absolute;
+      right: 54px;
+      bottom: 48px;
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      border: 2px solid rgba(193, 95, 60, 0.4);
+      display: grid;
+      place-items: center;
+      color: #c15f3c;
+      font-size: 20px;
+      font-weight: 950;
+    }
+
+    .code-card,
+    .map-card {
+      position: absolute;
+      border-radius: 28px;
+      border: 1px solid rgba(72, 45, 31, 0.18);
+      background: rgba(255, 255, 255, 0.76);
+      box-shadow: 0 18px 44px rgba(69, 44, 31, 0.16);
+      backdrop-filter: blur(8px);
+    }
+
+    .code-card {
+      left: 0;
+      top: 70px;
+      width: 290px;
+      height: 260px;
+      padding: 28px;
+      background: #211914;
+      color: #ffe0c8;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 21px;
+      line-height: 1.55;
+    }
+
+    .code-card strong {
+      color: #ff9a66;
+      font-weight: 700;
+    }
+
+    .map-card {
+      right: 0;
+      top: 72px;
+      width: 286px;
+      height: 258px;
+      padding: 30px;
+    }
+
+    .node {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #c15f3c;
+      box-shadow: 0 0 0 8px rgba(193, 95, 60, 0.12);
+    }
+
+    .node.a { left: 54px; top: 70px; }
+    .node.b { right: 62px; top: 58px; }
+    .node.c { left: 82px; bottom: 70px; }
+    .node.d { right: 74px; bottom: 58px; }
+    .node.e { left: 132px; top: 118px; background: #25201d; }
+
+    .map-card svg {
+      position: absolute;
+      inset: 28px;
+      width: calc(100% - 56px);
+      height: calc(100% - 56px);
+    }
+
+    .pill-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      padding: 12px 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(193, 95, 60, 0.25);
+      background: rgba(255, 255, 255, 0.7);
+      color: #9a482e;
+      font-size: 22px;
+      font-weight: 850;
+    }
+
+    .cta {
+      width: 650px;
+      margin: 44px auto 0;
+      height: 112px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      background: linear-gradient(135deg, #c15f3c, #a6462c);
+      color: white;
+      font-size: 52px;
+      font-weight: 950;
+      box-shadow: 0 24px 50px rgba(193, 95, 60, 0.3);
+    }
+
+    .cta span {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: white;
+      color: #b55336;
+      font-size: 44px;
+      line-height: 1;
+    }
+
+    footer {
+      position: absolute;
+      left: 78px;
+      right: 78px;
+      bottom: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #7b6254;
+      font-size: 22px;
+      font-weight: 720;
+    }
+
+    footer::before,
+    footer::after {
+      content: "";
+      width: 280px;
+      height: 1px;
+      background: rgba(193, 95, 60, 0.32);
+    }
+  </style>
+</head>
+<body>
+  <main class="poster">
+    <div class="ring one"></div>
+    <div class="ring two"></div>
+
+    <header>
+      <img class="logo" src="../../../jr-academy-brand/assets/logo/logo-zh-full.svg" alt="JR Academy 匠人学院" />
+    </header>
+
+    <div class="eyebrow">Anthropic 首个 Claude 官方技术认证</div>
+    <h1>Claude<br />官方架构师认证</h1>
+    <div class="highlight">成为全球华人首批</div>
+    <p class="subline"><b>Claude 官方认证架构师</b> · 官方考试名额 · 备考路线 · 模拟冲刺</p>
+
+    <section class="visual" aria-label="Certification visual">
+      <div class="code-card">
+        <strong>architect</strong>() {<br />
+        &nbsp;&nbsp;tools: MCP<br />
+        &nbsp;&nbsp;agents: flow<br />
+        &nbsp;&nbsp;context: clear<br />
+        }<br />
+        <strong>ready</strong>(exam)
+      </div>
+
+      <div class="certificate">
+        <div class="small">CCA-F · Claude Certified Architect - Foundations</div>
+        <div class="title">官方考试名额<br />系统备考路线</div>
+        <div class="seal">JR</div>
+      </div>
+
+      <div class="map-card">
+        <svg viewBox="0 0 220 190" aria-hidden="true">
+          <path d="M34 42 L156 32 L116 104 L48 142 L164 154 L156 32" fill="none" stroke="rgba(193,95,60,.42)" stroke-width="3" />
+          <path d="M34 42 L116 104 L48 142 M116 104 L164 154" fill="none" stroke="rgba(35,29,25,.28)" stroke-width="3" />
+        </svg>
+        <i class="node a"></i>
+        <i class="node b"></i>
+        <i class="node c"></i>
+        <i class="node d"></i>
+        <i class="node e"></i>
+      </div>
+    </section>
+
+    <div class="pill-row">
+      <div class="pill">5 大 Domain</div>
+      <div class="pill">场景题拆解</div>
+      <div class="pill">全真模拟</div>
+    </div>
+
+    <div class="cta">申请首期名额 <span>›</span></div>
+
+    <footer>
+      <span>JR Academy 匠人学院</span>
+    </footer>
+  </main>
+</body>
+</html>
