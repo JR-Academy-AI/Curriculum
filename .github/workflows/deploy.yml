@@ -339,7 +339,7 @@ jobs:
             cp -r business-analyst/public/* _site/business-analyst/
           fi
 
-          # cca-f-cert-pack (Claude 架构师认证 · 考试直通包 · CCA-F 官方考试名额 + 纯自学备考 · US$220): static HTML only
+          # cca-f-cert-pack (Claude 官方架构师认证 · 考试直通包): static HTML only
           if [ -d cca-f-cert-pack/public ]; then
             mkdir -p _site/cca-f-cert-pack
             cp -r cca-f-cert-pack/public/* _site/cca-f-cert-pack/
@@ -443,7 +443,7 @@ jobs:
           # 同时复制每门课的 marketing markdown 到 _site（dashboard fetch 时要能读到）
           for slug in $(ls -d */ 2>/dev/null | grep -v '^_' | sed 's|/$||'); do
             mkdir -p "_site/$slug"
-            for f in DESIGN.md PERSONAS.md PERSONAS-INIT-REPORT.md FUNNEL_PLAN.md PROMOTION_PLAN.md AUDIT_LOG.md; do
+            for f in DESIGN.md MARKETING_PLAN.md PERSONAS.md PERSONAS-INIT-REPORT.md FUNNEL_PLAN.md PROMOTION_PLAN.md AUDIT_LOG.md; do
               [ -f "$slug/$f" ] && cp "$slug/$f" "_site/$slug/$f" || true
             done
           done
@@ -804,16 +804,16 @@ jobs:
               </div>
 
               <div class="section">
-                <div class="section-title">Claude 架构师认证 CCA-F · Anthropic 官方认证 · 匠人 Partner 通道 · 两档</div>
+                <div class="section-title">Claude 官方架构师认证 · Anthropic 官方技术认证 · 两档路径</div>
                 <div class="cards">
                   <a href="./cca-f-cert-pack/curriculum.html">
-                    <span class="tag" style="background:#C15F3C">直通包 · US$220</span>
-                    <div class="title">CCA-F 考试直通包（纯自学）</div>
-                    <div class="desc">含 1 个 Anthropic 官方 CCA-F 考试名额 · 个人报不了名，匠人 Claude Partner 通道帮你开通 · 16 节自学 · 5 大 domain 考点精析 + 6 类场景题拆解 + 2 套全真模拟 + 报名/OnVUE 全程陪跑 · 适合已会 Claude/MCP、只差张证的人</div>
+                    <span class="tag" style="background:#C15F3C">考试直通包</span>
+                    <div class="title">Claude 官方架构师认证 · 考试直通包</div>
+                    <div class="desc">成为全球华人首批 Claude 官方认证架构师 · 含 1 个官方考试名额 · 16 节自学 · 5 大 domain 考点精析 + 6 类场景题拆解 + 2 套全真模拟 + 报名/OnVUE 全程陪跑 · 适合已会 Claude/MCP、只差张证的人</div>
                   </a>
                   <a href="./cca-f-claude-code-bootcamp/curriculum.html">
-                    <span class="tag" style="background:#D97757">实战冲刺班 · 价格待定</span>
-                    <div class="title">CCA-F + Claude Code 实战冲刺班</div>
+                    <span class="tag" style="background:#D97757">实战冲刺班</span>
+                    <div class="title">Claude 官方架构师认证 + Claude Code 实战冲刺班</div>
                     <div class="desc">直通包全部 + 一整套 Claude Code 真实环境实战 · 40 节 / 8 直播 / 11 个 Quest · 装机 / CLAUDE.md / hooks / slash command / 亲手搭 MCP server / subagents / 上下文管理 · 含 1 个官方考试名额 · 直播小班 4-6 周 · 学完有真实作品 + 一张证</div>
                   </a>
                 </div>
