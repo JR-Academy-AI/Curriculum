@@ -7,7 +7,15 @@
       "Bash(grep -n '</div>$' /Users/lightman/Documents/sites/jr-academy-ai/curriculum/ai-adoption-bootcamp/public/curriculum.html)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "mcp__fs__list_directory"
+      "mcp__fs__list_directory",
+      "Bash(git clone *)",
+      "Bash(git check-ignore *)",
+      "Bash(git -C curriculum log --oneline -3)",
+      "Bash(git -C curriculum diff --cached --stat)",
+      "Bash(git -C curriculum rev-parse HEAD)",
+      "Bash(echo \"curriculum HEAD:        $\\(git -C curriculum rev-parse HEAD\\)\")",
+      "Bash(git ls-tree *)",
+      "Bash(echo \"curriculum recorded ptr: $\\(git ls-tree HEAD curriculum)"
     ]
   },
   "enabledMcpjsonServers": [

@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /Users/lightman/Documents/sites/jr-academy-ai/curriculum && result=$(git pull --rebase 2>&1) && if echo \"$result\" | grep -qv 'Already up to date'; then echo \"[auto-sync] 已拉取最新代码: $result\"; fi",
+            "timeout": 15000
+          }
+        ]
+      }
+    ]
+  }
+}

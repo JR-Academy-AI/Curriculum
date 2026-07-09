@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>匠人学院 · 产品介绍（新同事入职版）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700;900&family=Space+Mono:wght@400;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --black:#111111; --ink:#0f1830;
+    --yellow:#FFD23F; --red:#FF5A4D; --indigo:#4F46E5;
+    --purple:#9333EA; --green:#1FA971; --orange:#FF8A3D;
+    --bg:#FBF7EE; --white:#ffffff; --muted:#6b7280;
+    --bd:3px solid var(--black);
+    --sh:6px 6px 0 var(--black);
+    --sh-sm:4px 4px 0 var(--black);
+    --head:'Bricolage Grotesque','Noto Sans SC',sans-serif;
+    --body:'DM Sans','Noto Sans SC',sans-serif;
+    --mono:'Space Mono',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:#222; font-family:var(--body); color:var(--black);
+    overflow:hidden; display:flex; align-items:center; justify-content:center;
+  }
+  #stage{
+    position:relative; width:1280px; height:720px;
+    transform-origin:center center; flex:none;
+  }
+  .slide{
+    position:absolute; inset:0; background:var(--bg);
+    padding:56px 64px; display:none; flex-direction:column;
+    border:5px solid var(--black); overflow:hidden;
+  }
+  .slide.active{display:flex}
+
+  /* shared bits */
+  .tag{
+    display:inline-block; font-family:var(--mono); font-weight:700;
+    font-size:13px; letter-spacing:2px; padding:5px 12px;
+    background:var(--black); color:var(--yellow); border:2px solid var(--black);
+  }
+  .tag.alt{background:var(--yellow); color:var(--black)}
+  h1.title{font-family:var(--head); font-weight:800; letter-spacing:-1.5px; line-height:1.02}
+  h2.title{font-family:var(--head); font-weight:800; letter-spacing:-1px; line-height:1.05; font-size:42px}
+  .hl{background:var(--yellow); padding:0 8px; border:3px solid var(--black); box-shadow:var(--sh-sm); display:inline-block}
+  .hl.red{background:var(--red); color:#fff}
+  .hl.indigo{background:var(--indigo); color:#fff}
+  .card{background:var(--white); border:var(--bd); box-shadow:var(--sh); padding:18px 20px}
+  .lead{font-size:20px; line-height:1.5; font-weight:500; color:#333}
+  .mono{font-family:var(--mono)}
+  .kicker{font-family:var(--mono); font-size:13px; letter-spacing:1.5px; color:var(--muted); font-weight:700}
+
+  /* slide header */
+  .shead{display:flex; align-items:center; gap:14px; margin-bottom:22px}
+  .snum{font-family:var(--mono); font-weight:700; font-size:14px; background:var(--ink); color:#fff; padding:4px 10px}
+
+  /* grids */
+  .grid{display:grid; gap:16px}
+  .g2{grid-template-columns:1fr 1fr}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(2,1fr)}
+
+  /* table */
+  table.t{width:100%; border-collapse:separate; border-spacing:0; font-size:14.5px}
+  table.t th,table.t td{border:2px solid var(--black); padding:9px 11px; text-align:left; vertical-align:middle}
+  table.t th{background:var(--ink); color:#fff; font-family:var(--mono); font-size:12px; letter-spacing:.5px}
+  table.t td.price{font-family:var(--mono); font-weight:700; color:var(--red)}
+  table.t tr:nth-child(even) td{background:#fff}
+  table.t tr:nth-child(odd) td{background:#fbf3df}
+  .strong{font-weight:900}
+
+  /* footer / nav */
+  #bar{
+    position:fixed; bottom:16px; left:50%; transform:translateX(-50%);
+    display:flex; align-items:center; gap:14px; z-index:50;
+    font-family:var(--mono); font-size:13px; color:#fff;
+  }
+  #bar button{
+    font-family:var(--mono); font-weight:700; font-size:13px; cursor:pointer;
+    background:var(--yellow); color:var(--black); border:2px solid #000; padding:6px 12px;
+  }
+  #bar button:hover{background:#fff}
+  #dots{display:flex; gap:5px}
+  .dot{width:9px; height:9px; background:#666; border:1px solid #000; cursor:pointer}
+  .dot.on{background:var(--yellow)}
+  #count{background:#000; padding:5px 10px; border:2px solid var(--yellow)}
+  .hint{position:fixed; top:14px; right:16px; color:#bbb; font-family:var(--mono); font-size:12px; z-index:50}
+
+  /* cover */
+  .cover{background:var(--ink); color:#fff; border-color:#000}
+  .cover .big{font-size:86px}
+  .funnel-row{display:flex; align-items:center; gap:10px}
+  .funnel-band{flex:1; border:var(--bd); box-shadow:var(--sh-sm); padding:12px 16px; background:#fff}
+  .pill{display:inline-block; font-family:var(--mono); font-size:11px; font-weight:700; padding:3px 8px; border:2px solid #000; background:#f2f2f2; margin:3px 3px 0 0}
+  .stat{font-family:var(--head); font-weight:800; line-height:1; letter-spacing:-1px}
+  .arrow-down{font-size:22px; text-align:center; color:var(--red); font-weight:900}
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <!-- 1 · COVER -->
+  <section class="slide active cover" style="justify-content:center">
+    <div class="tag alt" style="margin-bottom:20px">JR ACADEMY · 产品介绍 · 新同事入职版</div>
+    <h1 class="title big">匠人学院<br><span style="color:var(--yellow)">产品全景介绍</span></h1>
+    <p class="lead" style="color:#dfe3ee; margin-top:22px; max-width:780px">
+      有哪些产品 · 亮点是什么 · 主推哪些课 · 课程怎么区分 · P3 是什么 · 整体流程怎么跑通
+    </p>
+    <div style="display:flex; gap:14px; margin-top:34px; flex-wrap:wrap">
+      <span class="hl">全球华人学 AI 第一站</span>
+      <span class="hl indigo">600+ 大厂导师</span>
+      <span class="hl red">2017 创立 · 澳洲</span>
+    </div>
+  </section>
+
+  <!-- 2 · 定位 -->
+  <section class="slide">
+    <div class="shead"><span class="snum">01</span><span class="tag">我们是谁 · 一句话定位</span></div>
+    <div style="display:flex; flex-direction:column; gap:24px; flex:1; justify-content:center">
+      <h2 class="title" style="font-size:48px">
+        一边教你<span class="hl">掌握 AI</span>，<br>
+        一边让你<span class="hl red">用 AI 学得更快</span>
+      </h2>
+      <p class="lead" style="max-width:880px">
+        匠人学院是一个 <b>AI 驱动的职业发展平台</b>。最终目标只有一个 ——
+        把人从「在校生 / 转行者」一路送到「<b>拿到 offer 的从业者</b>」。
+      </p>
+      <div class="grid g3">
+        <div class="card"><div class="stat" style="font-size:40px; color:var(--indigo)">600+</div><div class="kicker">大厂导师（微软/Canva/Atlassian…）</div></div>
+        <div class="card"><div class="stat" style="font-size:40px; color:var(--red)">2017</div><div class="kicker">创立于澳洲 · 最大华人 IT 社区</div></div>
+        <div class="card"><div class="stat" style="font-size:40px; color:var(--green)">200+</div><div class="kicker">线下活动 · 100+ 行业专家</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · 产品矩阵 4 层 -->
+  <section class="slide">
+    <div class="shead"><span class="snum">02</span><span class="tag">产品矩阵 · 一条完整漏斗</span></div>
+    <h2 class="title" style="margin-bottom:18px">4 层产品 · 从<span class="hl">免费引流</span>到<span class="hl red">高价旗舰</span></h2>
+    <div style="display:flex; flex-direction:column; gap:9px; flex:1; justify-content:center">
+      <div class="funnel-row"><div class="funnel-band" style="background:#eef2ff">
+        <b>① 免费工具 / 资源</b> — 3 个 Chrome 插件、50+ 路线图、100+ Cheat Sheet、免费试看
+        <span style="float:right" class="kicker">作用：引流 + 建立信任</span></div></div>
+      <div class="arrow-down">▼</div>
+      <div class="funnel-row"><div class="funnel-band" style="background:#fff7e6">
+        <b>② 自学平台（订阅制）</b> — 6 大 AI 学习方向、10+ 互动 Lab、Prompt Lab、AI Skills 市场
+        <span style="float:right" class="kicker">作用：低价订阅 · 规模化变现</span></div></div>
+      <div class="arrow-down">▼</div>
+      <div class="funnel-row"><div class="funnel-band" style="background:#eafaf1">
+        <b>③ 考证平台</b> — 350+ IT 认证题库（AWS/Azure/GCP/PMP/Salesforce…）
+        <span style="float:right" class="kicker">作用：$8/月起 · 高复购</span></div></div>
+      <div class="arrow-down">▼</div>
+      <div class="funnel-row"><div class="funnel-band" style="background:var(--ink); color:#fff; border-color:#000">
+        <b style="color:var(--yellow)">④ 旗舰 Bootcamp（高价主课）</b> — AI Coding / AI Adoption / AI Engineer / Solo Founder / 全栈班
+        <span style="float:right" class="kicker" style="color:#cbd2e6">作用：核心利润 + P3 就业出口</span></div></div>
+    </div>
+  </section>
+
+  <!-- 4 · 自学平台 6 方向 -->
+  <section class="slide">
+    <div class="shead"><span class="snum">03</span><span class="tag">自学平台 · 6 大学习方向</span></div>
+    <h2 class="title" style="margin-bottom:18px">订阅制平台：<span class="hl">6 个方向</span>覆盖全部 AI 用法</h2>
+    <div class="grid g3" style="flex:1; align-content:center">
+      <div class="card"><b style="color:var(--indigo)">Vibe Coding</b><div class="kicker" style="margin-top:6px">用自然语言 + AI 工具编程</div></div>
+      <div class="card"><b style="color:var(--purple)">Prompt Master</b><div class="kicker" style="margin-top:6px">ChatGPT/Claude 对话优化</div></div>
+      <div class="card"><b style="color:var(--orange)">AI Office</b><div class="kicker" style="margin-top:6px">自动化办公重复劳动</div></div>
+      <div class="card"><b style="color:var(--red)">AI Content Creation</b><div class="kicker" style="margin-top:6px">视频 / 图片 / 文章生成</div></div>
+      <div class="card"><b style="color:var(--green)">AI Engineer</b><div class="kicker" style="margin-top:6px">全栈 AI 应用开发</div></div>
+      <div class="card"><b style="color:var(--ink)">AI Product Manager</b><div class="kicker" style="margin-top:6px">用 AI 重定义产品经理</div></div>
+    </div>
+    <div class="card" style="margin-top:16px; background:#fffbe6">
+      还配套 <b>10+ 互动 Lab</b>（Python / Prompt / 前端实操）、<b>AI Skills 市场</b>、<b>UniMate AI 浏览器插件</b>
+    </div>
+  </section>
+
+  <!-- 5 · 考证平台 -->
+  <section class="slide">
+    <div class="shead"><span class="snum">04</span><span class="tag">考证平台 · Certifications</span></div>
+    <h2 class="title" style="margin-bottom:18px"><span class="hl">350+</span> 热门 IT 认证 · 一个订阅全站畅学</h2>
+    <div class="grid g4" style="flex:1; align-content:center">
+      <div class="card"><div class="stat" style="font-size:38px;color:var(--indigo)">350+</div><div class="kicker">覆盖认证：AWS / Azure / GCP / PMP / Salesforce / ServiceNow / 安全合规</div></div>
+      <div class="card"><div class="stat" style="font-size:38px;color:var(--red)">85%+</div><div class="kicker">首考通过率 · 不过免费重学</div></div>
+      <div class="card"><div class="stat" style="font-size:38px;color:var(--green)">75,616+</div><div class="kicker">题库量 · 17,810+ 在学学员</div></div>
+      <div class="card"><div class="stat" style="font-size:38px;color:var(--orange)">$8/月</div><div class="kicker">竞品 ExamTopics 单科 $20+/月，我们全站畅学</div></div>
+    </div>
+    <div class="card" style="margin-top:16px; background:var(--ink); color:#fff; border-color:#000">
+      免费插件 <b style="color:var(--yellow)">Cert Master</b>：在 16+ 考试平台上「2 秒出答案」 —— 既是工具，也是引流入口
+    </div>
+  </section>
+
+  <!-- 6 · 3 插件 -->
+  <section class="slide">
+    <div class="shead"><span class="snum">05</span><span class="tag">免费 Chrome 插件 · 引流利器</span></div>
+    <h2 class="title" style="margin-bottom:18px">3 个免费插件，把用户「先用起来」</h2>
+    <div class="grid g3" style="flex:1; align-content:center">
+      <div class="card" style="border-top:10px solid var(--indigo)">
+        <b style="font-size:20px">Cert Master</b>
+        <div class="kicker" style="margin-top:8px">考证刷题助手 · 16+ 平台 2 秒出答案</div></div>
+      <div class="card" style="border-top:10px solid var(--red)">
+        <b style="font-size:20px">Job Hunter</b>
+        <div class="kicker" style="margin-top:8px">JD 分析 + 面试准备</div></div>
+      <div class="card" style="border-top:10px solid var(--green)">
+        <b style="font-size:20px">UniMate AI</b>
+        <div class="kicker" style="margin-top:8px">学校 LMS 作业 / debug 辅助</div></div>
+    </div>
+    <p class="lead" style="margin-top:18px">作用：<b>零门槛获客 + 留资</b>，把免费用户导入自学平台与 Bootcamp 漏斗。</p>
+  </section>
+
+  <!-- 7 · 主推课总表 -->
+  <section class="slide">
+    <div class="shead"><span class="snum">06</span><span class="tag alt">★ 重点 · 我们主推的课程</span></div>
+    <h2 class="title" style="margin-bottom:14px">六门旗舰课 ·<span class="hl"> 人群与承诺各不同</span></h2>
+    <table class="t">
+      <tr><th>课程</th><th>时长</th><th>价格 AUD</th><th>面向谁</th><th>核心承诺</th></tr>
+      <tr><td class="strong">AI Coding 实战课<br><span class="kicker">人人都能学的 AI Coding</span></td><td>基础 8 周<br>进阶 12 周</td><td class="price">$960 /<br>$2,280</td><td><b>零代码基础</b>的普通人</td><td>中文指挥 Cursor 写代码，做出 <b>5 件可上线真作品</b></td></tr>
+      <tr><td class="strong">AI 工作流提效营<br><span class="kicker">AI Adoption · V2</span></td><td>8 周</td><td class="price">$799</td><td>帮全公司落地 AI 的职场人</td><td>不是教你聊 AI，是<b>让整个公司用好 AI</b></td></tr>
+      <tr><td class="strong">Vibe Coding Enhancement</td><td>8 周</td><td class="price">$770</td><td>已有基础的全栈开发者</td><td>Claude Code Skills/MCP/Agent，PRD → 部署真全栈</td></tr>
+      <tr><td class="strong">AI Solo Founder</td><td>11 周<br>(三城线下)</td><td class="price">$2,400</td><td>想做 AI 创业的人</td><td>选品→MVP→第一笔收入→获客，1:8 带教</td></tr>
+      <tr><td class="strong">AI Engineer Bootcamp</td><td>12 周 / 96 节</td><td class="price">$3,850</td><td>初–中级 AI 工程师</td><td>Context Engineering、RAG、多 Agent，7 个生产级项目</td></tr>
+      <tr><td class="strong">全栈项目班<br><span class="kicker">旗舰大课 · 现 30 期</span></td><td>多期持续</td><td class="price">—</td><td>转行 / 求职者</td><td>全栈 + Agile 团队项目 + AI/RAG + 上线 + 就业辅导</td></tr>
+    </table>
+    <div class="card" style="margin-top:12px; background:#fff3f1; border-color:var(--red); padding:10px 16px; font-size:14px">
+      ⚠️ <b>AI Essentials（$299）只是低价引流课，不在主推之列</b>。别把它当主推课讲。
+    </div>
+  </section>
+
+  <!-- 8 · AI Coding detail -->
+  <section class="slide">
+    <div class="shead"><span class="snum">07</span><span class="tag">主推课详解 · ①</span></div>
+    <h2 class="title" style="margin-bottom:6px">🟢 AI Coding 实战课</h2>
+    <p class="kicker" style="margin-bottom:16px">「人人都能学的 AI Coding」· 面向零代码基础的小白 · 不用懂编程语法</p>
+    <div class="grid g2" style="flex:1; align-content:start">
+      <div class="card"><b>课程结构</b><div class="lead" style="font-size:16px; margin-top:8px">
+        13 个阶段（P0–P12）· 共 <b>113 小时</b><br>
+        27 节直播 · 18 个互动 Lab · 14 个 Quest · 50 个自学模块</div></div>
+      <div class="card" style="background:var(--ink); color:#fff; border-color:#000"><b style="color:var(--yellow)">毕业产出：5 件可上线真作品</b>
+        <div class="lead" style="font-size:16px; margin-top:8px; color:#dfe3ee">专业 PPT · PDF · 落地页 · 自动化工作流 · 60 秒科普视频</div></div>
+      <div class="card"><b>差异化</b><div class="lead" style="font-size:16px; margin-top:8px">
+        整合 <b>33 个 AI 工具</b>、<b>8 种产出形态</b>（文档/图像/音频/视频/网页/自动化/数据/分发）于一套统一工作流</div></div>
+      <div class="card"><b>两档定价</b><div class="lead" style="font-size:16px; margin-top:8px">
+        基础 <span class="mono">$960</span>（76 节，$12.6/节）<br>进阶 <span class="mono">$2,280</span>（109 节，$20.9/节）</div></div>
+    </div>
+  </section>
+
+  <!-- 9 · AI Adoption detail -->
+  <section class="slide">
+    <div class="shead"><span class="snum">08</span><span class="tag">主推课详解 · ②</span></div>
+    <h2 class="title" style="margin-bottom:6px">🔵 AI 工作流提效营（AI Adoption）</h2>
+    <p class="kicker" style="margin-bottom:16px">V2 升级版 · 教的是「组织级落地」，不是「个人用工具」</p>
+    <div class="grid g2" style="flex:1; align-content:start">
+      <div class="card" style="background:var(--ink); color:#fff; border-color:#000">
+        <b style="color:var(--yellow)">一句话区别</b>
+        <div class="lead" style="font-size:17px; margin-top:8px; color:#dfe3ee">"你不是来学怎么跟 AI 聊天 ——<br>你是来学<b>怎么帮整个公司把 AI 用好</b>。"</div></div>
+      <div class="card"><b>8 周 4 阶段</b><div class="lead" style="font-size:15px; margin-top:8px">
+        P1 工具+角色定位（W1-2）→ P2 跨部门业务场景（W3-5）→ P3 组织落地方法论（W6-7）→ P4 毕设 Demo Day（W8）</div></div>
+      <div class="card"><b>规模</b><div class="lead" style="font-size:15px; margin-top:8px">
+        22 节直播 · 30+ 自学 · 48 场景 · 20+ 工具<br><b>39 个互动 Lab + 6 个 Quest</b>（V2 扩充）</div></div>
+      <div class="card"><b>独有模块（竞品没有）</b><div class="lead" style="font-size:15px; margin-top:8px">
+        AI 选型框架 · 试点设计 · 干系人管理 · 组织级部署（<b>OpenClaw</b>）· 变革管理 · ROI 测算<br>
+        <span class="kicker">场景覆盖 HR / Marketing / Finance / Sales</span></div></div>
+    </div>
+  </section>
+
+  <!-- 10 · 定位差异 -->
+  <section class="slide">
+    <div class="shead"><span class="snum">09</span><span class="tag alt">★ 怎么跟客户区分这几门课</span></div>
+    <h2 class="title" style="margin-bottom:16px">按「<span class="hl">用 AI 做什么</span>」分三条线</h2>
+    <div class="grid g4" style="flex:1; align-content:center">
+      <div class="card" style="border-top:10px solid var(--green)"><b>用 AI 做出东西的普通人</b><div class="kicker" style="margin-top:6px">不写代码</div><div style="margin-top:8px"><span class="pill">AI Coding 实战课</span></div></div>
+      <div class="card" style="border-top:10px solid var(--indigo)"><b>帮公司落地 AI 的职场人</b><div class="kicker" style="margin-top:6px">推动组织变革</div><div style="margin-top:8px"><span class="pill">AI 工作流提效营</span></div></div>
+      <div class="card" style="border-top:10px solid var(--orange)"><b>靠 AI 创业的人</b><div class="kicker" style="margin-top:6px">从 0 到第一笔收入</div><div style="margin-top:8px"><span class="pill">AI Solo Founder</span></div></div>
+      <div class="card" style="border-top:10px solid var(--red)"><b>写 AI 应用的工程师</b><div class="kicker" style="margin-top:6px">真全栈 · 上生产</div><div style="margin-top:8px"><span class="pill">Vibe Coding</span><span class="pill">AI Engineer</span><span class="pill">全栈班</span></div></div>
+    </div>
+    <div class="card" style="margin-top:16px; background:#fffbe6; font-size:15px">
+      🔑 最易混的两对：<b>AI Coding（我自己做出作品）vs AI Adoption（我推动公司用 AI）</b> ·
+      <b>AI Coding（零基础小白）vs Vibe Coding（已有基础开发者）</b>
+    </div>
+  </section>
+
+  <!-- 11 · P3 是什么 -->
+  <section class="slide cover">
+    <div class="tag alt" style="margin-bottom:18px">10 · 重点中的重点 · P3</div>
+    <h2 class="title" style="font-size:46px; color:#fff; margin-bottom:18px">P3 = <span style="color:var(--yellow)">Career Incubator 职业孵化器</span></h2>
+    <div class="card" style="background:var(--yellow); border-color:#000; max-width:920px; margin-bottom:22px">
+      <div style="font-family:var(--head); font-weight:800; font-size:26px; line-height:1.25">
+        P3 不是「作品集 portfolio」——<br>而是<u>真业务 / 真团队 / 真上线</u>的<b>就业推荐通道</b>。
+      </div>
+    </div>
+    <div class="grid g4" style="width:100%; max-width:1000px">
+      <div class="card" style="background:#1c2742; color:#fff; border-color:#000"><b style="color:var(--yellow)">10 人组队</b><div class="kicker" style="color:#cbd2e6; margin-top:6px">对接真实企业客户 · 像真公司一样分工：Tech Lead / AI Engineer / Full-Stack / PM·DevOps</div></div>
+      <div class="card" style="background:#1c2742; color:#fff; border-color:#000"><b style="color:var(--yellow)">工程标准拉满</b><div class="kicker" style="color:#cbd2e6; margin-top:6px">CI/CD · 可观测性 · 灰度发布 · SLO(p95<2s) · 安全 · 成本管控 · 企业级交付文档</div></div>
+    </div>
+    <div class="card" style="margin-top:14px; background:#fff; border-color:#000; max-width:1000px; width:100%; color:#111">
+      <b>12 周节奏：</b> W1-2 组队选题 → W3-6 架构+MVP → W7-9 灰度迭代 → W10-11 上线监控 → <b style="color:var(--red)">W12 Demo Day（企业客户 + 招聘方现场）</b>
+    </div>
+  </section>
+
+  <!-- 12 · P3 出口 + 数据 -->
+  <section class="slide">
+    <div class="shead"><span class="snum">11</span><span class="tag">P3 · 三类就业出口 + 战绩</span></div>
+    <h2 class="title" style="margin-bottom:16px">P3 直接对接 <span class="hl">大公司 / Startup / 孵化项目</span></h2>
+    <div class="grid g3" style="margin-bottom:18px">
+      <div class="card" style="border-top:10px solid var(--ink)"><b>🏢 大公司 / Enterprise</b><div style="margin-top:6px"><span class="pill">Deloitte</span><span class="pill">KPMG</span><span class="pill">EY</span><span class="pill">HSBC</span><span class="pill">Macquarie</span><span class="pill">Telstra</span></div><div class="kicker" style="margin-top:8px">真实业务对接 · 转正概率高</div></div>
+      <div class="card" style="border-top:10px solid var(--red)"><b>🚀 Startup / Scale-up</b><div style="margin-top:6px"><span class="pill">Canva</span><span class="pill">Atlassian</span><span class="pill">Airwallex</span><span class="pill">Afterpay</span><span class="pill">Zip</span></div><div class="kicker" style="margin-top:8px">股权 + 快速晋升</div></div>
+      <div class="card" style="border-top:10px solid var(--green)"><b>🌱 孵化项目</b><div style="margin-top:6px"><span class="pill">Antler</span><span class="pill">Stone & Chalk</span><span class="pill">校友新创</span></div><div class="kicker" style="margin-top:8px">可作为联合创始人参与</div></div>
+    </div>
+    <div class="grid g3">
+      <div class="card" style="text-align:center"><div class="stat" style="font-size:46px; color:var(--red)">600+</div><div class="kicker">通过 P3 拿到 offer</div></div>
+      <div class="card" style="text-align:center"><div class="stat" style="font-size:46px; color:var(--indigo)">4–6 月</div><div class="kicker">入职中位数</div></div>
+      <div class="card" style="text-align:center"><div class="stat" style="font-size:46px; color:var(--green)">80+</div><div class="kicker">合作公司持续招匠人学员</div></div>
+    </div>
+  </section>
+
+  <!-- 13 · 整体流程 -->
+  <section class="slide">
+    <div class="shead"><span class="snum">12</span><span class="tag">整体流程 · 漏斗怎么跑通</span></div>
+    <h2 class="title" style="margin-bottom:16px">从<span class="hl">免费</span>到<span class="hl red">就业</span>的完整闭环</h2>
+    <div style="display:flex; flex-direction:column; gap:7px; flex:1; justify-content:center">
+      <div class="funnel-band" style="background:#eef2ff"><b>免费插件 / 资源</b>（Cert Master、路线图、Cheat Sheet）<span class="kicker" style="float:right">建立认知 · 留资</span></div>
+      <div class="arrow-down">▼</div>
+      <div class="funnel-band" style="background:#fff7e6"><b>低价引流</b>（AI Essentials $299 / 考证订阅 $8月）<span class="kicker" style="float:right">快速 quick win · 验证学习习惯</span></div>
+      <div class="arrow-down">▼</div>
+      <div class="funnel-band" style="background:#eafaf1"><b>旗舰 Bootcamp</b>（AI Coding / Adoption / Engineer / Solo Founder / 全栈班）<span class="kicker" style="float:right">系统技能 + 真实项目</span></div>
+      <div class="arrow-down">▼</div>
+      <div class="funnel-band" style="background:var(--ink); color:#fff; border-color:#000"><b style="color:var(--yellow)">P3 职业孵化器</b>（真业务 / 真团队 / 真上线）→ Demo Day 直面招聘方<span class="kicker" style="float:right; color:#cbd2e6">把"学完"变成"就业"</span></div>
+      <div class="arrow-down">▼</div>
+      <div class="funnel-band" style="background:var(--yellow)"><b>拿到 Offer</b> → 校友网络 → 反哺社区（成为导师 / 孵化项目）<span class="kicker" style="float:right">闭环 · 自增长</span></div>
+    </div>
+  </section>
+
+  <!-- 14 · 结尾 -->
+  <section class="slide cover" style="justify-content:center">
+    <div class="tag alt" style="margin-bottom:20px">一页记住匠人</div>
+    <h1 class="title" style="font-size:56px; color:#fff">免费工具获客 → 低价课筛选 →<br><span style="color:var(--yellow)">旗舰课交付技能</span> → <span style="color:var(--red)">P3 闭环就业</span></h1>
+    <p class="lead" style="color:#dfe3ee; margin-top:24px; max-width:860px">
+      <b>P3 是匠人区别于普通网课平台的关键</b> —— 别家卖课程，我们卖「<b>从学完到拿 offer 的完整通道</b>」。
+    </p>
+    <p class="kicker" style="margin-top:30px; color:#8b93ad">方向键 ← → 翻页 · 欢迎加入匠人学院 🎉</p>
+  </section>
+
+</div>
+
+<div class="hint">← → 翻页 · F 全屏</div>
+<div id="bar">
+  <button id="prev">‹ 上一页</button>
+  <div id="dots"></div>
+  <button id="next">下一页 ›</button>
+  <span id="count">1 / 14</span>
+</div>
+
+<script>
+  const slides = [...document.querySelectorAll('.slide')];
+  const dotsWrap = document.getElementById('dots');
+  const count = document.getElementById('count');
+  let i = 0;
+  slides.forEach((_, n) => {
+    const d = document.createElement('div');
+    d.className = 'dot' + (n === 0 ? ' on' : '');
+    d.onclick = () => go(n);
+    dotsWrap.appendChild(d);
+  });
+  const dots = [...document.querySelectorAll('.dot')];
+  function go(n){
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach((s, k) => s.classList.toggle('active', k === i));
+    dots.forEach((d, k) => d.classList.toggle('on', k === i));
+    count.textContent = (i + 1) + ' / ' + slides.length;
+  }
+  document.getElementById('next').onclick = () => go(i + 1);
+  document.getElementById('prev').onclick = () => go(i - 1);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); go(i + 1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(i - 1); }
+    else if (e.key === 'Home') go(0);
+    else if (e.key === 'End') go(slides.length - 1);
+    else if (e.key.toLowerCase() === 'f') { document.documentElement.requestFullscreen?.(); }
+  });
+  // scale 1280x720 canvas to fit viewport
+  const stage = document.getElementById('stage');
+  function fit(){
+    const s = Math.min(window.innerWidth / 1280, window.innerHeight / 720) * 0.96;
+    stage.style.transform = 'scale(' + s + ')';
+  }
+  window.addEventListener('resize', fit);
+  fit();
+</script>
+</body>
+</html>

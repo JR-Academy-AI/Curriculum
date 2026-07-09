@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ai-engineer-cn",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "C:/Users/Administrator/Desktop/Curriculum/.claude/serve-preview.ps1"],
+      "port": 8083
+    }
+  ]
+}
