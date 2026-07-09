@@ -134,7 +134,7 @@
               "order": 3,
               "type": "CONCEPT",
               "title": "及格线与评分",
-              "description": "720 / 1000 分及格；5 大 domain 加权，Agentic Architecture 与 Claude Code 权重最高。",
+              "description": "720 / 1000 分及格（官方考纲）；5 大 domain 加权，Agentic Architecture 权重最高（27%）。",
               "duration": 8
             },
             {
@@ -291,7 +291,7 @@
               "order": 3,
               "type": "CONCEPT",
               "title": "推荐学习顺序",
-              "description": "按权重排：先攻 Agentic Architecture + Claude Code（权重最高），再 MCP，最后 Prompt / Context。",
+              "description": "按官方权重排：先攻 Agentic Architecture（27%），再 Claude Code 与 Prompt（各 20%），然后 MCP（18%），最后 Context（15%）。",
               "duration": 10
             },
             {
@@ -384,7 +384,7 @@
         },
         {
           "code": "L08",
-          "title": "Domain 3 精析 — Claude Code Configuration（权重最高）",
+          "title": "Domain 3 精析 — Claude Code Configuration（20%）",
           "description": "Claude Code 工作流配置考点：CLAUDE.md 项目规则、settings、hooks、slash commands、subagents、权限模式、MCP 接入。这是自学者最容易失分的 domain。",
           "type": "Information",
           "isLive": false,

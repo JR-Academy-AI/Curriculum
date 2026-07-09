@@ -18,10 +18,11 @@ themeColor `#C15F3C`（Claude 珊瑚色的深色调，区别于实战班的 `#D9
 
 学员心里的疑问是"不就是发我一堆 PDF？"。用这三根支柱正面拆掉它：
 
-### 支柱 1 · 官方考试名额 + CPN 合规通道
-- CCA-F 是 Anthropic 首个官方技术认证。
-- 匠人已注册加入 **Anthropic Claude Partner Network（CPN）**。这个包=一个**官方考试名额**（Pearson VUE 监考）+ 由匠人 CPN 合规通道协助你把报名、激活和预约流程走通。
-- 话术：**"这不是卖资料，是官方考试名额 + 备考路线 + 模拟冲刺一起交付。"**
+### 支柱 1 · 官方考试名额 + CPN 合规通道 ⏸️ **暂停使用，待核实**
+> **2026-07-09 冻结**：官方考纲 §11 写明考生自己在 Partner Academy 注册结账（$125 USD，结账价含 partner tier 折扣），再建 Pearson VUE 账号约考。匠人 Registered tier 能否代购/代发名额、折扣能否传导给学员，**均未核实**。核实前本支柱的"含 1 个官方考试名额"一律不得出现在对外内容里。若核实为不能代发，本支柱须整根重写为"报名链路陪跑"而非"名额"。
+
+- CCAR-F 是 Anthropic 首个官方技术认证（考试费 $125 USD，证书有效期 12 个月）。
+- 匠人已注册加入 **Anthropic Claude Partner Network（CPN）**。
 - ⚠️ 合规底线：不要写"保过/稳过/必过"（红线 3）。写"帮你一次过""冲刺过考"可以，"保证通过"不行。
 
 ### 支柱 2 · 我们替你省下几十小时的摸索
@@ -76,9 +77,9 @@ themeColor `#C15F3C`（Claude 珊瑚色的深色调，区别于实战班的 `#D9
 
 > **标题**：Claude 官方架构师认证 · 考试直通包
 > **副标题**：成为全球华人首批 Claude 官方认证架构师。匠人 Claude Partner Network 合规通道，帮你拿到考试名额、走通最短备考路线、两套全真模拟冲刺过考。
-> **三个 bullet**：
-> - ✅ 含 1 个 Anthropic 官方 CCA-F 考试名额（Pearson VUE 监考）
-> - 🚪 匠人 Claude Partner Network 合规通道协助申请考试名额
+> **三个 bullet**（⏸️ 前两条冻结中，见支柱 1 的核实说明；核实前 landing 只出第三条 + 官方考纲对齐）：
+> - ⏸️ ~~含 1 个 Anthropic 官方 CCA-F 考试名额（Pearson VUE 监考）~~ → 待核实匠人能否代发名额
+> - ⏸️ ~~匠人 Claude Partner Network 合规通道协助申请考试名额~~ → 同上
 > - 🎯 5 domain 考点精析 + 6 类场景题拆解 + 2 套全真模拟 + 报名全程陪跑
 
 ---
@@ -96,11 +97,17 @@ themeColor `#C15F3C`（Claude 珊瑚色的深色调，区别于实战班的 `#D9
 
 ## 数据准确性红线（写任何对外内容都遵守）
 
-- 官方**已确认**：Pearson VUE 承办、OnVUE/线下、闭卷监考、认证归个人、Partner 门槛、重考 4 次(14/30/90 天)。
-  - **一手出处（2026-07-09 核实）**：https://www.pearsonvue.com/us/en/anthropic.html —— 原文 "14 days after your first attempt, 30 days after your second, and 90 days after your third" + "up to 4 attempts per exam in any rolling 12-month period"；改期政策 "Test center appointments can be rescheduled or cancelled **up to 24 hours prior** to your scheduled appointment"（注意方向：距开考不足 24 小时**不能**改期，不是"24 小时内可免费改"）。该页同时列出 Foundations 与 Professional 两门。
-  - 命名：对外统一用 **CCA-F**。Pearson VUE 页面上出现过一次 "CCAR-F"，普遍判断为笔误，不要跟着改。
-- 社区口径**未经官方正式公布**（60 题/120 分/720 分/6 抽 4）：对外可写"约 60 题""社区口径"，**不要**说成"官方规定 60 题"。
-- **🚨 五域权重同样是社区口径（2026-07-09 核实）**：Agentic Architecture 27% / Claude Code Config 20% / Prompt Engineering 20% / Tool Design & MCP 18% / Context Management 15% —— 这组百分比**在 anthropic.com / claude.com 公开页面查不到一手出处**，来自第三方备考站与社区整理。对外与课文里一律写"社区口径，以官方考纲为准"，**禁止**写成"官方权重"。真正的 blueprint 锁在 Partner Academy 内，取到后再升级口径。（域的**名称与相对排序**可信度较高，具体百分比不可当官方引用。）
+> **🔑 事实真相源已升级**：2026-07-09 Lightman 从 Partner Academy 取到官方《CCAR-F Exam Guide v1.0 · Effective July 2026》。**所有考试事实以 [`SYLLABUS_OFFICIAL.md`](./SYLLABUS_OFFICIAL.md) 为准**，本文件只管"对外怎么说"。PDF 原件在 `research/official/`（gitignore，Anthropic 版权，不转载不整篇翻译）。
+
+- **🚨 考试代码是 `CCAR-F` 不是 `CCA-F`（2026-07-09 官方考纲核实）**：考纲页眉与 Exam Details 表两处均为 CCAR-F，全篇 **0 次**出现 CCA-F。此前本文件写的"CCAR-F 是 Pearson VUE 笔误、不要跟着改"**方向反了，已作废**。目录名与线上 URL `/curriculum/cca-f-cert-pack/` 按 URL 冻结铁律**保持不动**；正文凡指考试代码处用 **CCAR-F**，品牌主称呼用全名「Claude 认证架构师 – Foundations」。
+- **官方已确认（考纲 §3 §11 §12 §15）**：60 题 · 120 分钟 · **6 抽 4 场景** · 100–1000 量表分 **720 及格** · 单选多选混合且每题标明选几个 · Pearson VUE 承办（线上监考或考场）· 闭卷监考 · 认证归属个人 · 重考 14/30/90 天且滚动 12 个月内最多 4 次（每次重新付费）· 改期取消须在考前 **24 小时之外**（进入最后 24 小时改动 = 考试费作废；缺考同样作废）。
+  - 这批数字此前被我们标为"社区口径"，**现在可以、也应该写成"官方考纲"**。
+- **官方五域权重（考纲 §4 blueprint，可直接引用为官方）**：D1 Agentic Architecture & Orchestration **27%** / D2 Tool Design & MCP Integration **18%** / D3 Claude Code Configuration & Workflows **20%** / D4 Prompt Engineering & Structured Output **20%** / D5 Context Management & Reliability **15%**。
+  - **🚨 权重最高的是 D1 Agentic Architecture（27%），不是 Claude Code（20%）。** 旧稿在 L02 描述、L08 标题、销售页三处把 Claude Code 说成"权重最高"，是事实错误。
+  - domain 分段百分比**只出现在成绩单上供诊断，不参与判定通过与否** —— 通过只看总量表分。别写成"每个域都要过线"。
+- **🚨 考试费 $125 USD、证书有效期 12 个月（考纲 §3 §15）**：到期前可在 Partner Academy 完成一次**免费、非监考**的续证评估；**一旦过期须全价重考**。有效期这条我们旧稿从未提及，属重大遗漏，L01/L02 必须讲清楚。
+- **🚨 "含 1 个官方考试名额"这句话暂停使用**：考纲 §11 写的报名链路是**考生自己在 Partner Academy 注册并结账**（结账价反映 partner tier 折扣），再建 Pearson VUE 账号约考。匠人 Registered tier 能否代购/代发名额、tier 折扣能否传导给学员，**均未核实**。核实前 landing / 海报 / 小红书**不得**写"含官方考试名额"。
+- **🚨 官方 12 道样题 + practice test 不可复用**：考纲 §9 的样题是 Anthropic 版权内容，**禁止**原文或翻译放进 L14/L15 模拟考，**禁止**照抄题干情境、选项措辞、干扰项设计。只可当难度校准样本。
 - **绝不**承诺"保过/稳过/必过"（红线 3）。
 - **🚨 Services Partner Directory 收录的是「公司」不是「个人」（2026-07-09 核实）**：Anthropic 原话 "Qualified partners will also be added to our Services Partner Directory, where enterprise buyers can find **firms**"。同一来源同时确认 "Certifications belong to individual people, not firms, and are earned through Anthropic Partner Academy exams" 与 "more than 10,000 consultants have earned a Claude certification"。因此可写"逾 1 万名顾问已持证""认证归个人"，**不可**写成"持证即可进入 Directory 被企业买家找到"。
 - **🚨 Anthropic Academy 是 20 门课不是 13 门（2026-07-09 核实）**：anthropic.skilljar.com 实际目录为 20 门免费课。旧稿"约 13 门散课"是错的，已全线改为 20。
