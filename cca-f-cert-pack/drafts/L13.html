@@ -1,0 +1,125 @@
+<h2>怎么做这一课：先闭卷 25 分钟，再对答案 15 分钟</h2>
+<p>前面 L06–L10 把五个域的判据讲完了，L11 给了<strong>四步定位法</strong>（抓约束 → 判域 → 排雷 → 选最贴），L12 拆了六类场景。这一课不再喂新知识，只做一件事：<strong>你自己独立做一组题，做完再回来定位薄弱域。</strong>真实考场闭卷、有监考、不许查文档（Pearson VUE 承办、OnVUE 远程监考或线下考场），所以这里也照规矩来——下面 5 道题，先只看题干和选项，<strong>不要往下翻详解</strong>，掐 25 分钟做完，每题在草稿上写下你选的字母 + 一句"我判它是哪个域、靠哪条约束选的"。</p>
+<p>做法要点：每题都强制走一遍四步——先圈题干里的规模/延迟/成本/合规约束，再判它主要考哪个域，再删明显错项，最后在剩下的里选最贴约束的那个。写不出"靠哪条约束选的"，说明你是在凭感觉，那道题就算蒙对也要标记。</p>
+
+<h2>场景背景：墨尔本双语选课咨询 agent</h2>
+<p>你在维护一个给澳洲华人留学生用的<strong>双语选课咨询 agent</strong>，接在平台的微信小程序和 web 两端。它接的活分四类：</p>
+<ul>
+<li><strong>查课程信息</strong>——某门课哪个学期开、多少学分、先修课是什么（只读，答错顶多重查）。</li>
+<li><strong>改账户</strong>——改学员绑定的邮箱、通知偏好（写操作，动账户，需先验证身份）。</li>
+<li><strong>退课退款</strong>——按退款政策处理退选与退费（涉钱，超阈值必须转人工）。</li>
+<li><strong>签证与 OSHC 合规问题</strong>——学生签证课时要求、保险合规（答错有法律风险，必须转持牌顾问）。</li>
+</ul>
+<p>当前是单 agent 版本，团队想在开学选课高峰前把它做扎实。下面 5 道题都基于这个系统。</p>
+
+<h2>限时自测：5 题（先别翻详解）</h2>
+
+<h3>第 1 题</h3>
+<p>你另做了一个"选课建议报告"功能，让 agent 针对学员目标专业，汇总每门备选课的<strong>学分 / 开课学期 / 先修课要求 / 往届评价</strong>四个维度。上线后报告总是整块缺"先修课要求"这一维——不是查得浅，是这一路的数据<strong>完全不出现</strong>。这是个多 agent（coordinator 派多个 subagent 各查一路）系统。你先怀疑哪里？</p>
+<ul>
+<li>A. 负责查数据的某个 subagent 关键词写得不好，换更精准的关键词</li>
+<li>B. 汇总 agent 的 prompt 不够强，没发现缺口</li>
+<li>C. coordinator 的任务分解压根没切"先修课要求"这一路 subtopic</li>
+<li>D. subagent 数量不够，再多 spawn 几个就补上了</li>
+</ul>
+
+<h3>第 2 题</h3>
+<p>系统里两个工具 <code>query_course_schedule</code>（查开课学期/学分）和 <code>query_credit_requirement</code>（查先修课与毕业学分要求），description 都只写了一句话（"查课程时间表""查学分要求"）。学员用中文问"这门课要先上什么课吗"，agent 时对时错地调错工具，返回开课学期。产品经理说"加几个 few-shot 例子"或"上个 routing 分类器"。<strong>最该先做</strong>的是？</p>
+<ul>
+<li>A. 把两个工具的 description 各扩写到 3–4 句，写清各自返回什么、什么问法该用、并显式把另一类问题指给对方工具</li>
+<li>B. 往 prompt 里加 few-shot 例子，把这类问法讲细</li>
+<li>C. 在两个工具前面加一个 routing 分类器，先判意图再分发</li>
+<li>D. 把两个工具合并成一个带 <code>action</code> 参数的大工具</li>
+</ul>
+
+<h3>第 3 题</h3>
+<p>团队共享一套 Claude Code 配置。你写了个 <code>PreToolUse</code> hook，想拦住"把含真实学员手机号的文件提交进 git"这个动作：脚本检测到命中就往 stderr 打原因、然后 <code>exit 1</code>。测试时发现命令照样跑了、文件照样被提交。为什么？</p>
+<ul>
+<li>A. <code>PreToolUse</code> 拦不了 Bash 类工具，只能拦文件编辑</li>
+<li>B. hook 必须先加进 <code>settings.json</code> 的 <code>permissions.allow</code> 才生效</li>
+<li>C. stderr 不会回传给 Claude，得改用 stdout 才能阻断</li>
+<li>D. 只有 <code>exit 2</code> 才阻断动作，<code>exit 1</code> 被当成非阻断错误、动作照常继续</li>
+</ul>
+
+<h3>第 4 题</h3>
+<p>有个模块从学员上传的成绩单里抽结构化字段喂给选课引擎，schema 把 <code>gpa</code> 设成 required。可很多海外成绩单根本没有标准 4.0 制 GPA，模型每次都<strong>编</strong>一个看着合理的数字填进去。怎么修？</p>
+<ul>
+<li>A. 在 system prompt 里加一句"成绩单没有 GPA 就留空"</li>
+<li>B. 把 <code>gpa</code> 改成 nullable（<code>"type": ["number","null"]</code>）并从 <code>required</code> 移除，让模型能诚实返回 null</li>
+<li>C. 加一次复核调用，让第二次调用检查第一次抽的 GPA 对不对</li>
+<li>D. 干脆把 <code>gpa</code> 字段从 schema 删掉</li>
+</ul>
+
+<h3>第 5 题</h3>
+<p>选课 agent 要基于一本<strong>800 页的大学 course handbook</strong>（偶尔更新）回答学员问题。上下文该怎么设计，既准又不烧钱？</p>
+<ul>
+<li>A. 用 just-in-time 检索：只存 handbook 的索引/片段路径，运行时按当前问题动态拉相关的几段进上下文</li>
+<li>B. 把整本 handbook 塞进 system prompt，配 prompt caching 缓存起来就不占成本了</li>
+<li>C. 直接上 1M 窗口的模型，一次把整本塞进去让模型自己找</li>
+<li>D. 每次请求切一小块 handbook 轮流塞，凑几轮把全书过一遍</li>
+</ul>
+
+<h2>详解</h2>
+<p>逐题公布答案 + 逐选项解析 + 标注该题所属域。对答案时重点不是"我对了几道"，是<strong>错的那道错在四步的哪一步</strong>——是约束没圈到、还是判错域、还是没识破成对干扰项。</p>
+
+<h3>第 1 题详解 · 正确答案 C ·（Domain 1 Agentic Architecture）</h3>
+<ul>
+<li><strong>C 对</strong>：输出在<strong>广度</strong>上整块缺失（不是某一路查得浅），根因几乎总在 coordinator 的任务分解——它压根没派人去查这一路。修法是改分解逻辑、补上这个 subtopic。</li>
+<li><strong>A 错且诱人</strong>：换关键词能治"某路查得浅"，治不了"整维不存在"——没人被派去查，关键词再好也没用。</li>
+<li><strong>B 错</strong>：汇总 agent 只能整合它<strong>收到</strong>的东西，没数据进来，prompt 再强也变不出先修课信息。</li>
+<li><strong>D 错</strong>：分解逻辑不改，新加的 subagent 只会领到同样残缺的任务清单。</li>
+</ul>
+
+<h3>第 2 题详解 · 正确答案 A ·（Domain 2 Tool Design &amp; MCP）</h3>
+<ul>
+<li><strong>A 对</strong>：工具的 <code>description</code> 是模型做选择的<strong>主机制</strong>，官方原话"这是工具表现最重要的因素"。两个描述都太短、边界没写，模型分不清"要先上什么课"算时间表还是学分要求——先扩描述、加显式边界，这是最低成本最高杠杆的一步。</li>
+<li><strong>B 错</strong>：描述都没写清就堆 few-shot，只是往 prompt 塞 token，绕开了真正的根因。</li>
+<li><strong>C 过度工程</strong>：分类器绕开模型自带的语言理解、平白加一层基础设施，而问题本是描述写太糙。</li>
+<li><strong>D 不是第一步</strong>：合并工具是架构层改动；这里两个工具职责本就该分开，先扩描述就能路由对。</li>
+</ul>
+
+<h3>第 3 题详解 · 正确答案 D ·（Domain 3 Claude Code Configuration）</h3>
+<ul>
+<li><strong>D 对</strong>：官方讲得很死——<strong>只有 <code>exit 2</code> 阻断动作</strong>，<code>exit 1</code> 被当成非阻断错误、动作照常继续。<code>exit 1</code> 是 Unix 惯用失败码，正因如此最容易顺手写错。要拦就必须 <code>exit 2</code>（或 <code>exit 0</code> + 输出 JSON <code>permissionDecision: "deny"</code>）。</li>
+<li><strong>A 错</strong>：<code>PreToolUse</code> 对任意工具（含 Bash）都能阻断，命中就拦。</li>
+<li><strong>B 错</strong>：hook 不进 <code>permissions.allow</code>，两套机制不搭界。</li>
+<li><strong>C 错</strong>：恰好反了——<code>exit 2</code> 时 stderr 正是回传给 Claude 的错误信息通道。</li>
+</ul>
+
+<h3>第 4 题详解 · 正确答案 B ·（Domain 4 Prompt Engineering）</h3>
+<ul>
+<li><strong>B 对</strong>：required 字段本身在<strong>逼</strong>模型给缺失信息编值（这是 fabrication）。nullable + 移出 required，才让它能诚实返回 null——修的是 schema 设计这个根因，诚实的 null 永远好过看着合理的假数据。</li>
+<li><strong>A 错</strong>：又回到靠 prompt 措辞兜底，required 的结构性压力还在，照样编。prompt 里写"don't hallucinate"基本没用。</li>
+<li><strong>C 错且更贵</strong>：源头成绩单上没印的数字，第二次调用也变不出来，治标又加成本。</li>
+<li><strong>D 因噎废食</strong>：有 GPA 的成绩单本来能抽到，删字段等于把能抽的也一起丢了。</li>
+</ul>
+
+<h3>第 5 题详解 · 正确答案 A ·（Domain 5 Context Management）</h3>
+<ul>
+<li><strong>A 对</strong>：官方推荐的按需检索——只握轻量标识符（路径/索引），运行时把相关片段动态载入，上下文始终精简、只放高信号 token，既省钱又躲开 context rot；handbook 更新也只改被检索的源，不用重灌整个 prompt。</li>
+<li><strong>B 诱人但错</strong>：prompt caching 只改<strong>计费</strong>，被缓存的前缀<strong>照样占 context window</strong>，800 页全程在窗口里，context rot 一点没解决。</li>
+<li><strong>C 错</strong>：加大窗口不解决 rot，token 越多召回越差，还更慢更贵；官方明说"more context isn't automatically better"。</li>
+<li><strong>D 错</strong>：手动切块轮流塞既低效又容易丢上下文，不是按相关性检索的正解。</li>
+</ul>
+
+<h2>错题定位表：薄弱 domain → 回哪一课重读</h2>
+<p>按你错的题号对到域，回去重读对应那一课（重点看该课的"判据"和 SCENARIO 段），别泛泛重刷。错两题以上集中在同一域，说明那个域的判据没建立，优先补：</p>
+<ul>
+<li><strong>错第 1 题</strong> → 弱在 <strong>Domain 1 Agentic Architecture</strong>（单/多 agent、coordinator 任务分解、loop 终止、升级人工）→ 回读 <strong>L06</strong>，重点是"广度缺失 = 分解问题"和确定性 gate。</li>
+<li><strong>错第 2 题</strong> → 弱在 <strong>Domain 2 Tool Design &amp; MCP</strong>（description 是选择主机制、排障先扩描述、<code>is_error</code>、<code>tool_choice</code>、MCP scope）→ 回读 <strong>L07</strong>。</li>
+<li><strong>错第 3 题</strong> → 弱在 <strong>Domain 3 Claude Code Configuration</strong>（CLAUDE.md 引导 vs settings/hook 强制、exit code 语义、path rules、scope）→ 回读 <strong>L08</strong>，exit 2 那条几乎必考。</li>
+<li><strong>错第 4 题</strong> → 弱在 <strong>Domain 4 Prompt Engineering</strong>（结构化输出、明确判据、few-shot、fabrication 用 nullable、eval 迭代）→ 回读 <strong>L09</strong>，核心是"加强措辞≠拿到确定性"。</li>
+<li><strong>错第 5 题</strong> → 弱在 <strong>Domain 5 Context Management</strong>（检索 vs 塞满、context rot、prompt caching、compaction、memory tool）→ 回读 <strong>L10</strong>。</li>
+</ul>
+<p>五题全对也别急着翻篇——回头检查你写的"靠哪条约束选的"是否站得住。场景题真正的能力是<strong>把选择的理由说清楚</strong>，而不是答案恰好蒙对。理由说不清的题，等于没掌握。这套"独立作答 → 定位薄弱域 → 回读原课"的循环，就是冲刺阶段最高效的用法。</p>
+
+<h2>官方文档引用</h2>
+<ul>
+<li>Building Effective Agents（由简入繁、停止条件、人工检查点、任务分解质量）— https://www.anthropic.com/engineering/building-effective-agents</li>
+<li>How we built our multi-agent research system（orchestrator-worker、分解含糊会留缺口）— https://www.anthropic.com/engineering/multi-agent-research-system</li>
+<li>Define tools（description 是工具表现最重要因素、tool_choice、input_schema）— https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools</li>
+<li>Hooks（exit code 0/2/其它语义、只有 exit 2 阻断、PreToolUse permissionDecision）— https://code.claude.com/docs/en/hooks</li>
+<li>Prompting best practices（结构化输出、few-shot、避免 fabrication）— https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices</li>
+<li>Effective context engineering for AI agents（just-in-time 检索、context rot、最少高信号 token）— https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents</li>
+<li>Claude Certified Architect 认证发布（面向 solution architect 的技术考试）— https://www.anthropic.com/news/claude-partner-network</li>
+</ul>

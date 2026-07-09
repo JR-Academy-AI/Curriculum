@@ -97,6 +97,8 @@ themeColor `#C15F3C`（Claude 珊瑚色的深色调，区别于实战班的 `#D9
 ## 数据准确性红线（写任何对外内容都遵守）
 
 - 官方**已确认**：Pearson VUE 承办、OnVUE/线下、闭卷监考、认证归个人、Partner 门槛、重考 4 次(14/30/90 天)。
+  - **一手出处（2026-07-09 核实）**：https://www.pearsonvue.com/us/en/anthropic.html —— 原文 "14 days after your first attempt, 30 days after your second, and 90 days after your third" + "up to 4 attempts per exam in any rolling 12-month period"；改期政策 "Test center appointments can be rescheduled or cancelled **up to 24 hours prior** to your scheduled appointment"（注意方向：距开考不足 24 小时**不能**改期，不是"24 小时内可免费改"）。该页同时列出 Foundations 与 Professional 两门。
+  - 命名：对外统一用 **CCA-F**。Pearson VUE 页面上出现过一次 "CCAR-F"，普遍判断为笔误，不要跟着改。
 - 社区口径**未经官方正式公布**（60 题/120 分/720 分/6 抽 4）：对外可写"约 60 题""社区口径"，**不要**说成"官方规定 60 题"。
 - **🚨 五域权重同样是社区口径（2026-07-09 核实）**：Agentic Architecture 27% / Claude Code Config 20% / Prompt Engineering 20% / Tool Design & MCP 18% / Context Management 15% —— 这组百分比**在 anthropic.com / claude.com 公开页面查不到一手出处**，来自第三方备考站与社区整理。对外与课文里一律写"社区口径，以官方考纲为准"，**禁止**写成"官方权重"。真正的 blueprint 锁在 Partner Academy 内，取到后再升级口径。（域的**名称与相对排序**可信度较高，具体百分比不可当官方引用。）
 - **绝不**承诺"保过/稳过/必过"（红线 3）。

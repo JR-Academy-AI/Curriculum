@@ -1,0 +1,89 @@
+<h2>CCA-F 的定位：它到底考什么</h2>
+<p>Anthropic 在 <strong>2026 年 3 月 12 日</strong>的公告里推出了 Claude Certified Architect 认证。官方对这门考试的定性只有一句，但很关键——<strong>"This is a technical exam for solution architects building production applications with Claude."</strong> 三个词划定了它的边界：<code>technical</code>（技术考，不是产品经理的认知考）、<code>solution architects</code>（面向做架构决策的人）、<code>production applications</code>（生产级应用，不是玩具 demo）。</p>
+<p>所以它<strong>不考你背没背下参数</strong>——不会问你 <code>max_tokens</code> 默认值是多少、某个 model id 的定价是几分钱。它考的是<strong>架构决策</strong>：一个需求进来，你判断单 agent 还是多 agent、工具怎么切、什么动作 agent 能自己拍板、什么必须转人工、上下文和成本怎么权衡、可靠性护栏拿 hook 做还是拿 prompt 做。举个对照：背题库能告诉你 <code>stop_reason</code> 有哪几个取值，但考试真正问的是"这段 loop 为什么会提前退出、你改哪里"。前者是记忆，后者是判断力。这门考的是后者。</p>
+<p>它也不是"会用 Claude 聊天"就能过的入门证。目标人群是<strong>真的在拿 Claude 搭生产系统的人</strong>：接过 Messages API、配过工具、碰过 MCP、部署过 agent。没有这些实战底子，光刷题很难扛住场景判断题。这一点决定了你适不适合现在就报——第 4 步的自测就是帮你照镜子。</p>
+
+<h2>含金量与归属：证是你的，不是公司的</h2>
+<p>先说一个很多人搞反的事实：<strong>这张证归属个人，不归公司</strong>。官方原文写得很硬——<strong>"Certifications belong to individual people, not firms, and are earned through Anthropic Partner Academy exams."</strong> 意思是你考过了，这个 credential 挂在你名下，你换工作它跟着你走，公司不能"收回"。</p>
+<p>含金量参照一个官方数字：截至公告，<strong>已有逾 1 万名顾问考取了 Claude 认证</strong>（"more than 10,000 consultants have earned a Claude certification"）。一万这个量级说明它已经形成了行业共识的门槛，不是刚发的冷门证；但也没泛滥到人手一张，早拿仍有先发优势。</p>
+<p>这里要<strong>诚实划清一条线</strong>，别被营销话术带偏：<strong>个人持证 ≠ 你会被企业买家直接搜到接单</strong>。官方的 Services Partner Directory 收录的是<strong>公司（firms）</strong>不是个人——"enterprise buyers can find firms with Claude implementation experience"。个人证的真实价值是两块：一是<strong>你自己的履历背书</strong>，简历和 LinkedIn 上一个第三方可验证的技术凭证，面试和接私活时有说服力；二是<strong>帮你所在的公司凑合作伙伴层级的 certified individuals 门槛</strong>——Anthropic 按公司有多少持证个人来评合作伙伴等级，你这张证是团队达标的一块拼图。把这两点讲清楚，你才不会因为"考了证怎么没人来找我"而失望。</p>
+
+<h2>报名资格与 CPN 通道：为什么个人注册不了</h2>
+<p>这是很多人卡住的地方：<strong>你没法自己上官网点个按钮就报名</strong>。考试资格通过 <strong>Anthropic Partner Academy / Claude Partner Network（CPN）成员通道</strong>申请——也就是说，报考入口开给 CPN 成员，个人身份无法直接注册。</p>
+<p>匠人已经注册加入了 CPN，<strong>本考证包的作用就是协助你走通这个报名入口</strong>，把"没有 CPN 身份就报不了名"这道门帮你打开。这不是花钱买证，考试本身该怎么考还得你自己扛下来。</p>
+<p>考务细则<strong>以 Pearson VUE 的 Claude 认证考试页为准</strong>（文末已列 URL，可自查），这些可以当准信息：考试由 <strong>Pearson VUE</strong> 承办；两种考法——<strong>OnVUE 线上远程监考</strong>或去<strong>线下考场</strong>；OnVUE 全程<strong>录像监考、桌面须清空、禁带书本笔记纸笔等外部资源</strong>（等同闭卷、不许 AI 辅助）；重考规则是<strong>同一门考试 12 个月滚动周期内最多 4 次</strong>，间隔递增——第一次没过隔 14 天、第二次隔 30 天、第三次隔 90 天。</p>
+<p>还有一批在网上流传很广的数字，<strong>属于社区口径、Anthropic 官方页面查不到一手出处，以官方为准</strong>：约 <strong>60 题 / 120 分钟 / 满分 1000、720 分及格 / 场景题 6 抽 4</strong>；五个域的权重<strong>（社区口径）</strong>大致是 Agentic Architecture 27% · Claude Code Configuration 20% · Prompt Engineering 20% · Tool Design &amp; MCP 18% · Context Management 15%。域的名称和相对排序可信度较高，具体百分比别当成官方指标去死磕自己。你要练的是判断力，不是卡这些数字。</p>
+
+<h2>自测：这个认证适合你吗</h2>
+<p>4 道题帮你照镜子。选完对答案，重点看解析里"为什么"——它顺带把前三步的关键事实又过了一遍。</p>
+
+<h3>第 1 题</h3>
+<p>关于 CCA-F 考什么，下面哪个理解最准确？</p>
+<ul>
+<li>A. 考在生产场景里做架构决策的判断力：单/多 agent、工具设计、升级人工、可靠性护栏</li>
+<li>B. 主要考对 Claude 各 model 的参数、定价、上下文窗口大小的记忆</li>
+<li>C. 考你能不能用 Claude 网页版聊天完成日常任务</li>
+<li>D. 考 Python / TypeScript 的语法基础</li>
+</ul>
+<p><strong>正确答案：A。</strong></p>
+<ul>
+<li><strong>A 对</strong>：官方定性是"面向用 Claude 构建生产级应用的 solution architects 的技术考"，核心是架构决策而非记忆。</li>
+<li><strong>B 错且诱人</strong>：参数、定价这类会随版本变的死数字正是它<strong>不</strong>考的，靠背题库押这些方向会白费力气。</li>
+<li><strong>C 错</strong>：会聊天是入门，扛不住场景判断题。这门证的门槛远在"会用"之上。</li>
+<li><strong>D 错</strong>：它不是编程语言语法考，考的是系统怎么组，不是循环怎么写。</li>
+</ul>
+
+<h3>第 2 题</h3>
+<p>你想报名 CCA-F，正确的报名路径是？</p>
+<ul>
+<li>A. 直接在 anthropic.com 上找个人报名按钮，付款即可</li>
+<li>B. 只要买了任何备考资料，主办方会自动给你开考位</li>
+<li>C. 通过 Partner Academy / CPN 成员通道申请资格——个人无法自行注册，需要走 CPN 成员入口</li>
+<li>D. 在 Pearson VUE 官网用个人账号随便约个时间就行</li>
+</ul>
+<p><strong>正确答案：C。</strong></p>
+<ul>
+<li><strong>C 对</strong>：考试资格通过 CPN 成员通道申请，个人身份报不了名。匠人已加入 CPN，本包协助你走通这个入口。</li>
+<li><strong>A / D 错且诱人</strong>：考试确实由 Pearson VUE 承办，但"约考位"的前提是先有 CPN 通道给你的资格，个人无法自己发起注册。</li>
+<li><strong>B 错</strong>：买资料 ≠ 拿到考位，两件事，别混。</li>
+</ul>
+
+<h3>第 3 题</h3>
+<p>下面四种背景，哪种现在报考最稳、最不需要额外补基础？</p>
+<ul>
+<li>A. 只在网页版和 Claude 聊过天，没写过 API 调用、没配过工具、没碰过 MCP</li>
+<li>B. 用 Messages API 搭过 agent、配过 tool_use、接过 MCP，跑过一两个生产/半生产项目</li>
+<li>C. 完全没接触过 Claude，想靠两周纯刷题上考场</li>
+<li>D. 是产品经理，懂业务但从不写代码、不看 API 文档</li>
+</ul>
+<p><strong>正确答案：B。</strong></p>
+<ul>
+<li><strong>B 对</strong>：这门考"生产级应用架构"，有 API + 工具 + MCP 的实战底子才接得住场景判断题，是最匹配的目标人群。</li>
+<li><strong>A 错且诱人</strong>：会聊天离"会做架构决策"还差一大截，建议先补 Anthropic Academy 的 API / MCP / agent 相关免费课再上。</li>
+<li><strong>C 错</strong>：零实战纯刷题，场景题会把你问穿——它问的是"你改哪里"，不是"选哪个名词"。</li>
+<li><strong>D 错</strong>：不写代码、不读 API 文档的角色，短期内很难扛住 <code>technical exam</code> 的判断题，先补技术底子。</li>
+</ul>
+
+<h3>第 4 题</h3>
+<p>你个人考过 CCA-F 之后，下面哪条是<strong>真实</strong>的价值，哪条是被夸大的？</p>
+<ul>
+<li>A. 个人持证后就会自动进入 Services Partner Directory，企业买家能直接搜到你接单</li>
+<li>B. 考过就保证涨薪 / 保证接到单</li>
+<li>C. 持证等于官方认证你是"Claude Partner"，可以对外这么自称</li>
+<li>D. 证归属你个人、换工作跟着走，是可验证的履历背书，同时帮你所在公司凑合作伙伴层级的持证人数门槛</li>
+</ul>
+<p><strong>正确答案：D。</strong></p>
+<ul>
+<li><strong>D 对</strong>：官方明确证归个人不归公司；真实价值是履历背书 + 帮公司团队达标，这两点站得住。</li>
+<li><strong>A 错且最诱人</strong>：Directory 收录的是<strong>公司（firms）</strong>不是个人——"enterprise buyers can find firms"。把公司级权益说成个人待遇是最常见的误解。</li>
+<li><strong>C 错</strong>：持证是个人 credential，不等于官方 Partner 身份，别对外这么自称。</li>
+<li><strong>B 错</strong>：没有任何认证能"保证"薪资或接单结果，涨薪靠的是证背后你真实的能力。</li>
+</ul>
+
+<h2>官方文档引用</h2>
+<ul>
+<li>Introducing the Claude Partner Network（CCA 发布、2026-03-12、"technical exam for solution architects building production applications with Claude"）— https://www.anthropic.com/news/claude-partner-network</li>
+<li>Services track &amp; Partner Hub（证归个人不归公司、逾 1 万顾问持证、逾 4 万公司申请、Directory 收录 firms）— https://www.anthropic.com/news/services-track-partner-hub</li>
+<li>Claude Certification Program（Pearson VUE 承办、OnVUE 线上/线下考场、重考 12 个月内 4 次 · 间隔 14/30/90 天）— https://www.pearsonvue.com/us/en/anthropic.html</li>
+<li>OnVUE online testing requirements（录像远程监考、桌面清空、禁书本笔记等外部资源）— https://www.pearsonvue.com/us/en/anthropic/onvue.html</li>
+</ul>

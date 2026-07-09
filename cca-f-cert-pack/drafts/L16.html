@@ -1,0 +1,53 @@
+<h2>考前 48 小时：把可控的部分做到位</h2>
+<p>这一课不教知识点，教的是别在会做的题上翻车。考试是 Pearson VUE 承办、OnVUE 线上远程监考（也可选线下考场），闭卷、真人监考、全程录像、不许用任何 AI 辅助。真正吃亏的人往往不是不会，而是没过环境检查被取消、或者时间没分配好后面十几道没看完。下面按 48 小时倒计时把该锁的东西锁死。</p>
+
+<h3>先跑一遍 OnVUE 系统自检（考前 48 小时内）</h3>
+<p>OnVUE 官方要求你<strong>用考试当天同一台电脑、同一个网络</strong>跑一遍 System Test（<code>Run the System Test</code>），当场没过的机器考试当天基本也过不了。官方硬指标：Windows 10 或 macOS 14 及以上、可用的摄像头 / 麦克风 / 扬声器、下行至少 <strong>6 Mbps</strong> 上行至少 <strong>2 Mbps</strong> 的稳定网络。明确禁止的：虚拟机、beta 操作系统、<strong>VPN、公司内网、公共 / 共享网络</strong>，只允许单显示器。</p>
+<ul>
+<li>公司发的电脑最容易翻车——装了 MDM、防火墙、强制 VPN，监考软件起不来。宁可用自己的私人电脑跑家里网络。</li>
+<li>华人学员常踩的坑：家里挂着科学上网的 VPN 忘了关。考前把所有 VPN、代理全断掉再自检。</li>
+<li>双屏用户考前把第二块屏物理拔掉，别只是关掉。</li>
+</ul>
+
+<h3>证件、房间、提前 30 分钟登录</h3>
+<p><strong>证件</strong>：政府签发、带清晰照片的实体证件，上面的名字要和你报名时填的<strong>完全一致</strong>。过期的、电子版的、复印的、有破损的、法律上不允许拍照的证件一律不认（<code>Expired, digital, damaged, copied</code> 全被拒）。留学生用护照最稳，但要确认报名英文名和护照拼写逐字一致。</p>
+<p><strong>房间</strong>：check-in 时要做 360° 房间扫描 + 自拍 + 证件拍照。桌面必须清空，官方原文只允许桌上有<strong>考试用的电脑、预先批准的物品、一杯无标签容器里的饮料</strong>；手机、平板、耳机 / earbuds、手写笔、手表、书、纸笔、任何写字工具、食物全部拿走，房间里<strong>自始至终只能有你一个人</strong>（<code>remain alone at all times</code>）。</p>
+<p><strong>提前登录</strong>：官方要求<strong>提前 30 分钟开始 check-in</strong>，窗口是预约时间前 30 分钟到后 15 分钟。别卡点，前面技术检查 + 排队等 proctor 会吃掉时间，迟到超窗口直接作废、考费不退。以上任何一条以你收到的 Pearson 考试说明为准，程序页面偶尔会更新。</p>
+
+<h2>120 分钟怎么分：给自己一个时间预算</h2>
+<p>下面这组数字是<strong>社区口径，以官方公布为准</strong>：约 <strong>60 题 / 120 分钟</strong>，720 分及格（满分 1000），含场景题簇（社区说法 6 抽 4）。按 60 题 120 分钟摊，平均每题只有 <strong>120 秒</strong>——但不能真的匀速做，场景题一段材料要读两三分钟，纯概念题十几秒就能定。</p>
+<p>可执行的预算（数字为社区口径估算，按你实际卷量弹性调整）：</p>
+<ul>
+<li><strong>第一遍匀速通关 ≈ 95 分钟</strong>：概念 / 判断题控制在 <strong>60–75 秒</strong>，多出来的时间喂给场景题。</li>
+<li><strong>场景题每题预留 2.5–3 分钟</strong>：先读题干问的是什么，再回头读材料，别通读一遍再想问题。</li>
+<li><strong>留 15–20 分钟复查</strong>：只回头看第一遍标记（flag）过的题，不重做已经确定的题。</li>
+<li>硬规矩：<strong>任何一题卡过 90 秒就标记 flag 跳过</strong>，第一遍先把 60 题全部走完。没有任何一道单题值得你耗到最后没时间看后面五道。</li>
+</ul>
+<p>盯住屏幕上的倒计时。做到第 30 题时应该还剩 60 分钟以上；如果只剩 45 分钟，说明前面陷进去了，立刻提速、加大 flag 跳过的比例。</p>
+
+<h2>不确定的题：排除法 + 贴约束，不跟单题较劲</h2>
+<p>这是一门 solution architect 的考试，选项常常「都对但只有一个最优」。碰到不确定的题，流程固定成三步，别凭感觉：</p>
+<ol>
+<li><strong>先排除明显错的</strong>：CCA-F 的干扰项通常带一个硬伤——方向反了（比如「用 PostToolUse 去阻止一笔转账」，触发时事已发生）、把概率性手段当确定性保证（「在 prompt 里写一句 always verify」当成 100% 不发生）、或者无脑堆复杂度（简单咨询也上多 agent）。先划掉一两个，四选一变二选一，胜率立刻从 25% 到 50%。</li>
+<li><strong>回到题干的约束选最优</strong>：剩下的两个比的是「哪个更贴题目给的条件」。题里写「绝对不能发生」就选确定性机制（PreToolUse deny / hook），写「偏好 / 语气」就选 prompt；写「成本敏感」就选省 token 的单 agent。把题干里的关键约束词圈出来，答案往往就锁定了。</li>
+<li><strong>还是拿不准就凭排除后的直觉选一个、标记 flag、走人</strong>。绝不空着——没有倒扣，空题就是白送。选完立刻下一题，别回头反复纠结，那是在偷后面题目的时间。</li>
+</ol>
+<p>关于 <strong>标记复查（flag / mark for review）</strong>：它是给「有把握排到两个、但想再确认」的题用的，不是给「完全不会」的题用的。完全不会的先选一个保底答案再 flag。复查阶段时间有限，flag 的题控制在十道以内，太多等于没标；进复查时优先看「当时排到 50% 但倾向变过」的题，第一直觉通常别轻易推翻，除非复查时发现自己之前读漏了约束。</p>
+
+<h2>万一没过：把二刷排进日历</h2>
+<p>没过不是终点。重考规则在 Pearson VUE 的 Anthropic 认证官方页写明（原文见文末引用）：<strong>任一门考试在滚动的 12 个月内最多 4 次</strong>，两次之间有强制等待——第 1 次失败后隔 <strong>14 天</strong>，第 2 次后隔 <strong>30 天</strong>，第 3 次后隔 <strong>90 天</strong>。也就是说别指望「明天再刷一遍」，节奏要提前规划。</p>
+<p>一个能用的二刷计划：</p>
+<ul>
+<li><strong>考完当天趁记忆热</strong>，把还有印象、当时拿不准的考点原样记下来（别抄题、别外传，官方禁止 record / share 考题，只记「我对 hook 方向、context 隔离这两块不熟」这种自我诊断）。</li>
+<li><strong>用满 14 天等待期精准补漏</strong>：不要从头重刷全部，对着自诊清单和五个域回去补最弱的一两块。权重最高的 Agentic Architecture（社区口径 27%，以官方考纲为准）如果是弱项，优先砸这里，回报最高。</li>
+<li><strong>把重考日期直接约进日历</strong>：等待期一满就是你的目标日，倒排 14 天复习计划。有明确 deadline 的二刷通过率远高于「感觉准备好了再约」。</li>
+</ul>
+<p>没人能替你打包票，这门考试也没有「保过」这回事。但你能控的部分——环境自检、证件、时间预算、排除法、二刷节奏——全部做到位，就是把一次过的概率推到你能推的最高。</p>
+
+<h2>官方文档引用</h2>
+<ul>
+<li>Testing requirements for OnVUE online exams（系统 / 证件 / 房间 / 提前 30 分钟 / 禁带物品）— https://www.pearsonvue.com/us/en/onvue/requirements.html</li>
+<li>Tips on taking an OnVUE exam（系统自检 / 无干扰环境 / 监控同意）— https://www.pearsonvue.com/us/en/onvue/tips.html</li>
+<li>Claude Certification Program by Anthropic — Pearson VUE（承办方 / 重考政策：12 个月内最多 4 次、14 / 30 / 90 天等待期）— https://www.pearsonvue.com/us/en/anthropic.html</li>
+<li>Claude Certified Architect / Anthropic Partner Network 公告（认证定位）— https://www.anthropic.com/news/claude-partner-network</li>
+</ul>

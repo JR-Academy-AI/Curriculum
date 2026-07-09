@@ -1,0 +1,61 @@
+<h2>先分清：哪些官方板上钉钉，哪些是社区口径</h2>
+<p>这一课只干一件事：把 CCA-F 考试形式里"Anthropic 官方确认过的"和"考生社区口口相传的"拆开。为什么较真？因为免费资料最爱把社区猜测当官方硬指标写，你照着数字卡自己，进考场一对不上就慌。下面两栏摆清楚，你带着"每条信到什么程度"进场。</p>
+
+<h3>官方已确认（可信，直接采用）</h3>
+<ul>
+<li><strong>承办方 = Pearson VUE</strong>。报名走 Anthropic Partner Academy，首次考 Pearson 会发账号密码邮件，再登录排期。</li>
+<li><strong>两种交付方式</strong>：OnVUE 线上远程监考（在家考）或线下 Pearson 考场。</li>
+<li><strong>闭卷、真人监考、全程录像</strong>。桌面必须清空，不许多屏、不许碰手机、不许他人代考——等于没有任何 AI 辅助的空间。</li>
+<li><strong>认证归个人不归公司</strong>。原文："Certifications belong to individual people, not firms."</li>
+<li><strong>重考规则</strong>：滚动 12 个月内每门最多 <strong>4 次</strong>；失败后等待期递增 <strong>14 / 30 / 90 天</strong>。</li>
+<li><strong>现在共四门认证</strong>：Associate-Foundations、Architect-Foundations（本课对应的架构师入门）、Architect-Professional、Developer-Foundations。</li>
+</ul>
+
+<h3>社区口径（未经官方公布，一律以官方为准）</h3>
+<ul>
+<li>约 <strong>60 题 / 120 分钟</strong></li>
+<li>及格线 <strong>720 分</strong>（满分 1000）</li>
+<li>场景题 <strong>6 抽 4</strong></li>
+<li>五域权重 <strong>27 / 20 / 20 / 18 / 15</strong>（Agentic Architecture 最重，Context Management 最轻）</li>
+</ul>
+<p>这四条在 anthropic.com 公开页面都查不到一手出处。域的<strong>名称和相对排序</strong>可信度较高，具体<strong>百分比和题数不能当官方引用</strong>。<strong>一句话原则：以你在 Pearson VUE 考试说明页看到的为准；实际与社区口径冲突时，官方说了算。</strong></p>
+
+<h2>① 谁承办、怎么交付</h2>
+<p>Pearson VUE 是全球最大的标准化考试承办商，AWS、微软、Cisco 的认证都走它，流程成熟。落到你手上是这条链：Partner Academy 报名 → 收到 Pearson 账号密码邮件 → 登录选 <code>OnVUE</code> 在线或线下考场 + 时间。</p>
+<p>选 OnVUE 在家考，硬件门槛是真实卡人的（官方要求）：<code>Windows 10</code> 或 <code>macOS 14</code> 及以上、可用的摄像头麦克风扬声器（<strong>不许戴耳机</strong>）、<strong>单显示器</strong>（多屏直接不让考）、下行至少 <code>6 Mbps</code>、上行 <code>2 Mbps</code>。开考前要拍环境照，桌面清空到只剩考试电脑和一个无标签水杯。这些不达标当场就被拦，别等考试日才发现家里是双屏。</p>
+<p>OnVUE 的通行流程也要提前演练：一般提前 15-30 分钟登录，先跑系统自检，再用摄像头拍带照片的政府证件、拍四周环境（桌面、前后左右墙面），监考员人工核验通过后才解锁题目。核验期间摄像头不能离开人脸、不能读题、不能有人进房间——这些都算违规，严重的直接终止考试。所以考前把手机静音、门锁上、桌面收干净，别让一次能过的考试栽在环境上。选线下考场则相反省心：带政府签发的带照片证件去，包和电子设备存储物柜，考场发草稿工具，全程有人现场监考。哪种交付都是同一套闭卷监考逻辑，AI 辅助、翻资料、找人帮答一律不可能。</p>
+<p>"认证归个人"这条容易被误读成"个人持证就能进 Services Partner Directory 被企业买家找到"——错。Directory 收录的是<strong>公司（firms）</strong>，原文写得很清楚。个人持证的真实价值是两块：给自己履历背书，以及帮所在公司凑够 CPN 合作层级要求的 certified individuals 人数。目前全球已有 <strong>1 万多名</strong>顾问拿到 Claude 认证、<strong>4 万多家</strong>公司在排队申请合作，这张证的含金量正在被市场定价。</p>
+
+<h2>② 题量与时长</h2>
+<p>社区口径是 <strong>约 60 题 / 120 分钟</strong>，折算每题约 2 分钟。<strong>但官方没公布这两个数</strong>，别当铁指标。</p>
+<p>备考策略不该赌数字，该练的是<strong>判断速度</strong>：看完一段场景，90 秒内定位它考的是哪个域、锁定判据。L06 讲 Domain 1 时给过判据——<code>stop_reason</code> 是唯一可靠的 loop 终止信号、默认从单 agent 起步、100% 必守的动作用 <code>PreToolUse</code> hook 而不是写进 prompt。这种"看到情境就知道考什么"的反应，才是跨过时长压力的东西，比背题数有用。真进考场那一页会写明确题数和时长，以它为准。</p>
+
+<h2>③ 及格线与评分</h2>
+<p>社区流传及格线 <strong>720（满分 1000）</strong>。但 Anthropic 未公开评分算法：是不是 scaled score（换算分）、每题是否等权、错题倒不倒扣，全都没有官方出处。</p>
+<p>一个最常见的错误换算：拿"720/1000 = 答对 72%"去反推"那我能错 17 题"。<strong>标准化考试普遍用换算分，答对率和最终得分不是线性关系</strong>，这么算会给自己错误的安全感。你能做的是把五个域<strong>都</strong>拉到能过线的水平，别指望"强域拉分救弱域"。权重最高的 Agentic Architecture（社区口径 27%）先吃透——四道题里可能有一道以上出自这里。</p>
+<p>分配复习时间可以粗按社区权重来排优先级：Agentic Architecture 和 Claude Code Configuration、Prompt Engineering 这三块合计过半，是主战场；Tool Design &amp; MCP、Context Management 权重低但也别裸考，场景题经常把"上下文隔离""工具选择"这些点混进架构题里一起考。记住这只是排序参考，不是官方配比，考完拿到成绩单看实际分域反馈更靠谱。</p>
+
+<h2>④ 场景题机制</h2>
+<p>社区说法是"<strong>6 抽 4</strong>"（可能指一组场景下的多道题，或一题多选里选 4 项）。机制细节以考试界面实际显示为准，别纠结这个数字。</p>
+<p>你真正要理解的是<strong>场景题在考什么</strong>：它给你一段贴近生产的情境——agent 该收尾却提前终止了、退款要不要转人工、多 agent 汇总报告缺了一整块维度——四个选项里往往三个是"看起来对"的干扰项。你要用判据把它们逐个排除，不是回忆某个定义。L06 那五道自测就是这个形态：每道都有一个"最诱人的错项"，靠概念判断力才能绕过。</p>
+<p>举个匠人自己会碰到的原创情境感受一下题感：你给一个留学生求职工具做双语客服 agent，它偶尔在"还得再查一次数据库"的时候就提前吐了最终答复。四个选项——A 在 system prompt 里写死"查完所有工具再回复"，靠指令逼它别早停；B 把 <code>max_tokens</code> 调大，让它有足够 token 把工具调完；C 每轮读响应的 <code>stop_reason</code>，返回 <code>tool_use</code> 就接着跑工具、返回 <code>end_turn</code> 才收尾；D 把最大迭代次数从 10 调到 30，给它更多轮次。A 像"下死命令"、B 和 D 像"给足资源"，但这三条全在绕根因：模型返回 <code>tool_use</code> 就是明说"我还要调工具"，你的 loop 没接着这个字段跑才会早停——只有 C 读的是这个信号。这种题不靠背，靠你在 Domain 1 建立的判断链。</p>
+<p>匠人给的备考动作很具体：过每一个考点时，逼自己写出"什么情况下选它、另外三个各错在哪"。考场上的场景题，考的就是这套已经练成肌肉的排除逻辑。</p>
+
+<h2>⑤ 重考规则与二刷时间规划算法</h2>
+<p>官方确认的三条硬规则：滚动 12 个月内每门最多考 <strong>4 次</strong>；失败后等待期<strong>递增</strong>——一挂等 14 天、二挂等 30 天、三挂等 90 天；改期/取消只能在<strong>距开考还剩 24 小时以上</strong>时通过 Pearson 账号免费操作（官方原文 "up to 24 hours prior to your scheduled appointment"），<strong>一旦进入最后 24 小时窗口就改不了</strong>——到时不到场按缺考处理，考试费损失。</p>
+<p>把这几条拼成一套可执行的二刷规划：</p>
+<ol>
+<li><strong>首考日往前留 buffer</strong>：把首考安排在你真实 deadline 前至少 5 周，万一挂了还有二刷、三刷的时间窗。</li>
+<li><strong>算清最早重考日</strong>（设首考为 D0 且失败）：二考最早 <code>D+14</code>；若二考再挂，三考最早 <code>D+14+30 = D+44</code>；若三考再挂，四考最早 <code>D+44+90 = D+134</code>。四次打满约 4.5 个月。把这条时间线倒推回你的目标月份，定出 D0。</li>
+<li><strong>次数不是真约束，"没过"才是</strong>：一年内约满 4 次绰绰有余，真正的风险是"4 次用完还没过"。所以每次失败后别等到 14 天到点就冲——先用成绩反馈把弱域补透再约下一次。</li>
+<li><strong>要改期必须赶在 24 小时红线之前决定</strong>：免费改期/取消只在距开考 24 小时以上时开放，进最后 24 小时就锁死，只能到场硬考或直接缺考损失费用。所以开考前一天就把环境过一遍（会不会临时变双屏、网速稳不稳、家里吵不吵），发现不达标赶在窗口关闭前改；真拖到最后 24 小时才发现状态不对，已经没有免费改期这条路，改期不消耗 attempt 这个便利也用不上了。</li>
+</ol>
+<p>套一个真实月份走一遍：假设你想在 10 月拿证冲一个求职窗口，就把首考 D0 定在 8 月底（deadline 前 5 周以上）。8 月底挂了，9 月中（D+14）二刷；再挂，10 月中（D+44）三刷仍赶得上 10 月的目标。这条时间线的意义是——首考不要卡在 deadline 前一周，否则一次失败就没有第二次机会了。把"最坏挂三次也能过"提前算进日历，比考前焦虑有用得多。</p>
+
+<h2>官方文档引用</h2>
+<ul>
+<li>Pearson VUE — Anthropic Claude Certification Program（承办方、四门认证清单、重考 14/30/90 天、12 个月内最多 4 次、改期 24 小时）— https://www.pearsonvue.com/us/en/anthropic.html</li>
+<li>Pearson VUE — Anthropic OnVUE 在线考试要求（远程监考、全程录像、桌面清空、单显示器、6/2 Mbps 网速门槛、禁手机禁代考）— https://www.pearsonvue.com/us/en/anthropic/onvue.html</li>
+<li>Anthropic — Services track &amp; Partner Hub（认证归个人不归公司、Directory 收录公司、1 万+顾问持证、4 万+公司申请）— https://www.anthropic.com/news/services-track-partner-hub</li>
+<li>Anthropic — Claude Partner Network 公告（CCA 架构师认证发布，面向搭建生产应用的方案架构师）— https://www.anthropic.com/news/claude-partner-network</li>
+</ul>

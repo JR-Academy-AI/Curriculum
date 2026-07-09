@@ -1,0 +1,79 @@
+<h2>先说清楚：这六类是匠人的切分，不是官方分类</h2>
+<p>CCA-F 官方从没公布过"场景题分几类"。下面这套<strong>六类切分是匠人自己的归纳</strong>——我们把五个域（Agentic Architecture、Claude Code Configuration、Prompt Engineering、Tool Design &amp; MCP、Context Management）里反复出现的题干形态反推出来，做成一套上考场能对号入座的工具。它不是考纲，别拿去当"官方六大题型"背。</p>
+<p>用法接着 L11 那套<strong>四步定位法（抓约束 → 判域 → 排雷 → 选最贴）</strong>：这六类本质是帮你把"判域"和"排雷"提速——题干一出来先归到某一类，就知道该调哪套判据、该盯哪种干扰项。每一类给你三样东西：<strong>识别信号</strong>（题干出现什么词/什么约束就是这类）、<strong>正确解法方向</strong>、<strong>这类题的干扰项长什么样</strong>。社区流传的 60 题、场景题 6 抽 4 是<strong>社区口径，以官方为准</strong>，别当硬指标。</p>
+
+<h2>场景类型 1-2：多智能体编排 · 工具选择调试</h2>
+
+<h3>类型 1 · 多智能体编排</h3>
+<p>拿一个真实语境：华人学员做的"澳洲租房情报聚合"工具，一次查询要同时看某套房源的挂牌价、所在区治安、到 CBD 的通勤、周边学区——四路彼此独立、能并行。</p>
+<ul>
+<li><strong>识别信号</strong>：题干出现"多路独立子任务可并行""orchestrator-worker""coordinator / subagent""汇总报告整块维度缺失""subagent 拿不到上下文"。</li>
+<li><strong>正确解法方向</strong>：判域先落到 Agentic Architecture。默认<strong>由简入繁</strong>，只有任务能切干净、且价值高到值回成本时才上多 agent（多 agent 约比单纯对话多用 <strong>15 倍 token</strong>）。上了就守边界：subagent 跑在全新对话里、拿不到 parent 历史、只回流 final message、通信只经 coordinator——parent 要传的路径和前序结论必须显式写进 Agent 工具那段 prompt。报告在<strong>广度</strong>上缺一整块（比如漏了学区那路），根因几乎一定在 <strong>coordinator 的任务分解</strong>，改分解逻辑多切一路，别去动某个 subagent。</li>
+<li><strong>干扰项长什么样</strong>：给"查个开班时间"这种单步小任务也上多 agent，理由是"显得更稳更专业"——忽略成本/延迟约束的典型；把汇总缺块怪到"search agent 关键词不好"或"换个更强的汇总 agent"（它们只会领到同样残缺的任务）；让 subagent 之间直连要上下文（破坏可观测性，官方明确禁止）。</li>
+</ul>
+
+<h3>类型 2 · 工具选择调试</h3>
+<p>语境：考证匠会员刷题 App 的客服 agent 挂了 <code>get_course_order</code>（查课程订单开通状态）、<code>get_member_profile</code>（查会员资料）、<code>check_quiz_progress</code>（查刷题进度）三个工具，学员反馈它老选错——用户给了订单号 <code>#74620</code> 问"我买的冲刺班开通了没"，它却去调 <code>get_member_profile</code> 报了一堆账号信息。</p>
+<ul>
+<li><strong>识别信号</strong>：题干出现"选错工具 / misrouting""工具太多选不准""该调 A 调了 B""MCP 集成""结构化输出保证"。</li>
+<li><strong>正确解法方向</strong>：<strong>tool description 是 tool selection 的首要机制</strong>——官方原话 "by far the most important factor in tool performance"，每个工具描述<strong>至少 3-4 句</strong>，写清做什么、什么时候用（和什么时候<strong>别</strong>用）、参数格式、和相邻工具的边界。上面那个 misrouting，根因就是 <code>get_course_order</code> 的描述太薄（只有一句"查订单信息"），模型分不清它和 <code>get_member_profile</code> 谁管订单号。把描述改成"当用户提供订单号查课程开通/发货状态时用本工具；查会员等级、绑定手机等账号资料请用 <code>get_member_profile</code>"，选对率立刻上来。改描述是 low-effort high-leverage 的第一步。工具太多本身会增加选择歧义，官方建议把相关操作<strong>合并成更少、更有能力的工具</strong>（用 <code>action</code> 参数区分）。需要保证每轮必出结构化调用时，<code>tool_choice</code> 用 <code>"any"</code>。</li>
+<li><strong>干扰项长什么样</strong>：第一步就上"routing classifier / 分类模型"去路由——over-engineered，绕过了模型本来的语言理解；misrouting 时第一反应加 few-shot（治标，描述都没写清就先堆例子）；直接再加几个工具让它"更全";把 <code>tool_choice</code> 长期钉死成 <code>"any"</code>（该收尾那轮也被迫再调工具，死循环）。</li>
+</ul>
+
+<h2>场景类型 3-4：升级人工 · Claude Code 团队工作流</h2>
+
+<h3>类型 3 · 升级人工</h3>
+<p>语境：留学生咨询平台的 agent 会被问签证、退课退款、改绑定邮箱——有些必须停下来交人。</p>
+<ul>
+<li><strong>识别信号</strong>：题干出现"什么时候转人工""高风险 / 涉法 / 涉钱""客户明确要求人工""政策没覆盖这种情况""超出 agent 能力"。</li>
+<li><strong>正确解法方向</strong>：把升级条件写成<strong>明确的分类标准</strong>，不是靠模型体会。可靠的触发就几种：客户明说要真人 → <strong>立即转、零调查</strong>；政策对这种情况本身沉默（policy gap，不是 policy violation——后者有文档答案不用升级）→ 转；真的实际尝试过且失败 → 转。涉钱涉法这类"单次失败就出事"的动作，升级本身要落到 hook 层的确定性 gate（见类型 6），不是让模型自己决定要不要停。签证这种有法律风险的，识别为超范围 + 引导去持牌顾问，别硬编一个听着专业的答案。这里要分清 policy gap 和 policy violation：超了退货窗口是 violation，政策白纸黑字写了"不行"，agent 直接答不用升级；政策对这种情况根本没写（gap），才升级。</li>
+<li><strong>干扰项长什么样</strong>：在 system prompt 写一句"遇到情绪激烈的投诉务必转人工"就当解决了——这是概率手段冒充硬保障，"偶尔漏转"就是概率漏下来那部分；用<strong>客户情绪</strong>或<strong>模型自报置信度</strong>当升级触发（情绪和案件复杂度不相关，自报置信度校准很差）；客户已经明说要人工了还先"让我先帮你试试"；搜索到三个同名客户时按"最近活跃"那条猜一个（该做的是索要 email / 订单号等额外标识）。</li>
+</ul>
+
+<h3>类型 4 · Claude Code 团队工作流</h3>
+<p>语境：团队几个人用 Claude Code 一起维护 <code>jr-academy</code> 这个 repo，配置放哪、权限怎么定、密钥怎么管，是这类题的核心。</p>
+<ul>
+<li><strong>识别信号</strong>：题干出现"团队共享 / 多人协作""配置放哪个文件""权限 allow/deny""<code>CLAUDE.md</code>""<code>.mcp.json</code>""个人 vs 全队""密钥 / secrets"。</li>
+<li><strong>正确解法方向</strong>：<strong>要全队共享的进版本控制</strong>——团队权限和 hooks 进 <code>.claude/settings.json</code>、团队记忆进 <code>CLAUDE.md</code>、团队 MCP server 进 <code>.mcp.json</code>，这三个都 check 进 git。<strong>个人的不进 git</strong>——个人覆盖进 <code>.claude/settings.local.json</code>（自动 gitignore）、个人记忆进 <code>CLAUDE.local.md</code>、个人级别进 <code>~/.claude/settings.json</code>。权限规则 <code>deny</code> 永远压过 <code>allow</code>——想彻底禁掉 <code>Bash(curl *)</code> 或读 <code>.env</code>，写进 <code>deny</code> 就没人能覆盖。密钥绝不明文写进 <code>.mcp.json</code>，用 <code>${ENV_VAR}</code> 引用（config 里只留变量名不留值），各人本地设自己的 token，配置才能安全 commit，token 轮换也不用改 config。判这类题的一条捷径：先问"这份配置是要全队生效还是只我自己"，答案直接决定进不进 git。</li>
+<li><strong>干扰项长什么样</strong>：把"全队都要遵守的标准"写进个人的 <code>~/.claude/settings.json</code>（别人根本拿不到）；把 credentials 明文塞进 <code>.mcp.json</code> 然后 commit；把个人的实验性配置 commit 进 repo 污染全队；以为 <code>allow</code> 能覆盖 <code>deny</code>（反了，deny 永远赢）。</li>
+</ul>
+
+<h2>场景类型 5-6：上下文成本权衡 · 可靠性护栏</h2>
+
+<h3>类型 5 · 上下文与成本权衡</h3>
+<p>语境：会员制刷题 App，一头是学员和 AI tutor 的长对话，一头是每晚批量给题库生成解析。两头对延迟和成本的要求正好相反。</p>
+<ul>
+<li><strong>识别信号</strong>：题干出现"长对话 / 上下文塞不下""token 成本高 / 想省钱""延迟""缓存 caching""批量处理""历史被摘要后丢了关键信息"。</li>
+<li><strong>正确解法方向</strong>：省重复前缀用 <strong>prompt caching</strong>——静态内容放前面（缓存前缀顺序是 <code>tools → system → messages</code>），<code>cache_control: {"type":"ephemeral"}</code> 打在<strong>最后一个跨请求不变的块</strong>上，命中后 cache read 只要 <strong>0.1 倍</strong>输入价（省约 90%），默认 <strong>5 分钟</strong>不用就过期。不要实时结果的批量任务（晚间批量出解析）走 <strong>Message Batches API</strong>：成本省 <strong>50%</strong>、最长 <strong>24 小时</strong>窗口（多数一小时内完成，但设计要按 24 小时最大值算）、用 <code>custom_id</code> 关联每条请求方便挑出失败项重提交；用户在实时等的对话必须留同步 API。长会话主动 <code>/compact</code>，把金额、订单号这种交易事实抽成一个不被摘要的固定块，放进每轮 prompt。</li>
+<li><strong>干扰项长什么样</strong>：把 <code>cache_control</code> 打在"带时间戳、每次都变"的块上（前缀 hash 每次不同，<strong>永远命中不了</strong>）；为省钱把实时用户对话也切 batch（用户可能等满 24 小时）；上下文退化时靠<strong>加大 context window</strong>硬扛（这是注意力质量问题不是容量问题，装得下不等于注意得均）；放任 progressive summary 把金额、订单号一起摘掉。</li>
+</ul>
+
+<h3>类型 6 · 可靠性护栏</h3>
+<p>语境：客服 agent 的退款、转账动作，要求"身份没验证通过绝对不能执行"。这类"100% 不能出事"是可靠性题的题眼。</p>
+<ul>
+<li><strong>识别信号</strong>：题干出现"绝对不能 / 100% 不允许""单次失败就出金钱或法律后果""退款 / 转账前置校验""幂等 / 护栏 / 前置 gate""错误处理 / 重试"。</li>
+<li><strong>正确解法方向</strong>：确定性动作用<strong>确定性机制</strong>——<code>PreToolUse</code> hook 在工具执行<strong>之前</strong>触发，未满足前置条件就返回 <code>permissionDecision: "deny"</code>，钱根本跑不起来，模型绕不过。loop 终止靠 <code>stop_reason</code>（<code>tool_use</code> 继续、<code>end_turn</code> 结束），迭代上限只当防失控的安全网。错误响应要<strong>结构化分类</strong>：transient（超时→可重试）、validation（输入错→改了再试）、business（违反政策→绝不重试，走升级）、permission（无权限→换凭证）；并且分清"访问失败"（没够到数据源，可考虑重试）和"查询成功但空结果"（空本身就是答案，重试只会一直空）。</li>
+<li><strong>干扰项长什么样</strong>：用 <code>PostToolUse</code> 去"阻止"违规转账（触发时钱已经出去了，方向反了）；靠"加强 system prompt 指令"保证某动作绝不发生（概率手段冒充硬保障）；对空结果或 business 错误<strong>盲目重试</strong>（空结果永远重现、政策冲突每次都触发）；agent 老是提前退出，去<strong>调大迭代上限</strong>而不是修 <code>stop_reason</code> 判断（治不了，病因在判断逻辑）。</li>
+</ul>
+
+<h2>陷阱选项的通用识别法</h2>
+<p>把六类题的干扰项摊平了看，翻来覆去就那么几副面孔。记住这几个模式，遇到新题也能一眼认出哪个选项是坑。</p>
+<ul>
+<li><strong>「加强 system prompt 指令」冒充确定性保障（最高频）</strong>——凡是题干要"100% / 绝对 / 必须"，而某个选项是"在 prompt 里写清楚 / 加一句 always…"，几乎都是坑。prompt 是概率性的，能把遵守率推很高，压不到 0 失败。硬要求要的是 hook / 代码级 gate。</li>
+<li><strong>「盲目重试」当作错误处理</strong>——重试只对"再来一次有可能成功"的错有效（transient、格式错改了再试）。对"查询成功但空结果""违反政策的 business 错误""源文档根本没这信息"，重试是白烧 token。看到"重试 N 次 / 提高重试上限"先问一句：这个错重试有救吗？</li>
+<li><strong>「加迭代上限」去治本该查 <code>stop_reason</code> 的问题</strong>——agent 提前退出，根因是没看 <code>stop_reason</code>、只看了 content 第 0 块；agent 该停不停，根因也在终止判断。调迭代上限是反方向的药，上限是防 runaway 的安全网，不是正常终止信号。</li>
+<li><strong>「过度工程」——不必要地上多 agent / 上分类器 / 忽略成本与延迟约束</strong>——"多 agent 显得更专业""先上个 routing classifier""换更大 context window / 更强模型"这类选项，读着高级，但官方铁律是<strong>先用最简单能解决的方案，只有简单方案顶不住才加复杂度</strong>。复杂度是拿延迟和成本换的，题干只要有成本/延迟约束，第一个被排除的往往就是它。</li>
+</ul>
+<p>一条收口的自检：<strong>把可疑选项和"题干那条硬约束"对一遍</strong>——它是在正面解决约束，还是用一个听着合理的手段绕过约束？绕过的就是干扰项。这也正是 L11 四步法的最后一步"选最贴"在做的事：脱离约束，选项对不对根本判不了。下一课 L13 会把这些干扰项套路成对拆开，练到能反射性识别。</p>
+
+<h2>官方文档引用</h2>
+<ul>
+<li>Define tools / implement tool use（tool description 是 tool selection 首要机制、至少 3-4 句、合并成更少工具、<code>tool_choice</code> auto/any/tool/none）— https://platform.claude.com/docs/en/agents-and-tools/tool-use/implement-tool-use</li>
+<li>Claude Code Settings（<code>.claude/settings.json</code> vs <code>settings.local.json</code>、<code>CLAUDE.md</code>、<code>.mcp.json</code>、permissions deny &gt; allow、<code>${ENV_VAR}</code>）— https://code.claude.com/docs/en/settings</li>
+<li>Prompt caching（prefix 匹配、<code>cache_control</code> ephemeral、5 分钟 TTL、cache read 0.1x、tools→system→messages 顺序）— https://platform.claude.com/docs/en/build-with-claude/prompt-caching</li>
+<li>Message Batches API（省 50%、最长 24 小时窗口、<code>custom_id</code>）— https://platform.claude.com/docs/en/build-with-claude/batch-processing</li>
+<li>Building Effective Agents（由简入繁、只在复杂度能改善结果时才加、人工检查点暂停）— https://www.anthropic.com/engineering/building-effective-agents</li>
+<li>How we built our multi-agent research system（orchestrator-worker、约 15× token、分解质量决定广度覆盖）— https://www.anthropic.com/engineering/multi-agent-research-system</li>
+<li>Intercept and control agent behavior with hooks（PreToolUse / PostToolUse、<code>permissionDecision</code> deny/ask）— https://code.claude.com/docs/en/agent-sdk/hooks</li>
+<li>Handling stop reasons（<code>stop_reason</code> 驱动 loop 终止）— https://platform.claude.com/docs/en/api/handling-stop-reasons</li>
+</ul>
