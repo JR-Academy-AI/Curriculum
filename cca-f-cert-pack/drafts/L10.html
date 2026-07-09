@@ -1,0 +1,140 @@
+<h2>考点地图：Domain 5 — Context Management（权重约 15%，社区口径）</h2>
+<p>五个考域里 Context Management 权重最低（15%），但它是最容易靠"工程直觉"答错的一域。原因是：这域几乎不考 API 语法，考的是<strong>生产系统里管上下文的判断力</strong>——什么该留在 context 里、什么该踢出去、长会话怎么不丢关键事实、检索和直接塞满怎么选。很多题的错误选项看起来都"挺合理"，比如"加大到 1M 窗口就好了"、"撞上限再说"，全是陷阱。</p>
+<p>这一课把这个域拆成三块高频子考点讲透：</p>
+<ul>
+<li><strong>上下文预算与管理</strong>——context window 装什么、API 无状态意味着什么、token 怎么算、prompt caching 怎么省钱、context editing 怎么自动清工具结果</li>
+<li><strong>检索 vs 塞满上下文</strong>——just-in-time 按需检索和一次性预加载的取舍，以及 context rot 这个根因</li>
+<li><strong>长会话的记忆与状态设计</strong>——memory tool、compaction、跨会话恢复</li>
+</ul>
+<p>关于考试形式：这域偏场景判断题多。<strong>坊间流传的"60 题 / 120 分钟 / 720 分及格 / 6 抽 4 场景"是社区口径，不是 Anthropic 官方公布的数字，一切以官方为准。</strong>下面每个技术断言都能追溯到官方文档，文末列了抓取过的 URL。</p>
+
+<h2>① 上下文预算与管理：先搞清楚 context window 到底装了什么</h2>
+<h3>context window = 模型的"工作记忆"，不是硬盘</h3>
+<p>官方定义很直白：context window 是模型生成回复时能引用的全部文本，<strong>包括它正在生成的回复本身</strong>。它是"working memory"，跟模型训练时见过的海量语料是两回事。一个请求里所有东西都算进这个窗口：system prompt、<code>messages</code> 里每一条消息（含 tool results、图片、文档）、你的 tool definitions，以及 Claude 这一轮生成的输出（连它的 extended thinking 也算）。每次响应的 <code>usage</code> 字段会报告这次请求消耗了多少。</p>
+<p>窗口大小按模型分档：Claude Sonnet 4.5 及更早是 <strong>200K token</strong>；Opus 4.8 / 4.7 / 4.6、Sonnet 5 / Sonnet 4.6 是 <strong>1M token</strong>。1M 模型不用加 beta header，默认就是 1M。单个请求最多带 600 张图或 PDF 页（200K 模型是 100 张）。</p>
+<h3>API 无状态：每次都要背着全部历史走</h3>
+<p>关键认知：Messages API 是无状态的，服务端不替你存 session。你看到的多轮对话，本质是<strong>每一轮请求的 input 都把之前所有对话历史原样带上</strong>再发一遍。这条直接决定了两件事：(1) 会话越长，每次请求越贵、越慢，因为历史在滚雪球；(2) 你不能随手截掉中间某几轮"省点 token"——那会破坏对话连贯，模型会突然失忆。要减负得用专门机制（下面讲的 context editing / compaction），不是手动剪历史。</p>
+<h3>为什么 1M 窗口不是万能药：context rot</h3>
+<p>官方点名了一个现象叫 <strong>context rot</strong>：随着窗口里 token 变多，模型准确召回信息的能力会下降。这不是 bug，是 transformer 架构的固有代价——注意力要在越来越多的 token 对之间摊薄。所以官方原话是"curating what's in context just as important as how much space is available"——<strong>往 context 里放什么，和你有多大空间同等重要</strong>。考试里但凡出现"直接换更大窗口解决问题"的选项，基本是错的。</p>
+<p>撞上限时的行为也要记：如果光 input 就超了窗口，API 直接返回 <code>400 invalid_request_error</code>（"prompt is too long"）。在 Claude 4.5 及更新的模型上，如果 input + <code>max_tokens</code> 超窗口，请求会被接受，但生成到上限时会以 <code>stop_reason: "model_context_window_exceeded"</code> 停下——所以"撞上限它会优雅降级"是错的，它是停，不是自动压缩。</p>
+<h3>省钱的第一手：prompt caching</h3>
+<p>如果你每次请求都重复发一大段静态内容（长 system prompt、tool definitions、参考文档），prompt caching 能让这部分只按缓存价计费。用法是在内容块上打 <code>cache_control</code>：</p>
+<pre><code>"cache_control": { "type": "ephemeral", "ttl": "5m" }</code></pre>
+<p>要点全在细节里，考试专挑这些考：</p>
+<ul>
+<li><strong>只有一个 type：<code>ephemeral</code></strong>。TTL 可选 <code>"5m"</code>（默认）或 <code>"1h"</code>。</li>
+<li><strong>最多 4 个 cache breakpoint</strong>，别乱加。</li>
+<li><strong>缓存前缀严格按 <code>tools</code> → <code>system</code> → <code>messages</code> 的顺序生成</strong>，逐 prefix 匹配。所以静态内容（tool 定义、system 里的知识库）必须放前面，breakpoint 打在静态块末尾，易变内容（用户当次输入）放后面。<strong>顺序放反 = 前缀对不上 = 完全命中不了缓存。</strong></li>
+<li>计费倍率：5 分钟写入 <strong>1.25x</strong>、1 小时写入 <strong>2x</strong>、命中读取只要 <strong>0.1x</strong> 基础 input 价。所以"用 1h 一定更省"是错的——如果内容不会隔那么久复用，1h 的 2x 写入成本你就白付了。</li>
+<li>响应 <code>usage</code> 里看效果：<code>cache_creation_input_tokens</code>（写进缓存的量）、<code>cache_read_input_tokens</code>（命中读的量）、<code>input_tokens</code>（最后一个 breakpoint 之后、没缓存的量）。</li>
+<li>注意：<strong>缓存的前缀仍然占用 context window</strong>。caching 改的是你为这些 token 付多少钱，不改它们算不算进窗口。</li>
+</ul>
+<h3>自动清理工具结果：context editing</h3>
+<p>agent 会话里，工具每调一次就往历史里塞一坨结果，很快撑爆预算。官方给的自动方案是 context editing 的 <code>clear_tool_uses_20250919</code> 策略：当 input token 超过 <code>trigger</code> 阈值（默认 <code>{"type":"input_tokens","value":100000}</code>），最旧的工具结果按时间顺序被清掉、替换成一段占位文本（让模型知道"这里被清过"），并保留最近 <code>keep</code> 个工具调用（默认 3 个）。还能用 <code>exclude_tools</code> 保护某些工具的结果永不被清、用 <code>clear_at_least</code> 保证每次至少清够多少（避免频繁失效缓存）。这套要带 beta header <code>context-management-2025-06-27</code>。<strong>它和手动剪历史的区别就是——自动、按阈值触发、还给模型留了占位符提示，不会让模型莫名其妙失忆。</strong></p>
+
+<h2>② 检索 vs 塞满上下文：两种拿数据的姿势，考的是取舍</h2>
+<p>假设一个华人学员做的 AI 产品要基于一本 500 页的产品手册答用户问题。有两条路：</p>
+<h3>路 A：一次性全塞进上下文（pre-loading / stuffing）</h3>
+<p>把整本手册塞进 system prompt，每次请求都带着。好处是模型一眼看全、不用再去找。坏处是官方反复强调的：token 一多就 context rot，召回反而下降；而且每次都占满窗口、又贵又慢。就算用 prompt caching 把手册缓存起来省了钱，它<strong>照样占着 context window</strong>——rot 的问题一点没解决。</p>
+<h3>路 B：按需检索（just-in-time retrieval）</h3>
+<p>官方推荐的方向：不预处理全部数据，而是让 agent 手里只握"轻量标识符"——文件路径、存好的查询、网页链接——运行时用工具<strong>按需把相关片段动态载入上下文</strong>。官方把这比作人的认知：我们不背整本百科全书，而是用文件系统、收件箱、书签这类外部索引，需要时再取。这就是 RAG / agentic search 的核心思路：上下文始终保持精简，只放当前这个问题真正需要的高信号 token。</p>
+<p>取舍点（考试爱考）：just-in-time 的代价是<strong>运行时探索比读预先算好的数据慢</strong>。所以官方给的现实答案往往是<strong>混合策略</strong>——先预加载一部分肯定要用的，再让 agent 自主按需检索其余。核心判据是那句"the smallest possible set of high-signal tokens"——用最少的高信号 token 达成目标。选项里出现"为了保险把所有可能相关的都塞进去"，基本是错的。</p>
+<p>把这条落到匠人的场景：给留学生做的求职工具，用户简历、目标 JD、平台的岗位知识库——不该全量塞进每次请求。正确做法是存索引/路径，模型判断这次要答什么，再去拉对应那几段。这既省 token 又躲开 context rot。</p>
+
+<h2>③ SCENARIO：给双语客服 agent 设计长会话的记忆与状态</h2>
+<p>真实场景：匠人给一家澳洲本地企业做了个中英双语客服 agent，处理退课咨询。一通对话经常几十轮，还可能跨天——用户今天问一半，明天回来接着问。问题来了：会话拖长后模型开始忘前面说过的关键事实（学员报的是哪门 bootcamp、退款政策哪条适用），跨天回来更是从零开始。怎么设计？</p>
+<h3>第一层：会话内变长 → server-side compaction</h3>
+<p>单通对话逼近窗口上限时，用 compaction 让它能继续下去。官方的 <code>compact_20260112</code> 策略：当 input token 到 <code>trigger</code>（默认 <code>{"type":"input_tokens","value":150000}</code>，value 至少 50000）时，服务端自动把早期对话总结进一个 <code>&lt;summary&gt;</code> 块，生成一个 <code>compaction</code> content block；之后的请求里，API 自动丢掉 compaction 块之前的所有内容，从摘要继续。要带 beta header <code>compact-2026-01-12</code>。它的价值是——<strong>让对话越过窗口上限还能连贯往下走，而不是撞墙报错或被粗暴截断。</strong></p>
+<h3>第二层：跨会话 / 跨天 → memory tool</h3>
+<p>compaction 只在单次会话内起作用；跨天回来那通全新会话，靠它没用。这时候要 memory tool（<code>memory_20250818</code>，已 GA，不用 beta header）。它让 Claude 在一个你自己掌控的客户端目录（<code>/memories</code>）里读写文件，跨会话持久化。支持的命令：<code>view</code> / <code>create</code> / <code>str_replace</code> / <code>insert</code> / <code>delete</code> / <code>rename</code>。开了这工具，API 会自动往 system prompt 注入一段协议，核心是两句：<strong>"ALWAYS VIEW YOUR MEMORY DIRECTORY BEFORE DOING ANYTHING ELSE"</strong> 和 <strong>"ASSUME INTERRUPTION：你的 context 随时可能被重置，没写进 memory 的进度都可能丢"</strong>。</p>
+<p>官方的多会话模式落到我们这个客服场景就是：第一通对话把关键事实（学员 ID、报的课、争议点、退款政策适用条款）写进 memory 文件；用户明天回来，新会话先 <code>view /memories</code> 恢复状态，接着上次的进度谈，而不是重新问一遍"您报的是哪门课"。注意安全红线——所有路径操作必须锁死在 <code>/memories</code> 目录内，防目录穿越（<code>/memories/../../secrets.env</code> 这种要拒绝）。</p>
+<h3>三个机制别搞混（这是本域最爱考的辨析）</h3>
+<ul>
+<li><strong>prompt caching</strong>：只省钱，不是持久状态。缓存 5 分钟或 1 小时就过期，指望它跨天记住客户信息是错的。</li>
+<li><strong>context editing（clear_tool_uses）</strong>：在客户端清掉旧的工具结果，给当前会话腾地方。</li>
+<li><strong>compaction</strong>：在服务端把整段旧对话总结掉，让当前会话越过窗口上限继续。</li>
+<li><strong>memory tool</strong>：把必须活过总结/重置的信息，写到 context window 之外的文件里，跨会话取回。</li>
+</ul>
+<p>官方明说这几个能组合用：长跑 agent 常常 compaction + memory 一起上——compaction 让活动上下文保持小，memory 保住那些"绝不能被总结掉"的信息。</p>
+
+<h2>自测 5 题</h2>
+<h3>Q1. 双语客服 agent 每轮都调订单查询工具，返回一堆字段，几十轮后模型开始忘记前面的结论。最省事、最不容易出错的减负做法是？</h3>
+<ul>
+<li>A. 把模型换到 1M 窗口的版本，多出来的空间够塞</li>
+<li>B. 配 context editing 的 <code>clear_tool_uses_20250919</code>，设好 <code>trigger</code> 阈值和 <code>keep</code>，旧工具结果自动清成占位符</li>
+<li>C. 每轮请求前手动从历史里删掉最早几条消息</li>
+<li>D. 在 system prompt 里叮嘱模型"忽略旧的工具结果，只看最近的"</li>
+</ul>
+<p><strong>正确答案：B。</strong></p>
+<ul>
+<li>A 错：加大窗口治标不治本，context rot 依旧存在，token 还更贵。官方明说"more context isn't automatically better"。</li>
+<li>B 对：这正是 <code>clear_tool_uses_20250919</code> 的设计——按 input_tokens 阈值自动清最旧的工具结果、保留最近 <code>keep</code> 个、换成占位文本让模型知道被清过。自动、可控、不破坏连贯。</li>
+<li>C 诱人但错：API 无状态，历史是你手动带的，随手删中间消息会破坏对话连贯，模型会失忆，还容易删错。</li>
+<li>D 错：prompt 层的"请忽略"约束不可靠，那些 token 照样占着窗口、照样计费，rot 一点没解决。</li>
+</ul>
+<h3>Q2. 给留学生做的求职工具，system prompt 里有一大段固定的岗位知识库 + 简历评分规则，每次请求还会附上用户当次的简历。想用 prompt caching 省钱，怎么摆内容和 breakpoint？</h3>
+<ul>
+<li>A. 固定的知识库 + 评分规则放前面，<code>cache_control</code> breakpoint 打在这段静态内容末尾，用户简历放后面</li>
+<li>B. 用户简历放最前面并加 breakpoint，因为它最重要</li>
+<li>C. 给每一条消息都加一个 breakpoint，命中率最高</li>
+<li>D. 所有内容都用 <code>ttl: "1h"</code>，因为缓存越久一定越省</li>
+</ul>
+<p><strong>正确答案：A。</strong></p>
+<ul>
+<li>A 对：缓存按 <code>tools</code>→<code>system</code>→<code>messages</code> 顺序逐前缀匹配，静态内容必须在前、breakpoint 打在静态块末尾，易变的用户输入在后，才稳定命中。</li>
+<li>B 错：把每次都变的简历放最前面，前缀每次都不同，后面的静态内容永远匹配不上，等于完全没缓存。</li>
+<li>C 错：最多只有 4 个 breakpoint，逐条加既超上限也没意义。</li>
+<li>D 诱人但错：1h 写入是 2x 基础价，5m 只要 1.25x。内容若不会隔那么久复用，1h 反而更贵。</li>
+</ul>
+<h3>Q3. 华人学员的 AI 产品要基于一本 500 页产品手册回答用户问题，手册偶尔更新。上下文该怎么设计？</h3>
+<ul>
+<li>A. 把整本手册塞进 system prompt，配 prompt caching 缓存起来就不占成本了</li>
+<li>B. 直接上 1M 窗口的模型，一次把手册全塞进去让模型自己找</li>
+<li>C. 用 just-in-time 检索：存手册的索引/片段路径，运行时按当前问题动态拉相关几段进上下文</li>
+<li>D. 每次请求把手册切成小块轮流塞一部分，凑几轮把全书过一遍</li>
+</ul>
+<p><strong>正确答案：C。</strong></p>
+<ul>
+<li>A 诱人但错：caching 只改计费，缓存的前缀<strong>照样占 context window</strong>，500 页全程在窗口里，context rot 照样发生。</li>
+<li>B 错：大窗口不解决 rot，token 越多召回越差，还慢还贵。</li>
+<li>C 对：官方推荐的按需检索——握轻量标识符、运行时动态载入相关片段，上下文保持精简、只放高信号 token。</li>
+<li>D 错：手动分块轮流塞既低效又容易丢上下文，不是官方倡导的按相关性检索。</li>
+</ul>
+<h3>Q4. 一个帮学员分步骤搭简历网站的 agent 任务要跨好几天，中途 context 随时可能被重置。怎么保证下次会话能接着上次干，而不是从头开始？</h3>
+<ul>
+<li>A. 靠 prompt caching 把上一次的对话缓存下来，下次自动接上</li>
+<li>B. 每次新会话都把上一次的完整历史全部重新塞进请求</li>
+<li>C. 依赖 API 服务端记住这个 session 的进度</li>
+<li>D. 用 memory tool，把进度日志和功能清单写进 <code>/memories</code>，新会话先 <code>view</code> 恢复状态再继续</li>
+</ul>
+<p><strong>正确答案：D。</strong></p>
+<ul>
+<li>A 错：缓存是省钱机制，5m/1h 就过期，不是持久状态存储，跨天靠不住。</li>
+<li>B 诱人但错：历史会滚雪球撞窗口上限、又贵又慢，而且未必存着完整历史。</li>
+<li>C 错：Messages API 无状态，服务端不替你记 session。</li>
+<li>D 对：这正是 memory tool 的多会话模式——初始会话建 progress log + checklist，后续会话开场先 <code>view /memories</code> 恢复，结束前更新进度。官方注入的协议就一句核心："ASSUME INTERRUPTION"。</li>
+</ul>
+<h3>Q5. 一通双语客服对话特别长，input token 已逼近模型窗口上限，但用户还在继续问。既要让对话能接着走，又要尽量不丢前面的关键信息，最合适的机制是？</h3>
+<ul>
+<li>A. 直接把最早的那批消息截掉腾空间</li>
+<li>B. 开 server-side compaction（<code>compact_20260112</code>），到阈值时服务端自动把早期对话总结成 summary 后继续</li>
+<li>C. 靠 context awareness 注入的 token budget 标签，模型看到剩余空间会自己压缩</li>
+<li>D. 什么都不做，等撞上限模型会自动优雅降级</li>
+</ul>
+<p><strong>正确答案：B。</strong></p>
+<ul>
+<li>A 错：粗暴截断最早消息，恰恰会丢掉早期的关键事实（学员报的课、争议起因）。</li>
+<li>B 对：compaction 就是为这个设计的——到 <code>trigger</code> 阈值（默认 input_tokens 150000）服务端总结早期对话进 <code>&lt;summary&gt;</code> 块，之后请求丢掉 compaction 块之前的内容，让对话越过窗口上限继续。</li>
+<li>C 诱人但错：context awareness 只是把剩余 token 预算<strong>告诉</strong>模型（如 <code>&lt;system_warning&gt;Token usage: 35000/200000&lt;/system_warning&gt;</code>），它自己不会去压缩历史。</li>
+<li>D 错：在 4.5+ 模型上撞上限是以 <code>stop_reason: "model_context_window_exceeded"</code> 停下，不是优雅降级；更早的模型直接报错。</li>
+</ul>
+
+<h2>官方文档引用</h2>
+<ul>
+<li>Context windows — https://platform.claude.com/docs/en/build-with-claude/context-windows</li>
+<li>Prompt caching — https://platform.claude.com/docs/en/build-with-claude/prompt-caching</li>
+<li>Context editing — https://platform.claude.com/docs/en/build-with-claude/context-editing</li>
+<li>Server-side compaction — https://platform.claude.com/docs/en/build-with-claude/compaction</li>
+<li>Memory tool — https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool</li>
+<li>Effective context engineering for AI agents — https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents</li>
+</ul>

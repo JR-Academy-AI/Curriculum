@@ -58,7 +58,9 @@
     "promoTuition": 299
   },
   "curriculumPages": {
-    "pages": ["curriculum.html"],
+    "pages": [
+      "curriculum.html"
+    ],
     "defaultPage": "curriculum.html"
   },
   "phases": [
@@ -75,10 +77,34 @@
           "isLive": false,
           "duration": 30,
           "steps": [
-            { "order": 1, "type": "CONCEPT", "title": "CCA-F 的定位", "description": "2026-03 推出，面向用 Claude 构建生产级应用的解决方案架构师；考的是架构决策，不是参数背诵。", "duration": 8 },
-            { "order": 2, "type": "CONCEPT", "title": "含金量与归属", "description": "认证归属个人；已有超 1 万名顾问获得 Claude 认证；可进入 Anthropic Services Partner Directory 被企业买家找到。", "duration": 7 },
-            { "order": 3, "type": "CONCEPT", "title": "报名资格与 CPN 通道", "description": "考试资格通过 Claude Partner Network 成员通道申请；匠人已注册加入 CPN，本包协助你走通报名入口。", "duration": 8 },
-            { "order": 4, "type": "MCQ", "title": "自测：这个认证适合你吗", "description": "判断你的背景是否匹配（有无 Claude/MCP 实战经验）。", "duration": 7 }
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "CCA-F 的定位",
+              "description": "2026-03 推出，面向用 Claude 构建生产级应用的解决方案架构师；考的是架构决策，不是参数背诵。",
+              "duration": 8
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "含金量与归属",
+              "description": "认证归属个人；已有超 1 万名顾问获得 Claude 认证；可进入 Anthropic Services Partner Directory 被企业买家找到。",
+              "duration": 7
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "报名资格与 CPN 通道",
+              "description": "考试资格通过 Claude Partner Network 成员通道申请；匠人已注册加入 CPN，本包协助你走通报名入口。",
+              "duration": 8
+            },
+            {
+              "order": 4,
+              "type": "MCQ",
+              "title": "自测：这个认证适合你吗",
+              "description": "判断你的背景是否匹配（有无 Claude/MCP 实战经验）。",
+              "duration": 7
+            }
           ]
         },
         {
@@ -89,11 +115,41 @@
           "isLive": false,
           "duration": 40,
           "steps": [
-            { "order": 1, "type": "CONCEPT", "title": "承办与交付方式", "description": "Pearson VUE 承办，可选 OnVUE 线上远程监考或线下考场；闭卷、有人监考、不允许 AI 辅助。", "duration": 8 },
-            { "order": 2, "type": "CONCEPT", "title": "题量与时长", "description": "社区一致口径约 60 题 / 120 分钟，多选 + 场景题；官方尚未正式公布，以你收到的 Pearson 考试说明为准。", "duration": 8 },
-            { "order": 3, "type": "CONCEPT", "title": "及格线与评分", "description": "720 / 1000 分及格；5 大 domain 加权，Agentic Architecture 与 Claude Code 权重最高。", "duration": 8 },
-            { "order": 4, "type": "CONCEPT", "title": "场景题机制", "description": "题库 6 个真实场景随机抽 4 个，每个场景让你替一个生产级 Claude 应用做架构决策。", "duration": 8 },
-            { "order": 5, "type": "CONCEPT", "title": "重考规则", "description": "12 个月滚动周期最多 4 次；间隔 14 天 / 30 天 / 90 天。规划好一次尽量过。", "duration": 8 }
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "承办与交付方式",
+              "description": "Pearson VUE 承办，可选 OnVUE 线上远程监考或线下考场；闭卷、有人监考、不允许 AI 辅助。",
+              "duration": 8
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "题量与时长",
+              "description": "社区一致口径约 60 题 / 120 分钟，多选 + 场景题；官方尚未正式公布，以你收到的 Pearson 考试说明为准。",
+              "duration": 8
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "及格线与评分",
+              "description": "720 / 1000 分及格；5 大 domain 加权，Agentic Architecture 与 Claude Code 权重最高。",
+              "duration": 8
+            },
+            {
+              "order": 4,
+              "type": "CONCEPT",
+              "title": "场景题机制",
+              "description": "题库 6 个真实场景随机抽 4 个，每个场景让你替一个生产级 Claude 应用做架构决策。",
+              "duration": 8
+            },
+            {
+              "order": 5,
+              "type": "CONCEPT",
+              "title": "重考规则",
+              "description": "12 个月滚动周期最多 4 次；间隔 14 天 / 30 天 / 90 天。规划好一次尽量过。",
+              "duration": 8
+            }
           ]
         },
         {
@@ -113,14 +169,37 @@
             "uiMode": "chat",
             "context": "学员刚买了考试直通包，需要走通『匠人 CPN 通道 → Anthropic Partner Academy → Pearson VUE 账号』的激活链路。AI 要逐步带：(1) 确认已收到匠人发来的 Partner Academy 访问/报名邀请邮件，没收到就引导联系课程顾问；(2) 在 Partner Academy 完成报名，触发 Pearson 凭证邮件；(3) 登录 Pearson VUE（pearsonvue.com/anthropic）确认账号里出现 CCA-F 可预约；(4) 核对姓名拼写与证件完全一致（OnVUE 会查证件，名字对不上进不了考场）。关键坑：Partner 邀请邮件常进垃圾箱；Pearson 账号邮箱要和收邀请的邮箱一致；名字中英文/拼音顺序要和护照/驾照一致。AI 全程主动带节奏，不确定的地方让学员贴截图文字描述。",
             "stepSkeleton": [
-              { "title": "确认收到匠人 Partner Academy 访问邀请", "verificationType": "self-confirm", "expectedEvidence": "邮箱里有 Anthropic Partner Academy / 匠人课程顾问发的报名链接" },
-              { "title": "在 Partner Academy 完成报名，触发 Pearson 凭证", "verificationType": "self-confirm", "expectedEvidence": "收到 Pearson VUE 账号凭证邮件" },
-              { "title": "登录 Pearson VUE 确认 CCA-F 可预约", "verificationType": "text-evidence", "expectedEvidence": "Pearson 账号里能看到 Claude Certified Architect – Foundations 考试可 schedule" },
-              { "title": "核对姓名/邮箱与证件一致", "verificationType": "self-confirm", "expectedEvidence": "Pearson 档案里的姓名与你考试要用的证件完全一致" }
+              {
+                "title": "确认收到匠人 Partner Academy 访问邀请",
+                "verificationType": "self-confirm",
+                "expectedEvidence": "邮箱里有 Anthropic Partner Academy / 匠人课程顾问发的报名链接"
+              },
+              {
+                "title": "在 Partner Academy 完成报名，触发 Pearson 凭证",
+                "verificationType": "self-confirm",
+                "expectedEvidence": "收到 Pearson VUE 账号凭证邮件"
+              },
+              {
+                "title": "登录 Pearson VUE 确认 CCA-F 可预约",
+                "verificationType": "text-evidence",
+                "expectedEvidence": "Pearson 账号里能看到 Claude Certified Architect – Foundations 考试可 schedule"
+              },
+              {
+                "title": "核对姓名/邮箱与证件一致",
+                "verificationType": "self-confirm",
+                "expectedEvidence": "Pearson 档案里的姓名与你考试要用的证件完全一致"
+              }
             ],
-            "prerequisites": ["已购买本考试直通包", "有一个常用邮箱"],
+            "prerequisites": [
+              "已购买本考试直通包",
+              "有一个常用邮箱"
+            ],
             "targetPlatform": "browser",
-            "tags": ["cca-f", "registration", "pearson-vue"]
+            "tags": [
+              "cca-f",
+              "registration",
+              "pearson-vue"
+            ]
           }
         },
         {
@@ -140,14 +219,36 @@
             "uiMode": "chat",
             "context": "学员已激活名额，现在要预约。AI 带：(1) 帮学员权衡 OnVUE 线上 vs 线下考场（线上方便但对网络/摄像头/独立房间要求严）；(2) 在 Pearson 选时间预约，提醒开考前 24 小时才能免费改期/取消；(3) 若选 OnVUE，引导跑官方 system test（测网络/摄像头/麦克风）、准备一间无他人、桌面清空、证件备好的房间；(4) 讲清考试当天流程：提前 30 分钟登录、拍摄环境、全程监考、不能离开镜头。关键坑：OnVUE 对第二屏幕/耳机/手机零容忍；证件名字要对得上；网络不稳建议改线下。AI 主动提醒时间管理与改期规则。",
             "stepSkeleton": [
-              { "title": "选择 OnVUE 线上 或 线下考场", "verificationType": "self-confirm", "expectedEvidence": "学员明确说出选了哪种及原因" },
-              { "title": "在 Pearson 预约考试时间", "verificationType": "text-evidence", "expectedEvidence": "Pearson 账号显示已预约的日期时间" },
-              { "title": "（线上）通过 OnVUE system test", "verificationType": "self-confirm", "expectedEvidence": "OnVUE 系统测试网络/摄像头/麦克风全部通过" },
-              { "title": "确认考试当天环境与证件就绪", "verificationType": "self-confirm", "expectedEvidence": "独立房间 + 桌面清空 + 证件与档案姓名一致" }
+              {
+                "title": "选择 OnVUE 线上 或 线下考场",
+                "verificationType": "self-confirm",
+                "expectedEvidence": "学员明确说出选了哪种及原因"
+              },
+              {
+                "title": "在 Pearson 预约考试时间",
+                "verificationType": "text-evidence",
+                "expectedEvidence": "Pearson 账号显示已预约的日期时间"
+              },
+              {
+                "title": "（线上）通过 OnVUE system test",
+                "verificationType": "self-confirm",
+                "expectedEvidence": "OnVUE 系统测试网络/摄像头/麦克风全部通过"
+              },
+              {
+                "title": "确认考试当天环境与证件就绪",
+                "verificationType": "self-confirm",
+                "expectedEvidence": "独立房间 + 桌面清空 + 证件与档案姓名一致"
+              }
             ],
-            "prerequisites": ["已激活考试名额（L03 完成）"],
+            "prerequisites": [
+              "已激活考试名额（L03 完成）"
+            ],
             "targetPlatform": "browser",
-            "tags": ["cca-f", "scheduling", "onvue"]
+            "tags": [
+              "cca-f",
+              "scheduling",
+              "onvue"
+            ]
           }
         }
       ]
@@ -156,7 +257,11 @@
       "name": "Phase 1 — 5 大 Domain 备考路径",
       "color": "#D97757",
       "summary": "6 自学 — 官方 Academy 导航 + 每个 domain 考点精析",
-      "test": { "questions": 15, "passRate": 0.7, "unlocks": "Phase 2" },
+      "test": {
+        "questions": 15,
+        "passRate": 0.7,
+        "unlocks": "Phase 2"
+      },
       "lessons": [
         {
           "code": "L05",
@@ -166,10 +271,34 @@
           "isLive": false,
           "duration": 45,
           "steps": [
-            { "order": 1, "type": "CONCEPT", "title": "官方唯一备考资源：Anthropic Academy", "description": "Skilljar 上约 13 门免费课覆盖 AI Fluency / API / MCP / Claude Code；这是唯一官方备考资源，别买第三方题库 dump。", "duration": 10 },
-            { "order": 2, "type": "CONCEPT", "title": "13 课 → 5 domain 映射表", "description": "哪几门课对应 Agentic Architecture、哪几门对应 MCP、哪几门对应 Claude Code……一张表看清。", "duration": 15 },
-            { "order": 3, "type": "CONCEPT", "title": "推荐学习顺序", "description": "按权重排：先攻 Agentic Architecture + Claude Code（权重最高），再 MCP，最后 Prompt / Context。", "duration": 10 },
-            { "order": 4, "type": "PROJECT", "title": "制定你的两周备考计划", "description": "根据自己基础，把 13 课 + 本包内容排进两周日历。", "duration": 10 }
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "官方唯一备考资源：Anthropic Academy",
+              "description": "Skilljar 上约 13 门免费课覆盖 AI Fluency / API / MCP / Claude Code；这是唯一官方备考资源，别买第三方题库 dump。",
+              "duration": 10
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "13 课 → 5 domain 映射表",
+              "description": "哪几门课对应 Agentic Architecture、哪几门对应 MCP、哪几门对应 Claude Code……一张表看清。",
+              "duration": 15
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "推荐学习顺序",
+              "description": "按权重排：先攻 Agentic Architecture + Claude Code（权重最高），再 MCP，最后 Prompt / Context。",
+              "duration": 10
+            },
+            {
+              "order": 4,
+              "type": "PROJECT",
+              "title": "制定你的两周备考计划",
+              "description": "根据自己基础，把 13 课 + 本包内容排进两周日历。",
+              "duration": 10
+            }
           ]
         },
         {
@@ -180,11 +309,36 @@
           "isLive": false,
           "duration": 50,
           "steps": [
-            { "order": 1, "type": "CONCEPT", "title": "考点地图", "description": "single-agent vs multi-agent、orchestrator-worker、评估器-优化器、何时该拆 agent。", "duration": 12 },
-            { "order": 2, "type": "SCENARIO", "title": "典型场景：支持 agent 何时升级人工", "description": "自主处理 vs 转人工的判断标准，是场景题高频点。", "duration": 12 },
-            { "order": 3, "type": "CONCEPT", "title": "可靠性设计", "description": "重试、超时、护栏、失败降级——生产级 agent 的可靠性考点。", "duration": 13 },
-            { "order": 4, "type": "MCQ", "title": "本 domain 自测 5 题", "description": "检验 Agentic Architecture 掌握度。", "duration": 13 }
-          ]
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "考点地图",
+              "description": "single-agent vs multi-agent、orchestrator-worker、评估器-优化器、何时该拆 agent。",
+              "duration": 12
+            },
+            {
+              "order": 2,
+              "type": "SCENARIO",
+              "title": "典型场景：支持 agent 何时升级人工",
+              "description": "自主处理 vs 转人工的判断标准，是场景题高频点。",
+              "duration": 12
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "可靠性设计",
+              "description": "重试、超时、护栏、失败降级——生产级 agent 的可靠性考点。",
+              "duration": 13
+            },
+            {
+              "order": 4,
+              "type": "MCQ",
+              "title": "本 domain 自测 5 题",
+              "description": "检验 Agentic Architecture 掌握度。",
+              "duration": 13
+            }
+          ],
+          "learningMaterial": "<h2>考点地图：Domain 1 为什么值得你花最多时间</h2>\n<p>Domain 1 权重约 <strong>27%</strong>（社区口径，以官方考纲为准），是五个域里最高的一个（其余：Claude Code Configuration 20%、Prompt Engineering 20%、Tool Design &amp; MCP 18%、Context Management 15%）。换句话说，四道题里就有一道以上出自这里。这个域考的不是\"你会不会调 API\"，而是<strong>系统怎么组：单 agent 还是多 agent、coordinator 怎么切任务、loop 什么时候停、什么动作 agent 能自己拍板、什么必须转人工</strong>。</p>\n<p>先把这个域的高频子考点摆出来，后面三步逐个拆：</p>\n<ul>\n<li><strong>Agentic loop 的终止控制</strong>——<code>stop_reason</code> 是唯一可靠信号，别用自然语言或迭代上限当主要终止条件。</li>\n<li><strong>单 vs 多 agent 取舍</strong>——默认从最简单的方案起步，只有简单方案顶不住才上多 agent。</li>\n<li><strong>Coordinator / subagent 职责边界</strong>——通信只走 coordinator，subagent 之间不直连；context 完全隔离。</li>\n<li><strong>自主处理 vs 升级人工</strong>——高风险动作在检查点暂停交人。</li>\n<li><strong>可靠性与失败处理</strong>——用 hook 做确定性拦截，用 prompt 做偏好引导，两者不能混。</li>\n</ul>\n<p>关于考试形式本身：网上流传的 <strong>60 题 / 120 分钟 / 720 分及格 / 场景题 6 抽 4</strong> 属于社区口径，<strong>以官方公布为准</strong>，别当成硬指标去卡自己。你要抓的是概念判断力，不是背数字。</p>\n\n<h3>Agentic loop：一个循环，一个信号</h3>\n<p>agent 的骨架就是一个循环：发一次 Messages API 请求（system prompt + 历史消息 + 上一轮 tool 结果）→ 读响应里的 <code>stop_reason</code> → 如果是 <code>\"tool_use\"</code>，就执行工具、把结果追加回对话再发下一轮；如果是 <code>\"end_turn\"</code>，循环结束、返回最终答复。</p>\n<p><code>stop_reason</code> 官方定义的取值不止两个，考试爱在这里挖坑，记全：<code>end_turn</code>（自然说完）、<code>tool_use</code>（要调工具）、<code>max_tokens</code>（撞了 token 上限被截断）、<code>stop_sequence</code>（命中你设的停止串）、<code>pause_turn</code>（服务端工具循环到达迭代上限）、<code>refusal</code>（模型拒答）、<code>model_context_window_exceeded</code>（填满上下文窗口）。真正驱动 loop 的是前两个，其余是异常分支要单独处理。</p>\n<p>最经典的一个 bug：拿 <code>response.content[0].type === \"text\"</code> 判断\"任务完成了\"。<strong>错在哪</strong>——官方文档里明确写着，一个 assistant 响应可以<strong>同时</strong>包含一个 text block 和一个 tool_use block，比如模型先说 \"I'll help you check the current weather\"，紧跟着一个 <code>get_weather</code> 的 tool_use。你只看第 0 个块是 text 就收工，等于把还要调工具的这一轮当成结束了 → 提前终止。正确判断永远是看 <code>stop_reason</code>，不是看 content 里某个位置是什么类型。</p>\n\n<h2>SCENARIO：客服 agent 什么时候自己处理，什么时候转人工</h2>\n<p>拿匠人学院真实会碰到的场景说。假设你给一个留学生咨询平台做中英双语客服 agent，接的活包括：查课程开班时间、改学员绑定的邮箱、处理退课退款、回答签证相关的合规问题。哪些让 agent 自己闭环，哪些必须停下来交人？考试就爱考这个判断。</p>\n\n<h3>判据一：单次失败会不会造成钱 / 法律 / 安全后果</h3>\n<p>Anthropic《Building Effective Agents》给的原则很直白：autonomous agent 意味着<strong>更高成本和错误累积的风险</strong>，所以要配\"stopping conditions（比如最大迭代次数）\"来保持控制，并且让 agent\"在检查点或遇到阻塞时暂停、交给人反馈\"。翻译成这个场景：</p>\n<ul>\n<li><strong>查开班时间、答已公开的课程 FAQ</strong>——读操作、错了顶多重查一次，agent 全程自主，没必要惊动人。</li>\n<li><strong>改邮箱、退款</strong>——写操作、动的是账户和钱。这类必须先<strong>验证身份</strong>，且退款金额过阈值要转人工审批。不是\"prompt 里写一句 always verify 就行\"，后面第三步会讲为什么那样不够。</li>\n<li><strong>签证合规问题</strong>——答错有法律风险，agent 不该自己下结论，应识别为超出范围、给出\"这块请联系持牌顾问\"并升级，而不是硬编一个看起来专业的答案。</li>\n</ul>\n\n<h3>判据二：任务是不是\"可预先切干净\"——决定单 agent 还是多 agent</h3>\n<p>《Building Effective Agents》里 workflow 和 agent 是两回事：workflow 是\"LLM 和工具走预定义代码路径\"，agent 是\"LLM 自己动态决定流程和工具\"。指导原则是<strong>先找最简单的方案，只有简单方案不够才加复杂度</strong>——很多需求\"优化单次 LLM 调用 + 检索 + 少量示例\"就够了。别一上来就堆多 agent。</p>\n<p>什么时候值得上多 agent？看一个对照场景：学员让工具\"调研墨尔本某家公司的面试情报\"——要同时查 Glassdoor 评价、公司技术博客、LinkedIn 在职员工背景、近期新闻。这几路彼此独立、可并行，适合 <strong>orchestrator-worker（协调者-工人）</strong>结构：一个 lead agent 拆解任务、并行 spawn 出多个 subagent 各查一路、最后汇总。Anthropic 多 agent research 系统的博客给了硬数据：这种系统<strong>大约比单纯对话多用 15 倍 token</strong>，所以只在\"任务价值高到值回这个成本\"时才用。给学员查个开班时间用多 agent，就是杀鸡用牛刀。</p>\n\n<h3>coordinator 与 subagent 的职责边界（最容易考错的地方）</h3>\n<p>多 agent 一旦上了，边界规则必须背清楚，官方 Agent SDK 文档写得很死：</p>\n<ul>\n<li><strong>spawn 机制</strong>：coordinator 通过 <code>Agent</code> 工具生成 subagent，所以 coordinator 的 <code>allowedTools</code> 必须包含 <code>\"Agent\"</code>，否则 subagent 调用不会被自动放行。这个工具在 Claude Code v2.1.63 从旧名 <code>\"Task\"</code> 改成 <code>\"Agent\"</code>；当前 SDK 在 <code>tool_use</code> 块里发的是 <code>\"Agent\"</code>，但 <code>system:init</code> 工具清单和 permission 拒绝记录里仍留着 <code>\"Task\"</code>，检测 subagent 调用时两个名字都要认。</li>\n<li><strong>context 完全隔离</strong>：每个 subagent 跑在一段<strong>全新的对话</strong>里。它<strong>拿不到</strong> parent 的对话历史、parent 的 system prompt、也拿不到其他 subagent 的结果。parent 传给它的<strong>唯一通道</strong>就是 Agent 工具那段 prompt 字符串——文件路径、上一步发现、错误信息，你不写进去它就不知道。</li>\n<li><strong>只有 final message 回流</strong>：subagent 中间调的所有工具、读的所有文件都留在它自己那，只有最后一条消息作为 Agent 工具的结果返回给 parent。这正是它省 context 的原因。</li>\n<li><strong>通信只经 coordinator</strong>：subagent 之间不直接对话，全部结果先回 lead，由 lead 决定要不要再补一轮。</li>\n</ul>\n<p>由此推一个高频诊断题：如果汇总报告在<strong>广度</strong>上缺了一块（比如上面那个调研只查了 Glassdoor 和新闻，漏了技术栈和在职员工），根因几乎一定在 <strong>coordinator 的任务分解</strong>，不是某个 subagent 不给力。修法是改分解逻辑、多切一路 subtopic，而不是\"给 search agent 换个更好的关键词\"或\"加一个更强的汇总 agent\"——它们只会拿到同样残缺的任务。Anthropic 博客也印证：任务描述含糊会让 agent\"重复劳动、留下缺口、找不到必要信息\"。</p>\n\n<h2>可靠性设计：确定性拦截 vs 概率性引导</h2>\n<p>第二步说到\"退款要验证身份\"，为什么\"在 system prompt 里写一句 always verify identity\"不够？因为 prompt 是<strong>概率性</strong>的——它能把遵守率推很高，但永远压不到 0 失败。对退款、转账、身份验证、合规这种\"单次失败就出事\"的动作，你需要<strong>确定性</strong>机制。这是 Domain 1 可靠性部分的核心心智模型，也是最狠的一组干扰项来源。</p>\n\n<h3>hook 的方向性：PreToolUse 能拦，PostToolUse 拦不住</h3>\n<p>Claude Agent SDK 的 hook 是在 agent 执行的关键节点插你的代码。两个最该分清方向的：</p>\n<ul>\n<li><strong><code>PreToolUse</code></strong>：在工具<strong>执行之前</strong>触发。回调返回 <code>permissionDecision</code> 决定这次调用，官方四个取值：<code>\"deny\"</code>（硬拦，工具根本不会跑）、<code>\"ask\"</code>（转人工确认）、<code>\"allow\"</code>（放行，可同时带 <code>updatedInput</code> 把危险入参改安全）、<code>\"defer\"</code>（挂起本次查询、之后再 resume）。要拦一个动作就返回 <code>\"deny\"</code>。多个 hook 同时命中时优先级是 <code>deny</code> &gt; <code>defer</code> &gt; <code>ask</code> &gt; <code>allow</code>，只要有一个 <code>deny</code> 就整体否决。</li>\n<li><strong><code>PostToolUse</code></strong>：在工具<strong>已经执行、拿到结果之后</strong>触发。这里能做 <code>additionalContext</code> 追加信息、<code>updatedToolOutput</code> 改写模型看到的输出，但工具的副作用<strong>已经发生了</strong>。</li>\n</ul>\n<p>所以本节最强的一个陷阱：<strong>\"用 PostToolUse 去阻止一笔违规转账\"</strong>——错到底。PostToolUse 触发时钱已经转出去了，你顶多能记一笔账让人事后复查，满足不了\"100% 不能发生\"的要求。想让某个动作在满足前置条件前物理不可执行，只能用 PreToolUse 的 deny。用退款场景落地：写一个 PreToolUse hook 匹配 <code>process_refund</code> 工具，检查这个会话里 <code>get_customer</code> 是否已返回过 verified 的客户身份、退款额是否超阈值；不满足就 <code>deny</code> 并在 <code>permissionDecisionReason</code> 里告诉模型原因，让它别重试。这就是代码级的 prerequisite gate，模型绕不过去。</p>\n\n<h3>什么用 hook，什么用 prompt</h3>\n<p>一句话判据：<strong>必须 100% 遵守、单次失败有金钱/法律后果 → hook（确定性）；只是偏好、偶尔偏离能接受 → prompt（概率性）。</strong></p>\n<ul>\n<li>退款超额转人工、转账前必须过风控、身份未验证不放行敏感操作 → PreToolUse hook。</li>\n<li>回复语气、中英文排版偏好、先给结论再解释 → 写进 system prompt 就行，偶尔跑偏无伤大雅。</li>\n</ul>\n<p>另外两个可靠性相关的 hook 值得记名字：<code>SubagentStop</code>（subagent 结束时触发，可用来做结果 schema 校验、脱敏、汇总），<code>Stop</code>（agent 整体停下时触发，可存会话状态）。</p>\n\n<h3>别把迭代上限当终止机制</h3>\n<p>回到 loop。很多人想用 <code>MAX_ITERATIONS = 20</code> 这种上限来\"控制 agent\"。官方定位很清楚：迭代上限是 <strong>safety net</strong>，防的是失控 agent（runaway）无限跑下去的最大边界，<strong>不是</strong>正常的终止信号。正常查询应该远早于上限就靠 <code>stop_reason == \"end_turn\"</code> 自然结束。如果你发现 agent 老是提前退出（premature termination），加大迭代上限是<strong>治不了</strong>的——那是 <code>stop_reason</code> 判断写错了，去修判断逻辑，别调上限。</p>\n<p>还有一个自毁操作：为了\"逼模型别输出闲聊文本\"把 <code>tool_choice</code> 长期设成 <code>\"any\"</code>。<code>any</code> 会强制模型必须调一个工具，而且 <code>any</code>/<code>tool</code> 模式下 API 会 prefill、模型连自然语言解释都不会出。结果就是——agent 真正该收尾的那一轮也被迫再调一次工具，<strong>死循环</strong>。</p>\n\n<h2>自测 5 题</h2>\n\n<h3>第 1 题</h3>\n<p>你的双语客服 agent 偶尔在还需要继续调工具的时候就提前返回了最终答复。排查发现代码用 <code>if response.content[0].type == \"text\": return done</code> 来判断任务完成。最该改成哪种做法？</p>\n<ul>\n<li>A. 把最大迭代次数从 10 调到 30，给它更多轮数</li>\n<li>B. 把 <code>tool_choice</code> 设为 <code>\"any\"</code>，强制它每轮都调工具</li>\n<li>C. 改成检查响应的 <code>stop_reason</code>：<code>\"tool_use\"</code> 继续循环、<code>\"end_turn\"</code> 才结束</li>\n<li>D. 解析文本里有没有出现 \"done\" / \"完成\" 之类的词来判断</li>\n</ul>\n<p><strong>正确答案：C。</strong></p>\n<ul>\n<li><strong>C 对</strong>：<code>stop_reason</code> 是官方指定的、确定且无歧义的 loop 控制信号。提前终止的根因就是没看它、只看了 content 的第 0 个块——而一个响应可以同时含 text 和 tool_use 块。</li>\n<li><strong>A 错且诱人</strong>：迭代上限是防 runaway 的安全网，跟\"提前退出\"是反方向的病，加大上限对提前终止毫无作用。看起来像\"给它更多机会\"，其实文不对题。</li>\n<li><strong>B 错</strong>：<code>\"any\"</code> 强制每轮必调工具，会在该结束时制造死循环，把一个 bug 换成更糟的 bug。</li>\n<li><strong>D 错</strong>：自然语言有歧义，\"我已经分析完第一个文件\" 到底是全完了还是还要继续？靠解析文本判断终止本身就是被考试点名的反模式。</li>\n</ul>\n\n<h3>第 2 题</h3>\n<p>一个帮学员做\"目标公司面试情报\"的多 agent 系统，最终报告总是缺一整块维度（比如公司技术栈那一路完全没有）。你会先怀疑哪里？</p>\n<ul>\n<li>A. 负责搜索的 subagent 关键词写得不够好</li>\n<li>B. coordinator 的任务分解漏切了这一路 subtopic</li>\n<li>C. 汇总 agent 的 prompt 不够强，没发现缺口</li>\n<li>D. subagent 数量不够，再多加几个就好了</li>\n</ul>\n<p><strong>正确答案：B。</strong></p>\n<ul>\n<li><strong>B 对</strong>：输出在<strong>广度</strong>上整块缺失，根因几乎总在 coordinator 的 decomposition——它压根没派人去查这一路。修法是改分解逻辑、补上这个 subtopic。</li>\n<li><strong>A 错且诱人</strong>：如果只是某路查得浅，怀疑关键词还说得过去；但\"整块维度不存在\"说明就没人被派去查，不是查得好不好的问题。</li>\n<li><strong>C 错</strong>：汇总 agent 只能整合它<strong>收到</strong>的东西。没派 subagent 去查，汇总再强也变不出数据。</li>\n<li><strong>D 错</strong>：分解逻辑不改，新加的 subagent 只会领到同样残缺的任务清单，多几个也没用。</li>\n</ul>\n\n<h3>第 3 题</h3>\n<p>退款流程要求：任何退款在客户身份验证通过之前<strong>绝对不能执行</strong>。下面哪种实现能真正做到\"100% 不发生\"？</p>\n<ul>\n<li>A. 在 system prompt 里写 \"always verify customer identity before any refund\"</li>\n<li>B. 加几个 few-shot 示例演示\"先验证再退款\"</li>\n<li>C. 用 PostToolUse hook，在退款执行后检查身份是否验证过，没验证就标记待人工复查</li>\n<li>D. 用 PreToolUse hook 匹配退款工具，会话内未拿到已验证身份就返回 <code>permissionDecision: \"deny\"</code></li>\n</ul>\n<p><strong>正确答案：D。</strong></p>\n<ul>\n<li><strong>D 对</strong>：PreToolUse 在工具执行<strong>之前</strong>触发，<code>deny</code> 让退款根本跑不起来，这是确定性的代码级 gate，模型绕不过。</li>\n<li><strong>A / B 错</strong>：prompt 和 few-shot 都是概率性手段，能把遵守率推到很高但压不到 0 失败。对\"绝对不能发生\"的要求不合格。</li>\n<li><strong>C 错且最诱人</strong>：方向反了。PostToolUse 触发时退款<strong>已经执行</strong>，事后标记复查救不回已经出去的钱，满足不了 100% 的硬要求。</li>\n</ul>\n\n<h3>第 4 题</h3>\n<p>coordinator spawn 了一个 subagent 去分析一份财报 PDF，但 subagent 报错说不知道要分析哪个文件、也不清楚前一步的结论。最可能的原因是？</p>\n<ul>\n<li>A. coordinator 没把文件路径和前序结论写进 Agent 工具的 prompt 里</li>\n<li>B. subagent 会自动继承 coordinator 的对话历史，只是这次同步失败了</li>\n<li>C. 应该让这个 subagent 直接去问另一个 subagent 要上下文</li>\n<li>D. subagent 默认能读 coordinator 的 system prompt，配置漏了一项</li>\n</ul>\n<p><strong>正确答案：A。</strong></p>\n<ul>\n<li><strong>A 对</strong>：subagent 跑在全新对话里，parent 传给它的<strong>唯一通道</strong>就是 Agent 工具那段 prompt。路径、前序发现没写进去，它就是不知道。</li>\n<li><strong>B 错且诱人</strong>：正好相反——subagent <strong>不</strong>继承 parent 的对话历史、tool 结果或 system prompt。\"自动继承\"是这个域最常见的误解。</li>\n<li><strong>C 错</strong>：subagent 之间不直接通信，所有 context 由 coordinator 显式传递。让它们直连会破坏可观测性和信息流控制。</li>\n<li><strong>D 错</strong>：subagent 只带自己的 system prompt（<code>AgentDefinition.prompt</code>），拿不到 parent 的 system prompt，这不是\"漏配一项\"能开出来的。</li>\n</ul>\n\n<h3>第 5 题</h3>\n<p>产品经理问：\"我们要不要把'查开班时间'这个简单咨询也做成多 agent 架构，显得更高级？\" 你基于官方指导应该怎么答？</p>\n<ul>\n<li>A. 要，多 agent 永远比单 agent 准，是更先进的架构</li>\n<li>B. 要，反正 token 成本可以忽略不计</li>\n<li>C. 不要，先用最简单方案，多 agent 大约多用 15 倍 token，只在任务价值高到值回成本时才用</li>\n<li>D. 不要，因为 Claude 根本不支持多 agent</li>\n</ul>\n<p><strong>正确答案：C。</strong></p>\n<ul>\n<li><strong>C 对</strong>：官方原则是\"先找最简单方案，简单方案不够才加复杂度\"；多 agent research 系统实测约比对话多用 15 倍 token，需要任务价值撑得起这个开销。查开班时间单次调用就够。</li>\n<li><strong>A 错且诱人</strong>：\"更多 agent = 更先进 = 更准\"是很吸引人的直觉，但官方明确说复杂度是拿延迟和成本换性能，不是无脑越多越好。</li>\n<li><strong>B 错</strong>：token 成本恰恰是多 agent 的主要制约，15 倍不是可忽略的量级。</li>\n<li><strong>D 错</strong>：事实错误，Claude Agent SDK 通过 <code>Agent</code> 工具原生支持 subagent 编排。</li>\n</ul>\n\n<h2>官方文档引用</h2>\n<ul>\n<li>Handling stop reasons（Messages API）— https://platform.claude.com/docs/en/api/handling-stop-reasons</li>\n<li>Implement tool use / define tools（tool_choice、tool_use 与 text 块可同时出现）— https://platform.claude.com/docs/en/agents-and-tools/tool-use/implement-tool-use</li>\n<li>Subagents in the SDK（Agent 工具、context 隔离、AgentDefinition、Task→Agent 改名）— https://code.claude.com/docs/en/agent-sdk/subagents</li>\n<li>Intercept and control agent behavior with hooks（PreToolUse / PostToolUse / SubagentStop / Stop、permissionDecision）— https://code.claude.com/docs/en/agent-sdk/hooks</li>\n<li>Building Effective Agents（workflow vs agent、由简入繁、停止条件、人工检查点）— https://www.anthropic.com/engineering/building-effective-agents</li>\n<li>How we built our multi-agent research system（orchestrator-worker、约 15× token、分解质量）— https://www.anthropic.com/engineering/multi-agent-research-system</li>\n</ul>"
         },
         {
           "code": "L07",
@@ -194,11 +348,36 @@
           "isLive": false,
           "duration": 50,
           "steps": [
-            { "order": 1, "type": "CONCEPT", "title": "工具设计原则", "description": "工具粒度、命名、描述如何影响模型选对工具；工具太多/描述含糊的坑。", "duration": 12 },
-            { "order": 2, "type": "CONCEPT", "title": "MCP 架构", "description": "MCP server / client / transport；MCP 解决什么问题、什么时候该上。", "duration": 13 },
-            { "order": 3, "type": "SCENARIO", "title": "典型场景：调试工具选择错误", "description": "模型选错工具时怎么定位是描述问题还是架构问题。", "duration": 12 },
-            { "order": 4, "type": "MCQ", "title": "本 domain 自测 5 题", "description": "检验 Tool Design & MCP 掌握度。", "duration": 13 }
-          ]
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "工具设计原则",
+              "description": "工具粒度、命名、描述如何影响模型选对工具；工具太多/描述含糊的坑。",
+              "duration": 12
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "MCP 架构",
+              "description": "MCP server / client / transport；MCP 解决什么问题、什么时候该上。",
+              "duration": 13
+            },
+            {
+              "order": 3,
+              "type": "SCENARIO",
+              "title": "典型场景：调试工具选择错误",
+              "description": "模型选错工具时怎么定位是描述问题还是架构问题。",
+              "duration": 12
+            },
+            {
+              "order": 4,
+              "type": "MCQ",
+              "title": "本 domain 自测 5 题",
+              "description": "检验 Tool Design & MCP 掌握度。",
+              "duration": 13
+            }
+          ],
+          "learningMaterial": "<h2>考点地图</h2>\n<p>Domain 2「Tool Design &amp; MCP」权重约 <strong>18%</strong>（社区口径，出处见下），在五个域里排第四（其余四域社区口径为 Agentic Architecture 27%、Claude Code Configuration 20%、Prompt Engineering 20%、Context Management 15%）。它不是最大的域，但踩坑率最高——因为大多数人把「给模型接个工具」当成写函数，忽略了模型选不选、怎么选、选错了怎么恢复，全押在一个字段上：<code>description</code>。</p>\n<p>这一课要拿分的四条主线：</p>\n<ul>\n<li><strong>工具粒度与工具描述</strong>——本域第一高频子考点。工具的 <code>description</code> 是模型做选择的主机制，不是补充说明。</li>\n<li><strong>工具选择歧义的调试路径</strong>——两个功能相近的工具被调混了，第一步该改什么？考试反复考「最低成本、最高杠杆的那一步」。</li>\n<li><strong>MCP 的 host / client / server 三方架构与 transport</strong>——谁连谁、一对一还是一对多、stdio 和 HTTP 怎么选。</li>\n<li><strong>何时用 MCP、何时直接函数调用；工具的错误返回怎么设计</strong>——尤其是 <code>is_error</code> 这个字段用对没有。</li>\n</ul>\n<p>先说清一个合规前提：这门认证的「60 题 / 120 分钟 / 720 分及格 / 场景题占一部分」，连同五域权重（27 / 20 / 20 / 18 / 15）和域名结构，<strong>都是第三方备考社区整理的口径，未见 Anthropic 官方公布确切百分比，一律以官方为准</strong>——别拿这些数字当官方保证去排复习优先级。真正能追溯到 Anthropic 官方文档的，是下面每一条技术断言，文末列了实际抓过的链接。</p>\n\n<h2>工具设计原则：description 决定模型选不选、选得对不对</h2>\n<h3>一个工具在 API 里就三个字段</h3>\n<p>用 Claude 的 Messages API 定义一个自定义工具，核心就三样：<code>name</code>、<code>description</code>、<code>input_schema</code>。<code>name</code> 必须匹配正则 <code>^[a-zA-Z0-9_-]{1,64}$</code>；<code>input_schema</code> 是标准 JSON Schema，用 <code>properties</code> 描述参数、用 <code>required</code> 数组列必填项。模型决定调工具时，返回 <code>stop_reason: \"tool_use\"</code> 和一个 <code>tool_use</code> 块（含 <code>id</code> / <code>name</code> / <code>input</code>），你的代码跑完再用 <code>tool_result</code> 把结果送回去。</p>\n<p>官方原话把话说死了：<strong>「Provide extremely detailed descriptions. This is by far the most important factor in tool performance.」</strong>——描述是工具表现的头号因素。建议每个工具描述至少 3-4 句，复杂工具更多，要写清四件事：这工具做什么、什么时候该用（以及什么时候<strong>不</strong>该用）、每个参数是什么含义、有什么重要限制（比如它<strong>不</strong>返回什么）。</p>\n<p>拿匠人学院一个真实场景：给留学生求职平台做双语客服 agent。看两版查会员资料的工具描述——</p>\n<pre><code>差的描述（模型只能靠猜）：\n{ \"name\": \"query_member_profile\",\n  \"description\": \"查会员资料\" }\n\n好的描述（模型知道边界）：\n{ \"name\": \"query_member_profile\",\n  \"description\": \"按会员 ID 查一个学员的账户资料：订阅档位、\n    到期日、绑定邮箱、所在时区。用于回答『我是不是会员 /\n    我的订阅什么时候到期 / 我绑的哪个邮箱』这类账户问题。\n    不返回课程学习进度——查『上到第几课 / 完课率』请用\n    query_learning_progress。member_id 格式为 M 开头 8 位数字，\n    例 M10420071。\" }</code></pre>\n<p>差别不在实现，在于好描述写明了<strong>返回什么、什么问题该用、什么问题该转给隔壁工具、参数长什么样</strong>。官方另一个可背的对照例子是 <code>get_stock_price</code>：好描述会写「ticker 必须是 NYSE/NASDAQ 上市公司的有效代码、返回美元最新成交价、只在用户问当前股价时用、不提供公司其它信息」。</p>\n\n<h3>粒度：合并相关操作，用命名空间区分</h3>\n<p>官方对工具粒度的两条明确指引，跟「工具越拆越好」的直觉相反：</p>\n<ul>\n<li><strong>把相关操作合进更少的工具</strong>。别为每个动作各建一个工具（<code>create_pr</code> / <code>review_pr</code> / <code>merge_pr</code>），合成一个带 <code>action</code> 参数的工具。工具越少、越有能力，模型的选择歧义越小。</li>\n<li><strong>工具名用有意义的命名空间</strong>。跨多个服务时，名字加服务前缀，如 <code>github_list_prs</code>、<code>slack_send_message</code>，库一大就不会撞名。</li>\n<li><strong>返回只给高信号信息</strong>。回稳定的语义化标识（slug / UUID），别回内部不透明引用；只带模型下一步真正要用的字段，臃肿的返回既烧 context 又让模型抓不住重点。</li>\n</ul>\n\n<h3>tool_choice 四个取值，考试直接考</h3>\n<p><code>tool_choice</code> 控制模型「要不要调、调不调死某个」，官方定义四种：</p>\n<pre><code>{\"type\": \"auto\"}                    — 模型自行决定调不调、调哪个。\n                                     提供 tools 时的默认值。一般 agentic loop 用它。\n{\"type\": \"any\"}                     — 必须调某个工具，但由模型自选哪个。\n                                     用于「保证结构化输出、但不确定该用哪个 schema」。\n{\"type\": \"tool\", \"name\": \"extract\"} — 强制调指定工具。用于强制某个 mandatory 首步。\n{\"type\": \"none\"}                    — 禁止调任何工具。不提供 tools 时的默认值。</code></pre>\n<p>落到场景：双语客服 bot 每收到一条留言，必须归类并建一张结构化工单，四类各有不同 schema——<code>create_refund_ticket</code>（退款）、<code>create_tech_ticket</code>（技术故障）、<code>create_course_ticket</code>（课程咨询）、<code>create_visa_ticket</code>（签证问题），绝不能回一段闲聊文本。可事先不知道该归哪一类。这时用 <code>any</code>：强制模型一定建某张工单，但由它自己判断归哪类。不能用 <code>tool</code>（锁死到某一类 schema，来的是别类就建错单），也不能用 <code>auto</code>（可能直接回自然语言、不建工单）。反过来，如果每条流程都必须先跑同一个 <code>triage</code> 再往下，用 <code>{\"type\":\"tool\",\"name\":\"triage\"}</code> 强制第一步，之后的 turn 再切回 <code>auto</code>。注意：<code>any</code> 和 <code>tool</code> 会预填 assistant 消息，模型不会在 <code>tool_use</code> 前输出自然语言解释。</p>\n\n<h3>错误返回：is_error 用对，别把「空结果」当「失败」</h3>\n<p>工具执行出错时，在 <code>tool_result</code> 里把错误信息放进 <code>content</code>，并设 <code>\"is_error\": true</code>，模型才会把它当失败去推理恢复。官方还强调错误信息要有指导性：不要只回 <code>\"failed\"</code>，要写清出了什么错、下一步该怎么办，例如 <code>\"Rate limit exceeded. Retry after 60 seconds.\"</code>——给模型足够上下文自己恢复。</p>\n<p>本域最爱考的一个坑：<strong>「够不到数据源的失败」和「查询成功但没有匹配」是两回事</strong>。签证规则查询工具查一个冷门签证类别、库里确实没有对应规则——这是查询<strong>成功</strong>了、结果为空，不该设 <code>is_error</code>，直接返回一条「no matching rule found」就是答案。如果这里错误地设了 <code>is_error: true</code>，模型会以为是抓取失败、去重试，可空结果每次都一样，最后白白转人工。空结果 ≠ 错误，这一条要刻进肌肉记忆。</p>\n\n<h3>什么时候上 MCP、什么时候直接写函数</h3>\n<p>上面那种「在自己 API 里定义 tool、自己的代码执行 <code>tool_use</code>」就是最直接的做法（client tools），没有额外协议开销，适合单一应用内部逻辑。<strong>MCP 是另一层抽象</strong>：当你想把同一套工具和数据源复用到多个 AI host（Claude Code、Claude Desktop、你自己的 app），或者要接远程服务、想直接用社区已经写好的 server 时，用 MCP 这个开放标准协议把工具「插」进去，而不是每个应用各写一遍。判断依据是复用面和标准化，不是「MCP 更高级」。</p>\n\n<h2>MCP 架构：host / client / server 与 transport</h2>\n<h3>三个角色，一台 host 每个 server 各开一个 client</h3>\n<p>MCP 是 client-server 架构，三个参与方（官方定义）：</p>\n<ul>\n<li><strong>MCP Host</strong>——AI 应用本身（如 Claude Code、Claude Desktop），负责协调管理一个或多个 client。</li>\n<li><strong>MCP Client</strong>——host 为<strong>每一个</strong> server 各创建一个 client，每个 client 维护一条到对应 server 的<strong>专属连接</strong>。</li>\n<li><strong>MCP Server</strong>——给 client 提供上下文的程序，可以跑在本地，也可以跑在远端。</li>\n</ul>\n<p>记牢这条关系：host 接三个 server，就有三个 client、三条专属连接，是一对一。本地 stdio server 通常只服务一个 client；远程 Streamable HTTP server 通常服务很多 client。「server 主动连 host」「一个 client 连多个 server」都是错的说法。</p>\n\n<h3>两层：data layer 讲 JSON-RPC，transport layer 讲怎么传</h3>\n<p>MCP 分两层。<strong>Data layer</strong> 是内层，用 <strong>JSON-RPC 2.0</strong> 定义消息结构和语义，管生命周期（<code>initialize</code> 握手协商能力）和核心 primitives。<strong>Transport layer</strong> 是外层，管连接建立、消息分帧、鉴权。同一套 JSON-RPC 消息格式在所有 transport 上通用。</p>\n<p>官方两种 transport：</p>\n<ul>\n<li><strong>Stdio transport</strong>——用标准输入输出在同机进程间直连，无网络开销，本地 server 用它。</li>\n<li><strong>Streamable HTTP transport</strong>——用 HTTP POST 发消息、可选 Server-Sent Events 做流式；支持远程通信和标准 HTTP 鉴权（bearer token、API key、自定义 header），官方推荐用 OAuth 拿 token。</li>\n</ul>\n<p>在 Claude Code 里配置时，<code>type</code> 字段接受 <code>streamable-http</code> 作为 <code>http</code> 的别名；老的 SSE transport 已被标记 deprecated，能用 HTTP 就别用 SSE。</p>\n\n<h3>三种 primitive：tools 给行动力，resources 给可见性</h3>\n<p>server 能向 client 暴露三种 primitive：<strong>Tools</strong>（可执行函数，如查数据库、调 API）、<strong>Resources</strong>（上下文数据源，如文件内容、数据库 schema）、<strong>Prompts</strong>（可复用的交互模板）。client 先用 <code>tools/list</code> 发现有哪些工具，再用 <code>tools/call</code> 执行。一句话记：tools 让 agent 能<strong>做</strong>事，resources 让 agent 能<strong>看见</strong>数据——把数据库 schema 做成 resource 前置暴露，就省掉 agent 一遍遍探索式地列表、描述每张表。</p>\n\n<h3>Claude Code 里的三个 scope 和 .mcp.json</h3>\n<p>Claude Code 的 MCP 配置分三个 scope（官方原表）：</p>\n<pre><code>Scope     | 在哪些项目加载   | 是否与团队共享        | 存在哪\nlocal     | 仅当前项目       | 否                    | ~/.claude.json（默认）\nproject   | 仅当前项目       | 是，通过版本控制      | 项目根的 .mcp.json\nuser      | 你所有项目       | 否                    | ~/.claude.json</code></pre>\n<p>给团队接公司内部自建的 Confluence、希望全队共享又不把 token 写进 repo：用 <strong>project scope</strong>，配置落项目根 <code>.mcp.json</code>（设计上就是要 check 进版本控制），token 用环境变量展开——<code>${VAR}</code> 展开成环境变量 <code>VAR</code> 的值，<code>${VAR:-default}</code> 在没设时用默认值。这样 config 能安全提交、各人本地设自己的 token、轮换 token 不用改 config。命令形态：<code>claude mcp add --transport http --scope project &lt;name&gt; &lt;url&gt;</code>；本地 stdio server 用 <code>claude mcp add --scope project &lt;name&gt; -- &lt;command&gt; [args...]</code>，<code>--</code> 后面的东西原样传给 server。</p>\n\n<h2>SCENARIO：调试工具选择错误</h2>\n<p><strong>现象</strong>：双语客服 agent 上线后，学员用中文问「我这个月的课上到哪了」，agent 却调了 <code>query_member_profile</code>（查会员资料），返回订阅到期日，答非所问。换成英文问「how far am I in the course」有时对有时错。产品经理第一反应是「模型太笨，加几个 few-shot 例子」或者「上个 routing 分类器」。都不是第一步。</p>\n<p><strong>诊断顺序（从最低成本、最高杠杆开始）：</strong></p>\n<ol>\n<li><strong>先看 description，它才是选择的主机制。</strong> 打开两个工具的描述，发现 <code>query_member_profile</code> 写的是「查会员资料」、<code>query_learning_progress</code> 写的是「查学习进度」——都太短，边界没写。模型分不清「上到哪了」算资料还是进度，只能猜。这就是根因所在。</li>\n<li><strong>扩写 description，加显式边界。</strong> 给 <code>query_member_profile</code> 加一句「不返回课程进度——查『上到第几课 / 完课率』请用 query_learning_progress」；给 <code>query_learning_progress</code> 对称加一句反向边界，并各写清返回字段和触发问法。每条描述扩到 3-4 句。这一步改完，中英文两种问法通常就都路由对了。</li>\n<li><strong>回查 system prompt 有没有反向拉扯。</strong> 描述改对了还偶发翻车，去看 system prompt——如果里面有类似「回答任何问题前先确认学员账户状态」这种指令，模型会被它带偏、优先去查会员资料。system prompt 里对关键词敏感的措辞会盖过你写好的工具描述，改完 description 一定要回头查 prompt 有没有冲突。</li>\n</ol>\n<p><strong>为什么不先做那两件事：</strong>加 few-shot 例子只是往 prompt 里堆 token、治标不治本，根因是描述没写清；一上来就上 routing 分类器是过度工程，绕开了模型本来的自然语言理解、还平白加了一层基础设施。这门认证的元规则就一句：<strong>先做低成本高杠杆的那一步——先扩描述，再谈分类器。</strong>如果两个工具的能力本来就高度重叠，长期可以考虑合并成一个带 <code>action</code> 参数的工具，但那是架构层的活，不是排障第一步。</p>\n\n<h2>自测 5 题</h2>\n<h3>第 1 题</h3>\n<p>双语客服 agent 的 <code>query_member_profile</code> 和 <code>query_learning_progress</code>，两个工具的 description <strong>已经扩写过</strong>、边界写清了，绝大多数问法都路由对了。但学员问「我这个月的课上到哪了」偶尔还是被调去查会员资料。你翻 system prompt，发现里面有一句「回答任何问题前，先确认学员的账户与订阅状态」。<strong>最该先做</strong>的是？</p>\n<ul>\n<li>A. 再往两个工具的 description 里塞更多例子，把这类问法讲得更细</li>\n<li>B. 改 system prompt 那句全局指令，别让它在每次回答前都强制先查账户、跟工具描述抢路由</li>\n<li>C. 在两个工具前面加一个 routing 分类器，先判意图再分发</li>\n<li>D. 把两个工具合并成一个带 action 参数的大工具</li>\n</ul>\n<p><strong>正确答案：B</strong></p>\n<ul>\n<li><strong>B 对</strong>：description 已经写对了，剩下的偶发翻车来自 system prompt——里面对关键词敏感的措辞（「先确认账户状态」）会盖过工具描述，把模型拽去查会员资料。描述改对后仍偶发翻车，下一步就是回头查 prompt 有没有反向拉扯，这一步竞品常被忽略。</li>\n<li><strong>A 错</strong>：描述已经清楚了，再堆例子只是往 prompt 塞 token，动不了真正的根因（system prompt 冲突）。</li>\n<li><strong>C 过度工程</strong>：分类器绕开模型自带的语言理解、平白加一层基础设施，而问题本是一句 prompt 冲突。</li>\n<li><strong>D 不是第一步</strong>：合并工具是架构层改动、工作量大；这里两个工具职责本就该分开，冲突根因在 prompt 不在工具数量。</li>\n</ul>\n\n<h3>第 2 题</h3>\n<p>双语客服 bot 每收到一条留言，必须建一张结构化工单，按类别分四个工具：<code>create_refund_ticket</code> / <code>create_tech_ticket</code> / <code>create_course_ticket</code> / <code>create_visa_ticket</code>，各自 schema 不同。要求：一定要建某张工单、绝不回聊天文本，但<strong>事先不知道</strong>该归哪一类。<code>tool_choice</code> 该设成什么？</p>\n<ul>\n<li>A. <code>{\"type\": \"auto\"}</code></li>\n<li>B. <code>{\"type\": \"none\"}</code></li>\n<li>C. <code>{\"type\": \"any\"}</code></li>\n<li>D. <code>{\"type\": \"tool\", \"name\": \"create_refund_ticket\"}</code></li>\n</ul>\n<p><strong>正确答案：C</strong></p>\n<ul>\n<li><strong>C 对</strong>：<code>any</code> 强制模型必须调某个工具、但由它自选哪个——正好对应「必须结构化输出、但不确定该用哪个 schema」。</li>\n<li><strong>A 错</strong>：<code>auto</code> 允许模型直接回自然语言，保证不了一定建工单。</li>\n<li><strong>B 错</strong>：<code>none</code> 禁止调任何工具，与需求相反。</li>\n<li><strong>D 诱人但错</strong>：<code>tool</code> 会锁死到 <code>create_refund_ticket</code> 一类 schema，来的是技术故障或签证问题就建错单了。</li>\n</ul>\n\n<h3>第 3 题</h3>\n<p>多 agent 客服系统里，子 agent 的 <code>lookup_visa_rule</code> 查一个冷门签证类别，库里确实没有对应规则——查询本身成功、只是结果为空。但工具返回时设了 <code>\"is_error\": true</code>。上游的 coordinator agent 一看到 <code>is_error</code>，判定这条链路「坏了」，直接把整个会话标记为系统故障、跳过后续步骤、弹出「服务暂时不可用」。根因该怎么修？</p>\n<ul>\n<li>A. 工具不该给「查询成功但无匹配」设 <code>is_error</code>，应作为正常空结果返回（写明「no matching rule found」）；<code>is_error</code> 只留给真正够不到数据源的失败。coordinator 就不会把空结果误判成系统故障</li>\n<li>B. 让 coordinator 忽略所有 <code>is_error</code>，一律当成非致命继续往下</li>\n<li>C. 在 <code>lookup_visa_rule</code> 外面包一层 try/catch，把返回吞掉不上报</li>\n<li>D. 给 coordinator 加一张「系统故障」白名单，把 <code>lookup_visa_rule</code> 排除在外</li>\n</ul>\n<p><strong>正确答案：A</strong></p>\n<ul>\n<li><strong>A 对</strong>：「够不到数据源的失败」和「查成功但无匹配」是两回事。空结果不是错误，标了 <code>is_error</code> 就是在源头给出错误信号，下游怎么处理都是在给一个假故障打补丁。修响应结构、别乱标 <code>is_error</code> 才是根治。</li>\n<li><strong>B 错</strong>：一刀切忽略所有 <code>is_error</code>，会把真正够不到数据源的失败也当成功，掩盖真错，比原问题更危险。</li>\n<li><strong>C 错</strong>：空结果压根不是异常，try/catch 抓不到；吞返回还会把真异常一起吞掉，变静默失败。</li>\n<li><strong>D 治标</strong>：白名单绕过了症状，没改「把空结果标成错误」的根因，换个工具犯同样毛病还得再加一条白名单。</li>\n</ul>\n\n<h3>第 4 题</h3>\n<p>关于 MCP 的 host / client / server 架构，下面哪条说法<strong>正确</strong>？</p>\n<ul>\n<li>A. 一个 MCP client 可以同时维护到多个 server 的连接，一对多复用</li>\n<li>B. MCP server 主动发起连接、连到 host 上</li>\n<li>C. MCP 只支持 stdio transport，无法用于远程 server</li>\n<li>D. host 为每个 server 各创建一个 MCP client，每个 client 维护一条到对应 server 的专属连接</li>\n</ul>\n<p><strong>正确答案：D</strong></p>\n<ul>\n<li><strong>D 对</strong>：官方定义就是 host 协调多个 client，每个 server 对应一个 client、一条专属连接，是一对一。</li>\n<li><strong>A 错</strong>：把关系说反了——是一个 host 管多个 client，不是一个 client 连多个 server。</li>\n<li><strong>B 错</strong>：是 host（通过 client）发起并维护到 server 的连接，不是 server 反过来连 host。</li>\n<li><strong>C 错</strong>：除了 stdio，还有 Streamable HTTP transport 专门用于远程通信。</li>\n</ul>\n\n<h3>第 5 题</h3>\n<p>团队要给 Claude Code 接公司<strong>内部自建的 Confluence</strong>（内部知识库），要求：配置进版本控制、全队共享同一套、但 API token 绝不写进 repo。正确做法是？</p>\n<ul>\n<li>A. 放 user scope（<code>~/.claude.json</code>），把 token 明文写在配置里</li>\n<li>B. 放项目根 <code>.mcp.json</code>（project scope），token 用 <code>${CONFLUENCE_TOKEN}</code> 环境变量展开，各人本地设自己的值</li>\n<li>C. 每个成员各自在 local scope 配一遍，互不共享</li>\n<li>D. 放项目根 <code>.mcp.json</code> 但把 token 明文填进去，再用 <code>.gitignore</code> 忽略这个文件、不让它进版本控制</li>\n</ul>\n<p><strong>正确答案：B</strong></p>\n<ul>\n<li><strong>B 对</strong>：project scope 的 <code>.mcp.json</code> 设计上就是要 check 进版本控制、全队共享；<code>${VAR}</code> 展开让 config 只引用变量名、secrets 不进 repo，token 轮换也不用改 config。</li>\n<li><strong>A 错</strong>：user scope 存在 <code>~/.claude.json</code>、不进版本控制也不共享，且明文写 token 违反「secrets 不进配置」。</li>\n<li><strong>C 错</strong>：local scope 只对本人本项目可见、不共享，达不到「全队同一套」。</li>\n<li><strong>D 自相矛盾</strong>：把 <code>.mcp.json</code> 加进 <code>.gitignore</code>，它就不进版本控制、全队也拿不到，直接违背「配置进版本控制、全队共享」；明文写 token 也照样违规。</li>\n</ul>\n\n<h2>官方文档引用</h2>\n<ul>\n<li>Tool use with Claude（overview）：https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview</li>\n<li>Define tools（description 最佳实践、tool_choice 四取值、input_schema）：https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools</li>\n<li>Handle tool calls（tool_result / is_error / stop_reason: tool_use）：https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls</li>\n<li>MCP Architecture overview（host / client / server、data vs transport layer、JSON-RPC 2.0、primitives）：https://modelcontextprotocol.io/docs/learn/architecture</li>\n<li>Connect Claude Code to tools via MCP（三个 scope、.mcp.json、transport、${VAR} 展开）：https://code.claude.com/docs/en/mcp</li>\n</ul>"
         },
         {
           "code": "L08",
@@ -208,11 +387,36 @@
           "isLive": false,
           "duration": 55,
           "steps": [
-            { "order": 1, "type": "CONCEPT", "title": "CLAUDE.md 与 settings", "description": "项目规则如何驱动 Claude Code 行为；settings.json 权限/hooks 层级。", "duration": 14 },
-            { "order": 2, "type": "CONCEPT", "title": "hooks / slash commands / subagents", "description": "自动化行为靠 hooks、复用 prompt 靠 slash command、并行靠 subagents 的考点。", "duration": 14 },
-            { "order": 3, "type": "SCENARIO", "title": "典型场景：配置一个可靠的团队工作流", "description": "给定团队需求，选对 hooks + 权限 + subagent 配置。", "duration": 14 },
-            { "order": 4, "type": "MCQ", "title": "本 domain 自测 5 题", "description": "检验 Claude Code Configuration 掌握度。", "duration": 13 }
-          ]
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "CLAUDE.md 与 settings",
+              "description": "项目规则如何驱动 Claude Code 行为；settings.json 权限/hooks 层级。",
+              "duration": 14
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "hooks / slash commands / subagents",
+              "description": "自动化行为靠 hooks、复用 prompt 靠 slash command、并行靠 subagents 的考点。",
+              "duration": 14
+            },
+            {
+              "order": 3,
+              "type": "SCENARIO",
+              "title": "典型场景：配置一个可靠的团队工作流",
+              "description": "给定团队需求，选对 hooks + 权限 + subagent 配置。",
+              "duration": 14
+            },
+            {
+              "order": 4,
+              "type": "MCQ",
+              "title": "本 domain 自测 5 题",
+              "description": "检验 Claude Code Configuration 掌握度。",
+              "duration": 13
+            }
+          ],
+          "learningMaterial": "<h2>考点地图：Domain 3 为什么最容易失分</h2>\n<p>Domain 3（Claude Code Configuration）权重约 <strong>20%</strong>（社区口径，以官方考纲为准），仅次于 Agentic Architecture 的 27%，和 Prompt Engineering 并列第二。它失分率高的原因很具体：网上大量二手教程把配置层级讲成\"更具体的覆盖更宽的\"，而官方文档明确否认这套优先级——你如果凭直觉答，会成片踩坑。</p>\n<p>这个 domain 的官方描述覆盖五块，按考试出现频率排：</p>\n<ul>\n<li><strong>CLAUDE.md 层级与 <code>.claude/rules/</code></strong> — 三级作用域、拼接 vs 覆盖、path-scoped 规则。最高频。</li>\n<li><strong>settings.json 与权限模式</strong> — 谁是硬强制、permission mode 有哪几个值。</li>\n<li><strong>hooks</strong> — 触发时机、exit code 语义（exit 2 才阻断，exit 1 不阻断，几乎必考一题）。</li>\n<li><strong>slash commands / skills</strong> — project vs personal 作用域（跨版本稳定的核心考点）、frontmatter；新版 docs 已把两者合并，但考试可能锁在合并前的快照。</li>\n<li><strong>subagents 与 MCP 接入</strong> — 独立 context window、<code>claude mcp add</code> 的三种 transport 和三种 scope。</li>\n</ul>\n<p>一句话抓总纲：<strong>CLAUDE.md 是\"引导\"，settings.json 和 hooks 是\"强制\"。</strong> 分不清这两层，Domain 3 至少丢一半分。</p>\n\n<h2>第一层：CLAUDE.md 层级 vs settings.json（到底谁说了算）</h2>\n<h3>CLAUDE.md 的四个作用域是\"拼接\"，不是\"覆盖\"</h3>\n<p>CLAUDE.md 按作用域从宽到窄有四处，官方给的精确路径是：</p>\n<ul>\n<li><strong>Managed policy</strong>（组织级，IT 下发）：macOS <code>/Library/Application Support/ClaudeCode/CLAUDE.md</code>、Linux/WSL <code>/etc/claude-code/CLAUDE.md</code></li>\n<li><strong>User</strong>（个人，跨所有项目）：<code>~/.claude/CLAUDE.md</code>，不进 git</li>\n<li><strong>Project</strong>（团队共享，随 repo）：<code>./CLAUDE.md</code> 或 <code>./.claude/CLAUDE.md</code>，两个路径都合法</li>\n<li><strong>Local</strong>（个人项目偏好）：<code>./CLAUDE.local.md</code>，按惯例进 <code>.gitignore</code></li>\n</ul>\n<p>这里是最大的考点陷阱。官方原文：<strong>\"All discovered files are concatenated into context rather than overriding each other.\"</strong> 所有文件是<strong>拼接进同一个 context</strong>，谁都不覆盖谁。加载顺序是从文件系统根往工作目录方向走（宽 scope 先、窄 scope 后），同目录内 <code>CLAUDE.local.md</code> 接在 <code>CLAUDE.md</code> 后面。但\"读得晚\"不等于\"优先级高\"——文档说得很直白：<strong>\"if two rules contradict each other, Claude may pick one arbitrarily.\"</strong> 冲突时是随机挑一个，没有胜负规则。</p>\n<p>再往深一层：CLAUDE.md 是<strong>以 user message 形式</strong>投喂给模型的，不进 system prompt，官方原话 <strong>\"there's no guarantee of strict compliance\"</strong>。所以它天生就是软约束。</p>\n<p>典型考场景（原创版）：匠人做双语客服机器人，Aurora 的机器（Claude）总是只回英文，其他人正常双语。根因几乎永远是——\"必须中英双语\"这条规则被写进了她的 <code>~/.claude/CLAUDE.md</code>（user-level，不进 git），队友 clone repo 根本拿不到。修法：把规则从 user-level 挪到项目 <code>./CLAUDE.md</code>。</p>\n\n<h3>要\"每次都生效\"的硬规则，放 settings.json 或 hook</h3>\n<p>官方给了一句判据式的原话：<strong>\"Settings rules are enforced by the client regardless of what Claude decides to do. CLAUDE.md instructions shape Claude's behavior but are not a hard enforcement layer.\"</strong> settings 由客户端强制，跟模型怎么想无关；CLAUDE.md 只塑造行为。</p>\n<p>settings.json 的作用域<strong>有</strong>严格优先级（这点和 CLAUDE.md 相反），从高到低：<strong>managed（企业托管）&gt; command line &gt; local（<code>.claude/settings.local.json</code>）&gt; project（<code>.claude/settings.json</code>）&gt; user（<code>~/.claude/settings.json</code>）</strong>。权限相关字段在 <code>permissions</code> 对象下：<code>allow</code> / <code>deny</code> / <code>ask</code> / <code>defaultMode</code> / <code>additionalDirectories</code>。注意一个细节：优先级链管的是<strong>普通设置</strong>，而权限规则是<strong>跨作用域合并（merge）</strong>的，不是简单覆盖——所以某一层加了 <code>deny</code>，别的层删不掉。</p>\n<p>要 100% 挡住 Claude 读微信 key，正确姿势是往 <code>permissions.deny</code> 加一行 <code>Read(./.env)</code>，而不是在 CLAUDE.md 写\"禁止读 .env\"（后者是引导，会被违反）。</p>\n<p><code>defaultMode</code> 的四个合法值要背下来：<code>default</code>（标准，该问就问）、<code>acceptEdits</code>（自动批准文件编辑）、<code>plan</code>（先出计划不动手）、<code>bypassPermissions</code>（完全跳过权限检查）。</p>\n<p>还有两个易混工具：<code>/memory</code> 命令只<strong>列出</strong>当前 session 已加载哪些 CLAUDE.md / rules 文件，是诊断用的，<strong>不触发加载、也不强制执行</strong>。<code>@path</code> import（如 <code>@docs/git-instructions.md</code>）能把 CLAUDE.md 拆成多个文件，但它是 launch 时原地 inline 加载，<strong>拆文件并不省 context</strong>——想省 token 要用下面的 <code>.claude/rules/</code>。</p>\n\n<h2>第二层：hooks / skills / subagents / MCP（强制、复用、隔离、接入）</h2>\n<h3>hooks —— 唯一的确定性强制层，exit 2 才阻断</h3>\n<p>hook 是绑在生命周期事件上的 shell 命令，客户端在固定时机执行，跟模型的\"意愿\"无关。要考的事件名：<code>PreToolUse</code>（工具调用前）、<code>PostToolUse</code>（工具成功后）、<code>UserPromptSubmit</code>（你提交 prompt、Claude 处理前）、<code>SessionStart</code> / <code>SessionEnd</code>、<code>Stop</code>（Claude 回答完）、<code>SubagentStop</code>、<code>PreCompact</code> 等。</p>\n<p>最爱考的是 exit code 语义，官方讲得非常死：</p>\n<ul>\n<li><strong>exit 0</strong>：成功。Claude Code 解析 stdout 里的 JSON 输出字段（JSON 只在 exit 0 时被处理）。</li>\n<li><strong>exit 2</strong>：阻断错误。忽略 stdout，把 stderr 当错误信息回传给 Claude。对 <code>PreToolUse</code> 就是<strong>阻断这次工具调用</strong>，对 <code>UserPromptSubmit</code> 就是拒绝这个 prompt。</li>\n<li><strong>其它非零（含 exit 1）</strong>：非阻断错误。官方明确警告 <strong>\"only exit code 2 blocks the action... treats exit code 1 as a non-blocking error and proceeds with the action\"</strong>——你写 <code>exit 1</code> 想拦命令，命令照跑。要拦就必须 <code>exit 2</code>。</li>\n</ul>\n<p>另一条等效阻断路径：<code>PreToolUse</code> 用 <code>exit 0</code> + 输出 JSON <code>permissionDecision: \"deny\"</code>，也能确定性拦截并带上理由。想给\"每次 commit 前必跑 lint\"\"禁止 <code>rm -rf</code>\"这种<strong>必须发生在某个时点</strong>的规则上强制，答案永远是 hook，不是 CLAUDE.md。</p>\n\n<h3>slash commands 与 skills：作用域是硬考点，\"合没合并\"看版本</h3>\n<p>官方新版文档原话 <strong>\"Custom commands have been merged into skills\"</strong>：<code>.claude/commands/deploy.md</code> 和 <code>.claude/skills/deploy/SKILL.md</code> 都创建同一个 <code>/deploy</code>，旧的 <code>.claude/commands/</code> 文件继续能用，同名时 skill 形态优先。skill 比旧 command 多三样——SKILL.md 旁的 supporting-files 目录、Claude 按 <code>description</code> 自动发现调用、<code>disable-model-invocation</code> 等 frontmatter 开关。</p>\n<p><strong>⚠️ 但\"已合并\"是版本敏感的断言，别拿它去赌单选。</strong> CCA-F 通常锁定某个 docs 快照，如果考试所依据的版本里 commands 和 skills 还是两套并列机制，你按\"已合并、skill 优先\"去答反而可能踩坑。跨版本稳定、也是这个考点真正要考的，是下面的作用域规则——它不受\"合没合并\"影响。</p>\n<p>两级作用域，新旧版本一致：<strong>project</strong>（<code>.claude/skills/</code> 或旧的 <code>.claude/commands/</code>，进 git 全队 clone 即得）vs <strong>personal</strong>（<code>~/.claude/skills/</code> 或 <code>~/.claude/commands/</code>，个人机器独占、不进 git）。要\"全队 clone 就能用同一个 <code>/deploy</code>\"，无论做成 skill 还是 command，都必须放项目级并提交进 git；放 <code>~/.claude/</code> 队友 clone 拿不到。场景题落点在这儿，不在\"哪种形态更 canonical\"。</p>\n<p>常考 frontmatter 字段（真实字段名）：<code>description</code>（Claude 判断何时自动调）、<code>allowed-tools</code>（此 skill 活跃时免权限提示的工具，<strong>注意它不是\"限制工具集\"</strong>，只是预批准免问）、<code>disallowed-tools</code>（从可用池里移除）、<code>argument-hint</code>、<code>disable-model-invocation: true</code>（只允许用户显式 <code>/name</code> 调，禁止模型自动触发）、<code>context: fork</code>（在 forked subagent 里跑，verbose 输出不污染主对话）。内容里用 <code>$ARGUMENTS</code> 或 <code>$1</code> 接收参数。</p>\n<p>什么该做 skill、什么该进 CLAUDE.md？<strong>skill = 按需的任务型 workflow（body 只在调用时加载，长参考几乎不占 context）；CLAUDE.md = 每 session 常驻的通用事实。</strong> 任务流程塞进 CLAUDE.md，或把常驻标准做成 skill，都是反模式。</p>\n\n<h3>path-scoped rules —— 跨目录文件类型约定的正解</h3>\n<p><code>.claude/rules/</code> 下每个 <code>.md</code> 用 YAML frontmatter 的 <code>paths</code> glob，只在 Claude 读到匹配文件时才进 context。它专治一种 root CLAUDE.md 和 directory-level 都搞不定的场景：<strong>一种文件类型散落在几十个目录里</strong>。比如 <code>.test.ts</code> 分布在 40+ 功能目录，用 directory-level CLAUDE.md 要放 40+ 份拷贝、改一条约定改 40+ 处必然 drift；用 root CLAUDE.md 又会在你写 React 组件时也把测试规则烧进 context。正解是一个文件：</p>\n<pre><code>---\npaths:\n  - \"**/*.test.ts\"\n---\n# 测试约定\n- 每个测试覆盖 happy path + 边界 + 错误路径</code></pre>\n<p>无 <code>paths</code> 的 rules 文件则无条件加载，优先级和 <code>.claude/CLAUDE.md</code> 相同。</p>\n\n<h3>subagents —— 用独立 context window 隔离脏活</h3>\n<p>subagent 是跑在<strong>独立 context window</strong>里的专用 agent，自带 system prompt、指定工具集和独立权限，官方定位 <strong>\"runs in its own context window... returns only the summary\"</strong>。用途是：一个副线任务会往主对话灌一堆 grep 结果 / 日志 / 文件内容，让 subagent 在它自己的 context 里干、只回传结论。文件放 <code>.claude/agents/</code>（project）或 <code>~/.claude/agents/</code>（user），是 Markdown + YAML frontmatter，必填字段只有 <code>name</code> 和 <code>description</code>，可选 <code>tools</code>、<code>model</code>。Claude 靠 <code>description</code> 决定何时委派——所以 description 要写清\"什么时候用我\"。想让探索走更便宜的模型，就给它 <code>model: haiku</code>。</p>\n\n<h3>MCP —— 把外部工具接进 Claude Code</h3>\n<p>接一个 MCP server 用 <code>claude mcp add</code>。三种 transport：<strong>http</strong>（远程，官方推荐）、<strong>sse</strong>（已 deprecated）、<strong>stdio</strong>（本地进程）。远程：<code>claude mcp add --transport http notion https://mcp.notion.com/mcp</code>；本地 stdio 用 <code>--</code> 分隔 Claude 的选项和真正要跑的命令：<code>claude mcp add --transport stdio myserver -- npx server</code>。</p>\n<p>三种 scope 决定共享范围，也和前面的模式一致：<strong>local</strong>（默认，存 <code>~/.claude.json</code>，只有你自己、只在该项目）、<strong>project</strong>（<code>--scope project</code>，写进 repo 根的 <code>.mcp.json</code>，随 git 分发全队共享，队友首次需批准）、<strong>user</strong>（<code>--scope user</code>，你的所有项目）。团队要共用一个 Notion server，就得用 <code>--scope project</code> 让它进 <code>.mcp.json</code>。</p>\n\n<h2>SCENARIO：给匠人团队配一套可靠的 AI 工作流</h2>\n<p>把上面的机制串成一个真实决策。场景：匠人在做\"留学生求职工具\"这个 monorepo，团队五个人共享一套 Claude Code 配置。需求逐条落到正确的机制上——这正是 Domain 3 场景题的考法。</p>\n<ul>\n<li><strong>\"永远不能提交 <code>.env</code>、不能读客户 PII 目录\"</strong> → 这是硬红线，必须客户端强制。用 <code>settings.json</code> 的 <code>permissions.deny</code>（如 <code>Read(./secrets/**)</code>）或 <code>PreToolUse</code> hook。<strong>不要</strong>只写 CLAUDE.md——它是软约束会被违反。</li>\n<li><strong>\"每次改代码后必须自动跑 prettier\"</strong> → 必须发生在固定时点 → <code>PostToolUse</code> hook。</li>\n<li><strong>\"全队 clone 后就能用同一个 <code>/deploy</code>\"</strong> → project skill <code>.claude/skills/deploy/SKILL.md</code>，提交进 git。放 <code>~/.claude/</code> 只有自己有。</li>\n<li><strong>\"测试文件散在 30+ 目录，测试约定只在编辑测试时加载\"</strong> → <code>.claude/rules/testing.md</code> 加 <code>paths: [\"**/*.test.ts\"]</code>。不用 directory-level（会 drift），不用 root CLAUDE.md（烧 token）。</li>\n<li><strong>\"排查一个跨 20 文件的 bug，别让 grep/日志塞满主对话\"</strong> → subagent 在独立 context 里定位、回传 summary。</li>\n<li><strong>\"团队共用 Notion 知识库当数据源\"</strong> → <code>claude mcp add --transport http notion &lt;url&gt; --scope project</code>，进 <code>.mcp.json</code> 随 repo 分发。</li>\n<li><strong>\"项目的整体架构、命名规范、AU 本地化（GST、ABN、财年 7 月起）\"</strong> → 这些是每 session 都要的常驻事实 → 项目 <code>./CLAUDE.md</code>。</li>\n</ul>\n<p>决策口诀：<strong>常驻事实 → CLAUDE.md；跨目录文件类型约定 → path rules；按需任务流程 → skill；必须发生在某时点或必须硬拦 → hook / settings；隔离脏活 → subagent；接外部系统 → MCP。</strong></p>\n\n<h2>自测 5 题</h2>\n<h3>第 1 题</h3>\n<p>匠人双语客服机器人 repo 的安全要求：Claude 永远不能读 <code>.env</code>（里面有微信 API key）。你在项目 CLAUDE.md 写了\"禁止读取 .env\"，但 Claude 偶尔还是打开了它。要真正 100% 挡住，最靠谱的做法是？</p>\n<ul>\n<li>A. 把禁令改写得更具体、加粗、放到 CLAUDE.md 最顶部</li>\n<li>B. 在 <code>.claude/settings.json</code> 的 <code>permissions.deny</code> 加一条 <code>Read(./.env)</code></li>\n<li>C. 把禁令搬到 <code>~/.claude/CLAUDE.md</code>，因为 user-level 优先级最高</li>\n<li>D. 运行 <code>/memory</code> 强制重新加载规则</li>\n</ul>\n<p><strong>正确答案：B</strong></p>\n<ul>\n<li><strong>A 错</strong>：CLAUDE.md 以 user message 投喂，官方明说 \"no guarantee of strict compliance\"，措辞再狠也是引导不是强制。这个干扰项诱人在于\"更用力写规则\"是很多人的第一直觉。</li>\n<li><strong>B 对</strong>：<code>permissions.deny</code> 由客户端强制执行，\"enforced by the client regardless of what Claude decides\"。这是硬拦截层。</li>\n<li><strong>C 错</strong>：user-level 并不覆盖 project-level——文档明确是 concatenate 不 override；而且 <code>~/.claude</code> 不进 git，队友那台机器没有这条规则。\"优先级最高\"本身就是被官方否认的误解。</li>\n<li><strong>D 错</strong>：<code>/memory</code> 只列出已加载的文件，既不触发加载也不做强制。它是诊断工具，被误当成\"刷新配置\"的按钮。</li>\n</ul>\n\n<h3>第 2 题</h3>\n<p>留学生求职工具 monorepo 里，<code>.test.ts</code> 测试文件散落在 40+ 个功能目录。团队想让\"测试必须覆盖 happy path + 边界\"这条约定<strong>只在编辑测试文件时</strong>加载，写 React 组件时别占 context。怎么配最对？</p>\n<ul>\n<li>A. 在 40+ 个目录各放一份 directory-level CLAUDE.md</li>\n<li>B. 写进 repo 根 CLAUDE.md，让它全局生效</li>\n<li>C. 做成一个 skill，让 Claude always-on 自动调它</li>\n<li>D. 在 <code>.claude/rules/testing.md</code> 用 <code>paths: [\"**/*.test.ts\"]</code> frontmatter</li>\n</ul>\n<p><strong>正确答案：D</strong></p>\n<ul>\n<li><strong>A 错</strong>：40+ 份拷贝，改一条约定要改 40+ 处，必然 drift。看着\"就近生效\"很合理，实际是维护灾难。</li>\n<li><strong>B 错</strong>：root CLAUDE.md 每个 session 都全量加载，写 React 时测试规则也在烧 token，正好违背了\"只在编辑测试时加载\"。</li>\n<li><strong>C 错</strong>：skill 是按需任务型（调用时才加载），不是\"随文件类型自动常驻的背景约定\"；把它说成 always-on 本身就误解了 skill。</li>\n<li><strong>D 对</strong>：path-scoped rule 只在 Claude 读到匹配 glob 的文件时进 context，正是为\"跨目录文件类型约定 + token 效率\"设计的。</li>\n</ul>\n\n<h3>第 3 题</h3>\n<p>你写了个 <code>PreToolUse</code> hook 拦截 <code>rm -rf</code>：脚本检测到危险命令时往 stderr 打了原因并 <code>exit 1</code>。但 Claude 照样把命令跑了。为什么？</p>\n<ul>\n<li>A. 只有 <code>exit 2</code> 才阻断动作；<code>exit 1</code> 被当成非阻断错误，动作照常继续</li>\n<li>B. <code>PreToolUse</code> 不能拦 Bash，只能拦 Edit 类工具</li>\n<li>C. hook 必须先加进 <code>settings.json</code> 的 <code>allow</code> 列表才会生效</li>\n<li>D. stderr 不会回传给 Claude，必须改用 stdout</li>\n</ul>\n<p><strong>正确答案：A</strong></p>\n<ul>\n<li><strong>A 对</strong>：官方警告得很死，\"only exit code 2 blocks the action... treats exit code 1 as a non-blocking error and proceeds\"。<code>exit 1</code> 是 Unix 惯用失败码，正因如此最容易顺手写错。</li>\n<li><strong>B 错</strong>：<code>PreToolUse</code> 对任意工具（含 Bash）都能阻断，命中就拦。</li>\n<li><strong>C 错</strong>：hook 不进 <code>permissions.allow</code>，两套机制不搭界。</li>\n<li><strong>D 错</strong>：恰好反了——<code>exit 2</code> 时 stderr 正是回传给 Claude 的错误信息通道。</li>\n</ul>\n\n<h3>第 4 题</h3>\n<p>你在一个大 repo 里让 Claude 排查 bug，需要先 grep 几十个文件、翻一堆日志才能定位，但你不想让这些中间输出塞满主对话 context。最合适的做法是？</p>\n<ul>\n<li>A. 把相关日志都贴进 CLAUDE.md，让 Claude 直接读</li>\n<li>B. 开 <code>bypassPermissions</code> 模式，让它跑快点少产生输出</li>\n<li>C. 用一个 subagent 做定位，它在独立 context window 里跑、只回传 summary</li>\n<li>D. 每读完一个文件就 <code>/compact</code> 一次，随时压缩</li>\n</ul>\n<p><strong>正确答案：C</strong></p>\n<ul>\n<li><strong>A 错</strong>：CLAUDE.md 是放常驻指令的，不是临时日志缓冲；而且它每 session 全量加载，塞日志纯属浪费 context。</li>\n<li><strong>B 错</strong>：<code>bypassPermissions</code> 只是跳过权限确认，和 context 占用完全无关。这个干扰项蹭\"加速\"的直觉。</li>\n<li><strong>C 对</strong>：subagent \"runs in its own context window... returns only the summary\"，正是为隔离 verbose 探索、保持主对话干净而设计。</li>\n<li><strong>D 错</strong>：频繁 compact 有信息损耗且开销大，也不解决\"探索输出污染主线程\"这个根因。</li>\n</ul>\n\n<h3>第 5 题</h3>\n<p>匠人团队想让所有人 clone repo 后就能用同一个 <code>/deploy</code> 命令，还要接上团队共用的 Notion MCP server。哪组配置对？</p>\n<ul>\n<li>A. <code>/deploy</code> 放 <code>~/.claude/commands/</code>；Notion 用 <code>claude mcp add --scope local</code></li>\n<li>B. <code>/deploy</code> 放 <code>.claude/skills/deploy/SKILL.md</code> 并提交进 git；Notion 用 <code>claude mcp add --transport http notion &lt;url&gt; --scope project</code>（写进 <code>.mcp.json</code>）</li>\n<li>C. <code>/deploy</code> 放 <code>.claude/commands/</code>，但 MCP server 只能每人手动 <code>mcp add</code>，没法团队共享</li>\n<li>D. 把 <code>/deploy</code> 流程写进 CLAUDE.md 当一段说明；Notion 配到 <code>~/.claude.json</code></li>\n</ul>\n<p><strong>正确答案：B</strong></p>\n<ul>\n<li><strong>A 错</strong>：<code>~/.claude/</code> 是个人路径不进 git，队友 clone 拿不到；MCP 的 local scope 存 <code>~/.claude.json</code> 同样只有你自己有。两处都不共享。</li>\n<li><strong>B 对</strong>：project skill 进 git 全队共享；MCP <code>--scope project</code> 写进 repo 根的 <code>.mcp.json</code> 随 git 分发（队友首次会看到待批准）。两者都是团队共享的正解。关键判据是\"进 git 的项目级\"——放 <code>.claude/commands/deploy.md</code> 并提交同样能共享，不取决于它算 skill 还是 command，所以这题不押\"合没合并\"。</li>\n<li><strong>C 错</strong>：前半对（<code>.claude/commands/</code> 能共享），但\"MCP 没法团队共享\"是错的——project scope 就是为共享设计的。半对最诱人。</li>\n<li><strong>D 错</strong>：把任务型流程塞 CLAUDE.md 违反\"任务 workflow 用 skill\"的原则；<code>~/.claude.json</code> 是本地私有，团队看不到。</li>\n</ul>\n\n<h2>官方文档引用</h2>\n<ul>\n<li>How Claude remembers your project（CLAUDE.md 层级 / 拼接 vs 覆盖 / @import / .claude/rules / /memory）：https://code.claude.com/docs/en/memory</li>\n<li>Settings（settings.json 优先级 / permissions.allow·deny·ask / defaultMode 四值）：https://code.claude.com/docs/en/settings</li>\n<li>Hooks（事件列表 / exit code 0·2·其它语义 / PreToolUse 阻断）：https://code.claude.com/docs/en/hooks</li>\n<li>Create custom subagents（.claude/agents / 独立 context window / name·description·tools·model）：https://code.claude.com/docs/en/sub-agents</li>\n<li>Extend Claude with skills（\"Custom commands have been merged into skills\" 原文 / project vs personal / frontmatter / disable-model-invocation / 同名 skill 优先）：https://code.claude.com/docs/en/skills</li>\n<li>Connect Claude Code to tools via MCP（claude mcp add / http·sse·stdio / local·project·user scope / .mcp.json）：https://code.claude.com/docs/en/mcp</li>\n</ul>"
         },
         {
           "code": "L09",
@@ -222,11 +426,36 @@
           "isLive": false,
           "duration": 45,
           "steps": [
-            { "order": 1, "type": "CONCEPT", "title": "生产级 Prompt 设计", "description": "系统提示、角色、约束、输出格式；Claude 偏好的 XML 结构。", "duration": 12 },
-            { "order": 2, "type": "CONCEPT", "title": "Prompt 评估与迭代", "description": "怎么系统化评估 prompt 效果并迭代，而不是凭感觉调。", "duration": 11 },
-            { "order": 3, "type": "SCENARIO", "title": "典型场景：可靠性不达标时改 prompt 还是改架构", "description": "区分该动 prompt 还是该动系统设计。", "duration": 11 },
-            { "order": 4, "type": "MCQ", "title": "本 domain 自测 5 题", "description": "检验 Prompt Engineering 掌握度。", "duration": 11 }
-          ]
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "生产级 Prompt 设计",
+              "description": "系统提示、角色、约束、输出格式；Claude 偏好的 XML 结构。",
+              "duration": 12
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "Prompt 评估与迭代",
+              "description": "怎么系统化评估 prompt 效果并迭代，而不是凭感觉调。",
+              "duration": 11
+            },
+            {
+              "order": 3,
+              "type": "SCENARIO",
+              "title": "典型场景：可靠性不达标时改 prompt 还是改架构",
+              "description": "区分该动 prompt 还是该动系统设计。",
+              "duration": 11
+            },
+            {
+              "order": 4,
+              "type": "MCQ",
+              "title": "本 domain 自测 5 题",
+              "description": "检验 Prompt Engineering 掌握度。",
+              "duration": 11
+            }
+          ],
+          "learningMaterial": "<h2>考点地图：Domain 4 — Prompt Engineering（权重约 20%，社区口径）</h2>\n\n<p>五个考试域里，Prompt Engineering 占 <strong>20%</strong>，和 Claude Code Configuration 并列第二（第一是 Agentic Architecture 27%，之后是 Tool Design &amp; MCP 18%、Context Management 15%）。这一域最容易被当成\"背 prompt 模板\"来准备，然后在考场翻车——因为它考的不是\"怎么写一段好话\"，而是<strong>在什么可靠性问题下，写 prompt 根本不是正确解</strong>。</p>\n\n<p>高频子考点，按考场出现密度排：</p>\n<ul>\n<li><strong>结构化输出</strong>：什么时候用 <code>tool_use</code> + JSON Schema，什么时候靠 prompt 让模型吐 JSON；<code>tool_choice</code> 的 <code>auto</code> / <code>any</code> / <code>tool</code> / <code>none</code> 四种模式各解决什么。</li>\n<li><strong>System prompt 的明确判据</strong>：把\"用你的判断\"这种模糊指令换成可执行的分类边界。</li>\n<li><strong>Few-shot（多示例）</strong>：格式不一致时，加示例比加指令有效。</li>\n<li><strong>XML 结构化 / 思维链</strong>：用标签切开指令、上下文、输入；让模型先想再答。</li>\n<li><strong>评估与迭代</strong>：靠可自动打分的 eval 集迭代，而不是凭感觉改。</li>\n<li><strong>可靠性归因</strong>：一个 prompt 修不好的问题，判断该改 schema、加校验重试、还是换架构。</li>\n</ul>\n\n<p>贯穿这一课的一根主线：<strong>\"把 system prompt 指令写得更强硬\" 在考场上极其常见地是错误答案</strong>。它听起来负责任（\"我明确要求它必须返回合法 JSON 了呀\"），但它给的是一种确定性的假象。模型的输出永远不是完全确定的——官方文档写得很直白：即使 <code>temperature</code> 设成 <code>0.0</code>，结果也不会完全确定（\"even with temperature of 0.0, the results will not be fully deterministic\"）。要确定性，得靠结构（schema、工具、校验循环、独立实例），不是靠措辞。</p>\n\n<h2>Step 1 · 生产级 Prompt 设计</h2>\n\n<h3>结构化输出：要保证结构，别求 prompt 保证</h3>\n\n<p>假设一个华人学员给澳洲本地华人电商做中英双语客服机器人，要把每条工单分类成 <code>refund</code> / <code>shipping</code> / <code>product_question</code> / <code>complaint</code>。两条路线：</p>\n<ul>\n<li><strong>prompt-based JSON</strong>：在 system prompt 里写\"返回 JSON，字段是 category\"。能用，但生产里会周期性冒出不可解析的输出——多一个逗号、包了一层 markdown、加了段解释。</li>\n<li><strong><code>tool_use</code> + <code>input_schema</code></strong>：把分类定义成一个工具，<code>input_schema</code> 是一个 JSON Schema，<code>category</code> 用 <code>enum</code> 锁死四个取值。语法错误层面被彻底消除。</li>\n</ul>\n\n<p><code>tool_choice</code> 四种模式（官方定义，别记混）：</p>\n<ul>\n<li><code>auto</code> —— 有 <code>tools</code> 时的默认，模型可以选择不调工具、直接回文本。</li>\n<li><code>any</code> —— 必须调用某个工具，但由模型自选调哪个。文档类型未知、只要保证结构化输出时就用它。</li>\n<li><code>tool</code> —— <code>{\"type\":\"tool\",\"name\":\"...\"}</code>，强制调用指定工具。</li>\n<li><code>none</code> —— 无 <code>tools</code> 时的默认，禁止调工具。</li>\n</ul>\n\n<p>官方还有一条容易被当考点的补充：<code>tool_choice</code> 设成 <code>any</code> 或 <code>tool</code> 时，API 会预填 assistant 消息强制调工具，所以模型<strong>不会</strong>在 <code>tool_use</code> 块之前输出自然语言解释，即使你叫它这么做也不会。想同时要\"结构化 + 一段解释\"，就用 <code>auto</code> 再在 user 消息里明确要求调某工具。要连输入字段都严格符合 schema，把 <code>tool_choice: {\"type\":\"any\"}</code> 配上工具定义里的 <code>strict: true</code>——这才是\"保证调用 + 保证入参符合 schema\"的组合，不是在 prompt 里喊\"你必须遵守格式\"。</p>\n\n<p>关键边界：<code>tool_use</code> 消除的是<strong>语法错误</strong>，不是<strong>语义错误</strong>。schema 能保证\"有 <code>total</code> 这个字段、类型是 number\"，但保证不了这个 number 是对的、没放错字段、没在源文档缺信息时被硬编出来。语义错误要靠 Step 3 的校验重试和字段设计。</p>\n\n<h3>System prompt：明确判据 &gt; 模糊态度词</h3>\n\n<p>模糊指令是生产 prompt 最大的坑，也是考场最爱的干扰项。\"be conservative\"、\"only flag high-confidence issues\"、\"用你的最佳判断\"——这些没给模型任何可执行的边界。留学生求职工具里那个\"审一遍简历措辞是否专业\"的模块，如果 system prompt 只写\"flag unprofessional wording\"，同一句\"负责端到端交付\"在一份简历被标问题、另一份被放过。</p>\n\n<p>正确做法是把判据写成<strong>分类式的明确条件</strong>：明确列出\"要标什么\"（虚构的雇主 logo、编造的量化数字）、\"要跳过什么\"（中英混排、个人排版偏好），并给触发条件（\"当描述里的数字在正文其它地方找不到出处时才标\"）。校准示例要用<strong>具体样例</strong>而不是散文描述——\"可能显得不专业\"这种话逼着模型自己去解释它是什么意思，一个具体反例则消除歧义。</p>\n\n<h3>XML 结构化 + Few-shot + 思维链</h3>\n\n<p>当 prompt 里同时混着指令、上下文、示例、变量输入时，用 <strong>XML 标签</strong>切开：<code>&lt;instructions&gt;</code>、<code>&lt;context&gt;</code>、<code>&lt;input&gt;</code> 各包一段，减少模型把上下文当指令误读。多文档时每篇包 <code>&lt;document&gt;</code>，内含 <code>&lt;document_content&gt;</code> 和 <code>&lt;source&gt;</code>。标签名保持一致、有描述性。</p>\n\n<p><strong>Few-shot（多示例）</strong>是让输出格式、语气、结构一致最可靠的技术之一，官方建议放 <strong>3–5 个</strong>示例，用 <code>&lt;example&gt;</code>（多个用 <code>&lt;examples&gt;</code>）包起来。示例要<strong>相关</strong>（贴真实用例）、<strong>多样</strong>（覆盖边界、别让模型学到你没想教的规律）。考场反复出\"格式还是不一致——加更详细的指令 vs 加几个示例\"，答案几乎总是后者：示例直接示范目标形态，比再写三段说明有效。</p>\n\n<p><strong>思维链</strong>在当前模型上是 adaptive thinking（<code>thinking: {\"type\":\"adaptive\"}</code>），模型按 <code>effort</code> 参数和问题复杂度自己决定想多深；老模型那套手动 <code>budget_tokens</code> 的 extended thinking 在 Opus 4.7 及之后会直接 400 报错。要点是：让模型对复杂判断先推理再给结论，能提质量，但别在简单分类上硬开。</p>\n\n<h2>Step 2 · Prompt 评估与迭代</h2>\n\n<p>\"改了 prompt 感觉好点了\"不是迭代，是自我安慰。官方对评估的三条原则：</p>\n<ul>\n<li><strong>贴真实分布 + 塞边界</strong>：eval 集要镜像真实任务分布，别忘了塞边界情况——不相关/不存在的数据、超长输入、糟糕甚至恶意的用户输入、本身就歧义的样本。</li>\n<li><strong>能自动就自动</strong>：把题设计成可自动打分——选择题、字符串精确匹配、代码打分、或用另一个 LLM 打分（如 1–5 Likert）。</li>\n<li><strong>量优先于精</strong>：官方原话是\"更多题+略低信号的自动打分，好过更少题+高质量人工手判\"。统计显著性和边界覆盖需要样本量。</li>\n</ul>\n\n<p>落到那个双语客服分类器上：先攒一个 30–50 条真实工单的 eval 集，每条标好正确 <code>category</code>，用精确匹配算准确率；再单独挑一批\"歧义工单\"（既像退款又像投诉）看模型怎么处理。改一版 prompt / schema，跑同一个 eval 集，看数字动没动，而不是随手试两条觉得顺眼就上线。主观维度（比如生成的小红书文案\"语气够不够真诚\"）用 LLM 打 1–5 分，且<strong>换一个模型来打分</strong>，别让写的和判的是同一次调用。</p>\n\n<p>迭代里一个常被误解的点：<strong>确定性不是靠 prompt 或 temperature 拿到的</strong>。<code>temperature</code> 范围 0.0–1.0、默认 1.0，分析/选择题类任务调到接近 0——但官方明确即使 0.0 输出也不完全确定。所以\"我把 temperature 设 0 就能保证每次一模一样\"是错的；真要每次结构一致，靠 schema/工具约束结构，不靠调温度。</p>\n\n<h2>Step 3 · SCENARIO：可靠性不达标，改 prompt 还是改架构</h2>\n\n<p>这是这一课最值钱、也最容易失分的判断题。你的多通道 AI 产品（比如那个从 JD + 简历抽结构化字段喂给匹配引擎的留学生求职工具）可靠性没达标，第一反应千万别是\"把 prompt 写得更狠\"。先把症状对到根因，再选修法：</p>\n\n<ul>\n<li><strong>症状：输出偶尔不是合法 JSON / 缺字段。</strong> → 语法错误。修法：<code>tool_use</code> + <code>input_schema</code>，别在 prompt 里加\"you MUST return valid JSON\"。措辞救不了周期性的解析失败。</li>\n<li><strong>症状：格式在不同输入间飘（一会列表一会散文）。</strong> → 加 3–5 个 few-shot 示例覆盖不同结构，比把指令写更长有效。</li>\n<li><strong>症状：源文档没写的信息，模型给 required 字段编了个值。</strong> → 这是 fabrication。把该字段设成 nullable（<code>\"type\": [\"string\", \"null\"]</code>）、从 <code>required</code> 移除，允许诚实返回 null。required 字段本身在施压模型编值——诚实的 null 永远好过看起来合理的假数据。prompt 里加\"don't hallucinate\"基本没用。</li>\n<li><strong>症状：行项目加总 ≠ 声明的 total、值放错字段。</strong> → 语义错误，schema 保证不了。修法：加校验逻辑 + 带具体错误反馈的重试。重试消息要含\"原文档 + 失败的提取结果 + 具体校验错误\"三件套；不带具体错误的裸重试，模型通常复现同样的错。</li>\n<li><strong>症状：某字段的信息源文档里根本不存在 / 需要模型没有的外部知识。</strong> → 重试无效，再重试也变不出源文档没有的东西。转人工审或返回 null。考场爱出\"一份文档总数不符（该重试）+ 一份文档某字段源文本压根没有（该转人工）\"，正确答案是分别处理，不是两个都重试、也不是两个都不重试。</li>\n<li><strong>症状：让模型在同一段对话里审自己刚生成的东西，漏检严重。</strong> → 起一次干净的<strong>独立调用</strong>来审：新 messages 里只放待审内容，不背生成时那段推理。官方 subagent 机制就是这个思路——每个 subagent 跑在自己独立的 context window 里、不带父对话历史、独立返回结果。在原对话里把检查指令写得更狠、或就地多开一轮思考，都改变不了它带着生成上下文、倾向确认自己判断这个根因。</li>\n<li><strong>症状：要求\"每次调用输出完全一致\"。</strong> → prompt 和 temperature 都给不了。用 schema/enum 约束结构；真需要幂等就在应用层缓存结果。</li>\n</ul>\n\n<p>还有一类是<strong>批处理选型</strong>的场景题。Message Batches API 便宜 <strong>50%</strong>，大多数 batch 1 小时内完成，但结果要等全部完成或满 24 小时（以先到者为准），<strong>24 小时没跑完就过期</strong>，且异步、<strong>没有延迟 SLA 保证</strong>。用 <code>custom_id</code> 关联请求和响应。所以经理说\"全部切 Batch 省一半钱\"时，正确答案是：<strong>只把能容忍延迟的部分迁 Batch</strong>（隔夜批量翻译课程描述、每周内容审计），有人/系统在线等结果的（实时客服 bot、报名页即时应答）必须留同步 API。（补一句常见误传：现在官方 Batch 是支持 tool use 和多轮对话的，别背老资料说\"batch 里不能用工具\"。）</p>\n\n<h2>自测 5 题</h2>\n\n<p><strong>Q1.</strong> 双语客服分类器上线后，team 发现约每 40 条工单就有 1 条输出不是合法 JSON，导致下游解析报错。有人提议在 system prompt 里用全大写加粗写 \"You MUST ALWAYS return valid JSON, NO EXCEPTIONS\"。最该做的是？</p>\n<ul>\n<li>A. 照做，把这条指令改成全大写加粗、措辞再强硬一点</li>\n<li>B. 把分类定义成工具，用 <code>input_schema</code> 约束字段，<code>tool_choice</code> 设 <code>any</code> 并给工具设 <code>strict: true</code></li>\n<li>C. 把 <code>temperature</code> 调成 0，保证输出稳定不再出错</li>\n<li>D. 在下游写一段正则后处理，把返回里多包的 markdown 代码块和多余逗号剥掉再 <code>JSON.parse</code></li>\n</ul>\n<p><strong>正确答案：B。</strong> 不合法 JSON 是语法层问题，<code>tool_use</code> + JSON Schema 从机制上消除它，<code>any</code> + <code>strict</code> 还保证入参严格符合 schema。A 是典型的\"加强指令=确定性假象\"，措辞救不了周期性解析失败。C 错在 temperature 0 也不保证确定性、更管不了 JSON 合法性。D 是工程里最常见的兜底——正则修补治标不治本，模型下次换个花样（漏个引号、字段名带空格、多包一层解释）正则又漏，等于永远在追着 breakage 打补丁，不如从机制上根除。</p>\n\n<p><strong>Q2.</strong> 留学生简历字段抽取，指令已经写得很详细，但抽出来的\"工作经历\"格式在不同简历间飘——有的抽成 STAR 式成就句、有的并成一段自述、有的把几段经历挤成一行、有的干脆漏抽。最有效的改法是？</p>\n<ul>\n<li>A. 把 instructions 再写长一倍，把每种写法都用文字描述一遍</li>\n<li>B. 把 <code>temperature</code> 调到 0</li>\n<li>C. 加 3–5 个 few-shot 示例，覆盖简历里几种典型经历写法（倒序时间线、STAR 式成就句、一段式个人陈述），每个示例连同期望抽出的结构一起给</li>\n<li>D. 先加一步让模型把每份简历改写成统一模板，再从模板里抽字段</li>\n</ul>\n<p><strong>正确答案：C。</strong> 格式不一致的首选解是 few-shot，示例直接示范目标形态，比把所有情况用文字讲一遍可靠。A 是把已经失效的手段加倍，指令再详细也覆盖不全所有写法。B 管随机性不管格式一致性。D 看着聪明其实更糟——多插一次生成调用会引入新的不确定性、成本和延迟翻倍，而\"改写成统一模板\"这步本身照样会飘，等于把两层不稳定叠在一起。</p>\n\n<p><strong>Q3.</strong> 给澳洲小生意做的收据抽取工具，schema 把 <code>abn</code>（供应商的 11 位 Australian Business Number）设成 required 字段。很多手写小票、路边摊收据根本没印 ABN，模型于是每次都编一个看着合规的 11 位号码填进去。怎么修？</p>\n<ul>\n<li>A. 把 <code>abn</code> 改成 nullable（<code>\"type\": [\"string\",\"null\"]</code>）并从 <code>required</code> 移除，让模型能诚实返回 null</li>\n<li>B. 在 system prompt 里加一句\"收据上没有 ABN 就留空\"</li>\n<li>C. 加一次复核调用，让第二次调用检查第一次抽的 ABN 对不对</li>\n<li>D. 干脆把 <code>abn</code> 字段从 schema 里删掉</li>\n</ul>\n<p><strong>正确答案：A。</strong> required 字段本身在逼模型给缺失信息编值，nullable + 移出 required 才让它能诚实返回 null——修的是 schema 设计这个根因。B 又回到\"靠 prompt 措辞兜底\"，required 的结构性压力还在，照样编。C 治标又更贵，源头小票上没印的号码，复核也变不出来。D 因噎废食——正规税务发票依法必须印 ABN，删字段等于把本来能抽到的也一起丢了。</p>\n\n<p><strong>Q4.</strong> 团队要把 5000 条课程描述批量翻成中文，隔夜出结果完全可以；同一套翻译 prompt 还被一个面向用户的实时聊天功能调用。经理说\"两边都切 Message Batches API，省 50% 成本\"。正确判断是？</p>\n<ul>\n<li>A. 两边都迁 Batch，成本最优</li>\n<li>B. 两边都留同步 API 最稳妥</li>\n<li>C. 两边都迁 Batch，给实时聊天的每条请求配一个 <code>custom_id</code> 标好顺序，结果就能按提交顺序即时取回</li>\n<li>D. 只把隔夜批量翻译迁到 Batch，实时聊天功能留同步 API</li>\n</ul>\n<p><strong>正确答案：D。</strong> Batch 异步、没有延迟保证、最长可能到 24 小时才出结果（跑不完直接过期），只适合能容忍延迟的隔夜批量。实时聊天有用户在线等，必须留同步 API。A 会让实时功能可能干等到 24 小时，直接不可用。B 白白放弃隔夜任务能省的一半成本。C 是双重误解：<code>custom_id</code> 只是用来把乱序返回的结果对回原请求（官方明确 Batch 结果可能不按提交顺序回来），它既不能让 Batch 变成实时接口，也改变不了\"要等整批结束或满 24 小时才能取\"这个前提。</p>\n\n<p><strong>Q5.</strong> 有人把双语客服分类器的 prompt 改了一版，手动挑了 3 条工单试了试，说\"感觉比之前准多了\"，想直接上线。更靠谱的做法是？</p>\n<ul>\n<li>A. 3 条都对就说明改好了，直接上线</li>\n<li>B. 让另一个同事再手动看 20 条，两人都觉得没问题就上线</li>\n<li>C. 把 <code>temperature</code> 调到 0 让结果稳定，稳定了就不用测</li>\n<li>D. 攒一个 30–50 条带正确 <code>category</code> 标注的 eval 集（含歧义工单、超长工单、乱填的恶意输入等边界），改前改后各跑一遍精确匹配准确率，用数字对比</li>\n</ul>\n<p><strong>正确答案：D。</strong> 官方评估原则就是\"更多题 + 可自动打分，好过更少题 + 高质量人工手判\"，且 eval 集要镜像真实分布并塞边界情况（不相关/不存在数据、超长输入、歧义样本）；分类任务能用精确匹配算准确率，改前改后跑同一套才知道到底动没动。A 的 3 条样本毫无统计意义。B 手动看 20 条既主观又样本太小，正好踩了\"少量人工手判\"这个次优做法。C 把\"输出稳定\"当成\"分类正确\"，是偷换概念——temperature 0 也不保证确定性，更管不了对错。</p>\n\n<h2>官方文档引用</h2>\n<ul>\n<li>Define tools / tool_choice（auto·any·tool·none、strict、input_schema）：https://platform.claude.com/docs/en/build-with-claude/tool-use/implement-tool-use</li>\n<li>Prompting best practices（few-shot 3–5 示例、XML 标签、adaptive thinking、prefill 迁移）：https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices</li>\n<li>Message Batches API（50% 成本、24 小时过期、custom_id、支持工具/多轮、无 SLA）：https://platform.claude.com/docs/en/build-with-claude/batch-processing</li>\n<li>建立 prompt 评估集与打分方法（自动打分、量优先、多维成功标准）：https://platform.claude.com/docs/en/test-and-evaluate/develop-tests</li>\n<li>temperature 参数（范围 0.0–1.0、默认 1.0、0.0 也不完全确定）：https://platform.claude.com/docs/en/api/messages</li>\n<li>Subagent 独立 context window（起干净实例做独立审查、不背父对话历史）：https://code.claude.com/docs/en/sub-agents</li>\n</ul>"
         },
         {
           "code": "L10",
@@ -236,11 +465,36 @@
           "isLive": false,
           "duration": 45,
           "steps": [
-            { "order": 1, "type": "CONCEPT", "title": "上下文预算与管理", "description": "context window 预算、放什么进上下文、压缩与截断策略。", "duration": 12 },
-            { "order": 2, "type": "CONCEPT", "title": "检索 vs 塞满上下文", "description": "何时用 RAG/检索、何时直接放进上下文的取舍。", "duration": 11 },
-            { "order": 3, "type": "SCENARIO", "title": "典型场景：长会话的记忆与状态设计", "description": "多轮长会话如何管理记忆、状态与成本。", "duration": 11 },
-            { "order": 4, "type": "MCQ", "title": "本 domain 自测 5 题", "description": "检验 Context Management 掌握度。", "duration": 11 }
-          ]
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "上下文预算与管理",
+              "description": "context window 预算、放什么进上下文、压缩与截断策略。",
+              "duration": 12
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "检索 vs 塞满上下文",
+              "description": "何时用 RAG/检索、何时直接放进上下文的取舍。",
+              "duration": 11
+            },
+            {
+              "order": 3,
+              "type": "SCENARIO",
+              "title": "典型场景：长会话的记忆与状态设计",
+              "description": "多轮长会话如何管理记忆、状态与成本。",
+              "duration": 11
+            },
+            {
+              "order": 4,
+              "type": "MCQ",
+              "title": "本 domain 自测 5 题",
+              "description": "检验 Context Management 掌握度。",
+              "duration": 11
+            }
+          ],
+          "learningMaterial": "<h2>考点地图：Domain 5 — Context Management（权重约 15%，社区口径）</h2>\n<p>五个考域里 Context Management 权重最低（15%），但它是最容易靠\"工程直觉\"答错的一域。原因是：这域几乎不考 API 语法，考的是<strong>生产系统里管上下文的判断力</strong>——什么该留在 context 里、什么该踢出去、长会话怎么不丢关键事实、检索和直接塞满怎么选。很多题的错误选项看起来都\"挺合理\"，比如\"加大到 1M 窗口就好了\"、\"撞上限再说\"，全是陷阱。</p>\n<p>这一课把这个域拆成三块高频子考点讲透：</p>\n<ul>\n<li><strong>上下文预算与管理</strong>——context window 装什么、API 无状态意味着什么、token 怎么算、prompt caching 怎么省钱、context editing 怎么自动清工具结果</li>\n<li><strong>检索 vs 塞满上下文</strong>——just-in-time 按需检索和一次性预加载的取舍，以及 context rot 这个根因</li>\n<li><strong>长会话的记忆与状态设计</strong>——memory tool、compaction、跨会话恢复</li>\n</ul>\n<p>关于考试形式：这域偏场景判断题多。<strong>坊间流传的\"60 题 / 120 分钟 / 720 分及格 / 6 抽 4 场景\"是社区口径，不是 Anthropic 官方公布的数字，一切以官方为准。</strong>下面每个技术断言都能追溯到官方文档，文末列了抓取过的 URL。</p>\n\n<h2>① 上下文预算与管理：先搞清楚 context window 到底装了什么</h2>\n<h3>context window = 模型的\"工作记忆\"，不是硬盘</h3>\n<p>官方定义很直白：context window 是模型生成回复时能引用的全部文本，<strong>包括它正在生成的回复本身</strong>。它是\"working memory\"，跟模型训练时见过的海量语料是两回事。一个请求里所有东西都算进这个窗口：system prompt、<code>messages</code> 里每一条消息（含 tool results、图片、文档）、你的 tool definitions，以及 Claude 这一轮生成的输出（连它的 extended thinking 也算）。每次响应的 <code>usage</code> 字段会报告这次请求消耗了多少。</p>\n<p>窗口大小按模型分档：Claude Sonnet 4.5 及更早是 <strong>200K token</strong>；Opus 4.8 / 4.7 / 4.6、Sonnet 5 / Sonnet 4.6 是 <strong>1M token</strong>。1M 模型不用加 beta header，默认就是 1M。单个请求最多带 600 张图或 PDF 页（200K 模型是 100 张）。</p>\n<h3>API 无状态：每次都要背着全部历史走</h3>\n<p>关键认知：Messages API 是无状态的，服务端不替你存 session。你看到的多轮对话，本质是<strong>每一轮请求的 input 都把之前所有对话历史原样带上</strong>再发一遍。这条直接决定了两件事：(1) 会话越长，每次请求越贵、越慢，因为历史在滚雪球；(2) 你不能随手截掉中间某几轮\"省点 token\"——那会破坏对话连贯，模型会突然失忆。要减负得用专门机制（下面讲的 context editing / compaction），不是手动剪历史。</p>\n<h3>为什么 1M 窗口不是万能药：context rot</h3>\n<p>官方点名了一个现象叫 <strong>context rot</strong>：随着窗口里 token 变多，模型准确召回信息的能力会下降。这不是 bug，是 transformer 架构的固有代价——注意力要在越来越多的 token 对之间摊薄。所以官方原话是\"curating what's in context just as important as how much space is available\"——<strong>往 context 里放什么，和你有多大空间同等重要</strong>。考试里但凡出现\"直接换更大窗口解决问题\"的选项，基本是错的。</p>\n<p>撞上限时的行为也要记：如果光 input 就超了窗口，API 直接返回 <code>400 invalid_request_error</code>（\"prompt is too long\"）。在 Claude 4.5 及更新的模型上，如果 input + <code>max_tokens</code> 超窗口，请求会被接受，但生成到上限时会以 <code>stop_reason: \"model_context_window_exceeded\"</code> 停下——所以\"撞上限它会优雅降级\"是错的，它是停，不是自动压缩。</p>\n<h3>省钱的第一手：prompt caching</h3>\n<p>如果你每次请求都重复发一大段静态内容（长 system prompt、tool definitions、参考文档），prompt caching 能让这部分只按缓存价计费。用法是在内容块上打 <code>cache_control</code>：</p>\n<pre><code>\"cache_control\": { \"type\": \"ephemeral\", \"ttl\": \"5m\" }</code></pre>\n<p>要点全在细节里，考试专挑这些考：</p>\n<ul>\n<li><strong>只有一个 type：<code>ephemeral</code></strong>。TTL 可选 <code>\"5m\"</code>（默认）或 <code>\"1h\"</code>。</li>\n<li><strong>最多 4 个 cache breakpoint</strong>，别乱加。</li>\n<li><strong>缓存前缀严格按 <code>tools</code> → <code>system</code> → <code>messages</code> 的顺序生成</strong>，逐 prefix 匹配。所以静态内容（tool 定义、system 里的知识库）必须放前面，breakpoint 打在静态块末尾，易变内容（用户当次输入）放后面。<strong>顺序放反 = 前缀对不上 = 完全命中不了缓存。</strong></li>\n<li>计费倍率：5 分钟写入 <strong>1.25x</strong>、1 小时写入 <strong>2x</strong>、命中读取只要 <strong>0.1x</strong> 基础 input 价。所以\"用 1h 一定更省\"是错的——如果内容不会隔那么久复用，1h 的 2x 写入成本你就白付了。</li>\n<li>响应 <code>usage</code> 里看效果：<code>cache_creation_input_tokens</code>（写进缓存的量）、<code>cache_read_input_tokens</code>（命中读的量）、<code>input_tokens</code>（最后一个 breakpoint 之后、没缓存的量）。</li>\n<li>注意：<strong>缓存的前缀仍然占用 context window</strong>。caching 改的是你为这些 token 付多少钱，不改它们算不算进窗口。</li>\n</ul>\n<h3>自动清理工具结果：context editing</h3>\n<p>agent 会话里，工具每调一次就往历史里塞一坨结果，很快撑爆预算。官方给的自动方案是 context editing 的 <code>clear_tool_uses_20250919</code> 策略：当 input token 超过 <code>trigger</code> 阈值（默认 <code>{\"type\":\"input_tokens\",\"value\":100000}</code>），最旧的工具结果按时间顺序被清掉、替换成一段占位文本（让模型知道\"这里被清过\"），并保留最近 <code>keep</code> 个工具调用（默认 3 个）。还能用 <code>exclude_tools</code> 保护某些工具的结果永不被清、用 <code>clear_at_least</code> 保证每次至少清够多少（避免频繁失效缓存）。这套要带 beta header <code>context-management-2025-06-27</code>。<strong>它和手动剪历史的区别就是——自动、按阈值触发、还给模型留了占位符提示，不会让模型莫名其妙失忆。</strong></p>\n\n<h2>② 检索 vs 塞满上下文：两种拿数据的姿势，考的是取舍</h2>\n<p>假设一个华人学员做的 AI 产品要基于一本 500 页的产品手册答用户问题。有两条路：</p>\n<h3>路 A：一次性全塞进上下文（pre-loading / stuffing）</h3>\n<p>把整本手册塞进 system prompt，每次请求都带着。好处是模型一眼看全、不用再去找。坏处是官方反复强调的：token 一多就 context rot，召回反而下降；而且每次都占满窗口、又贵又慢。就算用 prompt caching 把手册缓存起来省了钱，它<strong>照样占着 context window</strong>——rot 的问题一点没解决。</p>\n<h3>路 B：按需检索（just-in-time retrieval）</h3>\n<p>官方推荐的方向：不预处理全部数据，而是让 agent 手里只握\"轻量标识符\"——文件路径、存好的查询、网页链接——运行时用工具<strong>按需把相关片段动态载入上下文</strong>。官方把这比作人的认知：我们不背整本百科全书，而是用文件系统、收件箱、书签这类外部索引，需要时再取。这就是 RAG / agentic search 的核心思路：上下文始终保持精简，只放当前这个问题真正需要的高信号 token。</p>\n<p>取舍点（考试爱考）：just-in-time 的代价是<strong>运行时探索比读预先算好的数据慢</strong>。所以官方给的现实答案往往是<strong>混合策略</strong>——先预加载一部分肯定要用的，再让 agent 自主按需检索其余。核心判据是那句\"the smallest possible set of high-signal tokens\"——用最少的高信号 token 达成目标。选项里出现\"为了保险把所有可能相关的都塞进去\"，基本是错的。</p>\n<p>把这条落到匠人的场景：给留学生做的求职工具，用户简历、目标 JD、平台的岗位知识库——不该全量塞进每次请求。正确做法是存索引/路径，模型判断这次要答什么，再去拉对应那几段。这既省 token 又躲开 context rot。</p>\n\n<h2>③ SCENARIO：给双语客服 agent 设计长会话的记忆与状态</h2>\n<p>真实场景：匠人给一家澳洲本地企业做了个中英双语客服 agent，处理退课咨询。一通对话经常几十轮，还可能跨天——用户今天问一半，明天回来接着问。问题来了：会话拖长后模型开始忘前面说过的关键事实（学员报的是哪门 bootcamp、退款政策哪条适用），跨天回来更是从零开始。怎么设计？</p>\n<h3>第一层：会话内变长 → server-side compaction</h3>\n<p>单通对话逼近窗口上限时，用 compaction 让它能继续下去。官方的 <code>compact_20260112</code> 策略：当 input token 到 <code>trigger</code>（默认 <code>{\"type\":\"input_tokens\",\"value\":150000}</code>，value 至少 50000）时，服务端自动把早期对话总结进一个 <code>&lt;summary&gt;</code> 块，生成一个 <code>compaction</code> content block；之后的请求里，API 自动丢掉 compaction 块之前的所有内容，从摘要继续。要带 beta header <code>compact-2026-01-12</code>。它的价值是——<strong>让对话越过窗口上限还能连贯往下走，而不是撞墙报错或被粗暴截断。</strong></p>\n<h3>第二层：跨会话 / 跨天 → memory tool</h3>\n<p>compaction 只在单次会话内起作用；跨天回来那通全新会话，靠它没用。这时候要 memory tool（<code>memory_20250818</code>，已 GA，不用 beta header）。它让 Claude 在一个你自己掌控的客户端目录（<code>/memories</code>）里读写文件，跨会话持久化。支持的命令：<code>view</code> / <code>create</code> / <code>str_replace</code> / <code>insert</code> / <code>delete</code> / <code>rename</code>。开了这工具，API 会自动往 system prompt 注入一段协议，核心是两句：<strong>\"ALWAYS VIEW YOUR MEMORY DIRECTORY BEFORE DOING ANYTHING ELSE\"</strong> 和 <strong>\"ASSUME INTERRUPTION：你的 context 随时可能被重置，没写进 memory 的进度都可能丢\"</strong>。</p>\n<p>官方的多会话模式落到我们这个客服场景就是：第一通对话把关键事实（学员 ID、报的课、争议点、退款政策适用条款）写进 memory 文件；用户明天回来，新会话先 <code>view /memories</code> 恢复状态，接着上次的进度谈，而不是重新问一遍\"您报的是哪门课\"。注意安全红线——所有路径操作必须锁死在 <code>/memories</code> 目录内，防目录穿越（<code>/memories/../../secrets.env</code> 这种要拒绝）。</p>\n<h3>三个机制别搞混（这是本域最爱考的辨析）</h3>\n<ul>\n<li><strong>prompt caching</strong>：只省钱，不是持久状态。缓存 5 分钟或 1 小时就过期，指望它跨天记住客户信息是错的。</li>\n<li><strong>context editing（clear_tool_uses）</strong>：在客户端清掉旧的工具结果，给当前会话腾地方。</li>\n<li><strong>compaction</strong>：在服务端把整段旧对话总结掉，让当前会话越过窗口上限继续。</li>\n<li><strong>memory tool</strong>：把必须活过总结/重置的信息，写到 context window 之外的文件里，跨会话取回。</li>\n</ul>\n<p>官方明说这几个能组合用：长跑 agent 常常 compaction + memory 一起上——compaction 让活动上下文保持小，memory 保住那些\"绝不能被总结掉\"的信息。</p>\n\n<h2>自测 5 题</h2>\n<h3>Q1. 双语客服 agent 每轮都调订单查询工具，返回一堆字段，几十轮后模型开始忘记前面的结论。最省事、最不容易出错的减负做法是？</h3>\n<ul>\n<li>A. 把模型换到 1M 窗口的版本，多出来的空间够塞</li>\n<li>B. 配 context editing 的 <code>clear_tool_uses_20250919</code>，设好 <code>trigger</code> 阈值和 <code>keep</code>，旧工具结果自动清成占位符</li>\n<li>C. 每轮请求前手动从历史里删掉最早几条消息</li>\n<li>D. 在 system prompt 里叮嘱模型\"忽略旧的工具结果，只看最近的\"</li>\n</ul>\n<p><strong>正确答案：B。</strong></p>\n<ul>\n<li>A 错：加大窗口治标不治本，context rot 依旧存在，token 还更贵。官方明说\"more context isn't automatically better\"。</li>\n<li>B 对：这正是 <code>clear_tool_uses_20250919</code> 的设计——按 input_tokens 阈值自动清最旧的工具结果、保留最近 <code>keep</code> 个、换成占位文本让模型知道被清过。自动、可控、不破坏连贯。</li>\n<li>C 诱人但错：API 无状态，历史是你手动带的，随手删中间消息会破坏对话连贯，模型会失忆，还容易删错。</li>\n<li>D 错：prompt 层的\"请忽略\"约束不可靠，那些 token 照样占着窗口、照样计费，rot 一点没解决。</li>\n</ul>\n<h3>Q2. 给留学生做的求职工具，system prompt 里有一大段固定的岗位知识库 + 简历评分规则，每次请求还会附上用户当次的简历。想用 prompt caching 省钱，怎么摆内容和 breakpoint？</h3>\n<ul>\n<li>A. 固定的知识库 + 评分规则放前面，<code>cache_control</code> breakpoint 打在这段静态内容末尾，用户简历放后面</li>\n<li>B. 用户简历放最前面并加 breakpoint，因为它最重要</li>\n<li>C. 给每一条消息都加一个 breakpoint，命中率最高</li>\n<li>D. 所有内容都用 <code>ttl: \"1h\"</code>，因为缓存越久一定越省</li>\n</ul>\n<p><strong>正确答案：A。</strong></p>\n<ul>\n<li>A 对：缓存按 <code>tools</code>→<code>system</code>→<code>messages</code> 顺序逐前缀匹配，静态内容必须在前、breakpoint 打在静态块末尾，易变的用户输入在后，才稳定命中。</li>\n<li>B 错：把每次都变的简历放最前面，前缀每次都不同，后面的静态内容永远匹配不上，等于完全没缓存。</li>\n<li>C 错：最多只有 4 个 breakpoint，逐条加既超上限也没意义。</li>\n<li>D 诱人但错：1h 写入是 2x 基础价，5m 只要 1.25x。内容若不会隔那么久复用，1h 反而更贵。</li>\n</ul>\n<h3>Q3. 华人学员的 AI 产品要基于一本 500 页产品手册回答用户问题，手册偶尔更新。上下文该怎么设计？</h3>\n<ul>\n<li>A. 把整本手册塞进 system prompt，配 prompt caching 缓存起来就不占成本了</li>\n<li>B. 直接上 1M 窗口的模型，一次把手册全塞进去让模型自己找</li>\n<li>C. 用 just-in-time 检索：存手册的索引/片段路径，运行时按当前问题动态拉相关几段进上下文</li>\n<li>D. 每次请求把手册切成小块轮流塞一部分，凑几轮把全书过一遍</li>\n</ul>\n<p><strong>正确答案：C。</strong></p>\n<ul>\n<li>A 诱人但错：caching 只改计费，缓存的前缀<strong>照样占 context window</strong>，500 页全程在窗口里，context rot 照样发生。</li>\n<li>B 错：大窗口不解决 rot，token 越多召回越差，还慢还贵。</li>\n<li>C 对：官方推荐的按需检索——握轻量标识符、运行时动态载入相关片段，上下文保持精简、只放高信号 token。</li>\n<li>D 错：手动分块轮流塞既低效又容易丢上下文，不是官方倡导的按相关性检索。</li>\n</ul>\n<h3>Q4. 一个帮学员分步骤搭简历网站的 agent 任务要跨好几天，中途 context 随时可能被重置。怎么保证下次会话能接着上次干，而不是从头开始？</h3>\n<ul>\n<li>A. 靠 prompt caching 把上一次的对话缓存下来，下次自动接上</li>\n<li>B. 每次新会话都把上一次的完整历史全部重新塞进请求</li>\n<li>C. 依赖 API 服务端记住这个 session 的进度</li>\n<li>D. 用 memory tool，把进度日志和功能清单写进 <code>/memories</code>，新会话先 <code>view</code> 恢复状态再继续</li>\n</ul>\n<p><strong>正确答案：D。</strong></p>\n<ul>\n<li>A 错：缓存是省钱机制，5m/1h 就过期，不是持久状态存储，跨天靠不住。</li>\n<li>B 诱人但错：历史会滚雪球撞窗口上限、又贵又慢，而且未必存着完整历史。</li>\n<li>C 错：Messages API 无状态，服务端不替你记 session。</li>\n<li>D 对：这正是 memory tool 的多会话模式——初始会话建 progress log + checklist，后续会话开场先 <code>view /memories</code> 恢复，结束前更新进度。官方注入的协议就一句核心：\"ASSUME INTERRUPTION\"。</li>\n</ul>\n<h3>Q5. 一通双语客服对话特别长，input token 已逼近模型窗口上限，但用户还在继续问。既要让对话能接着走，又要尽量不丢前面的关键信息，最合适的机制是？</h3>\n<ul>\n<li>A. 直接把最早的那批消息截掉腾空间</li>\n<li>B. 开 server-side compaction（<code>compact_20260112</code>），到阈值时服务端自动把早期对话总结成 summary 后继续</li>\n<li>C. 靠 context awareness 注入的 token budget 标签，模型看到剩余空间会自己压缩</li>\n<li>D. 什么都不做，等撞上限模型会自动优雅降级</li>\n</ul>\n<p><strong>正确答案：B。</strong></p>\n<ul>\n<li>A 错：粗暴截断最早消息，恰恰会丢掉早期的关键事实（学员报的课、争议起因）。</li>\n<li>B 对：compaction 就是为这个设计的——到 <code>trigger</code> 阈值（默认 input_tokens 150000）服务端总结早期对话进 <code>&lt;summary&gt;</code> 块，之后请求丢掉 compaction 块之前的内容，让对话越过窗口上限继续。</li>\n<li>C 诱人但错：context awareness 只是把剩余 token 预算<strong>告诉</strong>模型（如 <code>&lt;system_warning&gt;Token usage: 35000/200000&lt;/system_warning&gt;</code>），它自己不会去压缩历史。</li>\n<li>D 错：在 4.5+ 模型上撞上限是以 <code>stop_reason: \"model_context_window_exceeded\"</code> 停下，不是优雅降级；更早的模型直接报错。</li>\n</ul>\n\n<h2>官方文档引用</h2>\n<ul>\n<li>Context windows — https://platform.claude.com/docs/en/build-with-claude/context-windows</li>\n<li>Prompt caching — https://platform.claude.com/docs/en/build-with-claude/prompt-caching</li>\n<li>Context editing — https://platform.claude.com/docs/en/build-with-claude/context-editing</li>\n<li>Server-side compaction — https://platform.claude.com/docs/en/build-with-claude/compaction</li>\n<li>Memory tool — https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool</li>\n<li>Effective context engineering for AI agents — https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents</li>\n</ul>"
         }
       ]
     },
@@ -257,9 +511,27 @@
           "isLive": false,
           "duration": 40,
           "steps": [
-            { "order": 1, "type": "CONCEPT", "title": "场景题机制", "description": "6 抽 4；每个场景是一个生产级 Claude 应用背景，让你做一连串架构决策。", "duration": 10 },
-            { "order": 2, "type": "CONCEPT", "title": "四步答题框架", "description": "①抓场景约束（规模/延迟/成本/合规）②定这是哪个 domain 的问题 ③排除明显错误项 ④在剩下选项里选最贴合约束的。", "duration": 15 },
-            { "order": 3, "type": "SCENARIO", "title": "带练一题", "description": "用框架完整走一道多智能体场景题。", "duration": 15 }
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "场景题机制",
+              "description": "6 抽 4；每个场景是一个生产级 Claude 应用背景，让你做一连串架构决策。",
+              "duration": 10
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "四步答题框架",
+              "description": "①抓场景约束（规模/延迟/成本/合规）②定这是哪个 domain 的问题 ③排除明显错误项 ④在剩下选项里选最贴合约束的。",
+              "duration": 15
+            },
+            {
+              "order": 3,
+              "type": "SCENARIO",
+              "title": "带练一题",
+              "description": "用框架完整走一道多智能体场景题。",
+              "duration": 15
+            }
           ]
         },
         {
@@ -270,10 +542,34 @@
           "isLive": false,
           "duration": 55,
           "steps": [
-            { "order": 1, "type": "SCENARIO", "title": "场景类型 1-2：多智能体编排 / 工具选择调试", "description": "识别信号、正确解法、干扰项长什么样。", "duration": 14 },
-            { "order": 2, "type": "SCENARIO", "title": "场景类型 3-4：升级人工 / Claude Code 团队工作流", "description": "同上。", "duration": 14 },
-            { "order": 3, "type": "SCENARIO", "title": "场景类型 5-6：上下文成本权衡 / 可靠性护栏", "description": "同上。", "duration": 14 },
-            { "order": 4, "type": "CONCEPT", "title": "陷阱选项通用识别法", "description": "『过度工程』『忽略成本』『不必要多 agent』这类经典错误项怎么一眼认出。", "duration": 13 }
+            {
+              "order": 1,
+              "type": "SCENARIO",
+              "title": "场景类型 1-2：多智能体编排 / 工具选择调试",
+              "description": "识别信号、正确解法、干扰项长什么样。",
+              "duration": 14
+            },
+            {
+              "order": 2,
+              "type": "SCENARIO",
+              "title": "场景类型 3-4：升级人工 / Claude Code 团队工作流",
+              "description": "同上。",
+              "duration": 14
+            },
+            {
+              "order": 3,
+              "type": "SCENARIO",
+              "title": "场景类型 5-6：上下文成本权衡 / 可靠性护栏",
+              "description": "同上。",
+              "duration": 14
+            },
+            {
+              "order": 4,
+              "type": "CONCEPT",
+              "title": "陷阱选项通用识别法",
+              "description": "『过度工程』『忽略成本』『不必要多 agent』这类经典错误项怎么一眼认出。",
+              "duration": 13
+            }
           ]
         },
         {
@@ -284,8 +580,20 @@
           "isLive": false,
           "duration": 40,
           "steps": [
-            { "order": 1, "type": "PROJECT", "title": "独立作答一组场景题", "description": "限时用四步框架完成。", "duration": 25 },
-            { "order": 2, "type": "CONCEPT", "title": "对照详解定位薄弱 domain", "description": "标出错题所属 domain，回到 Phase 1 对应精析补漏。", "duration": 15 }
+            {
+              "order": 1,
+              "type": "PROJECT",
+              "title": "独立作答一组场景题",
+              "description": "限时用四步框架完成。",
+              "duration": 25
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "对照详解定位薄弱 domain",
+              "description": "标出错题所属 domain，回到 Phase 1 对应精析补漏。",
+              "duration": 15
+            }
           ]
         }
       ]
@@ -294,7 +602,11 @@
       "name": "Phase 3 — 全真模拟 & 考前冲刺",
       "color": "#8C3A24",
       "summary": "3 实战 — 2 套全真模拟 + 考前 48 小时清单",
-      "test": { "questions": 60, "passRate": 0.72, "unlocks": "考试" },
+      "test": {
+        "questions": 60,
+        "passRate": 0.72,
+        "unlocks": "考试"
+      },
       "lessons": [
         {
           "code": "L14",
@@ -304,8 +616,20 @@
           "isLive": false,
           "duration": 130,
           "steps": [
-            { "order": 1, "type": "PROJECT", "title": "闭卷限时做模拟 A", "description": "60 题 120 分钟，模拟真实闭卷环境，不查资料不用 AI。", "duration": 120 },
-            { "order": 2, "type": "CONCEPT", "title": "看 domain 得分分布", "description": "按 5 个 domain 出分，找出低于 72% 的 domain。", "duration": 10 }
+            {
+              "order": 1,
+              "type": "PROJECT",
+              "title": "闭卷限时做模拟 A",
+              "description": "60 题 120 分钟，模拟真实闭卷环境，不查资料不用 AI。",
+              "duration": 120
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "看 domain 得分分布",
+              "description": "按 5 个 domain 出分，找出低于 72% 的 domain。",
+              "duration": 10
+            }
           ]
         },
         {
@@ -316,8 +640,20 @@
           "isLive": false,
           "duration": 130,
           "steps": [
-            { "order": 1, "type": "PROJECT", "title": "闭卷限时做模拟 B", "description": "60 题 120 分钟。", "duration": 120 },
-            { "order": 2, "type": "CONCEPT", "title": "确认是否稳定过线", "description": "两套模拟都稳定 720+ 再去约考；没到就针对性回炉。", "duration": 10 }
+            {
+              "order": 1,
+              "type": "PROJECT",
+              "title": "闭卷限时做模拟 B",
+              "description": "60 题 120 分钟。",
+              "duration": 120
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "确认是否稳定过线",
+              "description": "两套模拟都稳定 720+ 再去约考；没到就针对性回炉。",
+              "duration": 10
+            }
           ]
         },
         {
@@ -328,10 +664,34 @@
           "isLive": false,
           "duration": 30,
           "steps": [
-            { "order": 1, "type": "CONCEPT", "title": "考前 48 小时清单", "description": "OnVUE 再自检、证件、房间、提前 30 分钟登录。", "duration": 8 },
-            { "order": 2, "type": "CONCEPT", "title": "120 分钟时间分配", "description": "每场景/每题的时间预算，先易后难，标记复查。", "duration": 8 },
-            { "order": 3, "type": "CONCEPT", "title": "不确定题的处理", "description": "排除法 + 贴合约束选最优，不纠结单题。", "duration": 7 },
-            { "order": 4, "type": "CONCEPT", "title": "万一没过：重考规划", "description": "12 个月 4 次、14/30/90 天间隔，怎么安排二刷。", "duration": 7 }
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "考前 48 小时清单",
+              "description": "OnVUE 再自检、证件、房间、提前 30 分钟登录。",
+              "duration": 8
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "120 分钟时间分配",
+              "description": "每场景/每题的时间预算，先易后难，标记复查。",
+              "duration": 8
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "不确定题的处理",
+              "description": "排除法 + 贴合约束选最优，不纠结单题。",
+              "duration": 7
+            },
+            {
+              "order": 4,
+              "type": "CONCEPT",
+              "title": "万一没过：重考规划",
+              "description": "12 个月 4 次、14/30/90 天间隔，怎么安排二刷。",
+              "duration": 7
+            }
           ]
         }
       ]

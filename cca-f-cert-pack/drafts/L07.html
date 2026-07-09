@@ -1,0 +1,184 @@
+<h2>考点地图</h2>
+<p>Domain 2「Tool Design &amp; MCP」权重约 <strong>18%</strong>（社区口径，出处见下），在五个域里排第四（其余四域社区口径为 Agentic Architecture 27%、Claude Code Configuration 20%、Prompt Engineering 20%、Context Management 15%）。它不是最大的域，但踩坑率最高——因为大多数人把「给模型接个工具」当成写函数，忽略了模型选不选、怎么选、选错了怎么恢复，全押在一个字段上：<code>description</code>。</p>
+<p>这一课要拿分的四条主线：</p>
+<ul>
+<li><strong>工具粒度与工具描述</strong>——本域第一高频子考点。工具的 <code>description</code> 是模型做选择的主机制，不是补充说明。</li>
+<li><strong>工具选择歧义的调试路径</strong>——两个功能相近的工具被调混了，第一步该改什么？考试反复考「最低成本、最高杠杆的那一步」。</li>
+<li><strong>MCP 的 host / client / server 三方架构与 transport</strong>——谁连谁、一对一还是一对多、stdio 和 HTTP 怎么选。</li>
+<li><strong>何时用 MCP、何时直接函数调用；工具的错误返回怎么设计</strong>——尤其是 <code>is_error</code> 这个字段用对没有。</li>
+</ul>
+<p>先说清一个合规前提：这门认证的「60 题 / 120 分钟 / 720 分及格 / 场景题占一部分」，连同五域权重（27 / 20 / 20 / 18 / 15）和域名结构，<strong>都是第三方备考社区整理的口径，未见 Anthropic 官方公布确切百分比，一律以官方为准</strong>——别拿这些数字当官方保证去排复习优先级。真正能追溯到 Anthropic 官方文档的，是下面每一条技术断言，文末列了实际抓过的链接。</p>
+
+<h2>工具设计原则：description 决定模型选不选、选得对不对</h2>
+<h3>一个工具在 API 里就三个字段</h3>
+<p>用 Claude 的 Messages API 定义一个自定义工具，核心就三样：<code>name</code>、<code>description</code>、<code>input_schema</code>。<code>name</code> 必须匹配正则 <code>^[a-zA-Z0-9_-]{1,64}$</code>；<code>input_schema</code> 是标准 JSON Schema，用 <code>properties</code> 描述参数、用 <code>required</code> 数组列必填项。模型决定调工具时，返回 <code>stop_reason: "tool_use"</code> 和一个 <code>tool_use</code> 块（含 <code>id</code> / <code>name</code> / <code>input</code>），你的代码跑完再用 <code>tool_result</code> 把结果送回去。</p>
+<p>官方原话把话说死了：<strong>「Provide extremely detailed descriptions. This is by far the most important factor in tool performance.」</strong>——描述是工具表现的头号因素。建议每个工具描述至少 3-4 句，复杂工具更多，要写清四件事：这工具做什么、什么时候该用（以及什么时候<strong>不</strong>该用）、每个参数是什么含义、有什么重要限制（比如它<strong>不</strong>返回什么）。</p>
+<p>拿匠人学院一个真实场景：给留学生求职平台做双语客服 agent。看两版查会员资料的工具描述——</p>
+<pre><code>差的描述（模型只能靠猜）：
+{ "name": "query_member_profile",
+  "description": "查会员资料" }
+
+好的描述（模型知道边界）：
+{ "name": "query_member_profile",
+  "description": "按会员 ID 查一个学员的账户资料：订阅档位、
+    到期日、绑定邮箱、所在时区。用于回答『我是不是会员 /
+    我的订阅什么时候到期 / 我绑的哪个邮箱』这类账户问题。
+    不返回课程学习进度——查『上到第几课 / 完课率』请用
+    query_learning_progress。member_id 格式为 M 开头 8 位数字，
+    例 M10420071。" }</code></pre>
+<p>差别不在实现，在于好描述写明了<strong>返回什么、什么问题该用、什么问题该转给隔壁工具、参数长什么样</strong>。官方另一个可背的对照例子是 <code>get_stock_price</code>：好描述会写「ticker 必须是 NYSE/NASDAQ 上市公司的有效代码、返回美元最新成交价、只在用户问当前股价时用、不提供公司其它信息」。</p>
+
+<h3>粒度：合并相关操作，用命名空间区分</h3>
+<p>官方对工具粒度的两条明确指引，跟「工具越拆越好」的直觉相反：</p>
+<ul>
+<li><strong>把相关操作合进更少的工具</strong>。别为每个动作各建一个工具（<code>create_pr</code> / <code>review_pr</code> / <code>merge_pr</code>），合成一个带 <code>action</code> 参数的工具。工具越少、越有能力，模型的选择歧义越小。</li>
+<li><strong>工具名用有意义的命名空间</strong>。跨多个服务时，名字加服务前缀，如 <code>github_list_prs</code>、<code>slack_send_message</code>，库一大就不会撞名。</li>
+<li><strong>返回只给高信号信息</strong>。回稳定的语义化标识（slug / UUID），别回内部不透明引用；只带模型下一步真正要用的字段，臃肿的返回既烧 context 又让模型抓不住重点。</li>
+</ul>
+
+<h3>tool_choice 四个取值，考试直接考</h3>
+<p><code>tool_choice</code> 控制模型「要不要调、调不调死某个」，官方定义四种：</p>
+<pre><code>{"type": "auto"}                    — 模型自行决定调不调、调哪个。
+                                     提供 tools 时的默认值。一般 agentic loop 用它。
+{"type": "any"}                     — 必须调某个工具，但由模型自选哪个。
+                                     用于「保证结构化输出、但不确定该用哪个 schema」。
+{"type": "tool", "name": "extract"} — 强制调指定工具。用于强制某个 mandatory 首步。
+{"type": "none"}                    — 禁止调任何工具。不提供 tools 时的默认值。</code></pre>
+<p>落到场景：双语客服 bot 每收到一条留言，必须归类并建一张结构化工单，四类各有不同 schema——<code>create_refund_ticket</code>（退款）、<code>create_tech_ticket</code>（技术故障）、<code>create_course_ticket</code>（课程咨询）、<code>create_visa_ticket</code>（签证问题），绝不能回一段闲聊文本。可事先不知道该归哪一类。这时用 <code>any</code>：强制模型一定建某张工单，但由它自己判断归哪类。不能用 <code>tool</code>（锁死到某一类 schema，来的是别类就建错单），也不能用 <code>auto</code>（可能直接回自然语言、不建工单）。反过来，如果每条流程都必须先跑同一个 <code>triage</code> 再往下，用 <code>{"type":"tool","name":"triage"}</code> 强制第一步，之后的 turn 再切回 <code>auto</code>。注意：<code>any</code> 和 <code>tool</code> 会预填 assistant 消息，模型不会在 <code>tool_use</code> 前输出自然语言解释。</p>
+
+<h3>错误返回：is_error 用对，别把「空结果」当「失败」</h3>
+<p>工具执行出错时，在 <code>tool_result</code> 里把错误信息放进 <code>content</code>，并设 <code>"is_error": true</code>，模型才会把它当失败去推理恢复。官方还强调错误信息要有指导性：不要只回 <code>"failed"</code>，要写清出了什么错、下一步该怎么办，例如 <code>"Rate limit exceeded. Retry after 60 seconds."</code>——给模型足够上下文自己恢复。</p>
+<p>本域最爱考的一个坑：<strong>「够不到数据源的失败」和「查询成功但没有匹配」是两回事</strong>。签证规则查询工具查一个冷门签证类别、库里确实没有对应规则——这是查询<strong>成功</strong>了、结果为空，不该设 <code>is_error</code>，直接返回一条「no matching rule found」就是答案。如果这里错误地设了 <code>is_error: true</code>，模型会以为是抓取失败、去重试，可空结果每次都一样，最后白白转人工。空结果 ≠ 错误，这一条要刻进肌肉记忆。</p>
+
+<h3>什么时候上 MCP、什么时候直接写函数</h3>
+<p>上面那种「在自己 API 里定义 tool、自己的代码执行 <code>tool_use</code>」就是最直接的做法（client tools），没有额外协议开销，适合单一应用内部逻辑。<strong>MCP 是另一层抽象</strong>：当你想把同一套工具和数据源复用到多个 AI host（Claude Code、Claude Desktop、你自己的 app），或者要接远程服务、想直接用社区已经写好的 server 时，用 MCP 这个开放标准协议把工具「插」进去，而不是每个应用各写一遍。判断依据是复用面和标准化，不是「MCP 更高级」。</p>
+
+<h2>MCP 架构：host / client / server 与 transport</h2>
+<h3>三个角色，一台 host 每个 server 各开一个 client</h3>
+<p>MCP 是 client-server 架构，三个参与方（官方定义）：</p>
+<ul>
+<li><strong>MCP Host</strong>——AI 应用本身（如 Claude Code、Claude Desktop），负责协调管理一个或多个 client。</li>
+<li><strong>MCP Client</strong>——host 为<strong>每一个</strong> server 各创建一个 client，每个 client 维护一条到对应 server 的<strong>专属连接</strong>。</li>
+<li><strong>MCP Server</strong>——给 client 提供上下文的程序，可以跑在本地，也可以跑在远端。</li>
+</ul>
+<p>记牢这条关系：host 接三个 server，就有三个 client、三条专属连接，是一对一。本地 stdio server 通常只服务一个 client；远程 Streamable HTTP server 通常服务很多 client。「server 主动连 host」「一个 client 连多个 server」都是错的说法。</p>
+
+<h3>两层：data layer 讲 JSON-RPC，transport layer 讲怎么传</h3>
+<p>MCP 分两层。<strong>Data layer</strong> 是内层，用 <strong>JSON-RPC 2.0</strong> 定义消息结构和语义，管生命周期（<code>initialize</code> 握手协商能力）和核心 primitives。<strong>Transport layer</strong> 是外层，管连接建立、消息分帧、鉴权。同一套 JSON-RPC 消息格式在所有 transport 上通用。</p>
+<p>官方两种 transport：</p>
+<ul>
+<li><strong>Stdio transport</strong>——用标准输入输出在同机进程间直连，无网络开销，本地 server 用它。</li>
+<li><strong>Streamable HTTP transport</strong>——用 HTTP POST 发消息、可选 Server-Sent Events 做流式；支持远程通信和标准 HTTP 鉴权（bearer token、API key、自定义 header），官方推荐用 OAuth 拿 token。</li>
+</ul>
+<p>在 Claude Code 里配置时，<code>type</code> 字段接受 <code>streamable-http</code> 作为 <code>http</code> 的别名；老的 SSE transport 已被标记 deprecated，能用 HTTP 就别用 SSE。</p>
+
+<h3>三种 primitive：tools 给行动力，resources 给可见性</h3>
+<p>server 能向 client 暴露三种 primitive：<strong>Tools</strong>（可执行函数，如查数据库、调 API）、<strong>Resources</strong>（上下文数据源，如文件内容、数据库 schema）、<strong>Prompts</strong>（可复用的交互模板）。client 先用 <code>tools/list</code> 发现有哪些工具，再用 <code>tools/call</code> 执行。一句话记：tools 让 agent 能<strong>做</strong>事，resources 让 agent 能<strong>看见</strong>数据——把数据库 schema 做成 resource 前置暴露，就省掉 agent 一遍遍探索式地列表、描述每张表。</p>
+
+<h3>Claude Code 里的三个 scope 和 .mcp.json</h3>
+<p>Claude Code 的 MCP 配置分三个 scope（官方原表）：</p>
+<pre><code>Scope     | 在哪些项目加载   | 是否与团队共享        | 存在哪
+local     | 仅当前项目       | 否                    | ~/.claude.json（默认）
+project   | 仅当前项目       | 是，通过版本控制      | 项目根的 .mcp.json
+user      | 你所有项目       | 否                    | ~/.claude.json</code></pre>
+<p>给团队接公司内部自建的 Confluence、希望全队共享又不把 token 写进 repo：用 <strong>project scope</strong>，配置落项目根 <code>.mcp.json</code>（设计上就是要 check 进版本控制），token 用环境变量展开——<code>${VAR}</code> 展开成环境变量 <code>VAR</code> 的值，<code>${VAR:-default}</code> 在没设时用默认值。这样 config 能安全提交、各人本地设自己的 token、轮换 token 不用改 config。命令形态：<code>claude mcp add --transport http --scope project &lt;name&gt; &lt;url&gt;</code>；本地 stdio server 用 <code>claude mcp add --scope project &lt;name&gt; -- &lt;command&gt; [args...]</code>，<code>--</code> 后面的东西原样传给 server。</p>
+
+<h2>SCENARIO：调试工具选择错误</h2>
+<p><strong>现象</strong>：双语客服 agent 上线后，学员用中文问「我这个月的课上到哪了」，agent 却调了 <code>query_member_profile</code>（查会员资料），返回订阅到期日，答非所问。换成英文问「how far am I in the course」有时对有时错。产品经理第一反应是「模型太笨，加几个 few-shot 例子」或者「上个 routing 分类器」。都不是第一步。</p>
+<p><strong>诊断顺序（从最低成本、最高杠杆开始）：</strong></p>
+<ol>
+<li><strong>先看 description，它才是选择的主机制。</strong> 打开两个工具的描述，发现 <code>query_member_profile</code> 写的是「查会员资料」、<code>query_learning_progress</code> 写的是「查学习进度」——都太短，边界没写。模型分不清「上到哪了」算资料还是进度，只能猜。这就是根因所在。</li>
+<li><strong>扩写 description，加显式边界。</strong> 给 <code>query_member_profile</code> 加一句「不返回课程进度——查『上到第几课 / 完课率』请用 query_learning_progress」；给 <code>query_learning_progress</code> 对称加一句反向边界，并各写清返回字段和触发问法。每条描述扩到 3-4 句。这一步改完，中英文两种问法通常就都路由对了。</li>
+<li><strong>回查 system prompt 有没有反向拉扯。</strong> 描述改对了还偶发翻车，去看 system prompt——如果里面有类似「回答任何问题前先确认学员账户状态」这种指令，模型会被它带偏、优先去查会员资料。system prompt 里对关键词敏感的措辞会盖过你写好的工具描述，改完 description 一定要回头查 prompt 有没有冲突。</li>
+</ol>
+<p><strong>为什么不先做那两件事：</strong>加 few-shot 例子只是往 prompt 里堆 token、治标不治本，根因是描述没写清；一上来就上 routing 分类器是过度工程，绕开了模型本来的自然语言理解、还平白加了一层基础设施。这门认证的元规则就一句：<strong>先做低成本高杠杆的那一步——先扩描述，再谈分类器。</strong>如果两个工具的能力本来就高度重叠，长期可以考虑合并成一个带 <code>action</code> 参数的工具，但那是架构层的活，不是排障第一步。</p>
+
+<h2>自测 5 题</h2>
+<h3>第 1 题</h3>
+<p>双语客服 agent 的 <code>query_member_profile</code> 和 <code>query_learning_progress</code>，两个工具的 description <strong>已经扩写过</strong>、边界写清了，绝大多数问法都路由对了。但学员问「我这个月的课上到哪了」偶尔还是被调去查会员资料。你翻 system prompt，发现里面有一句「回答任何问题前，先确认学员的账户与订阅状态」。<strong>最该先做</strong>的是？</p>
+<ul>
+<li>A. 再往两个工具的 description 里塞更多例子，把这类问法讲得更细</li>
+<li>B. 改 system prompt 那句全局指令，别让它在每次回答前都强制先查账户、跟工具描述抢路由</li>
+<li>C. 在两个工具前面加一个 routing 分类器，先判意图再分发</li>
+<li>D. 把两个工具合并成一个带 action 参数的大工具</li>
+</ul>
+<p><strong>正确答案：B</strong></p>
+<ul>
+<li><strong>B 对</strong>：description 已经写对了，剩下的偶发翻车来自 system prompt——里面对关键词敏感的措辞（「先确认账户状态」）会盖过工具描述，把模型拽去查会员资料。描述改对后仍偶发翻车，下一步就是回头查 prompt 有没有反向拉扯，这一步竞品常被忽略。</li>
+<li><strong>A 错</strong>：描述已经清楚了，再堆例子只是往 prompt 塞 token，动不了真正的根因（system prompt 冲突）。</li>
+<li><strong>C 过度工程</strong>：分类器绕开模型自带的语言理解、平白加一层基础设施，而问题本是一句 prompt 冲突。</li>
+<li><strong>D 不是第一步</strong>：合并工具是架构层改动、工作量大；这里两个工具职责本就该分开，冲突根因在 prompt 不在工具数量。</li>
+</ul>
+
+<h3>第 2 题</h3>
+<p>双语客服 bot 每收到一条留言，必须建一张结构化工单，按类别分四个工具：<code>create_refund_ticket</code> / <code>create_tech_ticket</code> / <code>create_course_ticket</code> / <code>create_visa_ticket</code>，各自 schema 不同。要求：一定要建某张工单、绝不回聊天文本，但<strong>事先不知道</strong>该归哪一类。<code>tool_choice</code> 该设成什么？</p>
+<ul>
+<li>A. <code>{"type": "auto"}</code></li>
+<li>B. <code>{"type": "none"}</code></li>
+<li>C. <code>{"type": "any"}</code></li>
+<li>D. <code>{"type": "tool", "name": "create_refund_ticket"}</code></li>
+</ul>
+<p><strong>正确答案：C</strong></p>
+<ul>
+<li><strong>C 对</strong>：<code>any</code> 强制模型必须调某个工具、但由它自选哪个——正好对应「必须结构化输出、但不确定该用哪个 schema」。</li>
+<li><strong>A 错</strong>：<code>auto</code> 允许模型直接回自然语言，保证不了一定建工单。</li>
+<li><strong>B 错</strong>：<code>none</code> 禁止调任何工具，与需求相反。</li>
+<li><strong>D 诱人但错</strong>：<code>tool</code> 会锁死到 <code>create_refund_ticket</code> 一类 schema，来的是技术故障或签证问题就建错单了。</li>
+</ul>
+
+<h3>第 3 题</h3>
+<p>多 agent 客服系统里，子 agent 的 <code>lookup_visa_rule</code> 查一个冷门签证类别，库里确实没有对应规则——查询本身成功、只是结果为空。但工具返回时设了 <code>"is_error": true</code>。上游的 coordinator agent 一看到 <code>is_error</code>，判定这条链路「坏了」，直接把整个会话标记为系统故障、跳过后续步骤、弹出「服务暂时不可用」。根因该怎么修？</p>
+<ul>
+<li>A. 工具不该给「查询成功但无匹配」设 <code>is_error</code>，应作为正常空结果返回（写明「no matching rule found」）；<code>is_error</code> 只留给真正够不到数据源的失败。coordinator 就不会把空结果误判成系统故障</li>
+<li>B. 让 coordinator 忽略所有 <code>is_error</code>，一律当成非致命继续往下</li>
+<li>C. 在 <code>lookup_visa_rule</code> 外面包一层 try/catch，把返回吞掉不上报</li>
+<li>D. 给 coordinator 加一张「系统故障」白名单，把 <code>lookup_visa_rule</code> 排除在外</li>
+</ul>
+<p><strong>正确答案：A</strong></p>
+<ul>
+<li><strong>A 对</strong>：「够不到数据源的失败」和「查成功但无匹配」是两回事。空结果不是错误，标了 <code>is_error</code> 就是在源头给出错误信号，下游怎么处理都是在给一个假故障打补丁。修响应结构、别乱标 <code>is_error</code> 才是根治。</li>
+<li><strong>B 错</strong>：一刀切忽略所有 <code>is_error</code>，会把真正够不到数据源的失败也当成功，掩盖真错，比原问题更危险。</li>
+<li><strong>C 错</strong>：空结果压根不是异常，try/catch 抓不到；吞返回还会把真异常一起吞掉，变静默失败。</li>
+<li><strong>D 治标</strong>：白名单绕过了症状，没改「把空结果标成错误」的根因，换个工具犯同样毛病还得再加一条白名单。</li>
+</ul>
+
+<h3>第 4 题</h3>
+<p>关于 MCP 的 host / client / server 架构，下面哪条说法<strong>正确</strong>？</p>
+<ul>
+<li>A. 一个 MCP client 可以同时维护到多个 server 的连接，一对多复用</li>
+<li>B. MCP server 主动发起连接、连到 host 上</li>
+<li>C. MCP 只支持 stdio transport，无法用于远程 server</li>
+<li>D. host 为每个 server 各创建一个 MCP client，每个 client 维护一条到对应 server 的专属连接</li>
+</ul>
+<p><strong>正确答案：D</strong></p>
+<ul>
+<li><strong>D 对</strong>：官方定义就是 host 协调多个 client，每个 server 对应一个 client、一条专属连接，是一对一。</li>
+<li><strong>A 错</strong>：把关系说反了——是一个 host 管多个 client，不是一个 client 连多个 server。</li>
+<li><strong>B 错</strong>：是 host（通过 client）发起并维护到 server 的连接，不是 server 反过来连 host。</li>
+<li><strong>C 错</strong>：除了 stdio，还有 Streamable HTTP transport 专门用于远程通信。</li>
+</ul>
+
+<h3>第 5 题</h3>
+<p>团队要给 Claude Code 接公司<strong>内部自建的 Confluence</strong>（内部知识库），要求：配置进版本控制、全队共享同一套、但 API token 绝不写进 repo。正确做法是？</p>
+<ul>
+<li>A. 放 user scope（<code>~/.claude.json</code>），把 token 明文写在配置里</li>
+<li>B. 放项目根 <code>.mcp.json</code>（project scope），token 用 <code>${CONFLUENCE_TOKEN}</code> 环境变量展开，各人本地设自己的值</li>
+<li>C. 每个成员各自在 local scope 配一遍，互不共享</li>
+<li>D. 放项目根 <code>.mcp.json</code> 但把 token 明文填进去，再用 <code>.gitignore</code> 忽略这个文件、不让它进版本控制</li>
+</ul>
+<p><strong>正确答案：B</strong></p>
+<ul>
+<li><strong>B 对</strong>：project scope 的 <code>.mcp.json</code> 设计上就是要 check 进版本控制、全队共享；<code>${VAR}</code> 展开让 config 只引用变量名、secrets 不进 repo，token 轮换也不用改 config。</li>
+<li><strong>A 错</strong>：user scope 存在 <code>~/.claude.json</code>、不进版本控制也不共享，且明文写 token 违反「secrets 不进配置」。</li>
+<li><strong>C 错</strong>：local scope 只对本人本项目可见、不共享，达不到「全队同一套」。</li>
+<li><strong>D 自相矛盾</strong>：把 <code>.mcp.json</code> 加进 <code>.gitignore</code>，它就不进版本控制、全队也拿不到，直接违背「配置进版本控制、全队共享」；明文写 token 也照样违规。</li>
+</ul>
+
+<h2>官方文档引用</h2>
+<ul>
+<li>Tool use with Claude（overview）：https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview</li>
+<li>Define tools（description 最佳实践、tool_choice 四取值、input_schema）：https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools</li>
+<li>Handle tool calls（tool_result / is_error / stop_reason: tool_use）：https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls</li>
+<li>MCP Architecture overview（host / client / server、data vs transport layer、JSON-RPC 2.0、primitives）：https://modelcontextprotocol.io/docs/learn/architecture</li>
+<li>Connect Claude Code to tools via MCP（三个 scope、.mcp.json、transport、${VAR} 展开）：https://code.claude.com/docs/en/mcp</li>
+</ul>

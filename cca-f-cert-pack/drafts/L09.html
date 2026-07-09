@@ -1,0 +1,137 @@
+<h2>考点地图：Domain 4 — Prompt Engineering（权重约 20%，社区口径）</h2>
+
+<p>五个考试域里，Prompt Engineering 占 <strong>20%</strong>，和 Claude Code Configuration 并列第二（第一是 Agentic Architecture 27%，之后是 Tool Design &amp; MCP 18%、Context Management 15%）。这一域最容易被当成"背 prompt 模板"来准备，然后在考场翻车——因为它考的不是"怎么写一段好话"，而是<strong>在什么可靠性问题下，写 prompt 根本不是正确解</strong>。</p>
+
+<p>高频子考点，按考场出现密度排：</p>
+<ul>
+<li><strong>结构化输出</strong>：什么时候用 <code>tool_use</code> + JSON Schema，什么时候靠 prompt 让模型吐 JSON；<code>tool_choice</code> 的 <code>auto</code> / <code>any</code> / <code>tool</code> / <code>none</code> 四种模式各解决什么。</li>
+<li><strong>System prompt 的明确判据</strong>：把"用你的判断"这种模糊指令换成可执行的分类边界。</li>
+<li><strong>Few-shot（多示例）</strong>：格式不一致时，加示例比加指令有效。</li>
+<li><strong>XML 结构化 / 思维链</strong>：用标签切开指令、上下文、输入；让模型先想再答。</li>
+<li><strong>评估与迭代</strong>：靠可自动打分的 eval 集迭代，而不是凭感觉改。</li>
+<li><strong>可靠性归因</strong>：一个 prompt 修不好的问题，判断该改 schema、加校验重试、还是换架构。</li>
+</ul>
+
+<p>贯穿这一课的一根主线：<strong>"把 system prompt 指令写得更强硬" 在考场上极其常见地是错误答案</strong>。它听起来负责任（"我明确要求它必须返回合法 JSON 了呀"），但它给的是一种确定性的假象。模型的输出永远不是完全确定的——官方文档写得很直白：即使 <code>temperature</code> 设成 <code>0.0</code>，结果也不会完全确定（"even with temperature of 0.0, the results will not be fully deterministic"）。要确定性，得靠结构（schema、工具、校验循环、独立实例），不是靠措辞。</p>
+
+<h2>Step 1 · 生产级 Prompt 设计</h2>
+
+<h3>结构化输出：要保证结构，别求 prompt 保证</h3>
+
+<p>假设一个华人学员给澳洲本地华人电商做中英双语客服机器人，要把每条工单分类成 <code>refund</code> / <code>shipping</code> / <code>product_question</code> / <code>complaint</code>。两条路线：</p>
+<ul>
+<li><strong>prompt-based JSON</strong>：在 system prompt 里写"返回 JSON，字段是 category"。能用，但生产里会周期性冒出不可解析的输出——多一个逗号、包了一层 markdown、加了段解释。</li>
+<li><strong><code>tool_use</code> + <code>input_schema</code></strong>：把分类定义成一个工具，<code>input_schema</code> 是一个 JSON Schema，<code>category</code> 用 <code>enum</code> 锁死四个取值。语法错误层面被彻底消除。</li>
+</ul>
+
+<p><code>tool_choice</code> 四种模式（官方定义，别记混）：</p>
+<ul>
+<li><code>auto</code> —— 有 <code>tools</code> 时的默认，模型可以选择不调工具、直接回文本。</li>
+<li><code>any</code> —— 必须调用某个工具，但由模型自选调哪个。文档类型未知、只要保证结构化输出时就用它。</li>
+<li><code>tool</code> —— <code>{"type":"tool","name":"..."}</code>，强制调用指定工具。</li>
+<li><code>none</code> —— 无 <code>tools</code> 时的默认，禁止调工具。</li>
+</ul>
+
+<p>官方还有一条容易被当考点的补充：<code>tool_choice</code> 设成 <code>any</code> 或 <code>tool</code> 时，API 会预填 assistant 消息强制调工具，所以模型<strong>不会</strong>在 <code>tool_use</code> 块之前输出自然语言解释，即使你叫它这么做也不会。想同时要"结构化 + 一段解释"，就用 <code>auto</code> 再在 user 消息里明确要求调某工具。要连输入字段都严格符合 schema，把 <code>tool_choice: {"type":"any"}</code> 配上工具定义里的 <code>strict: true</code>——这才是"保证调用 + 保证入参符合 schema"的组合，不是在 prompt 里喊"你必须遵守格式"。</p>
+
+<p>关键边界：<code>tool_use</code> 消除的是<strong>语法错误</strong>，不是<strong>语义错误</strong>。schema 能保证"有 <code>total</code> 这个字段、类型是 number"，但保证不了这个 number 是对的、没放错字段、没在源文档缺信息时被硬编出来。语义错误要靠 Step 3 的校验重试和字段设计。</p>
+
+<h3>System prompt：明确判据 &gt; 模糊态度词</h3>
+
+<p>模糊指令是生产 prompt 最大的坑，也是考场最爱的干扰项。"be conservative"、"only flag high-confidence issues"、"用你的最佳判断"——这些没给模型任何可执行的边界。留学生求职工具里那个"审一遍简历措辞是否专业"的模块，如果 system prompt 只写"flag unprofessional wording"，同一句"负责端到端交付"在一份简历被标问题、另一份被放过。</p>
+
+<p>正确做法是把判据写成<strong>分类式的明确条件</strong>：明确列出"要标什么"（虚构的雇主 logo、编造的量化数字）、"要跳过什么"（中英混排、个人排版偏好），并给触发条件（"当描述里的数字在正文其它地方找不到出处时才标"）。校准示例要用<strong>具体样例</strong>而不是散文描述——"可能显得不专业"这种话逼着模型自己去解释它是什么意思，一个具体反例则消除歧义。</p>
+
+<h3>XML 结构化 + Few-shot + 思维链</h3>
+
+<p>当 prompt 里同时混着指令、上下文、示例、变量输入时，用 <strong>XML 标签</strong>切开：<code>&lt;instructions&gt;</code>、<code>&lt;context&gt;</code>、<code>&lt;input&gt;</code> 各包一段，减少模型把上下文当指令误读。多文档时每篇包 <code>&lt;document&gt;</code>，内含 <code>&lt;document_content&gt;</code> 和 <code>&lt;source&gt;</code>。标签名保持一致、有描述性。</p>
+
+<p><strong>Few-shot（多示例）</strong>是让输出格式、语气、结构一致最可靠的技术之一，官方建议放 <strong>3–5 个</strong>示例，用 <code>&lt;example&gt;</code>（多个用 <code>&lt;examples&gt;</code>）包起来。示例要<strong>相关</strong>（贴真实用例）、<strong>多样</strong>（覆盖边界、别让模型学到你没想教的规律）。考场反复出"格式还是不一致——加更详细的指令 vs 加几个示例"，答案几乎总是后者：示例直接示范目标形态，比再写三段说明有效。</p>
+
+<p><strong>思维链</strong>在当前模型上是 adaptive thinking（<code>thinking: {"type":"adaptive"}</code>），模型按 <code>effort</code> 参数和问题复杂度自己决定想多深；老模型那套手动 <code>budget_tokens</code> 的 extended thinking 在 Opus 4.7 及之后会直接 400 报错。要点是：让模型对复杂判断先推理再给结论，能提质量，但别在简单分类上硬开。</p>
+
+<h2>Step 2 · Prompt 评估与迭代</h2>
+
+<p>"改了 prompt 感觉好点了"不是迭代，是自我安慰。官方对评估的三条原则：</p>
+<ul>
+<li><strong>贴真实分布 + 塞边界</strong>：eval 集要镜像真实任务分布，别忘了塞边界情况——不相关/不存在的数据、超长输入、糟糕甚至恶意的用户输入、本身就歧义的样本。</li>
+<li><strong>能自动就自动</strong>：把题设计成可自动打分——选择题、字符串精确匹配、代码打分、或用另一个 LLM 打分（如 1–5 Likert）。</li>
+<li><strong>量优先于精</strong>：官方原话是"更多题+略低信号的自动打分，好过更少题+高质量人工手判"。统计显著性和边界覆盖需要样本量。</li>
+</ul>
+
+<p>落到那个双语客服分类器上：先攒一个 30–50 条真实工单的 eval 集，每条标好正确 <code>category</code>，用精确匹配算准确率；再单独挑一批"歧义工单"（既像退款又像投诉）看模型怎么处理。改一版 prompt / schema，跑同一个 eval 集，看数字动没动，而不是随手试两条觉得顺眼就上线。主观维度（比如生成的小红书文案"语气够不够真诚"）用 LLM 打 1–5 分，且<strong>换一个模型来打分</strong>，别让写的和判的是同一次调用。</p>
+
+<p>迭代里一个常被误解的点：<strong>确定性不是靠 prompt 或 temperature 拿到的</strong>。<code>temperature</code> 范围 0.0–1.0、默认 1.0，分析/选择题类任务调到接近 0——但官方明确即使 0.0 输出也不完全确定。所以"我把 temperature 设 0 就能保证每次一模一样"是错的；真要每次结构一致，靠 schema/工具约束结构，不靠调温度。</p>
+
+<h2>Step 3 · SCENARIO：可靠性不达标，改 prompt 还是改架构</h2>
+
+<p>这是这一课最值钱、也最容易失分的判断题。你的多通道 AI 产品（比如那个从 JD + 简历抽结构化字段喂给匹配引擎的留学生求职工具）可靠性没达标，第一反应千万别是"把 prompt 写得更狠"。先把症状对到根因，再选修法：</p>
+
+<ul>
+<li><strong>症状：输出偶尔不是合法 JSON / 缺字段。</strong> → 语法错误。修法：<code>tool_use</code> + <code>input_schema</code>，别在 prompt 里加"you MUST return valid JSON"。措辞救不了周期性的解析失败。</li>
+<li><strong>症状：格式在不同输入间飘（一会列表一会散文）。</strong> → 加 3–5 个 few-shot 示例覆盖不同结构，比把指令写更长有效。</li>
+<li><strong>症状：源文档没写的信息，模型给 required 字段编了个值。</strong> → 这是 fabrication。把该字段设成 nullable（<code>"type": ["string", "null"]</code>）、从 <code>required</code> 移除，允许诚实返回 null。required 字段本身在施压模型编值——诚实的 null 永远好过看起来合理的假数据。prompt 里加"don't hallucinate"基本没用。</li>
+<li><strong>症状：行项目加总 ≠ 声明的 total、值放错字段。</strong> → 语义错误，schema 保证不了。修法：加校验逻辑 + 带具体错误反馈的重试。重试消息要含"原文档 + 失败的提取结果 + 具体校验错误"三件套；不带具体错误的裸重试，模型通常复现同样的错。</li>
+<li><strong>症状：某字段的信息源文档里根本不存在 / 需要模型没有的外部知识。</strong> → 重试无效，再重试也变不出源文档没有的东西。转人工审或返回 null。考场爱出"一份文档总数不符（该重试）+ 一份文档某字段源文本压根没有（该转人工）"，正确答案是分别处理，不是两个都重试、也不是两个都不重试。</li>
+<li><strong>症状：让模型在同一段对话里审自己刚生成的东西，漏检严重。</strong> → 起一次干净的<strong>独立调用</strong>来审：新 messages 里只放待审内容，不背生成时那段推理。官方 subagent 机制就是这个思路——每个 subagent 跑在自己独立的 context window 里、不带父对话历史、独立返回结果。在原对话里把检查指令写得更狠、或就地多开一轮思考，都改变不了它带着生成上下文、倾向确认自己判断这个根因。</li>
+<li><strong>症状：要求"每次调用输出完全一致"。</strong> → prompt 和 temperature 都给不了。用 schema/enum 约束结构；真需要幂等就在应用层缓存结果。</li>
+</ul>
+
+<p>还有一类是<strong>批处理选型</strong>的场景题。Message Batches API 便宜 <strong>50%</strong>，大多数 batch 1 小时内完成，但结果要等全部完成或满 24 小时（以先到者为准），<strong>24 小时没跑完就过期</strong>，且异步、<strong>没有延迟 SLA 保证</strong>。用 <code>custom_id</code> 关联请求和响应。所以经理说"全部切 Batch 省一半钱"时，正确答案是：<strong>只把能容忍延迟的部分迁 Batch</strong>（隔夜批量翻译课程描述、每周内容审计），有人/系统在线等结果的（实时客服 bot、报名页即时应答）必须留同步 API。（补一句常见误传：现在官方 Batch 是支持 tool use 和多轮对话的，别背老资料说"batch 里不能用工具"。）</p>
+
+<h2>自测 5 题</h2>
+
+<p><strong>Q1.</strong> 双语客服分类器上线后，team 发现约每 40 条工单就有 1 条输出不是合法 JSON，导致下游解析报错。有人提议在 system prompt 里用全大写加粗写 "You MUST ALWAYS return valid JSON, NO EXCEPTIONS"。最该做的是？</p>
+<ul>
+<li>A. 照做，把这条指令改成全大写加粗、措辞再强硬一点</li>
+<li>B. 把分类定义成工具，用 <code>input_schema</code> 约束字段，<code>tool_choice</code> 设 <code>any</code> 并给工具设 <code>strict: true</code></li>
+<li>C. 把 <code>temperature</code> 调成 0，保证输出稳定不再出错</li>
+<li>D. 在下游写一段正则后处理，把返回里多包的 markdown 代码块和多余逗号剥掉再 <code>JSON.parse</code></li>
+</ul>
+<p><strong>正确答案：B。</strong> 不合法 JSON 是语法层问题，<code>tool_use</code> + JSON Schema 从机制上消除它，<code>any</code> + <code>strict</code> 还保证入参严格符合 schema。A 是典型的"加强指令=确定性假象"，措辞救不了周期性解析失败。C 错在 temperature 0 也不保证确定性、更管不了 JSON 合法性。D 是工程里最常见的兜底——正则修补治标不治本，模型下次换个花样（漏个引号、字段名带空格、多包一层解释）正则又漏，等于永远在追着 breakage 打补丁，不如从机制上根除。</p>
+
+<p><strong>Q2.</strong> 留学生简历字段抽取，指令已经写得很详细，但抽出来的"工作经历"格式在不同简历间飘——有的抽成 STAR 式成就句、有的并成一段自述、有的把几段经历挤成一行、有的干脆漏抽。最有效的改法是？</p>
+<ul>
+<li>A. 把 instructions 再写长一倍，把每种写法都用文字描述一遍</li>
+<li>B. 把 <code>temperature</code> 调到 0</li>
+<li>C. 加 3–5 个 few-shot 示例，覆盖简历里几种典型经历写法（倒序时间线、STAR 式成就句、一段式个人陈述），每个示例连同期望抽出的结构一起给</li>
+<li>D. 先加一步让模型把每份简历改写成统一模板，再从模板里抽字段</li>
+</ul>
+<p><strong>正确答案：C。</strong> 格式不一致的首选解是 few-shot，示例直接示范目标形态，比把所有情况用文字讲一遍可靠。A 是把已经失效的手段加倍，指令再详细也覆盖不全所有写法。B 管随机性不管格式一致性。D 看着聪明其实更糟——多插一次生成调用会引入新的不确定性、成本和延迟翻倍，而"改写成统一模板"这步本身照样会飘，等于把两层不稳定叠在一起。</p>
+
+<p><strong>Q3.</strong> 给澳洲小生意做的收据抽取工具，schema 把 <code>abn</code>（供应商的 11 位 Australian Business Number）设成 required 字段。很多手写小票、路边摊收据根本没印 ABN，模型于是每次都编一个看着合规的 11 位号码填进去。怎么修？</p>
+<ul>
+<li>A. 把 <code>abn</code> 改成 nullable（<code>"type": ["string","null"]</code>）并从 <code>required</code> 移除，让模型能诚实返回 null</li>
+<li>B. 在 system prompt 里加一句"收据上没有 ABN 就留空"</li>
+<li>C. 加一次复核调用，让第二次调用检查第一次抽的 ABN 对不对</li>
+<li>D. 干脆把 <code>abn</code> 字段从 schema 里删掉</li>
+</ul>
+<p><strong>正确答案：A。</strong> required 字段本身在逼模型给缺失信息编值，nullable + 移出 required 才让它能诚实返回 null——修的是 schema 设计这个根因。B 又回到"靠 prompt 措辞兜底"，required 的结构性压力还在，照样编。C 治标又更贵，源头小票上没印的号码，复核也变不出来。D 因噎废食——正规税务发票依法必须印 ABN，删字段等于把本来能抽到的也一起丢了。</p>
+
+<p><strong>Q4.</strong> 团队要把 5000 条课程描述批量翻成中文，隔夜出结果完全可以；同一套翻译 prompt 还被一个面向用户的实时聊天功能调用。经理说"两边都切 Message Batches API，省 50% 成本"。正确判断是？</p>
+<ul>
+<li>A. 两边都迁 Batch，成本最优</li>
+<li>B. 两边都留同步 API 最稳妥</li>
+<li>C. 两边都迁 Batch，给实时聊天的每条请求配一个 <code>custom_id</code> 标好顺序，结果就能按提交顺序即时取回</li>
+<li>D. 只把隔夜批量翻译迁到 Batch，实时聊天功能留同步 API</li>
+</ul>
+<p><strong>正确答案：D。</strong> Batch 异步、没有延迟保证、最长可能到 24 小时才出结果（跑不完直接过期），只适合能容忍延迟的隔夜批量。实时聊天有用户在线等，必须留同步 API。A 会让实时功能可能干等到 24 小时，直接不可用。B 白白放弃隔夜任务能省的一半成本。C 是双重误解：<code>custom_id</code> 只是用来把乱序返回的结果对回原请求（官方明确 Batch 结果可能不按提交顺序回来），它既不能让 Batch 变成实时接口，也改变不了"要等整批结束或满 24 小时才能取"这个前提。</p>
+
+<p><strong>Q5.</strong> 有人把双语客服分类器的 prompt 改了一版，手动挑了 3 条工单试了试，说"感觉比之前准多了"，想直接上线。更靠谱的做法是？</p>
+<ul>
+<li>A. 3 条都对就说明改好了，直接上线</li>
+<li>B. 让另一个同事再手动看 20 条，两人都觉得没问题就上线</li>
+<li>C. 把 <code>temperature</code> 调到 0 让结果稳定，稳定了就不用测</li>
+<li>D. 攒一个 30–50 条带正确 <code>category</code> 标注的 eval 集（含歧义工单、超长工单、乱填的恶意输入等边界），改前改后各跑一遍精确匹配准确率，用数字对比</li>
+</ul>
+<p><strong>正确答案：D。</strong> 官方评估原则就是"更多题 + 可自动打分，好过更少题 + 高质量人工手判"，且 eval 集要镜像真实分布并塞边界情况（不相关/不存在数据、超长输入、歧义样本）；分类任务能用精确匹配算准确率，改前改后跑同一套才知道到底动没动。A 的 3 条样本毫无统计意义。B 手动看 20 条既主观又样本太小，正好踩了"少量人工手判"这个次优做法。C 把"输出稳定"当成"分类正确"，是偷换概念——temperature 0 也不保证确定性，更管不了对错。</p>
+
+<h2>官方文档引用</h2>
+<ul>
+<li>Define tools / tool_choice（auto·any·tool·none、strict、input_schema）：https://platform.claude.com/docs/en/build-with-claude/tool-use/implement-tool-use</li>
+<li>Prompting best practices（few-shot 3–5 示例、XML 标签、adaptive thinking、prefill 迁移）：https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices</li>
+<li>Message Batches API（50% 成本、24 小时过期、custom_id、支持工具/多轮、无 SLA）：https://platform.claude.com/docs/en/build-with-claude/batch-processing</li>
+<li>建立 prompt 评估集与打分方法（自动打分、量优先、多维成功标准）：https://platform.claude.com/docs/en/test-and-evaluate/develop-tests</li>
+<li>temperature 参数（范围 0.0–1.0、默认 1.0、0.0 也不完全确定）：https://platform.claude.com/docs/en/api/messages</li>
+<li>Subagent 独立 context window（起干净实例做独立审查、不背父对话历史）：https://code.claude.com/docs/en/sub-agents</li>
+</ul>

@@ -1,0 +1,170 @@
+<h2>考点地图：Domain 3 为什么最容易失分</h2>
+<p>Domain 3（Claude Code Configuration）权重约 <strong>20%</strong>（社区口径，以官方考纲为准），仅次于 Agentic Architecture 的 27%，和 Prompt Engineering 并列第二。它失分率高的原因很具体：网上大量二手教程把配置层级讲成"更具体的覆盖更宽的"，而官方文档明确否认这套优先级——你如果凭直觉答，会成片踩坑。</p>
+<p>这个 domain 的官方描述覆盖五块，按考试出现频率排：</p>
+<ul>
+<li><strong>CLAUDE.md 层级与 <code>.claude/rules/</code></strong> — 三级作用域、拼接 vs 覆盖、path-scoped 规则。最高频。</li>
+<li><strong>settings.json 与权限模式</strong> — 谁是硬强制、permission mode 有哪几个值。</li>
+<li><strong>hooks</strong> — 触发时机、exit code 语义（exit 2 才阻断，exit 1 不阻断，几乎必考一题）。</li>
+<li><strong>slash commands / skills</strong> — project vs personal 作用域（跨版本稳定的核心考点）、frontmatter；新版 docs 已把两者合并，但考试可能锁在合并前的快照。</li>
+<li><strong>subagents 与 MCP 接入</strong> — 独立 context window、<code>claude mcp add</code> 的三种 transport 和三种 scope。</li>
+</ul>
+<p>一句话抓总纲：<strong>CLAUDE.md 是"引导"，settings.json 和 hooks 是"强制"。</strong> 分不清这两层，Domain 3 至少丢一半分。</p>
+
+<h2>第一层：CLAUDE.md 层级 vs settings.json（到底谁说了算）</h2>
+<h3>CLAUDE.md 的四个作用域是"拼接"，不是"覆盖"</h3>
+<p>CLAUDE.md 按作用域从宽到窄有四处，官方给的精确路径是：</p>
+<ul>
+<li><strong>Managed policy</strong>（组织级，IT 下发）：macOS <code>/Library/Application Support/ClaudeCode/CLAUDE.md</code>、Linux/WSL <code>/etc/claude-code/CLAUDE.md</code></li>
+<li><strong>User</strong>（个人，跨所有项目）：<code>~/.claude/CLAUDE.md</code>，不进 git</li>
+<li><strong>Project</strong>（团队共享，随 repo）：<code>./CLAUDE.md</code> 或 <code>./.claude/CLAUDE.md</code>，两个路径都合法</li>
+<li><strong>Local</strong>（个人项目偏好）：<code>./CLAUDE.local.md</code>，按惯例进 <code>.gitignore</code></li>
+</ul>
+<p>这里是最大的考点陷阱。官方原文：<strong>"All discovered files are concatenated into context rather than overriding each other."</strong> 所有文件是<strong>拼接进同一个 context</strong>，谁都不覆盖谁。加载顺序是从文件系统根往工作目录方向走（宽 scope 先、窄 scope 后），同目录内 <code>CLAUDE.local.md</code> 接在 <code>CLAUDE.md</code> 后面。但"读得晚"不等于"优先级高"——文档说得很直白：<strong>"if two rules contradict each other, Claude may pick one arbitrarily."</strong> 冲突时是随机挑一个，没有胜负规则。</p>
+<p>再往深一层：CLAUDE.md 是<strong>以 user message 形式</strong>投喂给模型的，不进 system prompt，官方原话 <strong>"there's no guarantee of strict compliance"</strong>。所以它天生就是软约束。</p>
+<p>典型考场景（原创版）：匠人做双语客服机器人，Aurora 的机器（Claude）总是只回英文，其他人正常双语。根因几乎永远是——"必须中英双语"这条规则被写进了她的 <code>~/.claude/CLAUDE.md</code>（user-level，不进 git），队友 clone repo 根本拿不到。修法：把规则从 user-level 挪到项目 <code>./CLAUDE.md</code>。</p>
+
+<h3>要"每次都生效"的硬规则，放 settings.json 或 hook</h3>
+<p>官方给了一句判据式的原话：<strong>"Settings rules are enforced by the client regardless of what Claude decides to do. CLAUDE.md instructions shape Claude's behavior but are not a hard enforcement layer."</strong> settings 由客户端强制，跟模型怎么想无关；CLAUDE.md 只塑造行为。</p>
+<p>settings.json 的作用域<strong>有</strong>严格优先级（这点和 CLAUDE.md 相反），从高到低：<strong>managed（企业托管）&gt; command line &gt; local（<code>.claude/settings.local.json</code>）&gt; project（<code>.claude/settings.json</code>）&gt; user（<code>~/.claude/settings.json</code>）</strong>。权限相关字段在 <code>permissions</code> 对象下：<code>allow</code> / <code>deny</code> / <code>ask</code> / <code>defaultMode</code> / <code>additionalDirectories</code>。注意一个细节：优先级链管的是<strong>普通设置</strong>，而权限规则是<strong>跨作用域合并（merge）</strong>的，不是简单覆盖——所以某一层加了 <code>deny</code>，别的层删不掉。</p>
+<p>要 100% 挡住 Claude 读微信 key，正确姿势是往 <code>permissions.deny</code> 加一行 <code>Read(./.env)</code>，而不是在 CLAUDE.md 写"禁止读 .env"（后者是引导，会被违反）。</p>
+<p><code>defaultMode</code> 的四个合法值要背下来：<code>default</code>（标准，该问就问）、<code>acceptEdits</code>（自动批准文件编辑）、<code>plan</code>（先出计划不动手）、<code>bypassPermissions</code>（完全跳过权限检查）。</p>
+<p>还有两个易混工具：<code>/memory</code> 命令只<strong>列出</strong>当前 session 已加载哪些 CLAUDE.md / rules 文件，是诊断用的，<strong>不触发加载、也不强制执行</strong>。<code>@path</code> import（如 <code>@docs/git-instructions.md</code>）能把 CLAUDE.md 拆成多个文件，但它是 launch 时原地 inline 加载，<strong>拆文件并不省 context</strong>——想省 token 要用下面的 <code>.claude/rules/</code>。</p>
+
+<h2>第二层：hooks / skills / subagents / MCP（强制、复用、隔离、接入）</h2>
+<h3>hooks —— 唯一的确定性强制层，exit 2 才阻断</h3>
+<p>hook 是绑在生命周期事件上的 shell 命令，客户端在固定时机执行，跟模型的"意愿"无关。要考的事件名：<code>PreToolUse</code>（工具调用前）、<code>PostToolUse</code>（工具成功后）、<code>UserPromptSubmit</code>（你提交 prompt、Claude 处理前）、<code>SessionStart</code> / <code>SessionEnd</code>、<code>Stop</code>（Claude 回答完）、<code>SubagentStop</code>、<code>PreCompact</code> 等。</p>
+<p>最爱考的是 exit code 语义，官方讲得非常死：</p>
+<ul>
+<li><strong>exit 0</strong>：成功。Claude Code 解析 stdout 里的 JSON 输出字段（JSON 只在 exit 0 时被处理）。</li>
+<li><strong>exit 2</strong>：阻断错误。忽略 stdout，把 stderr 当错误信息回传给 Claude。对 <code>PreToolUse</code> 就是<strong>阻断这次工具调用</strong>，对 <code>UserPromptSubmit</code> 就是拒绝这个 prompt。</li>
+<li><strong>其它非零（含 exit 1）</strong>：非阻断错误。官方明确警告 <strong>"only exit code 2 blocks the action... treats exit code 1 as a non-blocking error and proceeds with the action"</strong>——你写 <code>exit 1</code> 想拦命令，命令照跑。要拦就必须 <code>exit 2</code>。</li>
+</ul>
+<p>另一条等效阻断路径：<code>PreToolUse</code> 用 <code>exit 0</code> + 输出 JSON <code>permissionDecision: "deny"</code>，也能确定性拦截并带上理由。想给"每次 commit 前必跑 lint""禁止 <code>rm -rf</code>"这种<strong>必须发生在某个时点</strong>的规则上强制，答案永远是 hook，不是 CLAUDE.md。</p>
+
+<h3>slash commands 与 skills：作用域是硬考点，"合没合并"看版本</h3>
+<p>官方新版文档原话 <strong>"Custom commands have been merged into skills"</strong>：<code>.claude/commands/deploy.md</code> 和 <code>.claude/skills/deploy/SKILL.md</code> 都创建同一个 <code>/deploy</code>，旧的 <code>.claude/commands/</code> 文件继续能用，同名时 skill 形态优先。skill 比旧 command 多三样——SKILL.md 旁的 supporting-files 目录、Claude 按 <code>description</code> 自动发现调用、<code>disable-model-invocation</code> 等 frontmatter 开关。</p>
+<p><strong>⚠️ 但"已合并"是版本敏感的断言，别拿它去赌单选。</strong> CCA-F 通常锁定某个 docs 快照，如果考试所依据的版本里 commands 和 skills 还是两套并列机制，你按"已合并、skill 优先"去答反而可能踩坑。跨版本稳定、也是这个考点真正要考的，是下面的作用域规则——它不受"合没合并"影响。</p>
+<p>两级作用域，新旧版本一致：<strong>project</strong>（<code>.claude/skills/</code> 或旧的 <code>.claude/commands/</code>，进 git 全队 clone 即得）vs <strong>personal</strong>（<code>~/.claude/skills/</code> 或 <code>~/.claude/commands/</code>，个人机器独占、不进 git）。要"全队 clone 就能用同一个 <code>/deploy</code>"，无论做成 skill 还是 command，都必须放项目级并提交进 git；放 <code>~/.claude/</code> 队友 clone 拿不到。场景题落点在这儿，不在"哪种形态更 canonical"。</p>
+<p>常考 frontmatter 字段（真实字段名）：<code>description</code>（Claude 判断何时自动调）、<code>allowed-tools</code>（此 skill 活跃时免权限提示的工具，<strong>注意它不是"限制工具集"</strong>，只是预批准免问）、<code>disallowed-tools</code>（从可用池里移除）、<code>argument-hint</code>、<code>disable-model-invocation: true</code>（只允许用户显式 <code>/name</code> 调，禁止模型自动触发）、<code>context: fork</code>（在 forked subagent 里跑，verbose 输出不污染主对话）。内容里用 <code>$ARGUMENTS</code> 或 <code>$1</code> 接收参数。</p>
+<p>什么该做 skill、什么该进 CLAUDE.md？<strong>skill = 按需的任务型 workflow（body 只在调用时加载，长参考几乎不占 context）；CLAUDE.md = 每 session 常驻的通用事实。</strong> 任务流程塞进 CLAUDE.md，或把常驻标准做成 skill，都是反模式。</p>
+
+<h3>path-scoped rules —— 跨目录文件类型约定的正解</h3>
+<p><code>.claude/rules/</code> 下每个 <code>.md</code> 用 YAML frontmatter 的 <code>paths</code> glob，只在 Claude 读到匹配文件时才进 context。它专治一种 root CLAUDE.md 和 directory-level 都搞不定的场景：<strong>一种文件类型散落在几十个目录里</strong>。比如 <code>.test.ts</code> 分布在 40+ 功能目录，用 directory-level CLAUDE.md 要放 40+ 份拷贝、改一条约定改 40+ 处必然 drift；用 root CLAUDE.md 又会在你写 React 组件时也把测试规则烧进 context。正解是一个文件：</p>
+<pre><code>---
+paths:
+  - "**/*.test.ts"
+---
+# 测试约定
+- 每个测试覆盖 happy path + 边界 + 错误路径</code></pre>
+<p>无 <code>paths</code> 的 rules 文件则无条件加载，优先级和 <code>.claude/CLAUDE.md</code> 相同。</p>
+
+<h3>subagents —— 用独立 context window 隔离脏活</h3>
+<p>subagent 是跑在<strong>独立 context window</strong>里的专用 agent，自带 system prompt、指定工具集和独立权限，官方定位 <strong>"runs in its own context window... returns only the summary"</strong>。用途是：一个副线任务会往主对话灌一堆 grep 结果 / 日志 / 文件内容，让 subagent 在它自己的 context 里干、只回传结论。文件放 <code>.claude/agents/</code>（project）或 <code>~/.claude/agents/</code>（user），是 Markdown + YAML frontmatter，必填字段只有 <code>name</code> 和 <code>description</code>，可选 <code>tools</code>、<code>model</code>。Claude 靠 <code>description</code> 决定何时委派——所以 description 要写清"什么时候用我"。想让探索走更便宜的模型，就给它 <code>model: haiku</code>。</p>
+
+<h3>MCP —— 把外部工具接进 Claude Code</h3>
+<p>接一个 MCP server 用 <code>claude mcp add</code>。三种 transport：<strong>http</strong>（远程，官方推荐）、<strong>sse</strong>（已 deprecated）、<strong>stdio</strong>（本地进程）。远程：<code>claude mcp add --transport http notion https://mcp.notion.com/mcp</code>；本地 stdio 用 <code>--</code> 分隔 Claude 的选项和真正要跑的命令：<code>claude mcp add --transport stdio myserver -- npx server</code>。</p>
+<p>三种 scope 决定共享范围，也和前面的模式一致：<strong>local</strong>（默认，存 <code>~/.claude.json</code>，只有你自己、只在该项目）、<strong>project</strong>（<code>--scope project</code>，写进 repo 根的 <code>.mcp.json</code>，随 git 分发全队共享，队友首次需批准）、<strong>user</strong>（<code>--scope user</code>，你的所有项目）。团队要共用一个 Notion server，就得用 <code>--scope project</code> 让它进 <code>.mcp.json</code>。</p>
+
+<h2>SCENARIO：给匠人团队配一套可靠的 AI 工作流</h2>
+<p>把上面的机制串成一个真实决策。场景：匠人在做"留学生求职工具"这个 monorepo，团队五个人共享一套 Claude Code 配置。需求逐条落到正确的机制上——这正是 Domain 3 场景题的考法。</p>
+<ul>
+<li><strong>"永远不能提交 <code>.env</code>、不能读客户 PII 目录"</strong> → 这是硬红线，必须客户端强制。用 <code>settings.json</code> 的 <code>permissions.deny</code>（如 <code>Read(./secrets/**)</code>）或 <code>PreToolUse</code> hook。<strong>不要</strong>只写 CLAUDE.md——它是软约束会被违反。</li>
+<li><strong>"每次改代码后必须自动跑 prettier"</strong> → 必须发生在固定时点 → <code>PostToolUse</code> hook。</li>
+<li><strong>"全队 clone 后就能用同一个 <code>/deploy</code>"</strong> → project skill <code>.claude/skills/deploy/SKILL.md</code>，提交进 git。放 <code>~/.claude/</code> 只有自己有。</li>
+<li><strong>"测试文件散在 30+ 目录，测试约定只在编辑测试时加载"</strong> → <code>.claude/rules/testing.md</code> 加 <code>paths: ["**/*.test.ts"]</code>。不用 directory-level（会 drift），不用 root CLAUDE.md（烧 token）。</li>
+<li><strong>"排查一个跨 20 文件的 bug，别让 grep/日志塞满主对话"</strong> → subagent 在独立 context 里定位、回传 summary。</li>
+<li><strong>"团队共用 Notion 知识库当数据源"</strong> → <code>claude mcp add --transport http notion &lt;url&gt; --scope project</code>，进 <code>.mcp.json</code> 随 repo 分发。</li>
+<li><strong>"项目的整体架构、命名规范、AU 本地化（GST、ABN、财年 7 月起）"</strong> → 这些是每 session 都要的常驻事实 → 项目 <code>./CLAUDE.md</code>。</li>
+</ul>
+<p>决策口诀：<strong>常驻事实 → CLAUDE.md；跨目录文件类型约定 → path rules；按需任务流程 → skill；必须发生在某时点或必须硬拦 → hook / settings；隔离脏活 → subagent；接外部系统 → MCP。</strong></p>
+
+<h2>自测 5 题</h2>
+<h3>第 1 题</h3>
+<p>匠人双语客服机器人 repo 的安全要求：Claude 永远不能读 <code>.env</code>（里面有微信 API key）。你在项目 CLAUDE.md 写了"禁止读取 .env"，但 Claude 偶尔还是打开了它。要真正 100% 挡住，最靠谱的做法是？</p>
+<ul>
+<li>A. 把禁令改写得更具体、加粗、放到 CLAUDE.md 最顶部</li>
+<li>B. 在 <code>.claude/settings.json</code> 的 <code>permissions.deny</code> 加一条 <code>Read(./.env)</code></li>
+<li>C. 把禁令搬到 <code>~/.claude/CLAUDE.md</code>，因为 user-level 优先级最高</li>
+<li>D. 运行 <code>/memory</code> 强制重新加载规则</li>
+</ul>
+<p><strong>正确答案：B</strong></p>
+<ul>
+<li><strong>A 错</strong>：CLAUDE.md 以 user message 投喂，官方明说 "no guarantee of strict compliance"，措辞再狠也是引导不是强制。这个干扰项诱人在于"更用力写规则"是很多人的第一直觉。</li>
+<li><strong>B 对</strong>：<code>permissions.deny</code> 由客户端强制执行，"enforced by the client regardless of what Claude decides"。这是硬拦截层。</li>
+<li><strong>C 错</strong>：user-level 并不覆盖 project-level——文档明确是 concatenate 不 override；而且 <code>~/.claude</code> 不进 git，队友那台机器没有这条规则。"优先级最高"本身就是被官方否认的误解。</li>
+<li><strong>D 错</strong>：<code>/memory</code> 只列出已加载的文件，既不触发加载也不做强制。它是诊断工具，被误当成"刷新配置"的按钮。</li>
+</ul>
+
+<h3>第 2 题</h3>
+<p>留学生求职工具 monorepo 里，<code>.test.ts</code> 测试文件散落在 40+ 个功能目录。团队想让"测试必须覆盖 happy path + 边界"这条约定<strong>只在编辑测试文件时</strong>加载，写 React 组件时别占 context。怎么配最对？</p>
+<ul>
+<li>A. 在 40+ 个目录各放一份 directory-level CLAUDE.md</li>
+<li>B. 写进 repo 根 CLAUDE.md，让它全局生效</li>
+<li>C. 做成一个 skill，让 Claude always-on 自动调它</li>
+<li>D. 在 <code>.claude/rules/testing.md</code> 用 <code>paths: ["**/*.test.ts"]</code> frontmatter</li>
+</ul>
+<p><strong>正确答案：D</strong></p>
+<ul>
+<li><strong>A 错</strong>：40+ 份拷贝，改一条约定要改 40+ 处，必然 drift。看着"就近生效"很合理，实际是维护灾难。</li>
+<li><strong>B 错</strong>：root CLAUDE.md 每个 session 都全量加载，写 React 时测试规则也在烧 token，正好违背了"只在编辑测试时加载"。</li>
+<li><strong>C 错</strong>：skill 是按需任务型（调用时才加载），不是"随文件类型自动常驻的背景约定"；把它说成 always-on 本身就误解了 skill。</li>
+<li><strong>D 对</strong>：path-scoped rule 只在 Claude 读到匹配 glob 的文件时进 context，正是为"跨目录文件类型约定 + token 效率"设计的。</li>
+</ul>
+
+<h3>第 3 题</h3>
+<p>你写了个 <code>PreToolUse</code> hook 拦截 <code>rm -rf</code>：脚本检测到危险命令时往 stderr 打了原因并 <code>exit 1</code>。但 Claude 照样把命令跑了。为什么？</p>
+<ul>
+<li>A. 只有 <code>exit 2</code> 才阻断动作；<code>exit 1</code> 被当成非阻断错误，动作照常继续</li>
+<li>B. <code>PreToolUse</code> 不能拦 Bash，只能拦 Edit 类工具</li>
+<li>C. hook 必须先加进 <code>settings.json</code> 的 <code>allow</code> 列表才会生效</li>
+<li>D. stderr 不会回传给 Claude，必须改用 stdout</li>
+</ul>
+<p><strong>正确答案：A</strong></p>
+<ul>
+<li><strong>A 对</strong>：官方警告得很死，"only exit code 2 blocks the action... treats exit code 1 as a non-blocking error and proceeds"。<code>exit 1</code> 是 Unix 惯用失败码，正因如此最容易顺手写错。</li>
+<li><strong>B 错</strong>：<code>PreToolUse</code> 对任意工具（含 Bash）都能阻断，命中就拦。</li>
+<li><strong>C 错</strong>：hook 不进 <code>permissions.allow</code>，两套机制不搭界。</li>
+<li><strong>D 错</strong>：恰好反了——<code>exit 2</code> 时 stderr 正是回传给 Claude 的错误信息通道。</li>
+</ul>
+
+<h3>第 4 题</h3>
+<p>你在一个大 repo 里让 Claude 排查 bug，需要先 grep 几十个文件、翻一堆日志才能定位，但你不想让这些中间输出塞满主对话 context。最合适的做法是？</p>
+<ul>
+<li>A. 把相关日志都贴进 CLAUDE.md，让 Claude 直接读</li>
+<li>B. 开 <code>bypassPermissions</code> 模式，让它跑快点少产生输出</li>
+<li>C. 用一个 subagent 做定位，它在独立 context window 里跑、只回传 summary</li>
+<li>D. 每读完一个文件就 <code>/compact</code> 一次，随时压缩</li>
+</ul>
+<p><strong>正确答案：C</strong></p>
+<ul>
+<li><strong>A 错</strong>：CLAUDE.md 是放常驻指令的，不是临时日志缓冲；而且它每 session 全量加载，塞日志纯属浪费 context。</li>
+<li><strong>B 错</strong>：<code>bypassPermissions</code> 只是跳过权限确认，和 context 占用完全无关。这个干扰项蹭"加速"的直觉。</li>
+<li><strong>C 对</strong>：subagent "runs in its own context window... returns only the summary"，正是为隔离 verbose 探索、保持主对话干净而设计。</li>
+<li><strong>D 错</strong>：频繁 compact 有信息损耗且开销大，也不解决"探索输出污染主线程"这个根因。</li>
+</ul>
+
+<h3>第 5 题</h3>
+<p>匠人团队想让所有人 clone repo 后就能用同一个 <code>/deploy</code> 命令，还要接上团队共用的 Notion MCP server。哪组配置对？</p>
+<ul>
+<li>A. <code>/deploy</code> 放 <code>~/.claude/commands/</code>；Notion 用 <code>claude mcp add --scope local</code></li>
+<li>B. <code>/deploy</code> 放 <code>.claude/skills/deploy/SKILL.md</code> 并提交进 git；Notion 用 <code>claude mcp add --transport http notion &lt;url&gt; --scope project</code>（写进 <code>.mcp.json</code>）</li>
+<li>C. <code>/deploy</code> 放 <code>.claude/commands/</code>，但 MCP server 只能每人手动 <code>mcp add</code>，没法团队共享</li>
+<li>D. 把 <code>/deploy</code> 流程写进 CLAUDE.md 当一段说明；Notion 配到 <code>~/.claude.json</code></li>
+</ul>
+<p><strong>正确答案：B</strong></p>
+<ul>
+<li><strong>A 错</strong>：<code>~/.claude/</code> 是个人路径不进 git，队友 clone 拿不到；MCP 的 local scope 存 <code>~/.claude.json</code> 同样只有你自己有。两处都不共享。</li>
+<li><strong>B 对</strong>：project skill 进 git 全队共享；MCP <code>--scope project</code> 写进 repo 根的 <code>.mcp.json</code> 随 git 分发（队友首次会看到待批准）。两者都是团队共享的正解。关键判据是"进 git 的项目级"——放 <code>.claude/commands/deploy.md</code> 并提交同样能共享，不取决于它算 skill 还是 command，所以这题不押"合没合并"。</li>
+<li><strong>C 错</strong>：前半对（<code>.claude/commands/</code> 能共享），但"MCP 没法团队共享"是错的——project scope 就是为共享设计的。半对最诱人。</li>
+<li><strong>D 错</strong>：把任务型流程塞 CLAUDE.md 违反"任务 workflow 用 skill"的原则；<code>~/.claude.json</code> 是本地私有，团队看不到。</li>
+</ul>
+
+<h2>官方文档引用</h2>
+<ul>
+<li>How Claude remembers your project（CLAUDE.md 层级 / 拼接 vs 覆盖 / @import / .claude/rules / /memory）：https://code.claude.com/docs/en/memory</li>
+<li>Settings（settings.json 优先级 / permissions.allow·deny·ask / defaultMode 四值）：https://code.claude.com/docs/en/settings</li>
+<li>Hooks（事件列表 / exit code 0·2·其它语义 / PreToolUse 阻断）：https://code.claude.com/docs/en/hooks</li>
+<li>Create custom subagents（.claude/agents / 独立 context window / name·description·tools·model）：https://code.claude.com/docs/en/sub-agents</li>
+<li>Extend Claude with skills（"Custom commands have been merged into skills" 原文 / project vs personal / frontmatter / disable-model-invocation / 同名 skill 优先）：https://code.claude.com/docs/en/skills</li>
+<li>Connect Claude Code to tools via MCP（claude mcp add / http·sse·stdio / local·project·user scope / .mcp.json）：https://code.claude.com/docs/en/mcp</li>
+</ul>

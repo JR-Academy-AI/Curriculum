@@ -1,0 +1,155 @@
+<h2>考点地图：Domain 1 为什么值得你花最多时间</h2>
+<p>Domain 1 权重约 <strong>27%</strong>（社区口径，以官方考纲为准），是五个域里最高的一个（其余：Claude Code Configuration 20%、Prompt Engineering 20%、Tool Design &amp; MCP 18%、Context Management 15%）。换句话说，四道题里就有一道以上出自这里。这个域考的不是"你会不会调 API"，而是<strong>系统怎么组：单 agent 还是多 agent、coordinator 怎么切任务、loop 什么时候停、什么动作 agent 能自己拍板、什么必须转人工</strong>。</p>
+<p>先把这个域的高频子考点摆出来，后面三步逐个拆：</p>
+<ul>
+<li><strong>Agentic loop 的终止控制</strong>——<code>stop_reason</code> 是唯一可靠信号，别用自然语言或迭代上限当主要终止条件。</li>
+<li><strong>单 vs 多 agent 取舍</strong>——默认从最简单的方案起步，只有简单方案顶不住才上多 agent。</li>
+<li><strong>Coordinator / subagent 职责边界</strong>——通信只走 coordinator，subagent 之间不直连；context 完全隔离。</li>
+<li><strong>自主处理 vs 升级人工</strong>——高风险动作在检查点暂停交人。</li>
+<li><strong>可靠性与失败处理</strong>——用 hook 做确定性拦截，用 prompt 做偏好引导，两者不能混。</li>
+</ul>
+<p>关于考试形式本身：网上流传的 <strong>60 题 / 120 分钟 / 720 分及格 / 场景题 6 抽 4</strong> 属于社区口径，<strong>以官方公布为准</strong>，别当成硬指标去卡自己。你要抓的是概念判断力，不是背数字。</p>
+
+<h3>Agentic loop：一个循环，一个信号</h3>
+<p>agent 的骨架就是一个循环：发一次 Messages API 请求（system prompt + 历史消息 + 上一轮 tool 结果）→ 读响应里的 <code>stop_reason</code> → 如果是 <code>"tool_use"</code>，就执行工具、把结果追加回对话再发下一轮；如果是 <code>"end_turn"</code>，循环结束、返回最终答复。</p>
+<p><code>stop_reason</code> 官方定义的取值不止两个，考试爱在这里挖坑，记全：<code>end_turn</code>（自然说完）、<code>tool_use</code>（要调工具）、<code>max_tokens</code>（撞了 token 上限被截断）、<code>stop_sequence</code>（命中你设的停止串）、<code>pause_turn</code>（服务端工具循环到达迭代上限）、<code>refusal</code>（模型拒答）、<code>model_context_window_exceeded</code>（填满上下文窗口）。真正驱动 loop 的是前两个，其余是异常分支要单独处理。</p>
+<p>最经典的一个 bug：拿 <code>response.content[0].type === "text"</code> 判断"任务完成了"。<strong>错在哪</strong>——官方文档里明确写着，一个 assistant 响应可以<strong>同时</strong>包含一个 text block 和一个 tool_use block，比如模型先说 "I'll help you check the current weather"，紧跟着一个 <code>get_weather</code> 的 tool_use。你只看第 0 个块是 text 就收工，等于把还要调工具的这一轮当成结束了 → 提前终止。正确判断永远是看 <code>stop_reason</code>，不是看 content 里某个位置是什么类型。</p>
+
+<h2>SCENARIO：客服 agent 什么时候自己处理，什么时候转人工</h2>
+<p>拿匠人学院真实会碰到的场景说。假设你给一个留学生咨询平台做中英双语客服 agent，接的活包括：查课程开班时间、改学员绑定的邮箱、处理退课退款、回答签证相关的合规问题。哪些让 agent 自己闭环，哪些必须停下来交人？考试就爱考这个判断。</p>
+
+<h3>判据一：单次失败会不会造成钱 / 法律 / 安全后果</h3>
+<p>Anthropic《Building Effective Agents》给的原则很直白：autonomous agent 意味着<strong>更高成本和错误累积的风险</strong>，所以要配"stopping conditions（比如最大迭代次数）"来保持控制，并且让 agent"在检查点或遇到阻塞时暂停、交给人反馈"。翻译成这个场景：</p>
+<ul>
+<li><strong>查开班时间、答已公开的课程 FAQ</strong>——读操作、错了顶多重查一次，agent 全程自主，没必要惊动人。</li>
+<li><strong>改邮箱、退款</strong>——写操作、动的是账户和钱。这类必须先<strong>验证身份</strong>，且退款金额过阈值要转人工审批。不是"prompt 里写一句 always verify 就行"，后面第三步会讲为什么那样不够。</li>
+<li><strong>签证合规问题</strong>——答错有法律风险，agent 不该自己下结论，应识别为超出范围、给出"这块请联系持牌顾问"并升级，而不是硬编一个看起来专业的答案。</li>
+</ul>
+
+<h3>判据二：任务是不是"可预先切干净"——决定单 agent 还是多 agent</h3>
+<p>《Building Effective Agents》里 workflow 和 agent 是两回事：workflow 是"LLM 和工具走预定义代码路径"，agent 是"LLM 自己动态决定流程和工具"。指导原则是<strong>先找最简单的方案，只有简单方案不够才加复杂度</strong>——很多需求"优化单次 LLM 调用 + 检索 + 少量示例"就够了。别一上来就堆多 agent。</p>
+<p>什么时候值得上多 agent？看一个对照场景：学员让工具"调研墨尔本某家公司的面试情报"——要同时查 Glassdoor 评价、公司技术博客、LinkedIn 在职员工背景、近期新闻。这几路彼此独立、可并行，适合 <strong>orchestrator-worker（协调者-工人）</strong>结构：一个 lead agent 拆解任务、并行 spawn 出多个 subagent 各查一路、最后汇总。Anthropic 多 agent research 系统的博客给了硬数据：这种系统<strong>大约比单纯对话多用 15 倍 token</strong>，所以只在"任务价值高到值回这个成本"时才用。给学员查个开班时间用多 agent，就是杀鸡用牛刀。</p>
+
+<h3>coordinator 与 subagent 的职责边界（最容易考错的地方）</h3>
+<p>多 agent 一旦上了，边界规则必须背清楚，官方 Agent SDK 文档写得很死：</p>
+<ul>
+<li><strong>spawn 机制</strong>：coordinator 通过 <code>Agent</code> 工具生成 subagent，所以 coordinator 的 <code>allowedTools</code> 必须包含 <code>"Agent"</code>，否则 subagent 调用不会被自动放行。这个工具在 Claude Code v2.1.63 从旧名 <code>"Task"</code> 改成 <code>"Agent"</code>；当前 SDK 在 <code>tool_use</code> 块里发的是 <code>"Agent"</code>，但 <code>system:init</code> 工具清单和 permission 拒绝记录里仍留着 <code>"Task"</code>，检测 subagent 调用时两个名字都要认。</li>
+<li><strong>context 完全隔离</strong>：每个 subagent 跑在一段<strong>全新的对话</strong>里。它<strong>拿不到</strong> parent 的对话历史、parent 的 system prompt、也拿不到其他 subagent 的结果。parent 传给它的<strong>唯一通道</strong>就是 Agent 工具那段 prompt 字符串——文件路径、上一步发现、错误信息，你不写进去它就不知道。</li>
+<li><strong>只有 final message 回流</strong>：subagent 中间调的所有工具、读的所有文件都留在它自己那，只有最后一条消息作为 Agent 工具的结果返回给 parent。这正是它省 context 的原因。</li>
+<li><strong>通信只经 coordinator</strong>：subagent 之间不直接对话，全部结果先回 lead，由 lead 决定要不要再补一轮。</li>
+</ul>
+<p>由此推一个高频诊断题：如果汇总报告在<strong>广度</strong>上缺了一块（比如上面那个调研只查了 Glassdoor 和新闻，漏了技术栈和在职员工），根因几乎一定在 <strong>coordinator 的任务分解</strong>，不是某个 subagent 不给力。修法是改分解逻辑、多切一路 subtopic，而不是"给 search agent 换个更好的关键词"或"加一个更强的汇总 agent"——它们只会拿到同样残缺的任务。Anthropic 博客也印证：任务描述含糊会让 agent"重复劳动、留下缺口、找不到必要信息"。</p>
+
+<h2>可靠性设计：确定性拦截 vs 概率性引导</h2>
+<p>第二步说到"退款要验证身份"，为什么"在 system prompt 里写一句 always verify identity"不够？因为 prompt 是<strong>概率性</strong>的——它能把遵守率推很高，但永远压不到 0 失败。对退款、转账、身份验证、合规这种"单次失败就出事"的动作，你需要<strong>确定性</strong>机制。这是 Domain 1 可靠性部分的核心心智模型，也是最狠的一组干扰项来源。</p>
+
+<h3>hook 的方向性：PreToolUse 能拦，PostToolUse 拦不住</h3>
+<p>Claude Agent SDK 的 hook 是在 agent 执行的关键节点插你的代码。两个最该分清方向的：</p>
+<ul>
+<li><strong><code>PreToolUse</code></strong>：在工具<strong>执行之前</strong>触发。回调返回 <code>permissionDecision</code> 决定这次调用，官方四个取值：<code>"deny"</code>（硬拦，工具根本不会跑）、<code>"ask"</code>（转人工确认）、<code>"allow"</code>（放行，可同时带 <code>updatedInput</code> 把危险入参改安全）、<code>"defer"</code>（挂起本次查询、之后再 resume）。要拦一个动作就返回 <code>"deny"</code>。多个 hook 同时命中时优先级是 <code>deny</code> &gt; <code>defer</code> &gt; <code>ask</code> &gt; <code>allow</code>，只要有一个 <code>deny</code> 就整体否决。</li>
+<li><strong><code>PostToolUse</code></strong>：在工具<strong>已经执行、拿到结果之后</strong>触发。这里能做 <code>additionalContext</code> 追加信息、<code>updatedToolOutput</code> 改写模型看到的输出，但工具的副作用<strong>已经发生了</strong>。</li>
+</ul>
+<p>所以本节最强的一个陷阱：<strong>"用 PostToolUse 去阻止一笔违规转账"</strong>——错到底。PostToolUse 触发时钱已经转出去了，你顶多能记一笔账让人事后复查，满足不了"100% 不能发生"的要求。想让某个动作在满足前置条件前物理不可执行，只能用 PreToolUse 的 deny。用退款场景落地：写一个 PreToolUse hook 匹配 <code>process_refund</code> 工具，检查这个会话里 <code>get_customer</code> 是否已返回过 verified 的客户身份、退款额是否超阈值；不满足就 <code>deny</code> 并在 <code>permissionDecisionReason</code> 里告诉模型原因，让它别重试。这就是代码级的 prerequisite gate，模型绕不过去。</p>
+
+<h3>什么用 hook，什么用 prompt</h3>
+<p>一句话判据：<strong>必须 100% 遵守、单次失败有金钱/法律后果 → hook（确定性）；只是偏好、偶尔偏离能接受 → prompt（概率性）。</strong></p>
+<ul>
+<li>退款超额转人工、转账前必须过风控、身份未验证不放行敏感操作 → PreToolUse hook。</li>
+<li>回复语气、中英文排版偏好、先给结论再解释 → 写进 system prompt 就行，偶尔跑偏无伤大雅。</li>
+</ul>
+<p>另外两个可靠性相关的 hook 值得记名字：<code>SubagentStop</code>（subagent 结束时触发，可用来做结果 schema 校验、脱敏、汇总），<code>Stop</code>（agent 整体停下时触发，可存会话状态）。</p>
+
+<h3>别把迭代上限当终止机制</h3>
+<p>回到 loop。很多人想用 <code>MAX_ITERATIONS = 20</code> 这种上限来"控制 agent"。官方定位很清楚：迭代上限是 <strong>safety net</strong>，防的是失控 agent（runaway）无限跑下去的最大边界，<strong>不是</strong>正常的终止信号。正常查询应该远早于上限就靠 <code>stop_reason == "end_turn"</code> 自然结束。如果你发现 agent 老是提前退出（premature termination），加大迭代上限是<strong>治不了</strong>的——那是 <code>stop_reason</code> 判断写错了，去修判断逻辑，别调上限。</p>
+<p>还有一个自毁操作：为了"逼模型别输出闲聊文本"把 <code>tool_choice</code> 长期设成 <code>"any"</code>。<code>any</code> 会强制模型必须调一个工具，而且 <code>any</code>/<code>tool</code> 模式下 API 会 prefill、模型连自然语言解释都不会出。结果就是——agent 真正该收尾的那一轮也被迫再调一次工具，<strong>死循环</strong>。</p>
+
+<h2>自测 5 题</h2>
+
+<h3>第 1 题</h3>
+<p>你的双语客服 agent 偶尔在还需要继续调工具的时候就提前返回了最终答复。排查发现代码用 <code>if response.content[0].type == "text": return done</code> 来判断任务完成。最该改成哪种做法？</p>
+<ul>
+<li>A. 把最大迭代次数从 10 调到 30，给它更多轮数</li>
+<li>B. 把 <code>tool_choice</code> 设为 <code>"any"</code>，强制它每轮都调工具</li>
+<li>C. 改成检查响应的 <code>stop_reason</code>：<code>"tool_use"</code> 继续循环、<code>"end_turn"</code> 才结束</li>
+<li>D. 解析文本里有没有出现 "done" / "完成" 之类的词来判断</li>
+</ul>
+<p><strong>正确答案：C。</strong></p>
+<ul>
+<li><strong>C 对</strong>：<code>stop_reason</code> 是官方指定的、确定且无歧义的 loop 控制信号。提前终止的根因就是没看它、只看了 content 的第 0 个块——而一个响应可以同时含 text 和 tool_use 块。</li>
+<li><strong>A 错且诱人</strong>：迭代上限是防 runaway 的安全网，跟"提前退出"是反方向的病，加大上限对提前终止毫无作用。看起来像"给它更多机会"，其实文不对题。</li>
+<li><strong>B 错</strong>：<code>"any"</code> 强制每轮必调工具，会在该结束时制造死循环，把一个 bug 换成更糟的 bug。</li>
+<li><strong>D 错</strong>：自然语言有歧义，"我已经分析完第一个文件" 到底是全完了还是还要继续？靠解析文本判断终止本身就是被考试点名的反模式。</li>
+</ul>
+
+<h3>第 2 题</h3>
+<p>一个帮学员做"目标公司面试情报"的多 agent 系统，最终报告总是缺一整块维度（比如公司技术栈那一路完全没有）。你会先怀疑哪里？</p>
+<ul>
+<li>A. 负责搜索的 subagent 关键词写得不够好</li>
+<li>B. coordinator 的任务分解漏切了这一路 subtopic</li>
+<li>C. 汇总 agent 的 prompt 不够强，没发现缺口</li>
+<li>D. subagent 数量不够，再多加几个就好了</li>
+</ul>
+<p><strong>正确答案：B。</strong></p>
+<ul>
+<li><strong>B 对</strong>：输出在<strong>广度</strong>上整块缺失，根因几乎总在 coordinator 的 decomposition——它压根没派人去查这一路。修法是改分解逻辑、补上这个 subtopic。</li>
+<li><strong>A 错且诱人</strong>：如果只是某路查得浅，怀疑关键词还说得过去；但"整块维度不存在"说明就没人被派去查，不是查得好不好的问题。</li>
+<li><strong>C 错</strong>：汇总 agent 只能整合它<strong>收到</strong>的东西。没派 subagent 去查，汇总再强也变不出数据。</li>
+<li><strong>D 错</strong>：分解逻辑不改，新加的 subagent 只会领到同样残缺的任务清单，多几个也没用。</li>
+</ul>
+
+<h3>第 3 题</h3>
+<p>退款流程要求：任何退款在客户身份验证通过之前<strong>绝对不能执行</strong>。下面哪种实现能真正做到"100% 不发生"？</p>
+<ul>
+<li>A. 在 system prompt 里写 "always verify customer identity before any refund"</li>
+<li>B. 加几个 few-shot 示例演示"先验证再退款"</li>
+<li>C. 用 PostToolUse hook，在退款执行后检查身份是否验证过，没验证就标记待人工复查</li>
+<li>D. 用 PreToolUse hook 匹配退款工具，会话内未拿到已验证身份就返回 <code>permissionDecision: "deny"</code></li>
+</ul>
+<p><strong>正确答案：D。</strong></p>
+<ul>
+<li><strong>D 对</strong>：PreToolUse 在工具执行<strong>之前</strong>触发，<code>deny</code> 让退款根本跑不起来，这是确定性的代码级 gate，模型绕不过。</li>
+<li><strong>A / B 错</strong>：prompt 和 few-shot 都是概率性手段，能把遵守率推到很高但压不到 0 失败。对"绝对不能发生"的要求不合格。</li>
+<li><strong>C 错且最诱人</strong>：方向反了。PostToolUse 触发时退款<strong>已经执行</strong>，事后标记复查救不回已经出去的钱，满足不了 100% 的硬要求。</li>
+</ul>
+
+<h3>第 4 题</h3>
+<p>coordinator spawn 了一个 subagent 去分析一份财报 PDF，但 subagent 报错说不知道要分析哪个文件、也不清楚前一步的结论。最可能的原因是？</p>
+<ul>
+<li>A. coordinator 没把文件路径和前序结论写进 Agent 工具的 prompt 里</li>
+<li>B. subagent 会自动继承 coordinator 的对话历史，只是这次同步失败了</li>
+<li>C. 应该让这个 subagent 直接去问另一个 subagent 要上下文</li>
+<li>D. subagent 默认能读 coordinator 的 system prompt，配置漏了一项</li>
+</ul>
+<p><strong>正确答案：A。</strong></p>
+<ul>
+<li><strong>A 对</strong>：subagent 跑在全新对话里，parent 传给它的<strong>唯一通道</strong>就是 Agent 工具那段 prompt。路径、前序发现没写进去，它就是不知道。</li>
+<li><strong>B 错且诱人</strong>：正好相反——subagent <strong>不</strong>继承 parent 的对话历史、tool 结果或 system prompt。"自动继承"是这个域最常见的误解。</li>
+<li><strong>C 错</strong>：subagent 之间不直接通信，所有 context 由 coordinator 显式传递。让它们直连会破坏可观测性和信息流控制。</li>
+<li><strong>D 错</strong>：subagent 只带自己的 system prompt（<code>AgentDefinition.prompt</code>），拿不到 parent 的 system prompt，这不是"漏配一项"能开出来的。</li>
+</ul>
+
+<h3>第 5 题</h3>
+<p>产品经理问："我们要不要把'查开班时间'这个简单咨询也做成多 agent 架构，显得更高级？" 你基于官方指导应该怎么答？</p>
+<ul>
+<li>A. 要，多 agent 永远比单 agent 准，是更先进的架构</li>
+<li>B. 要，反正 token 成本可以忽略不计</li>
+<li>C. 不要，先用最简单方案，多 agent 大约多用 15 倍 token，只在任务价值高到值回成本时才用</li>
+<li>D. 不要，因为 Claude 根本不支持多 agent</li>
+</ul>
+<p><strong>正确答案：C。</strong></p>
+<ul>
+<li><strong>C 对</strong>：官方原则是"先找最简单方案，简单方案不够才加复杂度"；多 agent research 系统实测约比对话多用 15 倍 token，需要任务价值撑得起这个开销。查开班时间单次调用就够。</li>
+<li><strong>A 错且诱人</strong>："更多 agent = 更先进 = 更准"是很吸引人的直觉，但官方明确说复杂度是拿延迟和成本换性能，不是无脑越多越好。</li>
+<li><strong>B 错</strong>：token 成本恰恰是多 agent 的主要制约，15 倍不是可忽略的量级。</li>
+<li><strong>D 错</strong>：事实错误，Claude Agent SDK 通过 <code>Agent</code> 工具原生支持 subagent 编排。</li>
+</ul>
+
+<h2>官方文档引用</h2>
+<ul>
+<li>Handling stop reasons（Messages API）— https://platform.claude.com/docs/en/api/handling-stop-reasons</li>
+<li>Implement tool use / define tools（tool_choice、tool_use 与 text 块可同时出现）— https://platform.claude.com/docs/en/agents-and-tools/tool-use/implement-tool-use</li>
+<li>Subagents in the SDK（Agent 工具、context 隔离、AgentDefinition、Task→Agent 改名）— https://code.claude.com/docs/en/agent-sdk/subagents</li>
+<li>Intercept and control agent behavior with hooks（PreToolUse / PostToolUse / SubagentStop / Stop、permissionDecision）— https://code.claude.com/docs/en/agent-sdk/hooks</li>
+<li>Building Effective Agents（workflow vs agent、由简入繁、停止条件、人工检查点）— https://www.anthropic.com/engineering/building-effective-agents</li>
+<li>How we built our multi-agent research system（orchestrator-worker、约 15× token、分解质量）— https://www.anthropic.com/engineering/multi-agent-research-system</li>
+</ul>
