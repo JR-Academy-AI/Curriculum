@@ -25,8 +25,8 @@ themeColor `#C15F3C`（Claude 珊瑚色的深色调，区别于实战班的 `#D9
 - ⚠️ 合规底线：不要写"保过/稳过/必过"（红线 3）。写"帮你一次过""冲刺过考"可以，"保证通过"不行。
 
 ### 支柱 2 · 我们替你省下几十小时的摸索
-- 官方备考资源 = Anthropic Academy 上约 **13 门散课**，没人告诉你先学哪门、哪门对应哪个考点、哪些能跳过。
-- 我们把它编成**一条 5-domain 备考路线图**（L05），学员照着走两周就能过一遍，不用自己在 13 门课里瞎撞。
+- 官方备考资源 = Anthropic Academy（anthropic.skilljar.com）上 **20 门散课**，没人告诉你先学哪门、哪门对应哪个考点、哪些能跳过。
+- 我们把它编成**一条 5-domain 备考路线图**（L05），学员照着走两周就能过一遍，不用自己在 20 门课里瞎撞。
 - 话术：**"官方资料是免费的，但把它排成一条能过考的路线，是我们干的活。"**（诚实——不藏着官方免费这件事，反而显得可信）
 
 ### 支柱 3 · 原创的冲刺件，官方没有
@@ -43,7 +43,7 @@ themeColor `#C15F3C`（Claude 珊瑚色的深色调，区别于实战班的 `#D9
 | Phase | 干什么 | 学员拿到的"确定性成果" |
 |---|---|---|
 | P0 认证全景 & 你的考试名额 | 搞懂考什么 + 激活名额 + 预约 | 手里一个已激活、已预约的官方名额 |
-| P1 5 大 Domain 备考路径 | Academy 13 课导航 + 逐 domain 精析 | 一条两周能走完的备考路线 |
+| P1 5 大 Domain 备考路径 | Academy 20 课导航 + 逐 domain 精析 | 一条两周能走完的备考路线 |
 | P2 场景题实战拆解 | 6 类场景 + 四步框架 | 会拆场景题、认得出陷阱选项 |
 | P3 全真模拟 & 冲刺 | 2 套模拟 + 考前清单 | 两套模拟稳定 720+ 再进考场 |
 
@@ -100,4 +100,6 @@ themeColor `#C15F3C`（Claude 珊瑚色的深色调，区别于实战班的 `#D9
 - 社区口径**未经官方正式公布**（60 题/120 分/720 分/6 抽 4）：对外可写"约 60 题""社区口径"，**不要**说成"官方规定 60 题"。
 - **🚨 五域权重同样是社区口径（2026-07-09 核实）**：Agentic Architecture 27% / Claude Code Config 20% / Prompt Engineering 20% / Tool Design & MCP 18% / Context Management 15% —— 这组百分比**在 anthropic.com / claude.com 公开页面查不到一手出处**，来自第三方备考站与社区整理。对外与课文里一律写"社区口径，以官方考纲为准"，**禁止**写成"官方权重"。真正的 blueprint 锁在 Partner Academy 内，取到后再升级口径。（域的**名称与相对排序**可信度较高，具体百分比不可当官方引用。）
 - **绝不**承诺"保过/稳过/必过"（红线 3）。
+- **🚨 Services Partner Directory 收录的是「公司」不是「个人」（2026-07-09 核实）**：Anthropic 原话 "Qualified partners will also be added to our Services Partner Directory, where enterprise buyers can find **firms**"。同一来源同时确认 "Certifications belong to individual people, not firms, and are earned through Anthropic Partner Academy exams" 与 "more than 10,000 consultants have earned a Claude certification"。因此可写"逾 1 万名顾问已持证""认证归个人"，**不可**写成"持证即可进入 Directory 被企业买家找到"。
+- **🚨 Anthropic Academy 是 20 门课不是 13 门（2026-07-09 核实）**：anthropic.skilljar.com 实际目录为 20 门免费课。旧稿"约 13 门散课"是错的，已全线改为 20。
 - **🚨 Partner 身份口径（2026-07-08 起强制）**：匠人在 Claude Partner Network 目前是 **Registered 级（on-ramp，不算正式 partner）**——对外**禁止**自称"官方 Claude Partner"、禁止使用 Partner badge / brand assets（依据 CPN Program Guide）。✅ 允许的说法："匠人已注册加入 Claude Partner Network""通过 CPN 合规通道为学员开通考试报名资格"。升 Select（需 ≥10 名 active certified individuals 等三门槛，2026-10-01 有特例加审）拿到 badge 后，话术方可升级。

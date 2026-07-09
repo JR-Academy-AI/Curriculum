@@ -3,7 +3,7 @@
   "slug": "cca-f-cert-pack",
   "name": "Claude 架构师认证 · 考试直通包",
   "name_en": "CCA-F Certification Fast-Track Pack",
-  "description": "Anthropic 官方 Claude Certified Architect – Foundations (CCA-F) 认证的<strong>考试直通包</strong>：成为全球华人首批 Claude 官方认证架构师。包含一个官方考试名额 + 系统化备考资料 + 全程报名答疑。匠人已注册加入 Claude Partner Network，本包通过 CPN 合规通道协助申请考试名额，同时把散落在 Anthropic Academy 的 13 门课编成一条清晰备考路线，配 2 套全真模拟题和场景题拆解，帮你一次过。",
+  "description": "Anthropic 官方 Claude Certified Architect – Foundations (CCA-F) 认证的<strong>考试直通包</strong>：成为全球华人首批 Claude 官方认证架构师。包含一个官方考试名额 + 系统化备考资料 + 全程报名答疑。匠人已注册加入 Claude Partner Network，本包通过 CPN 合规通道协助申请考试名额，同时把散落在 Anthropic Academy 的 20 门课编成一条清晰备考路线，配 2 套全真模拟题和场景题拆解，帮你一次过。",
   "description_en": "Fast-track pack for Anthropic's official Claude Certified Architect – Foundations (CCA-F) certification: one official exam seat, a structured study path, and end-to-end registration support.",
   "level": "中级",
   "type": "training",
@@ -17,15 +17,15 @@
   "timeLength": "12 小时自学（16 节课，自主安排节奏）+ 1 个官方考试名额",
   "courseObjective": "拿到 CCA-F 官方考试资格并系统备考：吃透 5 大考纲 domain（Agentic Architecture / Tool Design & MCP / Claude Code Configuration / Prompt Engineering / Context Management）、掌握场景题答题框架、跑通 2 套全真模拟、顺利完成 Pearson VUE 预约并通过考试。",
   "courseObjective_en": "Get CCA-F exam access and prepare systematically across all 5 domains, master the scenario-based question framework, complete 2 full mock exams, and pass the proctored Pearson VUE test.",
-  "suitable": "🧑‍💻 你已经在用 Claude / Claude Code / MCP 做真实项目，想要一张官方认证背书\n🚪 你希望通过匠人 CPN 合规通道申请官方考试名额\n⏱ 你不需要人从零教你，只想要一条最短备考路线 + 模拟题 + 报名协助，自己冲刺过考\n💼 你是技术顾问 / 外包团队成员，需要认证进入 Anthropic Services Partner Directory 拿单",
+  "suitable": "🧑‍💻 你已经在用 Claude / Claude Code / MCP 做真实项目，想要一张官方认证背书\n🚪 你希望通过匠人 CPN 合规通道申请官方考试名额\n⏱ 你不需要人从零教你，只想要一条最短备考路线 + 模拟题 + 报名协助，自己冲刺过考\n💼 你是技术顾问 / 外包团队成员，想用个人认证为团队申请 CPN 合作伙伴资质加分（Services Partner Directory 收录的是公司，不是个人）",
   "suitable_en": "Developers and solution architects already building with Claude who want the official credential, need Partner-gated exam access, and prefer to self-study with a curated path plus mocks.",
   "cardDescription": "成为全球华人首批 Claude 官方认证架构师：1 个官方 CCA-F 考试名额 + 5 大 domain 考点精析 + 2 套全真模拟 + 报名全程协助。",
-  "promoDescription": "CCA-F 是 Anthropic 2026 年 3 月推出的<strong>首个官方技术认证</strong>。匠人已注册加入 Claude Partner Network，这个直通包通过 CPN 合规通道协助申请官方考试名额。你拿到三样实打实的东西：① <strong>1 个官方考试名额</strong>（Pearson VUE 监考，价值不菲）；② 我们把 Anthropic Academy 13 门散课编成的<strong>一条 5-domain 备考路线</strong>，省你自己摸索的几十小时；③ 原创的<strong>场景题拆解 + 2 套全真模拟 + 考前清单</strong>。全程报名、预约、改期、重考规则有人答疑。不是卖资料——是考试名额、备考路线和模拟冲刺一起交付。",
+  "promoDescription": "CCA-F 是 Anthropic 2026 年 3 月推出的<strong>首个官方技术认证</strong>。匠人已注册加入 Claude Partner Network，这个直通包通过 CPN 合规通道协助申请官方考试名额。你拿到三样实打实的东西：① <strong>1 个官方考试名额</strong>（Pearson VUE 监考，价值不菲）；② 我们把 Anthropic Academy 20 门散课编成的<strong>一条 5-domain 备考路线</strong>，省你自己摸索的几十小时；③ 原创的<strong>场景题拆解 + 2 套全真模拟 + 考前清单</strong>。全程报名、预约、改期、重考规则有人答疑。不是卖资料——是考试名额、备考路线和模拟冲刺一起交付。",
   "prerequisiteknowledge": "有用 Claude API / Claude Code / MCP 做过真实项目的经验；理解 Agent、工具调用、Prompt 工程基本概念。不适合完全没接触过 Claude 开发的新手（那种情况建议先上「+ Claude Code 实战班」）。",
   "highlights": [
     "含 1 个 Anthropic 官方 CCA-F 考试名额（Pearson VUE 监考）",
     "匠人 Claude Partner Network 合规通道协助申请考试名额",
-    "把 Anthropic Academy 13 门免费课编成一条 5-domain 最短备考路线",
+    "把 Anthropic Academy 20 门免费课编成一条 5-domain 最短备考路线",
     "5 大考纲 domain 逐个考点精析，对齐官方 blueprint",
     "6 类场景题逐个拆解 + 答题框架（考试随机抽 4 类）",
     "2 套全真模拟题 + 逐题详解",
@@ -88,7 +88,7 @@
               "order": 2,
               "type": "CONCEPT",
               "title": "含金量与归属",
-              "description": "认证归属个人；已有超 1 万名顾问获得 Claude 认证；可进入 Anthropic Services Partner Directory 被企业买家找到。",
+              "description": "认证归属个人、不归公司（Anthropic 原话：certifications belong to individual people, not firms），通过 Partner Academy 考试获得；官方已公布逾 1 万名顾问拿到 Claude 认证。注意：Services Partner Directory 收录的是合作伙伴公司，个人持证本身不等于进目录。",
               "duration": 7
             },
             {
@@ -265,8 +265,8 @@
       "lessons": [
         {
           "code": "L05",
-          "title": "备考总路线图 — Anthropic Academy 13 课导航",
-          "description": "把 Anthropic Academy 13 门免费课按 5 大 domain 重新编排成一条最短学习路线，告诉你先学哪门、每门对应哪个考点、哪些可以跳过。",
+          "title": "备考总路线图 — Anthropic Academy 20 课导航",
+          "description": "把 Anthropic Academy 20 门免费课按 5 大 domain 重新编排成一条最短学习路线，告诉你先学哪门、每门对应哪个考点、哪些可以跳过。",
           "type": "Information",
           "isLive": false,
           "duration": 45,
@@ -275,13 +275,13 @@
               "order": 1,
               "type": "CONCEPT",
               "title": "官方唯一备考资源：Anthropic Academy",
-              "description": "Skilljar 上约 13 门免费课覆盖 AI Fluency / API / MCP / Claude Code；这是唯一官方备考资源，别买第三方题库 dump。",
+              "description": "Skilljar (anthropic.skilljar.com) 上 20 门免费课覆盖 AI Fluency / API / MCP / Claude Code / subagents / agent skills；这是唯一官方备考资源，别买第三方题库 dump。",
               "duration": 10
             },
             {
               "order": 2,
               "type": "CONCEPT",
-              "title": "13 课 → 5 domain 映射表",
+              "title": "20 课 → 5 domain 映射表",
               "description": "哪几门课对应 Agentic Architecture、哪几门对应 MCP、哪几门对应 Claude Code……一张表看清。",
               "duration": 15
             },
@@ -296,7 +296,7 @@
               "order": 4,
               "type": "PROJECT",
               "title": "制定你的两周备考计划",
-              "description": "根据自己基础，把 13 课 + 本包内容排进两周日历。",
+              "description": "根据自己基础，把相关课程 + 本包内容排进两周日历。",
               "duration": 10
             }
           ]
