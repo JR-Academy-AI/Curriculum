@@ -1,5 +1,5 @@
 <h2>考点地图</h2>
-<p>Domain 2「Tool Design &amp; MCP」权重约 <strong>18%</strong>（社区口径，出处见下），在五个域里排第四（其余四域社区口径为 Agentic Architecture 27%、Claude Code Configuration 20%、Prompt Engineering 20%、Context Management 15%）。它不是最大的域，但踩坑率最高——因为大多数人把「给模型接个工具」当成写函数，忽略了模型选不选、怎么选、选错了怎么恢复，全押在一个字段上：<code>description</code>。</p>
+<p>Domain 2「Tool Design &amp; MCP Integration」在官方 blueprint 里占 <strong>18%</strong>，在五个域里排第四（其余四域官方权重：Domain 1 Agentic Architecture 27%、Domain 3 Claude Code Configuration 20%、Domain 4 Prompt Engineering 20%、Domain 5 Context Management &amp; Reliability 15%）。它不是最大的域，但踩坑率最高——因为大多数人把「给模型接个工具」当成写函数，忽略了模型选不选、怎么选、选错了怎么恢复，全押在一个字段上：<code>description</code>。</p>
 <p>这一课要拿分的四条主线：</p>
 <ul>
 <li><strong>工具粒度与工具描述</strong>——本域第一高频子考点。工具的 <code>description</code> 是模型做选择的主机制，不是补充说明。</li>
@@ -7,7 +7,7 @@
 <li><strong>MCP 的 host / client / server 三方架构与 transport</strong>——谁连谁、一对一还是一对多、stdio 和 HTTP 怎么选。</li>
 <li><strong>何时用 MCP、何时直接函数调用；工具的错误返回怎么设计</strong>——尤其是 <code>is_error</code> 这个字段用对没有。</li>
 </ul>
-<p>先说清一个合规前提：这门认证的「60 题 / 120 分钟 / 720 分及格 / 场景题占一部分」，连同五域权重（27 / 20 / 20 / 18 / 15）和域名结构，<strong>都是第三方备考社区整理的口径，未见 Anthropic 官方公布确切百分比，一律以官方为准</strong>——别拿这些数字当官方保证去排复习优先级。真正能追溯到 Anthropic 官方文档的，是下面每一条技术断言，文末列了实际抓过的链接。</p>
+<p>先把考试形式对齐官方 Exam Guide：<strong>60 题 / 120 分钟</strong>，场景题是<strong>从 6 个场景里抽 4 个</strong>作答，及格线 <strong>720</strong>（100–1000 量表分，不是答对百分比）；五域权重（27 / 20 / 20 / 18 / 15）和域名结构也来自官方 blueprint，可以直接拿来排复习优先级。下面每一条技术断言同样能追溯到 Anthropic 官方文档，文末列了实际抓过的链接。</p>
 
 <h2>工具设计原则：description 决定模型选不选、选得对不对</h2>
 <h3>一个工具在 API 里就三个字段</h3>

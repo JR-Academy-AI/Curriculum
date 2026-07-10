@@ -3,5 +3,6 @@ mirror/
 extracted/
 url-list.txt
 
-# Anthropic 官方考纲 PDF 及其提取文本 = Anthropic 版权材料，只做写作 ground truth，不进 git、不整篇翻译转载
+# 官方考纲原件已统一迁至 curriculum/_cert-official-guides/（四门共用，整目录 gitignore）
+# 此处保留 official/ 规则做防误放
 official/

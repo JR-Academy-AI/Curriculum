@@ -1,12 +1,13 @@
-<h2>考点地图：Domain 5 — Context Management（权重约 15%，社区口径）</h2>
-<p>五个考域里 Context Management 权重最低（15%），但它是最容易靠"工程直觉"答错的一域。原因是：这域几乎不考 API 语法，考的是<strong>生产系统里管上下文的判断力</strong>——什么该留在 context 里、什么该踢出去、长会话怎么不丢关键事实、检索和直接塞满怎么选。很多题的错误选项看起来都"挺合理"，比如"加大到 1M 窗口就好了"、"撞上限再说"，全是陷阱。</p>
+<h2>考点地图：Domain 5 — Context Management &amp; Reliability（权重 15%，官方 blueprint）</h2>
+<p>五个考域里 Domain 5 Context Management &amp; Reliability 权重最低（官方 blueprint 里 15%），但它是最容易靠"工程直觉"答错的一域。原因是：这域几乎不考 API 语法，考的是<strong>生产系统里管上下文的判断力</strong>——什么该留在 context 里、什么该踢出去、长会话怎么不丢关键事实、检索和直接塞满怎么选。很多题的错误选项看起来都"挺合理"，比如"加大到 1M 窗口就好了"、"撞上限再说"，全是陷阱。</p>
+<p>注意官方域名带 <strong>&amp; Reliability</strong>：除了本课讲透的上下文管理，这个域还覆盖一批<strong>可靠性</strong>相关考点——升级决策、错误传播、人工复审与置信度校准。这一课先把上下文管理这块吃透，可靠性的判断题另有单独一节展开，这里先知道它同属 Domain 5。</p>
 <p>这一课把这个域拆成三块高频子考点讲透：</p>
 <ul>
 <li><strong>上下文预算与管理</strong>——context window 装什么、API 无状态意味着什么、token 怎么算、prompt caching 怎么省钱、context editing 怎么自动清工具结果</li>
 <li><strong>检索 vs 塞满上下文</strong>——just-in-time 按需检索和一次性预加载的取舍，以及 context rot 这个根因</li>
 <li><strong>长会话的记忆与状态设计</strong>——memory tool、compaction、跨会话恢复</li>
 </ul>
-<p>关于考试形式：这域偏场景判断题多。<strong>坊间流传的"60 题 / 120 分钟 / 720 分及格 / 6 抽 4 场景"是社区口径，不是 Anthropic 官方公布的数字，一切以官方为准。</strong>下面每个技术断言都能追溯到官方文档，文末列了抓取过的 URL。</p>
+<p>关于考试形式：这域偏场景判断题多。官方 Exam Guide 明确 <strong>60 题 / 120 分钟</strong>，场景题从 <strong>6 个里抽 4 个</strong>作答，及格线 <strong>720</strong>（100–1000 量表分，不是答对百分比）。下面每个技术断言都能追溯到官方文档，文末列了抓取过的 URL。</p>
 
 <h2>① 上下文预算与管理：先搞清楚 context window 到底装了什么</h2>
 <h3>context window = 模型的"工作记忆"，不是硬盘</h3>

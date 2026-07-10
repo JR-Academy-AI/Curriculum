@@ -2,7 +2,7 @@
 
 > **来源**：Anthropic 官方《Claude Certified Architect – Foundations Exam Guide》**Version 1.0 · Effective July 2026**，39 页，由 Lightman 从 Partner Academy 下载（2026-07-09）。
 >
-> **原件位置**：`research/official/CCAR-F_Exam_Guide_v1.0_Jul2026.pdf`（+ 提取文本）。**该目录已 gitignore** —— Anthropic 版权材料，与竞品 mirror 同等对待：只做写作 ground truth，**不进 git、不整篇翻译、不转载给学员**。
+> **原件位置**：`curriculum/_cert-official-guides/CCAR-F_Architect-Foundations_v1.0_Jul2026.pdf`（+ 提取文本；四门考纲统一存放于此，见该目录 `README.md`）。**该目录已 gitignore** —— Anthropic 版权材料，与竞品 mirror 同等对待：只做写作 ground truth，**不进 git、不整篇翻译、不转载给学员**。
 >
 > **本文件的定位**：官方**事实**（数字、政策、考纲结构）的记录，不是考纲的翻译件。事实不受版权保护，表达受保护。需要细读 30 条 task statement 的 "Knowledge of / Skills in" 明细时，读本地那份 PDF，不要把明细粘进任何对外内容。
 >

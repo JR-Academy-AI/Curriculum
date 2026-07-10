@@ -22,3 +22,6 @@ video-ai-engineer/out/
 
 # Claude Code subagent isolated worktrees (ephemeral, not committed)
 .claude/worktrees/
+
+# Anthropic 官方考纲原件（4 门）= 版权材料，只做本地 ground truth，不进 git
+_cert-official-guides/

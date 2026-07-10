@@ -1,5 +1,5 @@
 <h2>考点地图：Domain 3 为什么最容易失分</h2>
-<p>Domain 3（Claude Code Configuration）权重约 <strong>20%</strong>（社区口径，以官方考纲为准），仅次于 Agentic Architecture 的 27%，和 Prompt Engineering 并列第二。它失分率高的原因很具体：网上大量二手教程把配置层级讲成"更具体的覆盖更宽的"，而官方文档明确否认这套优先级——你如果凭直觉答，会成片踩坑。</p>
+<p>Domain 3（Claude Code Configuration &amp; Workflows）在官方 blueprint 里占 <strong>20%</strong>，仅次于 Agentic Architecture 的 27%，和 Prompt Engineering 并列第二（两者都是 20%）。它失分率高的原因很具体：网上大量二手教程把配置层级讲成"更具体的覆盖更宽的"，而官方文档明确否认这套优先级——你如果凭直觉答，会成片踩坑。</p>
 <p>这个 domain 的官方描述覆盖五块，按考试出现频率排：</p>
 <ul>
 <li><strong>CLAUDE.md 层级与 <code>.claude/rules/</code></strong> — 三级作用域、拼接 vs 覆盖、path-scoped 规则。最高频。</li>
@@ -43,7 +43,7 @@
 
 <h3>slash commands 与 skills：作用域是硬考点，"合没合并"看版本</h3>
 <p>官方新版文档原话 <strong>"Custom commands have been merged into skills"</strong>：<code>.claude/commands/deploy.md</code> 和 <code>.claude/skills/deploy/SKILL.md</code> 都创建同一个 <code>/deploy</code>，旧的 <code>.claude/commands/</code> 文件继续能用，同名时 skill 形态优先。skill 比旧 command 多三样——SKILL.md 旁的 supporting-files 目录、Claude 按 <code>description</code> 自动发现调用、<code>disable-model-invocation</code> 等 frontmatter 开关。</p>
-<p><strong>⚠️ 但"已合并"是版本敏感的断言，别拿它去赌单选。</strong> CCA-F 通常锁定某个 docs 快照，如果考试所依据的版本里 commands 和 skills 还是两套并列机制，你按"已合并、skill 优先"去答反而可能踩坑。跨版本稳定、也是这个考点真正要考的，是下面的作用域规则——它不受"合没合并"影响。</p>
+<p><strong>⚠️ 但"已合并"是版本敏感的断言，别拿它去赌单选。</strong> CCAR-F 通常锁定某个 docs 快照，如果考试所依据的版本里 commands 和 skills 还是两套并列机制，你按"已合并、skill 优先"去答反而可能踩坑。跨版本稳定、也是这个考点真正要考的，是下面的作用域规则——它不受"合没合并"影响。</p>
 <p>两级作用域，新旧版本一致：<strong>project</strong>（<code>.claude/skills/</code> 或旧的 <code>.claude/commands/</code>，进 git 全队 clone 即得）vs <strong>personal</strong>（<code>~/.claude/skills/</code> 或 <code>~/.claude/commands/</code>，个人机器独占、不进 git）。要"全队 clone 就能用同一个 <code>/deploy</code>"，无论做成 skill 还是 command，都必须放项目级并提交进 git；放 <code>~/.claude/</code> 队友 clone 拿不到。场景题落点在这儿，不在"哪种形态更 canonical"。</p>
 <p>常考 frontmatter 字段（真实字段名）：<code>description</code>（Claude 判断何时自动调）、<code>allowed-tools</code>（此 skill 活跃时免权限提示的工具，<strong>注意它不是"限制工具集"</strong>，只是预批准免问）、<code>disallowed-tools</code>（从可用池里移除）、<code>argument-hint</code>、<code>disable-model-invocation: true</code>（只允许用户显式 <code>/name</code> 调，禁止模型自动触发）、<code>context: fork</code>（在 forked subagent 里跑，verbose 输出不污染主对话）。内容里用 <code>$ARGUMENTS</code> 或 <code>$1</code> 接收参数。</p>
 <p>什么该做 skill、什么该进 CLAUDE.md？<strong>skill = 按需的任务型 workflow（body 只在调用时加载，长参考几乎不占 context）；CLAUDE.md = 每 session 常驻的通用事实。</strong> 任务流程塞进 CLAUDE.md，或把常驻标准做成 skill，都是反模式。</p>

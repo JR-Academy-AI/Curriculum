@@ -1,44 +1,44 @@
 <h2>官方唯一备考资源：Anthropic Academy</h2>
-<p>CCA（Claude Certified Architect）没有官方教材、没有 study guide、没有官方模拟题。Anthropic 给的备考入口只有一个：<strong>Anthropic Academy</strong>，托管在 <code>anthropic.skilljar.com</code>，注册免费、全部课程免费看。考试本身考的是"你能不能用 Claude 搭生产级应用"——原文是 "a technical exam for solution architects building production applications with Claude"（2026-03-12 公告），Academy 就是覆盖这套能力的唯一一手内容源。</p>
+<p>CCAR-F（Claude Certified Architect – Foundations）没有官方教材、没有 study guide、没有官方模拟题。Anthropic 给的备考入口只有一个：<strong>Anthropic Academy</strong>，托管在 <code>anthropic.skilljar.com</code>，注册免费、全部课程免费看。考试本身考的是"你能不能用 Claude 搭生产级应用"——原文是 "a technical exam for solution architects building production applications with Claude"（2026-03-12 公告），Academy 就是覆盖这套能力的唯一一手内容源。</p>
 <p>先把丑话说前面：<strong>这些课全部免费，你自己去 <code>anthropic.skilljar.com</code> 注册就能看，匠人不卖课程访问权。</strong>我们这个直通包卖的是"把 20 门散课排成一条对考试有效的路线"——哪几门是命根、哪几门是背景、哪 6 门跟架构师考试完全无关可以直接跳、按什么顺序刷、两周怎么排进日历。这一课就干这件事。</p>
 <p>抓这条主线前记住两个约束：其一，Academy 课程是 Anthropic 按"产品线 + 人群"组织的，<strong>不是按考试五域组织的</strong>，所以你不能顺着目录从上往下刷，得重新编排；其二，目录会增减（这份清单以 2026-07 实际抓取为准，共 20 门），你自己进站时对一眼数量。</p>
 <p>顺带把"为什么值得考"说清楚，免得你在两周里泄气：这张证<strong>发给个人、不发给公司</strong>（原文 "Certifications belong to individual people, not firms"），是你个人履历上的技术背书；据 Anthropic 官方 Services Partner Hub 公布，已有一万多名顾问拿到 Claude 认证（原文 "more than 10,000 consultants have earned a Claude certification"，出处见文末引用）。注意一个常见误解——Anthropic 的 Services Partner Directory 收录的是"有 Claude 落地经验的<strong>公司</strong>"，不是"个人持证就自动进目录被企业买家搜到"。个人持证的真实价值是两条：给自己简历加硬背书，以及帮你所在公司凑够合作伙伴层级要求的 certified 人数。想清楚这个，就不会考完发现"跟预期不一样"。</p>
 <p>还有一件容易被忽略的事：免费课最大的陷阱是"看过≠会"。这些课做得顺滑、看着轻松，很多人一路点"下一节"点到完课，考试一做题全塌。刷 Academy 要当成刷考点，不是当播客听——每看完一门，立刻用自己的话回答三个问题："这门课解决什么问题？考试会拿它的哪个概念挖坑？我现在能不看笔记复述出来吗？"答不上来就是没学会，回看那一节，别急着点下一门。下面 L06 起每门直通包课都配了 5 道自测题，就是逼你把"看过"变成"答得对"。</p>
 
 <h2>20 课 → 5 Domain 映射表</h2>
-<p>考试分五个域。域的名称、以及"哪个域权重最高、哪个最低"这个相对排序可信度较高；但<strong>网上流传的精确百分比在 anthropic.com 公开页查不到一手出处，能追到的只有第三方备考站的估算，不是官方数字、也不是可核实的社区共识</strong>。所以本课只用相对排序（Domain 1 最重、Domain 5 最轻）判断"该在哪个域多花时间"，不引用具体百分比。下面把 20 门课按域重排，跨域的课在主域列一次、在次域标"（跨域）"。</p>
-<p>先看懂这张表的两个信号：一是<strong>跨域课就是高性价比课</strong>——一门 <code>Building with the Claude API</code> 同时喂 Domain 1 和 4，一门 <code>subagents</code> 同时喂 Domain 1 和 5，刷一门抵两个域，这类课要优先且刷透；二是<strong>没有专属课的域要靠别人"顺带"覆盖</strong>——Domain 5（Context Management）在 Academy 里没有一门以它命名的课，全靠 subagents 的 context 隔离和 MCP Advanced 的上下文传递带出来，所以你看那两门时要有意识地把"这在讲上下文管理"的部分单独记下来。</p>
+<p>考试分五个域，官方 Exam Guide v1.0 给了明确的编号和权重：<strong>Domain 1 Agentic Architecture &amp; Orchestration 27%、Domain 2 Tool Design &amp; MCP Integration 18%、Domain 3 Claude Code Configuration &amp; Workflows 20%、Domain 4 Prompt Engineering &amp; Structured Output 20%、Domain 5 Context Management &amp; Reliability 15%</strong>。用它判断"该在哪个域多花时间"，直接看权重就行。抓两个反直觉点：一是<strong>权重最高的是 Domain 1（27%），不是 Claude Code</strong>；二是<strong>域的编号不等于你该刷课的顺序</strong>——Domain 2 是 Tool Design、Domain 3 才是 Claude Code，别被序号带着从上往下刷。下面把 20 门课按官方域编号重排，跨域的课在主域列一次、在次域标"（跨域）"。</p>
+<p>先看懂这张表的两个信号：一是<strong>跨域课就是高性价比课</strong>——一门 <code>Building with the Claude API</code> 同时喂 Domain 1 和 Domain 2，一门 <code>subagents</code> 同时喂 Domain 1 和 Domain 5，刷一门抵两个域，这类课要优先且刷透；二是<strong>没有专属课的域要靠别人"顺带"覆盖</strong>——Domain 5（Context Management &amp; Reliability）在 Academy 里没有一门以它命名的课，全靠 subagents 的 context 隔离和 MCP Advanced 的上下文传递带出来，所以你看那两门时要有意识地把"这在讲上下文管理"的部分单独记下来。</p>
 
-<h3>Domain 1 · Agentic Architecture（社区口径：权重最高，主战场）</h3>
+<h3>Domain 1 · Agentic Architecture &amp; Orchestration（官方权重 27%，五域最高，主战场）</h3>
 <ul>
 <li><strong>Introduction to subagents</strong> — 多智能体编排、coordinator/subagent 职责边界、context 隔离，这个域的命根，必刷。</li>
 <li><strong>Introduction to agent skills</strong> — agent 能力封装与 skill 设计，配合 subagents 一起看。</li>
-<li><strong>Building with the Claude API</strong> — agentic loop、<code>stop_reason</code>、工具循环的底层机制（同时喂 Domain 4，跨域）。</li>
-<li><strong>Claude Code in Action</strong> — 真实 agentic workflow 怎么跑起来（同时喂 Domain 2 / 5，跨域）。</li>
+<li><strong>Building with the Claude API</strong> — agentic loop、<code>stop_reason</code>、工具循环的底层机制（同时喂 Domain 2 工具设计，跨域）。</li>
+<li><strong>Claude Code in Action</strong> — 真实 agentic workflow 怎么跑起来（同时喂 Domain 3 / 5，跨域）。</li>
 </ul>
 
-<h3>Domain 2 · Claude Code Configuration（社区口径：第二梯队）</h3>
-<ul>
-<li><strong>Claude Code 101</strong> — Claude Code 入门与基础配置，必刷。</li>
-<li><strong>Claude Code in Action</strong>（跨域） — 配置进阶、hooks、permission 在真实项目里怎么落。</li>
-<li><strong>Introduction to Claude Cowork</strong> — Claude 协作 / 团队工作流场景，跟 Claude Code 生态一起理解。</li>
-</ul>
-
-<h3>Domain 3 · Prompt Engineering（社区口径：与 Domain 2 同属第二梯队）</h3>
-<ul>
-<li><strong>Claude 101</strong> — prompting 基本功，也是所有课的起点，第一门就该看。</li>
-<li><strong>AI Capabilities and Limitations</strong> — 知道模型边界（会什么、不会什么）才写得出靠谱 prompt，考点里的"识别超范围任务、该升级人工"跟这门直接相关。</li>
-<li><strong>AI Fluency: Framework &amp; Foundations</strong> — 与 AI 协作的思维框架，偏概念，快过一遍即可。</li>
-</ul>
-
-<h3>Domain 4 · Tool Design &amp; MCP（社区口径：中等偏下）</h3>
+<h3>Domain 2 · Tool Design &amp; MCP Integration（官方权重 18%）</h3>
 <ul>
 <li><strong>Introduction to Model Context Protocol</strong> — MCP 是什么、server/client 怎么接，必刷。</li>
 <li><strong>Model Context Protocol: Advanced Topics</strong> — MCP 进阶，也涉及上下文传递（同时喂 Domain 5，跨域）。</li>
 <li><strong>Building with the Claude API</strong>（跨域） — tool use、tool 定义、<code>tool_choice</code> 的坑，工具设计的地基。</li>
 </ul>
 
-<h3>Domain 5 · Context Management（社区口径：权重最低但别裸考）</h3>
+<h3>Domain 3 · Claude Code Configuration &amp; Workflows（官方权重 20%）</h3>
+<ul>
+<li><strong>Claude Code 101</strong> — Claude Code 入门与基础配置，必刷。</li>
+<li><strong>Claude Code in Action</strong>（跨域） — 配置进阶、hooks、permission 在真实项目里怎么落。</li>
+<li><strong>Introduction to Claude Cowork</strong> — Claude 协作 / 团队工作流场景，跟 Claude Code 生态一起理解。</li>
+</ul>
+
+<h3>Domain 4 · Prompt Engineering &amp; Structured Output（官方权重 20%）</h3>
+<ul>
+<li><strong>Claude 101</strong> — prompting 基本功，也是所有课的起点，第一门就该看。</li>
+<li><strong>AI Capabilities and Limitations</strong> — 知道模型边界（会什么、不会什么）才写得出靠谱 prompt，考点里的"识别超范围任务、该升级人工"跟这门直接相关。</li>
+<li><strong>AI Fluency: Framework &amp; Foundations</strong> — 与 AI 协作的思维框架，偏概念，快过一遍即可。</li>
+</ul>
+
+<h3>Domain 5 · Context Management &amp; Reliability（官方权重 15%，五域最低但别裸考）</h3>
 <ul>
 <li><strong>Introduction to subagents</strong>（跨域） — subagent context 隔离 = 省 token 的核心手段，这门课在这里再消化一遍。</li>
 <li><strong>Model Context Protocol: Advanced Topics</strong>（跨域） — 上下文注入与管理。</li>
@@ -66,17 +66,17 @@
 <p>一句话记账：<strong>20 门里，5 门 AI Fluency 人群课直接删，1 门 for Builders 可删，3 门云平台课押后，真正围绕考试要精刷的是剩下那 8 门左右。</strong>把无关的先划掉，本身就是省一半时间。</p>
 
 <h2>推荐学习顺序（按权重 + 前置依赖排）</h2>
-<p>不要顺着 Academy 目录刷，也不要只按权重从高到低刷——先看的课得给后看的课打地基。有人看到 Domain 1 权重最高就想第一天直接冲 <code>subagents</code>，结果连 agentic loop、<code>stop_reason</code>、tool use 是什么都没搞清，subagents 那些"context 隔离""只有 final message 回流"的机制根本听不懂，白看一遍还得回头补。<strong>权重决定你在一个域上花多少时间，不决定先看哪门课</strong>。下面这条顺序是"前置依赖优先，其次按域的相对权重压时间"。<strong>再强调一次：各域"谁重谁轻"的相对排序是社区口径，只用来分配精力；精确百分比查不到官方出处，别拿数字去背。后面 L06–L10 的考点地图里会给出社区流传的百分比，那是为了让你有个分配精力的参照，同样是社区口径，不是官方考纲。</strong></p>
+<p>不要顺着 Academy 目录刷，也不要只按权重从高到低刷——先看的课得给后看的课打地基。有人看到 Domain 1 权重最高就想第一天直接冲 <code>subagents</code>，结果连 agentic loop、<code>stop_reason</code>、tool use 是什么都没搞清，subagents 那些"context 隔离""只有 final message 回流"的机制根本听不懂，白看一遍还得回头补。<strong>权重决定你在一个域上花多少时间，不决定先看哪门课</strong>。下面这条顺序是"前置依赖优先，其次按官方域权重压时间"。<strong>再强调一次：官方权重（Domain 1 的 27% 到 Domain 5 的 15%）只用来分配精力，不决定刷课先后；后面 L06–L10 的考点地图会按域拆开这五组官方权重，帮你把时间压到该压的地方。</strong></p>
 <ol>
-<li><strong>Claude 101</strong> — 起点，把 prompting 和基本心智模型立起来（喂 Domain 3）。</li>
-<li><strong>Building with the Claude API</strong> — 立刻建立 agentic loop / <code>stop_reason</code> / tool use 的底层认知，Domain 1 和 4 都靠它（跨域地基）。</li>
-<li><strong>Claude Code 101</strong> — Domain 2 入门，把 Claude Code 跑起来。</li>
+<li><strong>Claude 101</strong> — 起点，把 prompting 和基本心智模型立起来（喂 Domain 4 Prompt Engineering）。</li>
+<li><strong>Building with the Claude API</strong> — 立刻建立 agentic loop / <code>stop_reason</code> / tool use 的底层认知，Domain 1 和 Domain 2 都靠它（跨域地基）。</li>
+<li><strong>Claude Code 101</strong> — Domain 3 入门，把 Claude Code 跑起来。</li>
 <li><strong>Introduction to subagents</strong> — 权重最高的 Domain 1 主攻，顺带把 Domain 5 的 context 隔离一起吃掉。</li>
 <li><strong>Introduction to agent skills</strong> — 补齐 Domain 1 的 agent 设计视角。</li>
-<li><strong>Introduction to Model Context Protocol</strong> — Domain 4 主线开刷。</li>
-<li><strong>Model Context Protocol: Advanced Topics</strong> — Domain 4 进阶 + Domain 5 上下文管理。</li>
-<li><strong>Claude Code in Action</strong> — 把 Domain 2 / 5 在真实 workflow 里收口，前面的概念到这里落地。</li>
-<li><strong>AI Capabilities and Limitations</strong> — 收 Domain 3 的"模型边界 / 何时升级人工"考点。</li>
+<li><strong>Introduction to Model Context Protocol</strong> — Domain 2 主线开刷。</li>
+<li><strong>Model Context Protocol: Advanced Topics</strong> — Domain 2 进阶 + Domain 5 上下文管理。</li>
+<li><strong>Claude Code in Action</strong> — 把 Domain 3 / 5 在真实 workflow 里收口，前面的概念到这里落地。</li>
+<li><strong>AI Capabilities and Limitations</strong> — 收 Domain 4 的"模型边界 / 何时升级人工"考点。</li>
 <li><strong>AI Fluency: Framework &amp; Foundations</strong> + <strong>Introduction to Claude Cowork</strong> — 概念补全，快过。</li>
 <li>（有余力）三门云平台课当背景扫读；六门 AI Fluency 人群课整批跳过。</li>
 </ol>
@@ -100,8 +100,8 @@
 <ol>
 <li><strong>Day 8 ［日期＿＿］</strong>：Introduction to Model Context Protocol → 要点＿＿</li>
 <li><strong>Day 9 ［日期＿＿］</strong>：MCP: Advanced Topics（顺带 Domain 5）→ 要点＿＿</li>
-<li><strong>Day 10 ［日期＿＿］</strong>：Claude Code in Action（Domain 2/5 落地）→ 要点＿＿</li>
-<li><strong>Day 11 ［日期＿＿］</strong>：AI Capabilities and Limitations（Domain 3 边界与升级人工）→ 要点＿＿</li>
+<li><strong>Day 10 ［日期＿＿］</strong>：Claude Code in Action（Domain 3/5 落地）→ 要点＿＿</li>
+<li><strong>Day 11 ［日期＿＿］</strong>：AI Capabilities and Limitations（Domain 4 边界与升级人工）→ 要点＿＿</li>
 <li><strong>Day 12 ［日期＿＿］</strong>：AI Fluency: Framework &amp; Foundations + Claude Cowork，快过概念</li>
 <li><strong>Day 13 ［日期＿＿］</strong>：五域自测题重刷一遍，统计各域正确率，最低那个域回看课</li>
 <li><strong>Day 14 ［日期＿＿］</strong>：模拟考节奏（限时做题）+ 检查 OnVUE 考试环境，约考</li>

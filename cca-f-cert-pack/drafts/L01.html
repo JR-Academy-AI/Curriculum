@@ -1,5 +1,5 @@
-<h2>CCA-F 的定位：它到底考什么</h2>
-<p>Anthropic 在 <strong>2026 年 3 月 12 日</strong>的公告里推出了 Claude Certified Architect 认证。官方对这门考试的定性只有一句，但很关键——<strong>"This is a technical exam for solution architects building production applications with Claude."</strong> 三个词划定了它的边界：<code>technical</code>（技术考，不是产品经理的认知考）、<code>solution architects</code>（面向做架构决策的人）、<code>production applications</code>（生产级应用，不是玩具 demo）。</p>
+<h2>CCAR-F 的定位：它到底考什么</h2>
+<p>Anthropic 在 <strong>2026 年 3 月 12 日</strong>的公告里推出了 Claude Certified Architect 认证；本包对应的是它的 Foundations 级，正式全名 <strong>Claude Certified Architect – Foundations</strong>，考试代码 <strong>CCAR-F</strong>。官方对这门考试的定性只有一句，但很关键——<strong>"This is a technical exam for solution architects building production applications with Claude."</strong> 三个词划定了它的边界：<code>technical</code>（技术考，不是产品经理的认知考）、<code>solution architects</code>（面向做架构决策的人）、<code>production applications</code>（生产级应用，不是玩具 demo）。</p>
 <p>所以它<strong>不考你背没背下参数</strong>——不会问你 <code>max_tokens</code> 默认值是多少、某个 model id 的定价是几分钱。它考的是<strong>架构决策</strong>：一个需求进来，你判断单 agent 还是多 agent、工具怎么切、什么动作 agent 能自己拍板、什么必须转人工、上下文和成本怎么权衡、可靠性护栏拿 hook 做还是拿 prompt 做。举个对照：背题库能告诉你 <code>stop_reason</code> 有哪几个取值，但考试真正问的是"这段 loop 为什么会提前退出、你改哪里"。前者是记忆，后者是判断力。这门考的是后者。</p>
 <p>它也不是"会用 Claude 聊天"就能过的入门证。目标人群是<strong>真的在拿 Claude 搭生产系统的人</strong>：接过 Messages API、配过工具、碰过 MCP、部署过 agent。没有这些实战底子，光刷题很难扛住场景判断题。这一点决定了你适不适合现在就报——第 4 步的自测就是帮你照镜子。</p>
 
@@ -9,16 +9,19 @@
 <p>这里要<strong>诚实划清一条线</strong>，别被营销话术带偏：<strong>个人持证 ≠ 你会被企业买家直接搜到接单</strong>。官方的 Services Partner Directory 收录的是<strong>公司（firms）</strong>不是个人——"enterprise buyers can find firms with Claude implementation experience"。个人证的真实价值是两块：一是<strong>你自己的履历背书</strong>，简历和 LinkedIn 上一个第三方可验证的技术凭证，面试和接私活时有说服力；二是<strong>帮你所在的公司凑合作伙伴层级的 certified individuals 门槛</strong>——Anthropic 按公司有多少持证个人来评合作伙伴等级，你这张证是团队达标的一块拼图。把这两点讲清楚，你才不会因为"考了证怎么没人来找我"而失望。</p>
 
 <h2>报名资格与 CPN 通道：为什么个人注册不了</h2>
-<p>这是很多人卡住的地方：<strong>你没法自己上官网点个按钮就报名</strong>。考试资格通过 <strong>Anthropic Partner Academy / Claude Partner Network（CPN）成员通道</strong>申请——也就是说，报考入口开给 CPN 成员，个人身份无法直接注册。</p>
-<p>匠人已经注册加入了 CPN，<strong>本考证包的作用就是协助你走通这个报名入口</strong>，把"没有 CPN 身份就报不了名"这道门帮你打开。这不是花钱买证，考试本身该怎么考还得你自己扛下来。</p>
-<p>考务细则<strong>以 Pearson VUE 的 Claude 认证考试页为准</strong>（文末已列 URL，可自查），这些可以当准信息：考试由 <strong>Pearson VUE</strong> 承办；两种考法——<strong>OnVUE 线上远程监考</strong>或去<strong>线下考场</strong>；OnVUE 全程<strong>录像监考、桌面须清空、禁带书本笔记纸笔等外部资源</strong>（等同闭卷、不许 AI 辅助）；重考规则是<strong>同一门考试 12 个月滚动周期内最多 4 次</strong>，间隔递增——第一次没过隔 14 天、第二次隔 30 天、第三次隔 90 天。</p>
-<p>还有一批在网上流传很广的数字，<strong>属于社区口径、Anthropic 官方页面查不到一手出处，以官方为准</strong>：约 <strong>60 题 / 120 分钟 / 满分 1000、720 分及格 / 场景题 6 抽 4</strong>；五个域的权重<strong>（社区口径）</strong>大致是 Agentic Architecture 27% · Claude Code Configuration 20% · Prompt Engineering 20% · Tool Design &amp; MCP 18% · Context Management 15%。域的名称和相对排序可信度较高，具体百分比别当成官方指标去死磕自己。你要练的是判断力，不是卡这些数字。</p>
+<p>这是很多人卡住的地方：<strong>你没法自己上官网点个按钮就报名</strong>。Anthropic Partner Academy 不对个人开放注册——你得先是 <strong>Claude Partner Network（CPN）</strong>成员，或者由一个已经加入 CPN 的伙伴在后台给你开通 Partner Academy 账号，你才进得去、才看得到那张认证考试页、才报得了名。这道准入墙是真的，也是本节要帮你翻过去的第一堵墙。</p>
+<p>匠人已经注册加入了 CPN。<strong>本考证包做的事，是通过 CPN 合规通道为你开通 Anthropic Partner Academy 账号</strong>，把"没有 CPN 身份就进不了 Partner Academy"这道门打开。说清楚边界很重要：<strong>我们给你的是账号和报名资格，不是替你买好的考试名额</strong>。账号开通之后，注册考试、结账付费、建 Pearson VUE 账号约考这些动作，都得<strong>你本人</strong>在 Partner Academy 上自己走一遍——我们全程陪你走完注册 → 约考 → 进考场，但没人能替你报、替你考。</p>
+<p><strong>一笔要提前知道的钱：官方考试费需要你自己另付，不含在本包价里。</strong>报名走到结账那一步，Partner Academy 会让你为这次考试付一笔官方考试费——这笔钱是付给官方的，不在考证包里。别等到报名那步才发现要掏钱、以为被坑：<strong>包价 = 备考陪跑 + 帮你开通报名资格；考试费 = 你在官方结账时自己付的另一笔</strong>。具体金额和优惠口径销售会在私聊阶段跟你讲清楚，这里只提醒你这笔支出真实存在、报名前先算进预算。</p>
+<p>官方考纲把报名拆成六步，照着走就不会漏：<strong>①</strong> 登进 Partner Academy，在认证页看这门考试的详情；<strong>②</strong> 下载 <code>Exam Guide</code>，把 <code>Certification Terms and Conditions</code> 和 <code>Certification Exam Policy</code> 读一遍——别跳过，改期、取消、作废的规矩都写在这里；<strong>③</strong> 注册考试并<strong>完成结账</strong>（结账价会体现你所属 partner tier 的折扣，这一步就是上面说的那笔考试费）；<strong>④</strong> 按确认邮件的指引创建 Pearson VUE 账号并登录；<strong>⑤</strong> 选考试日期，选 <strong>OnVUE 线上远程监考</strong>或去<strong>线下考场</strong>；<strong>⑥</strong> 考前 <strong>24 小时之外</strong>可以改期或取消，一旦进入最后 24 小时再动，<strong>考试费直接作废</strong>——所以定好时间再确认。</p>
+<p>考务承办方是 <strong>Pearson VUE</strong>。OnVUE 线上考全程<strong>录像监考、桌面须清空、禁带书本笔记纸笔等外部资源</strong>，等同闭卷、不许 AI 辅助；线下考场就是去 Pearson VUE 的实体考点。重考规则以 Pearson VUE 的 Claude 认证考试页为准：<strong>同一门考试 12 个月滚动周期内最多 4 次</strong>，间隔递增——第一次没过隔 14 天、第二次隔 30 天、第三次隔 90 天。</p>
+<p><strong>证书只有 12 个月有效期，这点最容易被想当然。</strong>Claude Certified Architect 证书自授予日起有效期 <strong>12 个月</strong>，不是终身。到期之前，你可以在 Partner Academy 完成一次<strong>免费、非监考</strong>的续证评估来续期；但只要<strong>过了期</strong>，续证通道就关了，想要证只能<strong>全价重考</strong>。另外，如果考纲发生重大变更，Anthropic 有权要求持证人重考、而不是走续证评估。所以拿到证不是终点——把 12 个月后的续证提前记进日历。</p>
+<p>考试形态现在是<strong>官方考纲确认</strong>的口径，不再是网上流传的猜测：<strong>60 题 / 120 分钟</strong>，其中<strong>场景题 6 抽 4</strong>。及格线 <strong>720 分</strong>，但要拎清楚——这个 720 是 <strong>100–1000 的量表分（scaled score）</strong>，<strong>不是百分比、也不等于答对 72%</strong>；量表分是把不同套卷难度拉齐后的换算分，通过与否只看这一个总分。成绩单会给你每个 domain 的答对百分比，但<strong>domain 分段只用来帮你诊断强弱项，不参与判定过没过</strong>。五个域的官方权重是：<strong>Agentic Architecture &amp; Orchestration 27%</strong> · <strong>Claude Code Configuration &amp; Workflows 20%</strong> · <strong>Prompt Engineering &amp; Structured Output 20%</strong> · <strong>Tool Design &amp; MCP Integration 18%</strong> · <strong>Context Management &amp; Reliability 15%</strong>。权重高的域就是复习该多压的地方。你要练的是判断力，权重只是告诉你力气往哪使。</p>
 
 <h2>自测：这个认证适合你吗</h2>
 <p>4 道题帮你照镜子。选完对答案，重点看解析里"为什么"——它顺带把前三步的关键事实又过了一遍。</p>
 
 <h3>第 1 题</h3>
-<p>关于 CCA-F 考什么，下面哪个理解最准确？</p>
+<p>关于 CCAR-F 考什么，下面哪个理解最准确？</p>
 <ul>
 <li>A. 考在生产场景里做架构决策的判断力：单/多 agent、工具设计、升级人工、可靠性护栏</li>
 <li>B. 主要考对 Claude 各 model 的参数、定价、上下文窗口大小的记忆</li>
@@ -34,7 +37,7 @@
 </ul>
 
 <h3>第 2 题</h3>
-<p>你想报名 CCA-F，正确的报名路径是？</p>
+<p>你想报名 CCAR-F，正确的报名路径是？</p>
 <ul>
 <li>A. 直接在 anthropic.com 上找个人报名按钮，付款即可</li>
 <li>B. 只要买了任何备考资料，主办方会自动给你开考位</li>
@@ -43,8 +46,8 @@
 </ul>
 <p><strong>正确答案：C。</strong></p>
 <ul>
-<li><strong>C 对</strong>：考试资格通过 CPN 成员通道申请，个人身份报不了名。匠人已加入 CPN，本包协助你走通这个入口。</li>
-<li><strong>A / D 错且诱人</strong>：考试确实由 Pearson VUE 承办，但"约考位"的前提是先有 CPN 通道给你的资格，个人无法自己发起注册。</li>
+<li><strong>C 对</strong>：个人进不了 Partner Academy，报名资格得走 CPN 通道。匠人已加入 CPN，本包为你开通 Partner Academy 账号；账号开通后，注册考试、官方结账付考试费、建 Pearson VUE 账号约考都是你本人自己走，我们全程陪。注意：我们给的是账号 / 资格，不是替你买好的名额。</li>
+<li><strong>A / D 错且诱人</strong>：考试确实由 Pearson VUE 承办，但"约考"的前提是先在 Partner Academy 注册并结账，而进 Partner Academy 又得先有 CPN 通道给你开的账号，个人无法自己发起注册。</li>
 <li><strong>B 错</strong>：买资料 ≠ 拿到考位，两件事，别混。</li>
 </ul>
 
@@ -65,7 +68,7 @@
 </ul>
 
 <h3>第 4 题</h3>
-<p>你个人考过 CCA-F 之后，下面哪条是<strong>真实</strong>的价值，哪条是被夸大的？</p>
+<p>你个人考过 CCAR-F 之后，下面哪条是<strong>真实</strong>的价值，哪条是被夸大的？</p>
 <ul>
 <li>A. 个人持证后就会自动进入 Services Partner Directory，企业买家能直接搜到你接单</li>
 <li>B. 考过就保证涨薪 / 保证接到单</li>
@@ -86,4 +89,5 @@
 <li>Services track &amp; Partner Hub（证归个人不归公司、逾 1 万顾问持证、逾 4 万公司申请、Directory 收录 firms）— https://www.anthropic.com/news/services-track-partner-hub</li>
 <li>Claude Certification Program（Pearson VUE 承办、OnVUE 线上/线下考场、重考 12 个月内 4 次 · 间隔 14/30/90 天）— https://www.pearsonvue.com/us/en/anthropic.html</li>
 <li>OnVUE online testing requirements（录像远程监考、桌面清空、禁书本笔记等外部资源）— https://www.pearsonvue.com/us/en/anthropic/onvue.html</li>
+<li>Claude Certified Architect – Foundations（CCAR-F）Exam Guide + Certification Terms and Conditions + Certification Exam Policy（考试代码、六步报名流程、五域官方权重、720 量表分及格、证书 12 个月有效期与免费非监考续证评估——均以此为准；需登录 Anthropic Partner Academy 在认证页下载）</li>
 </ul>

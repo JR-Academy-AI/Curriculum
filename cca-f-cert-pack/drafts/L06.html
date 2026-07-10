@@ -1,5 +1,5 @@
 <h2>考点地图：Domain 1 为什么值得你花最多时间</h2>
-<p>Domain 1 权重约 <strong>27%</strong>（社区口径，以官方考纲为准），是五个域里最高的一个（其余：Claude Code Configuration 20%、Prompt Engineering 20%、Tool Design &amp; MCP 18%、Context Management 15%）。换句话说，四道题里就有一道以上出自这里。这个域考的不是"你会不会调 API"，而是<strong>系统怎么组：单 agent 还是多 agent、coordinator 怎么切任务、loop 什么时候停、什么动作 agent 能自己拍板、什么必须转人工</strong>。</p>
+<p>Domain 1「Agentic Architecture &amp; Orchestration」在官方 blueprint 里占 <strong>27%</strong>，是五个域里最高的一个（其余四域官方权重：Domain 3 Claude Code Configuration 20%、Domain 4 Prompt Engineering 20%、Domain 2 Tool Design &amp; MCP 18%、Domain 5 Context Management &amp; Reliability 15%）。换句话说，四道题里就有一道以上出自这里。这个域考的不是"你会不会调 API"，而是<strong>系统怎么组：单 agent 还是多 agent、coordinator 怎么切任务、loop 什么时候停、什么动作 agent 能自己拍板、什么必须转人工</strong>。</p>
 <p>先把这个域的高频子考点摆出来，后面三步逐个拆：</p>
 <ul>
 <li><strong>Agentic loop 的终止控制</strong>——<code>stop_reason</code> 是唯一可靠信号，别用自然语言或迭代上限当主要终止条件。</li>
@@ -8,7 +8,7 @@
 <li><strong>自主处理 vs 升级人工</strong>——高风险动作在检查点暂停交人。</li>
 <li><strong>可靠性与失败处理</strong>——用 hook 做确定性拦截，用 prompt 做偏好引导，两者不能混。</li>
 </ul>
-<p>关于考试形式本身：网上流传的 <strong>60 题 / 120 分钟 / 720 分及格 / 场景题 6 抽 4</strong> 属于社区口径，<strong>以官方公布为准</strong>，别当成硬指标去卡自己。你要抓的是概念判断力，不是背数字。</p>
+<p>关于考试形式本身：官方 Exam Guide 明确 <strong>60 题 / 120 分钟</strong>，场景题是<strong>从 6 个场景里抽 4 个</strong>作答；及格线 <strong>720</strong>（100–1000 量表分，是 scaled score，不是答对百分比）。这些是官方硬指标，但你真正要抓的是概念判断力，不是死背数字。</p>
 
 <h3>Agentic loop：一个循环，一个信号</h3>
 <p>agent 的骨架就是一个循环：发一次 Messages API 请求（system prompt + 历史消息 + 上一轮 tool 结果）→ 读响应里的 <code>stop_reason</code> → 如果是 <code>"tool_use"</code>，就执行工具、把结果追加回对话再发下一轮；如果是 <code>"end_turn"</code>，循环结束、返回最终答复。</p>
