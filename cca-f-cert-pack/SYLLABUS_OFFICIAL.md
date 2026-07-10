@@ -22,7 +22,7 @@
 | 4 | Domain 3 = Claude Code Configuration（**权重最高**） | Claude Code 是 **20%**；权重最高的是 Domain 1 Agentic Architecture **27%** | 🔴 事实错误，已写进 L02/L08 标题和销售页 |
 | 5 | 认证有效期 —— **从未提及** | **12 个月**。到期前免费非监考续证；过期则全价重考 | 🔴 重大遗漏，学员会误以为终身有效 |
 | 6 | 考试费 —— **从未提及** | **$125 USD**，且"结账价按 partner tier 折扣" | 🔴 直接关系我们 $399/$299 的定价叙事 |
-| 7 | 报名路径 = 匠人给"官方考试名额" | 考纲写的是：考生自己在 **Partner Academy 页面 register + checkout**，再建 Pearson VUE 账号约考 | 🔴 需 Lightman 确认 Registered tier 到底能不能代发/代购名额 |
+| 7 | 报名路径 = 匠人给"官方考试名额" | 考纲写的是：考生自己在 **Partner Academy 页面 register + checkout**，再建 Pearson VUE 账号约考 | 🔴 **已核实：匠人不能代发/代购名额**，只能开通账号。全线话术已改写 |
 | 8 | Domain 5 = Context Management | 官方全名 **Context Management & Reliability**，6 条 task statement 里 3 条是 Reliability（升级、错误传播、人工复审校准） | 🔴 L10 漏了半个域 |
 
 **未被推翻、原样成立的**：Pearson VUE 承办、OnVUE/线下双通道、闭卷监考、认证归属个人、重考 14/30/90 天且滚动 12 个月内最多 4 次、改期取消须在考前 24 小时之外（进入最后 24 小时改不了、缺考费用不退）。
@@ -207,7 +207,7 @@
 
 1. **考试代码要不要全线改成 CCAR-F**。目录名 `cca-f-cert-pack` 与线上 URL `/curriculum/cca-f-cert-pack/` 按 URL 冻结铁律**不动**；但正文里 27 处 "CCA-F" 属于我们自造的代码，官方文档零出现。建议：正文凡指"考试代码"处改 CCAR-F，品牌主称呼用全名「Claude 认证架构师 – Foundations」。
 2. **定价叙事必须重写**。官方考试费 $125 USD，我们卖 $399/$299。原话术"这个包 = 一个官方考试名额 + 路线 + 模拟"在学员算出 $125 后会显得溢价 3 倍。诚实且更强的说法是把 $125 摊开讲，明说我们收的是"路线 + 原创冲刺件 + 陪跑"的钱。
-3. **"官方考试名额"这个词需要重新核实**。考纲 §11 写的是考生自己在 Partner Academy 注册结账。Registered tier 能不能代购/代发名额，以及 partner tier 折扣是否可传导给学员 —— 这两条只有 Lightman 登进 Partner Academy 才能确认。**在确认前，landing 不要写"含 1 个官方考试名额"**。
+3. ~~**"官方考试名额"这个词需要重新核实**~~ → **已核实定案（2026-07-09 Lightman）**：匠人**不能代发、代购**考试名额。真实链路 = 匠人在 CPN 后台为学员开通 Partner Academy 账号（该平台不对个人开放自助注册）→ 学员本人注册考试并直接向官方支付考试费 → 学员建 Pearson VUE 账号约考。所有对外内容已改写为"开通账号 / 打通报名准入 / 全程陪跑"。用词对照表见 [`../CLAUDE_CERT_FAMILY.md`](../CLAUDE_CERT_FAMILY.md) 第三节。
 4. **有效期 12 个月是新卖点也是新责任**。必须在 L01/L02 讲清楚，并可衍生"续证提醒 + 免费续证陪跑"的留存钩子。
 5. **补 8 条缺失 task statement**（L06 的 1.7、L07 的 2.5、L08 的 3.4/3.5/3.6、L09 的 4.1、L10 的 5.2/5.3/5.5），另修 2 条只沾边的（2.2、L08 的 plan mode 深度）。
 6. **修"权重最高"事实错误**：L02 描述、L08 标题、销售页三处把 Claude Code 说成权重最高。

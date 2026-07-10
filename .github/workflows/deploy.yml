@@ -345,6 +345,24 @@ jobs:
             cp -r cca-f-cert-pack/public/* _site/cca-f-cert-pack/
           fi
 
+          # ccao-f-cert-pack (Claude 官方 Associate 认证 · 考试直通包): static HTML only
+          if [ -d ccao-f-cert-pack/public ]; then
+            mkdir -p _site/ccao-f-cert-pack
+            cp -r ccao-f-cert-pack/public/* _site/ccao-f-cert-pack/
+          fi
+
+          # ccdv-f-cert-pack (Claude 官方开发者认证 · 考试直通包): static HTML only
+          if [ -d ccdv-f-cert-pack/public ]; then
+            mkdir -p _site/ccdv-f-cert-pack
+            cp -r ccdv-f-cert-pack/public/* _site/ccdv-f-cert-pack/
+          fi
+
+          # ccar-p-cert-pack (Claude 官方架构师认证 Professional · 考试直通包): static HTML only
+          if [ -d ccar-p-cert-pack/public ]; then
+            mkdir -p _site/ccar-p-cert-pack
+            cp -r ccar-p-cert-pack/public/* _site/ccar-p-cert-pack/
+          fi
+
           # cca-f-claude-code-bootcamp (Claude 架构师认证 · Claude Code 实战冲刺班 · CCA-F 名额 + Claude Code 真实环境实战): static HTML only
           if [ -d cca-f-claude-code-bootcamp/public ]; then
             mkdir -p _site/cca-f-claude-code-bootcamp
@@ -809,12 +827,33 @@ jobs:
                   <a href="./cca-f-cert-pack/curriculum.html">
                     <span class="tag" style="background:#C15F3C">考试直通包</span>
                     <div class="title">Claude 官方架构师认证 · 考试直通包</div>
-                    <div class="desc">成为全球华人首批 Claude 官方认证架构师 · 含 1 个官方考试名额 · 16 节自学 · 5 大 domain 考点精析 + 6 类场景题拆解 + 2 套全真模拟 + 报名/OnVUE 全程陪跑 · 适合已会 Claude/MCP、只差张证的人</div>
+                    <div class="desc">成为全球华人首批 Claude 官方认证架构师 · 为你开通个人无法自行注册的 Partner Academy 账号 · 16 节自学 · 5 大 domain 考点精析 + 6 类场景题拆解 + 2 套全真模拟 + 报名/OnVUE 全程陪跑 · 适合已会 Claude/MCP、只差张证的人</div>
                   </a>
                   <a href="./cca-f-claude-code-bootcamp/curriculum.html">
                     <span class="tag" style="background:#D97757">实战冲刺班</span>
                     <div class="title">Claude 官方架构师认证 + Claude Code 实战冲刺班</div>
-                    <div class="desc">直通包全部 + 一整套 Claude Code 真实环境实战 · 40 节 / 8 直播 / 11 个 Quest · 装机 / CLAUDE.md / hooks / slash command / 亲手搭 MCP server / subagents / 上下文管理 · 含 1 个官方考试名额 · 直播小班 4-6 周 · 学完有真实作品 + 一张证</div>
+                    <div class="desc">直通包全部 + 一整套 Claude Code 真实环境实战 · 40 节 / 8 直播 / 11 个 Quest · 装机 / CLAUDE.md / hooks / slash command / 亲手搭 MCP server / subagents / 上下文管理 · 为你开通 Partner Academy 账号打通报名准入 · 直播小班 4-6 周 · 学完有真实作品 + 一张证</div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="section">
+                <div class="section-title">Claude 官方认证 · 另外三门 · 四门互不设前置</div>
+                <div class="cards">
+                  <a href="./ccao-f-cert-pack/curriculum.html">
+                    <span class="tag" style="background:#C98A4B">Associate</span>
+                    <div class="title">Claude 官方 Associate 认证 · 考试直通包</div>
+                    <div class="desc">不写代码也能拿的 Anthropic 官方认证 · 60 题 / 120 分钟 · 官方明确不需要开发或 API 经验 · 七域考点精析（"判断输出靠不靠谱" 占 21%，写 prompt 只占 14%）+ Claude Projects 实操 + 2 套全真模拟 · 适合运营 / 市场 / PM / 教育 / 顾问</div>
+                  </a>
+                  <a href="./ccdv-f-cert-pack/curriculum.html">
+                    <span class="tag" style="background:#4A7C8C">Developer</span>
+                    <div class="title">Claude 官方开发者认证 · 考试直通包</div>
+                    <div class="desc">53 题 / 120 分钟 · 四门里唯一给到子技能级权重的考纲 · Claude Code 只占 3.1%，Applications &amp; Integration 独占 33.1% · 八域 25 项子技能精析 + 第三方 agentic 框架专题 + 端到端应用实战 + 2 套全真模拟 · 适合写代码交付 Claude 应用的工程师</div>
+                  </a>
+                  <a href="./ccar-p-cert-pack/curriculum.html">
+                    <span class="tag" style="background:#7A4B8C">Professional</span>
+                    <div class="title">Claude 官方架构师认证 Professional · 考试直通包</div>
+                    <div class="desc">63 题 / 120 分钟，每题不到 2 分钟 · 不是 Foundations 的加难版：RAG / 合规 / 干系人沟通在 F 的考纲里出现 0 次，在这里合计超 40% · 七域精析 + RAG 流水线实战 + 架构决策沟通训练 + 2 套全真模拟 · 官方不要求先考 Foundations</div>
                   </a>
                 </div>
               </div>

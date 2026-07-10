@@ -1,0 +1,670 @@
+{
+  "themeColor": "#7A4B8C",
+  "slug": "ccar-p-cert-pack",
+  "name": "Claude 认证架构师 Professional · 考试直通包",
+  "name_en": "CCAR-P Certification Fast-Track Pack",
+  "description": "Anthropic 官方 Claude Certified Architect – Professional（考试代码 CCAR-P）认证的<strong>考试直通包</strong>。Anthropic Partner Academy 不对个人开放自助注册——匠人已注册加入 Claude Partner Network，为你开通账号打通报名准入，再全程陪你走完注册、约考、考场。配套官方 blueprint 逐域精析、实战与 2 套全真模拟。官方考试费不含在包价内，由你在 Partner Academy 结账时直接支付。",
+  "description_en": "Fast-track pack for Anthropic's official Claude Certified Architect – Professional certification (exam code CCAR-P). Anthropic Partner Academy is not open to individual self-registration — as a registered Claude Partner Network member, JR Academy opens an account for you. You then register and pay the official exam fee yourself; we walk you through registration, Pearson VUE scheduling and the OnVUE system check, plus a blueprint-aligned study path and 2 full mock exams. The official exam fee is not included in the pack price.",
+  "level": "高级",
+  "type": "training",
+  "targetAudience": "中高级技术专家：解决方案架构师、AI/ML 工程师、技术负责人、资深软件工程师。3+ 年系统架构或平台工程经验，做端到端交付，要跟安全、法务、高管过会。",
+  "totalLessons": 16,
+  "totalSteps": 49,
+  "liveClasses": 0,
+  "estimatedHours": 15,
+  "totalInteractiveLabs": 0,
+  "title_en": "CCAR-P Certification Fast-Track Pack",
+  "timeLength": "约 15 小时自学（16 节课，自主安排节奏）+ 报名准入与全程陪跑",
+  "courseObjective": "打通 CCAR-P 报名准入并系统备考：吃透官方 blueprint 的 7 个 domain（Integration 19% / Solution Design 17% / Evaluation & Testing 16% / Governance & Risk 14% / Stakeholder Communication 14% / Models & Context Engineering 13% / Developer Productivity 7%），掌握 RAG 设计、合规治理与干系人沟通，在 63 题 / 120 分钟的紧节奏下冲刺 720 分。",
+  "suitable": "🏗 你在生产环境里设计、实现并治理 Claude 方案，3 年以上架构经验\n🚪 你卡在报名这一步——Anthropic Partner Academy 不对个人开放注册\n📌 你以为 Professional 是 Foundations 的加难版——不是，是另一门考试（RAG、合规、干系人沟通合计超 40%，Foundations 完全不考）\n⏱ 63 题 / 120 分钟，每题不到 2 分钟，四门里节奏最紧",
+  "cardDescription": "开通 Partner Academy 账号打通报名准入 + 官方 blueprint 逐域精析 + 2 套全真模拟 + 注册约考全程陪跑。",
+  "promoDescription": "CCAR-P 的报名只走 Anthropic Partner Academy 这一条路，而<strong>这个平台不对个人开放自助注册</strong>——没有 Claude Partner Network 成员为你开通账号，你连报名页都进不去。匠人已注册加入 CPN，这个直通包做三件事：① <strong>为你开通 Partner Academy 账号</strong>，打通报名准入（考试注册与官方考试费由你本人完成结账，不含在包价内）；② 对齐官方 blueprint 的<strong>逐域考点精析</strong>（63 题的权重分布决定你该把时间花在哪）；③ 原创的<strong>实战 + 2 套全真模拟 + 考前清单</strong>。注册、预约、改期、重考规则全程有人答疑。不是卖资料，也不是卖名额——是把那道你自己打不开的门打开，再陪你最快走到考场。",
+  "prerequisiteknowledge": "软件工程最佳实践基础（模块化设计、关注点分离、可扩展性）；3+ 年系统架构或平台工程经验；至少 6 个月在生产环境使用 Claude 或同类 LLM 系统；交付过从 discovery 到部署运营化的端到端系统。注意：官方不要求先持有 Foundations 认证。",
+  "highlights": [
+    "为你开通 Anthropic Partner Academy 账号（该平台不对个人开放自助注册）",
+    "注册考试 → 预约 Pearson VUE → OnVUE 环境自检，全程陪跑（官方考试费由你在结账时直接支付）",
+    "逐域考点精析，严格对齐官方 Exam Guide v1.0 的 blueprint 权重",
+    "2 套全真模拟（63 题 / 120 分钟）+ 逐题详解 + 分域得分分布",
+    "Pearson OnVUE 预约 + 环境自检 + 重考规则全程手把手",
+    "证书 12 个月有效期与免费续证机制讲清楚，不让你以为拿到就是终身",
+    "报名 / 备考答疑社群"
+  ],
+  "highlights_en": [
+    "Partner Academy account opened for you — the platform does not allow individual self-registration",
+    "End-to-end support: register the exam, schedule Pearson VUE, pass the OnVUE system check (official exam fee paid by you at checkout)",
+    "Per-domain deep dive aligned to the official Exam Guide v1.0 blueprint",
+    "2 full-length mock exams (63 items / 120 minutes) with explanations and per-domain score breakdown",
+    "End-to-end Pearson OnVUE scheduling and retake guidance; credential valid 12 months"
+  ],
+  "features": [
+    "自主节奏 · 无直播 · 自学为主",
+    "报名准入我们打通：为你开通个人无法自行注册的 Partner Academy 账号",
+    "备考资料全部原创 + 官方资源导航，不是简单转链",
+    "考不过按官方重考规则协助你二刷"
+  ],
+  "program": {
+    "name": "CCAR-P 考试直通包 · 第一期",
+    "programPhase": 1,
+    "cohortStatus": "PLANNING",
+    "currency": "USD"
+  },
+  "curriculumPages": {
+    "pages": [
+      "curriculum.html"
+    ],
+    "defaultPage": "curriculum.html"
+  },
+  "phases": [
+    {
+      "name": "Phase 0 — 认证全景 & 打通报名",
+      "color": "#7A4B8C",
+      "summary": "4 节 — 搞懂考什么 + 开通账号、自行注册并预约",
+      "lessons": [
+        {
+          "code": "L01",
+          "title": "CCAR-P 是什么，它和 Foundations 到底差在哪",
+          "description": "不是加难版，是另一门考试。主轴从「怎么造」转向「怎么决策与交付」。官方不要求先考 Foundations。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 30,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "CCAR-P 的定位",
+              "description": "面向做端到端交付、对接干系人、负责安全合规治理的中高级架构师。",
+              "duration": 8
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "与 Foundations 的本质差异",
+              "description": "Claude Code 从 20% 掉到 7%；RAG、合规（GDPR/HIPAA/FedRAMP）、干系人沟通、A/B 测试与可观测性在 Foundations 完全不考，在这里合计超过 40%。",
+              "duration": 10
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "无前置要求",
+              "description": "官方原话：没有强制前置或必修课。不要求先持有 Foundations。分流依据是经验与岗位，不是证书阶梯。",
+              "duration": 6
+            },
+            {
+              "order": 4,
+              "type": "CONCEPT",
+              "title": "报名准入、考试费与 12 个月有效期",
+              "description": "Partner Academy 不对个人开放自助注册；考试费由你本人结账支付；证书 12 个月有效，到期前可免费非监考续证。",
+              "duration": 8
+            }
+          ]
+        },
+        {
+          "code": "L02",
+          "title": "考试形式全解 — 63 题 / 120 分钟 / 720 分",
+          "description": "四门里题量最多、节奏最紧的一门。量表分、成绩单怎么读、重考与改期规则。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 30,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "63 题 / 120 分钟",
+              "description": "每题约 1.9 分钟。单选与多选混合，每题标明该选几个。无场景抽题结构。",
+              "duration": 8
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "720 是量表分不是百分比",
+              "description": "100–1000 的 scaled score，criterion-referenced，cut score 来自正式的 standard-setting 研究。",
+              "duration": 8
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "成绩单只看总分",
+              "description": "各 domain 答对百分比只用于诊断，不参与判定通过与否。",
+              "duration": 7
+            },
+            {
+              "order": 4,
+              "type": "CONCEPT",
+              "title": "重考、改期与申诉",
+              "description": "失败后等 14/30/90 天，滚动 12 个月内最多 4 次，每次重新付费；改期取消只能在考前 24 小时之外；standard-setting 结果与单题内容不可申诉。",
+              "duration": 7
+            }
+          ]
+        },
+        {
+          "code": "L03",
+          "title": "实战：开通 Partner Academy 账号并完成考试注册",
+          "description": "跟着 AI 走通「匠人开通账号 → 你自己注册考试并结账 → 建 Pearson VUE 账号」这条链路。",
+          "type": "Quest",
+          "isLive": false,
+          "duration": 30,
+          "quest": {
+            "title": "开通 Partner Academy 账号并完成 CCAR-P 考试注册",
+            "description": "用匠人为你开通的 Anthropic Partner Academy 账号登录 → 阅读考试条款 → 自行注册考试并完成结账 → 按确认邮件建立 Pearson VUE 账号。",
+            "learningGoal": "学完你已在 Partner Academy 完成 CCAR-P 考试注册与付费，并拥有一个可用于预约的 Pearson VUE 账号。",
+            "successCriteria": "Partner Academy 显示 CCAR-P 已注册且已完成结账；Pearson VUE 账号建立成功；姓名/邮箱与证件一致。",
+            "difficulty": "beginner",
+            "estimatedMinutes": 30,
+            "uiMode": "chat",
+            "context": "前提：Anthropic Partner Academy 不对个人开放自助注册，账号由匠人（Claude Partner Network 成员）在后台为学员开通；但匠人不能代发、代购考试名额——注册与官方考试费必须由学员本人在 Partner Academy 上完成结账。AI 逐步带：(1) 确认收到开通的账号并成功登录；(2) 在认证页下载 Exam Guide、读完 Certification Terms and Conditions 与 Certification Exam Policy；(3) 完成考试注册与结账（提醒这笔官方考试费不含在包价里，需自付）；(4) 按确认邮件创建 Pearson VUE 账号（预约留到下一节）；(5) 核对姓名拼写与证件完全一致，改名须在约考前发信到 certifications-support@anthropic.com。关键坑：开通邮件常进垃圾箱；Pearson 账号邮箱要和 Partner Academy 邮箱一致；姓名顺序要和护照/驾照一致。",
+            "stepSkeleton": [
+              {
+                "title": "登录匠人为你开通的 Partner Academy 账号",
+                "verificationType": "self-confirm",
+                "expectedEvidence": "能用开通的账号成功登录 Anthropic Partner Academy"
+              },
+              {
+                "title": "读完 Exam Guide 与认证条款",
+                "verificationType": "self-confirm",
+                "expectedEvidence": "已下载 Exam Guide，读过 Terms and Conditions 与 Exam Policy"
+              },
+              {
+                "title": "自行注册 CCAR-P 考试并完成结账",
+                "verificationType": "text-evidence",
+                "expectedEvidence": "Partner Academy 显示 CCAR-P 已注册、结账完成（官方考试费由学员自付）"
+              },
+              {
+                "title": "按确认邮件建立 Pearson VUE 账号",
+                "verificationType": "text-evidence",
+                "expectedEvidence": "Pearson VUE 账号创建成功并能进入 Claude Certified Architect – Professional 的预约流程"
+              },
+              {
+                "title": "核对姓名/邮箱与证件一致",
+                "verificationType": "self-confirm",
+                "expectedEvidence": "Pearson 档案里的姓名与考试要用的证件完全一致"
+              }
+            ],
+            "prerequisites": [
+              "已购买本考试直通包",
+              "有一个常用邮箱",
+              "一张可支付官方考试费的国际信用卡"
+            ],
+            "targetPlatform": "browser",
+            "tags": [
+              "ccar-p",
+              "registration",
+              "pearson-vue"
+            ]
+          }
+        },
+        {
+          "code": "L04",
+          "title": "实战：预约考试 + OnVUE 环境自检",
+          "description": "选定日期与考场形式，考前跑一遍 OnVUE 系统测试。",
+          "type": "Quest",
+          "isLive": false,
+          "duration": 30,
+          "quest": {
+            "title": "预约你的 CCAR-P 考试并通过 OnVUE 环境自检",
+            "description": "在 Pearson VUE 选定日期与交付方式（OnVUE 线上监考或线下考场），并提前跑一遍 OnVUE 系统测试。",
+            "learningGoal": "学完你有一场已预约的考试，且确认你的设备与网络能通过 OnVUE 环境检查。",
+            "successCriteria": "Pearson 账号里能看到已预约的考试时间；OnVUE system test 通过。",
+            "difficulty": "beginner",
+            "estimatedMinutes": 30,
+            "uiMode": "chat",
+            "context": "学员已完成注册与结账。本节带他选考试日期、选 OnVUE 线上监考还是线下考场，并跑 OnVUE 系统测试。必须讲清：改期/取消只能在考前 24 小时之外，进入最后 24 小时的改动 = 考试费作废；缺考或超过迟到窗口同样作废且须重新报名。OnVUE 要求：全程在摄像头视野内、桌面清空（禁书本笔记纸笔手机手表耳机副屏）、禁与任何人交流、禁以任何形式记录考题。需要特殊便利（accommodations）的必须先由 Pearson VUE 批准，批准前不要约考。",
+            "stepSkeleton": [
+              {
+                "title": "选定考试日期与交付方式",
+                "verificationType": "text-evidence",
+                "expectedEvidence": "Pearson 账号显示已预约的考试时间与 OnVUE/考场选择"
+              },
+              {
+                "title": "跑一遍 OnVUE 系统测试",
+                "verificationType": "text-evidence",
+                "expectedEvidence": "OnVUE system test 全部通过（摄像头、麦克风、网络、浏览器）"
+              },
+              {
+                "title": "确认考场纪律与改期红线",
+                "verificationType": "self-confirm",
+                "expectedEvidence": "知道考前 24 小时内不能改期、缺考费用作废，且桌面须清空"
+              }
+            ],
+            "prerequisites": [
+              "已完成上一节：CCAR-P 考试注册与结账已完成，Pearson VUE 账号可登录"
+            ],
+            "targetPlatform": "browser",
+            "tags": [
+              "ccar-p",
+              "scheduling",
+              "onvue"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Phase 1 — 七大 Domain 备考路径",
+      "color": "#633D72",
+      "summary": "8 节 — 官方 blueprint 逐域精析",
+      "lessons": [
+        {
+          "code": "L05",
+          "title": "备考总路线图 — 七域权重地图与学习顺序",
+          "description": "把 F 和 P 的 blueprint 并排看，先搞清楚你要重学什么、可以跳过什么，再排两周顺序。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 45,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "七域权重全景",
+              "description": "D3 集成 19% > D1 方案设计 17% > D4 评估测试 16% > D5 治理 14% = D6 干系人沟通 14% > D2 模型与上下文 13% > D7 开发者生产力 7%。",
+              "duration": 12
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "从 Foundations 过来的人该重学什么",
+              "description": "RAG 与检索、合规框架、干系人沟通与 SLA、A/B 测试与可观测性——这四块 Foundations 一个字都没有。",
+              "duration": 12
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "Domain 6 是纯软技能，别轻视",
+              "description": "14% 的权重考需求发现、讲清取舍、管理期望、写架构文档。华人技术考生最容易丢分的一块。",
+              "duration": 10
+            },
+            {
+              "order": 4,
+              "type": "CONCEPT",
+              "title": "两周学习顺序",
+              "description": "官方原话：没有任何一门必修课，也不保证任何资源能确保通过。",
+              "duration": 11
+            }
+          ]
+        },
+        {
+          "code": "L06",
+          "title": "Domain 1 精析 — Solution Design & Architecture（17%）",
+          "description": "把业务问题翻译成 Claude 方案；端到端架构（输入→处理→输出→反馈闭环）；workflow / agentic / augmented LLM 三种模式怎么选；多 agent 编排；对齐业务价值支柱。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 40,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "三种架构模式的选择判据",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "端到端架构与反馈闭环",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "对齐业务价值：效率、转型、生产力、成本、性能 SLA",
+              "description": "",
+              "duration": 12
+            }
+          ]
+        },
+        {
+          "code": "L07",
+          "title": "Domain 2 精析 — Claude Models, Prompting & Context Engineering（13%）",
+          "description": "模型选型取舍；system prompt、模板与护栏设计；zero-shot / few-shot / chain-of-thought；上下文窗口与 token 优化；prompt 复用（caching、模块化 prompt、Skills）。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 35,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "模型选型的取舍维度",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "system prompt、模板与护栏",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "prompt 复用：caching、模块化、Skills",
+              "description": "",
+              "duration": 11
+            }
+          ]
+        },
+        {
+          "code": "L08",
+          "title": "Domain 3 精析 — Integration（19%，权重最高）",
+          "description": "能力膨胀评估；认证授权与安全缺口；准确率-延迟取舍；规模化可观测性；RAG 流水线设计（chunking + indexing）；检索策略匹配；MCP / API-CLI / agent-to-agent 协议选型；渐进式发现 vs 单体上下文。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 50,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "工具/agent 能力膨胀与最小权限",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "RAG 流水线：chunking 与 indexing 策略",
+              "description": "Foundations 完全不考，这里是重头。",
+              "duration": 15
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "按数据形态与查询模式匹配检索策略",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 4,
+              "type": "CONCEPT",
+              "title": "集成协议选型：MCP / API-CLI / agent-to-agent",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 5,
+              "type": "CONCEPT",
+              "title": "规模化下的可观测性",
+              "description": "",
+              "duration": 10
+            }
+          ]
+        },
+        {
+          "code": "L09",
+          "title": "Domain 4 精析 — Evaluation, Testing & Optimization（16%）",
+          "description": "定义评估指标（准确率、延迟、成本、安全）；设计评估数据集与测试框架；A/B 测试与迭代；诊断 prompt 失败、幻觉、模型不匹配；优化性价比；日志与可观测性监控。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 45,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "评估指标怎么定",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "评估数据集与混合方法测试框架",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "A/B 测试与迭代改进",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 4,
+              "type": "CONCEPT",
+              "title": "系统问题诊断树",
+              "description": "",
+              "duration": 12
+            }
+          ]
+        },
+        {
+          "code": "L10",
+          "title": "Domain 5 精析 — Governance, Safety & Risk Management（14%）",
+          "description": "护栏与安全控制；LLM 系统的风险、局限与失败模式；human-in-the-loop 校验；合规（GDPR / HIPAA / FedRAMP）；AI 伦理（偏见、公平性、透明度）。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 40,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "护栏分层与安全控制",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "三大合规框架对 AI 系统的约束",
+              "description": "GDPR / HIPAA / FedRAMP。Foundations 完全不考。",
+              "duration": 14
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "human-in-the-loop 校验策略",
+              "description": "",
+              "duration": 10
+            },
+            {
+              "order": 4,
+              "type": "CONCEPT",
+              "title": "偏见、公平性与透明度",
+              "description": "",
+              "duration": 10
+            }
+          ]
+        },
+        {
+          "code": "L11",
+          "title": "Domain 6 精析 — Stakeholder Communication & Lifecycle Management（14%）",
+          "description": "结构化需求发现；沟通架构决策与取舍；管理反馈闭环与期望（含 SLA）；写架构文档与实施指导；支撑 discovery → design → handoff → monitoring → iteration 全周期。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 40,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "结构化需求发现怎么做",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "把技术取舍讲给非技术干系人",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "SLA 与期望管理",
+              "description": "",
+              "duration": 10
+            },
+            {
+              "order": 4,
+              "type": "CONCEPT",
+              "title": "架构文档与交接",
+              "description": "",
+              "duration": 11
+            }
+          ]
+        },
+        {
+          "code": "L12",
+          "title": "Domain 7 精析 — Developer Productivity & Operational Enablement（7%）",
+          "description": "为团队配置 Claude 工具与环境（如 Claude Code）；用 AI 辅助工具改进开发者工作流；支持调试与运维问题解决。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 25,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "团队级 Claude Code 配置",
+              "description": "注意：这里只有 7%，Foundations 里是 20%。别超配时间。",
+              "duration": 12
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "AI 辅助的开发者工作流",
+              "description": "",
+              "duration": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 2 — 架构师软硬两手实战",
+      "color": "#4D2F5A",
+      "summary": "2 节 — Foundations 完全没有的两块",
+      "lessons": [
+        {
+          "code": "L13",
+          "title": "实战：设计一条 RAG 流水线",
+          "description": "从数据形态出发选 chunking 与 indexing 策略，匹配检索方法，评估准确率-延迟-成本三角。对应权重最高的 Domain 3。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 60,
+          "steps": [
+            {
+              "order": 1,
+              "type": "PRACTICE",
+              "title": "按数据形态选 chunking 策略",
+              "description": "",
+              "duration": 20
+            },
+            {
+              "order": 2,
+              "type": "PRACTICE",
+              "title": "匹配检索策略与查询模式",
+              "description": "",
+              "duration": 20
+            },
+            {
+              "order": 3,
+              "type": "PRACTICE",
+              "title": "评估三角：准确率 / 延迟 / 成本",
+              "description": "",
+              "duration": 20
+            }
+          ]
+        },
+        {
+          "code": "L14",
+          "title": "实战：把一个架构决策讲给非技术干系人",
+          "description": "写一份架构决策记录，然后用五分钟讲清取舍、风险与 SLA 承诺。对应 Domain 6 的 14%——最容易被中国考生轻视的一块。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 55,
+          "steps": [
+            {
+              "order": 1,
+              "type": "PRACTICE",
+              "title": "写一份架构决策记录（ADR）",
+              "description": "",
+              "duration": 20
+            },
+            {
+              "order": 2,
+              "type": "PRACTICE",
+              "title": "五分钟讲清取舍与风险",
+              "description": "",
+              "duration": 20
+            },
+            {
+              "order": 3,
+              "type": "MCQ",
+              "title": "自测：干系人沟通场景判断题",
+              "description": "",
+              "duration": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 3 — 全真模拟 & 冲刺",
+      "color": "#36203F",
+      "summary": "2 节 — 两套模拟稳定 720+ 再进考场",
+      "lessons": [
+        {
+          "code": "L15",
+          "title": "全真模拟考 A（63 题 / 120 分钟）+ 逐题详解",
+          "description": "按官方题量与时长的原创模拟卷。每题不到 2 分钟，时间管理本身就是考点。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 165,
+          "steps": [
+            {
+              "order": 1,
+              "type": "MCQ",
+              "title": "限时 120 分钟完成 63 题",
+              "description": "",
+              "duration": 120
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "逐题详解与错因归类",
+              "description": "",
+              "duration": 45
+            }
+          ]
+        },
+        {
+          "code": "L16",
+          "title": "全真模拟考 B + 考前 48 小时清单",
+          "description": "第二套原创模拟卷；考前清单、时间预算、三步排除法、二刷规划。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 175,
+          "steps": [
+            {
+              "order": 1,
+              "type": "MCQ",
+              "title": "限时 120 分钟完成 63 题",
+              "description": "",
+              "duration": 120
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "考前 48 小时清单",
+              "description": "",
+              "duration": 20
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "120 分钟怎么分：每题 1.9 分钟的取舍",
+              "description": "",
+              "duration": 20
+            },
+            {
+              "order": 4,
+              "type": "CONCEPT",
+              "title": "没过怎么办：14 天等待期精准补漏",
+              "description": "",
+              "duration": 15
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

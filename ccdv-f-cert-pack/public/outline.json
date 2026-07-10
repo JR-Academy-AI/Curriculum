@@ -1,0 +1,649 @@
+{
+  "themeColor": "#4A7C8C",
+  "slug": "ccdv-f-cert-pack",
+  "name": "Claude 认证开发者 · 考试直通包",
+  "name_en": "CCDV-F Certification Fast-Track Pack",
+  "description": "Anthropic 官方 Claude Certified Developer – Foundations（考试代码 CCDV-F）认证的<strong>考试直通包</strong>。Anthropic Partner Academy 不对个人开放自助注册——匠人已注册加入 Claude Partner Network，为你开通账号打通报名准入，再全程陪你走完注册、约考、考场。配套官方 blueprint 逐域精析、实战与 2 套全真模拟。官方考试费不含在包价内，由你在 Partner Academy 结账时直接支付。",
+  "description_en": "Fast-track pack for Anthropic's official Claude Certified Developer – Foundations certification (exam code CCDV-F). Anthropic Partner Academy is not open to individual self-registration — as a registered Claude Partner Network member, JR Academy opens an account for you. You then register and pay the official exam fee yourself; we walk you through registration, Pearson VUE scheduling and the OnVUE system check, plus a blueprint-aligned study path and 2 full mock exams. The official exam fee is not included in the pack price.",
+  "level": "中级",
+  "type": "training",
+  "targetAudience": "动手写代码、交付 Claude 应用的工程师：AI/ML 工程师、技术负责人、资深软件工程师。1–5 年软件工程经验 + 至少 6 个月 Claude 实战。",
+  "totalLessons": 16,
+  "totalSteps": 46,
+  "liveClasses": 0,
+  "estimatedHours": 15,
+  "totalInteractiveLabs": 0,
+  "title_en": "CCDV-F Certification Fast-Track Pack",
+  "timeLength": "约 15 小时自学（16 节课，自主安排节奏）+ 报名准入与全程陪跑",
+  "courseObjective": "打通 CCDV-F 报名准入并系统备考：按官方子技能权重分配复习时间（Applications & Integration 独占 33.1%，Claude Code 只有 3.1%），吃透 8 个 domain 与 25 项子技能，冲刺 720 分及格线。",
+  "suitable": "👨‍💻 你在写代码交付 Claude 应用，想要一张官方开发者认证\n🚪 你卡在报名这一步——Anthropic Partner Academy 不对个人开放注册\n⚠️ 你打算照着架构师认证的方法复习——那会跑偏：这门考试里 Claude Code 只占 3.1%\n🎯 你想知道官方到底按什么权重出题，而不是凭感觉刷",
+  "cardDescription": "开通 Partner Academy 账号打通报名准入 + 官方 blueprint 逐域精析 + 2 套全真模拟 + 注册约考全程陪跑。",
+  "promoDescription": "CCDV-F 的报名只走 Anthropic Partner Academy 这一条路，而<strong>这个平台不对个人开放自助注册</strong>——没有 Claude Partner Network 成员为你开通账号，你连报名页都进不去。匠人已注册加入 CPN，这个直通包做三件事：① <strong>为你开通 Partner Academy 账号</strong>，打通报名准入（考试注册与官方考试费由你本人完成结账，不含在包价内）；② 对齐官方 blueprint 的<strong>逐域考点精析</strong>（53 题的权重分布决定你该把时间花在哪）；③ 原创的<strong>实战 + 2 套全真模拟 + 考前清单</strong>。注册、预约、改期、重考规则全程有人答疑。不是卖资料，也不是卖名额——是把那道你自己打不开的门打开，再陪你最快走到考场。",
+  "prerequisiteknowledge": "1–5 年软件工程经验；至少 6 个月 Claude 或同类 LLM 系统实战；熟练 Python 和/或 TypeScript；熟悉 REST API 与 CLI 工具；对 LLM 基础、agent、上下文管理、MCP 有可用的理解。",
+  "highlights": [
+    "为你开通 Anthropic Partner Academy 账号（该平台不对个人开放自助注册）",
+    "注册考试 → 预约 Pearson VUE → OnVUE 环境自检，全程陪跑（官方考试费由你在结账时直接支付）",
+    "逐域考点精析，严格对齐官方 Exam Guide v1.0 的 blueprint 权重",
+    "2 套全真模拟（53 题 / 120 分钟）+ 逐题详解 + 分域得分分布",
+    "Pearson OnVUE 预约 + 环境自检 + 重考规则全程手把手",
+    "证书 12 个月有效期与免费续证机制讲清楚，不让你以为拿到就是终身",
+    "报名 / 备考答疑社群"
+  ],
+  "highlights_en": [
+    "Partner Academy account opened for you — the platform does not allow individual self-registration",
+    "End-to-end support: register the exam, schedule Pearson VUE, pass the OnVUE system check (official exam fee paid by you at checkout)",
+    "Per-domain deep dive aligned to the official Exam Guide v1.0 blueprint",
+    "2 full-length mock exams (53 items / 120 minutes) with explanations and per-domain score breakdown",
+    "End-to-end Pearson OnVUE scheduling and retake guidance; credential valid 12 months"
+  ],
+  "features": [
+    "自主节奏 · 无直播 · 自学为主",
+    "报名准入我们打通：为你开通个人无法自行注册的 Partner Academy 账号",
+    "备考资料全部原创 + 官方资源导航，不是简单转链",
+    "考不过按官方重考规则协助你二刷"
+  ],
+  "program": {
+    "name": "CCDV-F 考试直通包 · 第一期",
+    "programPhase": 1,
+    "cohortStatus": "PLANNING",
+    "currency": "USD"
+  },
+  "curriculumPages": {
+    "pages": [
+      "curriculum.html"
+    ],
+    "defaultPage": "curriculum.html"
+  },
+  "phases": [
+    {
+      "name": "Phase 0 — 认证全景 & 打通报名",
+      "color": "#4A7C8C",
+      "summary": "4 节 — 搞懂考什么 + 开通账号、自行注册并预约",
+      "lessons": [
+        {
+          "code": "L01",
+          "title": "CCDV-F 是什么，为什么值得考",
+          "description": "Anthropic 面向开发者的官方认证：考什么、不考什么、认证归属个人、证书 12 个月有效期与免费续证。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 30,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "CCDV-F 的定位",
+              "description": "面向构建、集成并交付生产级 Claude 应用的工程师。考的是取舍判断，不是 API 参数记忆。",
+              "duration": 8
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "含金量与归属",
+              "description": "认证归属个人不归公司；逾 1 万名顾问已持有 Claude 认证。Services Partner Directory 收录的是公司，不是个人。",
+              "duration": 7
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "报名准入与考试费",
+              "description": "Partner Academy 不对个人开放自助注册，须由 CPN 成员开通账号；开通后由你本人注册考试并直接向官方支付考试费。",
+              "duration": 8
+            },
+            {
+              "order": 4,
+              "type": "CONCEPT",
+              "title": "12 个月有效期与续证",
+              "description": "证书自授予日起 12 个月有效；到期前可完成一次免费、非监考的续证评估；过期须全价重考。",
+              "duration": 7
+            }
+          ]
+        },
+        {
+          "code": "L02",
+          "title": "考试形式全解 — 53 题 / 120 分钟 / 720 分",
+          "description": "注意：这门是 53 题，不是 60 题。量表分、成绩单怎么读、重考与改期规则。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 30,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "53 题 / 120 分钟",
+              "description": "每题约 2.26 分钟，比架构师 Foundations 宽裕。单选与多选混合，每题标明该选几个。无场景抽题结构。",
+              "duration": 8
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "720 是量表分不是百分比",
+              "description": "100–1000 的 scaled score，不等于答对 72%。criterion-referenced。",
+              "duration": 8
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "成绩单只看总分",
+              "description": "各 domain 答对百分比只用于诊断，不参与判定通过与否。",
+              "duration": 7
+            },
+            {
+              "order": 4,
+              "type": "CONCEPT",
+              "title": "重考、改期与申诉",
+              "description": "失败后等 14/30/90 天，滚动 12 个月内最多 4 次，每次重新付费；改期取消只能在考前 24 小时之外。",
+              "duration": 7
+            }
+          ]
+        },
+        {
+          "code": "L03",
+          "title": "实战：开通 Partner Academy 账号并完成考试注册",
+          "description": "跟着 AI 走通「匠人开通账号 → 你自己注册考试并结账 → 建 Pearson VUE 账号」这条链路。",
+          "type": "Quest",
+          "isLive": false,
+          "duration": 30,
+          "quest": {
+            "title": "开通 Partner Academy 账号并完成 CCDV-F 考试注册",
+            "description": "用匠人为你开通的 Anthropic Partner Academy 账号登录 → 阅读考试条款 → 自行注册考试并完成结账 → 按确认邮件建立 Pearson VUE 账号。",
+            "learningGoal": "学完你已在 Partner Academy 完成 CCDV-F 考试注册与付费，并拥有一个可用于预约的 Pearson VUE 账号。",
+            "successCriteria": "Partner Academy 显示 CCDV-F 已注册且已完成结账；Pearson VUE 账号建立成功；姓名/邮箱与证件一致。",
+            "difficulty": "beginner",
+            "estimatedMinutes": 30,
+            "uiMode": "chat",
+            "context": "前提：Anthropic Partner Academy 不对个人开放自助注册，账号由匠人（Claude Partner Network 成员）在后台为学员开通；但匠人不能代发、代购考试名额——注册与官方考试费必须由学员本人在 Partner Academy 上完成结账。AI 逐步带：(1) 确认收到开通的账号并成功登录；(2) 在认证页下载 Exam Guide、读完 Certification Terms and Conditions 与 Certification Exam Policy；(3) 完成考试注册与结账（提醒这笔官方考试费不含在包价里，需自付）；(4) 按确认邮件创建 Pearson VUE 账号（预约留到下一节）；(5) 核对姓名拼写与证件完全一致，改名须在约考前发信到 certifications-support@anthropic.com。关键坑：开通邮件常进垃圾箱；Pearson 账号邮箱要和 Partner Academy 邮箱一致；姓名顺序要和护照/驾照一致。",
+            "stepSkeleton": [
+              {
+                "title": "登录匠人为你开通的 Partner Academy 账号",
+                "verificationType": "self-confirm",
+                "expectedEvidence": "能用开通的账号成功登录 Anthropic Partner Academy"
+              },
+              {
+                "title": "读完 Exam Guide 与认证条款",
+                "verificationType": "self-confirm",
+                "expectedEvidence": "已下载 Exam Guide，读过 Terms and Conditions 与 Exam Policy"
+              },
+              {
+                "title": "自行注册 CCDV-F 考试并完成结账",
+                "verificationType": "text-evidence",
+                "expectedEvidence": "Partner Academy 显示 CCDV-F 已注册、结账完成（官方考试费由学员自付）"
+              },
+              {
+                "title": "按确认邮件建立 Pearson VUE 账号",
+                "verificationType": "text-evidence",
+                "expectedEvidence": "Pearson VUE 账号创建成功并能进入 Claude Certified Developer – Foundations 的预约流程"
+              },
+              {
+                "title": "核对姓名/邮箱与证件一致",
+                "verificationType": "self-confirm",
+                "expectedEvidence": "Pearson 档案里的姓名与考试要用的证件完全一致"
+              }
+            ],
+            "prerequisites": [
+              "已购买本考试直通包",
+              "有一个常用邮箱",
+              "一张可支付官方考试费的国际信用卡"
+            ],
+            "targetPlatform": "browser",
+            "tags": [
+              "ccdv-f",
+              "registration",
+              "pearson-vue"
+            ]
+          }
+        },
+        {
+          "code": "L04",
+          "title": "实战：预约考试 + OnVUE 环境自检",
+          "description": "选定日期与考场形式，考前跑一遍 OnVUE 系统测试。",
+          "type": "Quest",
+          "isLive": false,
+          "duration": 30,
+          "quest": {
+            "title": "预约你的 CCDV-F 考试并通过 OnVUE 环境自检",
+            "description": "在 Pearson VUE 选定日期与交付方式（OnVUE 线上监考或线下考场），并提前跑一遍 OnVUE 系统测试。",
+            "learningGoal": "学完你有一场已预约的考试，且确认你的设备与网络能通过 OnVUE 环境检查。",
+            "successCriteria": "Pearson 账号里能看到已预约的考试时间；OnVUE system test 通过。",
+            "difficulty": "beginner",
+            "estimatedMinutes": 30,
+            "uiMode": "chat",
+            "context": "学员已完成注册与结账。本节带他选考试日期、选 OnVUE 线上监考还是线下考场，并跑 OnVUE 系统测试。必须讲清：改期/取消只能在考前 24 小时之外，进入最后 24 小时的改动 = 考试费作废；缺考或超过迟到窗口同样作废且须重新报名。OnVUE 要求：全程在摄像头视野内、桌面清空（禁书本笔记纸笔手机手表耳机副屏）、禁与任何人交流、禁以任何形式记录考题。需要特殊便利（accommodations）的必须先由 Pearson VUE 批准，批准前不要约考。",
+            "stepSkeleton": [
+              {
+                "title": "选定考试日期与交付方式",
+                "verificationType": "text-evidence",
+                "expectedEvidence": "Pearson 账号显示已预约的考试时间与 OnVUE/考场选择"
+              },
+              {
+                "title": "跑一遍 OnVUE 系统测试",
+                "verificationType": "text-evidence",
+                "expectedEvidence": "OnVUE system test 全部通过（摄像头、麦克风、网络、浏览器）"
+              },
+              {
+                "title": "确认考场纪律与改期红线",
+                "verificationType": "self-confirm",
+                "expectedEvidence": "知道考前 24 小时内不能改期、缺考费用作废，且桌面须清空"
+              }
+            ],
+            "prerequisites": [
+              "已完成上一节：CCDV-F 考试注册与结账已完成，Pearson VUE 账号可登录"
+            ],
+            "targetPlatform": "browser",
+            "tags": [
+              "ccdv-f",
+              "scheduling",
+              "onvue"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Phase 1 — 八大 Domain 备考路径",
+      "color": "#3A6373",
+      "summary": "9 节 — 按官方子技能权重分配时间，别凭感觉",
+      "lessons": [
+        {
+          "code": "L05",
+          "title": "备考总路线图 — 权重陷阱与学习顺序",
+          "description": "这门叫 Developer 的考试里，Claude Code 只占 3.1%，Eval/Testing/Debugging 只占 2.6%，而 Applications & Integration 独占 33.1%。照着架构师认证的方法复习必然跑偏。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 45,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "八域权重全景",
+              "description": "D2 应用与集成 33.1% > D5 模型选型与优化 16.8% > D1 Agent 与工作流 14.7% > D6 Prompt 与上下文 11.0% > D8 工具与 MCP 10.6% > D7 安全 8.1% > D3 Claude Code 3.1% > D4 评估调试 2.6%。",
+              "duration": 12
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "三个反直觉的权重事实",
+              "description": "Claude Code 只有 3.1%；Eval/Debug 只有 2.6%；单项最高的是 Claude Application Design 8.6%，其次 Software Engineering Foundations 7.4%。",
+              "duration": 12
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "这门与其说考 Claude，不如说考软件工程功底",
+              "description": "REST / JSON / 异步 / 版本控制 / 代码审查 / 重构在 blueprint 里明确列出。",
+              "duration": 10
+            },
+            {
+              "order": 4,
+              "type": "CONCEPT",
+              "title": "两周学习顺序",
+              "description": "按子技能权重压时间。官方原话：没有任何一门必修课，也不保证任何资源能确保通过。",
+              "duration": 11
+            }
+          ]
+        },
+        {
+          "code": "L06",
+          "title": "Domain 1 精析 — Agents and Workflows（14.7%）",
+          "description": "Agent 架构（4.5%）、用 Claude 构建 agent（5.3%）、agent 模式与框架（4.9%）。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 40,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "workflow 还是 agent：决策判据",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "Agent SDK、自定义 loop、托管形态、hooks",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "第三方 agentic 框架：Strands / LangGraph / PydanticAI",
+              "description": "官方 blueprint 点名了这三个，架构师 Foundations 完全不考。",
+              "duration": 12
+            }
+          ]
+        },
+        {
+          "code": "L07",
+          "title": "Domain 2 精析（上）— Claude API 机制与软件工程功底（14.2%）",
+          "description": "Claude API Mechanics 6.8% + Software Engineering Foundations 7.4%。这两项加起来比整个 Domain 1 还重。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 45,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "messages / tools / streaming / vision / thinking / caching",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "实时 vs 批处理 API 的取舍",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "REST / JSON / 异步 / 版本控制 / 代码审查 / 重构",
+              "description": "",
+              "duration": 12
+            }
+          ]
+        },
+        {
+          "code": "L08",
+          "title": "Domain 2 精析（下）— Claude 应用设计与配置管理（15.1%）",
+          "description": "Claude Application Design 8.6%（单项最高）+ Configuration Management 4.1% + Understanding Requirements 3.4% + Systems Life Cycle 2.8%。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 45,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "Claude 在不同界面如何解读指令",
+              "description": "Claude Code / Desktop / claude.ai / API / SDK 各自的行为差异。",
+              "duration": 12
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "内容边界、schema 设计、session 卫生、plugin 管理",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "CLAUDE.md / settings.json / 模型版本锁定 / prompt 版本管理",
+              "description": "",
+              "duration": 12
+            }
+          ]
+        },
+        {
+          "code": "L09",
+          "title": "Domain 5 精析 — Model Selection and Optimization（16.8%）",
+          "description": "LLM 基础 5.2% + 技术基础 6.1% + 模型选型取舍 2.7% + 成本与 token 管理 2.8%。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 45,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "token / 上下文窗口 / 采样 / 非确定性",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "fast mode、extended thinking、adaptive thinking、effort levels",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "Opus / Sonnet / Haiku 取舍 + 版本升级的破坏性行为变化",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 4,
+              "type": "CONCEPT",
+              "title": "prompt caching 与 cache check-pointing",
+              "description": "",
+              "duration": 10
+            }
+          ]
+        },
+        {
+          "code": "L10",
+          "title": "Domain 6 精析 — Prompt and Context Engineering（11.0%）",
+          "description": "上下文工程 3.8% + prompt 工程 4.6% + 输出处理 2.6%。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 35,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "上下文漂移与膨胀：工具输出裁剪、compaction",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "指令清晰度、few-shot、system vs user 位置、输入净化",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "结构化输出、响应校验、防御式解析、对自信输出保持怀疑",
+              "description": "",
+              "duration": 11
+            }
+          ]
+        },
+        {
+          "code": "L11",
+          "title": "Domain 8 精析 — Tools and MCPs（10.6%）",
+          "description": "工具实现 4.4% + MCP server 开发 2.1% + agentic 定制 4.1%。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 35,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "tool use / function calling / 工具描述撰写 / 错误处理",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "MCP server 编写与通信模式（stdio、sockets、client vs server）",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "内建 Tools / 自定义 Tools / Skills / MCP 怎么选",
+              "description": "",
+              "duration": 11
+            }
+          ]
+        },
+        {
+          "code": "L12",
+          "title": "Domain 7 精析 — Security and Safety（8.1%）",
+          "description": "AI 应用安全 3.2% + 护栏与安全部署 2.3% + Claude Hooks 1.0% + 身份密钥管理 1.6%。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 32,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "prompt injection、越狱防御、不可信输入、PII 与数据泄露",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "护栏分层与 secure-by-design、最小权限",
+              "description": "",
+              "duration": 10
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "用 hooks 阻止破坏性动作；密钥与凭证管理",
+              "description": "",
+              "duration": 10
+            }
+          ]
+        },
+        {
+          "code": "L13",
+          "title": "Domain 3 + 4 精析 — Claude Code（3.1%）与 Eval / Debugging（2.6%）",
+          "description": "两个域加起来只有 5.7%——刚好够一节。别在这里超配时间。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 32,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "Claude Code 核心组件与 CLAUDE.md 层级",
+              "description": "Rules / Skills / Commands / Agents / Agent Memory、headless 与 streaming 模式、settings.json。",
+              "duration": 12
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "错误类型识别与恢复策略",
+              "description": "",
+              "duration": 10
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "trace 分析：把问题隔离在集成层还是模型输出",
+              "description": "",
+              "duration": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 2 — 端到端实战",
+      "color": "#2C4E5A",
+      "summary": "1 节 — 官方备考建议的核心动作",
+      "lessons": [
+        {
+          "code": "L14",
+          "title": "实战：搭并跑通一个端到端 Claude 应用",
+          "description": "官方建议的核心动作：调用 API、集成一个以上工具、做基础 prompt 与上下文工程、包含简单的安全与评估实践。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 65,
+          "steps": [
+            {
+              "order": 1,
+              "type": "PRACTICE",
+              "title": "接 API + 集成工具",
+              "description": "",
+              "duration": 25
+            },
+            {
+              "order": 2,
+              "type": "PRACTICE",
+              "title": "加基础安全实践（输入净化、密钥管理）",
+              "description": "",
+              "duration": 20
+            },
+            {
+              "order": 3,
+              "type": "PRACTICE",
+              "title": "加简单评估：输出校验与防御式解析",
+              "description": "",
+              "duration": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 3 — 全真模拟 & 冲刺",
+      "color": "#1E3A44",
+      "summary": "2 节 — 两套模拟稳定 720+ 再进考场",
+      "lessons": [
+        {
+          "code": "L15",
+          "title": "全真模拟考 A（53 题 / 120 分钟）+ 逐题详解",
+          "description": "按官方题量与时长的原创模拟卷，逐题详解 + 八域得分分布。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 165,
+          "steps": [
+            {
+              "order": 1,
+              "type": "MCQ",
+              "title": "限时 120 分钟完成 53 题",
+              "description": "",
+              "duration": 120
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "逐题详解与错因归类",
+              "description": "",
+              "duration": 45
+            }
+          ]
+        },
+        {
+          "code": "L16",
+          "title": "全真模拟考 B + 考前 48 小时清单",
+          "description": "第二套原创模拟卷；考前清单、时间预算、三步排除法、二刷规划。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 175,
+          "steps": [
+            {
+              "order": 1,
+              "type": "MCQ",
+              "title": "限时 120 分钟完成 53 题",
+              "description": "",
+              "duration": 120
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "考前 48 小时清单",
+              "description": "",
+              "duration": 20
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "120 分钟怎么分配 + 三步排除法",
+              "description": "",
+              "duration": 20
+            },
+            {
+              "order": 4,
+              "type": "CONCEPT",
+              "title": "没过怎么办：14 天等待期精准补漏",
+              "description": "",
+              "duration": 15
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

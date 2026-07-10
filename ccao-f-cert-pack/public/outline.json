@@ -1,0 +1,642 @@
+{
+  "themeColor": "#C98A4B",
+  "slug": "ccao-f-cert-pack",
+  "name": "Claude 认证 Associate · 考试直通包",
+  "name_en": "CCAO-F Certification Fast-Track Pack",
+  "description": "Anthropic 官方 Claude Certified Associate – Foundations（考试代码 CCAO-F）认证的<strong>考试直通包</strong>。Anthropic Partner Academy 不对个人开放自助注册——匠人已注册加入 Claude Partner Network，为你开通账号打通报名准入，再全程陪你走完注册、约考、考场。配套官方 blueprint 逐域精析、实战与 2 套全真模拟。官方考试费不含在包价内，由你在 Partner Academy 结账时直接支付。",
+  "description_en": "Fast-track pack for Anthropic's official Claude Certified Associate – Foundations certification (exam code CCAO-F). Anthropic Partner Academy is not open to individual self-registration — as a registered Claude Partner Network member, JR Academy opens an account for you. You then register and pay the official exam fee yourself; we walk you through registration, Pearson VUE scheduling and the OnVUE system check, plus a blueprint-aligned study path and 2 full mock exams. The official exam fee is not included in the pack price.",
+  "level": "入门",
+  "type": "training",
+  "targetAudience": "把 Claude 当日常生产力工具的业务人：运营、市场、项目管理、教育、传播、HR、顾问与知识工作者。官方明确不需要任何软件开发或 API 经验。",
+  "totalLessons": 16,
+  "totalSteps": 45,
+  "liveClasses": 0,
+  "estimatedHours": 14,
+  "totalInteractiveLabs": 0,
+  "title_en": "CCAO-F Certification Fast-Track Pack",
+  "timeLength": "约 14 小时自学（16 节课，自主安排节奏）+ 报名准入与全程陪跑",
+  "courseObjective": "打通 CCAO-F 报名准入并系统备考：吃透官方 blueprint 的 7 个 domain（Output Evaluation & Validation 21% / Workflow Integration 16% / Governance & Responsible Use 15% / Prompting 14% / Product & Model Selection 12% / Configuration & Knowledge Management 12% / Troubleshooting 10%），把 Claude Projects 配置与输出评估练成肌肉，冲刺 720 分及格线。",
+  "suitable": "🧑‍💼 你已经天天在用 Claude 干活，想要一张能写进简历的官方认证\n🚪 你卡在报名这一步——Anthropic Partner Academy 不对个人开放注册\n🚫 你不写代码，也不想学 API——这门考试官方明说不需要开发经验\n🎯 你想把「会用 AI」变成「能证明自己会判断 AI 输出靠不靠谱」",
+  "cardDescription": "开通 Partner Academy 账号打通报名准入 + 官方 blueprint 逐域精析 + 2 套全真模拟 + 注册约考全程陪跑。",
+  "promoDescription": "CCAO-F 的报名只走 Anthropic Partner Academy 这一条路，而<strong>这个平台不对个人开放自助注册</strong>——没有 Claude Partner Network 成员为你开通账号，你连报名页都进不去。匠人已注册加入 CPN，这个直通包做三件事：① <strong>为你开通 Partner Academy 账号</strong>，打通报名准入（考试注册与官方考试费由你本人完成结账，不含在包价内）；② 对齐官方 blueprint 的<strong>逐域考点精析</strong>（60 题的权重分布决定你该把时间花在哪）；③ 原创的<strong>实战 + 2 套全真模拟 + 考前清单</strong>。注册、预约、改期、重考规则全程有人答疑。不是卖资料，也不是卖名额——是把那道你自己打不开的门打开，再陪你最快走到考场。",
+  "prerequisiteknowledge": "会用 Claude 做日常工作（不需要写代码、不需要碰 API）。对 AI 的局限——幻觉、上下文限制、数据敏感性——有基本认知。完全没用过 Claude 的人建议先过一遍 Anthropic Academy 的免费入门课。",
+  "highlights": [
+    "为你开通 Anthropic Partner Academy 账号（该平台不对个人开放自助注册）",
+    "注册考试 → 预约 Pearson VUE → OnVUE 环境自检，全程陪跑（官方考试费由你在结账时直接支付）",
+    "逐域考点精析，严格对齐官方 Exam Guide v1.0 的 blueprint 权重",
+    "2 套全真模拟（60 题 / 120 分钟）+ 逐题详解 + 分域得分分布",
+    "Pearson OnVUE 预约 + 环境自检 + 重考规则全程手把手",
+    "证书 12 个月有效期与免费续证机制讲清楚，不让你以为拿到就是终身",
+    "报名 / 备考答疑社群"
+  ],
+  "highlights_en": [
+    "Partner Academy account opened for you — the platform does not allow individual self-registration",
+    "End-to-end support: register the exam, schedule Pearson VUE, pass the OnVUE system check (official exam fee paid by you at checkout)",
+    "Per-domain deep dive aligned to the official Exam Guide v1.0 blueprint",
+    "2 full-length mock exams (60 items / 120 minutes) with explanations and per-domain score breakdown",
+    "End-to-end Pearson OnVUE scheduling and retake guidance; credential valid 12 months"
+  ],
+  "features": [
+    "自主节奏 · 无直播 · 自学为主",
+    "报名准入我们打通：为你开通个人无法自行注册的 Partner Academy 账号",
+    "备考资料全部原创 + 官方资源导航，不是简单转链",
+    "考不过按官方重考规则协助你二刷"
+  ],
+  "program": {
+    "name": "CCAO-F 考试直通包 · 第一期",
+    "programPhase": 1,
+    "cohortStatus": "PLANNING",
+    "currency": "USD"
+  },
+  "curriculumPages": {
+    "pages": [
+      "curriculum.html"
+    ],
+    "defaultPage": "curriculum.html"
+  },
+  "phases": [
+    {
+      "name": "Phase 0 — 认证全景 & 打通报名",
+      "color": "#C98A4B",
+      "summary": "4 节 — 搞懂考什么 + 开通账号、自行注册并预约",
+      "lessons": [
+        {
+          "code": "L01",
+          "title": "CCAO-F 是什么，为什么值得考",
+          "description": "Anthropic 面向非技术从业者的官方认证：它考什么、不考什么、认证归属个人的意义、证书 12 个月有效期与免费续证机制。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 30,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "CCAO-F 的定位",
+              "description": "面向把 Claude 当核心生产力工具的业务人；官方明确不需要软件开发或 API 经验。考的是职业判断，不是功能记忆。",
+              "duration": 8
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "含金量与归属",
+              "description": "认证归属个人不归公司；逾 1 万名顾问已持有 Claude 认证。注意 Services Partner Directory 收录的是公司，不是个人。",
+              "duration": 7
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "报名准入与考试费",
+              "description": "Partner Academy 不对个人开放自助注册，须由 CPN 成员开通账号；开通后由你本人注册考试并直接向官方支付考试费。",
+              "duration": 8
+            },
+            {
+              "order": 4,
+              "type": "CONCEPT",
+              "title": "12 个月有效期与续证",
+              "description": "证书自授予日起 12 个月有效；到期前可完成一次免费、非监考的续证评估；过期须全价重考。",
+              "duration": 7
+            }
+          ]
+        },
+        {
+          "code": "L02",
+          "title": "考试形式全解 — 60 题 / 120 分钟 / 720 分",
+          "description": "官方 Exam Guide 口径：题量、时长、量表分、成绩单怎么读、重考与改期规则。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 30,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "题量与题型",
+              "description": "60 题 / 120 分钟；单选与多选混合，每题会标明该选几个。没有场景抽题结构（那是架构师 Foundations 独有的）。",
+              "duration": 8
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "720 是量表分不是百分比",
+              "description": "100–1000 的 scaled score，不等于答对 72%。criterion-referenced，跟固定标准比不跟其他考生比。",
+              "duration": 8
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "成绩单只看总分",
+              "description": "成绩单会给各 domain 的答对百分比，但只用于诊断，不参与判定通过与否。不存在「每个域都要过线」。",
+              "duration": 7
+            },
+            {
+              "order": 4,
+              "type": "CONCEPT",
+              "title": "重考、改期与申诉",
+              "description": "失败后等 14/30/90 天，滚动 12 个月内最多 4 次，每次重新付费；改期取消只能在考前 24 小时之外；申诉 14 天内提出。",
+              "duration": 7
+            }
+          ]
+        },
+        {
+          "code": "L03",
+          "title": "实战：开通 Partner Academy 账号并完成考试注册",
+          "description": "跟着 AI 走通「匠人开通账号 → 你自己注册考试并结账 → 建 Pearson VUE 账号」这条链路。",
+          "type": "Quest",
+          "isLive": false,
+          "duration": 30,
+          "quest": {
+            "title": "开通 Partner Academy 账号并完成 CCAO-F 考试注册",
+            "description": "用匠人为你开通的 Anthropic Partner Academy 账号登录 → 阅读考试条款 → 自行注册考试并完成结账 → 按确认邮件建立 Pearson VUE 账号。",
+            "learningGoal": "学完你已在 Partner Academy 完成 CCAO-F 考试注册与付费，并拥有一个可用于预约的 Pearson VUE 账号。",
+            "successCriteria": "Partner Academy 显示 CCAO-F 已注册且已完成结账；Pearson VUE 账号建立成功；姓名/邮箱与证件一致。",
+            "difficulty": "beginner",
+            "estimatedMinutes": 30,
+            "uiMode": "chat",
+            "context": "前提：Anthropic Partner Academy 不对个人开放自助注册，账号由匠人（Claude Partner Network 成员）在后台为学员开通；但匠人不能代发、代购考试名额——注册与官方考试费必须由学员本人在 Partner Academy 上完成结账。AI 逐步带：(1) 确认收到开通的账号并成功登录；(2) 在认证页下载 Exam Guide、读完 Certification Terms and Conditions 与 Certification Exam Policy；(3) 完成考试注册与结账（提醒这笔官方考试费不含在包价里，需自付）；(4) 按确认邮件创建 Pearson VUE 账号（预约留到下一节）；(5) 核对姓名拼写与证件完全一致，改名须在约考前发信到 certifications-support@anthropic.com。关键坑：开通邮件常进垃圾箱；Pearson 账号邮箱要和 Partner Academy 邮箱一致；姓名顺序要和护照/驾照一致。",
+            "stepSkeleton": [
+              {
+                "title": "登录匠人为你开通的 Partner Academy 账号",
+                "verificationType": "self-confirm",
+                "expectedEvidence": "能用开通的账号成功登录 Anthropic Partner Academy"
+              },
+              {
+                "title": "读完 Exam Guide 与认证条款",
+                "verificationType": "self-confirm",
+                "expectedEvidence": "已下载 Exam Guide，读过 Terms and Conditions 与 Exam Policy"
+              },
+              {
+                "title": "自行注册 CCAO-F 考试并完成结账",
+                "verificationType": "text-evidence",
+                "expectedEvidence": "Partner Academy 显示 CCAO-F 已注册、结账完成（官方考试费由学员自付）"
+              },
+              {
+                "title": "按确认邮件建立 Pearson VUE 账号",
+                "verificationType": "text-evidence",
+                "expectedEvidence": "Pearson VUE 账号创建成功并能进入 Claude Certified Associate – Foundations 的预约流程"
+              },
+              {
+                "title": "核对姓名/邮箱与证件一致",
+                "verificationType": "self-confirm",
+                "expectedEvidence": "Pearson 档案里的姓名与考试要用的证件完全一致"
+              }
+            ],
+            "prerequisites": [
+              "已购买本考试直通包",
+              "有一个常用邮箱",
+              "一张可支付官方考试费的国际信用卡"
+            ],
+            "targetPlatform": "browser",
+            "tags": [
+              "ccao-f",
+              "registration",
+              "pearson-vue"
+            ]
+          }
+        },
+        {
+          "code": "L04",
+          "title": "实战：预约考试 + OnVUE 环境自检",
+          "description": "选定日期与考场形式，考前跑一遍 OnVUE 系统测试，避免开考当天卡在环境检查。",
+          "type": "Quest",
+          "isLive": false,
+          "duration": 30,
+          "quest": {
+            "title": "预约你的 CCAO-F 考试并通过 OnVUE 环境自检",
+            "description": "在 Pearson VUE 选定日期与交付方式（OnVUE 线上监考或线下考场），并提前跑一遍 OnVUE 系统测试。",
+            "learningGoal": "学完你有一场已预约的考试，且确认你的设备与网络能通过 OnVUE 环境检查。",
+            "successCriteria": "Pearson 账号里能看到已预约的考试时间；OnVUE system test 通过。",
+            "difficulty": "beginner",
+            "estimatedMinutes": 30,
+            "uiMode": "chat",
+            "context": "学员已完成注册与结账。本节带他选考试日期、选 OnVUE 线上监考还是线下考场，并跑 OnVUE 系统测试。必须讲清：改期/取消只能在考前 24 小时之外，进入最后 24 小时的改动 = 考试费作废；缺考或超过迟到窗口同样作废且须重新报名。OnVUE 要求：全程在摄像头视野内、桌面清空（禁书本笔记纸笔手机手表耳机副屏）、禁与任何人交流、禁以任何形式记录考题。需要特殊便利（accommodations）的必须先由 Pearson VUE 批准，批准前不要约考。",
+            "stepSkeleton": [
+              {
+                "title": "选定考试日期与交付方式",
+                "verificationType": "text-evidence",
+                "expectedEvidence": "Pearson 账号显示已预约的考试时间与 OnVUE/考场选择"
+              },
+              {
+                "title": "跑一遍 OnVUE 系统测试",
+                "verificationType": "text-evidence",
+                "expectedEvidence": "OnVUE system test 全部通过（摄像头、麦克风、网络、浏览器）"
+              },
+              {
+                "title": "确认考场纪律与改期红线",
+                "verificationType": "self-confirm",
+                "expectedEvidence": "知道考前 24 小时内不能改期、缺考费用作废，且桌面须清空"
+              }
+            ],
+            "prerequisites": [
+              "已完成上一节：CCAO-F 考试注册与结账已完成，Pearson VUE 账号可登录"
+            ],
+            "targetPlatform": "browser",
+            "tags": [
+              "ccao-f",
+              "scheduling",
+              "onvue"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Phase 1 — 七大 Domain 备考路径",
+      "color": "#B87333",
+      "summary": "8 节 — 官方 blueprint 逐域精析，按权重压时间",
+      "lessons": [
+        {
+          "code": "L05",
+          "title": "备考总路线图 — 七域权重地图与学习顺序",
+          "description": "官方七域权重摆在一起看：最重的不是「怎么写 prompt」（14%），是「怎么判断 Claude 的输出靠不靠谱」（21%）。据此排两周学习顺序。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 30,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "七域权重全景",
+              "description": "D2 输出评估 21% > D4 工作流整合 16% > D6 治理 15% > D1 Prompting 14% > D3 产品与模型选型 12% = D5 配置与知识管理 12% > D7 排障 10%。",
+              "duration": 10
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "这个 blueprint 的重心很反直觉",
+              "description": "评估（21%）+ 治理（15%）= 36%，远超 Prompting 的 14%。市面上的 AI 通识课几乎全在教后者。",
+              "duration": 10
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "Anthropic Academy 免费课导航",
+              "description": "把官方免费课映射到七个域，标出哪些能跳过。官方原话：没有任何一门必修课，也不保证任何资源能确保通过。",
+              "duration": 10
+            },
+            {
+              "order": 4,
+              "type": "CONCEPT",
+              "title": "两周学习顺序",
+              "description": "前置依赖优先，其次按权重压时间。不要顺着课程目录刷。",
+              "duration": 10
+            }
+          ]
+        },
+        {
+          "code": "L06",
+          "title": "Domain 1 精析 — Prompting and Task Execution（14%）",
+          "description": "为业务与技术任务写有效 prompt；任务分解；迭代改进；按任务类型（分析/研究/起草/头脑风暴）切换策略。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 35,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "有效 prompt 的构成要素",
+              "description": "",
+              "duration": 10
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "任务分解组织复杂请求",
+              "description": "",
+              "duration": 10
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "按任务类型调整策略",
+              "description": "",
+              "duration": 10
+            }
+          ]
+        },
+        {
+          "code": "L07",
+          "title": "Domain 2 精析 — Output Evaluation and Validation（21%，权重最高）",
+          "description": "评估准确性与完整性；识别幻觉、不一致与偏见；事实核查；判断何时需要人工复审；为读者编辑改写；选择输出形态。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 45,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "幻觉、不一致与偏见的识别信号",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "事实核查与验证技术",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "何时必须转人工复审",
+              "description": "",
+              "duration": 10
+            },
+            {
+              "order": 4,
+              "type": "CONCEPT",
+              "title": "输出形态选择：artifacts / 内联 / 结构化数据",
+              "description": "",
+              "duration": 11
+            }
+          ]
+        },
+        {
+          "code": "L08",
+          "title": "Domain 3 精析 — Product and Model Selection（12%）",
+          "description": "Projects、research 模式、chat、artifacts 怎么选；Haiku / Sonnet / Opus 的取舍；上下文限制与记忆管理。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 30,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "Claude 产品功能面全览",
+              "description": "",
+              "duration": 10
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "三个模型的成本/速度/质量取舍",
+              "description": "",
+              "duration": 10
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "上下文限制：何时重开、摘要、持久化",
+              "description": "",
+              "duration": 10
+            }
+          ]
+        },
+        {
+          "code": "L09",
+          "title": "Domain 4 精析 — Workflow Integration and Solution Design（16%）",
+          "description": "用 Claude 分析需求与用例；做研究、规划与流程优化；把 Claude 融进既有工作流；向干系人讲清价值与局限。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 35,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "从需求到用例",
+              "description": "",
+              "duration": 10
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "增强既有工作流 vs 重构工作流",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "讲清 Claude 的价值与局限",
+              "description": "",
+              "duration": 10
+            }
+          ]
+        },
+        {
+          "code": "L10",
+          "title": "Domain 5 精析 — Configuration and Knowledge Management（12%）",
+          "description": "用指令与知识源配置 Claude Projects；管理上传知识与连接器（Google Drive、Gmail）；写系统级指令并持续维护。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 30,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "Projects 的指令与知识源",
+              "description": "",
+              "duration": 10
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "连接器与知识维护",
+              "description": "",
+              "duration": 10
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "系统级指令怎么写",
+              "description": "",
+              "duration": 10
+            }
+          ]
+        },
+        {
+          "code": "L11",
+          "title": "Domain 6 精析 — Governance, Risk, and Responsible Use（15%）",
+          "description": "识别合适与不合适的用例；数据敏感性、监管与隐私；遵循组织 AI 政策；AI 使用的伦理影响。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 35,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "什么用例不该交给 AI",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "数据敏感性与隐私边界",
+              "description": "",
+              "duration": 12
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "组织 AI 政策与伦理",
+              "description": "",
+              "duration": 11
+            }
+          ]
+        },
+        {
+          "code": "L12",
+          "title": "Domain 7 精析 — Troubleshooting and Optimization（10%）",
+          "description": "诊断表现不佳的 prompt 与劣质输出；按反馈调整方法；优化工作流的效率与效果。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 25,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "输出不好时的排查顺序",
+              "description": "",
+              "duration": 10
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "按反馈迭代",
+              "description": "",
+              "duration": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 2 — 判断力实战",
+      "color": "#8C5A3C",
+      "summary": "2 节 — 把评估与配置练成肌肉",
+      "lessons": [
+        {
+          "code": "L13",
+          "title": "实战：配一个真实的 Claude Project",
+          "description": "从零配置指令 + 知识源 + 连接器，跑一个你自己工作里的真实流程。对应 Domain 5 + Domain 4。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 45,
+          "steps": [
+            {
+              "order": 1,
+              "type": "PRACTICE",
+              "title": "选一个你每周都做的重复任务",
+              "description": "",
+              "duration": 15
+            },
+            {
+              "order": 2,
+              "type": "PRACTICE",
+              "title": "配指令与知识源",
+              "description": "",
+              "duration": 15
+            },
+            {
+              "order": 3,
+              "type": "PRACTICE",
+              "title": "评估输出并迭代",
+              "description": "",
+              "duration": 15
+            }
+          ]
+        },
+        {
+          "code": "L14",
+          "title": "实战：输出评估 checklist",
+          "description": "拿一批真实的 Claude 输出，逐条过幻觉、事实、偏见、完整性四关，练成考场上的条件反射。对应权重最高的 Domain 2。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 45,
+          "steps": [
+            {
+              "order": 1,
+              "type": "PRACTICE",
+              "title": "四关核查法",
+              "description": "",
+              "duration": 15
+            },
+            {
+              "order": 2,
+              "type": "PRACTICE",
+              "title": "什么时候该说「这个我不敢直接发」",
+              "description": "",
+              "duration": 15
+            },
+            {
+              "order": 3,
+              "type": "MCQ",
+              "title": "自测：10 个输出，哪些能直接用",
+              "description": "",
+              "duration": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 3 — 全真模拟 & 冲刺",
+      "color": "#6B4226",
+      "summary": "2 节 — 两套模拟稳定 720+ 再进考场",
+      "lessons": [
+        {
+          "code": "L15",
+          "title": "全真模拟考 A（60 题 / 120 分钟）+ 逐题详解",
+          "description": "按官方题量与时长的原创模拟卷，逐题详解 + 七域得分分布。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 165,
+          "steps": [
+            {
+              "order": 1,
+              "type": "MCQ",
+              "title": "限时 120 分钟完成 60 题",
+              "description": "",
+              "duration": 120
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "逐题详解与错因归类",
+              "description": "",
+              "duration": 45
+            }
+          ]
+        },
+        {
+          "code": "L16",
+          "title": "全真模拟考 B + 考前 48 小时清单",
+          "description": "第二套原创模拟卷；考前清单、时间预算、三步排除法、万一没过的二刷规划。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 175,
+          "steps": [
+            {
+              "order": 1,
+              "type": "MCQ",
+              "title": "限时 120 分钟完成 60 题",
+              "description": "",
+              "duration": 120
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "考前 48 小时清单",
+              "description": "",
+              "duration": 20
+            },
+            {
+              "order": 3,
+              "type": "CONCEPT",
+              "title": "120 分钟怎么分配 + 三步排除法",
+              "description": "",
+              "duration": 20
+            },
+            {
+              "order": 4,
+              "type": "CONCEPT",
+              "title": "没过怎么办：14 天等待期精准补漏",
+              "description": "",
+              "duration": 15
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
