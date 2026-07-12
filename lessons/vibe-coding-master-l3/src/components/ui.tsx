@@ -90,9 +90,10 @@ export function Slide({ bg = colors.warmBg, children, style }: { bg?: string; ch
 export function Inner({ children, center, split, style }: { children: ReactNode; center?: boolean; split?: boolean; style?: CSSProperties }) {
 	return (
 		<div style={{
-			width: '90%', maxWidth: 1400, height: '85%', display: 'flex', gap: 48, padding: 40,
-			...(center ? { flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center' } : {}),
-			...(split ? { alignItems: 'center' } : {}),
+			// 默认竖排（内容 slide 自管 margin）；split 才切回横排 2 列
+			width: '90%', maxWidth: 1400, height: '85%', display: 'flex', flexDirection: 'column', gap: 0, padding: 40,
+			...(center ? { justifyContent: 'center', alignItems: 'center', textAlign: 'center' } : {}),
+			...(split ? { flexDirection: 'row', gap: 48, alignItems: 'center' } : {}),
 			...style,
 		}}>
 			{children}
@@ -120,7 +121,7 @@ export function Highlight({ children, color: bg = colors.red }: { children: Reac
 export function Tag({ children, bg = colors.dark, color: c = colors.white }: { children: ReactNode; bg?: string; color?: string }) {
 	return (
 		<span style={{
-			display: 'inline-block', padding: '6px 16px', fontSize: 14, fontWeight: 700,
+			display: 'inline-block', alignSelf: 'flex-start', padding: '6px 16px', fontSize: 14, fontWeight: 700,
 			fontFamily: fonts.mono, border: `2px solid ${bg}`, background: bg, color: c,
 		}}>
 			{children}

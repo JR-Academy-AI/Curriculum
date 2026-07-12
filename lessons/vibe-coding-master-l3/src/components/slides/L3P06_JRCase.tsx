@@ -5,8 +5,8 @@ import { Slide, Inner, Title, Tag, colors, fonts, border, shadow, shadowSm } fro
 export default function L3P06_JRCase() {
 	return (
 		<Slide bg={colors.warmBg}>
-			<Inner>
-				<Tag bg={colors.purple}>真实案例 · 匠人学院</Tag>
+			<Inner style={{ flexDirection: 'column', gap: 0, justifyContent: 'center' }}>
+				<div><Tag bg={colors.purple}>真实案例 · 匠人学院</Tag></div>
 				<Title size="46px" style={{ marginTop: 14, marginBottom: 8, lineHeight: 1.15 }}>
 					一套 token 机制，管住<span style={{ background: colors.yellow, padding: '0 10px' }}>两种风格</span>
 				</Title>

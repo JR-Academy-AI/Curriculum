@@ -12,6 +12,8 @@ import L3P03 from './components/slides/L3P03_RootCause';
 import L3P04 from './components/slides/L3P04_TokenConcept';
 import L3P05 from './components/slides/L3P05_TokenCode';
 import L3P06 from './components/slides/L3P06_JRCase';
+import L3P06b from './components/slides/L3P06b_DesignStyles';
+import L3P06c from './components/slides/L3P06c_GetDesignSystem';
 import L3P07 from './components/slides/L3P07_NeoTokens';
 import L3P08 from './components/slides/L3P08_TokenPower';
 import L3P09 from './components/slides/L3P09_Constitution';
@@ -40,6 +42,8 @@ export default function App() {
 			<L3P04 />
 			<L3P05 />
 			<L3P06 />
+			<L3P06b />{/* 常见设计风格盘点 */}
+			<L3P06c />{/* 拿到设计系统的 3 条路 */}
 			<L3P07 />
 			<L3P08 />
 
