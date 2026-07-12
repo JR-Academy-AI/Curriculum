@@ -20,10 +20,12 @@ import L3P07 from './components/slides/L3P07_NeoTokens';
 import L3P08 from './components/slides/L3P08_TokenPower';
 import L3P08b from './components/slides/L3P08b_TokenTiers';
 import L3P08c from './components/slides/L3P08c_DarkMode';
+import L3P08d from './components/slides/L3P08d_BeyondWeb';
 import L3P09 from './components/slides/L3P09_Constitution';
 import L3P10 from './components/slides/L3P10_ConstitutionCode';
 import L3P11 from './components/slides/L3P11_FixLaw';
 import L3P11b from './components/slides/L3P11b_DesignLint';
+import L3P11c from './components/slides/L3P11c_ContextEngineering';
 import L3P12 from './components/slides/L3P12_Lab1';
 import L3P13 from './components/slides/L3P13_Lab2';
 import L3P14 from './components/slides/L3P14_Lab3';
@@ -55,12 +57,14 @@ export default function App() {
 			<L3P08 />
 			<L3P08b />{/* Token 三层架构 */}
 			<L3P08c />{/* 暗色模式 = 换 token */}
+			<L3P08d />{/* 除了网站还能做什么·全渠道 */}
 
 			{/* How：设计宪法 */}
 			<L3P09 />
 			<L3P10 />
 			<L3P11 />
 			<L3P11b />{/* AI design lint 一致性审计 */}
+			<L3P11c />{/* 设计系统 = design agent 的 Context Engineering */}
 
 			{/* Workshop：四个 Lab */}
 			<L3P12 />
