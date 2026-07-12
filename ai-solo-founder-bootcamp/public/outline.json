@@ -7,7 +7,7 @@
   "level": "高级",
   "type": "training",
   "targetAudience": "澳洲华人专业人士（35-50 岁、150-250k+ 工资、有 5-15 年职业积累）—— senior 程序员、PM、设计师、咨询、律师、会计、医生、小公司老板/1-5 人团队创始人、准备申请 YC/Antler/Startmate 的 founder。想用 AI 做一人公司收第一笔钱、拿澳洲 Grant 退税、建立第二条收入腿、把现有业务 AI 化、或为 accelerator 申请攒 traction。",
-  "totalLessons": 60,
+  "totalLessons": 61,
   "totalSteps": 182,
   "liveClasses": 36,
   "estimatedHours": 92,
@@ -1252,6 +1252,44 @@
               "title": "视觉产线收口：30 分钟出全套",
               "description": "把 L20 内容工厂 + L20a 视频 + L20b 海报串成一条视觉 / 内容产线，演示一次 launch 怎么 30 分钟出全套。学员对照清单确认自己的产线缺哪一环。",
               "duration": 10
+            }
+          ]
+        },
+        {
+          "code": "L20c",
+          "title": "[Live] AI 漫剧 / 短剧：用 AI 做连续动画短剧获客（与真人短视频互补）",
+          "description": "<h3>🎯 漫剧 / AI 短剧 — 2026 涨粉最快的内容形态，一个人也能做</h3><p>真人短视频要出镜、要拍摄；<strong>漫剧（连续动画短剧）不用露脸、可批量、强留存</strong> —— 抖音 / 快手 / 番茄 / 小红书 / YouTube 的漫剧赛道 2025 起爆发，单账号靠一个 IP 连续更新就能涨粉变现。OPC 学员用它做产品科普剧、创始人故事剧、行业痛点剧，一条主线拆几十集，比单条 hook 视频留存高得多。</p><p><strong>AI 漫剧全流程工具栈（2026）</strong>：①剧本 / 分镜 — Claude / GPT 写连续剧本 + 分镜脚本；②角色一致性设定图 — Nano Banana / Midjourney v7 出角色三视图 + 即梦（Dreamina）锁定角色；③图生动画 — Vidu（动漫 / 角色一致性最强）+ Kling 2.0 + Pixverse + 海螺 Hailuo，把设定图变成会动的分镜；④配音 / 配乐 — ElevenLabs 多角色配音 + Suno BGM；⑤成片 — CapCut 拼接 + 字幕 + 竖屏 9:16。全程无需绘画 / 剪辑基础。</p><p><strong>现场产出</strong>：①1 集 60-90s 漫剧样片（含 2-3 个一致角色 + 配音 + 字幕）；②一套可连续更新的角色设定 + 3 集剧本大纲；③平台分账 / 引流双轨规划（番茄漫剧分账 vs 导流到自己产品）。<strong>L20a 真人短视频 + L20c 漫剧短剧</strong>互补 = 露脸 / 不露脸两套获客内容线全覆盖。</p>",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 120,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "漫剧 / 短剧 vs 真人短视频：选型 + 平台分账逻辑",
+              "description": "讲清漫剧（连续动画短剧）跟真人短视频的差别：不用出镜、可批量、留存高、适合连续 IP。梳理抖音 / 快手 / 番茄 / 小红书 / YouTube 各平台的漫剧分账与引流规则，给一张『你的产品适合做哪种剧（科普剧 / 创始人故事剧 / 痛点剧）』决策表。",
+              "duration": 20
+            },
+            {
+              "order": 2,
+              "type": "CONCEPT",
+              "title": "角色一致性 — AI 漫剧最难的坎怎么过",
+              "description": "漫剧最容易翻车的是『同一个角色每集长得不一样』。演示用 Nano Banana / Midjourney v7 出角色三视图设定，用即梦（Dreamina）锁定角色，再喂给 Vidu / Kling 保持跨镜头一致。给一套可复用的角色设定 prompt 模板。",
+              "duration": 25
+            },
+            {
+              "order": 3,
+              "type": "LIVE",
+              "title": "一集 60-90s 漫剧全流程现场演示",
+              "description": "现场跑『Claude 写剧本 + 分镜 → 设定图锁角色 → Vidu / Kling 图生动画 → ElevenLabs 多角色配音 + Suno BGM → CapCut 拼接 + 字幕 + 9:16 竖屏』，产出一集完整漫剧样片。",
+              "duration": 40
+            },
+            {
+              "order": 4,
+              "type": "SCENARIO",
+              "title": "学员产 1 集样片 + 3 集大纲 + 分账/引流规划",
+              "description": "每个学员为自己产品定一个漫剧 IP，现场出 1 集 60-90s 样片 + 3 集剧本大纲，并定好走番茄漫剧分账还是导流到自己产品的双轨规划。和 L20a 真人短视频拼成露脸 / 不露脸两条获客内容线。",
+              "duration": 35
             }
           ]
         },
