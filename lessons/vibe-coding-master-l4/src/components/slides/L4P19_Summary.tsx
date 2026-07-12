@@ -57,7 +57,7 @@ export default function L4P19_Summary() {
 							))}
 						</div>
 						<div style={{ marginTop: 18, paddingTop: 14, borderTop: '2px dashed #ddd', fontSize: 14.5, color: '#888', fontFamily: fonts.mono }}>
-							第五节 · 让产品在 Vercel 上动起来：用 api/ Functions 接后端（登录 · 存数据）
+							第五节 · Skills：把你反复对 Agent 说的套路，固化成一句话就能调用的能力
 						</div>
 					</motion.div>
 				</Half>
