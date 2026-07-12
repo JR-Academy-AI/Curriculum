@@ -72,7 +72,7 @@
 
 - **Partner 身份**：匠人在 CPN 目前是 **Registered 级**（on-ramp，不算正式 partner）。对外**禁止**自称"官方 Claude Partner"、禁止使用 Partner badge / brand assets。✅ 允许："匠人已注册加入 Claude Partner Network""通过 CPN 合规通道为学员开通报名资格"。升 Select 拿到 badge 后话术方可升级。
 - **绝不**承诺"保过/稳过/必过/包通过"。四份考纲自己就写着 "**Anthropic does not guarantee that any particular resource ensures a passing result**"——这句话是我们这条红线的官方背书，也可以在诚实营销时引用。
-- **官方样题不可复用**：四份考纲里的样题（原文或翻译）**禁止**放进我们的模拟考，**禁止**照抄题干情境、选项措辞、干扰项设计。只可当难度与命题风格的校准样本。
+- **官方样题口径（2026-07-11 Lightman 改判，2026-07-12 同步至此）**：官方考纲样题**按 346 门 dump 的同等方式原文入库**当题库用（考证匠既有惯例）。执行约定：入库样题 `source` 字段一律标 `official-exam-guide-sample`（与原创题 `jr-original` 区分，便于日后一键审计/清理）。⚠️ 风险已向 Lightman 完整陈述并被明确覆盖（Anthropic 版权材料 + NDA + 正在申请升级的 partner 关系），决策记录与理由链见 `docs/prd/CLAUDE_CERT_C_SIDE_PRD.md` §5.4（以该 PRD 为准）。**仍然禁止**：把样题原文放进对外免费展示的营销物料。
 - **事实 vs 表达**：数字、权重、政策属于事实，不受版权保护，可自由使用。task statement 原文、场景描述、题干属于表达，受保护，**必须用我们自己的话重写**。
 - **认证归属个人**：Anthropic 原话 "Certifications belong to individual people, not firms"。同一来源确认 "more than 10,000 consultants have earned a Claude certification"。但 **Services Partner Directory 收录的是公司（firms）不是个人**——不可写成"持证即可进入 Directory 被企业买家找到"。
 - **禁止模版化 AI 味文案**（"在当今快速发展的""深入探讨""无论你是初学者还是"）。写人话。
