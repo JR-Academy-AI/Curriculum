@@ -16,7 +16,7 @@ export default function L3P13_Lab2() {
 						style={{ flex: 1.2, background: colors.white, border, boxShadow: shadow, padding: '24px 28px' }}>
 						<div style={{ fontWeight: 800, fontSize: 21, marginBottom: 14 }}>任务</div>
 						<ol style={{ fontSize: 19, lineHeight: 1.9, paddingLeft: 24, margin: 0 }}>
-							<li>在 <code style={{ fontFamily: fonts.mono, background: '#eee', padding: '1px 6px' }}>CLAUDE.md</code>（或 .cursorrules）写 <b>5 条设计铁律</b></li>
+							<li>在 <code style={{ fontFamily: fonts.mono, background: '#eee', padding: '1px 6px' }}>CLAUDE.md</code>（或 .claude/rules/）写 <b>5 条设计铁律</b></li>
 							<li>再写 <b>2 条「立即打回」红线</b></li>
 							<li>每条都要指向 tokens.css 里的具体变量，不写「要好看」这种空话</li>
 						</ol>

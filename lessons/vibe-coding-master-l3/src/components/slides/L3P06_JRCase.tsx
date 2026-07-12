@@ -41,11 +41,17 @@ export default function L3P06_JRCase() {
 						<div style={{ marginTop: 16, display: 'inline-block', background: colors.dark, color: colors.white, border: `2px solid ${colors.black}`, boxShadow: shadowSm, padding: '8px 24px', fontWeight: 700, fontSize: 15 }}>立即报名</div>
 					</motion.div>
 				</div>
-				<motion.p
+				<motion.div
 					initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}
-					style={{ marginTop: 20, fontSize: 18, fontWeight: 600, color: colors.dark }}>
-					关键洞察：两种风格都能被<span style={{ background: colors.yellow, padding: '0 6px' }}>一组变量完整描述</span> —— 用错场景（官网上黑边硬阴影）code review 直接打回。
-				</motion.p>
+					style={{ marginTop: 18, display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
+					<p style={{ fontSize: 17, fontWeight: 600, color: colors.dark, margin: 0, flex: 1, minWidth: 340 }}>
+						关键洞察：两种风格都能被<span style={{ background: colors.yellow, padding: '0 6px' }}>一组变量完整描述</span> —— 用错场景（官网上黑边硬阴影）code review 直接打回。
+					</p>
+					<a href="https://jr-academy-ai.github.io/unimate-ai/" target="_blank" rel="noopener"
+						style={{ flexShrink: 0, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8, background: colors.dark, color: colors.white, border, boxShadow: shadow, padding: '11px 18px', fontSize: 15, fontWeight: 800 }}>
+						▶ 打开真实站点 UniMate <span style={{ fontFamily: fonts.mono, fontSize: 12, color: colors.yellow }}>整站统一 = 一套 --um-*</span>
+					</a>
+				</motion.div>
 			</Inner>
 		</Slide>
 	);

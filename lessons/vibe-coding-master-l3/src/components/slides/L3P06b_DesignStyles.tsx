@@ -206,20 +206,20 @@ export default function L3P06b_DesignStyles() {
 				</div>
 
 				<div style={{ display: 'flex', gap: 20, flex: 1, minHeight: 0 }}>
-					{/* 左：风格列表 */}
-					<div style={{ width: 250, flexShrink: 0, display: 'grid', gridTemplateColumns: '1fr', gridAutoRows: 'min-content', gap: 6, alignContent: 'start' }}>
+					{/* 左：风格列表（19 种，压紧到一屏，SlideEngine 滚轮翻页所以不靠滚动） */}
+					<div style={{ width: 268, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 4 }}>
 						{STYLES.map((s, i) => {
 							const on = i === sel;
 							return (
 								<div key={s.name} onClick={() => setSel(i)}
 									style={{
-										cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 9,
+										cursor: 'pointer', display: 'flex', alignItems: 'baseline', gap: 8,
 										background: on ? colors.dark : '#fff', color: on ? '#fff' : '#111',
-										border: `2px solid ${colors.black}`, boxShadow: on ? '3px 3px 0 #000' : 'none',
-										padding: '7px 11px', transform: on ? 'translate(-1px,-1px)' : 'none',
+										border: `2px solid ${colors.black}`, boxShadow: on ? '2px 2px 0 #000' : 'none',
+										padding: '3px 10px', transform: on ? 'translateX(-1px)' : 'none', lineHeight: 1.3,
 									}}>
-									<span style={{ fontSize: 13.5, fontWeight: 900 }}>{s.name}</span>
-									<span style={{ fontFamily: fonts.mono, fontSize: 9.5, opacity: on ? 0.7 : 0.45, marginLeft: 'auto' }}>{s.en}</span>
+									<span style={{ fontSize: 12.5, fontWeight: 900 }}>{s.name}</span>
+									<span style={{ fontFamily: fonts.mono, fontSize: 9, opacity: on ? 0.7 : 0.4, marginLeft: 'auto' }}>{s.en}</span>
 								</div>
 							);
 						})}

@@ -16,7 +16,7 @@ export default function L3P09_Constitution() {
 						style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 22, marginTop: 40 }}>
 						{[
 							{ t: 'tokens.css', d: '变量本体', bg: colors.blue },
-							{ t: '设计宪法', d: 'CLAUDE.md / .cursorrules 里的规则', bg: colors.yellow },
+							{ t: '设计宪法', d: 'CLAUDE.md / .claude/rules/ 里的规则', bg: colors.yellow },
 							{ t: 'AI 生成 UI', d: '每次都引 token', bg: colors.green },
 						].map((s, i) => (
 							<div key={s.t} style={{ display: 'flex', alignItems: 'center', gap: 22 }}>

@@ -13,7 +13,7 @@ export default function L3P10_ConstitutionCode() {
 							5 条铁律<br />+ 立即打回红线
 						</Title>
 						<p style={{ fontSize: 19, color: '#444', marginTop: 18, lineHeight: 1.65 }}>
-							放进项目根目录的 <code style={{ fontFamily: fonts.mono, background: '#eee', padding: '1px 8px' }}>CLAUDE.md</code> 或 <code style={{ fontFamily: fonts.mono, background: '#eee', padding: '1px 8px' }}>.cursorrules</code>。
+							放进项目根目录的 <code style={{ fontFamily: fonts.mono, background: '#eee', padding: '1px 8px' }}>CLAUDE.md</code> 或 <code style={{ fontFamily: fonts.mono, background: '#eee', padding: '1px 8px' }}>.claude/rules/</code>。
 						</p>
 						<div style={{ marginTop: 16, background: colors.dark, color: colors.white, border, padding: '13px 18px', fontSize: 16.5, lineHeight: 1.6 }}>
 							说「做个价格卡」，AI 产出自动带黑边硬阴影、用对字体 —— 这就是给 AI 建 <b style={{ color: colors.yellow }}>SoT</b>：设计也要有唯一真相源。
