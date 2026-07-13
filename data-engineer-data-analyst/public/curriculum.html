@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;900&family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans','Noto Sans SC',-apple-system,BlinkMacSystemFont,sans-serif; background:#faf9f5; color:#10162f; line-height:1.6; padding:28px 24px 80px; max-width:1180px; margin:0 auto; }
+  h1,h2,h3 { font-family:'Bricolage Grotesque','Noto Sans SC',sans-serif; line-height:1.15; }
+  h1 { font-size:clamp(30px,5vw,52px); font-weight:900; letter-spacing:-0.5px; }
+  h2 { font-size:clamp(22px,2.8vw,32px); font-weight:900; margin:44px 0 16px; }
+  h3 { font-size:17px; font-weight:800; }
+  .mono { font-family:'Space Mono',monospace; }
+  .sub { font-size:clamp(15px,2vw,19px); color:#444; margin-top:10px; max-width:760px; }
+  .hero { border:3px solid #10162f; box-shadow:8px 8px 0 #1565c0; background:#fff; padding:30px 32px; margin-bottom:8px; }
+  .badges { display:flex; gap:8px; flex-wrap:wrap; margin-top:16px; }
+  .badge { font-family:'Space Mono',monospace; font-size:12px; font-weight:700; padding:6px 12px; border:2px solid #10162f; background:#1565c0; color:#fff; }
+  .badge.ghost { background:#fff; color:#10162f; }
+  .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(110px,1fr)); gap:10px; margin:20px 0; }
+  .stat { background:#fff; border:2px solid #10162f; box-shadow:3px 3px 0 #10162f; padding:12px 14px; }
+  .stat .n { font-size:30px; font-weight:900; font-family:'Space Mono',monospace; line-height:1; color:#1565c0; }
+  .stat .l { font-size:11px; color:#666; margin-top:5px; font-family:'Space Mono',monospace; letter-spacing:.5px; }
+  .sp-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:14px; margin:18px 0; }
+  .sp { background:#fff; border:2px solid #10162f; box-shadow:5px 5px 0 #10162f; padding:16px 18px; display:flex; gap:14px; transition:transform .15s,box-shadow .15s; }
+  .sp:hover { transform:translate(-2px,-2px); box-shadow:7px 7px 0 #1565c0; }
+  .sp-ico { font-size:28px; line-height:1; }
+  .sp h3 { margin-bottom:5px; }
+  .sp p { font-size:13px; color:#444; }
+  .teacher { background:#10162f; color:#fff; border:3px solid #10162f; box-shadow:8px 8px 0 #1565c0; padding:24px 28px; display:flex; gap:22px; align-items:flex-start; flex-wrap:wrap; }
+  .teacher .avatar { width:70px; height:70px; border-radius:50%; background:#1565c0; color:#fff; font-size:34px; font-weight:900; display:flex; align-items:center; justify-content:center; font-family:'Bricolage Grotesque',sans-serif; flex-shrink:0; }
+  .teacher h3 { color:#fff; font-size:22px; }
+  .teacher .role { font-family:'Space Mono',monospace; font-size:12px; color:#1565c0; font-weight:700; margin:4px 0 10px; letter-spacing:.5px; }
+  .teacher p { font-size:14px; color:#e5e7eb; max-width:640px; }
+  .pipe { background:#fff; border:2px solid #10162f; box-shadow:6px 6px 0 #10162f; padding:20px 22px; margin:16px 0; font-family:'Space Mono',monospace; font-size:13px; line-height:2; }
+  .pipe b { background:#1565c0; color:#fff; padding:2px 7px; }
+  .phase-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin:18px 0; }
+  .phase-card { background:#fff; border:2px solid #10162f; box-shadow:5px 5px 0 #10162f; padding:15px 17px; text-decoration:none; color:#10162f; transition:transform .15s,box-shadow .15s; display:block; }
+  .phase-card:hover { transform:translate(-2px,-2px); box-shadow:7px 7px 0 #10162f; }
+  .phase-card .label { font-family:'Space Mono',monospace; font-size:11px; font-weight:800; letter-spacing:1px; }
+  .phase-card .name { font-size:15px; font-weight:800; margin:6px 0 8px; line-height:1.3; }
+  .phase-card .summary { font-size:11px; color:#666; font-family:'Space Mono',monospace; }
+  .card { background:#fff; border:2px solid #10162f; box-shadow:6px 6px 0 #10162f; margin-bottom:16px; }
+  .lesson-row { padding:11px 14px; border-bottom:1px solid #eee; display:grid; grid-template-columns:52px 92px 1fr 52px; gap:12px; align-items:start; }
+  .lesson-row:last-child { border-bottom:0; }
+  .lesson-row .code { font-family:'Space Mono',monospace; font-weight:700; font-size:12px; }
+  .lesson-row .title { font-weight:700; font-size:13px; }
+  .lesson-row .meta { font-size:11px; color:#666; margin-top:3px; }
+  .lesson-row .dur { font-family:'Space Mono',monospace; font-size:11px; color:#888; text-align:right; }
+  .type-pill { display:inline-block; padding:2px 7px; font-size:10px; font-weight:700; border-radius:999px; font-family:'Space Mono',monospace; white-space:nowrap; }
+  .t-Lesson { background:#fecaca; }
+  .t-Video { background:#bfdbfe; }
+  .t-Quest { background:#bbf7d0; }
+  .pblock { scroll-margin-top:20px; margin-bottom:22px; }
+  .pblock h3 { margin:20px 0 12px; font-size:18px; }
+  .cta { background:#1565c0; color:#fff; border:3px solid #10162f; box-shadow:8px 8px 0 #10162f; padding:28px 32px; margin-top:40px; text-align:center; }
+  .cta h2 { color:#fff; margin:0 0 8px; }
+  .cta p { font-size:15px; opacity:.95; }
+  .footer { font-size:11px; color:#888; font-family:'Space Mono',monospace; margin-top:36px; padding-top:14px; border-top:1px dashed #ccc; }
+  @media (max-width:600px) { .lesson-row { grid-template-columns:46px 1fr; } .lesson-row .meta,.lesson-row .dur { grid-column:2; } .teacher { flex-direction:column; } }
+</style>
+<title>机器学习 &amp; 数据工程全栈项目班 — 课程总览</title></head>
+<body>
+
+<div class="hero">
+  <h1>机器学习 &amp; 数据工程全栈项目班</h1>
+  <div class="sub">10 周，视频自主学 + 一个资深数据工程师全程带你做完一条端到端数据管道，老师现场 AI Coding、你跟着做，产出能写进简历的真实项目。</div>
+  <div class="badges">
+    <span class="badge">⏱ 10 周</span>
+    <span class="badge ghost">📹 视频自主学 + 项目带练</span>
+    <span class="badge ghost">👤 一个老师带全程</span>
+    <span class="badge ghost">🎯 全程一个项目</span>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="n">10</div><div class="l">周</div></div>
+  <div class="stat"><div class="n">53</div><div class="l">节课</div></div>
+  <div class="stat"><div class="n">33</div><div class="l">录播视频</div></div>
+  <div class="stat"><div class="n">10</div><div class="l">次项目带练</div></div>
+  <div class="stat"><div class="n">1</div><div class="l">端到端项目</div></div>
+  <div class="stat"><div class="n">2-3h</div><div class="l">每周带练</div></div>
+</div>
+
+<h2>为什么选这门课</h2>
+<div class="sp-grid">
+<div class="sp"><div class="sp-ico">👤</div><div><h3>一个老师带全程</h3><p>AWS 现役 Data Engineer（Jevy）从入营带到结营，你 10 周只对一个人——不是 6 个老师轮流讲，谁都不对你的项目负责到底。</p></div></div>
+<div class="sp"><div class="sp-ico">⌨️</div><div><h3>老师现场 AI Coding 真敲</h3><p>带练不是讲 PPT。老师当场用 AI Coding 把项目这一层真的敲出来、跑通，你看到的是资深工程师真实的编码过程，然后跟着做进自己的项目。</p></div></div>
+<div class="sp"><div class="sp-ico">🎬</div><div><h3>报名即开营，视频全开</h3><p>所有知识点做成录播视频，报名当天全部开放，你按自己的节奏学，100+ 小时随时回看，不用追直播。</p></div></div>
+<div class="sp"><div class="sp-ico">🚀</div><div><h3>全程只做一个项目</h3><p>10 周就打磨一条端到端数据管道，每周长一层，结营时你交出的是一个能直接写进简历的完整作品，不是一堆笔记。</p></div></div>
+<div class="sp"><div class="sp-ico">🧱</div><div><h3>覆盖 Modern Data Stack 全栈</h3><p>Python/SQL → AWS 上云 → 数仓/dbt → Spark/Airflow → AI 应用 → 可视化，一条真实生产链路走完，不是零散知识点。</p></div></div>
+<div class="sp"><div class="sp-ico">🤝</div><div><h3>结营走 JR 内推</h3><p>作品集 + 简历定稿 + Mock 面试，结营直接进 JR 内推通道。</p></div></div>
+</div>
+
+<h2>你的带练老师</h2>
+<div class="teacher">
+  <div class="avatar">J</div>
+  <div>
+    <h3>Jevy</h3>
+    <div class="role">AWS Data Engineer · 全程带练老师</div>
+    <p>AWS Data Engineer，曾做过全栈开发、项目管理、数据分析 &amp; 数据工程等方向，目前就职于 AWS 大数据 Support ETL 组。精通基于业务的 Modern Data Stack 架构。</p>
+  </div>
+</div>
+
+<h2>10 周，你会亲手做出一条端到端数据管道</h2>
+<div class="pipe">
+  数据源(API/文件) → <b>Extract 抽取</b>(Python ETL) → 落库(SQL) → <b>上云</b>(Docker/S3/Lambda) →
+  <b>数仓建模</b>(dbt) → <b>批处理</b>(Spark) → <b>编排</b>(Airflow)+CI/CD →
+  <b>AI 应用层</b>(RAG / text-to-SQL) → <b>可视化</b>(Tableau/Power BI) → 安全加固 → 部署交付
+</div>
+<p style="font-size:13px;color:#555;margin-bottom:8px">视频教你每一层，老师每周现场用 AI Coding 带你把这一层做进你自己的项目里。10 周攒成一个可写进简历的完整作品。</p>
+
+<h2>10 周节奏 · 10 个阶段</h2>
+<div class="phase-grid">
+<a href="#ph0" class="phase-card" style="--phase-color:#2e7d32"><div class="label" style="color:#2e7d32">Phase 0</div><div class="name">开营 &amp; 项目立项（W1）</div><div class="summary">4 视频 + 1 项目带练 + 立项里程碑</div></a><a href="#ph1" class="phase-card" style="--phase-color:#1565c0"><div class="label" style="color:#1565c0">Phase 1</div><div class="name">数据抽取层 Extract（W2）</div><div class="summary">6 视频 + 1 项目带练 + 抽取里程碑</div></a><a href="#ph2" class="phase-card" style="--phase-color:#6a1b9a"><div class="label" style="color:#6a1b9a">Phase 2</div><div class="name">上云 · 容器化 &amp; AWS 基础（W3）</div><div class="summary">3 视频 + 1 项目带练 + 上云基础里程碑</div></a><a href="#ph3" class="phase-card" style="--phase-color:#8e24aa"><div class="label" style="color:#8e24aa">Phase 3</div><div class="name">上云 · Serverless &amp; 云数据库（W4）</div><div class="summary">2 视频 + 1 项目带练 + Serverless 里程碑</div></a><a href="#ph4" class="phase-card" style="--phase-color:#00838f"><div class="label" style="color:#00838f">Phase 4</div><div class="name">数仓 &amp; 转换（W5）</div><div class="summary">3 视频 + 1 项目带练 + 数仓里程碑</div></a><a href="#ph5" class="phase-card" style="--phase-color:#ad1457"><div class="label" style="color:#ad1457">Phase 5</div><div class="name">大数据 · Spark 批处理（W6）</div><div class="summary">2 视频 + 1 项目带练 + 批处理里程碑</div></a><a href="#ph6" class="phase-card" style="--phase-color:#d81b60"><div class="label" style="color:#d81b60">Phase 6</div><div class="name">编排 &amp; CI/CD（W7）</div><div class="summary">2 视频 + 1 项目带练 + 自动化里程碑</div></a><a href="#ph7" class="phase-card" style="--phase-color:#e65100"><div class="label" style="color:#e65100">Phase 7</div><div class="name">数据应用层 · AI 应用（W8）</div><div class="summary">4 视频 + 1 项目带练 + AI 应用里程碑</div></a><a href="#ph8" class="phase-card" style="--phase-color:#455a64"><div class="label" style="color:#455a64">Phase 8</div><div class="name">加固 &amp; 交付（W9）</div><div class="summary">3 视频 + 1 项目带练 + 交付里程碑</div></a><a href="#ph9" class="phase-card" style="--phase-color:#c62828"><div class="label" style="color:#c62828">Phase 9</div><div class="name">结营 &amp; 求职（W10）</div><div class="summary">4 视频 + 结营 Demo + 作品集里程碑</div></a>
+</div>
+
+<h2>完整课程大纲</h2>
+<div class="pblock" id="ph0"><h3 style="border-left:6px solid #2e7d32;padding-left:12px">Phase 0 · 开营 &amp; 项目立项（W1）</h3><div class="card" style="padding:0"><div class="lesson-row"><div class="code">L01</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">大数据与数据工程全景</div><div class="meta">数据工程师到底在做什么？结构化 vs 非结构化数据、数据流水线全景，先建立整门课的地图。</div></div><div class="dur">45m</div></div><div class="lesson-row"><div class="code">L02</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">开发环境搭建：Linux 基础 + 命令行</div><div class="meta">装好项目要用的环境，掌握 Linux 常用命令与命令行操作。</div></div><div class="dur">60m</div></div><div class="lesson-row"><div class="code">L03</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">Git 版本控制基础</div><div class="meta">用 Git 管理你的项目代码：clone、commit、branch、push，团队协作的地基。</div></div><div class="dur">45m</div></div><div class="lesson-row"><div class="code">L04</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">数据工程项目怎么选题 &amp; 架构设计</div><div class="meta">怎么挑一个能写进简历的数据源，怎么画端到端架构图，为你自己的项目定方向。</div></div><div class="dur">45m</div></div><div class="lesson-row"><div class="code">L05</div><div><span class="type-pill t-Lesson">🔴 带练</span></div><div><div class="title">【项目带练·W1】开营 + 你的项目立项</div><div class="meta">老师现场用 AI Coding 带你确定数据源、画出端到端架构图、搭好开发环境；答疑：选题、环境、Git 卡点都能问。</div></div><div class="dur">150m</div></div><div class="lesson-row"><div class="code">L06</div><div><span class="type-pill t-Quest">🎯 里程碑</span></div><div><div class="title">【里程碑】提交项目立项书</div><div class="meta">产出：数据源 + 架构图 + 项目目标的立项书，作为全程唯一项目的起点。</div></div><div class="dur">120m</div></div></div></div><div class="pblock" id="ph1"><h3 style="border-left:6px solid #1565c0;padding-left:12px">Phase 1 · 数据抽取层 Extract（W2）</h3><div class="card" style="padding:0"><div class="lesson-row"><div class="code">L07</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">数据工程总览：ETL 与 ELT</div><div class="meta">ETL / ELT 的区别与取舍，一条数据管道从抽取到加载的完整链路。</div></div><div class="dur">45m</div></div><div class="lesson-row"><div class="code">L08</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">Python 文件操作与数据读写</div><div class="meta">用 Python 读写 CSV / JSON / 文本，处理各种格式的原始数据。</div></div><div class="dur">60m</div></div><div class="lesson-row"><div class="code">L09</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">API 数据抽取实战</div><div class="meta">从真实 API 拉数据：认证、分页、限流、错误重试，攒出项目的数据源。</div></div><div class="dur">60m</div></div><div class="lesson-row"><div class="code">L10</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">ETL 管道设计与编码最佳实践</div><div class="meta">怎么把抽取逻辑写成可维护、可复用的 ETL 管道，工程化的编码规范。</div></div><div class="dur">60m</div></div><div class="lesson-row"><div class="code">L11</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">SQL 基础：查询、聚合、Join</div><div class="meta">SELECT / WHERE / GROUP BY / JOIN，把抽取来的数据落进数据库并查询。</div></div><div class="dur">60m</div></div><div class="lesson-row"><div class="code">L12</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">SQL 进阶：窗口函数与查询优化</div><div class="meta">窗口函数、子查询、索引与执行计划，写出跑得快的 SQL。</div></div><div class="dur">60m</div></div><div class="lesson-row"><div class="code">L13</div><div><span class="type-pill t-Lesson">🔴 带练</span></div><div><div class="title">【项目带练·W2】带你搭 Extract 层</div><div class="meta">老师现场用 AI Coding 把项目的抽取层敲出来：从数据源抽取 → 清洗 → 落库；答疑 Python / API / SQL 任何卡点。</div></div><div class="dur">150m</div></div><div class="lesson-row"><div class="code">L14</div><div><span class="type-pill t-Quest">🎯 里程碑</span></div><div><div class="title">【里程碑】项目接入真实数据源</div><div class="meta">产出：项目的抽取管道跑通，真实数据源的数据已落库。</div></div><div class="dur">120m</div></div></div></div><div class="pblock" id="ph2"><h3 style="border-left:6px solid #6a1b9a;padding-left:12px">Phase 2 · 上云 · 容器化 &amp; AWS 基础（W3）</h3><div class="card" style="padding:0"><div class="lesson-row"><div class="code">L15</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">云计算与数据工程：为什么上云</div><div class="meta">本地跑通之后为什么要上云，云上数据工程的价值与成本。</div></div><div class="dur">45m</div></div><div class="lesson-row"><div class="code">L16</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">AWS 核心：IAM / S3 / EC2 / VPC</div><div class="meta">数据工程最常用的 AWS 服务：权限、对象存储、计算、网络。</div></div><div class="dur">90m</div></div><div class="lesson-row"><div class="code">L17</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">Docker 容器化基础</div><div class="meta">把你的管道打包成容器，环境一致、随处可跑。</div></div><div class="dur">60m</div></div><div class="lesson-row"><div class="code">L18</div><div><span class="type-pill t-Lesson">🔴 带练</span></div><div><div class="title">【项目带练·W3】带你容器化 + 配好 AWS 环境</div><div class="meta">老师现场用 AI Coding 把项目管道容器化、配好 IAM/S3/VPC；答疑 AWS 与 Docker 卡点。</div></div><div class="dur">150m</div></div><div class="lesson-row"><div class="code">L19</div><div><span class="type-pill t-Quest">🎯 里程碑</span></div><div><div class="title">【里程碑】项目容器化 + AWS 环境就绪</div><div class="meta">产出：项目管道打包成 Docker 容器，AWS 账号/权限/S3 存储桶配置完成。</div></div><div class="dur">120m</div></div></div></div><div class="pblock" id="ph3"><h3 style="border-left:6px solid #8e24aa;padding-left:12px">Phase 3 · 上云 · Serverless &amp; 云数据库（W4）</h3><div class="card" style="padding:0"><div class="lesson-row"><div class="code">L20</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">Serverless：Lambda 与事件驱动</div><div class="meta">用 Lambda 把抽取管道做成 serverless，按事件触发、按量付费。</div></div><div class="dur">60m</div></div><div class="lesson-row"><div class="code">L21</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">AWS 上的数据库（RDS / DynamoDB）</div><div class="meta">在云上托管关系型与 NoSQL 数据库，替代本地数据库。</div></div><div class="dur">45m</div></div><div class="lesson-row"><div class="code">L22</div><div><span class="type-pill t-Lesson">🔴 带练</span></div><div><div class="title">【项目带练·W4】带你把管道 Serverless 化部署</div><div class="meta">老师现场用 AI Coding 把抽取管道搬上云：Lambda 跑抽取、数据落 S3 与云数据库；答疑部署卡点。</div></div><div class="dur">150m</div></div><div class="lesson-row"><div class="code">L23</div><div><span class="type-pill t-Quest">🎯 里程碑</span></div><div><div class="title">【里程碑】项目管道上云跑通</div><div class="meta">产出：项目管道在 AWS 上 serverless 跑起来，S3 + Lambda + 云数据库抽取链路打通。</div></div><div class="dur">120m</div></div></div></div><div class="pblock" id="ph4"><h3 style="border-left:6px solid #00838f;padding-left:12px">Phase 4 · 数仓 &amp; 转换（W5）</h3><div class="card" style="padding:0"><div class="lesson-row"><div class="code">L24</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">数据建模：数据仓库 vs 数据湖</div><div class="meta">数仓和数据湖分别解决什么问题，你的项目该用哪个。</div></div><div class="dur">45m</div></div><div class="lesson-row"><div class="code">L25</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">维度建模与数仓设计</div><div class="meta">事实表 / 维度表、星型模型，把原始数据组织成可分析的结构。</div></div><div class="dur">60m</div></div><div class="lesson-row"><div class="code">L26</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">dbt：数据转换与工程化</div><div class="meta">用 dbt 把转换逻辑变成版本化、可测试的工程，数仓的现代做法。</div></div><div class="dur">60m</div></div><div class="lesson-row"><div class="code">L27</div><div><span class="type-pill t-Lesson">🔴 带练</span></div><div><div class="title">【项目带练·W5】带你给项目建数仓</div><div class="meta">老师现场用 AI Coding 为项目设计数仓模型、用 dbt 写转换层；答疑建模与 dbt 卡点。</div></div><div class="dur">150m</div></div><div class="lesson-row"><div class="code">L28</div><div><span class="type-pill t-Quest">🎯 里程碑</span></div><div><div class="title">【里程碑】项目数仓建模完成</div><div class="meta">产出：项目的数仓模型建好，dbt 转换层跑通，数据可供分析。</div></div><div class="dur">120m</div></div></div></div><div class="pblock" id="ph5"><h3 style="border-left:6px solid #ad1457;padding-left:12px">Phase 5 · 大数据 · Spark 批处理（W6）</h3><div class="card" style="padding:0"><div class="lesson-row"><div class="code">L29</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">大数据处理：HDFS 与分布式存储</div><div class="meta">数据量大了怎么办，分布式存储的基本原理。</div></div><div class="dur">45m</div></div><div class="lesson-row"><div class="code">L30</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">Spark SQL 批处理实战</div><div class="meta">用 Spark 处理大规模数据，批处理管道的写法。</div></div><div class="dur">60m</div></div><div class="lesson-row"><div class="code">L31</div><div><span class="type-pill t-Lesson">🔴 带练</span></div><div><div class="title">【项目带练·W6】带你接 Spark 批处理</div><div class="meta">老师现场用 AI Coding 给项目加一层 Spark 批处理，处理更大规模的数据；答疑大数据卡点。</div></div><div class="dur">150m</div></div><div class="lesson-row"><div class="code">L32</div><div><span class="type-pill t-Quest">🎯 里程碑</span></div><div><div class="title">【里程碑】项目 Spark 批处理跑通</div><div class="meta">产出：项目接入 Spark 批处理层，能处理规模化数据。</div></div><div class="dur">120m</div></div></div></div><div class="pblock" id="ph6"><h3 style="border-left:6px solid #d81b60;padding-left:12px">Phase 6 · 编排 &amp; CI/CD（W7）</h3><div class="card" style="padding:0"><div class="lesson-row"><div class="code">L33</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">Airflow：数据管道编排与调度</div><div class="meta">用 Airflow 把多步管道串成 DAG，定时自动跑。</div></div><div class="dur">60m</div></div><div class="lesson-row"><div class="code">L34</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">CI/CD for 数据工程</div><div class="meta">用 GitHub Actions 给数据管道做自动化测试与部署。</div></div><div class="dur">60m</div></div><div class="lesson-row"><div class="code">L35</div><div><span class="type-pill t-Lesson">🔴 带练</span></div><div><div class="title">【项目带练·W7】带你接 Airflow 编排 + CI/CD</div><div class="meta">老师现场用 AI Coding 把项目多步管道用 Airflow 串成 DAG、配 CI/CD 自动化；答疑编排卡点。</div></div><div class="dur">150m</div></div><div class="lesson-row"><div class="code">L36</div><div><span class="type-pill t-Quest">🎯 里程碑</span></div><div><div class="title">【里程碑】项目自动化编排上线</div><div class="meta">产出：项目的 Airflow 编排 + CI/CD 全部跑通，管道能定时自动运行。</div></div><div class="dur">120m</div></div></div></div><div class="pblock" id="ph7"><h3 style="border-left:6px solid #e65100;padding-left:12px">Phase 7 · 数据应用层 · AI 应用（W8）</h3><div class="card" style="padding:0"><div class="lesson-row"><div class="code">L37</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">AI 数据工程：Embedding &amp; 向量数据库</div><div class="meta">把数据变成向量、存进向量库，AI 应用的数据地基。</div></div><div class="dur">60m</div></div><div class="lesson-row"><div class="code">L38</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">LLM 应用：RAG 推荐 / text-to-SQL</div><div class="meta">用 LLM 做检索增强推荐、自然语言查数据库，数据 × AI 的实战——本周项目默认接这一层。</div></div><div class="dur">60m</div></div><div class="lesson-row"><div class="code">L39</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">机器学习基础（选修）：监督 / 无监督学习</div><div class="meta">选修：ML 核心概念与常见算法，想额外给项目接 ML 模型的同学自学。</div></div><div class="dur">60m</div></div><div class="lesson-row"><div class="code">L40</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">模型评估、调优与部署（选修 · SageMaker）</div><div class="meta">选修：模型评估、调参、部署成服务，想走 ML 方向的同学自学。</div></div><div class="dur">60m</div></div><div class="lesson-row"><div class="code">L41</div><div><span class="type-pill t-Lesson">🔴 带练</span></div><div><div class="title">【项目带练·W8】带你给项目接 AI 应用层</div><div class="meta">老师现场用 AI Coding 给项目接一个 AI 应用层（RAG 推荐 / text-to-SQL）；想额外做 ML 的同学也能现场问，但默认带 AI。</div></div><div class="dur">150m</div></div><div class="lesson-row"><div class="code">L42</div><div><span class="type-pill t-Quest">🎯 里程碑</span></div><div><div class="title">【里程碑】项目接入 AI 应用层</div><div class="meta">产出：项目在管道之上接了一个 AI 应用（RAG 推荐 或 text-to-SQL）。</div></div><div class="dur">120m</div></div></div></div><div class="pblock" id="ph8"><h3 style="border-left:6px solid #455a64;padding-left:12px">Phase 8 · 加固 &amp; 交付（W9）</h3><div class="card" style="padding:0"><div class="lesson-row"><div class="code">L43</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">数据安全与隐私：脱敏、权限、合规</div><div class="meta">生产级数据管道必须做的安全：数据脱敏、访问控制、合规要点。</div></div><div class="dur">45m</div></div><div class="lesson-row"><div class="code">L44</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">数据可视化：Tableau / Power BI</div><div class="meta">把项目产出的数据做成看板，让结果看得见、讲得清。</div></div><div class="dur">60m</div></div><div class="lesson-row"><div class="code">L45</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">项目部署收尾与工程文档</div><div class="meta">把项目收尾成一个完整可交付的系统，写好 README 与架构文档。</div></div><div class="dur">45m</div></div><div class="lesson-row"><div class="code">L46</div><div><span class="type-pill t-Lesson">🔴 带练</span></div><div><div class="title">【项目带练·W9】带你做加固 + 可视化 + 收尾</div><div class="meta">老师现场用 AI Coding 给项目做安全加固、搭可视化看板、部署收尾；答疑交付相关卡点。</div></div><div class="dur">150m</div></div><div class="lesson-row"><div class="code">L47</div><div><span class="type-pill t-Quest">🎯 里程碑</span></div><div><div class="title">【里程碑】项目端到端完整跑通</div><div class="meta">产出：项目从抽取到应用到可视化全链路跑通，产出可视化看板，达到作品集标准。</div></div><div class="dur">150m</div></div></div></div><div class="pblock" id="ph9"><h3 style="border-left:6px solid #c62828;padding-left:12px">Phase 9 · 结营 &amp; 求职（W10）</h3><div class="card" style="padding:0"><div class="lesson-row"><div class="code">L48</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">敏捷项目管理：Scrum / SDLC</div><div class="meta">回看整个项目怎么按迭代推进，敏捷在真实数据项目里的用法。</div></div><div class="dur">45m</div></div><div class="lesson-row"><div class="code">L49</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">简历与 LinkedIn：把项目写成亮点</div><div class="meta">怎么把你做的这个端到端项目写成简历和 LinkedIn 上的硬亮点。</div></div><div class="dur">45m</div></div><div class="lesson-row"><div class="code">L50</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">数据工程 / 数据分析面试题精讲</div><div class="meta">高频面试题精讲：SQL、管道设计、系统设计、场景题。</div></div><div class="dur">60m</div></div><div class="lesson-row"><div class="code">L51</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">谈薪技巧与内推流程</div><div class="meta">拿到面试之后怎么谈薪、怎么走 JR 内推通道。</div></div><div class="dur">45m</div></div><div class="lesson-row"><div class="code">L52</div><div><span class="type-pill t-Lesson">🔴 带练</span></div><div><div class="title">【结营·W10】Demo Day：项目路演 + 老师验收</div><div class="meta">结营路演：你上台讲你的端到端数据项目，老师现场验收点评、给作品集改进建议。</div></div><div class="dur">150m</div></div><div class="lesson-row"><div class="code">L53</div><div><span class="type-pill t-Quest">🎯 里程碑</span></div><div><div class="title">【里程碑】完整项目作品集 + 简历定稿</div><div class="meta">产出：一个可写进简历的端到端数据工程项目 + 定稿简历，进入求职/内推。</div></div><div class="dur">120m</div></div></div></div>
+
+<div class="cta">
+  <h2>一个老师，10 周，带你做出一个真项目</h2>
+  <p>报名即开营 · 视频全开自主学 · 每周项目带练 · 结营走 JR 内推</p>
+</div>
+
+<div class="footer">JR Academy · Machine Learning &amp; Data Engineering Full Stack Bootcamp · 视频课 + 单一项目全程带练 · 带练老师 Jevy</div>
+
+</body>
+</html>

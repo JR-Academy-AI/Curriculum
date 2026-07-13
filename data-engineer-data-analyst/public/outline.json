@@ -1,0 +1,1335 @@
+{
+  "themeColor": "#1565c0",
+  "slug": "data-engineer-data-analyst",
+  "name": "机器学习 & 数据工程全栈项目班",
+  "name_en": "Machine Learning & Data Engineering Full Stack Bootcamp",
+  "description": "10 周，视频自主学 + 一个资深数据工程师全程带你做完一条端到端数据管道，老师现场 AI Coding、你跟着做，产出能写进简历的真实项目。",
+  "level": "中级",
+  "type": "training",
+  "targetAudience": "有 Python / SQL 基础，想转数据工程 / 数据分析的 IT、CS、数据方向学生与在职者",
+  "instructor": {
+    "name": "Jevy",
+    "title": "AWS Data Engineer · 全程带练老师",
+    "bio": "AWS Data Engineer，曾做过全栈开发、项目管理、数据分析 & 数据工程等方向，目前就职于 AWS 大数据 Support ETL 组。精通基于业务的 Modern Data Stack 架构。"
+  },
+  "totalLessons": 53,
+  "totalSteps": 96,
+  "liveClasses": 10,
+  "estimatedHours": 76,
+  "totalInteractiveLabs": 0,
+  "title_en": "Machine Learning & Data Engineering Full Stack Bootcamp",
+  "description_en": "10 weeks of self-paced video plus one senior data engineer live AI-coding you end-to-end through a single real data pipeline project you can put on your resume.",
+  "timeLength": "10 周（53 节课，视频自主学 + 每周 2-3 小时项目带练）",
+  "courseObjective": "10 周内独立做出一条端到端的数据工程管道（抽取 → 上云 → 数仓 → 批处理编排 → ML/AI 应用 → 可视化交付），并把它变成简历上的硬项目。",
+  "courseObjective_en": "Build one end-to-end data engineering pipeline in 10 weeks and turn it into a portfolio project.",
+  "suitable": "有 Python 和 SQL 基础、想系统掌握数据工程全栈并产出真实项目的人；纯零基础不适合。",
+  "suitable_en": "Learners with Python and SQL fundamentals who want to master the full data engineering stack with a real project. Not for absolute beginners.",
+  "cardDescription": "10 周视频 + 项目带练：一个老师现场 AI Coding 带你做完一条端到端数据管道，产出简历级作品。",
+  "promoDescription": "不再是听 6 个老师讲 100 小时的课。报名即开营——所有知识点录播全开放，你按自己节奏学；同时一个资深数据工程师每周现场用 AI Coding 带你把学到的东西一层层做进你自己的项目里。10 周后你交出的不是笔记，是一条真实跑通的端到端数据管道，直接写进简历、走内推。",
+  "prerequisiteknowledge": "需要 Python 基础和 SQL 基础。纯零基础不适合。",
+  "highlights": [
+    "全程一个老师带练：AWS 现役 Data Engineer（Jevy）现场 AI Coding，不只是讲",
+    "报名即开营：全部录播视频当天全开放，按自己节奏学",
+    "全程只做一个项目：一条端到端数据管道，10 周每周长一层",
+    "老师每周现场用 AI Coding 把项目这一层真敲出来，你跟着做",
+    "结营产出一个简历级作品集 + 走 JR 内推"
+  ],
+  "highlights_en": [
+    "All recorded videos open on day one, learn at your own pace",
+    "One end-to-end project for the whole 10 weeks, growing one layer per week",
+    "One senior data engineer live AI-codes with you every week — not just lecturing",
+    "Plug in an ML or AI application layer of your choice",
+    "Graduate with a resume-ready portfolio project and internal referral"
+  ],
+  "features": [
+    "视频复用现有 100+ 小时直播录播精剪，self-paced",
+    "每周 2-3 小时项目带练直播：老师现场 AI Coding + 答疑 Clinic",
+    "10 个项目里程碑，攒成一个完整作品",
+    "保留 cohort 批次制，维持节奏与同伴感"
+  ],
+  "program": {
+    "name": "机器学习 & 数据工程全栈项目班 改版第一期",
+    "programPhase": 1,
+    "cohortStatus": "RECRUITING"
+  },
+  "curriculumPages": {
+    "pages": [
+      "curriculum.html"
+    ],
+    "defaultPage": "curriculum.html"
+  },
+  "phases": [
+    {
+      "name": "Phase 0 · 开营 & 项目立项（W1）",
+      "color": "#2e7d32",
+      "summary": "4 视频 + 1 项目带练 + 立项里程碑",
+      "lessons": [
+        {
+          "code": "L01",
+          "title": "大数据与数据工程全景",
+          "description": "数据工程师到底在做什么？结构化 vs 非结构化数据、数据流水线全景，先建立整门课的地图。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 45,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "数据工程师到底在做什么？结构化 vs 非结构化数据、数据流水线全景，先建立整门课的地图。",
+              "duration": 45
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L02",
+          "title": "开发环境搭建：Linux 基础 + 命令行",
+          "description": "装好项目要用的环境，掌握 Linux 常用命令与命令行操作。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 60,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "装好项目要用的环境，掌握 Linux 常用命令与命令行操作。",
+              "duration": 60
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L03",
+          "title": "Git 版本控制基础",
+          "description": "用 Git 管理你的项目代码：clone、commit、branch、push，团队协作的地基。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 45,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "用 Git 管理你的项目代码：clone、commit、branch、push，团队协作的地基。",
+              "duration": 45
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L04",
+          "title": "数据工程项目怎么选题 & 架构设计",
+          "description": "怎么挑一个能写进简历的数据源，怎么画端到端架构图，为你自己的项目定方向。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 45,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "怎么挑一个能写进简历的数据源，怎么画端到端架构图，为你自己的项目定方向。",
+              "duration": 45
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L05",
+          "title": "【项目带练·W1】开营 + 你的项目立项",
+          "description": "老师现场用 AI Coding 带你确定数据源、画出端到端架构图、搭好开发环境；答疑：选题、环境、Git 卡点都能问。",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 150,
+          "steps": [
+            {
+              "order": 1,
+              "type": "LIVE",
+              "title": "项目带练（老师现场 AI Coding）",
+              "description": "老师现场用 AI Coding 带你确定数据源、画出端到端架构图、搭好开发环境；答疑：选题、环境、Git 卡点都能问。",
+              "duration": 105
+            },
+            {
+              "order": 2,
+              "type": "LIVE",
+              "title": "答疑 Clinic",
+              "description": "项目问题、知识点问题自由问，卡点当场解决。",
+              "duration": 45
+            }
+          ]
+        },
+        {
+          "code": "L06",
+          "title": "【里程碑】提交项目立项书",
+          "description": "产出：数据源 + 架构图 + 项目目标的立项书，作为全程唯一项目的起点。",
+          "type": "Assignment",
+          "isLive": false,
+          "duration": 120,
+          "steps": [
+            {
+              "order": 1,
+              "type": "PROJECT",
+              "title": "项目里程碑交付",
+              "description": "产出：数据源 + 架构图 + 项目目标的立项书，作为全程唯一项目的起点。",
+              "duration": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 1 · 数据抽取层 Extract（W2）",
+      "color": "#1565c0",
+      "summary": "6 视频 + 1 项目带练 + 抽取里程碑",
+      "lessons": [
+        {
+          "code": "L07",
+          "title": "数据工程总览：ETL 与 ELT",
+          "description": "ETL / ELT 的区别与取舍，一条数据管道从抽取到加载的完整链路。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 45,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "ETL / ELT 的区别与取舍，一条数据管道从抽取到加载的完整链路。",
+              "duration": 45
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L08",
+          "title": "Python 文件操作与数据读写",
+          "description": "用 Python 读写 CSV / JSON / 文本，处理各种格式的原始数据。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 60,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "用 Python 读写 CSV / JSON / 文本，处理各种格式的原始数据。",
+              "duration": 60
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L09",
+          "title": "API 数据抽取实战",
+          "description": "从真实 API 拉数据：认证、分页、限流、错误重试，攒出项目的数据源。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 60,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "从真实 API 拉数据：认证、分页、限流、错误重试，攒出项目的数据源。",
+              "duration": 60
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L10",
+          "title": "ETL 管道设计与编码最佳实践",
+          "description": "怎么把抽取逻辑写成可维护、可复用的 ETL 管道，工程化的编码规范。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 60,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "怎么把抽取逻辑写成可维护、可复用的 ETL 管道，工程化的编码规范。",
+              "duration": 60
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L11",
+          "title": "SQL 基础：查询、聚合、Join",
+          "description": "SELECT / WHERE / GROUP BY / JOIN，把抽取来的数据落进数据库并查询。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 60,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "SELECT / WHERE / GROUP BY / JOIN，把抽取来的数据落进数据库并查询。",
+              "duration": 60
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L12",
+          "title": "SQL 进阶：窗口函数与查询优化",
+          "description": "窗口函数、子查询、索引与执行计划，写出跑得快的 SQL。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 60,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "窗口函数、子查询、索引与执行计划，写出跑得快的 SQL。",
+              "duration": 60
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L13",
+          "title": "【项目带练·W2】带你搭 Extract 层",
+          "description": "老师现场用 AI Coding 把项目的抽取层敲出来：从数据源抽取 → 清洗 → 落库；答疑 Python / API / SQL 任何卡点。",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 150,
+          "steps": [
+            {
+              "order": 1,
+              "type": "LIVE",
+              "title": "项目带练（老师现场 AI Coding）",
+              "description": "老师现场用 AI Coding 把项目的抽取层敲出来：从数据源抽取 → 清洗 → 落库；答疑 Python / API / SQL 任何卡点。",
+              "duration": 105
+            },
+            {
+              "order": 2,
+              "type": "LIVE",
+              "title": "答疑 Clinic",
+              "description": "项目问题、知识点问题自由问，卡点当场解决。",
+              "duration": 45
+            }
+          ]
+        },
+        {
+          "code": "L14",
+          "title": "【里程碑】项目接入真实数据源",
+          "description": "产出：项目的抽取管道跑通，真实数据源的数据已落库。",
+          "type": "Assignment",
+          "isLive": false,
+          "duration": 120,
+          "steps": [
+            {
+              "order": 1,
+              "type": "PROJECT",
+              "title": "项目里程碑交付",
+              "description": "产出：项目的抽取管道跑通，真实数据源的数据已落库。",
+              "duration": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 2 · 上云 · 容器化 & AWS 基础（W3）",
+      "color": "#6a1b9a",
+      "summary": "3 视频 + 1 项目带练 + 上云基础里程碑",
+      "lessons": [
+        {
+          "code": "L15",
+          "title": "云计算与数据工程：为什么上云",
+          "description": "本地跑通之后为什么要上云，云上数据工程的价值与成本。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 45,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "本地跑通之后为什么要上云，云上数据工程的价值与成本。",
+              "duration": 45
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L16",
+          "title": "AWS 核心：IAM / S3 / EC2 / VPC",
+          "description": "数据工程最常用的 AWS 服务：权限、对象存储、计算、网络。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 90,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "数据工程最常用的 AWS 服务：权限、对象存储、计算、网络。",
+              "duration": 90
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L17",
+          "title": "Docker 容器化基础",
+          "description": "把你的管道打包成容器，环境一致、随处可跑。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 60,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "把你的管道打包成容器，环境一致、随处可跑。",
+              "duration": 60
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L18",
+          "title": "【项目带练·W3】带你容器化 + 配好 AWS 环境",
+          "description": "老师现场用 AI Coding 把项目管道容器化、配好 IAM/S3/VPC；答疑 AWS 与 Docker 卡点。",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 150,
+          "steps": [
+            {
+              "order": 1,
+              "type": "LIVE",
+              "title": "项目带练（老师现场 AI Coding）",
+              "description": "老师现场用 AI Coding 把项目管道容器化、配好 IAM/S3/VPC；答疑 AWS 与 Docker 卡点。",
+              "duration": 105
+            },
+            {
+              "order": 2,
+              "type": "LIVE",
+              "title": "答疑 Clinic",
+              "description": "项目问题、知识点问题自由问，卡点当场解决。",
+              "duration": 45
+            }
+          ]
+        },
+        {
+          "code": "L19",
+          "title": "【里程碑】项目容器化 + AWS 环境就绪",
+          "description": "产出：项目管道打包成 Docker 容器，AWS 账号/权限/S3 存储桶配置完成。",
+          "type": "Assignment",
+          "isLive": false,
+          "duration": 120,
+          "steps": [
+            {
+              "order": 1,
+              "type": "PROJECT",
+              "title": "项目里程碑交付",
+              "description": "产出：项目管道打包成 Docker 容器，AWS 账号/权限/S3 存储桶配置完成。",
+              "duration": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 3 · 上云 · Serverless & 云数据库（W4）",
+      "color": "#8e24aa",
+      "summary": "2 视频 + 1 项目带练 + Serverless 里程碑",
+      "lessons": [
+        {
+          "code": "L20",
+          "title": "Serverless：Lambda 与事件驱动",
+          "description": "用 Lambda 把抽取管道做成 serverless，按事件触发、按量付费。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 60,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "用 Lambda 把抽取管道做成 serverless，按事件触发、按量付费。",
+              "duration": 60
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L21",
+          "title": "AWS 上的数据库（RDS / DynamoDB）",
+          "description": "在云上托管关系型与 NoSQL 数据库，替代本地数据库。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 45,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "在云上托管关系型与 NoSQL 数据库，替代本地数据库。",
+              "duration": 45
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L22",
+          "title": "【项目带练·W4】带你把管道 Serverless 化部署",
+          "description": "老师现场用 AI Coding 把抽取管道搬上云：Lambda 跑抽取、数据落 S3 与云数据库；答疑部署卡点。",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 150,
+          "steps": [
+            {
+              "order": 1,
+              "type": "LIVE",
+              "title": "项目带练（老师现场 AI Coding）",
+              "description": "老师现场用 AI Coding 把抽取管道搬上云：Lambda 跑抽取、数据落 S3 与云数据库；答疑部署卡点。",
+              "duration": 105
+            },
+            {
+              "order": 2,
+              "type": "LIVE",
+              "title": "答疑 Clinic",
+              "description": "项目问题、知识点问题自由问，卡点当场解决。",
+              "duration": 45
+            }
+          ]
+        },
+        {
+          "code": "L23",
+          "title": "【里程碑】项目管道上云跑通",
+          "description": "产出：项目管道在 AWS 上 serverless 跑起来，S3 + Lambda + 云数据库抽取链路打通。",
+          "type": "Assignment",
+          "isLive": false,
+          "duration": 120,
+          "steps": [
+            {
+              "order": 1,
+              "type": "PROJECT",
+              "title": "项目里程碑交付",
+              "description": "产出：项目管道在 AWS 上 serverless 跑起来，S3 + Lambda + 云数据库抽取链路打通。",
+              "duration": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 4 · 数仓 & 转换（W5）",
+      "color": "#00838f",
+      "summary": "3 视频 + 1 项目带练 + 数仓里程碑",
+      "lessons": [
+        {
+          "code": "L24",
+          "title": "数据建模：数据仓库 vs 数据湖",
+          "description": "数仓和数据湖分别解决什么问题，你的项目该用哪个。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 45,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "数仓和数据湖分别解决什么问题，你的项目该用哪个。",
+              "duration": 45
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L25",
+          "title": "维度建模与数仓设计",
+          "description": "事实表 / 维度表、星型模型，把原始数据组织成可分析的结构。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 60,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "事实表 / 维度表、星型模型，把原始数据组织成可分析的结构。",
+              "duration": 60
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L26",
+          "title": "dbt：数据转换与工程化",
+          "description": "用 dbt 把转换逻辑变成版本化、可测试的工程，数仓的现代做法。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 60,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "用 dbt 把转换逻辑变成版本化、可测试的工程，数仓的现代做法。",
+              "duration": 60
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L27",
+          "title": "【项目带练·W5】带你给项目建数仓",
+          "description": "老师现场用 AI Coding 为项目设计数仓模型、用 dbt 写转换层；答疑建模与 dbt 卡点。",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 150,
+          "steps": [
+            {
+              "order": 1,
+              "type": "LIVE",
+              "title": "项目带练（老师现场 AI Coding）",
+              "description": "老师现场用 AI Coding 为项目设计数仓模型、用 dbt 写转换层；答疑建模与 dbt 卡点。",
+              "duration": 105
+            },
+            {
+              "order": 2,
+              "type": "LIVE",
+              "title": "答疑 Clinic",
+              "description": "项目问题、知识点问题自由问，卡点当场解决。",
+              "duration": 45
+            }
+          ]
+        },
+        {
+          "code": "L28",
+          "title": "【里程碑】项目数仓建模完成",
+          "description": "产出：项目的数仓模型建好，dbt 转换层跑通，数据可供分析。",
+          "type": "Assignment",
+          "isLive": false,
+          "duration": 120,
+          "steps": [
+            {
+              "order": 1,
+              "type": "PROJECT",
+              "title": "项目里程碑交付",
+              "description": "产出：项目的数仓模型建好，dbt 转换层跑通，数据可供分析。",
+              "duration": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 5 · 大数据 · Spark 批处理（W6）",
+      "color": "#ad1457",
+      "summary": "2 视频 + 1 项目带练 + 批处理里程碑",
+      "lessons": [
+        {
+          "code": "L29",
+          "title": "大数据处理：HDFS 与分布式存储",
+          "description": "数据量大了怎么办，分布式存储的基本原理。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 45,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "数据量大了怎么办，分布式存储的基本原理。",
+              "duration": 45
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L30",
+          "title": "Spark SQL 批处理实战",
+          "description": "用 Spark 处理大规模数据，批处理管道的写法。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 60,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "用 Spark 处理大规模数据，批处理管道的写法。",
+              "duration": 60
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L31",
+          "title": "【项目带练·W6】带你接 Spark 批处理",
+          "description": "老师现场用 AI Coding 给项目加一层 Spark 批处理，处理更大规模的数据；答疑大数据卡点。",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 150,
+          "steps": [
+            {
+              "order": 1,
+              "type": "LIVE",
+              "title": "项目带练（老师现场 AI Coding）",
+              "description": "老师现场用 AI Coding 给项目加一层 Spark 批处理，处理更大规模的数据；答疑大数据卡点。",
+              "duration": 105
+            },
+            {
+              "order": 2,
+              "type": "LIVE",
+              "title": "答疑 Clinic",
+              "description": "项目问题、知识点问题自由问，卡点当场解决。",
+              "duration": 45
+            }
+          ]
+        },
+        {
+          "code": "L32",
+          "title": "【里程碑】项目 Spark 批处理跑通",
+          "description": "产出：项目接入 Spark 批处理层，能处理规模化数据。",
+          "type": "Assignment",
+          "isLive": false,
+          "duration": 120,
+          "steps": [
+            {
+              "order": 1,
+              "type": "PROJECT",
+              "title": "项目里程碑交付",
+              "description": "产出：项目接入 Spark 批处理层，能处理规模化数据。",
+              "duration": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 6 · 编排 & CI/CD（W7）",
+      "color": "#d81b60",
+      "summary": "2 视频 + 1 项目带练 + 自动化里程碑",
+      "lessons": [
+        {
+          "code": "L33",
+          "title": "Airflow：数据管道编排与调度",
+          "description": "用 Airflow 把多步管道串成 DAG，定时自动跑。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 60,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "用 Airflow 把多步管道串成 DAG，定时自动跑。",
+              "duration": 60
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L34",
+          "title": "CI/CD for 数据工程",
+          "description": "用 GitHub Actions 给数据管道做自动化测试与部署。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 60,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "用 GitHub Actions 给数据管道做自动化测试与部署。",
+              "duration": 60
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L35",
+          "title": "【项目带练·W7】带你接 Airflow 编排 + CI/CD",
+          "description": "老师现场用 AI Coding 把项目多步管道用 Airflow 串成 DAG、配 CI/CD 自动化；答疑编排卡点。",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 150,
+          "steps": [
+            {
+              "order": 1,
+              "type": "LIVE",
+              "title": "项目带练（老师现场 AI Coding）",
+              "description": "老师现场用 AI Coding 把项目多步管道用 Airflow 串成 DAG、配 CI/CD 自动化；答疑编排卡点。",
+              "duration": 105
+            },
+            {
+              "order": 2,
+              "type": "LIVE",
+              "title": "答疑 Clinic",
+              "description": "项目问题、知识点问题自由问，卡点当场解决。",
+              "duration": 45
+            }
+          ]
+        },
+        {
+          "code": "L36",
+          "title": "【里程碑】项目自动化编排上线",
+          "description": "产出：项目的 Airflow 编排 + CI/CD 全部跑通，管道能定时自动运行。",
+          "type": "Assignment",
+          "isLive": false,
+          "duration": 120,
+          "steps": [
+            {
+              "order": 1,
+              "type": "PROJECT",
+              "title": "项目里程碑交付",
+              "description": "产出：项目的 Airflow 编排 + CI/CD 全部跑通，管道能定时自动运行。",
+              "duration": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 7 · 数据应用层 · AI 应用（W8）",
+      "color": "#e65100",
+      "summary": "4 视频 + 1 项目带练 + AI 应用里程碑",
+      "lessons": [
+        {
+          "code": "L37",
+          "title": "AI 数据工程：Embedding & 向量数据库",
+          "description": "把数据变成向量、存进向量库，AI 应用的数据地基。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 60,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "把数据变成向量、存进向量库，AI 应用的数据地基。",
+              "duration": 60
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L38",
+          "title": "LLM 应用：RAG 推荐 / text-to-SQL",
+          "description": "用 LLM 做检索增强推荐、自然语言查数据库，数据 × AI 的实战——本周项目默认接这一层。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 60,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "用 LLM 做检索增强推荐、自然语言查数据库，数据 × AI 的实战——本周项目默认接这一层。",
+              "duration": 60
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L39",
+          "title": "机器学习基础（选修）：监督 / 无监督学习",
+          "description": "选修：ML 核心概念与常见算法，想额外给项目接 ML 模型的同学自学。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 60,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "选修：ML 核心概念与常见算法，想额外给项目接 ML 模型的同学自学。",
+              "duration": 60
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L40",
+          "title": "模型评估、调优与部署（选修 · SageMaker）",
+          "description": "选修：模型评估、调参、部署成服务，想走 ML 方向的同学自学。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 60,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "选修：模型评估、调参、部署成服务，想走 ML 方向的同学自学。",
+              "duration": 60
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L41",
+          "title": "【项目带练·W8】带你给项目接 AI 应用层",
+          "description": "老师现场用 AI Coding 给项目接一个 AI 应用层（RAG 推荐 / text-to-SQL）；想额外做 ML 的同学也能现场问，但默认带 AI。",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 150,
+          "steps": [
+            {
+              "order": 1,
+              "type": "LIVE",
+              "title": "项目带练（老师现场 AI Coding）",
+              "description": "老师现场用 AI Coding 给项目接一个 AI 应用层（RAG 推荐 / text-to-SQL）；想额外做 ML 的同学也能现场问，但默认带 AI。",
+              "duration": 105
+            },
+            {
+              "order": 2,
+              "type": "LIVE",
+              "title": "答疑 Clinic",
+              "description": "项目问题、知识点问题自由问，卡点当场解决。",
+              "duration": 45
+            }
+          ]
+        },
+        {
+          "code": "L42",
+          "title": "【里程碑】项目接入 AI 应用层",
+          "description": "产出：项目在管道之上接了一个 AI 应用（RAG 推荐 或 text-to-SQL）。",
+          "type": "Assignment",
+          "isLive": false,
+          "duration": 120,
+          "steps": [
+            {
+              "order": 1,
+              "type": "PROJECT",
+              "title": "项目里程碑交付",
+              "description": "产出：项目在管道之上接了一个 AI 应用（RAG 推荐 或 text-to-SQL）。",
+              "duration": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 8 · 加固 & 交付（W9）",
+      "color": "#455a64",
+      "summary": "3 视频 + 1 项目带练 + 交付里程碑",
+      "lessons": [
+        {
+          "code": "L43",
+          "title": "数据安全与隐私：脱敏、权限、合规",
+          "description": "生产级数据管道必须做的安全：数据脱敏、访问控制、合规要点。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 45,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "生产级数据管道必须做的安全：数据脱敏、访问控制、合规要点。",
+              "duration": 45
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L44",
+          "title": "数据可视化：Tableau / Power BI",
+          "description": "把项目产出的数据做成看板，让结果看得见、讲得清。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 60,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "把项目产出的数据做成看板，让结果看得见、讲得清。",
+              "duration": 60
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L45",
+          "title": "项目部署收尾与工程文档",
+          "description": "把项目收尾成一个完整可交付的系统，写好 README 与架构文档。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 45,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "把项目收尾成一个完整可交付的系统，写好 README 与架构文档。",
+              "duration": 45
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L46",
+          "title": "【项目带练·W9】带你做加固 + 可视化 + 收尾",
+          "description": "老师现场用 AI Coding 给项目做安全加固、搭可视化看板、部署收尾；答疑交付相关卡点。",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 150,
+          "steps": [
+            {
+              "order": 1,
+              "type": "LIVE",
+              "title": "项目带练（老师现场 AI Coding）",
+              "description": "老师现场用 AI Coding 给项目做安全加固、搭可视化看板、部署收尾；答疑交付相关卡点。",
+              "duration": 105
+            },
+            {
+              "order": 2,
+              "type": "LIVE",
+              "title": "答疑 Clinic",
+              "description": "项目问题、知识点问题自由问，卡点当场解决。",
+              "duration": 45
+            }
+          ]
+        },
+        {
+          "code": "L47",
+          "title": "【里程碑】项目端到端完整跑通",
+          "description": "产出：项目从抽取到应用到可视化全链路跑通，产出可视化看板，达到作品集标准。",
+          "type": "Assignment",
+          "isLive": false,
+          "duration": 150,
+          "steps": [
+            {
+              "order": 1,
+              "type": "PROJECT",
+              "title": "项目里程碑交付",
+              "description": "产出：项目从抽取到应用到可视化全链路跑通，产出可视化看板，达到作品集标准。",
+              "duration": 150
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 9 · 结营 & 求职（W10）",
+      "color": "#c62828",
+      "summary": "4 视频 + 结营 Demo + 作品集里程碑",
+      "lessons": [
+        {
+          "code": "L48",
+          "title": "敏捷项目管理：Scrum / SDLC",
+          "description": "回看整个项目怎么按迭代推进，敏捷在真实数据项目里的用法。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 45,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "回看整个项目怎么按迭代推进，敏捷在真实数据项目里的用法。",
+              "duration": 45
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L49",
+          "title": "简历与 LinkedIn：把项目写成亮点",
+          "description": "怎么把你做的这个端到端项目写成简历和 LinkedIn 上的硬亮点。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 45,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "怎么把你做的这个端到端项目写成简历和 LinkedIn 上的硬亮点。",
+              "duration": 45
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L50",
+          "title": "数据工程 / 数据分析面试题精讲",
+          "description": "高频面试题精讲：SQL、管道设计、系统设计、场景题。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 60,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "高频面试题精讲：SQL、管道设计、系统设计、场景题。",
+              "duration": 60
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L51",
+          "title": "谈薪技巧与内推流程",
+          "description": "拿到面试之后怎么谈薪、怎么走 JR 内推通道。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 45,
+          "steps": [
+            {
+              "order": 1,
+              "type": "VIDEO",
+              "title": "观看录播",
+              "description": "拿到面试之后怎么谈薪、怎么走 JR 内推通道。",
+              "duration": 45
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "知识点自测",
+              "description": "看完做一道理解检查题，确认掌握再进下一节。",
+              "duration": 5
+            }
+          ]
+        },
+        {
+          "code": "L52",
+          "title": "【结营·W10】Demo Day：项目路演 + 老师验收",
+          "description": "结营路演：你上台讲你的端到端数据项目，老师现场验收点评、给作品集改进建议。",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 150,
+          "steps": [
+            {
+              "order": 1,
+              "type": "LIVE",
+              "title": "项目带练（老师现场 AI Coding）",
+              "description": "结营路演：你上台讲你的端到端数据项目，老师现场验收点评、给作品集改进建议。",
+              "duration": 105
+            },
+            {
+              "order": 2,
+              "type": "LIVE",
+              "title": "答疑 Clinic",
+              "description": "项目问题、知识点问题自由问，卡点当场解决。",
+              "duration": 45
+            }
+          ]
+        },
+        {
+          "code": "L53",
+          "title": "【里程碑】完整项目作品集 + 简历定稿",
+          "description": "产出：一个可写进简历的端到端数据工程项目 + 定稿简历，进入求职/内推。",
+          "type": "Assignment",
+          "isLive": false,
+          "duration": 120,
+          "steps": [
+            {
+              "order": 1,
+              "type": "PROJECT",
+              "title": "项目里程碑交付",
+              "description": "产出：一个可写进简历的端到端数据工程项目 + 定稿简历，进入求职/内推。",
+              "duration": 120
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
