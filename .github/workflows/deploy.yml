@@ -178,6 +178,12 @@ jobs:
             cp -r ai-engineer-rag/public/* _site/ai-engineer-rag/
           fi
 
+          # data-engineer-data-analyst (机器学习 & 数据工程全栈项目班 · 改版 · 10 周 · 视频课 + 单一项目全程带练): static HTML only
+          if [ -d data-engineer-data-analyst/public ]; then
+            mkdir -p _site/data-engineer-data-analyst
+            cp -r data-engineer-data-analyst/public/* _site/data-engineer-data-analyst/
+          fi
+
           # ai-programming (Cursor AI 编程实战课) / ai-builder (Vibe Coding 大师课):
           # only copy if directory exists (not yet committed)
           if [ -d ai-programming/public ]; then
@@ -731,6 +737,17 @@ jobs:
                     <span class="tag" style="background:#CB6CE6">PART 4</span>
                     <div class="title">RAG 工程实战</div>
                     <div class="desc">Part 4 — RAG 架构到生产部署全流程</div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="section">
+                <div class="section-title">机器学习 & 数据工程全栈项目班 · 改版 · 10 周 · 视频 + 项目带练</div>
+                <div class="cards">
+                  <a href="./data-engineer-data-analyst/curriculum.html">
+                    <span class="tag" style="background:#1565c0">CURRICULUM</span>
+                    <div class="title">机器学习 & 数据工程全栈项目班</div>
+                    <div class="desc">10 周 · 视频自主学 + 一个老师(Jevy)现场 AI Coding 全程带一个端到端数据管道 · 53 节 / 33 录播 / 10 带练</div>
                   </a>
                 </div>
               </div>
