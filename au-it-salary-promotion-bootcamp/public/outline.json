@@ -1,0 +1,201 @@
+{
+  "themeColor": "#FFDE59",
+  "slug": "au-it-salary-promotion-bootcamp",
+  "name": "澳洲 IT 薪资谈判与晋升营",
+  "name_en": "Salary & Promotion Bootcamp",
+  "description": "把 offer 谈到市场上限，再规划升职与跳槽的收益最大化路径",
+  "level": "零基础",
+  "type": "training",
+  "targetAudience": "已在职或拿到 offer、想涨薪 / 升职 / 高性价比跳槽的人",
+  "totalLessons": 14,
+  "totalSteps": 0,
+  "liveClasses": 0,
+  "estimatedHours": 7,
+  "totalInteractiveLabs": 1,
+  "title_en": "Salary & Promotion Bootcamp",
+  "description_en": "Negotiate offers to the top of market, then plan promotions and job moves for maximum gain.",
+  "timeLength": "约 7 小时（14 节：录播 + 互动 Lab + 平台工具，自主安排节奏）",
+  "courseObjective": "掌握谈判的心理与策略，看懂澳洲薪资构成与天花板，规划升职评分与跳槽时机，把收入做到市场上限。",
+  "courseObjective_en": "Master negotiation psychology and strategy, understand Australian comp structure, and plan promotions and moves.",
+  "suitable": "拿到 offer 要谈薪、已在职想涨薪升职、或考虑跳槽的人。",
+  "suitable_en": "Those negotiating an offer, seeking raises/promotions, or considering a move.",
+  "cardDescription": "14 节：薪资谈判 + 薪资构成 + 升职评分 + 跳槽时机，把收入做到上限。",
+  "promoDescription": "很多人不敢谈薪，白白丢掉几千上万。这门课先讲清谈判背后的心理与策略，再拆开澳洲薪资构成与天花板，最后教你看懂升职评分、算准跳槽时机——把收入谈到、也做到市场上限。",
+  "prerequisiteknowledge": "适合已进入 offer / 在职阶段的求职者与从业者。",
+  "highlights": [
+    "谈判的心理障碍与破解策略",
+    "澳洲薪资构成与天花板真相",
+    "如何权衡多个工作机会",
+    "升职评分标准与晋升策略",
+    "跳槽时机与收益最大化"
+  ],
+  "highlights_en": [
+    "Negotiation psychology & strategy",
+    "Australian comp structure & ceiling",
+    "Weighing multiple offers",
+    "Promotion scoring & strategy",
+    "Timing job moves for max gain"
+  ],
+  "features": [
+    "录播 + 谈判场景 role-play Lab",
+    "覆盖谈薪、薪资构成、升职、跳槽",
+    "面向在职与拿 offer 阶段"
+  ],
+  "program": {
+    "name": "澳洲 IT 薪资谈判与晋升营 第一期",
+    "programPhase": 1,
+    "cohortStatus": "RECRUITING",
+    "tuition": 79,
+    "promoTuition": 59
+  },
+  "curriculumPages": {
+    "pages": [
+      "curriculum.html"
+    ],
+    "defaultPage": "curriculum.html"
+  },
+  "phases": [
+    {
+      "name": "Part 1 — 薪资谈判",
+      "color": "#2e7d32",
+      "summary": "先敢谈，再会谈",
+      "lessons": [
+        {
+          "code": "L01",
+          "title": "掌握谈判技巧",
+          "description": "谈判的核心原则：永远不要先报价、用数据说话、谈的是 package 不只是 base salary。一个真实案例：同样的 offer 谈判后多拿了 $15K。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L02",
+          "title": "掌握谈判的基本策略",
+          "description": "5 个谈判策略：Anchoring（锚定效应）、BATNA（最佳替代方案）、Deadline（制造紧迫感）、Silence（沉默的力量）、Walk Away（准备好放弃）。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L03",
+          "title": "如何权衡多个工作机会",
+          "description": "不只看薪资：WLB、技术栈成长空间、团队文化、通勤时间、visa sponsorship、promotion 速度。用加权评分表做理性决策。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L04",
+          "title": "Lab: 职场场景 — 谈薪 role-play",
+          "description": "用真实谈薪情境和 AI 对练，练到从容开口、稳住底价。",
+          "type": "InteractiveLab",
+          "isLive": false,
+          "isInteractiveLab": true,
+          "interactiveLabType": "prompt",
+          "interactiveLabSlug": "workplace-scenarios",
+          "duration": 30,
+          "labs": [
+            {
+              "source": "prompt-lab",
+              "slug": "workplace-scenarios"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Part 2 — 看懂薪资构成",
+      "color": "#1565c0",
+      "summary": "知道钱从哪来",
+      "lessons": [
+        {
+          "code": "L05",
+          "title": "澳洲薪水天花板的构成",
+          "description": "IC 路线天花板：Principal Engineer $250K+。Management 路线天花板：VP of Engineering $300K+。怎么突破天花板。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L06",
+          "title": "薪资由什么决定",
+          "description": "5 个核心因素：城市（悉尼>墨尔本>布里斯班）、公司规模、行业（Fintech/Mining/Big4）、技术稀缺度、个人议价能力。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L07",
+          "title": "澳洲大厂薪资组成",
+          "description": "Atlassian、Canva、REA、CommBank、Telstra 的真实薪资结构对比。Base + Super + RSU + Bonus 各占多少比例。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        }
+      ]
+    },
+    {
+      "name": "Part 3 — 升职与跳槽",
+      "color": "#6a1b9a",
+      "summary": "把长期收益规划好",
+      "lessons": [
+        {
+          "code": "L08",
+          "title": "如何在大厂中升职",
+          "description": "大厂升职的 3 个条件：完成当前 level 的所有 expectation、展示 next level 的能力、有 sponsor 在 calibration 会上为你说话。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L09",
+          "title": "怎样跳槽让收益最大化",
+          "description": "什么时候该跳：连续 2 次没升职、薪资低于市场 20%、技术栈过时。跳槽的最佳时机和常见陷阱。跳一次涨 20-30% 是正常的。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L10",
+          "title": "找工作的赛道",
+          "description": "不是所有公司都一样难进。3 条赛道：Tier 1 大厂（Google/Atlassian）、Tier 2 知名公司（REA/Canva）、Tier 3 中小公司/startup。不同赛道的准备策略完全不同。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L11",
+          "title": "升职策略",
+          "description": "主动 manage up：定期和 manager 同步职业目标、主动请缨 high-visibility 项目、建立跨团队 influence、记录自己的 impact。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L12",
+          "title": "升职评分标准",
+          "description": "大厂和中小厂的升职标准对比。Google 的 PERF、Amazon 的 Promo Doc、一般公司的 Performance Review。怎么用这些标准反推自己的发展计划。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L13",
+          "title": "想成为 Senior Developer 需要哪些方面提升",
+          "description": "Junior → Mid → Senior 的核心跨越：从\"完成被分配的任务\"到\"独立拆解和解决复杂问题\"。技术深度、系统设计能力、mentoring 能力、项目推动力。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L14",
+          "title": "技术路线 vs 管理路线",
+          "description": "不是所有人都适合做管理。IC 路线（Staff → Principal → Fellow）和 Management 路线（TL → EM → Director → VP）的区别。两条路线各自的挑战和天花板。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        }
+      ]
+    }
+  ]
+}

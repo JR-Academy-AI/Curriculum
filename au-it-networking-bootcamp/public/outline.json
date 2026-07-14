@@ -1,0 +1,209 @@
+{
+  "themeColor": "#FFDE59",
+  "slug": "au-it-networking-bootcamp",
+  "name": "澳洲 IT 人脉内推求职营",
+  "name_en": "Networking & Referral Bootcamp",
+  "description": "经营 LinkedIn 个人品牌 + 走通内推，让工作机会主动找上门",
+  "level": "零基础",
+  "type": "training",
+  "targetAudience": "海投无效、想靠 LinkedIn 和内推打开澳洲 IT 求职局面的人",
+  "totalLessons": 15,
+  "totalSteps": 0,
+  "liveClasses": 0,
+  "estimatedHours": 7,
+  "totalInteractiveLabs": 1,
+  "title_en": "Networking & Referral Bootcamp",
+  "description_en": "Build a LinkedIn brand and unlock referrals so opportunities come to you.",
+  "timeLength": "约 7 小时（15 节：录播 + 互动 Lab + 平台工具，自主安排节奏）",
+  "courseObjective": "把 LinkedIn Profile 优化到 All-Star，学会 cold message 和 coffee chat，找到能内推你的人，把内推成功率做到海投的 5-10 倍。",
+  "courseObjective_en": "Optimise LinkedIn to All-Star, master cold outreach, and land referrals 5-10x more effective than cold applications.",
+  "suitable": "简历海投没回音、不懂经营 LinkedIn、不知道怎么找内推的求职者。",
+  "suitable_en": "Job seekers with no response to cold applications, new to LinkedIn and referrals.",
+  "cardDescription": "15 节：LinkedIn 个人品牌 + 人脉经营 + 内推路径，让机会主动找你。",
+  "promoDescription": "内推成功率是海投的 5-10 倍。这门课带你把 LinkedIn 经营成个人品牌，找到能内推你的人，用对话把弱关系变成机会——而不是简历投进黑洞里等回音。",
+  "prerequisiteknowledge": "需要一个 LinkedIn 账号（没有会教你建），无需技术基础。",
+  "highlights": [
+    "All-Star LinkedIn Profile 优化公式",
+    "不被忽略的 cold message 模板",
+    "内推的本质与找内推人的方法",
+    "弱关系→强关系的经营路径",
+    "用 AI 批量生成个性化触达文案"
+  ],
+  "highlights_en": [
+    "All-Star LinkedIn profile formula",
+    "Cold message templates that get replies",
+    "How referrals work & how to find referrers",
+    "Turning weak ties into opportunities",
+    "AI-generated personalised outreach"
+  ],
+  "features": [
+    "录播 + Job Referral / 求职匠插件实操",
+    "覆盖领英品牌、人脉、内推全链路",
+    "附 cold message 与 coffee chat 话术"
+  ],
+  "program": {
+    "name": "澳洲 IT 人脉内推求职营 第一期",
+    "programPhase": 1,
+    "cohortStatus": "RECRUITING",
+    "tuition": 39,
+    "promoTuition": 29
+  },
+  "curriculumPages": {
+    "pages": [
+      "curriculum.html"
+    ],
+    "defaultPage": "curriculum.html"
+  },
+  "phases": [
+    {
+      "name": "Part 1 — 打造 LinkedIn 个人品牌",
+      "color": "#2e7d32",
+      "summary": "让 recruiter 主动搜到你",
+      "lessons": [
+        {
+          "code": "L01",
+          "title": "Personal Branding on LinkedIn",
+          "description": "LinkedIn 不只是求职工具，是你的个人品牌。Profile 优化：headline 公式、summary 模板、experience 写法。澳洲 recruiter 搜索候选人时最看重的 5 个字段。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L02",
+          "title": "手把手带着运营 LinkedIn",
+          "description": "实操课：从头优化一个 LinkedIn Profile。Banner 图设计、Headline 写法、Featured 区怎么用、Skills endorsement 怎么拿。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L03",
+          "title": "如何利用 LinkedIn 准备面试",
+          "description": "面试前必做：查面试官 LinkedIn → 找共同点 → 了解团队技术栈 → 准备针对性问题。这些动作让你面试通过率翻倍。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L04",
+          "title": "LinkedIn 作业",
+          "description": "完成 LinkedIn Profile 优化，截图提交。导师评估 Profile 完成度（目标：LinkedIn Profile Strength 达到 All-Star）。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 25
+        }
+      ]
+    },
+    {
+      "name": "Part 2 — 人脉经营与内推",
+      "color": "#1565c0",
+      "summary": "把关系变成机会",
+      "lessons": [
+        {
+          "code": "L05",
+          "title": "如何与行业领袖建立联系与合作",
+          "description": "Cold message 模板：怎么加陌生人不被忽略。Coffee chat 的正确姿势。参加 Meetup/Hackathon 的实际价值。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L06",
+          "title": "构建和扩展自己的职业网络",
+          "description": "Networking 不是加好友，是建立有价值的双向关系。3 个层次：弱关系（行业活动认识的人）、中关系（同事/校友）、强关系（mentor/referrer）。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L07",
+          "title": "找工作的渠道和途径",
+          "description": "Seek、LinkedIn Jobs、Indeed、Glassdoor、公司官网、猎头、内推——7 大渠道的优劣对比和使用策略。哪个渠道的 offer 转化率最高？",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L08",
+          "title": "信息渠道有什么",
+          "description": "除了招聘网站，还有哪些信息源：Glassdoor 公司评价、Blind 匿名讨论、Reddit r/cscareerquestions、微信求职群、Meetup。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L09",
+          "title": "什么是内推",
+          "description": "内推的本质：绕过 HR screening 直接到 hiring manager 的桌上。内推成功率是海投的 5-10 倍。但不是所有内推都有用——关键看推荐人的 level 和和团队的关系。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L10",
+          "title": "内推社交网络",
+          "description": "怎么找到能内推你的人：LinkedIn 搜索目标公司员工 → 找二度人脉 → 请中间人介绍。找不到二度人脉怎么 cold reach。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L11",
+          "title": "如何扩充社交网络",
+          "description": "如何扩充社交网络",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        }
+      ]
+    },
+    {
+      "name": "Part 3 — 定方向 + 工具实操",
+      "color": "#6a1b9a",
+      "summary": "把方法用起来",
+      "lessons": [
+        {
+          "code": "L12",
+          "title": "行业方向指导",
+          "description": "根据你的背景和目标，导师帮你确定最合适的求职方向。转行 vs 深耕、大厂 vs 中小厂、contract vs permanent 的取舍。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L13",
+          "title": "用一下: Job Referral",
+          "description": "在平台 Job Referral 找到目标公司的内推机会并发起申请。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 20
+        },
+        {
+          "code": "L14",
+          "title": "用一下: 求职匠 Chrome Ext",
+          "description": "用求职匠 Chrome 插件自动匹配 JD、一键投递、追踪进度。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 20
+        },
+        {
+          "code": "L15",
+          "title": "Lab: Few-shot — 批量生成个性化触达",
+          "description": "给 AI 一个高回复率的 cold message 范例，用 few-shot 针对不同对象批量生成个性化版本。",
+          "type": "InteractiveLab",
+          "isLive": false,
+          "isInteractiveLab": true,
+          "interactiveLabType": "prompt",
+          "interactiveLabSlug": "few-shot",
+          "duration": 30,
+          "labs": [
+            {
+              "source": "prompt-lab",
+              "slug": "few-shot"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

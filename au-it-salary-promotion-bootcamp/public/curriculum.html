@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;900&family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'DM Sans','Noto Sans SC',-apple-system,sans-serif; background:#faf9f5; color:#10162f; line-height:1.6; padding:28px 24px 80px; max-width:1180px; margin:0 auto; }
+  h1,h2,h3 { font-family:'Bricolage Grotesque','Noto Sans SC',sans-serif; line-height:1.15; }
+  h1 { font-size:clamp(30px,5vw,52px); font-weight:900; letter-spacing:-0.5px; }
+  h2 { font-size:clamp(22px,2.8vw,32px); font-weight:900; margin:44px 0 16px; }
+  h3 { font-size:17px; font-weight:800; }
+  .sub { font-size:clamp(15px,2vw,19px); color:#444; margin-top:10px; max-width:820px; }
+  .hero { border:3px solid #10162f; box-shadow:8px 8px 0 #1565c0; background:#fff; padding:30px 32px; margin-bottom:8px; }
+  .badges { display:flex; gap:8px; flex-wrap:wrap; margin-top:16px; }
+  .badge { font-family:'Space Mono',monospace; font-size:12px; font-weight:700; padding:6px 12px; border:2px solid #10162f; background:#1565c0; color:#fff; }
+  .badge.ghost { background:#fff; color:#10162f; }
+  .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(110px,1fr)); gap:10px; margin:20px 0; }
+  .stat { background:#fff; border:2px solid #10162f; box-shadow:3px 3px 0 #10162f; padding:12px 14px; }
+  .stat .n { font-size:28px; font-weight:900; font-family:'Space Mono',monospace; line-height:1; color:#1565c0; }
+  .stat .l { font-size:11px; color:#666; margin-top:5px; font-family:'Space Mono',monospace; letter-spacing:.5px; }
+  .price-tag { background:#FFDE59; color:#10162f; border:3px solid #10162f; box-shadow:5px 5px 0 #10162f; padding:14px 18px; display:inline-flex; align-items:baseline; gap:10px; margin:6px 0 2px; }
+  .price-tag .now { font-family:'Space Mono',monospace; font-size:34px; font-weight:700; }
+  .price-tag .was { font-family:'Space Mono',monospace; font-size:16px; color:#777; text-decoration:line-through; }
+  .price-tag .lbl { font-size:12px; font-weight:800; background:#c62828; color:#fff; padding:2px 8px; }
+  .sp-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px; margin:18px 0; }
+  .sp { background:#fff; border:2px solid #10162f; box-shadow:5px 5px 0 #10162f; padding:16px 18px; display:flex; gap:14px; }
+  .sp-ico { font-size:26px; line-height:1; }
+  .sp p { font-size:13px; color:#444; }
+  .phase-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin:18px 0; }
+  .phase-card { background:#fff; border:2px solid #10162f; box-shadow:5px 5px 0 #10162f; padding:15px 17px; text-decoration:none; color:#10162f; display:block; }
+  .phase-card .label { font-family:'Space Mono',monospace; font-size:11px; font-weight:800; letter-spacing:1px; }
+  .phase-card .name { font-size:15px; font-weight:800; margin:6px 0 8px; line-height:1.3; }
+  .phase-card .summary { font-size:11px; color:#666; font-family:'Space Mono',monospace; }
+  .card { background:#fff; border:2px solid #10162f; box-shadow:6px 6px 0 #10162f; margin-bottom:16px; }
+  .lesson-row { padding:11px 14px; border-bottom:1px solid #eee; display:grid; grid-template-columns:52px 96px 1fr 52px; gap:12px; align-items:start; }
+  .lesson-row:last-child { border-bottom:0; }
+  .lesson-row .code { font-family:'Space Mono',monospace; font-weight:700; font-size:12px; }
+  .lesson-row .title { font-weight:700; font-size:13px; }
+  .lesson-row .meta { font-size:11px; color:#666; margin-top:3px; }
+  .lesson-row .dur { font-family:'Space Mono',monospace; font-size:11px; color:#888; text-align:right; }
+  .type-pill { display:inline-block; padding:2px 7px; font-size:10px; font-weight:700; border-radius:999px; font-family:'Space Mono',monospace; white-space:nowrap; }
+  .t-Video { background:#bfdbfe; } .t-Lab { background:#bbf7d0; } .t-Info { background:#fde68a; } .t-Tool { background:#fbcfe8; }
+  .pblock { scroll-margin-top:20px; margin-bottom:22px; }
+  .pblock h3 { margin:20px 0 12px; font-size:18px; }
+  .cta { background:#1565c0; color:#fff; border:3px solid #10162f; box-shadow:8px 8px 0 #10162f; padding:28px 32px; margin-top:40px; text-align:center; }
+  .cta h2 { color:#fff; margin:0 0 8px; }
+  .cta p { font-size:15px; opacity:.95; }
+  .footer { font-size:11px; color:#888; font-family:'Space Mono',monospace; margin-top:36px; padding-top:14px; border-top:1px dashed #ccc; }
+  @media (max-width:600px){ .lesson-row{ grid-template-columns:46px 1fr; } .lesson-row .meta,.lesson-row .dur{ grid-column:2; } }
+</style>
+<title>澳洲 IT 薪资谈判与晋升营 — 课程总览</title></head>
+<body><div class="hero">
+  <h1>澳洲 IT 薪资谈判与晋升营</h1>
+  <div class="sub">很多人不敢谈薪，白白丢掉几千上万。这门课先讲清谈判背后的心理与策略，再拆开澳洲薪资构成与天花板，最后教你看懂升职评分、算准跳槽时机——把收入谈到、也做到市场上限。</div>
+  <div class="badges">
+    <span class="badge">⏱ 约 7 小时</span>
+    <span class="badge ghost">📹 13 节录播</span>
+    <span class="badge ghost">🔬 1 个互动 Lab</span>
+    <span class="badge ghost">🎬 报名即开 · 自主学</span>
+  </div>
+  <div style="margin-top:18px"><div class="price-tag"><span class="lbl">早鸟价</span><span class="now">$59</span><span class="was">原价 $79</span></div></div>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="n">14</div><div class="l">节课</div></div>
+  <div class="stat"><div class="n">13</div><div class="l">录播视频</div></div>
+  <div class="stat"><div class="n">1</div><div class="l">互动 Lab</div></div>
+  <div class="stat"><div class="n">7h</div><div class="l">总时长</div></div>
+  <div class="stat"><div class="n">$59</div><div class="l">早鸟价 AUD</div></div>
+</div>
+
+<h2>为什么选这门课</h2>
+<div class="sp-grid"><div class="sp"><div class="sp-ico">🎯</div><div><p><b>谈判的心理障碍与破解策略</b></p></div></div>
+<div class="sp"><div class="sp-ico">⚡</div><div><p><b>澳洲薪资构成与天花板真相</b></p></div></div>
+<div class="sp"><div class="sp-ico">🔬</div><div><p><b>如何权衡多个工作机会</b></p></div></div>
+<div class="sp"><div class="sp-ico">🛠️</div><div><p><b>升职评分标准与晋升策略</b></p></div></div>
+<div class="sp"><div class="sp-ico">📈</div><div><p><b>跳槽时机与收益最大化</b></p></div></div></div>
+
+<h2>适合谁</h2>
+<div class="card" style="padding:16px 18px"><p style="font-size:14px;color:#333">拿到 offer 要谈薪、已在职想涨薪升职、或考虑跳槽的人。</p></div>
+
+<h2>课程结构 · 3 个 Part</h2>
+<div class="phase-grid"><a href="#ph0" class="phase-card"><div class="label" style="color:#2e7d32">PART 1</div><div class="name">薪资谈判</div><div class="summary">3 视频 · 1 Lab</div></a><a href="#ph1" class="phase-card"><div class="label" style="color:#1565c0">PART 2</div><div class="name">看懂薪资构成</div><div class="summary">3 视频</div></a><a href="#ph2" class="phase-card"><div class="label" style="color:#6a1b9a">PART 3</div><div class="name">升职与跳槽</div><div class="summary">7 视频</div></a></div>
+
+<h2>完整课程大纲</h2>
+<div class="pblock" id="ph0"><h3 style="border-left:6px solid #2e7d32;padding-left:12px">Part 1 — 薪资谈判</h3><div class="card" style="padding:0"><div class="lesson-row"><div class="code">L01</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">掌握谈判技巧</div><div class="meta">谈判的核心原则：永远不要先报价、用数据说话、谈的是 package 不只是 base salary。一个真实案例：同样的 offer 谈判后多拿了 $15K。</div></div><div class="dur">30m</div></div><div class="lesson-row"><div class="code">L02</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">掌握谈判的基本策略</div><div class="meta">5 个谈判策略：Anchoring（锚定效应）、BATNA（最佳替代方案）、Deadline（制造紧迫感）、Silence（沉默的力量）、Walk Away（准备好放弃）。</div></div><div class="dur">30m</div></div><div class="lesson-row"><div class="code">L03</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">如何权衡多个工作机会</div><div class="meta">不只看薪资：WLB、技术栈成长空间、团队文化、通勤时间、visa sponsorship、promotion 速度。用加权评分表做理性决策。</div></div><div class="dur">30m</div></div><div class="lesson-row"><div class="code">L04</div><div><span class="type-pill t-Lab">🔬 互动 Lab</span></div><div><div class="title">Lab: 职场场景 — 谈薪 role-play</div><div class="meta">用真实谈薪情境和 AI 对练，练到从容开口、稳住底价。</div></div><div class="dur">30m</div></div></div></div><div class="pblock" id="ph1"><h3 style="border-left:6px solid #1565c0;padding-left:12px">Part 2 — 看懂薪资构成</h3><div class="card" style="padding:0"><div class="lesson-row"><div class="code">L05</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">澳洲薪水天花板的构成</div><div class="meta">IC 路线天花板：Principal Engineer $250K+。Management 路线天花板：VP of Engineering $300K+。怎么突破天花板。</div></div><div class="dur">30m</div></div><div class="lesson-row"><div class="code">L06</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">薪资由什么决定</div><div class="meta">5 个核心因素：城市（悉尼&gt;墨尔本&gt;布里斯班）、公司规模、行业（Fintech/Mining/Big4）、技术稀缺度、个人议价能力。</div></div><div class="dur">30m</div></div><div class="lesson-row"><div class="code">L07</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">澳洲大厂薪资组成</div><div class="meta">Atlassian、Canva、REA、CommBank、Telstra 的真实薪资结构对比。Base + Super + RSU + Bonus 各占多少比例。</div></div><div class="dur">30m</div></div></div></div><div class="pblock" id="ph2"><h3 style="border-left:6px solid #6a1b9a;padding-left:12px">Part 3 — 升职与跳槽</h3><div class="card" style="padding:0"><div class="lesson-row"><div class="code">L08</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">如何在大厂中升职</div><div class="meta">大厂升职的 3 个条件：完成当前 level 的所有 expectation、展示 next level 的能力、有 sponsor 在 calibration 会上为你说话。</div></div><div class="dur">30m</div></div><div class="lesson-row"><div class="code">L09</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">怎样跳槽让收益最大化</div><div class="meta">什么时候该跳：连续 2 次没升职、薪资低于市场 20%、技术栈过时。跳槽的最佳时机和常见陷阱。跳一次涨 20-30% 是正常的。</div></div><div class="dur">30m</div></div><div class="lesson-row"><div class="code">L10</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">找工作的赛道</div><div class="meta">不是所有公司都一样难进。3 条赛道：Tier 1 大厂（Google/Atlassian）、Tier 2 知名公司（REA/Canva）、Tier 3 中小公司/startup。不同赛道的准备策略完全不同。</div></div><div class="dur">30m</div></div><div class="lesson-row"><div class="code">L11</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">升职策略</div><div class="meta">主动 manage up：定期和 manager 同步职业目标、主动请缨 high-visibility 项目、建立跨团队 influence、记录自己的 impact。</div></div><div class="dur">30m</div></div><div class="lesson-row"><div class="code">L12</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">升职评分标准</div><div class="meta">大厂和中小厂的升职标准对比。Google 的 PERF、Amazon 的 Promo Doc、一般公司的 Performance Review。怎么用这些标准反推自己的发展计划。</div></div><div class="dur">30m</div></div><div class="lesson-row"><div class="code">L13</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">想成为 Senior Developer 需要哪些方面提升</div><div class="meta">Junior → Mid → Senior 的核心跨越：从&quot;完成被分配的任务&quot;到&quot;独立拆解和解决复杂问题&quot;。技术深度、系统设计能力、mentoring 能力、项目推动力。</div></div><div class="dur">30m</div></div><div class="lesson-row"><div class="code">L14</div><div><span class="type-pill t-Video">📹 录播</span></div><div><div class="title">技术路线 vs 管理路线</div><div class="meta">不是所有人都适合做管理。IC 路线（Staff → Principal → Fellow）和 Management 路线（TL → EM → Director → VP）的区别。两条路线各自的挑战和天花板。</div></div><div class="dur">30m</div></div></div></div>
+
+<div class="cta">
+  <h2>澳洲 IT 薪资谈判与晋升营</h2>
+  <p>掌握谈判的心理与策略，看懂澳洲薪资构成与天花板，规划升职评分与跳槽时机，把收入做到市场上限。</p>
+  <p style="margin-top:12px;font-weight:800">早鸟价 $59 AUD（原价 $79）· 报名即开 · 自主学习</p>
+</div>
+
+<div class="footer">JR Academy · 澳洲 IT 薪资谈判与晋升营（Salary &amp; Promotion Bootcamp）· 录播 + 互动 Lab + 平台工具 · 内容真实来自 IT Career Coaching 教学库</div>
+</body></html>

@@ -1,0 +1,251 @@
+{
+  "themeColor": "#FFDE59",
+  "slug": "au-it-bigtech-bootcamp",
+  "name": "澳洲科技大厂求职营",
+  "name_en": "Big Tech Career Bootcamp",
+  "description": "韭天拆解大厂招聘内幕：职级、薪资、面试题来源与算法题打法",
+  "level": "零基础",
+  "type": "training",
+  "targetAudience": "冲 Atlassian / Google 等澳洲科技大厂的进阶求职者",
+  "totalLessons": 18,
+  "totalSteps": 0,
+  "liveClasses": 0,
+  "estimatedHours": 9,
+  "totalInteractiveLabs": 3,
+  "title_en": "Big Tech Career Bootcamp",
+  "description_en": "Insider guide to big-tech hiring: levels, comp, question sources and algorithm strategy.",
+  "timeLength": "约 9 小时（18 节：录播 + 互动 Lab + 平台工具，自主安排节奏）",
+  "courseObjective": "看懂大厂招聘流程与职级薪资体系，破解自我设限与面试机会公式，掌握大厂面试题来源与经典算法题打法。",
+  "courseObjective_en": "Understand big-tech hiring and leveling, break self-limiting beliefs, and master question sources and algorithm strategy.",
+  "suitable": "已有一定经验、目标是澳洲科技大厂、想了解真实招聘内幕的求职者。",
+  "suitable_en": "Experienced candidates targeting Australian big tech who want the real hiring playbook.",
+  "cardDescription": "18 节：大厂招聘内幕 + Atlassian/Google 拆解 + 算法题打法（韭天主讲）。",
+  "promoDescription": "大厂的“小黑屋”是什么？面试题从哪来？职级和薪资怎么算？韭天把 Atlassian、Google 的招聘流程、职级薪资、面试题来源逐一拆开，再教你经典算法题的解题套路——冲大厂前先看懂规则。",
+  "prerequisiteknowledge": "建议已有开发经验或已完成技术面准备，冲刺大厂阶段使用。",
+  "highlights": [
+    "大厂招聘流程与职级薪资体系",
+    "“小黑屋”与面试机会公式真相",
+    "Atlassian 职级 / 薪资 / 前端面试拆解",
+    "Google 简历准备要点",
+    "经典算法题解题套路 + AI 辅助"
+  ],
+  "highlights_en": [
+    "Big-tech hiring & leveling system",
+    "The truth about 'cool-down' and interview odds",
+    "Atlassian levels/comp/front-end interview",
+    "Google resume essentials",
+    "Algorithm patterns with AI assistance"
+  ],
+  "features": [
+    "录播（韭天主讲）+ 推理/代码 Lab + 求职匠插件",
+    "大厂真实内幕，不讲空话",
+    "算法题从思路到套路"
+  ],
+  "program": {
+    "name": "澳洲科技大厂求职营 第一期",
+    "programPhase": 1,
+    "cohortStatus": "RECRUITING",
+    "tuition": 119,
+    "promoTuition": 89
+  },
+  "curriculumPages": {
+    "pages": [
+      "curriculum.html"
+    ],
+    "defaultPage": "curriculum.html"
+  },
+  "phases": [
+    {
+      "name": "Part 1 — 大厂求职策略",
+      "color": "#2e7d32",
+      "summary": "先破心态，再懂规则",
+      "lessons": [
+        {
+          "code": "L01",
+          "title": "大厂找工作的渠道",
+          "description": "大厂不走普通招聘网站。4 条路线：内推（成功率最高）、猎头（Tier 1 猎头名单）、LinkedIn 直接联系 recruiter、公司官网 Career Page。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L02",
+          "title": "面向大厂的简历注意哪些",
+          "description": "大厂简历和普通简历的区别：必须有量化指标、项目规模要大（百万用户/高并发）、技术栈要和 JD 精准匹配。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L03",
+          "title": "如何准备大厂面试",
+          "description": "大厂面试准备时间线：至少 3 个月。月度计划：第1月补基础（算法+系统设计）、第2月专项刷题、第3月模拟面试+查漏补缺。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L04",
+          "title": "解决\"自我设限\"以及面试机会公式",
+          "description": "\"我不够格去大厂\"——这是最大的误区。面试是 numbers game：投 10 家 → 5 家给面试 → 2 家进终面 → 1 个 offer。关键是增大分子。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L05",
+          "title": "大厂的\"小黑屋\"是什么",
+          "description": "大厂面试后的 Debrief 会议（俗称\"小黑屋\"）怎么运作：每个面试官独立打分 → Hiring Committee 综合评估 → 最终决定。一票否决权的存在。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L06",
+          "title": "大厂面试题从哪里来的",
+          "description": "面试题不是随机出的：Google 有题库系统（每道题有使用次数限制）、Atlassian 按 Values 出题。LeetCode/Glassdoor 上的面经有多大参考价值。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L07",
+          "title": "如何通过大厂面试",
+          "description": "通过大厂面试的 3 个核心能力：Problem Solving（拆解问题）、Communication（清晰表达思路）、Culture Fit（匹配公司价值观）。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L08",
+          "title": "大厂面试技巧",
+          "description": "具体技巧：白板编码时先写伪代码、System Design 时先画架构图、行为面试时用\"I\"不用\"We\"、被问到不会的题时怎么优雅处理。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L09",
+          "title": "大厂招聘流程",
+          "description": "Google（5轮）、Atlassian（4轮）、Amazon（5轮 Loop）、Meta（3-4轮）、Canva（4轮）的完整面试流程对比。每轮考察什么、通过率多少。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        }
+      ]
+    },
+    {
+      "name": "Part 2 — Atlassian / Google 拆解",
+      "color": "#1565c0",
+      "summary": "把两家大厂讲透",
+      "lessons": [
+        {
+          "code": "L10",
+          "title": "Atlassian 的 Engineer 职位等级",
+          "description": "P1（Grad）→ P2（Junior）→ P3（Mid）→ P4（Senior）→ P5（Staff）→ P6（Principal）。每个 level 的职责边界和薪资范围。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L11",
+          "title": "Atlassian 的工资构成",
+          "description": "Atlassian 的 Total Compensation：Base + RSU（4年 vest）+ Bonus（10-15%）+ Super。P3 到 P5 的真实 TC 范围。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L12",
+          "title": "Atlassian 的前端面试流程",
+          "description": "Atlassian 前端面试 4 轮：Coding Pair（现场写 React 组件）→ System Design（前端架构）→ Values Interview → Hiring Manager。每轮的准备策略。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L13",
+          "title": "Google 的简历如何准备",
+          "description": "Google 的简历筛选通过率只有 1%。怎么过这 1%：简历必须有大规模系统经验、明确的 impact metrics、和目标团队相关的技术栈。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        }
+      ]
+    },
+    {
+      "name": "Part 3 — 算法题专项",
+      "color": "#6a1b9a",
+      "summary": "从思路到套路",
+      "lessons": [
+        {
+          "code": "L14",
+          "title": "如何大厂面试中回答经典算法题",
+          "description": "用 3 道经典算法题演示面试全过程：Two Sum（Easy）→ LRU Cache（Medium）→ Merge K Sorted Lists（Hard）。不是背答案，是演示沟通和解题过程。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L15",
+          "title": "Lab: Tree of Thoughts 推理",
+          "description": "用 Tree of Thoughts 拆解复杂算法题的多路径推理。",
+          "type": "InteractiveLab",
+          "isLive": false,
+          "isInteractiveLab": true,
+          "interactiveLabType": "prompt",
+          "interactiveLabSlug": "tree-of-thoughts",
+          "duration": 30,
+          "labs": [
+            {
+              "source": "prompt-lab",
+              "slug": "tree-of-thoughts"
+            }
+          ]
+        },
+        {
+          "code": "L16",
+          "title": "Lab: Chain of Thought 推理",
+          "description": "用 Chain of Thought 一步步推导算法题解法。",
+          "type": "InteractiveLab",
+          "isLive": false,
+          "isInteractiveLab": true,
+          "interactiveLabType": "prompt",
+          "interactiveLabSlug": "chain-of-thought",
+          "duration": 30,
+          "labs": [
+            {
+              "source": "prompt-lab",
+              "slug": "chain-of-thought"
+            }
+          ]
+        },
+        {
+          "code": "L17",
+          "title": "Lab: AI 代码生成",
+          "description": "用 AI 快速验证算法思路、生成参考实现。",
+          "type": "InteractiveLab",
+          "isLive": false,
+          "isInteractiveLab": true,
+          "interactiveLabType": "prompt",
+          "interactiveLabSlug": "code-generation",
+          "duration": 30,
+          "labs": [
+            {
+              "source": "prompt-lab",
+              "slug": "code-generation"
+            }
+          ]
+        },
+        {
+          "code": "L18",
+          "title": "用一下: 求职匠 Chrome Ext",
+          "description": "用求职匠插件批量投递大厂岗位并追踪进度。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 20
+        }
+      ]
+    }
+  ]
+}

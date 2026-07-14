@@ -1,0 +1,293 @@
+{
+  "themeColor": "#FFDE59",
+  "slug": "au-it-tech-interview-bootcamp",
+  "name": "澳洲 IT 技术面试特训营",
+  "name_en": "Technical Interview Bootcamp",
+  "description": "前端 / 后端 / DevOps / 数据分方向技术面 + System Design 全套",
+  "level": "零基础",
+  "type": "training",
+  "targetAudience": "有技术背景、要冲澳洲开发岗技术面与 System Design 的求职者",
+  "totalLessons": 21,
+  "totalSteps": 0,
+  "liveClasses": 0,
+  "estimatedHours": 10,
+  "totalInteractiveLabs": 5,
+  "title_en": "Technical Interview Bootcamp",
+  "description_en": "Front-end / back-end / DevOps / data technical interviews plus System Design.",
+  "timeLength": "约 10 小时（21 节：录播 + 互动 Lab + 平台工具，自主安排节奏）",
+  "courseObjective": "掌握澳洲技术面的三种形式，按前端/后端/DevOps/数据分方向准备，打通 System Design 从 Monolith 到微服务、Docker 的完整脉络。",
+  "courseObjective_en": "Master the three technical interview formats, prepare by track, and cover System Design from monolith to microservices and Docker.",
+  "suitable": "有编程基础、准备开发岗技术面试、需要补 System Design 的求职者。",
+  "suitable_en": "Candidates with coding background preparing for dev technical interviews and System Design.",
+  "cardDescription": "20 节：分方向技术面 + System Design + 前端手写 Lab + AI 编程实操。",
+  "promoDescription": "技术面有三种形式：现场手写、take-home、System Design，不同公司偏好不同。这门课按你的方向（前端/后端/DevOps/数据）逐一准备，再把 System Design 从单体到微服务、Docker 讲成一条清晰的脉络，配手写 Lab 真练。",
+  "prerequisiteknowledge": "需要基本编程基础（任一语言），了解至少一个技术方向。",
+  "highlights": [
+    "技术面 3 种形式与应对",
+    "前端/后端/DevOps/数据 分方向准备",
+    "System Design：Monolith→微服务→Docker",
+    "浏览器内手写 React/JS/CSS Lab",
+    "用 AI 辅助生成与理解代码"
+  ],
+  "highlights_en": [
+    "3 technical interview formats",
+    "Prep by front-end/back-end/DevOps/data",
+    "System Design: monolith→microservices→Docker",
+    "In-browser React/JS/CSS labs",
+    "AI-assisted code generation"
+  ],
+  "features": [
+    "录播 + 5 个可运行代码 Lab + AI Engineer Hub",
+    "分方向准备，不做一锅烩",
+    "System Design 成体系讲透"
+  ],
+  "program": {
+    "name": "澳洲 IT 技术面试特训营 第一期",
+    "programPhase": 1,
+    "cohortStatus": "RECRUITING",
+    "tuition": 79,
+    "promoTuition": 59
+  },
+  "curriculumPages": {
+    "pages": [
+      "curriculum.html"
+    ],
+    "defaultPage": "curriculum.html"
+  },
+  "phases": [
+    {
+      "name": "Part 1 — 技术面通识",
+      "color": "#2e7d32",
+      "summary": "先懂技术面怎么考",
+      "lessons": [
+        {
+          "code": "L01",
+          "title": "澳洲 IT 面试流程",
+          "description": "典型的澳洲 IT 面试 4-5 轮流程：HR Screening → Online Assessment → Technical Interview → Hiring Manager → Culture Fit。每轮的时长、形式、淘汰率。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 25
+        },
+        {
+          "code": "L02",
+          "title": "如何准备技术面",
+          "description": "技术面的 3 种形式：Coding Challenge（手写代码）、Take-home Project（回家做项目）、System Design（架构讨论）。不同公司偏好不同形式。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L03",
+          "title": "如何准备 Hiring Manager Interview",
+          "description": "Hiring Manager 面试和 HR/技术面的区别：HM 看的是\"你能不能和我的团队配合\"、\"你能不能独立解决问题\"、\"你的职业目标和我的团队方向是否匹配\"。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L04",
+          "title": "Tutorial - 技术面试题以及如何回答",
+          "description": "以真实面试题为例演示回答过程：先问清需求 → 说思路 → 写代码 → 分析复杂度 → 讨论优化。面试官看的不只是答案，是你的思维过程。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        }
+      ]
+    },
+    {
+      "name": "Part 2 — 分方向面试准备",
+      "color": "#1565c0",
+      "summary": "按你的方向逐个击破",
+      "lessons": [
+        {
+          "code": "L05",
+          "title": "前端面试需要准备什么",
+          "description": "前端面试 3 大块：HTML/CSS/JS 基础（闭包、原型链、事件循环）、React/Vue 框架原理（虚拟 DOM、Hooks、状态管理）、实战（现场写一个组件）。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L06",
+          "title": "Lab: React — useState Hook",
+          "description": "浏览器内手写 useState，练前端面试高频考点。",
+          "type": "InteractiveLab",
+          "isLive": false,
+          "isInteractiveLab": true,
+          "interactiveLabType": "frontend",
+          "interactiveLabSlug": "react-useState",
+          "duration": 30,
+          "labs": [
+            {
+              "source": "prompt-lab",
+              "slug": "react-useState"
+            }
+          ]
+        },
+        {
+          "code": "L07",
+          "title": "Lab: React — useEffect Hook",
+          "description": "浏览器内手写 useEffect，理解副作用与依赖。",
+          "type": "InteractiveLab",
+          "isLive": false,
+          "isInteractiveLab": true,
+          "interactiveLabType": "frontend",
+          "interactiveLabSlug": "react-useEffect",
+          "duration": 30,
+          "labs": [
+            {
+              "source": "prompt-lab",
+              "slug": "react-useEffect"
+            }
+          ]
+        },
+        {
+          "code": "L08",
+          "title": "Lab: JS — let/const 作用域",
+          "description": "手写练习作用域与闭包，前端面试必考。",
+          "type": "InteractiveLab",
+          "isLive": false,
+          "isInteractiveLab": true,
+          "interactiveLabType": "frontend",
+          "interactiveLabSlug": "js-let-const-scope",
+          "duration": 30,
+          "labs": [
+            {
+              "source": "prompt-lab",
+              "slug": "js-let-const-scope"
+            }
+          ]
+        },
+        {
+          "code": "L09",
+          "title": "Lab: CSS — Flexbox 卡片布局",
+          "description": "浏览器内实现 Flexbox 布局，练现场写样式。",
+          "type": "InteractiveLab",
+          "isLive": false,
+          "isInteractiveLab": true,
+          "interactiveLabType": "frontend",
+          "interactiveLabSlug": "flexbox-cards",
+          "duration": 30,
+          "labs": [
+            {
+              "source": "prompt-lab",
+              "slug": "flexbox-cards"
+            }
+          ]
+        },
+        {
+          "code": "L10",
+          "title": "Java 后端面试需要准备什么",
+          "description": "后端面试 3 大块：Java 基础（集合框架、多线程、JVM）、Spring Boot 全家桶（IoC、AOP、JPA）、数据库（SQL 优化、索引、事务）。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L11",
+          "title": "DevOps 面试需要准备什么",
+          "description": "DevOps 面试 3 大块：CI/CD 流水线（Jenkins/GitHub Actions）、容器化（Docker/K8s）、云平台（AWS/Azure/GCP）。面试官最爱问的场景题。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L12",
+          "title": "数据工程面试需要准备什么",
+          "description": "数据面试 3 大块：SQL（窗口函数、CTE、性能优化）、ETL Pipeline（Airflow/Spark）、数据仓库（Snowflake/BigQuery/Redshift）。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        }
+      ]
+    },
+    {
+      "name": "Part 3 — System Design 专项",
+      "color": "#6a1b9a",
+      "summary": "从单体到微服务讲透",
+      "lessons": [
+        {
+          "code": "L13",
+          "title": "System Design 面试问题分析",
+          "description": "System Design 面试的标准流程：需求澄清（5min）→ 高层设计（10min）→ 深入设计（15min）→ Trade-off 讨论（10min）。面试官打分的 4 个维度。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L14",
+          "title": "什么是 Monolith",
+          "description": "单体架构的特点：一个代码库、一个部署单元、一个数据库。优点：简单、容易调试。缺点：规模大了改不动、部署慢、团队协作冲突多。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L15",
+          "title": "什么是 Microservices",
+          "description": "微服务架构：每个服务独立部署、独立数据库、通过 API 通信。什么时候该拆微服务、什么时候不该拆。面试中怎么回答\"Monolith vs Microservices\"。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L16",
+          "title": "什么是 Docker",
+          "description": "Docker 解决什么问题（\"在我机器上能跑\"）、Image vs Container、Dockerfile 怎么写、docker-compose 管理多服务。面试常见 Docker 问题。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L17",
+          "title": "Solution - Dockerised Microservices",
+          "description": "实战案例：一个电商系统的 Docker + Microservices 架构。User Service / Product Service / Order Service / API Gateway 怎么拆、怎么通信。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L18",
+          "title": "Advanced Topics of System Design",
+          "description": "高级话题：CAP Theorem、Consistency Patterns、Rate Limiting、Load Balancing、Message Queue（Kafka/RabbitMQ）、Caching（Redis）。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L19",
+          "title": "Tutorial - System Design Case 分析",
+          "description": "实战：设计一个 URL Shortener / Chat App / News Feed。从需求分析到最终架构，完整走一遍 System Design 面试。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L20",
+          "title": "Lab: AI 代码生成",
+          "description": "用 AI 辅助生成与重构代码，提升准备效率。",
+          "type": "InteractiveLab",
+          "isLive": false,
+          "isInteractiveLab": true,
+          "interactiveLabType": "prompt",
+          "interactiveLabSlug": "code-generation",
+          "duration": 30,
+          "labs": [
+            {
+              "source": "prompt-lab",
+              "slug": "code-generation"
+            }
+          ]
+        },
+        {
+          "code": "L21",
+          "title": "用一下: AI Engineer Hub",
+          "description": "在平台 AI Engineer Hub 做进阶技术练习与项目。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 20
+        }
+      ]
+    }
+  ]
+}

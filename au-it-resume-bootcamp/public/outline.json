@@ -1,0 +1,218 @@
+{
+  "themeColor": "#FFDE59",
+  "slug": "au-it-resume-bootcamp",
+  "name": "澳洲 IT 简历特训营",
+  "name_en": "IT Resume Bootcamp",
+  "description": "用招聘官视角重写一份能过 ATS、拿到面试的澳洲 IT 简历",
+  "level": "零基础",
+  "type": "training",
+  "targetAudience": "在澳求职 / 转行 IT、投简历长期没有回音的求职者",
+  "totalLessons": 15,
+  "totalSteps": 0,
+  "liveClasses": 0,
+  "estimatedHours": 7,
+  "totalInteractiveLabs": 2,
+  "title_en": "IT Resume Bootcamp",
+  "description_en": "Rewrite an ATS-friendly Australian IT resume the way recruiters actually read it.",
+  "timeLength": "约 7 小时（15 节：录播 + 互动 Lab + 平台工具，自主安排节奏）",
+  "courseObjective": "看懂招聘官 7 秒筛简历的标准，掌握 Action Verb + Metric + Impact 写法，产出一份针对澳洲 IT 岗位、能过 ATS 的简历与 Cover Letter。",
+  "courseObjective_en": "Understand 7-second recruiter screening and produce an ATS-ready Australian IT resume and cover letter.",
+  "suitable": "投了很多简历没有面试邀约、不确定简历哪里出问题、想针对澳洲 IT 市场重写简历的求职者；零经验和有经验都适用。",
+  "suitable_en": "Job seekers getting no interviews, unsure what's wrong — both entry-level and experienced.",
+  "cardDescription": "15 节：用招聘官视角重写澳洲 IT 简历 + Cover Letter，配 AI 实操 Lab，过 ATS 拿面试。",
+  "promoDescription": "招聘官平均只花 7 秒看一份简历——你的简历撑得过这 7 秒吗？这门课带你按澳洲 IT 市场的真实标准，从框架到措辞重写一遍，还教你用 AI 精准对着 JD 优化。",
+  "prerequisiteknowledge": "无需技术基础，有一份现有简历（哪怕很粗糙）即可开始。",
+  "highlights": [
+    "招聘官 7 秒筛简历的真实标准",
+    "Action Verb + Metric + Impact 量化写法",
+    "零经验 / 有经验两条专属路线",
+    "用 AI 提取 JD 关键词、仿写 bullet point",
+    "配套 Cover Letter 定制方法"
+  ],
+  "highlights_en": [
+    "7-second recruiter screening",
+    "Action Verb + Metric + Impact writing",
+    "Tracks for entry-level and experienced",
+    "AI keyword extraction & bullet rewriting",
+    "Cover letter tailoring"
+  ],
+  "features": [
+    "录播 + 互动 Lab + 平台工具，不只是看视频",
+    "澳洲 IT 市场本地化（ATS / 格式 / visa 标注）",
+    "配套简历模板与作业点评方向"
+  ],
+  "program": {
+    "name": "澳洲 IT 简历特训营 第一期",
+    "programPhase": 1,
+    "cohortStatus": "RECRUITING",
+    "tuition": 39,
+    "promoTuition": 29
+  },
+  "curriculumPages": {
+    "pages": [
+      "curriculum.html"
+    ],
+    "defaultPage": "curriculum.html"
+  },
+  "phases": [
+    {
+      "name": "Part 1 — 简历底层逻辑",
+      "color": "#2e7d32",
+      "summary": "先搞懂招聘官怎么看，再动手写",
+      "lessons": [
+        {
+          "code": "L01",
+          "title": "招聘官挑选简历的标准",
+          "description": "一个 recruiter 平均花 7 秒看一份简历。他们看什么？第一眼：最近工作经历。第二眼：技术栈匹配度。第三眼：量化成果。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L02",
+          "title": "简历框架及如何有效展现自己",
+          "description": "简历的 6 个区块：Contact → Summary → Experience → Skills → Education → Projects。每个区块写多少、写什么、不写什么。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L03",
+          "title": "常见简历模版",
+          "description": "澳洲 IT 行业最受欢迎的 3 种简历模板对比。哪些模板 ATS（自动筛选系统）识别率最高。PDF vs Word 格式选择。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 25
+        }
+      ]
+    },
+    {
+      "name": "Part 2 — 写出一份专业 IT 简历",
+      "color": "#1565c0",
+      "summary": "从措辞到技术栈逐块打磨",
+      "lessons": [
+        {
+          "code": "L04",
+          "title": "简历撰写与优化技巧",
+          "description": "Action Verb + Metric + Impact 公式。\"参与了项目开发\" vs \"用 React + Node.js 重构了用户中心，页面加载速度提升 40%\"——哪个版本更好？",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L05",
+          "title": "如何撰写 IT 专业简历",
+          "description": "针对 IT 岗位的简历特殊要求：技术栈怎么列（不要\"熟练掌握 Java\"，要\"Java 8+, Spring Boot, Hibernate\"）、GitHub/Portfolio 链接放哪里。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L06",
+          "title": "如何写 IT 行业的简历",
+          "description": "不同方向的简历侧重点：前端重 UI/UX 作品集，后端重系统设计经验，DevOps 重自动化成果，数据重指标提升。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L07",
+          "title": "简历常见问题",
+          "description": "Gap year 怎么解释？频繁跳槽怎么写？海外学历怎么标注？visa status 要不要写？逐一解答。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        }
+      ]
+    },
+    {
+      "name": "Part 3 — 分场景 + AI 提效",
+      "color": "#6a1b9a",
+      "summary": "零经验/有经验两条线，AI 精准优化",
+      "lessons": [
+        {
+          "code": "L08",
+          "title": "零经验者的简历之路",
+          "description": "没有工作经验怎么写简历？4 个策略：课程项目包装、开源贡献、个人 Side Project、志愿者/实习经历。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L09",
+          "title": "有经验者的简历进阶",
+          "description": "有 3-5 年经验后简历怎么升级？从\"我做了什么\"到\"我带来了什么业务价值\"。Senior 岗位简历和 Junior 的核心区别。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L10",
+          "title": "如何利用 ChatGPT 写简历",
+          "description": "实操演示：把 JD 喂给 AI，让 AI 帮你提取关键词、生成 bullet point、优化措辞。注意事项：AI 生成的内容必须基于真实经历。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L11",
+          "title": "Lab: 信息提取 — 从 JD 抓关键词",
+          "description": "把真实 JD 喂给 AI，抓出技术栈、硬性要求、关键词，反向优化简历。浏览器内完成，即时验证。",
+          "type": "InteractiveLab",
+          "isLive": false,
+          "isInteractiveLab": true,
+          "interactiveLabType": "prompt",
+          "interactiveLabSlug": "information-extraction",
+          "duration": 30,
+          "labs": [
+            {
+              "source": "prompt-lab",
+              "slug": "information-extraction"
+            }
+          ]
+        },
+        {
+          "code": "L12",
+          "title": "Lab: Few-shot — 让 AI 仿写 bullet",
+          "description": "给 AI 一个优质简历 bullet 范例，用 few-shot 让它按 Action+Metric+Impact 仿写你的经历。",
+          "type": "InteractiveLab",
+          "isLive": false,
+          "isInteractiveLab": true,
+          "interactiveLabType": "prompt",
+          "interactiveLabSlug": "few-shot",
+          "duration": 30,
+          "labs": [
+            {
+              "source": "prompt-lab",
+              "slug": "few-shot"
+            }
+          ]
+        },
+        {
+          "code": "L13",
+          "title": "用一下: JobPin AI 简历编辑",
+          "description": "在平台用 JobPin AI 对照目标 JD 优化简历关键词与措辞，一键生成针对性版本。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 20
+        },
+        {
+          "code": "L14",
+          "title": "如何写 Cover Letter",
+          "description": "如何写 Cover Letter",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L15",
+          "title": "结业作业：针对真实 JD 产出简历与 Cover Letter",
+          "description": "选一个真实 JD，产出定制简历与 Cover Letter，对照 checklist 自检 ATS 关键词匹配、量化成果覆盖、格式一致性。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 25
+        }
+      ]
+    }
+  ]
+}

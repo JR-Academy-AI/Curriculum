@@ -1,0 +1,201 @@
+{
+  "themeColor": "#FFDE59",
+  "slug": "au-it-career-planning-bootcamp",
+  "name": "澳洲 IT 职业规划营",
+  "name_en": "IT Career Planning Bootcamp",
+  "description": "搞懂澳洲 IT 行业地图 + 定位自己，先想清楚投哪个方向再动手",
+  "level": "零基础",
+  "type": "training",
+  "targetAudience": "刚落地 / 转行、对澳洲 IT 行业和自己方向都还迷糊的人",
+  "totalLessons": 14,
+  "totalSteps": 0,
+  "liveClasses": 0,
+  "estimatedHours": 7,
+  "totalInteractiveLabs": 1,
+  "title_en": "IT Career Planning Bootcamp",
+  "description_en": "Map the Australian IT industry and position yourself before you start applying.",
+  "timeLength": "约 7 小时（14 节：录播 + 互动 Lab + 平台工具，自主安排节奏）",
+  "courseObjective": "看懂澳洲 IT 各岗位的做什么、薪资、需求量与趋势，用 SWOT 定位自己，产出一份可执行的 3/6/12 个月职业规划。",
+  "courseObjective_en": "Understand Australian IT roles, salaries and trends, position yourself with SWOT, and build a 3/6/12-month plan.",
+  "suitable": "刚到澳洲、准备转行 IT、或投简历前还没想清楚方向的人。",
+  "suitable_en": "Newcomers, career changers, or anyone unclear on direction before applying.",
+  "cardDescription": "14 节：澳洲 IT 行业全景 + SWOT 自我定位 + 可执行职业规划。",
+  "promoDescription": "80% 的人找工作效率低，是因为没搞清自己要什么、市场要什么、自己缺什么。这门课先带你看懂澳洲 IT 的行业地图，再用 SWOT 把自己定位清楚，产出一份能落地的职业规划。",
+  "prerequisiteknowledge": "无需任何基础，适合求职最开始的方向探索阶段。",
+  "highlights": [
+    "澳洲 IT 各岗位做什么 / 薪资 / 需求量",
+    "2026 哪些方向在涨、哪些在缩",
+    "IT 职业发展 5 条主流路径",
+    "用 SWOT 分析自己的求职竞争力",
+    "产出 3/6/12 个月可执行规划"
+  ],
+  "highlights_en": [
+    "What each IT role does, pays, demands",
+    "2026 rising vs shrinking directions",
+    "5 mainstream IT career paths",
+    "SWOT your job-search competitiveness",
+    "Build a 3/6/12-month actionable plan"
+  ],
+  "features": [
+    "录播 + Career Planning 工具 + AI 入门 Lab",
+    "澳洲本地行业数据与雇主分布",
+    "配套 SWOT 与规划作业"
+  ],
+  "program": {
+    "name": "澳洲 IT 职业规划营 第一期",
+    "programPhase": 1,
+    "cohortStatus": "RECRUITING",
+    "tuition": 39,
+    "promoTuition": 29
+  },
+  "curriculumPages": {
+    "pages": [
+      "curriculum.html"
+    ],
+    "defaultPage": "curriculum.html"
+  },
+  "phases": [
+    {
+      "name": "Part 1 — 澳洲 IT 行业认知",
+      "color": "#2e7d32",
+      "summary": "先看懂这个市场",
+      "lessons": [
+        {
+          "code": "L01",
+          "title": "澳洲工作职场介绍",
+          "description": "澳洲 IT 职场和国内的核心区别：Agile 工作方式、代码质量文化、跨职能团队协作、work-life balance。中国背景求职者最常踩的坑。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L02",
+          "title": "IT 行业的主要部门与趋势分析",
+          "description": "前端/后端/移动端/数据/AI/DevOps/QA/BA/PM 各岗位做什么、薪资范围、需求量。2026 年哪些方向在涨、哪些在缩。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L03",
+          "title": "澳洲企业招聘流程",
+          "description": "一个典型的澳洲 IT 岗位从发布到 offer 的完整流程：HR screening → technical interview → hiring manager → reference check → offer。每个环节的通过率和常见淘汰原因。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L04",
+          "title": "行业的未来预测",
+          "description": "AI 对 IT 岗位的冲击：哪些岗位会被取代、哪些需求会暴增、哪些技能组合最有竞争力。基于 2025-2026 真实招聘数据分析。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L05",
+          "title": "企业招聘成本",
+          "description": "企业招一个人要花多少钱（招聘平台费、猎头费、面试时间成本），理解这些能帮你在面试中站在企业角度思考。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        }
+      ]
+    },
+    {
+      "name": "Part 2 — 职业规划与自我定位",
+      "color": "#1565c0",
+      "summary": "把自己想清楚",
+      "lessons": [
+        {
+          "code": "L06",
+          "title": "职业规划的重要性",
+          "description": "没有规划的求职 = 海投。为什么 80% 的人找工作效率低？因为没搞清楚自己要什么、市场要什么、自己缺什么。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L07",
+          "title": "自我认知与分析",
+          "description": "三个问题定位自己：我擅长什么技术？我喜欢什么工作方式？市场上什么岗位匹配？性格测试工具（MBTI/DISC）在 IT 求职中的实际用法。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L08",
+          "title": "如何制定长短期的职业目标",
+          "description": "短期目标（3个月）：拿到第一份 offer。中期目标（1年）：站稳脚跟。长期目标（3-5年）：达到 Senior/Lead。SMART 原则在职业规划中的应用。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L09",
+          "title": "什么是 SWOT 分析",
+          "description": "用 SWOT 分析你的求职竞争力：Strength（技术栈）、Weakness（英语/经验）、Opportunity（市场需求）、Threat（竞争对手）。带你做一个完整的 SWOT。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L10",
+          "title": "常见的 IT 职业发展路径介绍",
+          "description": "5 条主流路径详解：Full Stack → Senior → Lead → Architect；Data Analyst → Data Engineer → ML Engineer；DevOps → SRE → Platform Engineer。每条路径的薪资天花板和所需年限。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        },
+        {
+          "code": "L11",
+          "title": "制定未来的 IT 职业生涯",
+          "description": "根据前几节的分析，制定你自己的职业路线图。工具：用 Roadmap 可视化你的技能树和学习计划。",
+          "type": "Video",
+          "isLive": false,
+          "duration": 30
+        }
+      ]
+    },
+    {
+      "name": "Part 3 — 落地成规划",
+      "color": "#6a1b9a",
+      "summary": "把想法变成计划",
+      "lessons": [
+        {
+          "code": "L12",
+          "title": "用一下: Career Planning",
+          "description": "在平台用 Career Planning 可视化你的技能树与学习计划。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 20
+        },
+        {
+          "code": "L13",
+          "title": "Lab: Hello AI — 第一次和 AI 对话",
+          "description": "第一次上手 AI：学会向 AI 提问、让它帮你梳理职业方向。",
+          "type": "InteractiveLab",
+          "isLive": false,
+          "isInteractiveLab": true,
+          "interactiveLabType": "prompt",
+          "interactiveLabSlug": "hello-ai",
+          "duration": 30,
+          "labs": [
+            {
+              "source": "prompt-lab",
+              "slug": "hello-ai"
+            }
+          ]
+        },
+        {
+          "code": "L14",
+          "title": "结业作业：个人 SWOT + 3/6/12 个月规划",
+          "description": "提交你的 SWOT 分析与 3/6/12 个月职业规划，对照课程标准自检可行性。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 25
+        }
+      ]
+    }
+  ]
+}

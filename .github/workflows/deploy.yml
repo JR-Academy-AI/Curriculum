@@ -484,6 +484,14 @@ jobs:
             cp -r ai-engineer-bootcamp/public/jobs _site/ai-engineer-bootcamp/
           fi
 
+          # ---- IT Career Coaching 拆课系列（P1-P7，纯静态录播产品）----
+          for slug in au-it-resume-bootcamp au-it-interview-bootcamp au-it-networking-bootcamp au-it-career-planning-bootcamp au-it-tech-interview-bootcamp au-it-bigtech-bootcamp au-it-salary-promotion-bootcamp; do
+            if [ -d "$slug/public" ]; then
+              mkdir -p "_site/$slug"
+              cp -r "$slug/public/"* "_site/$slug/"
+            fi
+          done
+
           # Top-level posters aggregate page (internal marketing asset index)
           [ -f posters.html ] && cp posters.html _site/posters.html || true
           [ -f quest-posters.html ] && cp quest-posters.html _site/quest-posters.html || true
@@ -569,6 +577,47 @@ jobs:
                     <span class="tag" style="background:#CB6CE6">QUEST</span>
                     <div class="title">✨ Quest 海报集</div>
                     <div class="desc">跨课程 Quest 任务（AI Tutor 实战）海报合集</div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="section">
+                <div class="section-title">IT Career Coaching 拆课系列 · 澳洲 IT 求职录播 · 7 门</div>
+                <div class="cards">
+                  <a href="./au-it-resume-bootcamp/curriculum.html">
+                    <span class="tag" style="background:#1565c0">早鸟 $29</span>
+                    <div class="title">澳洲 IT 简历特训营</div>
+                    <div class="desc">15 节 · 10 视频 · 2 Lab — 用招聘官视角重写一份能过 ATS、拿到面试的澳洲 IT 简历</div>
+                  </a>
+                  <a href="./au-it-interview-bootcamp/curriculum.html">
+                    <span class="tag" style="background:#2e7d32">早鸟 $29</span>
+                    <div class="title">澳洲 IT 面试特训营</div>
+                    <div class="desc">15 节 · 11 视频 · 2 Lab — 从自我介绍到行为面试 STAR，把澳洲 IT 面试打成一场有准备的仗</div>
+                  </a>
+                  <a href="./au-it-networking-bootcamp/curriculum.html">
+                    <span class="tag" style="background:#6a1b9a">早鸟 $29</span>
+                    <div class="title">澳洲 IT 人脉内推求职营</div>
+                    <div class="desc">15 节 · 11 视频 · 1 Lab — 经营 LinkedIn 个人品牌 + 走通内推，让工作机会主动找上门</div>
+                  </a>
+                  <a href="./au-it-career-planning-bootcamp/curriculum.html">
+                    <span class="tag" style="background:#00838f">早鸟 $29</span>
+                    <div class="title">澳洲 IT 职业规划营</div>
+                    <div class="desc">14 节 · 11 视频 · 1 Lab — 搞懂澳洲 IT 行业地图 + 定位自己，先想清楚投哪个方向再动手</div>
+                  </a>
+                  <a href="./au-it-tech-interview-bootcamp/curriculum.html">
+                    <span class="tag" style="background:#c62828">早鸟 $59</span>
+                    <div class="title">澳洲 IT 技术面试特训营</div>
+                    <div class="desc">21 节 · 14 视频 · 5 Lab — 前端 / 后端 / DevOps / 数据分方向技术面 + System Design 全套</div>
+                  </a>
+                  <a href="./au-it-bigtech-bootcamp/curriculum.html">
+                    <span class="tag" style="background:#10162f">早鸟 $89</span>
+                    <div class="title">澳洲科技大厂求职营</div>
+                    <div class="desc">18 节 · 14 视频 · 3 Lab — 韭天拆解大厂招聘内幕：职级、薪资、面试题来源与算法题打法</div>
+                  </a>
+                  <a href="./au-it-salary-promotion-bootcamp/curriculum.html">
+                    <span class="tag" style="background:#e65100">早鸟 $59</span>
+                    <div class="title">澳洲 IT 薪资谈判与晋升营</div>
+                    <div class="desc">14 节 · 13 视频 · 1 Lab — 把 offer 谈到市场上限，再规划升职与跳槽的收益最大化路径</div>
                   </a>
                 </div>
               </div>
