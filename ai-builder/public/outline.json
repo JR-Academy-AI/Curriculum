@@ -7,14 +7,14 @@
   "level": "中级",
   "type": "training",
   "targetAudience": "有编程基础的开发者、全栈工程师、DevOps、想用 AI 提升开发效率的技术人员",
-  "totalLessons": 112,
-  "totalSteps": 142,
-  "liveClasses": 22,
+  "totalLessons": 111,
+  "totalSteps": 137,
+  "liveClasses": 20,
   "estimatedHours": 107.3,
   "totalInteractiveLabs": 32,
   "title_en": "Vibe Coding Masterclass",
   "description_en": "Build full-stack apps with Claude Code and Codex. From PRD to Skills/MCP/Agent to deployment. For developers with programming experience.",
-  "timeLength": "8 周（112 节课）",
+  "timeLength": "8 周（111 节课）",
   "courseObjective": "建立从个人到企业的 AI 操作系统：用 Source of Truth 把你的经验/规范结构化成 AI 可读的第二大脑，用 ADLC 把整份 PRD 交给 Agent 端到端开发并部署，把重复流程交给 Agent 自动跑，最终能同时指挥多个 Agent 并行工作。",
   "courseObjective_en": "Master Claude Code Skills, MCP Server building, Agent architecture, and multi-model collaboration. Ship a full-stack project from PRD to deployment with AI.",
   "suitable": "有 Python/JS 基础的软件工程师\n全栈开发者想用 AI 10x 开发效率\nDevOps 工程师想了解 AI 开发工具\n技术创业者想快速出产品",
@@ -774,11 +774,24 @@
           "_id": "6a4310732f662a5f6d5c9ba1"
         },
         {
-          "code": "L20",
-          "title": "Claude Prompt Engineering 与 Context Engineering（上下文工程）实践",
-          "description": "Prompt Engineering 管的是单条指令的质量，Context Engineering 管的是 AI 能看到的所有信息。同一条 Prompt 在不同 Context 下输出完全不同。这节课讲 Context Engineering 的核心：CLAUDE.md 文件写什么（项目规范和约束）、.claude/rules/ 怎么按领域拆分（编码风格和模式）、什么信息放上下文什么不放、怎么设计项目结构让 AI 更好理解你的代码。",
+          "code": "L111",
+          "title": "从 PRD 到 Production：GitHub + Actions + Pages / Vercel 交付链路",
+          "description": "前三节写的 PRD、CLAUDE.md、tokens.css 都还只躺在你本地。这节 120 分钟动手工作坊，把它们接成一条真能交付的链路：让 Agent 从 PRD 生成 scaffold、进 GitHub、跑 Actions CI（并亲眼看它拦住坏代码）、发布到 Pages 和 Vercel，最后对照 PRD 验收线上版本。全程你不敲命令，你指挥 Agent。",
           "type": "Lesson",
           "isLive": true,
+          "duration": 120,
+          "steps": [],
+          "labs": [],
+          "learns": [],
+          "learningMaterial": "<p><strong>📽 课堂 Slides：</strong><a href=\"https://jiangren.com.au/curriculum/lessons/vibe-coding-master-l4/\" target=\"_blank\" rel=\"noopener\">从 PRD 到 Production（网页版 PPT · 22 页 · ← → 翻页）</a></p><h2>学习目标</h2><p>这节课结束后，你能：</p><ul><li>从已有 PRD 让 Agent 生成最小可运行项目框架（scaffold first，不是一次性做完整产品）</li><li>让项目在本地通过 install / typecheck / build 三条绿线（本地绿色基线）</li><li>把代码 + PRD + rules + tokens 放进同一个 GitHub Repository，作为项目的 SoT</li><li>看懂并使用最小 GitHub Actions CI，亲眼验证它能拦住坏代码（红灯实验）</li><li>用 Actions 把静态构建产物发布到 GitHub Pages</li><li>用 Vercel Git Integration 拿到 Preview + Production URL</li><li>对照 PRD 验收线上版本，而不是以「URL 能打开」为完成标准</li></ul><h2>核心概念</h2><h3>本地能跑 ≠ 交付</h3><p>localhost 只有你能访问、没人验证、没有历史。交付是「别人能点开就用、你每次提交都自动验证、自动上线」。这节课把前三节的三层 SoT（人 / 产品 / 视觉）接成一条真能跑的链路：<code>PRD + CLAUDE.md + tokens.css → Scaffold → GitHub → Actions → Pages / Vercel</code>。</p><h3>Scaffold ≠ 完整产品</h3><p>先分清 scaffold / MVP 功能 / 完整产品。主线只做 scaffold + placeholder + 一个最小核心 Flow，禁止「一句话做完」导致生成失控。先让 Agent 出 scaffold plan，你确认后再让它生成。</p><h3>你不敲命令，你指挥 Agent</h3><p>git 命令、workflow YAML、部署配置都是 Agent 替你生成的产物，你 review。你的活是：给对意图 → review Agent 产出 → 验证结果真跑通 → 守住 Agent 保证不了的（密钥不进 git、URL 能打开、CI 真能拦住坏代码、对照 PRD 验收、别擅自加 PRD 以外的功能）。</p><h3>红灯实验：CI 到底在保护什么</h3><p>让 Agent 建 ci.yml → 故意写一个 TS error → workflow 变红 → 修复 → 变绿。亲眼看它拦住坏代码，才算过关。</p><h3>三个环境与 PR → Preview → Production</h3><p>Local / Preview / Production 各管一段：Actions 管 CI 与 Pages，Vercel 用官方 Git Integration。PR 一开盯四件事——CI 过没、有没有独立 Preview URL、在 Preview 上对着 PRD 验收、验收过了再 merge。<strong>没看过 Preview 之前不要 merge。</strong></p><h2>课堂产物</h2><ul><li>一个 GitHub Repository（代码 + PRD + rules + tokens 同仓）</li><li>一条能跑的 GitHub Actions CI（并做过红灯实验）</li><li>一个 GitHub Pages 线上 URL</li><li>一个 Vercel Preview URL + Production URL</li></ul><h2>课后作业（一个完整闭环）</h2><p>去你的 Vercel Preview 找一个真实问题，把它写成 PRD 的一条变更（PRD v1.1）；新开分支让 Agent 改，让 Actions 验证，用 Preview 验收；过了再 merge 到 main。</p><p>交四样：Pages URL、Vercel URL、PR 链接，加一张 Actions 绿灯截图。</p><h2>常见坑</h2><ul><li>Vite <code>base</code> 配错 → Pages 子路径资源 404</li><li>SPA 直接刷新子路由 → Pages 404</li><li>密钥 / .env 混进 commit —— push 前必查</li></ul><h2>前置</h2><p>需要本机 Node + Git + Claude Code（或 Cursor）、GitHub 账号、Vercel 账号。带上前三节的产物：PRD、CLAUDE.md、tokens.css。</p>",
+          "_id": "6a55dda12b2c173c34b25118"
+        },
+        {
+          "code": "L20",
+          "title": "自学：Claude Prompt Engineering 与 Context Engineering（上下文工程）实践",
+          "description": "Prompt Engineering 管的是单条指令的质量，Context Engineering 管的是 AI 能看到的所有信息。同一条 Prompt 在不同 Context 下输出完全不同。这节课讲 Context Engineering 的核心：CLAUDE.md 文件写什么（项目规范和约束）、.claude/rules/ 怎么按领域拆分（编码风格和模式）、什么信息放上下文什么不放、怎么设计项目结构让 AI 更好理解你的代码。",
+          "type": "Information",
+          "isLive": false,
           "duration": 90,
           "steps": [
             {
@@ -1013,76 +1026,6 @@
             ]
           },
           "_id": "69e19a954267524e904ae4db"
-        },
-        {
-          "code": "L111",
-          "title": "从 PRD 到 Production：GitHub + Actions + Pages / Vercel 交付链路",
-          "description": "前三节写的 PRD、CLAUDE.md、tokens.css 都还只躺在你本地。这节 120 分钟动手工作坊，把它们接成一条真能交付的链路：让 Agent 从 PRD 生成 scaffold、进 GitHub、跑 Actions CI（并亲眼看它拦住坏代码）、发布到 Pages 和 Vercel，最后对照 PRD 验收线上版本。全程你不敲命令，你指挥 Agent。",
-          "type": "Lesson",
-          "isLive": true,
-          "duration": 120,
-          "steps": [],
-          "labs": [],
-          "learns": [],
-          "learningMaterial": "<p><strong>📽 课堂 Slides：</strong><a href=\"https://jiangren.com.au/curriculum/lessons/vibe-coding-master-l4/\" target=\"_blank\" rel=\"noopener\">从 PRD 到 Production（网页版 PPT · 22 页 · ← → 翻页）</a></p><h2>学习目标</h2><p>这节课结束后，你能：</p><ul><li>从已有 PRD 让 Agent 生成最小可运行项目框架（scaffold first，不是一次性做完整产品）</li><li>让项目在本地通过 install / typecheck / build 三条绿线（本地绿色基线）</li><li>把代码 + PRD + rules + tokens 放进同一个 GitHub Repository，作为项目的 SoT</li><li>看懂并使用最小 GitHub Actions CI，亲眼验证它能拦住坏代码（红灯实验）</li><li>用 Actions 把静态构建产物发布到 GitHub Pages</li><li>用 Vercel Git Integration 拿到 Preview + Production URL</li><li>对照 PRD 验收线上版本，而不是以「URL 能打开」为完成标准</li></ul><h2>核心概念</h2><h3>本地能跑 ≠ 交付</h3><p>localhost 只有你能访问、没人验证、没有历史。交付是「别人能点开就用、你每次提交都自动验证、自动上线」。这节课把前三节的三层 SoT（人 / 产品 / 视觉）接成一条真能跑的链路：<code>PRD + CLAUDE.md + tokens.css → Scaffold → GitHub → Actions → Pages / Vercel</code>。</p><h3>Scaffold ≠ 完整产品</h3><p>先分清 scaffold / MVP 功能 / 完整产品。主线只做 scaffold + placeholder + 一个最小核心 Flow，禁止「一句话做完」导致生成失控。先让 Agent 出 scaffold plan，你确认后再让它生成。</p><h3>你不敲命令，你指挥 Agent</h3><p>git 命令、workflow YAML、部署配置都是 Agent 替你生成的产物，你 review。你的活是：给对意图 → review Agent 产出 → 验证结果真跑通 → 守住 Agent 保证不了的（密钥不进 git、URL 能打开、CI 真能拦住坏代码、对照 PRD 验收、别擅自加 PRD 以外的功能）。</p><h3>红灯实验：CI 到底在保护什么</h3><p>让 Agent 建 ci.yml → 故意写一个 TS error → workflow 变红 → 修复 → 变绿。亲眼看它拦住坏代码，才算过关。</p><h3>三个环境与 PR → Preview → Production</h3><p>Local / Preview / Production 各管一段：Actions 管 CI 与 Pages，Vercel 用官方 Git Integration。PR 一开盯四件事——CI 过没、有没有独立 Preview URL、在 Preview 上对着 PRD 验收、验收过了再 merge。<strong>没看过 Preview 之前不要 merge。</strong></p><h2>课堂产物</h2><ul><li>一个 GitHub Repository（代码 + PRD + rules + tokens 同仓）</li><li>一条能跑的 GitHub Actions CI（并做过红灯实验）</li><li>一个 GitHub Pages 线上 URL</li><li>一个 Vercel Preview URL + Production URL</li></ul><h2>课后作业（一个完整闭环）</h2><p>去你的 Vercel Preview 找一个真实问题，把它写成 PRD 的一条变更（PRD v1.1）；新开分支让 Agent 改，让 Actions 验证，用 Preview 验收；过了再 merge 到 main。</p><p>交四样：Pages URL、Vercel URL、PR 链接，加一张 Actions 绿灯截图。</p><h2>常见坑</h2><ul><li>Vite <code>base</code> 配错 → Pages 子路径资源 404</li><li>SPA 直接刷新子路由 → Pages 404</li><li>密钥 / .env 混进 commit —— push 前必查</li></ul><h2>前置</h2><p>需要本机 Node + Git + Claude Code（或 Cursor）、GitHub 账号、Vercel 账号。带上前三节的产物：PRD、CLAUDE.md、tokens.css。</p>",
-          "_id": "6a55dda12b2c173c34b25118"
-        },
-        {
-          "code": "L25",
-          "title": "Claude 协助 Debug：从报错到修复的完整流程",
-          "description": "代码报错了，怎么让 AI 帮你修？不是直接粘贴报错信息就行。这节课讲 Claude 辅助 Debug 的最佳实践：1）给完整的错误堆栈不要截断；2）说清楚你在做什么操作触发了这个错误；3）附上相关代码文件的上下文；4）让 Claude 先分析原因再给方案。",
-          "type": "Lesson",
-          "isLive": true,
-          "duration": 120,
-          "steps": [
-            {
-              "order": 1,
-              "type": "LIVE",
-              "title": "Claude Debug 最佳实践",
-              "description": "完整错误堆栈 + 操作上下文 + 先分析再修",
-              "duration": 30
-            },
-            {
-              "order": 2,
-              "type": "LAB",
-              "title": "Prompt Lab: 代码生成",
-              "description": "生成代码并 Debug",
-              "duration": 15,
-              "labSlug": "code-generation"
-            },
-            {
-              "order": 3,
-              "type": "SCENARIO",
-              "title": "修复 3 个真实 Bug",
-              "description": "用「先分析再修复」流程修复 3 个真实 Bug",
-              "duration": 30
-            },
-            {
-              "order": 4,
-              "type": "MCQ",
-              "title": "Debug 策略选择",
-              "description": "不同报错类型的最佳处理方式",
-              "duration": 15
-            }
-          ],
-          "labs": [
-            {
-              "source": "prompt-lab",
-              "slug": "vibe-debug-ai-code"
-            },
-            {
-              "source": "prompt-lab",
-              "slug": "code-generation"
-            }
-          ],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "debug-with-ai"
-            }
-          ],
-          "learningMaterial": "<h2>学习目标</h2><ul><li>掌握 Claude 辅助 Debug 的最佳实践：完整错误堆栈 + 操作上下文 + 先分析再修复</li><li>掌握「先分析根因，再动手修复」的 Debug 思维</li><li>学会判断不同报错类型应该用哪种 Debug 策略</li></ul><h2>核心概念</h2><h3>Debug 三要素</h3><p>AI Debug 效果取决于你给的信息质量。三个必须提供的要素：</p><pre><code># 要素 1：完整错误堆栈（不要截断！）\nTypeError: Cannot read properties of undefined (reading 'map')\n    at UserList (src/components/UserList.tsx:23:15)\n    at renderWithHooks (node_modules/react-dom/...)\n    at mountIndeterminateComponent (...)\n\n# 要素 2：你在做什么操作\n\"我在 UserList 组件中调用 API 获取用户列表，\n API 返回成功但组件渲染时报错\"\n\n# 要素 3：相关代码上下文\n# 不只是报错那一行，还有数据来源、类型定义</code></pre><h3>Claude Code Debug 方式</h3><p>把错误堆栈粘贴到终端 → Claude 自动读取相关文件 → 分析根因 → 可能修改多个文件。适合跨文件的复杂 bug，也能处理单文件的简单 bug。</p><pre><code># Claude Code 的 Debug 对话示例\n你：这个报错怎么修？[粘贴完整错误堆栈]\n\n# Claude 会自动：\n# 1. 读取报错文件 UserList.tsx\n# 2. 读取 API 返回的类型定义\n# 3. 发现 API 返回的 data 可能是 null\n# 4. 修改代码添加空值检查\n# 5. 如果类型定义不准确，还会修改 interface</code></pre><h3>先分析再修复</h3><p>不要让 AI 直接 \"修这个 bug\"。让它先分析：</p><pre><code># 差：直接让修\n\"修复这个 TypeError\"\n\n# 好：先分析\n\"分析这个 TypeError 的根因。不要直接修复，\n先告诉我：\n1. 哪个变量是 undefined？\n2. 为什么它是 undefined？\n3. 你建议的修复方案是什么？\n确认方案后再修改代码。\"</code></pre><h2>动手练习</h2><ol><li>找你项目中一个已知的 bug（或故意制造一个），用 Claude Code Debug</li><li>记录 Debug 效率：定位时间、修复准确率、是否引入新 bug</li><li>练习「先分析再修复」的 Debug 流程，养成不让 AI 盲目修的习惯</li></ol><h2>小结</h2><p>AI Debug 的关键不是 AI 多聪明，而是你给的信息够不够。完整错误堆栈 + 操作上下文 + 先分析后修复，这三步能解决 90% 的 Debug 场景。无论简单还是跨文件的复杂 bug，都适用这套流程。</p>",
-          "_id": "69db3dc476e3e0c1b3b66d44"
         },
         {
           "code": "L109",
