@@ -66,7 +66,8 @@
           "description": "澳洲 IT 职场和国内的核心区别：Agile 工作方式、代码质量文化、跨职能团队协作、work-life balance。中国背景求职者最常踩的坑。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571978a82b85aa9047d348"
         },
         {
           "code": "L02",
@@ -74,7 +75,8 @@
           "description": "前端/后端/移动端/数据/AI/DevOps/QA/BA/PM 各岗位做什么、薪资范围、需求量。2026 年哪些方向在涨、哪些在缩。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571979a82b85aa9047d351"
         },
         {
           "code": "L03",
@@ -82,7 +84,8 @@
           "description": "一个典型的澳洲 IT 岗位从发布到 offer 的完整流程：HR screening → technical interview → hiring manager → reference check → offer。每个环节的通过率和常见淘汰原因。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a57197aa82b85aa9047d35c"
         },
         {
           "code": "L04",
@@ -90,7 +93,8 @@
           "description": "AI 对 IT 岗位的冲击：哪些岗位会被取代、哪些需求会暴增、哪些技能组合最有竞争力。基于 2025-2026 真实招聘数据分析。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a57197ba82b85aa9047d36b"
         },
         {
           "code": "L05",
@@ -98,7 +102,8 @@
           "description": "企业招一个人要花多少钱（招聘平台费、猎头费、面试时间成本），理解这些能帮你在面试中站在企业角度思考。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a57197ea82b85aa9047d37f"
         }
       ]
     },
@@ -113,7 +118,8 @@
           "description": "没有规划的求职 = 海投。为什么 80% 的人找工作效率低？因为没搞清楚自己要什么、市场要什么、自己缺什么。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a57197fa82b85aa9047d39b"
         },
         {
           "code": "L07",
@@ -121,7 +127,8 @@
           "description": "三个问题定位自己：我擅长什么技术？我喜欢什么工作方式？市场上什么岗位匹配？性格测试工具（MBTI/DISC）在 IT 求职中的实际用法。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571980a82b85aa9047d3a3"
         },
         {
           "code": "L08",
@@ -129,7 +136,8 @@
           "description": "短期目标（3个月）：拿到第一份 offer。中期目标（1年）：站稳脚跟。长期目标（3-5年）：达到 Senior/Lead。SMART 原则在职业规划中的应用。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571981a82b85aa9047d3af"
         },
         {
           "code": "L09",
@@ -137,7 +145,8 @@
           "description": "用 SWOT 分析你的求职竞争力：Strength（技术栈）、Weakness（英语/经验）、Opportunity（市场需求）、Threat（竞争对手）。带你做一个完整的 SWOT。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571982a82b85aa9047d3b7"
         },
         {
           "code": "L10",
@@ -145,7 +154,8 @@
           "description": "5 条主流路径详解：Full Stack → Senior → Lead → Architect；Data Analyst → Data Engineer → ML Engineer；DevOps → SRE → Platform Engineer。每条路径的薪资天花板和所需年限。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571983a82b85aa9047d3bf"
         },
         {
           "code": "L11",
@@ -153,7 +163,8 @@
           "description": "根据前几节的分析，制定你自己的职业路线图。工具：用 Roadmap 可视化你的技能树和学习计划。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571984a82b85aa9047d3e0"
         }
       ]
     },
@@ -168,7 +179,8 @@
           "description": "在平台用 Career Planning 可视化你的技能树与学习计划。",
           "type": "Information",
           "isLive": false,
-          "duration": 20
+          "duration": 20,
+          "_id": "6a571985a82b85aa9047d3f4"
         },
         {
           "code": "L13",
@@ -185,7 +197,8 @@
               "source": "prompt-lab",
               "slug": "hello-ai"
             }
-          ]
+          ],
+          "_id": "6a571986a82b85aa9047d40f"
         },
         {
           "code": "L14",
@@ -193,7 +206,8 @@
           "description": "提交你的 SWOT 分析与 3/6/12 个月职业规划，对照课程标准自检可行性。",
           "type": "Information",
           "isLive": false,
-          "duration": 25
+          "duration": 25,
+          "_id": "6a571987a82b85aa9047d417"
         }
       ]
     }

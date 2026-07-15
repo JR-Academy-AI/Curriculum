@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "slug": "au-it-interview-bootcamp",
+  "trainingId": "6a5718cca82b85aa9047c385",
+  "syncedAt": "2026-07-15T05:22:11.878Z",
+  "modules": [
+    {
+      "_id": "6a5718cda82b85aa9047c38f",
+      "name": "Part 1 — 面试基础与准备",
+      "order": 0
+    },
+    {
+      "_id": "6a5718cea82b85aa9047c3a7",
+      "name": "Part 2 — 行为面试专项",
+      "order": 1
+    },
+    {
+      "_id": "6a5718cfa82b85aa9047c3c3",
+      "name": "Part 3 — AI 模拟练兵",
+      "order": 2
+    }
+  ],
+  "programs": [
+    {
+      "_id": "6a5718d0a82b85aa9047c3d4",
+      "programPhase": 1,
+      "name": "澳洲 IT 面试特训营 第1期",
+      "syllabusId": "6a5718d1a82b85aa9047c3e1",
+      "lessonCount": 15
+    }
+  ],
+  "lessons": {
+    "6a5718d2a82b85aa9047c3ea": {
+      "_id": "6a5718d2a82b85aa9047c3ea",
+      "name": "澳洲面试精英指南",
+      "title": "澳洲面试精英指南",
+      "moduleId": "6a5718cda82b85aa9047c38f",
+      "syllabusId": "6a5718d1a82b85aa9047c3e1",
+      "syllabusOrder": 0,
+      "matchedLocalCode": "L01",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5718d3a82b85aa9047c3f2": {
+      "_id": "6a5718d3a82b85aa9047c3f2",
+      "name": "如何准备面试",
+      "title": "如何准备面试",
+      "moduleId": "6a5718cda82b85aa9047c38f",
+      "syllabusId": "6a5718d1a82b85aa9047c3e1",
+      "syllabusOrder": 1,
+      "matchedLocalCode": "L02",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5718d4a82b85aa9047c3fe": {
+      "_id": "6a5718d4a82b85aa9047c3fe",
+      "name": "如何准备 Phone Screening Interview",
+      "title": "如何准备 Phone Screening Interview",
+      "moduleId": "6a5718cda82b85aa9047c38f",
+      "syllabusId": "6a5718d1a82b85aa9047c3e1",
+      "syllabusOrder": 2,
+      "matchedLocalCode": "L03",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5718d4a82b85aa9047c406": {
+      "_id": "6a5718d4a82b85aa9047c406",
+      "name": "面试中的自我营销艺术",
+      "title": "面试中的自我营销艺术",
+      "moduleId": "6a5718cda82b85aa9047c38f",
+      "syllabusId": "6a5718d1a82b85aa9047c3e1",
+      "syllabusOrder": 3,
+      "matchedLocalCode": "L04",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5718d6a82b85aa9047c40e": {
+      "_id": "6a5718d6a82b85aa9047c40e",
+      "name": "面试高手的秘籍",
+      "title": "面试高手的秘籍",
+      "moduleId": "6a5718cda82b85aa9047c38f",
+      "syllabusId": "6a5718d1a82b85aa9047c3e1",
+      "syllabusOrder": 4,
+      "matchedLocalCode": "L05",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5718d6a82b85aa9047c416": {
+      "_id": "6a5718d6a82b85aa9047c416",
+      "name": "行业和公司研究资料",
+      "title": "行业和公司研究资料",
+      "moduleId": "6a5718cda82b85aa9047c38f",
+      "syllabusId": "6a5718d1a82b85aa9047c3e1",
+      "syllabusOrder": 5,
+      "matchedLocalCode": "L06",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5718d7a82b85aa9047c41e": {
+      "_id": "6a5718d7a82b85aa9047c41e",
+      "name": "面试准备材料",
+      "title": "面试准备材料",
+      "moduleId": "6a5718cda82b85aa9047c38f",
+      "syllabusId": "6a5718d1a82b85aa9047c3e1",
+      "syllabusOrder": 6,
+      "matchedLocalCode": "L07",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5718d8a82b85aa9047c42a": {
+      "_id": "6a5718d8a82b85aa9047c42a",
+      "name": "让面试完美收官",
+      "title": "让面试完美收官",
+      "moduleId": "6a5718cda82b85aa9047c38f",
+      "syllabusId": "6a5718d1a82b85aa9047c3e1",
+      "syllabusOrder": 7,
+      "matchedLocalCode": "L08",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5718d9a82b85aa9047c432": {
+      "_id": "6a5718d9a82b85aa9047c432",
+      "name": "如何准备 Behaviour Interview",
+      "title": "如何准备 Behaviour Interview",
+      "moduleId": "6a5718cea82b85aa9047c3a7",
+      "syllabusId": "6a5718d1a82b85aa9047c3e1",
+      "syllabusOrder": 8,
+      "matchedLocalCode": "L09",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5718daa82b85aa9047c43a": {
+      "_id": "6a5718daa82b85aa9047c43a",
+      "name": "研究常见的行为面试问题",
+      "title": "研究常见的行为面试问题",
+      "moduleId": "6a5718cea82b85aa9047c3a7",
+      "syllabusId": "6a5718d1a82b85aa9047c3e1",
+      "syllabusOrder": 9,
+      "matchedLocalCode": "L10",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5718dba82b85aa9047c442": {
+      "_id": "6a5718dba82b85aa9047c442",
+      "name": "如何用 STAR 回答行为面试题",
+      "title": "如何用 STAR 回答行为面试题",
+      "moduleId": "6a5718cea82b85aa9047c3a7",
+      "syllabusId": "6a5718d1a82b85aa9047c3e1",
+      "syllabusOrder": 10,
+      "matchedLocalCode": "L11",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5718dca82b85aa9047c458": {
+      "_id": "6a5718dca82b85aa9047c458",
+      "name": "面试中的沟通技巧",
+      "title": "面试中的沟通技巧",
+      "moduleId": "6a5718cea82b85aa9047c3a7",
+      "syllabusId": "6a5718d1a82b85aa9047c3e1",
+      "syllabusOrder": 11,
+      "matchedLocalCode": "L12",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5718dda82b85aa9047c460": {
+      "_id": "6a5718dda82b85aa9047c460",
+      "name": "Lab: 角色扮演 — 让 AI 当面试官",
+      "title": "Lab: 角色扮演 — 让 AI 当面试官",
+      "moduleId": "6a5718cfa82b85aa9047c3c3",
+      "syllabusId": "6a5718d1a82b85aa9047c3e1",
+      "syllabusOrder": 12,
+      "matchedLocalCode": "L13",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5718dea82b85aa9047c4a9": {
+      "_id": "6a5718dea82b85aa9047c4a9",
+      "name": "Lab: 职场场景练习",
+      "title": "Lab: 职场场景练习",
+      "moduleId": "6a5718cfa82b85aa9047c3c3",
+      "syllabusId": "6a5718d1a82b85aa9047c3e1",
+      "syllabusOrder": 13,
+      "matchedLocalCode": "L14",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5718dfa82b85aa9047c4b1": {
+      "_id": "6a5718dfa82b85aa9047c4b1",
+      "name": "用一下: Mock Interview",
+      "title": "用一下: Mock Interview",
+      "moduleId": "6a5718cfa82b85aa9047c3c3",
+      "syllabusId": "6a5718d1a82b85aa9047c3e1",
+      "syllabusOrder": 14,
+      "matchedLocalCode": "L15",
+      "isOrphan": false,
+      "isDuplicate": false
+    }
+  }
+}

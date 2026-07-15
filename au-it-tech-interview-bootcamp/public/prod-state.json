@@ -1,0 +1,265 @@
+{
+  "schemaVersion": 1,
+  "slug": "au-it-tech-interview-bootcamp",
+  "trainingId": "6a5719aaa82b85aa9047d7a0",
+  "syncedAt": "2026-07-15T05:26:07.738Z",
+  "modules": [
+    {
+      "_id": "6a5719aba82b85aa9047d7a8",
+      "name": "Part 1 — 技术面通识",
+      "order": 0
+    },
+    {
+      "_id": "6a5719aca82b85aa9047d7be",
+      "name": "Part 2 — 分方向面试准备",
+      "order": 1
+    },
+    {
+      "_id": "6a5719ada82b85aa9047d7ca",
+      "name": "Part 3 — System Design 专项",
+      "order": 2
+    }
+  ],
+  "programs": [
+    {
+      "_id": "6a5719aea82b85aa9047d7d5",
+      "programPhase": 1,
+      "name": "澳洲 IT 技术面试特训营 第1期",
+      "syllabusId": "6a5719afa82b85aa9047d7df",
+      "lessonCount": 21
+    }
+  ],
+  "lessons": {
+    "6a5719b0a82b85aa9047d7ea": {
+      "_id": "6a5719b0a82b85aa9047d7ea",
+      "name": "澳洲 IT 面试流程",
+      "title": "澳洲 IT 面试流程",
+      "moduleId": "6a5719aba82b85aa9047d7a8",
+      "syllabusId": "6a5719afa82b85aa9047d7df",
+      "syllabusOrder": 0,
+      "matchedLocalCode": "L01",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5719b1a82b85aa9047d7f2": {
+      "_id": "6a5719b1a82b85aa9047d7f2",
+      "name": "如何准备技术面",
+      "title": "如何准备技术面",
+      "moduleId": "6a5719aba82b85aa9047d7a8",
+      "syllabusId": "6a5719afa82b85aa9047d7df",
+      "syllabusOrder": 1,
+      "matchedLocalCode": "L02",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5719b2a82b85aa9047d7fa": {
+      "_id": "6a5719b2a82b85aa9047d7fa",
+      "name": "如何准备 Hiring Manager Interview",
+      "title": "如何准备 Hiring Manager Interview",
+      "moduleId": "6a5719aba82b85aa9047d7a8",
+      "syllabusId": "6a5719afa82b85aa9047d7df",
+      "syllabusOrder": 2,
+      "matchedLocalCode": "L03",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5719b3a82b85aa9047d804": {
+      "_id": "6a5719b3a82b85aa9047d804",
+      "name": "Tutorial - 技术面试题以及如何回答",
+      "title": "Tutorial - 技术面试题以及如何回答",
+      "moduleId": "6a5719aba82b85aa9047d7a8",
+      "syllabusId": "6a5719afa82b85aa9047d7df",
+      "syllabusOrder": 3,
+      "matchedLocalCode": "L04",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5719b4a82b85aa9047d80e": {
+      "_id": "6a5719b4a82b85aa9047d80e",
+      "name": "前端面试需要准备什么",
+      "title": "前端面试需要准备什么",
+      "moduleId": "6a5719aca82b85aa9047d7be",
+      "syllabusId": "6a5719afa82b85aa9047d7df",
+      "syllabusOrder": 4,
+      "matchedLocalCode": "L05",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5719b4a82b85aa9047d816": {
+      "_id": "6a5719b4a82b85aa9047d816",
+      "name": "Lab: React — useState Hook",
+      "title": "Lab: React — useState Hook",
+      "moduleId": "6a5719aca82b85aa9047d7be",
+      "syllabusId": "6a5719afa82b85aa9047d7df",
+      "syllabusOrder": 5,
+      "matchedLocalCode": "L06",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5719b5a82b85aa9047d81e": {
+      "_id": "6a5719b5a82b85aa9047d81e",
+      "name": "Lab: React — useEffect Hook",
+      "title": "Lab: React — useEffect Hook",
+      "moduleId": "6a5719aca82b85aa9047d7be",
+      "syllabusId": "6a5719afa82b85aa9047d7df",
+      "syllabusOrder": 6,
+      "matchedLocalCode": "L07",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5719b6a82b85aa9047d828": {
+      "_id": "6a5719b6a82b85aa9047d828",
+      "name": "Lab: JS — let/const 作用域",
+      "title": "Lab: JS — let/const 作用域",
+      "moduleId": "6a5719aca82b85aa9047d7be",
+      "syllabusId": "6a5719afa82b85aa9047d7df",
+      "syllabusOrder": 7,
+      "matchedLocalCode": "L08",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5719b7a82b85aa9047d832": {
+      "_id": "6a5719b7a82b85aa9047d832",
+      "name": "Lab: CSS — Flexbox 卡片布局",
+      "title": "Lab: CSS — Flexbox 卡片布局",
+      "moduleId": "6a5719aca82b85aa9047d7be",
+      "syllabusId": "6a5719afa82b85aa9047d7df",
+      "syllabusOrder": 8,
+      "matchedLocalCode": "L09",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5719b8a82b85aa9047d83a": {
+      "_id": "6a5719b8a82b85aa9047d83a",
+      "name": "Java 后端面试需要准备什么",
+      "title": "Java 后端面试需要准备什么",
+      "moduleId": "6a5719aca82b85aa9047d7be",
+      "syllabusId": "6a5719afa82b85aa9047d7df",
+      "syllabusOrder": 9,
+      "matchedLocalCode": "L10",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5719b9a82b85aa9047d842": {
+      "_id": "6a5719b9a82b85aa9047d842",
+      "name": "DevOps 面试需要准备什么",
+      "title": "DevOps 面试需要准备什么",
+      "moduleId": "6a5719aca82b85aa9047d7be",
+      "syllabusId": "6a5719afa82b85aa9047d7df",
+      "syllabusOrder": 10,
+      "matchedLocalCode": "L11",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5719baa82b85aa9047d84a": {
+      "_id": "6a5719baa82b85aa9047d84a",
+      "name": "数据工程面试需要准备什么",
+      "title": "数据工程面试需要准备什么",
+      "moduleId": "6a5719aca82b85aa9047d7be",
+      "syllabusId": "6a5719afa82b85aa9047d7df",
+      "syllabusOrder": 11,
+      "matchedLocalCode": "L12",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5719bba82b85aa9047d852": {
+      "_id": "6a5719bba82b85aa9047d852",
+      "name": "System Design 面试问题分析",
+      "title": "System Design 面试问题分析",
+      "moduleId": "6a5719ada82b85aa9047d7ca",
+      "syllabusId": "6a5719afa82b85aa9047d7df",
+      "syllabusOrder": 12,
+      "matchedLocalCode": "L13",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5719bca82b85aa9047d85a": {
+      "_id": "6a5719bca82b85aa9047d85a",
+      "name": "什么是 Monolith",
+      "title": "什么是 Monolith",
+      "moduleId": "6a5719ada82b85aa9047d7ca",
+      "syllabusId": "6a5719afa82b85aa9047d7df",
+      "syllabusOrder": 13,
+      "matchedLocalCode": "L14",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5719bda82b85aa9047d866": {
+      "_id": "6a5719bda82b85aa9047d866",
+      "name": "什么是 Microservices",
+      "title": "什么是 Microservices",
+      "moduleId": "6a5719ada82b85aa9047d7ca",
+      "syllabusId": "6a5719afa82b85aa9047d7df",
+      "syllabusOrder": 14,
+      "matchedLocalCode": "L15",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5719bea82b85aa9047d86e": {
+      "_id": "6a5719bea82b85aa9047d86e",
+      "name": "什么是 Docker",
+      "title": "什么是 Docker",
+      "moduleId": "6a5719ada82b85aa9047d7ca",
+      "syllabusId": "6a5719afa82b85aa9047d7df",
+      "syllabusOrder": 15,
+      "matchedLocalCode": "L16",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5719bfa82b85aa9047d87f": {
+      "_id": "6a5719bfa82b85aa9047d87f",
+      "name": "Solution - Dockerised Microservices",
+      "title": "Solution - Dockerised Microservices",
+      "moduleId": "6a5719ada82b85aa9047d7ca",
+      "syllabusId": "6a5719afa82b85aa9047d7df",
+      "syllabusOrder": 16,
+      "matchedLocalCode": "L17",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5719c0a82b85aa9047d889": {
+      "_id": "6a5719c0a82b85aa9047d889",
+      "name": "Advanced Topics of System Design",
+      "title": "Advanced Topics of System Design",
+      "moduleId": "6a5719ada82b85aa9047d7ca",
+      "syllabusId": "6a5719afa82b85aa9047d7df",
+      "syllabusOrder": 17,
+      "matchedLocalCode": "L18",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5719c1a82b85aa9047d89c": {
+      "_id": "6a5719c1a82b85aa9047d89c",
+      "name": "Tutorial - System Design Case 分析",
+      "title": "Tutorial - System Design Case 分析",
+      "moduleId": "6a5719ada82b85aa9047d7ca",
+      "syllabusId": "6a5719afa82b85aa9047d7df",
+      "syllabusOrder": 18,
+      "matchedLocalCode": "L19",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5719c2a82b85aa9047d8ef": {
+      "_id": "6a5719c2a82b85aa9047d8ef",
+      "name": "Lab: AI 代码生成",
+      "title": "Lab: AI 代码生成",
+      "moduleId": "6a5719ada82b85aa9047d7ca",
+      "syllabusId": "6a5719afa82b85aa9047d7df",
+      "syllabusOrder": 19,
+      "matchedLocalCode": "L20",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a5719c3a82b85aa9047d8fd": {
+      "_id": "6a5719c3a82b85aa9047d8fd",
+      "name": "用一下: AI Engineer Hub",
+      "title": "用一下: AI Engineer Hub",
+      "moduleId": "6a5719ada82b85aa9047d7ca",
+      "syllabusId": "6a5719afa82b85aa9047d7df",
+      "syllabusOrder": 20,
+      "matchedLocalCode": "L21",
+      "isOrphan": false,
+      "isDuplicate": false
+    }
+  }
+}

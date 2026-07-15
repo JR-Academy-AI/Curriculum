@@ -66,7 +66,8 @@
           "description": "LinkedIn 不只是求职工具，是你的个人品牌。Profile 优化：headline 公式、summary 模板、experience 写法。澳洲 recruiter 搜索候选人时最看重的 5 个字段。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a57190ca82b85aa9047c977"
         },
         {
           "code": "L02",
@@ -74,7 +75,8 @@
           "description": "实操课：从头优化一个 LinkedIn Profile。Banner 图设计、Headline 写法、Featured 区怎么用、Skills endorsement 怎么拿。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a57190da82b85aa9047c991"
         },
         {
           "code": "L03",
@@ -82,7 +84,8 @@
           "description": "面试前必做：查面试官 LinkedIn → 找共同点 → 了解团队技术栈 → 准备针对性问题。这些动作让你面试通过率翻倍。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a57190ea82b85aa9047c9bf"
         },
         {
           "code": "L04",
@@ -90,7 +93,8 @@
           "description": "完成 LinkedIn Profile 优化，截图提交。导师评估 Profile 完成度（目标：LinkedIn Profile Strength 达到 All-Star）。",
           "type": "Information",
           "isLive": false,
-          "duration": 25
+          "duration": 25,
+          "_id": "6a57190fa82b85aa9047c9c7"
         }
       ]
     },
@@ -105,7 +109,8 @@
           "description": "Cold message 模板：怎么加陌生人不被忽略。Coffee chat 的正确姿势。参加 Meetup/Hackathon 的实际价值。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571910a82b85aa9047ca15"
         },
         {
           "code": "L06",
@@ -113,7 +118,8 @@
           "description": "Networking 不是加好友，是建立有价值的双向关系。3 个层次：弱关系（行业活动认识的人）、中关系（同事/校友）、强关系（mentor/referrer）。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571911a82b85aa9047ca21"
         },
         {
           "code": "L07",
@@ -121,7 +127,8 @@
           "description": "Seek、LinkedIn Jobs、Indeed、Glassdoor、公司官网、猎头、内推——7 大渠道的优劣对比和使用策略。哪个渠道的 offer 转化率最高？",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571912a82b85aa9047ca2d"
         },
         {
           "code": "L08",
@@ -129,7 +136,8 @@
           "description": "除了招聘网站，还有哪些信息源：Glassdoor 公司评价、Blind 匿名讨论、Reddit r/cscareerquestions、微信求职群、Meetup。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571913a82b85aa9047ca3c"
         },
         {
           "code": "L09",
@@ -137,7 +145,8 @@
           "description": "内推的本质：绕过 HR screening 直接到 hiring manager 的桌上。内推成功率是海投的 5-10 倍。但不是所有内推都有用——关键看推荐人的 level 和和团队的关系。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571914a82b85aa9047ca8a"
         },
         {
           "code": "L10",
@@ -145,7 +154,8 @@
           "description": "怎么找到能内推你的人：LinkedIn 搜索目标公司员工 → 找二度人脉 → 请中间人介绍。找不到二度人脉怎么 cold reach。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571915a82b85aa9047ca9e"
         },
         {
           "code": "L11",
@@ -153,7 +163,8 @@
           "description": "如何扩充社交网络",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571915a82b85aa9047caa6"
         }
       ]
     },
@@ -168,7 +179,8 @@
           "description": "根据你的背景和目标，导师帮你确定最合适的求职方向。转行 vs 深耕、大厂 vs 中小厂、contract vs permanent 的取舍。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571916a82b85aa9047cab5"
         },
         {
           "code": "L13",
@@ -176,7 +188,8 @@
           "description": "在平台 Job Referral 找到目标公司的内推机会并发起申请。",
           "type": "Information",
           "isLive": false,
-          "duration": 20
+          "duration": 20,
+          "_id": "6a571917a82b85aa9047cad2"
         },
         {
           "code": "L14",
@@ -184,7 +197,8 @@
           "description": "用求职匠 Chrome 插件自动匹配 JD、一键投递、追踪进度。",
           "type": "Information",
           "isLive": false,
-          "duration": 20
+          "duration": 20,
+          "_id": "6a571918a82b85aa9047caeb"
         },
         {
           "code": "L15",
@@ -201,7 +215,8 @@
               "source": "prompt-lab",
               "slug": "few-shot"
             }
-          ]
+          ],
+          "_id": "6a571919a82b85aa9047caf3"
         }
       ]
     }

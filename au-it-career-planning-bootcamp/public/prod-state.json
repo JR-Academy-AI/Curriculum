@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "slug": "au-it-career-planning-bootcamp",
+  "trainingId": "6a571973a82b85aa9047d2f3",
+  "syncedAt": "2026-07-15T05:24:58.037Z",
+  "modules": [
+    {
+      "_id": "6a571973a82b85aa9047d2fb",
+      "name": "Part 1 — 澳洲 IT 行业认知",
+      "order": 0
+    },
+    {
+      "_id": "6a571974a82b85aa9047d305",
+      "name": "Part 2 — 职业规划与自我定位",
+      "order": 1
+    },
+    {
+      "_id": "6a571975a82b85aa9047d30b",
+      "name": "Part 3 — 落地成规划",
+      "order": 2
+    }
+  ],
+  "programs": [
+    {
+      "_id": "6a571977a82b85aa9047d319",
+      "programPhase": 1,
+      "name": "澳洲 IT 职业规划营 第1期",
+      "syllabusId": "6a571977a82b85aa9047d32b",
+      "lessonCount": 14
+    }
+  ],
+  "lessons": {
+    "6a571978a82b85aa9047d348": {
+      "_id": "6a571978a82b85aa9047d348",
+      "name": "澳洲工作职场介绍",
+      "title": "澳洲工作职场介绍",
+      "moduleId": "6a571973a82b85aa9047d2fb",
+      "syllabusId": "6a571977a82b85aa9047d32b",
+      "syllabusOrder": 0,
+      "matchedLocalCode": "L01",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571979a82b85aa9047d351": {
+      "_id": "6a571979a82b85aa9047d351",
+      "name": "IT 行业的主要部门与趋势分析",
+      "title": "IT 行业的主要部门与趋势分析",
+      "moduleId": "6a571973a82b85aa9047d2fb",
+      "syllabusId": "6a571977a82b85aa9047d32b",
+      "syllabusOrder": 1,
+      "matchedLocalCode": "L02",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a57197aa82b85aa9047d35c": {
+      "_id": "6a57197aa82b85aa9047d35c",
+      "name": "澳洲企业招聘流程",
+      "title": "澳洲企业招聘流程",
+      "moduleId": "6a571973a82b85aa9047d2fb",
+      "syllabusId": "6a571977a82b85aa9047d32b",
+      "syllabusOrder": 2,
+      "matchedLocalCode": "L03",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a57197ba82b85aa9047d36b": {
+      "_id": "6a57197ba82b85aa9047d36b",
+      "name": "行业的未来预测",
+      "title": "行业的未来预测",
+      "moduleId": "6a571973a82b85aa9047d2fb",
+      "syllabusId": "6a571977a82b85aa9047d32b",
+      "syllabusOrder": 3,
+      "matchedLocalCode": "L04",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a57197ea82b85aa9047d37f": {
+      "_id": "6a57197ea82b85aa9047d37f",
+      "name": "企业招聘成本",
+      "title": "企业招聘成本",
+      "moduleId": "6a571973a82b85aa9047d2fb",
+      "syllabusId": "6a571977a82b85aa9047d32b",
+      "syllabusOrder": 4,
+      "matchedLocalCode": "L05",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a57197fa82b85aa9047d39b": {
+      "_id": "6a57197fa82b85aa9047d39b",
+      "name": "职业规划的重要性",
+      "title": "职业规划的重要性",
+      "moduleId": "6a571974a82b85aa9047d305",
+      "syllabusId": "6a571977a82b85aa9047d32b",
+      "syllabusOrder": 5,
+      "matchedLocalCode": "L06",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571980a82b85aa9047d3a3": {
+      "_id": "6a571980a82b85aa9047d3a3",
+      "name": "自我认知与分析",
+      "title": "自我认知与分析",
+      "moduleId": "6a571974a82b85aa9047d305",
+      "syllabusId": "6a571977a82b85aa9047d32b",
+      "syllabusOrder": 6,
+      "matchedLocalCode": "L07",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571981a82b85aa9047d3af": {
+      "_id": "6a571981a82b85aa9047d3af",
+      "name": "如何制定长短期的职业目标",
+      "title": "如何制定长短期的职业目标",
+      "moduleId": "6a571974a82b85aa9047d305",
+      "syllabusId": "6a571977a82b85aa9047d32b",
+      "syllabusOrder": 7,
+      "matchedLocalCode": "L08",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571982a82b85aa9047d3b7": {
+      "_id": "6a571982a82b85aa9047d3b7",
+      "name": "什么是 SWOT 分析",
+      "title": "什么是 SWOT 分析",
+      "moduleId": "6a571974a82b85aa9047d305",
+      "syllabusId": "6a571977a82b85aa9047d32b",
+      "syllabusOrder": 8,
+      "matchedLocalCode": "L09",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571983a82b85aa9047d3bf": {
+      "_id": "6a571983a82b85aa9047d3bf",
+      "name": "常见的 IT 职业发展路径介绍",
+      "title": "常见的 IT 职业发展路径介绍",
+      "moduleId": "6a571974a82b85aa9047d305",
+      "syllabusId": "6a571977a82b85aa9047d32b",
+      "syllabusOrder": 9,
+      "matchedLocalCode": "L10",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571984a82b85aa9047d3e0": {
+      "_id": "6a571984a82b85aa9047d3e0",
+      "name": "制定未来的 IT 职业生涯",
+      "title": "制定未来的 IT 职业生涯",
+      "moduleId": "6a571974a82b85aa9047d305",
+      "syllabusId": "6a571977a82b85aa9047d32b",
+      "syllabusOrder": 10,
+      "matchedLocalCode": "L11",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571985a82b85aa9047d3f4": {
+      "_id": "6a571985a82b85aa9047d3f4",
+      "name": "用一下: Career Planning",
+      "title": "用一下: Career Planning",
+      "moduleId": "6a571975a82b85aa9047d30b",
+      "syllabusId": "6a571977a82b85aa9047d32b",
+      "syllabusOrder": 11,
+      "matchedLocalCode": "L12",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571986a82b85aa9047d40f": {
+      "_id": "6a571986a82b85aa9047d40f",
+      "name": "Lab: Hello AI — 第一次和 AI 对话",
+      "title": "Lab: Hello AI — 第一次和 AI 对话",
+      "moduleId": "6a571975a82b85aa9047d30b",
+      "syllabusId": "6a571977a82b85aa9047d32b",
+      "syllabusOrder": 12,
+      "matchedLocalCode": "L13",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571987a82b85aa9047d417": {
+      "_id": "6a571987a82b85aa9047d417",
+      "name": "结业作业：个人 SWOT + 3/6/12 个月规划",
+      "title": "结业作业：个人 SWOT + 3/6/12 个月规划",
+      "moduleId": "6a571975a82b85aa9047d30b",
+      "syllabusId": "6a571977a82b85aa9047d32b",
+      "syllabusOrder": 13,
+      "matchedLocalCode": "L14",
+      "isOrphan": false,
+      "isDuplicate": false
+    }
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "slug": "au-it-networking-bootcamp",
+  "trainingId": "6a571905a82b85aa9047c849",
+  "syncedAt": "2026-07-15T05:23:12.444Z",
+  "modules": [
+    {
+      "_id": "6a571906a82b85aa9047c8a4",
+      "name": "Part 1 — 打造 LinkedIn 个人品牌",
+      "order": 0
+    },
+    {
+      "_id": "6a571907a82b85aa9047c8aa",
+      "name": "Part 2 — 人脉经营与内推",
+      "order": 1
+    },
+    {
+      "_id": "6a571909a82b85aa9047c8d2",
+      "name": "Part 3 — 定方向 + 工具实操",
+      "order": 2
+    }
+  ],
+  "programs": [
+    {
+      "_id": "6a57190aa82b85aa9047c91c",
+      "programPhase": 1,
+      "name": "澳洲 IT 人脉内推求职营 第1期",
+      "syllabusId": "6a57190ba82b85aa9047c96b",
+      "lessonCount": 15
+    }
+  ],
+  "lessons": {
+    "6a57190ca82b85aa9047c977": {
+      "_id": "6a57190ca82b85aa9047c977",
+      "name": "Personal Branding on LinkedIn",
+      "title": "Personal Branding on LinkedIn",
+      "moduleId": "6a571906a82b85aa9047c8a4",
+      "syllabusId": "6a57190ba82b85aa9047c96b",
+      "syllabusOrder": 0,
+      "matchedLocalCode": "L01",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a57190da82b85aa9047c991": {
+      "_id": "6a57190da82b85aa9047c991",
+      "name": "手把手带着运营 LinkedIn",
+      "title": "手把手带着运营 LinkedIn",
+      "moduleId": "6a571906a82b85aa9047c8a4",
+      "syllabusId": "6a57190ba82b85aa9047c96b",
+      "syllabusOrder": 1,
+      "matchedLocalCode": "L02",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a57190ea82b85aa9047c9bf": {
+      "_id": "6a57190ea82b85aa9047c9bf",
+      "name": "如何利用 LinkedIn 准备面试",
+      "title": "如何利用 LinkedIn 准备面试",
+      "moduleId": "6a571906a82b85aa9047c8a4",
+      "syllabusId": "6a57190ba82b85aa9047c96b",
+      "syllabusOrder": 2,
+      "matchedLocalCode": "L03",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a57190fa82b85aa9047c9c7": {
+      "_id": "6a57190fa82b85aa9047c9c7",
+      "name": "LinkedIn 作业",
+      "title": "LinkedIn 作业",
+      "moduleId": "6a571906a82b85aa9047c8a4",
+      "syllabusId": "6a57190ba82b85aa9047c96b",
+      "syllabusOrder": 3,
+      "matchedLocalCode": "L04",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571910a82b85aa9047ca15": {
+      "_id": "6a571910a82b85aa9047ca15",
+      "name": "如何与行业领袖建立联系与合作",
+      "title": "如何与行业领袖建立联系与合作",
+      "moduleId": "6a571907a82b85aa9047c8aa",
+      "syllabusId": "6a57190ba82b85aa9047c96b",
+      "syllabusOrder": 4,
+      "matchedLocalCode": "L05",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571911a82b85aa9047ca21": {
+      "_id": "6a571911a82b85aa9047ca21",
+      "name": "构建和扩展自己的职业网络",
+      "title": "构建和扩展自己的职业网络",
+      "moduleId": "6a571907a82b85aa9047c8aa",
+      "syllabusId": "6a57190ba82b85aa9047c96b",
+      "syllabusOrder": 5,
+      "matchedLocalCode": "L06",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571912a82b85aa9047ca2d": {
+      "_id": "6a571912a82b85aa9047ca2d",
+      "name": "找工作的渠道和途径",
+      "title": "找工作的渠道和途径",
+      "moduleId": "6a571907a82b85aa9047c8aa",
+      "syllabusId": "6a57190ba82b85aa9047c96b",
+      "syllabusOrder": 6,
+      "matchedLocalCode": "L07",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571913a82b85aa9047ca3c": {
+      "_id": "6a571913a82b85aa9047ca3c",
+      "name": "信息渠道有什么",
+      "title": "信息渠道有什么",
+      "moduleId": "6a571907a82b85aa9047c8aa",
+      "syllabusId": "6a57190ba82b85aa9047c96b",
+      "syllabusOrder": 7,
+      "matchedLocalCode": "L08",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571914a82b85aa9047ca8a": {
+      "_id": "6a571914a82b85aa9047ca8a",
+      "name": "什么是内推",
+      "title": "什么是内推",
+      "moduleId": "6a571907a82b85aa9047c8aa",
+      "syllabusId": "6a57190ba82b85aa9047c96b",
+      "syllabusOrder": 8,
+      "matchedLocalCode": "L09",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571915a82b85aa9047ca9e": {
+      "_id": "6a571915a82b85aa9047ca9e",
+      "name": "内推社交网络",
+      "title": "内推社交网络",
+      "moduleId": "6a571907a82b85aa9047c8aa",
+      "syllabusId": "6a57190ba82b85aa9047c96b",
+      "syllabusOrder": 9,
+      "matchedLocalCode": "L10",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571915a82b85aa9047caa6": {
+      "_id": "6a571915a82b85aa9047caa6",
+      "name": "如何扩充社交网络",
+      "title": "如何扩充社交网络",
+      "moduleId": "6a571907a82b85aa9047c8aa",
+      "syllabusId": "6a57190ba82b85aa9047c96b",
+      "syllabusOrder": 10,
+      "matchedLocalCode": "L11",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571916a82b85aa9047cab5": {
+      "_id": "6a571916a82b85aa9047cab5",
+      "name": "行业方向指导",
+      "title": "行业方向指导",
+      "moduleId": "6a571909a82b85aa9047c8d2",
+      "syllabusId": "6a57190ba82b85aa9047c96b",
+      "syllabusOrder": 11,
+      "matchedLocalCode": "L12",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571917a82b85aa9047cad2": {
+      "_id": "6a571917a82b85aa9047cad2",
+      "name": "用一下: Job Referral",
+      "title": "用一下: Job Referral",
+      "moduleId": "6a571909a82b85aa9047c8d2",
+      "syllabusId": "6a57190ba82b85aa9047c96b",
+      "syllabusOrder": 12,
+      "matchedLocalCode": "L13",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571918a82b85aa9047caeb": {
+      "_id": "6a571918a82b85aa9047caeb",
+      "name": "用一下: 求职匠 Chrome Ext",
+      "title": "用一下: 求职匠 Chrome Ext",
+      "moduleId": "6a571909a82b85aa9047c8d2",
+      "syllabusId": "6a57190ba82b85aa9047c96b",
+      "syllabusOrder": 13,
+      "matchedLocalCode": "L14",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571919a82b85aa9047caf3": {
+      "_id": "6a571919a82b85aa9047caf3",
+      "name": "Lab: Few-shot — 批量生成个性化触达",
+      "title": "Lab: Few-shot — 批量生成个性化触达",
+      "moduleId": "6a571909a82b85aa9047c8d2",
+      "syllabusId": "6a57190ba82b85aa9047c96b",
+      "syllabusOrder": 14,
+      "matchedLocalCode": "L15",
+      "isOrphan": false,
+      "isDuplicate": false
+    }
+  }
+}

@@ -66,7 +66,8 @@
           "description": "大厂不走普通招聘网站。4 条路线：内推（成功率最高）、猎头（Tier 1 猎头名单）、LinkedIn 直接联系 recruiter、公司官网 Career Page。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a24a82b85aa9047de2e"
         },
         {
           "code": "L02",
@@ -74,7 +75,8 @@
           "description": "大厂简历和普通简历的区别：必须有量化指标、项目规模要大（百万用户/高并发）、技术栈要和 JD 精准匹配。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a25a82b85aa9047de36"
         },
         {
           "code": "L03",
@@ -82,7 +84,8 @@
           "description": "大厂面试准备时间线：至少 3 个月。月度计划：第1月补基础（算法+系统设计）、第2月专项刷题、第3月模拟面试+查漏补缺。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a25a82b85aa9047de3e"
         },
         {
           "code": "L04",
@@ -90,7 +93,8 @@
           "description": "\"我不够格去大厂\"——这是最大的误区。面试是 numbers game：投 10 家 → 5 家给面试 → 2 家进终面 → 1 个 offer。关键是增大分子。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a26a82b85aa9047de4a"
         },
         {
           "code": "L05",
@@ -98,7 +102,8 @@
           "description": "大厂面试后的 Debrief 会议（俗称\"小黑屋\"）怎么运作：每个面试官独立打分 → Hiring Committee 综合评估 → 最终决定。一票否决权的存在。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a27a82b85aa9047de52"
         },
         {
           "code": "L06",
@@ -106,7 +111,8 @@
           "description": "面试题不是随机出的：Google 有题库系统（每道题有使用次数限制）、Atlassian 按 Values 出题。LeetCode/Glassdoor 上的面经有多大参考价值。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a28a82b85aa9047de5a"
         },
         {
           "code": "L07",
@@ -114,7 +120,8 @@
           "description": "通过大厂面试的 3 个核心能力：Problem Solving（拆解问题）、Communication（清晰表达思路）、Culture Fit（匹配公司价值观）。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a29a82b85aa9047de62"
         },
         {
           "code": "L08",
@@ -122,7 +129,8 @@
           "description": "具体技巧：白板编码时先写伪代码、System Design 时先画架构图、行为面试时用\"I\"不用\"We\"、被问到不会的题时怎么优雅处理。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a2aa82b85aa9047de6a"
         },
         {
           "code": "L09",
@@ -130,7 +138,8 @@
           "description": "Google（5轮）、Atlassian（4轮）、Amazon（5轮 Loop）、Meta（3-4轮）、Canva（4轮）的完整面试流程对比。每轮考察什么、通过率多少。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a2ba82b85aa9047de76"
         }
       ]
     },
@@ -145,7 +154,8 @@
           "description": "P1（Grad）→ P2（Junior）→ P3（Mid）→ P4（Senior）→ P5（Staff）→ P6（Principal）。每个 level 的职责边界和薪资范围。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a2ca82b85aa9047de7e"
         },
         {
           "code": "L11",
@@ -153,7 +163,8 @@
           "description": "Atlassian 的 Total Compensation：Base + RSU（4年 vest）+ Bonus（10-15%）+ Super。P3 到 P5 的真实 TC 范围。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a2da82b85aa9047de8a"
         },
         {
           "code": "L12",
@@ -161,7 +172,8 @@
           "description": "Atlassian 前端面试 4 轮：Coding Pair（现场写 React 组件）→ System Design（前端架构）→ Values Interview → Hiring Manager。每轮的准备策略。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a2da82b85aa9047de92"
         },
         {
           "code": "L13",
@@ -169,7 +181,8 @@
           "description": "Google 的简历筛选通过率只有 1%。怎么过这 1%：简历必须有大规模系统经验、明确的 impact metrics、和目标团队相关的技术栈。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a2ea82b85aa9047de9d"
         }
       ]
     },
@@ -184,7 +197,8 @@
           "description": "用 3 道经典算法题演示面试全过程：Two Sum（Easy）→ LRU Cache（Medium）→ Merge K Sorted Lists（Hard）。不是背答案，是演示沟通和解题过程。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a2fa82b85aa9047dea9"
         },
         {
           "code": "L15",
@@ -201,7 +215,8 @@
               "source": "prompt-lab",
               "slug": "tree-of-thoughts"
             }
-          ]
+          ],
+          "_id": "6a571a30a82b85aa9047deb9"
         },
         {
           "code": "L16",
@@ -218,7 +233,8 @@
               "source": "prompt-lab",
               "slug": "chain-of-thought"
             }
-          ]
+          ],
+          "_id": "6a571a31a82b85aa9047dec2"
         },
         {
           "code": "L17",
@@ -235,7 +251,8 @@
               "source": "prompt-lab",
               "slug": "code-generation"
             }
-          ]
+          ],
+          "_id": "6a571a32a82b85aa9047decb"
         },
         {
           "code": "L18",
@@ -243,7 +260,8 @@
           "description": "用求职匠插件批量投递大厂岗位并追踪进度。",
           "type": "Information",
           "isLive": false,
-          "duration": 20
+          "duration": 20,
+          "_id": "6a571a33a82b85aa9047ded4"
         }
       ]
     }

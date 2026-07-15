@@ -1,0 +1,232 @@
+{
+  "schemaVersion": 1,
+  "slug": "au-it-bigtech-bootcamp",
+  "trainingId": "6a571a1ea82b85aa9047dde2",
+  "syncedAt": "2026-07-15T05:27:52.817Z",
+  "modules": [
+    {
+      "_id": "6a571a1fa82b85aa9047ddf5",
+      "name": "Part 1 — 大厂求职策略",
+      "order": 0
+    },
+    {
+      "_id": "6a571a20a82b85aa9047ddff",
+      "name": "Part 2 — Atlassian / Google 拆解",
+      "order": 1
+    },
+    {
+      "_id": "6a571a21a82b85aa9047de05",
+      "name": "Part 3 — 算法题专项",
+      "order": 2
+    }
+  ],
+  "programs": [
+    {
+      "_id": "6a571a22a82b85aa9047de0f",
+      "programPhase": 1,
+      "name": "澳洲科技大厂求职营 第1期",
+      "syllabusId": "6a571a23a82b85aa9047de1d",
+      "lessonCount": 18
+    }
+  ],
+  "lessons": {
+    "6a571a24a82b85aa9047de2e": {
+      "_id": "6a571a24a82b85aa9047de2e",
+      "name": "大厂找工作的渠道",
+      "title": "大厂找工作的渠道",
+      "moduleId": "6a571a1fa82b85aa9047ddf5",
+      "syllabusId": "6a571a23a82b85aa9047de1d",
+      "syllabusOrder": 0,
+      "matchedLocalCode": "L01",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a25a82b85aa9047de36": {
+      "_id": "6a571a25a82b85aa9047de36",
+      "name": "面向大厂的简历注意哪些",
+      "title": "面向大厂的简历注意哪些",
+      "moduleId": "6a571a1fa82b85aa9047ddf5",
+      "syllabusId": "6a571a23a82b85aa9047de1d",
+      "syllabusOrder": 1,
+      "matchedLocalCode": "L02",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a25a82b85aa9047de3e": {
+      "_id": "6a571a25a82b85aa9047de3e",
+      "name": "如何准备大厂面试",
+      "title": "如何准备大厂面试",
+      "moduleId": "6a571a1fa82b85aa9047ddf5",
+      "syllabusId": "6a571a23a82b85aa9047de1d",
+      "syllabusOrder": 2,
+      "matchedLocalCode": "L03",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a26a82b85aa9047de4a": {
+      "_id": "6a571a26a82b85aa9047de4a",
+      "name": "解决\"自我设限\"以及面试机会公式",
+      "title": "解决\"自我设限\"以及面试机会公式",
+      "moduleId": "6a571a1fa82b85aa9047ddf5",
+      "syllabusId": "6a571a23a82b85aa9047de1d",
+      "syllabusOrder": 3,
+      "matchedLocalCode": "L04",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a27a82b85aa9047de52": {
+      "_id": "6a571a27a82b85aa9047de52",
+      "name": "大厂的\"小黑屋\"是什么",
+      "title": "大厂的\"小黑屋\"是什么",
+      "moduleId": "6a571a1fa82b85aa9047ddf5",
+      "syllabusId": "6a571a23a82b85aa9047de1d",
+      "syllabusOrder": 4,
+      "matchedLocalCode": "L05",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a28a82b85aa9047de5a": {
+      "_id": "6a571a28a82b85aa9047de5a",
+      "name": "大厂面试题从哪里来的",
+      "title": "大厂面试题从哪里来的",
+      "moduleId": "6a571a1fa82b85aa9047ddf5",
+      "syllabusId": "6a571a23a82b85aa9047de1d",
+      "syllabusOrder": 5,
+      "matchedLocalCode": "L06",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a29a82b85aa9047de62": {
+      "_id": "6a571a29a82b85aa9047de62",
+      "name": "如何通过大厂面试",
+      "title": "如何通过大厂面试",
+      "moduleId": "6a571a1fa82b85aa9047ddf5",
+      "syllabusId": "6a571a23a82b85aa9047de1d",
+      "syllabusOrder": 6,
+      "matchedLocalCode": "L07",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a2aa82b85aa9047de6a": {
+      "_id": "6a571a2aa82b85aa9047de6a",
+      "name": "大厂面试技巧",
+      "title": "大厂面试技巧",
+      "moduleId": "6a571a1fa82b85aa9047ddf5",
+      "syllabusId": "6a571a23a82b85aa9047de1d",
+      "syllabusOrder": 7,
+      "matchedLocalCode": "L08",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a2ba82b85aa9047de76": {
+      "_id": "6a571a2ba82b85aa9047de76",
+      "name": "大厂招聘流程",
+      "title": "大厂招聘流程",
+      "moduleId": "6a571a1fa82b85aa9047ddf5",
+      "syllabusId": "6a571a23a82b85aa9047de1d",
+      "syllabusOrder": 8,
+      "matchedLocalCode": "L09",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a2ca82b85aa9047de7e": {
+      "_id": "6a571a2ca82b85aa9047de7e",
+      "name": "Atlassian 的 Engineer 职位等级",
+      "title": "Atlassian 的 Engineer 职位等级",
+      "moduleId": "6a571a20a82b85aa9047ddff",
+      "syllabusId": "6a571a23a82b85aa9047de1d",
+      "syllabusOrder": 9,
+      "matchedLocalCode": "L10",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a2da82b85aa9047de8a": {
+      "_id": "6a571a2da82b85aa9047de8a",
+      "name": "Atlassian 的工资构成",
+      "title": "Atlassian 的工资构成",
+      "moduleId": "6a571a20a82b85aa9047ddff",
+      "syllabusId": "6a571a23a82b85aa9047de1d",
+      "syllabusOrder": 10,
+      "matchedLocalCode": "L11",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a2da82b85aa9047de92": {
+      "_id": "6a571a2da82b85aa9047de92",
+      "name": "Atlassian 的前端面试流程",
+      "title": "Atlassian 的前端面试流程",
+      "moduleId": "6a571a20a82b85aa9047ddff",
+      "syllabusId": "6a571a23a82b85aa9047de1d",
+      "syllabusOrder": 11,
+      "matchedLocalCode": "L12",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a2ea82b85aa9047de9d": {
+      "_id": "6a571a2ea82b85aa9047de9d",
+      "name": "Google 的简历如何准备",
+      "title": "Google 的简历如何准备",
+      "moduleId": "6a571a20a82b85aa9047ddff",
+      "syllabusId": "6a571a23a82b85aa9047de1d",
+      "syllabusOrder": 12,
+      "matchedLocalCode": "L13",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a2fa82b85aa9047dea9": {
+      "_id": "6a571a2fa82b85aa9047dea9",
+      "name": "如何大厂面试中回答经典算法题",
+      "title": "如何大厂面试中回答经典算法题",
+      "moduleId": "6a571a21a82b85aa9047de05",
+      "syllabusId": "6a571a23a82b85aa9047de1d",
+      "syllabusOrder": 13,
+      "matchedLocalCode": "L14",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a30a82b85aa9047deb9": {
+      "_id": "6a571a30a82b85aa9047deb9",
+      "name": "Lab: Tree of Thoughts 推理",
+      "title": "Lab: Tree of Thoughts 推理",
+      "moduleId": "6a571a21a82b85aa9047de05",
+      "syllabusId": "6a571a23a82b85aa9047de1d",
+      "syllabusOrder": 14,
+      "matchedLocalCode": "L15",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a31a82b85aa9047dec2": {
+      "_id": "6a571a31a82b85aa9047dec2",
+      "name": "Lab: Chain of Thought 推理",
+      "title": "Lab: Chain of Thought 推理",
+      "moduleId": "6a571a21a82b85aa9047de05",
+      "syllabusId": "6a571a23a82b85aa9047de1d",
+      "syllabusOrder": 15,
+      "matchedLocalCode": "L16",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a32a82b85aa9047decb": {
+      "_id": "6a571a32a82b85aa9047decb",
+      "name": "Lab: AI 代码生成",
+      "title": "Lab: AI 代码生成",
+      "moduleId": "6a571a21a82b85aa9047de05",
+      "syllabusId": "6a571a23a82b85aa9047de1d",
+      "syllabusOrder": 16,
+      "matchedLocalCode": "L17",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a33a82b85aa9047ded4": {
+      "_id": "6a571a33a82b85aa9047ded4",
+      "name": "用一下: 求职匠 Chrome Ext",
+      "title": "用一下: 求职匠 Chrome Ext",
+      "moduleId": "6a571a21a82b85aa9047de05",
+      "syllabusId": "6a571a23a82b85aa9047de1d",
+      "syllabusOrder": 17,
+      "matchedLocalCode": "L18",
+      "isOrphan": false,
+      "isDuplicate": false
+    }
+  }
+}

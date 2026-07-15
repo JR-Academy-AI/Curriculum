@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "slug": "au-it-resume-bootcamp",
+  "trainingId": "6a57178928586f5ebb8efde5",
+  "syncedAt": "2026-07-15T05:20:34.164Z",
+  "modules": [
+    {
+      "_id": "6a57178a28586f5ebb8efdeb",
+      "name": "Part 1 — 简历底层逻辑",
+      "order": 0
+    },
+    {
+      "_id": "6a57178b28586f5ebb8efe38",
+      "name": "Part 2 — 写出一份专业 IT 简历",
+      "order": 1
+    },
+    {
+      "_id": "6a57178c28586f5ebb8efe51",
+      "name": "Part 3 — 分场景 + AI 提效",
+      "order": 2
+    }
+  ],
+  "programs": [
+    {
+      "_id": "6a57178e28586f5ebb8efe5d",
+      "programPhase": 1,
+      "name": "澳洲 IT 简历特训营 第1期",
+      "syllabusId": "6a57178e28586f5ebb8efe67",
+      "lessonCount": 15
+    }
+  ],
+  "lessons": {
+    "6a57178f28586f5ebb8efe72": {
+      "_id": "6a57178f28586f5ebb8efe72",
+      "name": "招聘官挑选简历的标准",
+      "title": "招聘官挑选简历的标准",
+      "moduleId": "6a57178a28586f5ebb8efdeb",
+      "syllabusId": "6a57178e28586f5ebb8efe67",
+      "syllabusOrder": 0,
+      "matchedLocalCode": "L01",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a57179028586f5ebb8efe82": {
+      "_id": "6a57179028586f5ebb8efe82",
+      "name": "简历框架及如何有效展现自己",
+      "title": "简历框架及如何有效展现自己",
+      "moduleId": "6a57178a28586f5ebb8efdeb",
+      "syllabusId": "6a57178e28586f5ebb8efe67",
+      "syllabusOrder": 1,
+      "matchedLocalCode": "L02",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a57179128586f5ebb8efe8d": {
+      "_id": "6a57179128586f5ebb8efe8d",
+      "name": "常见简历模版",
+      "title": "常见简历模版",
+      "moduleId": "6a57178a28586f5ebb8efdeb",
+      "syllabusId": "6a57178e28586f5ebb8efe67",
+      "syllabusOrder": 2,
+      "matchedLocalCode": "L03",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a57179228586f5ebb8efe95": {
+      "_id": "6a57179228586f5ebb8efe95",
+      "name": "简历撰写与优化技巧",
+      "title": "简历撰写与优化技巧",
+      "moduleId": "6a57178b28586f5ebb8efe38",
+      "syllabusId": "6a57178e28586f5ebb8efe67",
+      "syllabusOrder": 3,
+      "matchedLocalCode": "L04",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a57179228586f5ebb8efea8": {
+      "_id": "6a57179228586f5ebb8efea8",
+      "name": "如何撰写 IT 专业简历",
+      "title": "如何撰写 IT 专业简历",
+      "moduleId": "6a57178b28586f5ebb8efe38",
+      "syllabusId": "6a57178e28586f5ebb8efe67",
+      "syllabusOrder": 4,
+      "matchedLocalCode": "L05",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a57179328586f5ebb8efec7": {
+      "_id": "6a57179328586f5ebb8efec7",
+      "name": "如何写 IT 行业的简历",
+      "title": "如何写 IT 行业的简历",
+      "moduleId": "6a57178b28586f5ebb8efe38",
+      "syllabusId": "6a57178e28586f5ebb8efe67",
+      "syllabusOrder": 5,
+      "matchedLocalCode": "L06",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a57179428586f5ebb8efecf": {
+      "_id": "6a57179428586f5ebb8efecf",
+      "name": "简历常见问题",
+      "title": "简历常见问题",
+      "moduleId": "6a57178b28586f5ebb8efe38",
+      "syllabusId": "6a57178e28586f5ebb8efe67",
+      "syllabusOrder": 6,
+      "matchedLocalCode": "L07",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a57179528586f5ebb8efed8": {
+      "_id": "6a57179528586f5ebb8efed8",
+      "name": "零经验者的简历之路",
+      "title": "零经验者的简历之路",
+      "moduleId": "6a57178c28586f5ebb8efe51",
+      "syllabusId": "6a57178e28586f5ebb8efe67",
+      "syllabusOrder": 7,
+      "matchedLocalCode": "L08",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a57179628586f5ebb8efee0": {
+      "_id": "6a57179628586f5ebb8efee0",
+      "name": "有经验者的简历进阶",
+      "title": "有经验者的简历进阶",
+      "moduleId": "6a57178c28586f5ebb8efe51",
+      "syllabusId": "6a57178e28586f5ebb8efe67",
+      "syllabusOrder": 8,
+      "matchedLocalCode": "L09",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a57179728586f5ebb8efee8": {
+      "_id": "6a57179728586f5ebb8efee8",
+      "name": "如何利用 ChatGPT 写简历",
+      "title": "如何利用 ChatGPT 写简历",
+      "moduleId": "6a57178c28586f5ebb8efe51",
+      "syllabusId": "6a57178e28586f5ebb8efe67",
+      "syllabusOrder": 9,
+      "matchedLocalCode": "L10",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a57179828586f5ebb8efef4": {
+      "_id": "6a57179828586f5ebb8efef4",
+      "name": "Lab: 信息提取 — 从 JD 抓关键词",
+      "title": "Lab: 信息提取 — 从 JD 抓关键词",
+      "moduleId": "6a57178c28586f5ebb8efe51",
+      "syllabusId": "6a57178e28586f5ebb8efe67",
+      "syllabusOrder": 10,
+      "matchedLocalCode": "L11",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a57179928586f5ebb8efefc": {
+      "_id": "6a57179928586f5ebb8efefc",
+      "name": "Lab: Few-shot — 让 AI 仿写 bullet",
+      "title": "Lab: Few-shot — 让 AI 仿写 bullet",
+      "moduleId": "6a57178c28586f5ebb8efe51",
+      "syllabusId": "6a57178e28586f5ebb8efe67",
+      "syllabusOrder": 11,
+      "matchedLocalCode": "L12",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a57179a28586f5ebb8eff04": {
+      "_id": "6a57179a28586f5ebb8eff04",
+      "name": "用一下: JobPin AI 简历编辑",
+      "title": "用一下: JobPin AI 简历编辑",
+      "moduleId": "6a57178c28586f5ebb8efe51",
+      "syllabusId": "6a57178e28586f5ebb8efe67",
+      "syllabusOrder": 12,
+      "matchedLocalCode": "L13",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a57179a28586f5ebb8eff0c": {
+      "_id": "6a57179a28586f5ebb8eff0c",
+      "name": "如何写 Cover Letter",
+      "title": "如何写 Cover Letter",
+      "moduleId": "6a57178c28586f5ebb8efe51",
+      "syllabusId": "6a57178e28586f5ebb8efe67",
+      "syllabusOrder": 13,
+      "matchedLocalCode": "L14",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a57179b28586f5ebb8eff18": {
+      "_id": "6a57179b28586f5ebb8eff18",
+      "name": "结业作业：针对真实 JD 产出简历与 Cover Letter",
+      "title": "结业作业：针对真实 JD 产出简历与 Cover Letter",
+      "moduleId": "6a57178c28586f5ebb8efe51",
+      "syllabusId": "6a57178e28586f5ebb8efe67",
+      "syllabusOrder": 14,
+      "matchedLocalCode": "L15",
+      "isOrphan": false,
+      "isDuplicate": false
+    }
+  }
+}

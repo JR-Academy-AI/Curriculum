@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "slug": "au-it-salary-promotion-bootcamp",
+  "trainingId": "6a571a59a82b85aa9047e0b9",
+  "syncedAt": "2026-07-15T05:28:46.431Z",
+  "modules": [
+    {
+      "_id": "6a571a5aa82b85aa9047e0bf",
+      "name": "Part 1 — 薪资谈判",
+      "order": 0
+    },
+    {
+      "_id": "6a571a5ba82b85aa9047e0c9",
+      "name": "Part 2 — 看懂薪资构成",
+      "order": 1
+    },
+    {
+      "_id": "6a571a5ba82b85aa9047e0cf",
+      "name": "Part 3 — 升职与跳槽",
+      "order": 2
+    }
+  ],
+  "programs": [
+    {
+      "_id": "6a571a5ea82b85aa9047e0e5",
+      "programPhase": 1,
+      "name": "澳洲 IT 薪资谈判与晋升营 第1期",
+      "syllabusId": "6a571a5fa82b85aa9047e0f3",
+      "lessonCount": 14
+    }
+  ],
+  "lessons": {
+    "6a571a5fa82b85aa9047e0fc": {
+      "_id": "6a571a5fa82b85aa9047e0fc",
+      "name": "掌握谈判技巧",
+      "title": "掌握谈判技巧",
+      "moduleId": "6a571a5aa82b85aa9047e0bf",
+      "syllabusId": "6a571a5fa82b85aa9047e0f3",
+      "syllabusOrder": 0,
+      "matchedLocalCode": "L01",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a60a82b85aa9047e10c": {
+      "_id": "6a571a60a82b85aa9047e10c",
+      "name": "掌握谈判的基本策略",
+      "title": "掌握谈判的基本策略",
+      "moduleId": "6a571a5aa82b85aa9047e0bf",
+      "syllabusId": "6a571a5fa82b85aa9047e0f3",
+      "syllabusOrder": 1,
+      "matchedLocalCode": "L02",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a61a82b85aa9047e114": {
+      "_id": "6a571a61a82b85aa9047e114",
+      "name": "如何权衡多个工作机会",
+      "title": "如何权衡多个工作机会",
+      "moduleId": "6a571a5aa82b85aa9047e0bf",
+      "syllabusId": "6a571a5fa82b85aa9047e0f3",
+      "syllabusOrder": 2,
+      "matchedLocalCode": "L03",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a62a82b85aa9047e11e": {
+      "_id": "6a571a62a82b85aa9047e11e",
+      "name": "Lab: 职场场景 — 谈薪 role-play",
+      "title": "Lab: 职场场景 — 谈薪 role-play",
+      "moduleId": "6a571a5aa82b85aa9047e0bf",
+      "syllabusId": "6a571a5fa82b85aa9047e0f3",
+      "syllabusOrder": 3,
+      "matchedLocalCode": "L04",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a63a82b85aa9047e128": {
+      "_id": "6a571a63a82b85aa9047e128",
+      "name": "澳洲薪水天花板的构成",
+      "title": "澳洲薪水天花板的构成",
+      "moduleId": "6a571a5ba82b85aa9047e0c9",
+      "syllabusId": "6a571a5fa82b85aa9047e0f3",
+      "syllabusOrder": 4,
+      "matchedLocalCode": "L05",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a64a82b85aa9047e130": {
+      "_id": "6a571a64a82b85aa9047e130",
+      "name": "薪资由什么决定",
+      "title": "薪资由什么决定",
+      "moduleId": "6a571a5ba82b85aa9047e0c9",
+      "syllabusId": "6a571a5fa82b85aa9047e0f3",
+      "syllabusOrder": 5,
+      "matchedLocalCode": "L06",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a65a82b85aa9047e13f": {
+      "_id": "6a571a65a82b85aa9047e13f",
+      "name": "澳洲大厂薪资组成",
+      "title": "澳洲大厂薪资组成",
+      "moduleId": "6a571a5ba82b85aa9047e0c9",
+      "syllabusId": "6a571a5fa82b85aa9047e0f3",
+      "syllabusOrder": 6,
+      "matchedLocalCode": "L07",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a65a82b85aa9047e147": {
+      "_id": "6a571a65a82b85aa9047e147",
+      "name": "如何在大厂中升职",
+      "title": "如何在大厂中升职",
+      "moduleId": "6a571a5ba82b85aa9047e0cf",
+      "syllabusId": "6a571a5fa82b85aa9047e0f3",
+      "syllabusOrder": 7,
+      "matchedLocalCode": "L08",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a66a82b85aa9047e14f": {
+      "_id": "6a571a66a82b85aa9047e14f",
+      "name": "怎样跳槽让收益最大化",
+      "title": "怎样跳槽让收益最大化",
+      "moduleId": "6a571a5ba82b85aa9047e0cf",
+      "syllabusId": "6a571a5fa82b85aa9047e0f3",
+      "syllabusOrder": 8,
+      "matchedLocalCode": "L09",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a67a82b85aa9047e15b": {
+      "_id": "6a571a67a82b85aa9047e15b",
+      "name": "找工作的赛道",
+      "title": "找工作的赛道",
+      "moduleId": "6a571a5ba82b85aa9047e0cf",
+      "syllabusId": "6a571a5fa82b85aa9047e0f3",
+      "syllabusOrder": 9,
+      "matchedLocalCode": "L10",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a68a82b85aa9047e163": {
+      "_id": "6a571a68a82b85aa9047e163",
+      "name": "升职策略",
+      "title": "升职策略",
+      "moduleId": "6a571a5ba82b85aa9047e0cf",
+      "syllabusId": "6a571a5fa82b85aa9047e0f3",
+      "syllabusOrder": 10,
+      "matchedLocalCode": "L11",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a69a82b85aa9047e16b": {
+      "_id": "6a571a69a82b85aa9047e16b",
+      "name": "升职评分标准",
+      "title": "升职评分标准",
+      "moduleId": "6a571a5ba82b85aa9047e0cf",
+      "syllabusId": "6a571a5fa82b85aa9047e0f3",
+      "syllabusOrder": 11,
+      "matchedLocalCode": "L12",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a6aa82b85aa9047e173": {
+      "_id": "6a571a6aa82b85aa9047e173",
+      "name": "想成为 Senior Developer 需要哪些方面提升",
+      "title": "想成为 Senior Developer 需要哪些方面提升",
+      "moduleId": "6a571a5ba82b85aa9047e0cf",
+      "syllabusId": "6a571a5fa82b85aa9047e0f3",
+      "syllabusOrder": 12,
+      "matchedLocalCode": "L13",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a571a6ba82b85aa9047e17e": {
+      "_id": "6a571a6ba82b85aa9047e17e",
+      "name": "技术路线 vs 管理路线",
+      "title": "技术路线 vs 管理路线",
+      "moduleId": "6a571a5ba82b85aa9047e0cf",
+      "syllabusId": "6a571a5fa82b85aa9047e0f3",
+      "syllabusOrder": 13,
+      "matchedLocalCode": "L14",
+      "isOrphan": false,
+      "isDuplicate": false
+    }
+  }
+}

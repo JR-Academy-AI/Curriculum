@@ -66,7 +66,8 @@
           "description": "澳洲 IT 面试和国内面试的 5 个核心区别：没有笔试、重 culture fit、英语沟通占比 30%+、面试官是未来同事不是 HR、谈薪在最后阶段。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5718d2a82b85aa9047c3ea"
         },
         {
           "code": "L02",
@@ -74,7 +75,8 @@
           "description": "面试前 72 小时清单：研究公司 → 研究面试官 → 准备 3 个必答题（自我介绍/为什么选我们/你的弱点）→ 准备 3 个反问。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5718d3a82b85aa9047c3f2"
         },
         {
           "code": "L03",
@@ -82,7 +84,8 @@
           "description": "Phone Screening 通常 15-30 分钟，HR 问的 5 个固定问题：visa status、salary expectation、availability、为什么换工作、简历上某段经历的具体内容。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5718d4a82b85aa9047c3fe"
         },
         {
           "code": "L04",
@@ -90,7 +93,8 @@
           "description": "自我介绍不是背简历。公式：当前角色（1句）→ 核心成就（2句）→ 为什么来面试（1句）→ 我能带来什么（1句）。控制在 90 秒内。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5718d4a82b85aa9047c406"
         },
         {
           "code": "L05",
@@ -98,7 +102,8 @@
           "description": "高手和普通候选人的区别：用具体数据而不是模糊描述、主动引导话题而不是被动回答、展示思维过程而不是只给结论。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5718d6a82b85aa9047c40e"
         },
         {
           "code": "L06",
@@ -106,7 +111,8 @@
           "description": "面试前怎么快速摸清一家公司：官网 → LinkedIn 公司页 → Glassdoor 面经 → GitHub（看技术栈）→ 新闻/融资/产品发布。30 分钟搞定一家公司的调研。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5718d6a82b85aa9047c416"
         },
         {
           "code": "L07",
@@ -114,7 +120,8 @@
           "description": "面试必带材料清单和准备模板：自我介绍脚本、3 个 STAR 故事、技术项目 deep dive 准备、反问列表、salary expectation 话术。",
           "type": "Information",
           "isLive": false,
-          "duration": 25
+          "duration": 25,
+          "_id": "6a5718d7a82b85aa9047c41e"
         },
         {
           "code": "L08",
@@ -122,7 +129,8 @@
           "description": "面试最后 5 分钟决定 50% 的印象。怎么问反问题（好问题 vs 烂问题）、怎么表达兴趣但不卑微、面试后 Thank You Email 模板。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5718d8a82b85aa9047c42a"
         }
       ]
     },
@@ -137,7 +145,8 @@
           "description": "行为面试的逻辑：过去的行为是未来表现的最佳预测。面试官问\"请举一个你解决冲突的例子\"，其实在评估你的 conflict resolution 能力。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5718d9a82b85aa9047c432"
         },
         {
           "code": "L10",
@@ -145,7 +154,8 @@
           "description": "20 个最常见的行为面试题分类：Teamwork（5题）、Leadership（4题）、Problem Solving（4题）、Conflict（3题）、Failure（2题）、Adaptability（2题）。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5718daa82b85aa9047c43a"
         },
         {
           "code": "L11",
@@ -153,7 +163,8 @@
           "description": "STAR 不是背模板，是组织回答的框架。Situation（10%）→ Task（10%）→ Action（60%）→ Result（20%）。用真实案例演示好的 STAR vs 坏的 STAR。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5718dba82b85aa9047c442"
         },
         {
           "code": "L12",
@@ -161,7 +172,8 @@
           "description": "英语面试的具体技巧：听不懂怎么要求复述（不丢分的说法）、答跑题怎么拉回来、紧张时怎么争取思考时间、怎么处理不会的问题。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5718dca82b85aa9047c458"
         }
       ]
     },
@@ -185,7 +197,8 @@
               "source": "prompt-lab",
               "slug": "role-playing"
             }
-          ]
+          ],
+          "_id": "6a5718dda82b85aa9047c460"
         },
         {
           "code": "L14",
@@ -202,7 +215,8 @@
               "source": "prompt-lab",
               "slug": "workplace-scenarios"
             }
-          ]
+          ],
+          "_id": "6a5718dea82b85aa9047c4a9"
         },
         {
           "code": "L15",
@@ -210,7 +224,8 @@
           "description": "在平台用 Mock Interview 做一次完整模拟面试，拿到结构化反馈。",
           "type": "Information",
           "isLive": false,
-          "duration": 20
+          "duration": 20,
+          "_id": "6a5718dfa82b85aa9047c4b1"
         }
       ]
     }

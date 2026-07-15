@@ -66,7 +66,8 @@
           "description": "一个 recruiter 平均花 7 秒看一份简历。他们看什么？第一眼：最近工作经历。第二眼：技术栈匹配度。第三眼：量化成果。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a57178f28586f5ebb8efe72"
         },
         {
           "code": "L02",
@@ -74,7 +75,8 @@
           "description": "简历的 6 个区块：Contact → Summary → Experience → Skills → Education → Projects。每个区块写多少、写什么、不写什么。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a57179028586f5ebb8efe82"
         },
         {
           "code": "L03",
@@ -82,7 +84,8 @@
           "description": "澳洲 IT 行业最受欢迎的 3 种简历模板对比。哪些模板 ATS（自动筛选系统）识别率最高。PDF vs Word 格式选择。",
           "type": "Information",
           "isLive": false,
-          "duration": 25
+          "duration": 25,
+          "_id": "6a57179128586f5ebb8efe8d"
         }
       ]
     },
@@ -97,7 +100,8 @@
           "description": "Action Verb + Metric + Impact 公式。\"参与了项目开发\" vs \"用 React + Node.js 重构了用户中心，页面加载速度提升 40%\"——哪个版本更好？",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a57179228586f5ebb8efe95"
         },
         {
           "code": "L05",
@@ -105,7 +109,8 @@
           "description": "针对 IT 岗位的简历特殊要求：技术栈怎么列（不要\"熟练掌握 Java\"，要\"Java 8+, Spring Boot, Hibernate\"）、GitHub/Portfolio 链接放哪里。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a57179228586f5ebb8efea8"
         },
         {
           "code": "L06",
@@ -113,7 +118,8 @@
           "description": "不同方向的简历侧重点：前端重 UI/UX 作品集，后端重系统设计经验，DevOps 重自动化成果，数据重指标提升。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a57179328586f5ebb8efec7"
         },
         {
           "code": "L07",
@@ -121,7 +127,8 @@
           "description": "Gap year 怎么解释？频繁跳槽怎么写？海外学历怎么标注？visa status 要不要写？逐一解答。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a57179428586f5ebb8efecf"
         }
       ]
     },
@@ -136,7 +143,8 @@
           "description": "没有工作经验怎么写简历？4 个策略：课程项目包装、开源贡献、个人 Side Project、志愿者/实习经历。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a57179528586f5ebb8efed8"
         },
         {
           "code": "L09",
@@ -144,7 +152,8 @@
           "description": "有 3-5 年经验后简历怎么升级？从\"我做了什么\"到\"我带来了什么业务价值\"。Senior 岗位简历和 Junior 的核心区别。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a57179628586f5ebb8efee0"
         },
         {
           "code": "L10",
@@ -152,7 +161,8 @@
           "description": "实操演示：把 JD 喂给 AI，让 AI 帮你提取关键词、生成 bullet point、优化措辞。注意事项：AI 生成的内容必须基于真实经历。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a57179728586f5ebb8efee8"
         },
         {
           "code": "L11",
@@ -169,7 +179,8 @@
               "source": "prompt-lab",
               "slug": "information-extraction"
             }
-          ]
+          ],
+          "_id": "6a57179828586f5ebb8efef4"
         },
         {
           "code": "L12",
@@ -186,7 +197,8 @@
               "source": "prompt-lab",
               "slug": "few-shot"
             }
-          ]
+          ],
+          "_id": "6a57179928586f5ebb8efefc"
         },
         {
           "code": "L13",
@@ -194,7 +206,8 @@
           "description": "在平台用 JobPin AI 对照目标 JD 优化简历关键词与措辞，一键生成针对性版本。",
           "type": "Information",
           "isLive": false,
-          "duration": 20
+          "duration": 20,
+          "_id": "6a57179a28586f5ebb8eff04"
         },
         {
           "code": "L14",
@@ -202,7 +215,8 @@
           "description": "如何写 Cover Letter",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a57179a28586f5ebb8eff0c"
         },
         {
           "code": "L15",
@@ -210,7 +224,8 @@
           "description": "选一个真实 JD，产出定制简历与 Cover Letter，对照 checklist 自检 ATS 关键词匹配、量化成果覆盖、格式一致性。",
           "type": "Information",
           "isLive": false,
-          "duration": 25
+          "duration": 25,
+          "_id": "6a57179b28586f5ebb8eff18"
         }
       ]
     }

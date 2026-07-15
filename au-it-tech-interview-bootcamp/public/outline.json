@@ -66,7 +66,8 @@
           "description": "典型的澳洲 IT 面试 4-5 轮流程：HR Screening → Online Assessment → Technical Interview → Hiring Manager → Culture Fit。每轮的时长、形式、淘汰率。",
           "type": "Information",
           "isLive": false,
-          "duration": 25
+          "duration": 25,
+          "_id": "6a5719b0a82b85aa9047d7ea"
         },
         {
           "code": "L02",
@@ -74,7 +75,8 @@
           "description": "技术面的 3 种形式：Coding Challenge（手写代码）、Take-home Project（回家做项目）、System Design（架构讨论）。不同公司偏好不同形式。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5719b1a82b85aa9047d7f2"
         },
         {
           "code": "L03",
@@ -82,7 +84,8 @@
           "description": "Hiring Manager 面试和 HR/技术面的区别：HM 看的是\"你能不能和我的团队配合\"、\"你能不能独立解决问题\"、\"你的职业目标和我的团队方向是否匹配\"。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5719b2a82b85aa9047d7fa"
         },
         {
           "code": "L04",
@@ -90,7 +93,8 @@
           "description": "以真实面试题为例演示回答过程：先问清需求 → 说思路 → 写代码 → 分析复杂度 → 讨论优化。面试官看的不只是答案，是你的思维过程。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5719b3a82b85aa9047d804"
         }
       ]
     },
@@ -105,7 +109,8 @@
           "description": "前端面试 3 大块：HTML/CSS/JS 基础（闭包、原型链、事件循环）、React/Vue 框架原理（虚拟 DOM、Hooks、状态管理）、实战（现场写一个组件）。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5719b4a82b85aa9047d80e"
         },
         {
           "code": "L06",
@@ -122,7 +127,8 @@
               "source": "prompt-lab",
               "slug": "react-useState"
             }
-          ]
+          ],
+          "_id": "6a5719b4a82b85aa9047d816"
         },
         {
           "code": "L07",
@@ -139,7 +145,8 @@
               "source": "prompt-lab",
               "slug": "react-useEffect"
             }
-          ]
+          ],
+          "_id": "6a5719b5a82b85aa9047d81e"
         },
         {
           "code": "L08",
@@ -156,7 +163,8 @@
               "source": "prompt-lab",
               "slug": "js-let-const-scope"
             }
-          ]
+          ],
+          "_id": "6a5719b6a82b85aa9047d828"
         },
         {
           "code": "L09",
@@ -173,7 +181,8 @@
               "source": "prompt-lab",
               "slug": "flexbox-cards"
             }
-          ]
+          ],
+          "_id": "6a5719b7a82b85aa9047d832"
         },
         {
           "code": "L10",
@@ -181,7 +190,8 @@
           "description": "后端面试 3 大块：Java 基础（集合框架、多线程、JVM）、Spring Boot 全家桶（IoC、AOP、JPA）、数据库（SQL 优化、索引、事务）。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5719b8a82b85aa9047d83a"
         },
         {
           "code": "L11",
@@ -189,7 +199,8 @@
           "description": "DevOps 面试 3 大块：CI/CD 流水线（Jenkins/GitHub Actions）、容器化（Docker/K8s）、云平台（AWS/Azure/GCP）。面试官最爱问的场景题。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5719b9a82b85aa9047d842"
         },
         {
           "code": "L12",
@@ -197,7 +208,8 @@
           "description": "数据面试 3 大块：SQL（窗口函数、CTE、性能优化）、ETL Pipeline（Airflow/Spark）、数据仓库（Snowflake/BigQuery/Redshift）。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5719baa82b85aa9047d84a"
         }
       ]
     },
@@ -212,7 +224,8 @@
           "description": "System Design 面试的标准流程：需求澄清（5min）→ 高层设计（10min）→ 深入设计（15min）→ Trade-off 讨论（10min）。面试官打分的 4 个维度。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5719bba82b85aa9047d852"
         },
         {
           "code": "L14",
@@ -220,7 +233,8 @@
           "description": "单体架构的特点：一个代码库、一个部署单元、一个数据库。优点：简单、容易调试。缺点：规模大了改不动、部署慢、团队协作冲突多。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5719bca82b85aa9047d85a"
         },
         {
           "code": "L15",
@@ -228,7 +242,8 @@
           "description": "微服务架构：每个服务独立部署、独立数据库、通过 API 通信。什么时候该拆微服务、什么时候不该拆。面试中怎么回答\"Monolith vs Microservices\"。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5719bda82b85aa9047d866"
         },
         {
           "code": "L16",
@@ -236,7 +251,8 @@
           "description": "Docker 解决什么问题（\"在我机器上能跑\"）、Image vs Container、Dockerfile 怎么写、docker-compose 管理多服务。面试常见 Docker 问题。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5719bea82b85aa9047d86e"
         },
         {
           "code": "L17",
@@ -244,7 +260,8 @@
           "description": "实战案例：一个电商系统的 Docker + Microservices 架构。User Service / Product Service / Order Service / API Gateway 怎么拆、怎么通信。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5719bfa82b85aa9047d87f"
         },
         {
           "code": "L18",
@@ -252,7 +269,8 @@
           "description": "高级话题：CAP Theorem、Consistency Patterns、Rate Limiting、Load Balancing、Message Queue（Kafka/RabbitMQ）、Caching（Redis）。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5719c0a82b85aa9047d889"
         },
         {
           "code": "L19",
@@ -260,7 +278,8 @@
           "description": "实战：设计一个 URL Shortener / Chat App / News Feed。从需求分析到最终架构，完整走一遍 System Design 面试。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a5719c1a82b85aa9047d89c"
         },
         {
           "code": "L20",
@@ -277,7 +296,8 @@
               "source": "prompt-lab",
               "slug": "code-generation"
             }
-          ]
+          ],
+          "_id": "6a5719c2a82b85aa9047d8ef"
         },
         {
           "code": "L21",
@@ -285,7 +305,8 @@
           "description": "在平台 AI Engineer Hub 做进阶技术练习与项目。",
           "type": "Information",
           "isLive": false,
-          "duration": 20
+          "duration": 20,
+          "_id": "6a5719c3a82b85aa9047d8fd"
         }
       ]
     }

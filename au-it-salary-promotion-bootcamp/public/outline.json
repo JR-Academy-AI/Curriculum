@@ -66,7 +66,8 @@
           "description": "谈判的核心原则：永远不要先报价、用数据说话、谈的是 package 不只是 base salary。一个真实案例：同样的 offer 谈判后多拿了 $15K。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a5fa82b85aa9047e0fc"
         },
         {
           "code": "L02",
@@ -74,7 +75,8 @@
           "description": "5 个谈判策略：Anchoring（锚定效应）、BATNA（最佳替代方案）、Deadline（制造紧迫感）、Silence（沉默的力量）、Walk Away（准备好放弃）。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a60a82b85aa9047e10c"
         },
         {
           "code": "L03",
@@ -82,7 +84,8 @@
           "description": "不只看薪资：WLB、技术栈成长空间、团队文化、通勤时间、visa sponsorship、promotion 速度。用加权评分表做理性决策。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a61a82b85aa9047e114"
         },
         {
           "code": "L04",
@@ -99,7 +102,8 @@
               "source": "prompt-lab",
               "slug": "workplace-scenarios"
             }
-          ]
+          ],
+          "_id": "6a571a62a82b85aa9047e11e"
         }
       ]
     },
@@ -114,7 +118,8 @@
           "description": "IC 路线天花板：Principal Engineer $250K+。Management 路线天花板：VP of Engineering $300K+。怎么突破天花板。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a63a82b85aa9047e128"
         },
         {
           "code": "L06",
@@ -122,7 +127,8 @@
           "description": "5 个核心因素：城市（悉尼>墨尔本>布里斯班）、公司规模、行业（Fintech/Mining/Big4）、技术稀缺度、个人议价能力。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a64a82b85aa9047e130"
         },
         {
           "code": "L07",
@@ -130,7 +136,8 @@
           "description": "Atlassian、Canva、REA、CommBank、Telstra 的真实薪资结构对比。Base + Super + RSU + Bonus 各占多少比例。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a65a82b85aa9047e13f"
         }
       ]
     },
@@ -145,7 +152,8 @@
           "description": "大厂升职的 3 个条件：完成当前 level 的所有 expectation、展示 next level 的能力、有 sponsor 在 calibration 会上为你说话。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a65a82b85aa9047e147"
         },
         {
           "code": "L09",
@@ -153,7 +161,8 @@
           "description": "什么时候该跳：连续 2 次没升职、薪资低于市场 20%、技术栈过时。跳槽的最佳时机和常见陷阱。跳一次涨 20-30% 是正常的。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a66a82b85aa9047e14f"
         },
         {
           "code": "L10",
@@ -161,7 +170,8 @@
           "description": "不是所有公司都一样难进。3 条赛道：Tier 1 大厂（Google/Atlassian）、Tier 2 知名公司（REA/Canva）、Tier 3 中小公司/startup。不同赛道的准备策略完全不同。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a67a82b85aa9047e15b"
         },
         {
           "code": "L11",
@@ -169,7 +179,8 @@
           "description": "主动 manage up：定期和 manager 同步职业目标、主动请缨 high-visibility 项目、建立跨团队 influence、记录自己的 impact。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a68a82b85aa9047e163"
         },
         {
           "code": "L12",
@@ -177,7 +188,8 @@
           "description": "大厂和中小厂的升职标准对比。Google 的 PERF、Amazon 的 Promo Doc、一般公司的 Performance Review。怎么用这些标准反推自己的发展计划。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a69a82b85aa9047e16b"
         },
         {
           "code": "L13",
@@ -185,7 +197,8 @@
           "description": "Junior → Mid → Senior 的核心跨越：从\"完成被分配的任务\"到\"独立拆解和解决复杂问题\"。技术深度、系统设计能力、mentoring 能力、项目推动力。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a6aa82b85aa9047e173"
         },
         {
           "code": "L14",
@@ -193,7 +206,8 @@
           "description": "不是所有人都适合做管理。IC 路线（Staff → Principal → Fellow）和 Management 路线（TL → EM → Director → VP）的区别。两条路线各自的挑战和天花板。",
           "type": "Video",
           "isLive": false,
-          "duration": 30
+          "duration": 30,
+          "_id": "6a571a6ba82b85aa9047e17e"
         }
       ]
     }
