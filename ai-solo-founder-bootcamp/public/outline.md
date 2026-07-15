@@ -5,7 +5,7 @@
 > 🤖 本文件由 `lineage/build_lineage.py` 从同目录 `outline.json` 自动生成 —— **勿手改**。要改大纲改 `outline.json`，再重跑 `python3 lineage/build_lineage.py`。
 > （`outline.json` 是生产管线吃的机器权威；这份 `.md` 是给人读、给谱系当真相文档的统一格式。）
 
-**级别** 高级 · **类型** training · **时长** 11 周（W0 Pre-work 自学 + W1-W11 三城线下 hub-and-spoke 模式：墨尔本主场 + 悉尼/布里斯班卫星教室。每周 4h 现场 + 4-8h 自学。不录播。） · **总课时** 60 · **步骤** 182 · **直播** 36 · **互动 Lab** 8 · **预计学时** 92
+**级别** 高级 · **类型** training · **时长** 11 周（W0 Pre-work 自学 + W1-W11 三城线下 hub-and-spoke 模式：墨尔本主场 + 悉尼/布里斯班卫星教室。每周 4h 现场 + 4-8h 自学。不录播。） · **总课时** 61 · **步骤** 182 · **直播** 36 · **互动 Lab** 8 · **预计学时** 92
 
 **适合**：澳洲华人专业人士（35-50 岁、150-250k+ 工资、有 5-15 年职业积累）—— senior 程序员、PM、设计师、咨询、律师、会计、医生、小公司老板/1-5 人团队创始人、准备申请 YC/Antler/Startmate 的 founder。想用 AI 做一人公司收第一笔钱、拿澳洲 Grant 退税、建立第二条收入腿、把现有业务 AI 化、或为 accelerator 申请攒 traction。
 
@@ -53,6 +53,7 @@ _按渠道类型切分（不按语言圈，未来加任何新市场都能套）�
 - **[Self] AI 内容工厂搭建：选题 → 写稿 → 改稿 → 出图** — 120 分钟
 - **[Live] AI 视频制作：从脚本到成片，一键生成中英文短视频** — 120 分钟 · 🔴直播
 - **[Live] AI 海报 + 产品图制作（与 AI 视频配套）** — 90 分钟 · 🔴直播
+- **[Live] AI 漫剧 / 短剧：用 AI 做连续动画短剧获客（与真人短视频互补）** — 120 分钟 · 🔴直播
 - **[Live] X / Twitter Build in Public 打法** — 120 分钟 · 🔴直播
 - **[Live] LinkedIn outreach + ProductHunt 冷启动** — 120 分钟 · 🔴直播
 - **Lab: LinkedIn 个人化 outreach 生成器（Prompt Lab）** — 30 分钟

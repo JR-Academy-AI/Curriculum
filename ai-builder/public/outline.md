@@ -5,28 +5,29 @@
 > 🤖 本文件由 `lineage/build_lineage.py` 从同目录 `outline.json` 自动生成 —— **勿手改**。要改大纲改 `outline.json`，再重跑 `python3 lineage/build_lineage.py`。
 > （`outline.json` 是生产管线吃的机器权威；这份 `.md` 是给人读、给谱系当真相文档的统一格式。）
 
-用 Claude Code、Cursor、Codex 做全栈开发。从 PRD 到 Skills/MCP/Agent 到部署上线，面向有编程基础的开发者
+<h2>会 AI chat ≠ 会 AI coding</h2><p>过去一年我带了 300 多名同学做 AI coding，统计下来：能正确做 AI coding 的不足 10%，能高效用的不足 3%，绝大多数人只停在「会跟 AI 聊天」。衡量标准很简单——一个 LinkedIn / Google / GitHub 的 SSO 登录功能，你能不能一小时内从零做完上线。做不到，就还没入门。</p><h2>这门课教你把 AI coding 用到 everything</h2><p>不是教你写 prompt，是教你建一套属于你自己、再放大到企业的 AI 操作系统：个人 AI OS（你的第二大脑）→ 用 ADLC（Agent Development Lifecycle）把整份 PRD 交给一个 Agent 端到端开发 → 让 Agent 自动替你和企业干活 → 沉淀成 AI-native 企业记忆系统。毕业那天的北极星：你能同时指挥多个独立 Agent 并行替你工作。</p><h2>8 周 4 个阶段</h2><p>Phase 1 入门 & 个人 AI OS（产品思维 + PRD + ADLC + 老项目改造 + Design System）；Phase 2 Skills / MCP / Agent 架构；Phase 3 AI 自动化（让 Agent 定时自动干活）；Phase 4 AI-native 企业记忆系统 + 云端 Agent 部署 + 全栈毕业项目。
 
-**级别** 中级 · **类型** training · **时长** 8 周（111 节课） · **总课时** 111 · **步骤** 142 · **直播** 21 · **互动 Lab** 32 · **预计学时** 107.3
+**级别** 中级 · **类型** training · **时长** 8 周（112 节课） · **总课时** 112 · **步骤** 142 · **直播** 22 · **互动 Lab** 32 · **预计学时** 107.3
 
 **适合**：有编程基础的开发者、全栈工程师、DevOps、想用 AI 提升开发效率的技术人员
 
-**目标**：掌握 Claude Code Skills、MCP Server 搭建、Agent 架构、多模型协作，用 AI 完成从 PRD 到部署的全栈项目
+**目标**：建立从个人到企业的 AI 操作系统：用 Source of Truth 把你的经验/规范结构化成 AI 可读的第二大脑，用 ADLC 把整份 PRD 交给 Agent 端到端开发并部署，把重复流程交给 Agent 自动跑，最终能同时指挥多个 Agent 并行工作。
 
 ---
 
-## Phase 1 — Vibe Coding 入门 & PRD
+## Phase 1 — Vibe Coding 入门 & 个人 AI OS
 
-_Week 1-2，33 节课_
+_Week 1-2_
 
-- **什么是 Vibe Coding？未来的开发范式** — 60 分钟 · 🔴直播
+- **什么是 Vibe Coding + 个人 AI OS：用你的简历搭第二大脑（公开试听）** — 60 分钟 · 🔴直播
 - **自学：AI 基础概念 — 5 分钟搞懂大模型** — 30 分钟
 - **自学：Vibe Coding 是什么** — 30 分钟
-- **安装与配置 Claude、Cursor、Codex CLI** — 120 分钟 · 🔴直播
+- **安装与配置 Claude、Codex CLI** — 120 分钟 · 🔴直播
+- **用 AI 生成 Design System：UI 布局与统一样式语言** — 120 分钟 · 🔴直播
 - **自学：Cursor 入门 — Vibe Coding 的代名词** — 30 分钟
 - **自学：安装 Cursor 与环境准备** — 30 分钟
-- **Quest 实战：装好 Claude Code + Cursor + Codex 完整工具链** — 35 分钟
-- **Claude、Codex、Cursor、Gemini 对比指南** — 120 分钟
+- **Quest 实战：装好 Claude Code + Codex 完整工具链** — 35 分钟
+- **Claude、Codex、Gemini 对比指南** — 120 分钟
 - **Lab: 模型与参数 — Temperature、Top-P 和模型选择** — 30 分钟
 - **自学：工具与模型最新动态** — 30 分钟
 - **自学：AI 模型对比参考** — 30 分钟
@@ -43,8 +44,9 @@ _Week 1-2，33 节课_
 - **Lab: .cursorrules 设计实战 — 让 Cursor 按你的规矩写代码** — 30 分钟
 - **自学：Cursor Rules 编写指南** — 30 分钟
 - **自学：Context Fundamentals** — 30 分钟
-- **Quest 实战：给你的真实项目写一套 .cursorrules + CLAUDE.md** — 40 分钟
+- **Quest 实战：给你的真实项目写一套 CLAUDE.md + 工具规则文件** — 40 分钟
 - **Claude 协助 Debug：从报错到修复的完整流程** — 120 分钟 · 🔴直播
+- **老项目改造（Brownfield）：让 AI 读懂 + 安全改一个真实 existing 项目** — 60 分钟 · 🔴直播
 - **Lab: 调试 AI 代码 — 读错误日志和修复 Bug** — 30 分钟
 - **Lab: 代码生成 — AI 辅助编程的正确姿势** — 30 分钟
 - **自学：用 AI 做 Debug** — 30 分钟
@@ -53,7 +55,7 @@ _Week 1-2，33 节课_
 
 ## Phase 2 — Skills, MCP & Agent 架构
 
-_Week 3-5，15 节课_
+_Week 3-5_
 
 - **自学：Skills 架构速览 — Claude/Codex 插件机制** — 30 分钟
 - **Lab: Tool Use — Function Calling 实战** — 30 分钟
@@ -92,11 +94,11 @@ _Week 3-5，15 节课_
 - **Lab: Context Engineering 入门 — 让 AI 不再丢上下文** — 60 分钟
 - **Quest 实战：搭建一个能跑的 Claude Code Sub-agents 工作流** — 45 分钟
 
-## Phase 3 — 多模型 & Prompt 精调
+## Phase 3 — AI 自动替你 / 企业干活（自动化）
 
-_Week 5-7，9 节课_
+_Week 6_
 
-- **自学：最新 AI Coding 模型选型参考（Claude / Codex / GPT-5.5）** — 120 分钟
+- **自学：最新 AI Coding 模型选型参考（Claude / Codex / GPT-5.6）** — 120 分钟
 - **多模型 Prompt Engineering 模板参考** — 120 分钟
 - **Lab: Zero-shot — 零示例直接提问** — 30 分钟
 - **Lab: 工具选型实战 — 没有绝对的最好，只有最适合** — 60 分钟
@@ -105,17 +107,17 @@ _Week 5-7，9 节课_
 - **Lab: Self-Consistency — 多路推理投票** — 30 分钟
 - **自学：Chain-of-Thought (CoT)** — 30 分钟
 - **自学：Prompt Chaining** — 30 分钟
-- **Codex CLI 与高效调试技巧全解析** — 90 分钟 · 🔴直播
-- **Codex 准确率、Prompt 精调与 AI Coding 优化闭环** — 150 分钟 · 🔴直播
+- **AI 自动化工作流：让 Agent 定时 / 自动替你干活（Schedule / Workflow / Cron）** — 90 分钟 · 🔴直播
+- **企业自动化落地：把重复业务流程交给 Agent 跑通闭环** — 150 分钟 · 🔴直播
 - **Lab: Prompt 评估 — 量化你的 Prompt 质量** — 30 分钟
 - **自学：性能与成本优化** — 30 分钟
 - **Codex CLI 安装指南与 config.toml 配置样例** — 120 分钟
 - **Lab: Prompt 迭代与追问 — 第一次一定不够好** — 60 分钟
 - **AI Coding 优化闭环：质量、速度、成本一起调** — 90 分钟
 
-## Phase 4 — 全栈项目 & 交付
+## Phase 4 — AI-native 企业记忆系统 & 云端交付
 
-_Week 7-8，9 节课_
+_Week 7-8_
 
 - **Claude 自动生成 UI 布局与样式系统** — 90 分钟 · 🔴直播
 - **Lab: AI 前端开发 — 从截图到 React 代码** — 30 分钟
@@ -127,10 +129,11 @@ _Week 7-8，9 节课_
 - **Claude 连接数据库（Supabase / Postgres）与建模** — 120 分钟
 - **Lab: 数据库设计与 AI — Schema 到迁移** — 30 分钟
 - **自学：数据与知识库协作** — 30 分钟
-- **Cloudflare Workers 上线部署指南** — 90 分钟 · 🔴直播
+- **从 PRD 到 Production：GitHub + Actions + Pages / Vercel 交付链路** — 120 分钟 · 🔴直播
+- **云端 Agent 部署：让 Agent 上云持续替企业跑（Workers / Serverless）** — 90 分钟 · 🔴直播
 - **Lab: 部署到上线 — AI 加速从开发到生产** — 30 分钟
 - **自学：脚手架与自动化交付** — 30 分钟
-- **Claude 辅助生成演示脚本与 Readme 文档** — 120 分钟 · 🔴直播
+- **AI-native 企业记忆系统：从个人 SoT 到团队共享第二大脑** — 120 分钟 · 🔴直播
 - **Lab: 邮件与商务写作 — AI 秒变你的写作助手** — 30 分钟
 - **Serverless 部署与 Workers 模板参考** — 120 分钟
 - **项目最终展示与 AI 代码 Review 技巧** — 90 分钟 · 🔴直播
