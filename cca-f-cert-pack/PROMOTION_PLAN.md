@@ -14,11 +14,11 @@
 | Course 中文名 | Claude 官方架构师认证 · 考试直通包（Claude Certified Architect – Foundations）|
 | **🎯 Course Type** | **Type 8 · 认证课（首发窗口变体）** |
 | 类型识别理由 | 付费直通包，核心价值=「个人打不开的 CPN 报名准入」+「全球华人首批持证窗口」稀缺感。第一阶段走 launch 冲刺（非标准 Type 8 长尾），首批过考案例出来后转长尾常青。|
-| 两阶段 | **阶段 A 首发窗口冲刺**（D0→D+30，稀缺+准入钩子）→ **阶段 B 长尾常青**（D+30 起 SEO + cert 长文持续）|
-| **🧑 PERSONAS.md 状态** | ❌ 不存在 → ⚠️ 待补。当前受众依据 = 官方 Exam Guide 目标受众（Anthropic 一手 ground truth，见 `CLAUDE_CERT_FAMILY.md §5`）+ `MARKETING_PLAN.md §4`。建议 CCAR-F 首期跑通后用 `/target-user-persona-mapper init cca-f-cert-pack` 补真实访谈画像。|
-| Launch Date | **2026-07-15（今日首期开售，D0）** |
-| Target Enrollment | ⚠️ 待补（首期席位数 + 报名目标由 Lightman/Beta 定）|
-| Status | `in-progress`（今日启动）|
+| 两阶段 | 阶段 A 首发窗口冲刺 ✅ **首期已售罄（2026-07-15）** → **当前：常规滚动报名 + 证明期**（首批学员备考/考试，案例出来即升级口号）→ 阶段 B 长尾常青（SEO + cert 长文持续）|
+| **🧑 PERSONAS.md 状态** | ✅ 已建 [`./PERSONAS.md`](./PERSONAS.md)（2026-07-15 init）。⚠️ **Ground truth 覆盖率 ~35% 偏弱** —— 画像/不会买的人有官方依据，痛点原话/决策周期/活跃平台待补。**首期已售罄 = 真实买家名单已存在，应尽快 `/target-user-persona-mapper refresh cca-f-cert-pack --cohort=1` 拉到 70%+。** |
+| Launch Date | 2026-07-15 首期开售，**当日售罄**；现常规滚动报名 |
+| Target Enrollment | 首期：✅ 已售罄（实际人数 ⚠️ 待补，Beta 回填）。常规报名目标：⚠️ 待补（Lightman/Beta 定滚动招生节奏）|
+| Status | `in-progress`（首期售罄，转常规报名 + 证明期）|
 | Created | 2026-07-15 by `/course-promotion-architect init` |
 | Last Updated | 2026-07-15 |
 | Related Docs | [MARKETING_PLAN.md](./MARKETING_PLAN.md) / [DESIGN.md](./DESIGN.md) / [SYLLABUS_OFFICIAL.md](./SYLLABUS_OFFICIAL.md) / [../CLAUDE_CERT_FAMILY.md](../CLAUDE_CERT_FAMILY.md) |
@@ -27,7 +27,7 @@
 
 ## 1. 课程定位摘要
 
-> 详细话术 / 卖点看 `MARKETING_PLAN.md`。本节只抽 1 屏。
+> 🧑 **目标用户画像见 [./PERSONAS.md](./PERSONAS.md)（2026-07-15 init，⚠️ 覆盖率 ~35% 待 refresh）**。详细话术 / 卖点看 `MARKETING_PLAN.md`。本节只抽 1 屏。
 
 **一句话**：成为全球华人首批 Claude 官方认证架构师 —— 个人报不了名的那道 Partner Academy 门，匠人通过 CPN 合规通道替你打开，再给最短备考路线和全真模拟冲刺。卖的是**报名准入 + 路线 + 冲刺**，不是资料。
 
@@ -42,6 +42,7 @@
 1. ⭐⭐⭐⭐⭐ **首个 Claude 官方技术认证 + 首批持证窗口稀缺感** —— "全球华人首批"是不可复制的时间窗
 2. ⭐⭐⭐⭐⭐ **CPN 报名准入这道门个人打不开**（可信度支柱，但不做封面主钩子）
 3. ⭐⭐⭐⭐ **5-domain 最短备考路线** —— 官方课免费但散，我们把它排成能过考的路线（Agentic Architecture 权重 27% 最高，备考重心先压这里）
+4. ⭐⭐⭐⭐ **Anthropic 官方 CCAR-F 专属精选页借势（2026-07 新上线）** —— Anthropic 刚为 CCAR-F 打包了 7 门免费备考课专属页（Claude Certification Exam Prep Courses：《Building with the Claude API》《Claude Code in Action》《Introduction to Model Context Protocol》等）。内容切角：「官方都替你选好课了，为什么还过不了考？」——7 门课≈20+ 小时，没有考点权重、没有题、没有反馈；我们的第一章免费预览里有**逐门解读**（哪几门真压中考点、哪几门是通用素养可跳过）。官网销售页已上线对应链接（2026-07-15 部署），小红书/公众号引流可直接落到销售页看逐门解读。
 
 **售价档**：对外不露价（红线）。考试费另付、由学员本人在 Partner Academy 结账，金额只在销售私聊讲。
 
@@ -55,7 +56,8 @@
 
 ## 2. 目标与漏斗反推
 
-> 认证直通包漏斗 ≠ bootcamp。没有引流课，路径是「内容触达 → 咨询私信 → 销售私聊 → 首期席位报名」。比例全部 `⚠️ 假设/待补`，首期跑通后换实测。
+> 认证直通包漏斗 ≠ bootcamp。没有引流课，路径是「内容触达 → 咨询私信 → 销售私聊 → 报名」。比例全部 `⚠️ 假设/待补`。
+> ✅ **首期已售罄（2026-07-15）** —— 下面反推的「首期报名目标 N」已达成；现改为**常规滚动报名**参照，常规每批目标待 Beta 定。**首期真实转化数据（触达→私信→报名）应从首期名单/客服记录回填，替换以下行业基线假设。**
 
 ```
 首期报名目标：N 人  ⚠️ 待补（Lightman/Beta 定）
@@ -187,6 +189,19 @@
   - 首期席位数/报名目标未定 → 漏斗反推全是假设，D0 内必须补
   - 无历史认证类转化数据 → §2 全行业基线，D+7 review 校准
 
+### Week of 2026-07-15（首期售罄 → 转常规报名）
+
+- ✅ 本周完成：
+  - **首期席位售罄**（稀缺窗口打法奏效）
+  - PERSONAS.md init 建立（覆盖率 ~35%）
+- 🎯 本周目标：
+  1. 拉首期报名/客服名单 → 跑 `/target-user-persona-mapper refresh --cohort=1` 把 PERSONAS 覆盖率拉到 70%+
+  2. 转常规滚动报名：内容不停（公众号/小红书继续），落地页去掉"首期席位"稀缺话术、改常规报名 + 证明期铺垫
+  3. Beta 定常规每批报名目标 + 回填 Meta 首期实际人数
+- 🚨 风险 flag：
+  - 时间轴 §4 仍是首发冲刺版（D0=07-15）→ 已作为"首期已执行记录"保留；常规报名期的滚动节奏待 Beta 确认后另起一版
+  - 首批过考案例未出 → 证明期口号暂不能升级（MARKETING_PLAN §3 红线）
+
 ---
 
 ## 7. 风险与决策日志
@@ -195,6 +210,8 @@
 |------|------|------|--------|------|
 | 2026-07-15 | CCAR-F 今日开售，其余三门错峰 | CCAR-F 领跑真实日期时间轴；CCAO-F/CCDV-F/CCAR-P 相对 T-N、launch 待补 | Lightman | 团队负荷错开，避免四门叠加 |
 | 2026-07-15 | 无 PERSONAS.md | 用官方 Exam Guide 受众打底，首期后补 `/target-user-persona-mapper` | — | 渠道判断可用但非真实访谈驱动 |
+| 2026-07-15 | **首期席位售罄** | 阶段 A 首发冲刺达成；转常规滚动报名 + 证明期；落地页去稀缺话术 | Lightman | §4 时间轴保留为首期执行记录，常规节奏待另起 |
+| 2026-07-15 | PERSONAS.md 已 init | 覆盖率 ~35% 偏弱；首期名单是最强 GT，优先 refresh 到 70%+ | — | 下游渠道决策暂用受众类型经验，refresh 后校准 |
 
 ---
 
