@@ -171,6 +171,19 @@
           "_id": "6a4310732f662a5f6d5c9ba1"
         },
         {
+          "code": "L111",
+          "title": "从 PRD 到 Production：GitHub + Actions + Pages / Vercel 交付链路",
+          "description": "前三节写的 PRD、CLAUDE.md、tokens.css 都还只躺在你本地。这节 120 分钟动手工作坊，把它们接成一条真能交付的链路：让 Agent 从 PRD 生成 scaffold、进 GitHub、跑 Actions CI（并亲眼看它拦住坏代码）、发布到 Pages 和 Vercel，最后对照 PRD 验收线上版本。全程你不敲命令，你指挥 Agent。",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 120,
+          "steps": [],
+          "labs": [],
+          "learns": [],
+          "learningMaterial": "<p><strong>📽 课堂 Slides：</strong><a href=\"https://jiangren.com.au/curriculum/lessons/vibe-coding-master-l4/\" target=\"_blank\" rel=\"noopener\">从 PRD 到 Production（网页版 PPT · 22 页 · ← → 翻页）</a></p><h2>学习目标</h2><p>这节课结束后，你能：</p><ul><li>从已有 PRD 让 Agent 生成最小可运行项目框架（scaffold first，不是一次性做完整产品）</li><li>让项目在本地通过 install / typecheck / build 三条绿线（本地绿色基线）</li><li>把代码 + PRD + rules + tokens 放进同一个 GitHub Repository，作为项目的 SoT</li><li>看懂并使用最小 GitHub Actions CI，亲眼验证它能拦住坏代码（红灯实验）</li><li>用 Actions 把静态构建产物发布到 GitHub Pages</li><li>用 Vercel Git Integration 拿到 Preview + Production URL</li><li>对照 PRD 验收线上版本，而不是以「URL 能打开」为完成标准</li></ul><h2>核心概念</h2><h3>本地能跑 ≠ 交付</h3><p>localhost 只有你能访问、没人验证、没有历史。交付是「别人能点开就用、你每次提交都自动验证、自动上线」。这节课把前三节的三层 SoT（人 / 产品 / 视觉）接成一条真能跑的链路：<code>PRD + CLAUDE.md + tokens.css → Scaffold → GitHub → Actions → Pages / Vercel</code>。</p><h3>Scaffold ≠ 完整产品</h3><p>先分清 scaffold / MVP 功能 / 完整产品。主线只做 scaffold + placeholder + 一个最小核心 Flow，禁止「一句话做完」导致生成失控。先让 Agent 出 scaffold plan，你确认后再让它生成。</p><h3>你不敲命令，你指挥 Agent</h3><p>git 命令、workflow YAML、部署配置都是 Agent 替你生成的产物，你 review。你的活是：给对意图 → review Agent 产出 → 验证结果真跑通 → 守住 Agent 保证不了的（密钥不进 git、URL 能打开、CI 真能拦住坏代码、对照 PRD 验收、别擅自加 PRD 以外的功能）。</p><h3>红灯实验：CI 到底在保护什么</h3><p>让 Agent 建 ci.yml → 故意写一个 TS error → workflow 变红 → 修复 → 变绿。亲眼看它拦住坏代码，才算过关。</p><h3>三个环境与 PR → Preview → Production</h3><p>Local / Preview / Production 各管一段：Actions 管 CI 与 Pages，Vercel 用官方 Git Integration。PR 一开盯四件事——CI 过没、有没有独立 Preview URL、在 Preview 上对着 PRD 验收、验收过了再 merge。<strong>没看过 Preview 之前不要 merge。</strong></p><h2>课堂产物</h2><ul><li>一个 GitHub Repository（代码 + PRD + rules + tokens 同仓）</li><li>一条能跑的 GitHub Actions CI（并做过红灯实验）</li><li>一个 GitHub Pages 线上 URL</li><li>一个 Vercel Preview URL + Production URL</li></ul><h2>课后作业（一个完整闭环）</h2><p>去你的 Vercel Preview 找一个真实问题，把它写成 PRD 的一条变更（PRD v1.1）；新开分支让 Agent 改，让 Actions 验证，用 Preview 验收；过了再 merge 到 main。</p><p>交四样：Pages URL、Vercel URL、PR 链接，加一张 Actions 绿灯截图。</p><h2>常见坑</h2><ul><li>Vite <code>base</code> 配错 → Pages 子路径资源 404</li><li>SPA 直接刷新子路由 → Pages 404</li><li>密钥 / .env 混进 commit —— push 前必查</li></ul><h2>前置</h2><p>需要本机 Node + Git + Claude Code（或 Cursor）、GitHub 账号、Vercel 账号。带上前三节的产物：PRD、CLAUDE.md、tokens.css。</p>",
+          "_id": "6a55dda12b2c173c34b25118"
+        },
+        {
           "code": "L05",
           "title": "自学：Cursor 入门 — Vibe Coding 的代名词",
           "description": "认识目前最流行的 AI IDE——Cursor。掌握 Composer 多文件编辑、@ 引用上下文、Tab 补全，以及如何用 .cursorrules 让 AI 记住你的项目规矩。",
@@ -3098,19 +3111,6 @@
             }
           ],
           "_id": "69dc41a976e3e0c1b3c53fc5"
-        },
-        {
-          "code": "L111",
-          "title": "从 PRD 到 Production：GitHub + Actions + Pages / Vercel 交付链路",
-          "description": "前三节写的 PRD、CLAUDE.md、tokens.css 都还只躺在你本地。这节 120 分钟动手工作坊，把它们接成一条真能交付的链路：让 Agent 从 PRD 生成 scaffold、进 GitHub、跑 Actions CI（并亲眼看它拦住坏代码）、发布到 Pages 和 Vercel，最后对照 PRD 验收线上版本。全程你不敲命令，你指挥 Agent。",
-          "type": "Lesson",
-          "isLive": true,
-          "duration": 120,
-          "steps": [],
-          "labs": [],
-          "learns": [],
-          "learningMaterial": "<p><strong>📽 课堂 Slides：</strong><a href=\"https://jiangren.com.au/curriculum/lessons/vibe-coding-master-l4/\" target=\"_blank\" rel=\"noopener\">从 PRD 到 Production（网页版 PPT · 22 页 · ← → 翻页）</a></p><h2>学习目标</h2><p>这节课结束后，你能：</p><ul><li>从已有 PRD 让 Agent 生成最小可运行项目框架（scaffold first，不是一次性做完整产品）</li><li>让项目在本地通过 install / typecheck / build 三条绿线（本地绿色基线）</li><li>把代码 + PRD + rules + tokens 放进同一个 GitHub Repository，作为项目的 SoT</li><li>看懂并使用最小 GitHub Actions CI，亲眼验证它能拦住坏代码（红灯实验）</li><li>用 Actions 把静态构建产物发布到 GitHub Pages</li><li>用 Vercel Git Integration 拿到 Preview + Production URL</li><li>对照 PRD 验收线上版本，而不是以「URL 能打开」为完成标准</li></ul><h2>核心概念</h2><h3>本地能跑 ≠ 交付</h3><p>localhost 只有你能访问、没人验证、没有历史。交付是「别人能点开就用、你每次提交都自动验证、自动上线」。这节课把前三节的三层 SoT（人 / 产品 / 视觉）接成一条真能跑的链路：<code>PRD + CLAUDE.md + tokens.css → Scaffold → GitHub → Actions → Pages / Vercel</code>。</p><h3>Scaffold ≠ 完整产品</h3><p>先分清 scaffold / MVP 功能 / 完整产品。主线只做 scaffold + placeholder + 一个最小核心 Flow，禁止「一句话做完」导致生成失控。先让 Agent 出 scaffold plan，你确认后再让它生成。</p><h3>你不敲命令，你指挥 Agent</h3><p>git 命令、workflow YAML、部署配置都是 Agent 替你生成的产物，你 review。你的活是：给对意图 → review Agent 产出 → 验证结果真跑通 → 守住 Agent 保证不了的（密钥不进 git、URL 能打开、CI 真能拦住坏代码、对照 PRD 验收、别擅自加 PRD 以外的功能）。</p><h3>红灯实验：CI 到底在保护什么</h3><p>让 Agent 建 ci.yml → 故意写一个 TS error → workflow 变红 → 修复 → 变绿。亲眼看它拦住坏代码，才算过关。</p><h3>三个环境与 PR → Preview → Production</h3><p>Local / Preview / Production 各管一段：Actions 管 CI 与 Pages，Vercel 用官方 Git Integration。PR 一开盯四件事——CI 过没、有没有独立 Preview URL、在 Preview 上对着 PRD 验收、验收过了再 merge。<strong>没看过 Preview 之前不要 merge。</strong></p><h2>课堂产物</h2><ul><li>一个 GitHub Repository（代码 + PRD + rules + tokens 同仓）</li><li>一条能跑的 GitHub Actions CI（并做过红灯实验）</li><li>一个 GitHub Pages 线上 URL</li><li>一个 Vercel Preview URL + Production URL</li></ul><h2>课后作业（一个完整闭环）</h2><p>去你的 Vercel Preview 找一个真实问题，把它写成 PRD 的一条变更（PRD v1.1）；新开分支让 Agent 改，让 Actions 验证，用 Preview 验收；过了再 merge 到 main。</p><p>交四样：Pages URL、Vercel URL、PR 链接，加一张 Actions 绿灯截图。</p><h2>常见坑</h2><ul><li>Vite <code>base</code> 配错 → Pages 子路径资源 404</li><li>SPA 直接刷新子路由 → Pages 404</li><li>密钥 / .env 混进 commit —— push 前必查</li></ul><h2>前置</h2><p>需要本机 Node + Git + Claude Code（或 Cursor）、GitHub 账号、Vercel 账号。带上前三节的产物：PRD、CLAUDE.md、tokens.css。</p>",
-          "_id": "6a55dda12b2c173c34b25118"
         },
         {
           "code": "L94",
