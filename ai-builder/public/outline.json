@@ -158,62 +158,6 @@
           "_id": "69db3dc376e3e0c1b3b66d12"
         },
         {
-          "code": "L110",
-          "title": "用 AI 生成 Design System：UI 布局与统一样式语言",
-          "description": "Vibe Coding 第一步不是写页面，是先定 Design System。学会用 design token 把颜色/字体/间距/圆角/阴影收敛成变量，并给 AI 写一份「设计宪法」，让它每次生成 UI 都用同一套 token，而不是每个页面重新乱配色。",
-          "type": "Lesson",
-          "isLive": true,
-          "duration": 120,
-          "steps": [],
-          "labs": [],
-          "learns": [],
-          "learningMaterial": "<p><strong>📽 课堂 Slides：</strong><a href=\"https://jiangren.com.au/curriculum/lessons/vibe-coding-master-l3/\" target=\"_blank\" rel=\"noopener\">用 AI 生成 Design System（网页版 PPT · 19 页 · ← → 翻页）</a></p><h2>学习目标</h2><p>这节课结束后，你能：</p><ul><li>说清楚为什么 Vibe Coding 的第一步不是写页面，而是先定一套 Design System</li><li>读懂 design token：把颜色、字体、间距、圆角、阴影收敛成一组变量</li><li>给 AI 写一份「设计宪法」，让它每次生成 UI 都用同一套 token，而不是每个页面重新乱配色</li><li>用一套真实 token（neo-brutalism）让 AI 批量产出风格统一的卡片、按钮、输入框</li></ul><h2>核心概念</h2><h3>不先定 Design System，AI 每个页面都长得不一样</h3><p>你让 AI「做个登录页」，它给你蓝色按钮、8px 圆角。第二天让它「做个仪表盘」，它给你紫色按钮、12px 圆角、另一种字体。单看每页都还行，拼到一个产品里就是一盘散沙——用户一眼看出「这是几个不同的人随手拼的」。问题不在 AI 笨，在你没给它一个统一的视觉约束。它每次都在「重新发明设计」，而不是「复用你的设计」。</p><p>正确顺序是反过来的：先定 Design System，再让 AI 在这套系统里生成页面。设计系统是 Vibe Coding 的地基，地基没打就盖楼，盖几层就得返工重来。</p><h3>design token：把设计决策变成变量</h3><p>token 就是把「颜色用哪个、字多大、圆角几像素、阴影怎么打」这些散落的设计决策，全部收敛成命名变量。改一处，全站跟着变；AI 引用变量，而不是每次现编一个 hex。一套最小 token 长这样（CSS 自定义属性）：</p><pre><code>:root {\n  /* 颜色 */\n  --color-bg:      #fff1e7;   /* 页面暖底 */\n  --color-surface: #ffffff;   /* 卡片底 */\n  --color-ink:     #10162f;   /* 主文字 / 主 CTA */\n  --color-accent:  #ff5757;   /* 强调 / 编号 / danger */\n  /* 边框 + 阴影 */\n  --border:    3px solid #000;\n  --shadow-md: 6px 6px 0 #000;\n  --radius:    0;             /* 直角 */\n  /* 字体 */\n  --font-heading: 'Bricolage Grotesque', sans-serif;\n  --font-body:    'DM Sans', sans-serif;\n  --font-mono:    'Space Mono', monospace;\n  /* 间距（4pt 一档）*/\n  --space-2: 8px;  --space-4: 16px;  --space-6: 24px;\n}</code></pre><p>这正是匠人学院品牌系统 <code>jr-academy-brand/tokens/tokens.css</code> 的做法：所有 <code>--jr-*</code> 变量是唯一真相源。匠人实际维护两套「register」——官网用精致软风（奶油底 + 大圆角 + 柔阴影），讲课 deck / 海报 / 课件用 neo-brutalism——但每套都由同一份 token 文件完整描述，同一场景内没有第二套数。</p><h3>一套真实 token 长什么样：neo-brutalism</h3><p>抽象的 token 概念，配一套真实风格才看得懂。以匠人学院教学物料（讲课 deck / 海报 / 课件）在用的 neo-brutalism（新粗野主义）为例，它的视觉语言用三条 token 就锁死了：</p><ul><li><strong>结构</strong> = <code>--border: 3px solid #000</code> 纯黑粗边 + <code>--radius: 0</code> 直角</li><li><strong>阴影</strong> = <code>--shadow-md: 6px 6px 0 #000</code> 偏移硬阴影（不是柔阴影 <code>0 4px 12px rgba()</code>），hover 时阴影归零 + 元素位移 4px，做出「按下去」的物理感</li><li><strong>配色</strong> = 暖底 <code>#fff1e7</code> + 纯白卡 + 深色 <code>#10162f</code> 主 CTA，红 <code>#ff5757</code> 只用在强调 / 编号 / danger</li></ul><p>关键不是这套风格本身好不好看，而是它「可被一组变量完整描述」。任意一个卡片，只要写 <code>border: var(--border); box-shadow: var(--shadow-md); border-radius: var(--radius);</code>，就和全站其他卡片长得一模一样——这就是 token 化的威力。</p><h3>给 AI 一份「设计宪法」</h3><p>光有 token 文件不够，AI 不会自己去读。你要把规则写成一份它每次都遵守的「设计宪法」——类似匠人学院的 <code>DESIGN.md</code>，放进项目根目录的 <code>CLAUDE.md</code> 或 <code>.cursorrules</code>，让 AI 生成任何 UI 前先对照。一份能用的设计宪法包含：</p><pre><code># 设计系统铁律（生成任何 UI 前必须遵守）\n\n1. 颜色只能用 tokens.css 里的 --color-* 变量，禁止现编 hex。\n2. 所有卡片 / 按钮 / 输入框：3px 黑边 + 6px 6px 0 #000 硬阴影 + 直角(0)。\n3. 圆角只给圆形元素（头像 / 状态点 / 胶囊标签 = 999px），其余一律 0。\n4. 标题字体 Bricolage Grotesque，正文 DM Sans，数据/标签 Space Mono。\n5. 间距走 4pt 档（8/16/24/32...），不要写 13px、17px 这种随手数。\n\n# 立即打回\n- 写死 hex（不走 --color-*）/ 柔阴影 0 Npx Npx rgba() / 圆角胶囊按钮</code></pre><p>有了这份宪法，你说「做个价格卡」，AI 产出的卡片自动带黑边硬阴影、用对字体、间距对齐——因为它不是在猜你的审美，是在执行你写下的规则。这跟课程里反复强调的「给 AI 建 SoT（Single Source of Truth）」是同一件事：设计也要有它的唯一真相源。</p><h2>动手练习</h2><ol><li>新建一个 <code>tokens.css</code>，把颜色、边框、阴影、圆角、字体、间距各定一组变量（可直接抄上面 neo-brutalism 那套）。</li><li>在 <code>CLAUDE.md</code> 里写 5 条设计铁律 + 2 条「立即打回」红线，作为你的设计宪法。</li><li>让 AI 基于这套 token 一次生成三个组件：一个价格卡、一个主 CTA 按钮、一个输入框。检查它们是不是都用了 <code>var(--border)</code> 和 <code>var(--shadow-md)</code>，而不是各写各的 hex。</li><li>故意让 AI「做个深色 hero 区」，看它会不会破坏 token（比如自己编一个新蓝色）。会的话，回到 CLAUDE.md 把规则补严，再让它重做——体会「修宪法 &gt; 改单个页面」。</li></ol><h2>常见问题</h2><h3>Q: 我没有设计师，token 的值从哪来？</h3><p>直接抄一套成熟的。neo-brutalism、Material、shadcn 都有现成 token，挑一套你喜欢的固定下来，先求统一，再谈好看。统一本身就是 80% 的「专业感」。</p><h3>Q: 项目做到一半才想起来要 token，来得及吗？</h3><p>来得及，但越早越省事。先把 token 文件和设计宪法补上，再让 AI 逐页把写死的 hex 换成变量——这其实就是下一节 brownfield「安全改造」的预演。</p><h2>小结</h2><p>Vibe Coding 第一步先定 Design System，不然 AI 每个页面都重新发明设计。token = 把颜色/字体/间距/圆角/阴影收敛成变量，设计宪法（CLAUDE.md）= 让 AI 每次都引这套变量而不是现编 hex。一套真实 token（neo-brutalism：3px 黑边 + 6px 6px 0 硬阴影 + 直角）就能让全站风格自动统一。记住：改设计宪法，比改一个个页面值钱得多。</p>",
-          "_id": "6a4310732f662a5f6d5c9ba1"
-        },
-        {
-          "code": "L111",
-          "title": "从 PRD 到 Production：GitHub + Actions + Pages / Vercel 交付链路",
-          "description": "前三节写的 PRD、CLAUDE.md、tokens.css 都还只躺在你本地。这节 120 分钟动手工作坊，把它们接成一条真能交付的链路：让 Agent 从 PRD 生成 scaffold、进 GitHub、跑 Actions CI（并亲眼看它拦住坏代码）、发布到 Pages 和 Vercel，最后对照 PRD 验收线上版本。全程你不敲命令，你指挥 Agent。",
-          "type": "Lesson",
-          "isLive": true,
-          "duration": 120,
-          "steps": [],
-          "labs": [],
-          "learns": [],
-          "learningMaterial": "<p><strong>📽 课堂 Slides：</strong><a href=\"https://jiangren.com.au/curriculum/lessons/vibe-coding-master-l4/\" target=\"_blank\" rel=\"noopener\">从 PRD 到 Production（网页版 PPT · 22 页 · ← → 翻页）</a></p><h2>学习目标</h2><p>这节课结束后，你能：</p><ul><li>从已有 PRD 让 Agent 生成最小可运行项目框架（scaffold first，不是一次性做完整产品）</li><li>让项目在本地通过 install / typecheck / build 三条绿线（本地绿色基线）</li><li>把代码 + PRD + rules + tokens 放进同一个 GitHub Repository，作为项目的 SoT</li><li>看懂并使用最小 GitHub Actions CI，亲眼验证它能拦住坏代码（红灯实验）</li><li>用 Actions 把静态构建产物发布到 GitHub Pages</li><li>用 Vercel Git Integration 拿到 Preview + Production URL</li><li>对照 PRD 验收线上版本，而不是以「URL 能打开」为完成标准</li></ul><h2>核心概念</h2><h3>本地能跑 ≠ 交付</h3><p>localhost 只有你能访问、没人验证、没有历史。交付是「别人能点开就用、你每次提交都自动验证、自动上线」。这节课把前三节的三层 SoT（人 / 产品 / 视觉）接成一条真能跑的链路：<code>PRD + CLAUDE.md + tokens.css → Scaffold → GitHub → Actions → Pages / Vercel</code>。</p><h3>Scaffold ≠ 完整产品</h3><p>先分清 scaffold / MVP 功能 / 完整产品。主线只做 scaffold + placeholder + 一个最小核心 Flow，禁止「一句话做完」导致生成失控。先让 Agent 出 scaffold plan，你确认后再让它生成。</p><h3>你不敲命令，你指挥 Agent</h3><p>git 命令、workflow YAML、部署配置都是 Agent 替你生成的产物，你 review。你的活是：给对意图 → review Agent 产出 → 验证结果真跑通 → 守住 Agent 保证不了的（密钥不进 git、URL 能打开、CI 真能拦住坏代码、对照 PRD 验收、别擅自加 PRD 以外的功能）。</p><h3>红灯实验：CI 到底在保护什么</h3><p>让 Agent 建 ci.yml → 故意写一个 TS error → workflow 变红 → 修复 → 变绿。亲眼看它拦住坏代码，才算过关。</p><h3>三个环境与 PR → Preview → Production</h3><p>Local / Preview / Production 各管一段：Actions 管 CI 与 Pages，Vercel 用官方 Git Integration。PR 一开盯四件事——CI 过没、有没有独立 Preview URL、在 Preview 上对着 PRD 验收、验收过了再 merge。<strong>没看过 Preview 之前不要 merge。</strong></p><h2>课堂产物</h2><ul><li>一个 GitHub Repository（代码 + PRD + rules + tokens 同仓）</li><li>一条能跑的 GitHub Actions CI（并做过红灯实验）</li><li>一个 GitHub Pages 线上 URL</li><li>一个 Vercel Preview URL + Production URL</li></ul><h2>课后作业（一个完整闭环）</h2><p>去你的 Vercel Preview 找一个真实问题，把它写成 PRD 的一条变更（PRD v1.1）；新开分支让 Agent 改，让 Actions 验证，用 Preview 验收；过了再 merge 到 main。</p><p>交四样：Pages URL、Vercel URL、PR 链接，加一张 Actions 绿灯截图。</p><h2>常见坑</h2><ul><li>Vite <code>base</code> 配错 → Pages 子路径资源 404</li><li>SPA 直接刷新子路由 → Pages 404</li><li>密钥 / .env 混进 commit —— push 前必查</li></ul><h2>前置</h2><p>需要本机 Node + Git + Claude Code（或 Cursor）、GitHub 账号、Vercel 账号。带上前三节的产物：PRD、CLAUDE.md、tokens.css。</p>",
-          "_id": "6a55dda12b2c173c34b25118"
-        },
-        {
-          "code": "L05",
-          "title": "自学：Cursor 入门 — Vibe Coding 的代名词",
-          "description": "认识目前最流行的 AI IDE——Cursor。掌握 Composer 多文件编辑、@ 引用上下文、Tab 补全，以及如何用 .cursorrules 让 AI 记住你的项目规矩。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [],
-          "learningMaterial": "<h2>学习目标</h2><ul><li>认识 Cursor——基于 VS Code 的 AI 代码编辑器，以及它和普通 IDE 的区别</li><li>掌握四个核心功能：Tab 补全、Cmd+K 内联编辑、Cmd+L 侧边对话、Composer 多文件编辑</li><li>学会用 @ 引用上下文，让 AI 看到对的文件</li><li>了解 .cursorrules 怎么让 Cursor 记住你的项目规矩</li></ul><h2>核心概念</h2><h3>Cursor 是什么</h3><p>Cursor 是把 AI 深度内建进编辑器的 <strong>VS Code fork</strong>（下载地址 <code>cursor.com</code>）。它不是\"装了个 AI 插件的编辑器\"，而是从补全、编辑、对话到多文件重构整条链路都由 AI 驱动。VS Code 的插件、快捷键、设置基本都能沿用，迁移成本极低。</p><h3>四个核心功能</h3><table><tr><th>功能</th><th>快捷键</th><th>用途</th></tr><tr><td>Tab 补全</td><td>Tab</td><td>预测你下一步要写的多行代码，不只补一个词</td></tr><tr><td>内联编辑</td><td>Cmd/Ctrl + K</td><td>选中代码 → 描述改动 → 原地改，适合单文件小修</td></tr><tr><td>侧边对话</td><td>Cmd/Ctrl + L</td><td>打开对话框问问题、生成代码，可 @ 引用文件</td></tr><tr><td>Composer</td><td>Cmd/Ctrl + I</td><td>多文件编辑：描述一个跨文件需求，它同时改多个文件</td></tr></table><h3>@ 引用上下文——让 AI 看到对的东西</h3><p>Cursor 的输出质量取决于它能看到什么。在对话或 Composer 里用 <code>@</code> 显式引用：</p><pre><code>@file   引用某个文件（@UserList.tsx）\n@folder 引用整个目录（@src/components）\n@code   引用一段选中的代码\n@docs   引用官方文档\n@web    让它联网搜</code></pre><p>不 @ 引用，AI 只能靠当前打开的文件猜；明确 @ 引用，它才知道你的类型定义、现有组件长什么样，输出才对得上你的项目。</p><h3>.cursorrules——项目规矩写一次，永久生效</h3><p>在项目根目录放一个 <code>.cursorrules</code> 文件，Cursor 每次生成代码前都会先读它。把\"这个项目必须遵守的约定\"写进去，就不用每次对话都重复叮嘱：</p><pre><code># .cursorrules 示例\n- 只用 TypeScript，禁止 JavaScript\n- 用函数式组件 + hooks，不用 class 组件\n- 错误处理用 Result 类型，不用 try-catch 吞错\n- 导入顺序：外部库 → 内部模块 → 类型 → 样式</code></pre><p>这和后面要讲的 Context Engineering、CLAUDE.md 是同一个思想：<strong>把\"AI 该怎么干\"写成它每次都能读到的文件，而不是靠记忆和反复叮嘱。</strong></p><h2>动手练习</h2><ol><li>下载安装 Cursor，用你熟悉的一个项目打开，试 Tab 补全写一个函数，感受它和普通补全的区别。</li><li>用 Cmd+K 选中一段代码让它\"加上完整的错误处理\"，看它改得对不对。</li><li>在项目根目录建一个 <code>.cursorrules</code>，写 3 条你项目的约定，让 Cursor 生成一个组件，检查它有没有遵守。</li></ol><h2>小结</h2><p>Cursor = AI 深度内建的 VS Code。四个核心功能覆盖从补全（Tab）、单文件改（Cmd+K）、对话（Cmd+L）到多文件重构（Composer）。用 @ 引用给它对的上下文，用 .cursorrules 把项目规矩固化下来——这就是后面 Context Engineering 的入门版。</p>",
-          "_id": "69dc419a76e3e0c1b3c53e26"
-        },
-        {
-          "code": "L06",
-          "title": "自学：安装 Cursor 与环境准备",
-          "description": "阅读「安装 Cursor 与环境准备」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "install-cursor"
-            }
-          ],
-          "_id": "69dc419a76e3e0c1b3c53e2f"
-        },
-        {
           "code": "Q01",
           "title": "Quest 实战：装好 Claude Code + Codex 完整工具链",
           "type": "Quest",
@@ -283,6 +227,26 @@
             ]
           },
           "_id": "69e19a944267524e904ae4cb"
+        },
+        {
+          "code": "L33",
+          "title": "Lab: Claude Code 入门 — 终端里的 AI 程序员",
+          "description": "认识 Anthropic 官方出品的终端 AI 编程工具 Claude Code。理解它的 Agent 工作模式，掌握 CLAUDE.md 配置和权限模式的选择策略。",
+          "type": "InteractiveLab",
+          "isLive": false,
+          "isInteractiveLab": true,
+          "interactiveLabType": "prompt",
+          "interactiveLabSlug": "vibe-claude-code-intro",
+          "duration": 30,
+          "steps": [],
+          "labs": [
+            {
+              "source": "prompt-lab",
+              "slug": "vibe-claude-code-intro"
+            }
+          ],
+          "learns": [],
+          "_id": "69dc419f76e3e0c1b3c53ea9"
         },
         {
           "code": "L07",
@@ -362,6 +326,71 @@
           "_id": "69dc419a76e3e0c1b3c53e38"
         },
         {
+          "code": "L70",
+          "title": "Lab: 工具选型实战 — 没有绝对的最好，只有最适合",
+          "description": "建立一套系统的工具选型框架。通过 5 个真实场景练习，学会根据技术水平、项目规模、团队情况和预算，做出合理的工具选择。",
+          "type": "InteractiveLab",
+          "isLive": false,
+          "duration": 60,
+          "steps": [
+            {
+              "order": 1,
+              "type": "LAB",
+              "title": "Vibe Coding Lab: 工具选型",
+              "description": "给场景选模型并说明理由",
+              "duration": 30,
+              "labSlug": "vibe-tool-selection"
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "多模型策略",
+              "description": "分析代码质量差异",
+              "duration": 15
+            }
+          ],
+          "labs": [
+            {
+              "source": "prompt-lab",
+              "slug": "vibe-tool-selection"
+            }
+          ],
+          "learns": [],
+          "isInteractiveLab": true,
+          "interactiveLabSlug": "vibe-tool-selection",
+          "interactiveLabType": "prompt",
+          "learningMaterial": "<h2>学习目标</h2><ul><li>根据具体开发场景选择最合适的 AI 模型</li><li>针对选定模型编写优化过的 Prompt</li><li>在实际练习中验证模型选择策略</li></ul><h2>核心概念</h2><h3>场景决策矩阵</h3><p>选择模型不是凭感觉，而是按任务特征匹配：</p><table><tr><th>场景特征</th><th>推荐模型</th><th>原因</th></tr><tr><td>需要分析整个项目架构</td><td>Claude</td><td>200K 长上下文 + 强推理</td></tr><tr><td>快速原型 / UI 生成</td><td>Gemini 2.5 Flash</td><td>速度快、多模态支持</td></tr><tr><td>在已有代码库做小修改</td><td>Codex</td><td>贴合现有代码风格</td></tr><tr><td>截图还原为代码</td><td>Gemini 2.5 Pro</td><td>多模态理解能力强</td></tr><tr><td>复杂调试 / 根因分析</td><td>Claude</td><td>推理链条深</td></tr><tr><td>批量生成测试用例</td><td>Gemini Flash</td><td>速度快、成本低</td></tr></table><h3>Lab 练习结构</h3><p>每道题给出一个开发场景描述，你需要：(1) 选择模型并说明理由 (2) 编写该模型偏好格式的 Prompt (3) 预测输出质量。</p><h3>示例场景</h3><p>场景：\"团队接手了一个 3 万行的 Express 项目，没有文档，需要理解整体架构并写出 API 文档。\"</p><p>参考答案：选 Claude — 需要长上下文处理大量代码文件，需要强推理能力梳理模块依赖关系。Prompt 用 XML 标签分别传入各模块的入口文件。</p><h2>动手练习</h2><ol><li>完成 5 个场景的模型选择判断</li><li>为其中 2 个场景编写完整的模型特化 Prompt</li><li>实际调用验证，记录是否符合预期</li></ol><h2>小结</h2><p>模型选择是 Vibe Coding 的核心技能之一。通过反复练习场景判断，你会逐渐形成直觉——看到任务就知道该用哪个模型、怎么写 Prompt。这种直觉比记住任何规则都有用。</p>",
+          "_id": "69db3dc776e3e0c1b3b66dfe"
+        },
+        {
+          "code": "L81",
+          "title": "Codex CLI 安装指南与 config.toml 配置样例",
+          "description": "Codex CLI 的安装、配置、config.toml 文件详解。包括 API Key 设置、模型选择、Token 限制、代理配置、自定义命令。参考资料课——安装和调试时回来查。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 120,
+          "steps": [
+            {
+              "order": 1,
+              "type": "CONCEPT",
+              "title": "Codex CLI 配置详解",
+              "description": "config.toml: API Key、模型、Token 限制、代理",
+              "duration": 30
+            },
+            {
+              "order": 2,
+              "type": "LEARN",
+              "title": "安装参考",
+              "description": "配置样例和常见问题",
+              "duration": 30
+            }
+          ],
+          "labs": [],
+          "learns": [],
+          "learningMaterial": "<h2>学习目标</h2><ul><li>完成 Codex CLI 的安装和环境配置</li><li>理解 config.toml 各项参数的作用和最佳实践</li><li>配置代理、自定义命令等高级选项</li></ul><h2>核心概念</h2><h3>安装 Codex CLI</h3><pre><code># 通过 npm 全局安装\nnpm install -g @openai/codex\n\n# 验证安装\ncodex --version\n\n# 首次运行会引导设置 API Key\ncodex \"hello\"</code></pre><h3>config.toml 完整配置</h3><p>配置文件位于 <code>~/.codex/config.toml</code>：</p><pre><code># 模型选择\n[model]\ndefault = \"gpt-5.6-codex\"           # 日常开发，编码优化主力\n# default = \"gpt-5.6-codex-mini\"              # 批量/低成本任务可切换\n\n# 审批模式\n[defaults]\napproval_mode = \"suggest\"     # suggest: 需确认 | auto-edit: 自动改 | full-auto: 全自动\n\n# Token 限制\n[limits]\nmax_tokens = 4096             # 单次响应最大 token\nmax_context = 16384           # 上下文窗口\n\n# 代理配置（公司网络环境需要）\n[network]\nproxy = \"http://proxy.company.com:8080\"\n\n# 自定义快捷命令\n[commands]\ntest = \"写单元测试覆盖所有公开方法\"\nrefactor = \"重构这段代码，提取公共逻辑，保持接口不变\"\ndoc = \"为所有公开 API 添加 JSDoc 注释\"</code></pre><h3>API Key 管理</h3><p>推荐用环境变量而不是写死在配置文件：</p><pre><code># .zshrc / .bashrc\nexport OPENAI_API_KEY=\"sk-xxxxx\"\n\n# 或者用 .env 文件（项目级别）\necho \"OPENAI_API_KEY=sk-xxxxx\" >> .env</code></pre><h3>常见问题排查</h3><table><tr><th>问题</th><th>原因</th><th>解决</th></tr><tr><td>连接超时</td><td>网络/代理问题</td><td>检查 proxy 配置</td></tr><tr><td>响应被截断</td><td>max_tokens 太小</td><td>调大到 8192</td></tr><tr><td>结果不稳定</td><td>模型随机性</td><td>用 Self-Consistency</td></tr></table><h2>操作步骤</h2><ol><li>安装 Codex CLI 并验证版本</li><li>创建 <code>~/.codex/config.toml</code>，填入上述配置</li><li>设置环境变量中的 API Key</li><li>运行 <code>codex \"生成一个 hello world Express 服务\"</code> 验证配置正确</li><li>创建自定义命令并测试</li></ol><h2>小结</h2><p>安装配置是一次性工作，但配置好坏直接影响日常使用体验。建议用 gpt-5.6-codex 做默认模型，suggest 模式保持对代码修改的控制，把常用操作配成自定义命令节省时间。</p>",
+          "_id": "69db3dc876e3e0c1b3b66e2d"
+        },
+        {
           "code": "L09",
           "title": "自学：工具与模型最新动态",
           "description": "阅读「工具与模型最新动态」章节。自主节奏完成，巩固本节课的知识点。",
@@ -394,6 +423,36 @@
             }
           ],
           "_id": "69dc419b76e3e0c1b3c53e45"
+        },
+        {
+          "code": "L05",
+          "title": "自学：Cursor 入门 — Vibe Coding 的代名词",
+          "description": "认识目前最流行的 AI IDE——Cursor。掌握 Composer 多文件编辑、@ 引用上下文、Tab 补全，以及如何用 .cursorrules 让 AI 记住你的项目规矩。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 30,
+          "steps": [],
+          "labs": [],
+          "learns": [],
+          "learningMaterial": "<h2>学习目标</h2><ul><li>认识 Cursor——基于 VS Code 的 AI 代码编辑器，以及它和普通 IDE 的区别</li><li>掌握四个核心功能：Tab 补全、Cmd+K 内联编辑、Cmd+L 侧边对话、Composer 多文件编辑</li><li>学会用 @ 引用上下文，让 AI 看到对的文件</li><li>了解 .cursorrules 怎么让 Cursor 记住你的项目规矩</li></ul><h2>核心概念</h2><h3>Cursor 是什么</h3><p>Cursor 是把 AI 深度内建进编辑器的 <strong>VS Code fork</strong>（下载地址 <code>cursor.com</code>）。它不是\"装了个 AI 插件的编辑器\"，而是从补全、编辑、对话到多文件重构整条链路都由 AI 驱动。VS Code 的插件、快捷键、设置基本都能沿用，迁移成本极低。</p><h3>四个核心功能</h3><table><tr><th>功能</th><th>快捷键</th><th>用途</th></tr><tr><td>Tab 补全</td><td>Tab</td><td>预测你下一步要写的多行代码，不只补一个词</td></tr><tr><td>内联编辑</td><td>Cmd/Ctrl + K</td><td>选中代码 → 描述改动 → 原地改，适合单文件小修</td></tr><tr><td>侧边对话</td><td>Cmd/Ctrl + L</td><td>打开对话框问问题、生成代码，可 @ 引用文件</td></tr><tr><td>Composer</td><td>Cmd/Ctrl + I</td><td>多文件编辑：描述一个跨文件需求，它同时改多个文件</td></tr></table><h3>@ 引用上下文——让 AI 看到对的东西</h3><p>Cursor 的输出质量取决于它能看到什么。在对话或 Composer 里用 <code>@</code> 显式引用：</p><pre><code>@file   引用某个文件（@UserList.tsx）\n@folder 引用整个目录（@src/components）\n@code   引用一段选中的代码\n@docs   引用官方文档\n@web    让它联网搜</code></pre><p>不 @ 引用，AI 只能靠当前打开的文件猜；明确 @ 引用，它才知道你的类型定义、现有组件长什么样，输出才对得上你的项目。</p><h3>.cursorrules——项目规矩写一次，永久生效</h3><p>在项目根目录放一个 <code>.cursorrules</code> 文件，Cursor 每次生成代码前都会先读它。把\"这个项目必须遵守的约定\"写进去，就不用每次对话都重复叮嘱：</p><pre><code># .cursorrules 示例\n- 只用 TypeScript，禁止 JavaScript\n- 用函数式组件 + hooks，不用 class 组件\n- 错误处理用 Result 类型，不用 try-catch 吞错\n- 导入顺序：外部库 → 内部模块 → 类型 → 样式</code></pre><p>这和后面要讲的 Context Engineering、CLAUDE.md 是同一个思想：<strong>把\"AI 该怎么干\"写成它每次都能读到的文件，而不是靠记忆和反复叮嘱。</strong></p><h2>动手练习</h2><ol><li>下载安装 Cursor，用你熟悉的一个项目打开，试 Tab 补全写一个函数，感受它和普通补全的区别。</li><li>用 Cmd+K 选中一段代码让它\"加上完整的错误处理\"，看它改得对不对。</li><li>在项目根目录建一个 <code>.cursorrules</code>，写 3 条你项目的约定，让 Cursor 生成一个组件，检查它有没有遵守。</li></ol><h2>小结</h2><p>Cursor = AI 深度内建的 VS Code。四个核心功能覆盖从补全（Tab）、单文件改（Cmd+K）、对话（Cmd+L）到多文件重构（Composer）。用 @ 引用给它对的上下文，用 .cursorrules 把项目规矩固化下来——这就是后面 Context Engineering 的入门版。</p>",
+          "_id": "69dc419a76e3e0c1b3c53e26"
+        },
+        {
+          "code": "L06",
+          "title": "自学：安装 Cursor 与环境准备",
+          "description": "阅读「安装 Cursor 与环境准备」章节。自主节奏完成，巩固本节课的知识点。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 30,
+          "steps": [],
+          "labs": [],
+          "learns": [
+            {
+              "direction": "vibe-coding",
+              "slug": "install-cursor"
+            }
+          ],
+          "_id": "69dc419a76e3e0c1b3c53e2f"
         },
         {
           "code": "L11",
@@ -480,26 +539,6 @@
           "_id": "69dc419b76e3e0c1b3c53e51"
         },
         {
-          "code": "L15",
-          "title": "Lab: Prompt Chaining — 多步骤编排",
-          "description": "掌握将复杂任务拆解为多个 Prompt 步骤串联执行的编排技术，学习 Pipeline、Map-Reduce、校验回环三种核心模式。",
-          "type": "InteractiveLab",
-          "isLive": false,
-          "isInteractiveLab": true,
-          "interactiveLabType": "prompt",
-          "interactiveLabSlug": "prompt-chaining",
-          "duration": 30,
-          "steps": [],
-          "labs": [
-            {
-              "source": "prompt-lab",
-              "slug": "prompt-chaining"
-            }
-          ],
-          "learns": [],
-          "_id": "69dc419b76e3e0c1b3c53e59"
-        },
-        {
           "code": "L16",
           "title": "PRD 模板与 Claude Prompt（提示词）参考",
           "description": "Claude 的 Prompt 不是随便写的——好的 Prompt 模板能让 Claude 输出的代码质量差 10 倍。这节课给你 6 个经过验证的 PRD/开发 Prompt 模板：需求分析模板、模块拆解模板、代码生成模板、Code Review 模板、Bug Fix 模板、重构模板。每个模板有具体的变量位和示例，直接复制修改就能用。",
@@ -551,6 +590,26 @@
           "_id": "69db3dc376e3e0c1b3b66d34"
         },
         {
+          "code": "L69",
+          "title": "Lab: Zero-shot — 零示例直接提问",
+          "description": "掌握 Zero-shot prompting：不给示例直接让 AI 完成任务。理解它的优势、局限和适用场景。",
+          "type": "InteractiveLab",
+          "isLive": false,
+          "isInteractiveLab": true,
+          "interactiveLabType": "prompt",
+          "interactiveLabSlug": "zero-shot",
+          "duration": 30,
+          "steps": [],
+          "labs": [
+            {
+              "source": "prompt-lab",
+              "slug": "zero-shot"
+            }
+          ],
+          "learns": [],
+          "_id": "69dc41a576e3e0c1b3c53f65"
+        },
+        {
           "code": "L17",
           "title": "Lab: 输出格式 — 让 AI 按你要的格式回答",
           "description": "学习如何指定输出格式，让 AI 的回答结构化、可预测、易于使用。掌握列表、表格、JSON、Markdown 等格式的应用场景。",
@@ -591,6 +650,100 @@
           "_id": "69dc419c76e3e0c1b3c53e64"
         },
         {
+          "code": "L73",
+          "title": "Lab: Chain of Thought — 让 AI 展示思考过程",
+          "description": "掌握 CoT 提示技术，让 AI 通过分步推理得出更准确、更可靠的答案。",
+          "type": "InteractiveLab",
+          "isLive": false,
+          "isInteractiveLab": true,
+          "interactiveLabType": "prompt",
+          "interactiveLabSlug": "chain-of-thought",
+          "duration": 30,
+          "steps": [],
+          "labs": [
+            {
+              "source": "prompt-lab",
+              "slug": "chain-of-thought"
+            }
+          ],
+          "learns": [],
+          "_id": "69dc41a676e3e0c1b3c53f6e"
+        },
+        {
+          "code": "L75",
+          "title": "自学：Chain-of-Thought (CoT)",
+          "description": "阅读「Chain-of-Thought (CoT)」章节。自主节奏完成，巩固本节课的知识点。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 30,
+          "steps": [],
+          "labs": [],
+          "learns": [
+            {
+              "direction": "prompt-master",
+              "slug": "cot"
+            }
+          ],
+          "_id": "69dc41a676e3e0c1b3c53f84"
+        },
+        {
+          "code": "L74",
+          "title": "Lab: Self-Consistency — 多路推理投票",
+          "description": "学习通过多次采样不同推理路径并投票选出最可靠答案的技术，显著提高关键决策的准确率。",
+          "type": "InteractiveLab",
+          "isLive": false,
+          "isInteractiveLab": true,
+          "interactiveLabType": "prompt",
+          "interactiveLabSlug": "self-consistency",
+          "duration": 30,
+          "steps": [],
+          "labs": [
+            {
+              "source": "prompt-lab",
+              "slug": "self-consistency"
+            }
+          ],
+          "learns": [],
+          "_id": "69dc41a676e3e0c1b3c53f78"
+        },
+        {
+          "code": "L15",
+          "title": "Lab: Prompt Chaining — 多步骤编排",
+          "description": "掌握将复杂任务拆解为多个 Prompt 步骤串联执行的编排技术，学习 Pipeline、Map-Reduce、校验回环三种核心模式。",
+          "type": "InteractiveLab",
+          "isLive": false,
+          "isInteractiveLab": true,
+          "interactiveLabType": "prompt",
+          "interactiveLabSlug": "prompt-chaining",
+          "duration": 30,
+          "steps": [],
+          "labs": [
+            {
+              "source": "prompt-lab",
+              "slug": "prompt-chaining"
+            }
+          ],
+          "learns": [],
+          "_id": "69dc419b76e3e0c1b3c53e59"
+        },
+        {
+          "code": "L76",
+          "title": "自学：Prompt Chaining",
+          "description": "阅读「Prompt Chaining」章节。自主节奏完成，巩固本节课的知识点。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 30,
+          "steps": [],
+          "labs": [],
+          "learns": [
+            {
+              "direction": "prompt-master",
+              "slug": "prompt-chaining"
+            }
+          ],
+          "_id": "69dc41a676e3e0c1b3c53f89"
+        },
+        {
           "code": "L19",
           "title": "自学：高质量 Prompt 模板",
           "description": "阅读「高质量 Prompt 模板」章节。自主节奏完成，巩固本节课的知识点。",
@@ -606,6 +759,19 @@
             }
           ],
           "_id": "69dc419c76e3e0c1b3c53e68"
+        },
+        {
+          "code": "L110",
+          "title": "用 AI 生成 Design System：UI 布局与统一样式语言",
+          "description": "Vibe Coding 第一步不是写页面，是先定 Design System。学会用 design token 把颜色/字体/间距/圆角/阴影收敛成变量，并给 AI 写一份「设计宪法」，让它每次生成 UI 都用同一套 token，而不是每个页面重新乱配色。",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 120,
+          "steps": [],
+          "labs": [],
+          "learns": [],
+          "learningMaterial": "<p><strong>📽 课堂 Slides：</strong><a href=\"https://jiangren.com.au/curriculum/lessons/vibe-coding-master-l3/\" target=\"_blank\" rel=\"noopener\">用 AI 生成 Design System（网页版 PPT · 19 页 · ← → 翻页）</a></p><h2>学习目标</h2><p>这节课结束后，你能：</p><ul><li>说清楚为什么 Vibe Coding 的第一步不是写页面，而是先定一套 Design System</li><li>读懂 design token：把颜色、字体、间距、圆角、阴影收敛成一组变量</li><li>给 AI 写一份「设计宪法」，让它每次生成 UI 都用同一套 token，而不是每个页面重新乱配色</li><li>用一套真实 token（neo-brutalism）让 AI 批量产出风格统一的卡片、按钮、输入框</li></ul><h2>核心概念</h2><h3>不先定 Design System，AI 每个页面都长得不一样</h3><p>你让 AI「做个登录页」，它给你蓝色按钮、8px 圆角。第二天让它「做个仪表盘」，它给你紫色按钮、12px 圆角、另一种字体。单看每页都还行，拼到一个产品里就是一盘散沙——用户一眼看出「这是几个不同的人随手拼的」。问题不在 AI 笨，在你没给它一个统一的视觉约束。它每次都在「重新发明设计」，而不是「复用你的设计」。</p><p>正确顺序是反过来的：先定 Design System，再让 AI 在这套系统里生成页面。设计系统是 Vibe Coding 的地基，地基没打就盖楼，盖几层就得返工重来。</p><h3>design token：把设计决策变成变量</h3><p>token 就是把「颜色用哪个、字多大、圆角几像素、阴影怎么打」这些散落的设计决策，全部收敛成命名变量。改一处，全站跟着变；AI 引用变量，而不是每次现编一个 hex。一套最小 token 长这样（CSS 自定义属性）：</p><pre><code>:root {\n  /* 颜色 */\n  --color-bg:      #fff1e7;   /* 页面暖底 */\n  --color-surface: #ffffff;   /* 卡片底 */\n  --color-ink:     #10162f;   /* 主文字 / 主 CTA */\n  --color-accent:  #ff5757;   /* 强调 / 编号 / danger */\n  /* 边框 + 阴影 */\n  --border:    3px solid #000;\n  --shadow-md: 6px 6px 0 #000;\n  --radius:    0;             /* 直角 */\n  /* 字体 */\n  --font-heading: 'Bricolage Grotesque', sans-serif;\n  --font-body:    'DM Sans', sans-serif;\n  --font-mono:    'Space Mono', monospace;\n  /* 间距（4pt 一档）*/\n  --space-2: 8px;  --space-4: 16px;  --space-6: 24px;\n}</code></pre><p>这正是匠人学院品牌系统 <code>jr-academy-brand/tokens/tokens.css</code> 的做法：所有 <code>--jr-*</code> 变量是唯一真相源。匠人实际维护两套「register」——官网用精致软风（奶油底 + 大圆角 + 柔阴影），讲课 deck / 海报 / 课件用 neo-brutalism——但每套都由同一份 token 文件完整描述，同一场景内没有第二套数。</p><h3>一套真实 token 长什么样：neo-brutalism</h3><p>抽象的 token 概念，配一套真实风格才看得懂。以匠人学院教学物料（讲课 deck / 海报 / 课件）在用的 neo-brutalism（新粗野主义）为例，它的视觉语言用三条 token 就锁死了：</p><ul><li><strong>结构</strong> = <code>--border: 3px solid #000</code> 纯黑粗边 + <code>--radius: 0</code> 直角</li><li><strong>阴影</strong> = <code>--shadow-md: 6px 6px 0 #000</code> 偏移硬阴影（不是柔阴影 <code>0 4px 12px rgba()</code>），hover 时阴影归零 + 元素位移 4px，做出「按下去」的物理感</li><li><strong>配色</strong> = 暖底 <code>#fff1e7</code> + 纯白卡 + 深色 <code>#10162f</code> 主 CTA，红 <code>#ff5757</code> 只用在强调 / 编号 / danger</li></ul><p>关键不是这套风格本身好不好看，而是它「可被一组变量完整描述」。任意一个卡片，只要写 <code>border: var(--border); box-shadow: var(--shadow-md); border-radius: var(--radius);</code>，就和全站其他卡片长得一模一样——这就是 token 化的威力。</p><h3>给 AI 一份「设计宪法」</h3><p>光有 token 文件不够，AI 不会自己去读。你要把规则写成一份它每次都遵守的「设计宪法」——类似匠人学院的 <code>DESIGN.md</code>，放进项目根目录的 <code>CLAUDE.md</code> 或 <code>.cursorrules</code>，让 AI 生成任何 UI 前先对照。一份能用的设计宪法包含：</p><pre><code># 设计系统铁律（生成任何 UI 前必须遵守）\n\n1. 颜色只能用 tokens.css 里的 --color-* 变量，禁止现编 hex。\n2. 所有卡片 / 按钮 / 输入框：3px 黑边 + 6px 6px 0 #000 硬阴影 + 直角(0)。\n3. 圆角只给圆形元素（头像 / 状态点 / 胶囊标签 = 999px），其余一律 0。\n4. 标题字体 Bricolage Grotesque，正文 DM Sans，数据/标签 Space Mono。\n5. 间距走 4pt 档（8/16/24/32...），不要写 13px、17px 这种随手数。\n\n# 立即打回\n- 写死 hex（不走 --color-*）/ 柔阴影 0 Npx Npx rgba() / 圆角胶囊按钮</code></pre><p>有了这份宪法，你说「做个价格卡」，AI 产出的卡片自动带黑边硬阴影、用对字体、间距对齐——因为它不是在猜你的审美，是在执行你写下的规则。这跟课程里反复强调的「给 AI 建 SoT（Single Source of Truth）」是同一件事：设计也要有它的唯一真相源。</p><h2>动手练习</h2><ol><li>新建一个 <code>tokens.css</code>，把颜色、边框、阴影、圆角、字体、间距各定一组变量（可直接抄上面 neo-brutalism 那套）。</li><li>在 <code>CLAUDE.md</code> 里写 5 条设计铁律 + 2 条「立即打回」红线，作为你的设计宪法。</li><li>让 AI 基于这套 token 一次生成三个组件：一个价格卡、一个主 CTA 按钮、一个输入框。检查它们是不是都用了 <code>var(--border)</code> 和 <code>var(--shadow-md)</code>，而不是各写各的 hex。</li><li>故意让 AI「做个深色 hero 区」，看它会不会破坏 token（比如自己编一个新蓝色）。会的话，回到 CLAUDE.md 把规则补严，再让它重做——体会「修宪法 &gt; 改单个页面」。</li></ol><h2>常见问题</h2><h3>Q: 我没有设计师，token 的值从哪来？</h3><p>直接抄一套成熟的。neo-brutalism、Material、shadcn 都有现成 token，挑一套你喜欢的固定下来，先求统一，再谈好看。统一本身就是 80% 的「专业感」。</p><h3>Q: 项目做到一半才想起来要 token，来得及吗？</h3><p>来得及，但越早越省事。先把 token 文件和设计宪法补上，再让 AI 逐页把写死的 hex 换成变量——这其实就是下一节 brownfield「安全改造」的预演。</p><h2>小结</h2><p>Vibe Coding 第一步先定 Design System，不然 AI 每个页面都重新发明设计。token = 把颜色/字体/间距/圆角/阴影收敛成变量，设计宪法（CLAUDE.md）= 让 AI 每次都引这套变量而不是现编 hex。一套真实 token（neo-brutalism：3px 黑边 + 6px 6px 0 硬阴影 + 直角）就能让全站风格自动统一。记住：改设计宪法，比改一个个页面值钱得多。</p>",
+          "_id": "6a4310732f662a5f6d5c9ba1"
         },
         {
           "code": "L20",
@@ -659,6 +825,43 @@
           ],
           "learningMaterial": "<h2>学习目标</h2><ul><li>区分 Prompt Engineering 和 Context Engineering：前者管单条指令质量，后者管 AI 能看到的所有信息</li><li>掌握 CLAUDE.md 的写法：项目规范、代码约定、禁止事项</li><li>掌握 .claude/rules/ 的配置：按领域拆分编码风格、偏好模式</li><li>理解项目结构设计对 AI 理解力的影响</li></ul><h2>核心概念</h2><h3>Prompt Engineering vs Context Engineering</h3><p>Prompt Engineering：优化你给 AI 的单条指令。\"帮我写一个函数\" vs \"帮我写一个函数，参数为 string，返回 Result 类型，包含错误处理\"——后者是更好的 Prompt。</p><p>Context Engineering：优化 AI 在执行任务时能看到的所有信息。同一条 Prompt，在空项目和有完整 CLAUDE.md 的项目中，输出质量差 10 倍。Context 包括：CLAUDE.md、.claude/rules/、项目文件结构、已有代码风格、README、类型定义。</p><h3>CLAUDE.md 怎么写</h3><pre><code># CLAUDE.md 示例\n## 项目概述\nNext.js 14 + TypeScript + MongoDB 的课程平台\n\n## 代码规范\n- 使用 TypeScript strict mode\n- 接口命名用 I 前缀：IUser, ICourse\n- 函数用 camelCase，组件用 PascalCase\n- 缩进用 Tab，宽度 4\n\n## 禁止事项\n- 不使用 any 类型\n- 不使用 Material UI\n- 不在 service 中直接返回 Response\n\n## 项目结构\nsrc/\n├── modules/     # 业务模块\n├── common/      # 公共工具\n└── models/      # 数据模型</code></pre><h3>.claude/rules/ 配置</h3><pre><code># .claude/rules/code-style.md\n- Always use TypeScript, never JavaScript\n- Use functional components with hooks\n- Error handling: use Result type, not try-catch\n- Import order: external → internal → types → styles</code></pre><h3>项目结构也是 Context</h3><p>清晰的目录结构让 AI 更容易找到相关文件。<code>src/modules/user/user.service.ts</code> 比 <code>src/services/s1.ts</code> 对 AI 友好得多。命名规范、文件组织都是 Context 的一部分。</p><h2>操作步骤</h2><ol><li>为你的项目创建 CLAUDE.md：写入项目概述、代码规范、禁止事项、项目结构</li><li>创建 .claude/rules/：写入编码偏好</li><li>在 Claude Code 中测试：有/无 CLAUDE.md 的情况下生成同一段代码，对比差异</li></ol><h2>小结</h2><p>Prompt Engineering 是「说什么」，Context Engineering 是「AI 能看到什么」。在 Vibe Coding 中，Context Engineering 的影响力远大于单条 Prompt。CLAUDE.md 和 .claude/rules/ 是你的 AI 工作环境配置文件。</p>",
           "_id": "69db3dc376e3e0c1b3b66d3c"
+        },
+        {
+          "code": "L64",
+          "title": "Lab: Context Engineering 入门 — 让 AI 不再丢上下文",
+          "description": "理解为什么 AI 编程工具会丢上下文、误解需求或反复犯同一个错。通过互动练习设计上下文结构、规则文件和任务边界，让 Agent 输出更稳定。",
+          "type": "InteractiveLab",
+          "isLive": false,
+          "duration": 60,
+          "steps": [
+            {
+              "order": 1,
+              "type": "LAB",
+              "title": "Vibe Coding Lab: Context Engineering",
+              "description": "Agent 工具编排方案设计",
+              "duration": 30,
+              "labSlug": "vibe-context-engineering-intro"
+            },
+            {
+              "order": 2,
+              "type": "MCQ",
+              "title": "Agent 架构设计",
+              "description": "优化 Agent System Prompt",
+              "duration": 15
+            }
+          ],
+          "labs": [
+            {
+              "source": "prompt-lab",
+              "slug": "vibe-context-engineering-intro"
+            }
+          ],
+          "learns": [],
+          "isInteractiveLab": true,
+          "interactiveLabSlug": "vibe-context-engineering-intro",
+          "interactiveLabType": "prompt",
+          "learningMaterial": "<h2>学习目标</h2><ul><li>通过互动练习综合检验 Agent 架构、多 Tool 编排、错误处理的理解</li><li>完成 Agent 设计的完整实战：给定场景 → 设计 Agent → 定义 Tools → 规划执行流程</li><li>评估自己对 Phase 2 全部内容的掌握程度</li></ul><h2>核心概念</h2><h3>Agent Lab 练习结构</h3><p>综合练习课。Lab 给你真实的开发场景，你需要设计完整的 Agent 方案。</p><pre><code># 场景示例：自动修复 CI 失败\n\n你需要设计一个 Agent，在 CI 失败时自动：\n1. 获取 CI 失败日志\n2. 分析失败原因（编译错误 / 测试失败 / lint 不通过）\n3. 根据原因自动修复\n4. 重新验证\n\n# 你需要回答：\n# Q1: Agent 的 System Prompt 怎么写？\n# Q2: 需要哪些 Tools？\n# Q3: 执行流程图（包含条件分支）\n# Q4: 错误恢复策略\n# Q5: 退出条件是什么？</code></pre><h3>设计模板</h3><pre><code># Agent 设计模板\n\n## 1. System Prompt\n角色：[你是什么角色]\n目标：[要完成什么]\n约束：[不能做什么]\n\n## 2. Tools 清单\n| Tool | 用途 | 输入 | 输出 |\n|------|------|------|------|\n| read_ci_log | 获取CI日志 | build_id | log text |\n| run_lint | 执行lint | file_path | lint result |\n| run_test | 执行测试 | test_path | test result |\n| edit_file | 修改文件 | path+content | success/fail |\n\n## 3. 执行流程\n[依赖图：哪些串行、哪些并行]\n\n## 4. 错误恢复\n[每个 Tool 失败时的处理策略]\n\n## 5. 退出条件\n[什么时候算完成 / 什么时候放弃]</code></pre><h3>自评标准</h3><ul><li>能否正确区分 Skills / ToolUse / MCP 三层？</li><li>能否设计 MCP Server 的 Tool Schema？</li><li>能否根据场景判断用 Hook / Command / Agent？</li><li>能否画出多 Tool 依赖图并标注串行/并行？</li><li>能否为每个失败点设计恢复策略？</li></ul><h3>Phase 2 知识图谱</h3><pre><code># 你应该掌握的完整知识链\nSkills 基础（L10-L11）\n  → Skills 高级：Sub-agents + Hooks（L12-L13）\n    → Skills Lab 验证（L14）\n      → MCP 原理（L15）\n        → Skills + ToolUse + MCP 三层（L16）\n          → MCP Server 开发（L17-L18）\n            → MCP Lab 验证（L19）\n              → Agentic Workflow（L20）\n                → 多 Tool 编排（L21）\n                  → Agent 搭建（L22）\n                    → 多工具执行分析（L23）\n                      → Agent Lab 综合验证（L24）</code></pre><p>如果某个环节不清楚，回到对应课程复习。每个环节都是下一个的基础。</p><h2>动手练习</h2><ol><li>完成 Vibe Coding Lab 中的 Agent 综合练习</li><li>选一个你实际工作中的复杂任务，按设计模板写一个完整的 Agent 方案</li><li>在 Claude Code 中实现并测试这个 Agent</li><li>对照自评标准检查自己的掌握程度，记录薄弱点</li></ol><h2>小结</h2><p>Phase 2 的核心能力链：Skills（定义能力）→ MCP（工具协议）→ Agent（自主执行）。这三者组合起来，让你能构建 AI 自动化的开发工作流。Agent Lab 是检验你是否真正掌握这条能力链的最终测试。</p>",
+          "_id": "69db3dc776e3e0c1b3b66ddb"
         },
         {
           "code": "L21",
@@ -810,6 +1013,19 @@
             ]
           },
           "_id": "69e19a954267524e904ae4db"
+        },
+        {
+          "code": "L111",
+          "title": "从 PRD 到 Production：GitHub + Actions + Pages / Vercel 交付链路",
+          "description": "前三节写的 PRD、CLAUDE.md、tokens.css 都还只躺在你本地。这节 120 分钟动手工作坊，把它们接成一条真能交付的链路：让 Agent 从 PRD 生成 scaffold、进 GitHub、跑 Actions CI（并亲眼看它拦住坏代码）、发布到 Pages 和 Vercel，最后对照 PRD 验收线上版本。全程你不敲命令，你指挥 Agent。",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 120,
+          "steps": [],
+          "labs": [],
+          "learns": [],
+          "learningMaterial": "<p><strong>📽 课堂 Slides：</strong><a href=\"https://jiangren.com.au/curriculum/lessons/vibe-coding-master-l4/\" target=\"_blank\" rel=\"noopener\">从 PRD 到 Production（网页版 PPT · 22 页 · ← → 翻页）</a></p><h2>学习目标</h2><p>这节课结束后，你能：</p><ul><li>从已有 PRD 让 Agent 生成最小可运行项目框架（scaffold first，不是一次性做完整产品）</li><li>让项目在本地通过 install / typecheck / build 三条绿线（本地绿色基线）</li><li>把代码 + PRD + rules + tokens 放进同一个 GitHub Repository，作为项目的 SoT</li><li>看懂并使用最小 GitHub Actions CI，亲眼验证它能拦住坏代码（红灯实验）</li><li>用 Actions 把静态构建产物发布到 GitHub Pages</li><li>用 Vercel Git Integration 拿到 Preview + Production URL</li><li>对照 PRD 验收线上版本，而不是以「URL 能打开」为完成标准</li></ul><h2>核心概念</h2><h3>本地能跑 ≠ 交付</h3><p>localhost 只有你能访问、没人验证、没有历史。交付是「别人能点开就用、你每次提交都自动验证、自动上线」。这节课把前三节的三层 SoT（人 / 产品 / 视觉）接成一条真能跑的链路：<code>PRD + CLAUDE.md + tokens.css → Scaffold → GitHub → Actions → Pages / Vercel</code>。</p><h3>Scaffold ≠ 完整产品</h3><p>先分清 scaffold / MVP 功能 / 完整产品。主线只做 scaffold + placeholder + 一个最小核心 Flow，禁止「一句话做完」导致生成失控。先让 Agent 出 scaffold plan，你确认后再让它生成。</p><h3>你不敲命令，你指挥 Agent</h3><p>git 命令、workflow YAML、部署配置都是 Agent 替你生成的产物，你 review。你的活是：给对意图 → review Agent 产出 → 验证结果真跑通 → 守住 Agent 保证不了的（密钥不进 git、URL 能打开、CI 真能拦住坏代码、对照 PRD 验收、别擅自加 PRD 以外的功能）。</p><h3>红灯实验：CI 到底在保护什么</h3><p>让 Agent 建 ci.yml → 故意写一个 TS error → workflow 变红 → 修复 → 变绿。亲眼看它拦住坏代码，才算过关。</p><h3>三个环境与 PR → Preview → Production</h3><p>Local / Preview / Production 各管一段：Actions 管 CI 与 Pages，Vercel 用官方 Git Integration。PR 一开盯四件事——CI 过没、有没有独立 Preview URL、在 Preview 上对着 PRD 验收、验收过了再 merge。<strong>没看过 Preview 之前不要 merge。</strong></p><h2>课堂产物</h2><ul><li>一个 GitHub Repository（代码 + PRD + rules + tokens 同仓）</li><li>一条能跑的 GitHub Actions CI（并做过红灯实验）</li><li>一个 GitHub Pages 线上 URL</li><li>一个 Vercel Preview URL + Production URL</li></ul><h2>课后作业（一个完整闭环）</h2><p>去你的 Vercel Preview 找一个真实问题，把它写成 PRD 的一条变更（PRD v1.1）；新开分支让 Agent 改，让 Actions 验证，用 Preview 验收；过了再 merge 到 main。</p><p>交四样：Pages URL、Vercel URL、PR 链接，加一张 Actions 绿灯截图。</p><h2>常见坑</h2><ul><li>Vite <code>base</code> 配错 → Pages 子路径资源 404</li><li>SPA 直接刷新子路由 → Pages 404</li><li>密钥 / .env 混进 commit —— push 前必查</li></ul><h2>前置</h2><p>需要本机 Node + Git + Claude Code（或 Cursor）、GitHub 账号、Vercel 账号。带上前三节的产物：PRD、CLAUDE.md、tokens.css。</p>",
+          "_id": "6a55dda12b2c173c34b25118"
         },
         {
           "code": "L25",
@@ -1060,46 +1276,6 @@
           ],
           "learningMaterial": "<h2>学习目标</h2><ul><li>理解 Claude Code Skills 的概念：给 Claude 装上特定能力的插件机制</li><li>了解 Skill 的生命周期：定义 → 注册 → 触发 → 执行</li><li>区分 Skills 和 MCP 的关系：Skills 定义「能做什么」，MCP 是「工具调用协议」</li></ul><h2>核心概念</h2><h3>Skills 是什么</h3><p>Claude Code Skills 是插件机制。一个 Skill = 一组预定义的指令和约束，让 Claude 在特定场景下按特定方式行动。比如：</p><pre><code># 场景：每次提交代码前自动审查\n# 没有 Skill：你每次手动说 \"review 一下这些改动\"\n# 有 Skill：配置一个 code-review Skill，\n#          Claude 在你说 /review 时自动按规范审查\n\n# 一个 Skill 包含：\n# - 名称和描述（什么时候触发）\n# - System Prompt（角色和约束）\n# - 可用 Tools（能调用什么）\n# - 执行步骤（按什么顺序做）</code></pre><h3>Skill 的目录结构</h3><pre><code>.claude/\n├── settings.json          # Claude Code 全局配置\n└── commands/              # 自定义 Slash Commands\n    ├── review.md          # /review 命令\n    ├── deploy.md          # /deploy 命令\n    └── test.md            # /test 命令</code></pre><p>每个 <code>.md</code> 文件就是一个 Skill 的定义。文件名就是命令名。文件内容就是 Claude 执行这个命令时的指令。</p><h3>Skills vs MCP 的关系</h3><p>Skills 定义 Claude「能做什么」和「怎么做」（高层能力）。MCP（Model Context Protocol）是「通过什么协议调用外部工具」（底层通信）。类比：Skills 像是「工作职责描述」，MCP 像是「通信协议（HTTP/gRPC）」。一个 Skill 可能内部使用 MCP 调用外部服务。</p><h3>Skills 的价值——自动化重复工作</h3><p>没有 Skills：每次 code review 你都手动写「请检查这些改动的 bug、性能、安全问题」。有 Skills：输入 <code>/review</code>，Claude 按预定义的检查清单自动审查。差别不只是少打几个字——Skills 保证了检查的一致性，不会因为你某天偷懒少检查几项。Skills = 标准化 + 自动化。</p><h2>动手练习</h2><ol><li>在你的项目中创建 <code>.claude/commands/hello.md</code>，内容写「请列出项目结构并总结」</li><li>在 Claude Code 中输入 <code>/hello</code>，验证 Skill 被触发</li><li>思考你日常开发中有哪些重复操作可以封装成 Skill（列出 3-5 个）</li></ol><h2>小结</h2><p>Skills 是 Claude Code 的扩展机制，让你把重复的工作流封装成可复用的命令。Skills 关注「做什么」，MCP 关注「怎么调用外部工具」。后续两节课分别实操写 Skill 和深入 Skills 高级功能。</p>",
           "_id": "69db3dc476e3e0c1b3b66d57"
-        },
-        {
-          "code": "L32",
-          "title": "Lab: Tool Use — Function Calling 实战",
-          "description": "学习如何定义工具（Function）、设计参数 Schema，让 LLM 在对话中自主决定何时调用工具、如何处理结果。",
-          "type": "InteractiveLab",
-          "isLive": false,
-          "isInteractiveLab": true,
-          "interactiveLabType": "prompt",
-          "interactiveLabSlug": "tool-use",
-          "duration": 30,
-          "steps": [],
-          "labs": [
-            {
-              "source": "prompt-lab",
-              "slug": "tool-use"
-            }
-          ],
-          "learns": [],
-          "_id": "69dc419e76e3e0c1b3c53e99"
-        },
-        {
-          "code": "L33",
-          "title": "Lab: Claude Code 入门 — 终端里的 AI 程序员",
-          "description": "认识 Anthropic 官方出品的终端 AI 编程工具 Claude Code。理解它的 Agent 工作模式，掌握 CLAUDE.md 配置和权限模式的选择策略。",
-          "type": "InteractiveLab",
-          "isLive": false,
-          "isInteractiveLab": true,
-          "interactiveLabType": "prompt",
-          "interactiveLabSlug": "vibe-claude-code-intro",
-          "duration": 30,
-          "steps": [],
-          "labs": [
-            {
-              "source": "prompt-lab",
-              "slug": "vibe-claude-code-intro"
-            }
-          ],
-          "learns": [],
-          "_id": "69dc419f76e3e0c1b3c53ea9"
         },
         {
           "code": "L34",
@@ -1522,6 +1698,26 @@
             }
           ],
           "_id": "69dc41a276e3e0c1b3c53ed7"
+        },
+        {
+          "code": "L32",
+          "title": "Lab: Tool Use — Function Calling 实战",
+          "description": "学习如何定义工具（Function）、设计参数 Schema，让 LLM 在对话中自主决定何时调用工具、如何处理结果。",
+          "type": "InteractiveLab",
+          "isLive": false,
+          "isInteractiveLab": true,
+          "interactiveLabType": "prompt",
+          "interactiveLabSlug": "tool-use",
+          "duration": 30,
+          "steps": [],
+          "labs": [
+            {
+              "source": "prompt-lab",
+              "slug": "tool-use"
+            }
+          ],
+          "learns": [],
+          "_id": "69dc419e76e3e0c1b3c53e99"
         },
         {
           "code": "L47",
@@ -2166,43 +2362,6 @@
           "learningMaterial": "<h2>学习目标</h2><ul><li>理解 Orchestrator + Workers（编排者 + 工作者）这种多 Agent 模式</li><li>判断什么任务值得上多 Agent，什么时候单 Agent 更好</li><li>设计 Agent 之间的分工、交接和结果汇总</li></ul><h2>核心概念</h2><h3>编排者 + 工作者</h3><pre><code>用户任务\n   ↓\n编排者 Orchestrator（拆任务、分派、汇总）\n   ├── 工作者 A：检索资料\n   ├── 工作者 B：写代码 / 生成内容\n   └── 工作者 C：审查 / 事实核查\n   ↓\n编排者整合各工作者产出 → 交付</code></pre><h3>为什么要拆成多个 Agent</h3><ul><li><strong>上下文隔离</strong>：每个工作者只带自己那块上下文，不互相污染</li><li><strong>专职专用</strong>：写代码的 Agent 和审查的 Agent 用不同 system prompt、不同工具</li><li><strong>可并行</strong>：互不依赖的子任务同时跑，缩短总时长</li></ul><h3>代价与取舍</h3><p>多 Agent 不是越多越好。每多一个 Agent 就多一份 token 成本、一层协调复杂度和一个出错点。子任务耦合紧、必须共享大量上下文时，单 Agent 反而更快更省。先问：这些子任务能独立完成吗？</p><h2>课堂练习</h2><ol><li>挑一个复杂任务（如“调研+写方案+审校”），画出编排者和工作者的分工</li><li>标出哪些工作者可以并行、哪些必须串行</li><li>设计编排者如何汇总产出、如何处理某个工作者失败</li></ol><h2>小结</h2><p>多 Agent 的价值是上下文隔离 + 专职分工 + 并行，代价是成本和协调复杂度。任务能干净拆分、子任务相对独立时才划算。拆不干净，就别硬拆。</p>"
         },
         {
-          "code": "L64",
-          "title": "Lab: Context Engineering 入门 — 让 AI 不再丢上下文",
-          "description": "理解为什么 AI 编程工具会丢上下文、误解需求或反复犯同一个错。通过互动练习设计上下文结构、规则文件和任务边界，让 Agent 输出更稳定。",
-          "type": "InteractiveLab",
-          "isLive": false,
-          "duration": 60,
-          "steps": [
-            {
-              "order": 1,
-              "type": "LAB",
-              "title": "Vibe Coding Lab: Context Engineering",
-              "description": "Agent 工具编排方案设计",
-              "duration": 30,
-              "labSlug": "vibe-context-engineering-intro"
-            },
-            {
-              "order": 2,
-              "type": "MCQ",
-              "title": "Agent 架构设计",
-              "description": "优化 Agent System Prompt",
-              "duration": 15
-            }
-          ],
-          "labs": [
-            {
-              "source": "prompt-lab",
-              "slug": "vibe-context-engineering-intro"
-            }
-          ],
-          "learns": [],
-          "isInteractiveLab": true,
-          "interactiveLabSlug": "vibe-context-engineering-intro",
-          "interactiveLabType": "prompt",
-          "learningMaterial": "<h2>学习目标</h2><ul><li>通过互动练习综合检验 Agent 架构、多 Tool 编排、错误处理的理解</li><li>完成 Agent 设计的完整实战：给定场景 → 设计 Agent → 定义 Tools → 规划执行流程</li><li>评估自己对 Phase 2 全部内容的掌握程度</li></ul><h2>核心概念</h2><h3>Agent Lab 练习结构</h3><p>综合练习课。Lab 给你真实的开发场景，你需要设计完整的 Agent 方案。</p><pre><code># 场景示例：自动修复 CI 失败\n\n你需要设计一个 Agent，在 CI 失败时自动：\n1. 获取 CI 失败日志\n2. 分析失败原因（编译错误 / 测试失败 / lint 不通过）\n3. 根据原因自动修复\n4. 重新验证\n\n# 你需要回答：\n# Q1: Agent 的 System Prompt 怎么写？\n# Q2: 需要哪些 Tools？\n# Q3: 执行流程图（包含条件分支）\n# Q4: 错误恢复策略\n# Q5: 退出条件是什么？</code></pre><h3>设计模板</h3><pre><code># Agent 设计模板\n\n## 1. System Prompt\n角色：[你是什么角色]\n目标：[要完成什么]\n约束：[不能做什么]\n\n## 2. Tools 清单\n| Tool | 用途 | 输入 | 输出 |\n|------|------|------|------|\n| read_ci_log | 获取CI日志 | build_id | log text |\n| run_lint | 执行lint | file_path | lint result |\n| run_test | 执行测试 | test_path | test result |\n| edit_file | 修改文件 | path+content | success/fail |\n\n## 3. 执行流程\n[依赖图：哪些串行、哪些并行]\n\n## 4. 错误恢复\n[每个 Tool 失败时的处理策略]\n\n## 5. 退出条件\n[什么时候算完成 / 什么时候放弃]</code></pre><h3>自评标准</h3><ul><li>能否正确区分 Skills / ToolUse / MCP 三层？</li><li>能否设计 MCP Server 的 Tool Schema？</li><li>能否根据场景判断用 Hook / Command / Agent？</li><li>能否画出多 Tool 依赖图并标注串行/并行？</li><li>能否为每个失败点设计恢复策略？</li></ul><h3>Phase 2 知识图谱</h3><pre><code># 你应该掌握的完整知识链\nSkills 基础（L10-L11）\n  → Skills 高级：Sub-agents + Hooks（L12-L13）\n    → Skills Lab 验证（L14）\n      → MCP 原理（L15）\n        → Skills + ToolUse + MCP 三层（L16）\n          → MCP Server 开发（L17-L18）\n            → MCP Lab 验证（L19）\n              → Agentic Workflow（L20）\n                → 多 Tool 编排（L21）\n                  → Agent 搭建（L22）\n                    → 多工具执行分析（L23）\n                      → Agent Lab 综合验证（L24）</code></pre><p>如果某个环节不清楚，回到对应课程复习。每个环节都是下一个的基础。</p><h2>动手练习</h2><ol><li>完成 Vibe Coding Lab 中的 Agent 综合练习</li><li>选一个你实际工作中的复杂任务，按设计模板写一个完整的 Agent 方案</li><li>在 Claude Code 中实现并测试这个 Agent</li><li>对照自评标准检查自己的掌握程度，记录薄弱点</li></ol><h2>小结</h2><p>Phase 2 的核心能力链：Skills（定义能力）→ MCP（工具协议）→ Agent（自主执行）。这三者组合起来，让你能构建 AI 自动化的开发工作流。Agent Lab 是检验你是否真正掌握这条能力链的最终测试。</p>",
-          "_id": "69db3dc776e3e0c1b3b66ddb"
-        },
-        {
           "code": "Q04",
           "title": "Quest 实战：搭建一个能跑的 Claude Code Sub-agents 工作流",
           "type": "Quest",
@@ -2384,63 +2543,6 @@
           "_id": "69db3dc776e3e0c1b3b66df8"
         },
         {
-          "code": "L69",
-          "title": "Lab: Zero-shot — 零示例直接提问",
-          "description": "掌握 Zero-shot prompting：不给示例直接让 AI 完成任务。理解它的优势、局限和适用场景。",
-          "type": "InteractiveLab",
-          "isLive": false,
-          "isInteractiveLab": true,
-          "interactiveLabType": "prompt",
-          "interactiveLabSlug": "zero-shot",
-          "duration": 30,
-          "steps": [],
-          "labs": [
-            {
-              "source": "prompt-lab",
-              "slug": "zero-shot"
-            }
-          ],
-          "learns": [],
-          "_id": "69dc41a576e3e0c1b3c53f65"
-        },
-        {
-          "code": "L70",
-          "title": "Lab: 工具选型实战 — 没有绝对的最好，只有最适合",
-          "description": "建立一套系统的工具选型框架。通过 5 个真实场景练习，学会根据技术水平、项目规模、团队情况和预算，做出合理的工具选择。",
-          "type": "InteractiveLab",
-          "isLive": false,
-          "duration": 60,
-          "steps": [
-            {
-              "order": 1,
-              "type": "LAB",
-              "title": "Vibe Coding Lab: 工具选型",
-              "description": "给场景选模型并说明理由",
-              "duration": 30,
-              "labSlug": "vibe-tool-selection"
-            },
-            {
-              "order": 2,
-              "type": "MCQ",
-              "title": "多模型策略",
-              "description": "分析代码质量差异",
-              "duration": 15
-            }
-          ],
-          "labs": [
-            {
-              "source": "prompt-lab",
-              "slug": "vibe-tool-selection"
-            }
-          ],
-          "learns": [],
-          "isInteractiveLab": true,
-          "interactiveLabSlug": "vibe-tool-selection",
-          "interactiveLabType": "prompt",
-          "learningMaterial": "<h2>学习目标</h2><ul><li>根据具体开发场景选择最合适的 AI 模型</li><li>针对选定模型编写优化过的 Prompt</li><li>在实际练习中验证模型选择策略</li></ul><h2>核心概念</h2><h3>场景决策矩阵</h3><p>选择模型不是凭感觉，而是按任务特征匹配：</p><table><tr><th>场景特征</th><th>推荐模型</th><th>原因</th></tr><tr><td>需要分析整个项目架构</td><td>Claude</td><td>200K 长上下文 + 强推理</td></tr><tr><td>快速原型 / UI 生成</td><td>Gemini 2.5 Flash</td><td>速度快、多模态支持</td></tr><tr><td>在已有代码库做小修改</td><td>Codex</td><td>贴合现有代码风格</td></tr><tr><td>截图还原为代码</td><td>Gemini 2.5 Pro</td><td>多模态理解能力强</td></tr><tr><td>复杂调试 / 根因分析</td><td>Claude</td><td>推理链条深</td></tr><tr><td>批量生成测试用例</td><td>Gemini Flash</td><td>速度快、成本低</td></tr></table><h3>Lab 练习结构</h3><p>每道题给出一个开发场景描述，你需要：(1) 选择模型并说明理由 (2) 编写该模型偏好格式的 Prompt (3) 预测输出质量。</p><h3>示例场景</h3><p>场景：\"团队接手了一个 3 万行的 Express 项目，没有文档，需要理解整体架构并写出 API 文档。\"</p><p>参考答案：选 Claude — 需要长上下文处理大量代码文件，需要强推理能力梳理模块依赖关系。Prompt 用 XML 标签分别传入各模块的入口文件。</p><h2>动手练习</h2><ol><li>完成 5 个场景的模型选择判断</li><li>为其中 2 个场景编写完整的模型特化 Prompt</li><li>实际调用验证，记录是否符合预期</li></ol><h2>小结</h2><p>模型选择是 Vibe Coding 的核心技能之一。通过反复练习场景判断，你会逐渐形成直觉——看到任务就知道该用哪个模型、怎么写 Prompt。这种直觉比记住任何规则都有用。</p>",
-          "_id": "69db3dc776e3e0c1b3b66dfe"
-        },
-        {
           "code": "L72",
           "title": "自学：Prompt 精调结构与四种模板技巧",
           "description": "课前复习四种 Prompt 精调模板：Step-by-step、Few-shot、Chain of Thought、Constrained Generation。直播会重点做准确率、成本和返工率对比实验。",
@@ -2494,80 +2596,6 @@
           ],
           "learningMaterial": "<h2>学习目标</h2><ul><li>掌握 Step-by-step、Few-shot、Chain of Thought、Constrained Generation 四种 Prompt 模板</li><li>理解每种模板适合的开发场景</li><li>能够在实际编码任务中选择和组合使用这些模板</li></ul><h2>核心概念</h2><h3>1. Step-by-step（分步指令）</h3><p>把复杂任务拆成明确的步骤序列，模型按顺序执行：</p><pre><code>请按以下步骤实现用户注册功能：\n\n步骤 1：创建 RegisterDto，包含 email、password、name 字段，用 class-validator 校验\n步骤 2：在 AuthService 中实现 register 方法，密码用 bcrypt hash\n步骤 3：检查 email 是否已存在，存在则抛出 ConflictException\n步骤 4：写对应的单元测试</code></pre><p>适合：流程明确的功能开发、新手引导模型做复杂任务。</p><h3>2. Few-shot（示例驱动）</h3><p>给模型 2-3 个输入输出示例，让它学会模式：</p><pre><code>请按照以下格式生成 API 错误处理：\n\n示例 1：\n输入：用户未找到\n输出：throw new NotFoundException('User not found');\n\n示例 2：\n输入：邮箱已注册\n输出：throw new ConflictException('Email already registered');\n\n现在处理：权限不足</code></pre><p>适合：格式统一的批量生成、代码风格一致性要求高的场景。</p><h3>3. Chain of Thought（思维链）</h3><p>要求模型先分析再编码，\"先想后做\"：</p><pre><code>这个函数有 bug，请先分析可能的原因（列出至少 3 个），\n然后选择最可能的原因，最后给出修复代码。\n\n```js\nasync function fetchUsers(page) {\n  const res = await fetch(`/api/users?page=${page}`);\n  const data = res.json();\n  return data.users;\n}\n```</code></pre><p>适合：调试、代码审查、架构决策等需要推理的场景。</p><h3>4. Constrained Generation（约束生成）</h3><p>用 JSON Schema 或严格格式约束输出：</p><pre><code>分析以下代码的问题，输出 JSON 格式：\n{\n  \"issues\": [{ \"line\": number, \"severity\": \"error\"|\"warning\", \"description\": string, \"fix\": string }],\n  \"overallScore\": number  // 1-10\n}</code></pre><p>适合：需要程序化处理 AI 输出的场景，如 CI/CD 集成、自动化工具。</p><h2>动手练习</h2><ol><li>用 Step-by-step 模板让 AI 实现一个完整的 CRUD 模块</li><li>用 Few-shot 模板批量生成 10 个 API 的错误处理代码</li><li>用 Chain of Thought 让 AI 分析一段有性能问题的代码</li></ol><h2>小结</h2><p>四种模板不是互斥的，实际使用中经常组合：Step-by-step + Constrained Generation 用于自动化流水线，Few-shot + Chain of Thought 用于复杂代码生成。关键是匹配任务特征选择模板。</p>",
           "_id": "69db3dc876e3e0c1b3b66e10"
-        },
-        {
-          "code": "L73",
-          "title": "Lab: Chain of Thought — 让 AI 展示思考过程",
-          "description": "掌握 CoT 提示技术，让 AI 通过分步推理得出更准确、更可靠的答案。",
-          "type": "InteractiveLab",
-          "isLive": false,
-          "isInteractiveLab": true,
-          "interactiveLabType": "prompt",
-          "interactiveLabSlug": "chain-of-thought",
-          "duration": 30,
-          "steps": [],
-          "labs": [
-            {
-              "source": "prompt-lab",
-              "slug": "chain-of-thought"
-            }
-          ],
-          "learns": [],
-          "_id": "69dc41a676e3e0c1b3c53f6e"
-        },
-        {
-          "code": "L74",
-          "title": "Lab: Self-Consistency — 多路推理投票",
-          "description": "学习通过多次采样不同推理路径并投票选出最可靠答案的技术，显著提高关键决策的准确率。",
-          "type": "InteractiveLab",
-          "isLive": false,
-          "isInteractiveLab": true,
-          "interactiveLabType": "prompt",
-          "interactiveLabSlug": "self-consistency",
-          "duration": 30,
-          "steps": [],
-          "labs": [
-            {
-              "source": "prompt-lab",
-              "slug": "self-consistency"
-            }
-          ],
-          "learns": [],
-          "_id": "69dc41a676e3e0c1b3c53f78"
-        },
-        {
-          "code": "L75",
-          "title": "自学：Chain-of-Thought (CoT)",
-          "description": "阅读「Chain-of-Thought (CoT)」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "prompt-master",
-              "slug": "cot"
-            }
-          ],
-          "_id": "69dc41a676e3e0c1b3c53f84"
-        },
-        {
-          "code": "L76",
-          "title": "自学：Prompt Chaining",
-          "description": "阅读「Prompt Chaining」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "prompt-master",
-              "slug": "prompt-chaining"
-            }
-          ],
-          "_id": "69dc41a676e3e0c1b3c53f89"
         },
         {
           "code": "L77",
@@ -2711,34 +2739,6 @@
             }
           ],
           "_id": "69dc41a776e3e0c1b3c53f91"
-        },
-        {
-          "code": "L81",
-          "title": "Codex CLI 安装指南与 config.toml 配置样例",
-          "description": "Codex CLI 的安装、配置、config.toml 文件详解。包括 API Key 设置、模型选择、Token 限制、代理配置、自定义命令。参考资料课——安装和调试时回来查。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 120,
-          "steps": [
-            {
-              "order": 1,
-              "type": "CONCEPT",
-              "title": "Codex CLI 配置详解",
-              "description": "config.toml: API Key、模型、Token 限制、代理",
-              "duration": 30
-            },
-            {
-              "order": 2,
-              "type": "LEARN",
-              "title": "安装参考",
-              "description": "配置样例和常见问题",
-              "duration": 30
-            }
-          ],
-          "labs": [],
-          "learns": [],
-          "learningMaterial": "<h2>学习目标</h2><ul><li>完成 Codex CLI 的安装和环境配置</li><li>理解 config.toml 各项参数的作用和最佳实践</li><li>配置代理、自定义命令等高级选项</li></ul><h2>核心概念</h2><h3>安装 Codex CLI</h3><pre><code># 通过 npm 全局安装\nnpm install -g @openai/codex\n\n# 验证安装\ncodex --version\n\n# 首次运行会引导设置 API Key\ncodex \"hello\"</code></pre><h3>config.toml 完整配置</h3><p>配置文件位于 <code>~/.codex/config.toml</code>：</p><pre><code># 模型选择\n[model]\ndefault = \"gpt-5.6-codex\"           # 日常开发，编码优化主力\n# default = \"gpt-5.6-codex-mini\"              # 批量/低成本任务可切换\n\n# 审批模式\n[defaults]\napproval_mode = \"suggest\"     # suggest: 需确认 | auto-edit: 自动改 | full-auto: 全自动\n\n# Token 限制\n[limits]\nmax_tokens = 4096             # 单次响应最大 token\nmax_context = 16384           # 上下文窗口\n\n# 代理配置（公司网络环境需要）\n[network]\nproxy = \"http://proxy.company.com:8080\"\n\n# 自定义快捷命令\n[commands]\ntest = \"写单元测试覆盖所有公开方法\"\nrefactor = \"重构这段代码，提取公共逻辑，保持接口不变\"\ndoc = \"为所有公开 API 添加 JSDoc 注释\"</code></pre><h3>API Key 管理</h3><p>推荐用环境变量而不是写死在配置文件：</p><pre><code># .zshrc / .bashrc\nexport OPENAI_API_KEY=\"sk-xxxxx\"\n\n# 或者用 .env 文件（项目级别）\necho \"OPENAI_API_KEY=sk-xxxxx\" >> .env</code></pre><h3>常见问题排查</h3><table><tr><th>问题</th><th>原因</th><th>解决</th></tr><tr><td>连接超时</td><td>网络/代理问题</td><td>检查 proxy 配置</td></tr><tr><td>响应被截断</td><td>max_tokens 太小</td><td>调大到 8192</td></tr><tr><td>结果不稳定</td><td>模型随机性</td><td>用 Self-Consistency</td></tr></table><h2>操作步骤</h2><ol><li>安装 Codex CLI 并验证版本</li><li>创建 <code>~/.codex/config.toml</code>，填入上述配置</li><li>设置环境变量中的 API Key</li><li>运行 <code>codex \"生成一个 hello world Express 服务\"</code> 验证配置正确</li><li>创建自定义命令并测试</li></ol><h2>小结</h2><p>安装配置是一次性工作，但配置好坏直接影响日常使用体验。建议用 gpt-5.6-codex 做默认模型，suggest 模式保持对代码修改的控制，把常用操作配成自定义命令节省时间。</p>",
-          "_id": "69db3dc876e3e0c1b3b66e2d"
         },
         {
           "code": "L82",
