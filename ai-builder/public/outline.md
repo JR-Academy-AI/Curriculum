@@ -7,7 +7,7 @@
 
 <h2>会 AI chat ≠ 会 AI coding</h2><p>过去一年我带了 300 多名同学做 AI coding，统计下来：能正确做 AI coding 的不足 10%，能高效用的不足 3%，绝大多数人只停在「会跟 AI 聊天」。衡量标准很简单——一个 LinkedIn / Google / GitHub 的 SSO 登录功能，你能不能一小时内从零做完上线。做不到，就还没入门。</p><h2>这门课教你把 AI coding 用到 everything</h2><p>不是教你写 prompt，是教你建一套属于你自己、再放大到企业的 AI 操作系统：个人 AI OS（你的第二大脑）→ 用 ADLC（Agent Development Lifecycle）把整份 PRD 交给一个 Agent 端到端开发 → 让 Agent 自动替你和企业干活 → 沉淀成 AI-native 企业记忆系统。毕业那天的北极星：你能同时指挥多个独立 Agent 并行替你工作。</p><h2>8 周 4 个阶段</h2><p>Phase 1 入门 & 个人 AI OS（产品思维 + PRD + ADLC + 老项目改造 + Design System）；Phase 2 Skills / MCP / Agent 架构；Phase 3 AI 自动化（让 Agent 定时自动干活）；Phase 4 AI-native 企业记忆系统 + 云端 Agent 部署 + 全栈毕业项目。
 
-**级别** 中级 · **类型** training · **时长** 8 周（112 节课） · **总课时** 112 · **步骤** 142 · **直播** 22 · **互动 Lab** 32 · **预计学时** 107.3
+**级别** 中级 · **类型** training · **时长** 8 周（111 节课） · **总课时** 111 · **步骤** 137 · **直播** 20 · **互动 Lab** 32 · **预计学时** 107.3
 
 **适合**：有编程基础的开发者、全栈工程师、DevOps、想用 AI 提升开发效率的技术人员
 
@@ -23,29 +23,38 @@ _Week 1-2_
 - **自学：AI 基础概念 — 5 分钟搞懂大模型** — 30 分钟
 - **自学：Vibe Coding 是什么** — 30 分钟
 - **安装与配置 Claude、Codex CLI** — 120 分钟 · 🔴直播
-- **用 AI 生成 Design System：UI 布局与统一样式语言** — 120 分钟 · 🔴直播
-- **自学：Cursor 入门 — Vibe Coding 的代名词** — 30 分钟
-- **自学：安装 Cursor 与环境准备** — 30 分钟
 - **Quest 实战：装好 Claude Code + Codex 完整工具链** — 35 分钟
+- **Lab: Claude Code 入门 — 终端里的 AI 程序员** — 30 分钟
 - **Claude、Codex、Gemini 对比指南** — 120 分钟
 - **Lab: 模型与参数 — Temperature、Top-P 和模型选择** — 30 分钟
+- **Lab: 工具选型实战 — 没有绝对的最好，只有最适合** — 60 分钟
+- **Codex CLI 安装指南与 config.toml 配置样例** — 120 分钟
 - **自学：工具与模型最新动态** — 30 分钟
 - **自学：AI 模型对比参考** — 30 分钟
+- **自学：Cursor 入门 — Vibe Coding 的代名词** — 30 分钟
+- **自学：安装 Cursor 与环境准备** — 30 分钟
 - **从需求到 PRD：AI 产品设计流程与 Claude 模块拆解** — 120 分钟 · 🔴直播
 - **Lab: 明确任务 — 让 AI 准确理解你的需求** — 30 分钟
 - **自学：从想法到 PRD（用 AI 写 PRD）** — 30 分钟
-- **Lab: Prompt Chaining — 多步骤编排** — 30 分钟
 - **PRD 模板与 Claude Prompt（提示词）参考** — 120 分钟
+- **Lab: Zero-shot — 零示例直接提问** — 30 分钟
 - **Lab: 输出格式 — 让 AI 按你要的格式回答** — 30 分钟
 - **Lab: Few-shot Learning — 用示例教会 AI** — 30 分钟
+- **Lab: Chain of Thought — 让 AI 展示思考过程** — 30 分钟
+- **自学：Chain-of-Thought (CoT)** — 30 分钟
+- **Lab: Self-Consistency — 多路推理投票** — 30 分钟
+- **Lab: Prompt Chaining — 多步骤编排** — 30 分钟
+- **自学：Prompt Chaining** — 30 分钟
 - **自学：高质量 Prompt 模板** — 30 分钟
-- **Claude Prompt Engineering 与 Context Engineering（上下文工程）实践** — 90 分钟 · 🔴直播
+- **用 AI 生成 Design System：UI 布局与统一样式语言** — 120 分钟 · 🔴直播
+- **从 PRD 到 Production：GitHub + Actions + Pages / Vercel 交付链路** — 120 分钟 · 🔴直播
+- **自学：Claude Prompt Engineering 与 Context Engineering（上下文工程）实践** — 90 分钟
+- **Lab: Context Engineering 入门 — 让 AI 不再丢上下文** — 60 分钟
 - **Lab: Context Engineering — AI Agent 的核心能力** — 30 分钟
 - **Lab: .cursorrules 设计实战 — 让 Cursor 按你的规矩写代码** — 30 分钟
 - **自学：Cursor Rules 编写指南** — 30 分钟
 - **自学：Context Fundamentals** — 30 分钟
 - **Quest 实战：给你的真实项目写一套 CLAUDE.md + 工具规则文件** — 40 分钟
-- **Claude 协助 Debug：从报错到修复的完整流程** — 120 分钟 · 🔴直播
 - **老项目改造（Brownfield）：让 AI 读懂 + 安全改一个真实 existing 项目** — 60 分钟 · 🔴直播
 - **Lab: 调试 AI 代码 — 读错误日志和修复 Bug** — 30 分钟
 - **Lab: 代码生成 — AI 辅助编程的正确姿势** — 30 分钟
@@ -58,8 +67,6 @@ _Week 1-2_
 _Week 3-5_
 
 - **自学：Skills 架构速览 — Claude/Codex 插件机制** — 30 分钟
-- **Lab: Tool Use — Function Calling 实战** — 30 分钟
-- **Lab: Claude Code 入门 — 终端里的 AI 程序员** — 30 分钟
 - **自学：Claude Code Skills 进阶** — 30 分钟
 - **Skills 架构与 agent.md 模板标准化实战** — 120 分钟 · 🔴直播
 - **Lab: Claude Code Skills 和 Agent Teams — AI 能力复用** — 30 分钟
@@ -74,6 +81,7 @@ _Week 3-5_
 - **自学：MCP 概念速览 — Model Context Protocol** — 30 分钟
 - **Lab: MCP 入门 — 让 AI 连接整个世界** — 30 分钟
 - **自学：MCP 服务器配置** — 30 分钟
+- **Lab: Tool Use — Function Calling 实战** — 30 分钟
 - **ToolUse 与 MCP 接入机制详解** — 150 分钟 · 🔴直播
 - **Lab: ReAct Agent — 推理与行动循环** — 30 分钟
 - **自学：Mcp Tool Integration** — 30 分钟
@@ -91,7 +99,6 @@ _Week 3-5_
 - **自学：Agent Tool Use** — 30 分钟
 - **Claude Agent 多工具执行结构解析** — 120 分钟
 - **自学：Multi Agent Orchestration** — 30 分钟
-- **Lab: Context Engineering 入门 — 让 AI 不再丢上下文** — 60 分钟
 - **Quest 实战：搭建一个能跑的 Claude Code Sub-agents 工作流** — 45 分钟
 
 ## Phase 3 — AI 自动替你 / 企业干活（自动化）
@@ -100,18 +107,11 @@ _Week 6_
 
 - **自学：最新 AI Coding 模型选型参考（Claude / Codex / GPT-5.6）** — 120 分钟
 - **多模型 Prompt Engineering 模板参考** — 120 分钟
-- **Lab: Zero-shot — 零示例直接提问** — 30 分钟
-- **Lab: 工具选型实战 — 没有绝对的最好，只有最适合** — 60 分钟
 - **自学：Prompt 精调结构与四种模板技巧** — 30 分钟
-- **Lab: Chain of Thought — 让 AI 展示思考过程** — 30 分钟
-- **Lab: Self-Consistency — 多路推理投票** — 30 分钟
-- **自学：Chain-of-Thought (CoT)** — 30 分钟
-- **自学：Prompt Chaining** — 30 分钟
 - **AI 自动化工作流：让 Agent 定时 / 自动替你干活（Schedule / Workflow / Cron）** — 90 分钟 · 🔴直播
 - **企业自动化落地：把重复业务流程交给 Agent 跑通闭环** — 150 分钟 · 🔴直播
 - **Lab: Prompt 评估 — 量化你的 Prompt 质量** — 30 分钟
 - **自学：性能与成本优化** — 30 分钟
-- **Codex CLI 安装指南与 config.toml 配置样例** — 120 分钟
 - **Lab: Prompt 迭代与追问 — 第一次一定不够好** — 60 分钟
 - **AI Coding 优化闭环：质量、速度、成本一起调** — 90 分钟
 
@@ -129,7 +129,6 @@ _Week 7-8_
 - **Claude 连接数据库（Supabase / Postgres）与建模** — 120 分钟
 - **Lab: 数据库设计与 AI — Schema 到迁移** — 30 分钟
 - **自学：数据与知识库协作** — 30 分钟
-- **从 PRD 到 Production：GitHub + Actions + Pages / Vercel 交付链路** — 120 分钟 · 🔴直播
 - **云端 Agent 部署：让 Agent 上云持续替企业跑（Workers / Serverless）** — 90 分钟 · 🔴直播
 - **Lab: 部署到上线 — AI 加速从开发到生产** — 30 分钟
 - **自学：脚手架与自动化交付** — 30 分钟
