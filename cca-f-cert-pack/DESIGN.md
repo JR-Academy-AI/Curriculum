@@ -1,5 +1,7 @@
 # DESIGN · Claude 架构师认证 · 考试直通包（cca-f-cert-pack）
 
+> 📣 **推广排期 / task 派单见 [`./PROMOTION_PLAN.md`](./PROMOTION_PLAN.md)**（`/course-promotion-architect` 产出）。本文件只管话术，PROMOTION_PLAN 管谁什么时候用哪个 skill 做什么。
+
 > 定位：**只有考试资料、无培训**的产品。核心难点 = 让学员理解这不是"资料包"，而是考试准入 + 系统备考路线 + 模拟冲刺。本文是这门产品的**话术真相源**，landing / 小红书 / 公众号 / 销售跟进都从这里取。
 
 themeColor `#C15F3C`（Claude 珊瑚色的深色调，区别于实战班的 `#D97757`——深色传达"直达/硬核冲刺"，浅色传达"陪练/入门"）。

@@ -1,5 +1,7 @@
 # DESIGN · Claude 认证架构师 Professional · 考试直通包（ccar-p-cert-pack）
 
+> 📣 **推广排期 / task 派单见 [`./PROMOTION_PLAN.md`](./PROMOTION_PLAN.md)**（`/course-promotion-architect` 产出）。本文件只管话术，PROMOTION_PLAN 管谁什么时候用哪个 skill 做什么。
+
 > **共用红线不在这里。** 报名链路铁律（卖准入不卖名额）、考试政策、Partner 身份口径、保过禁令、官方样题版权、四门证对比 —— 全部见 [`../CLAUDE_CERT_FAMILY.md`](../CLAUDE_CERT_FAMILY.md)，**写任何对外内容前先读那份**。
 >
 > **事实真相源** = [`SYLLABUS_OFFICIAL.md`](./SYLLABUS_OFFICIAL.md)（CCAR-P 的 blueprint、与 Foundations 的逐条差异、受众）。本文件只管**对外怎么说**。
