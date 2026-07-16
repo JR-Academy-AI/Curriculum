@@ -31,7 +31,7 @@
 
 产品形态：
 
-- 报名准入：为你开通 Anthropic Partner Academy 账号（个人无法自行注册）
+- 报名准入：通过 CPN 合规通道为你开通 Anthropic Partner Academy 账号
 - 系统化备考资料
 - 从注册到约考的全程陪跑
 - 场景题拆解
@@ -40,7 +40,7 @@
 
 一句话定位：
 
-> 成为全球华人首批 Claude 官方认证架构师。Anthropic Partner Academy 个人无法自行注册——必须由 Claude Partner Network 伙伴在后台开通账号才进得去。匠人已注册加入 CPN，通过合规通道为你开通账号、打通报名准入，再配上最短备考路线、场景题拆解和全真模拟，陪你走完注册 → 约考 → 考场。
+> 成为全球华人首批 Claude 官方认证架构师。匠人已注册加入 Claude Partner Network，通过 CPN 合规通道为你开通 Partner Academy 账号、打通报名准入，再配上最短备考路线、场景题拆解和全真模拟，陪你走完注册 → 约考 → 考场。
 
 核心不是卖资料，而是三件事：
 
@@ -116,7 +116,7 @@
 
 推荐话术：
 
-> Claude 官方架构师认证是 Anthropic 首个 Claude 官方技术认证。关键是：Anthropic Partner Academy 个人无法自行注册，必须由 Claude Partner Network 伙伴在后台开通账号，你才进得去、才报得了名。匠人已注册加入 CPN，通过合规通道为你开通 Partner Academy 账号、打通报名资格。账号开通后你本人在 Partner Academy 上自行注册考试、自行结账支付官方考试费，再建 Pearson VUE 账号约考——注册、约考、OnVUE 环境自检每一步匠人都陪你走完。
+> Claude 官方架构师认证是 Anthropic 首个 Claude 官方技术认证。匠人已注册加入 CPN，通过 Claude Partner Network 合规通道为你开通 Partner Academy 账号、打通报名资格。账号开通后你本人在 Partner Academy 上自行注册考试、自行结账支付官方考试费，再建 Pearson VUE 账号约考——注册、约考、OnVUE 环境自检每一步匠人都陪你走完。
 
 ### 卖点 2：省下几十小时摸索
 
@@ -132,7 +132,7 @@
 
 交付物：
 
-- 为你开通 Anthropic Partner Academy 账号（个人无法自行注册），打通报名准入。
+- 通过 CPN 合规通道为你开通 Anthropic Partner Academy 账号，打通报名准入。
   - 官方考试费不含在包价里，在 Partner Academy 结账时由你本人直接支付，按官方标准。
 - 5 大 domain 考点精析（按官方考纲权重）。
 - 场景题拆解（官方 6 个场景抽 4 个的题型框架）。
@@ -179,7 +179,7 @@
 FAQ 必须回答：
 
 - Claude 官方架构师认证是什么？
-- 我能不能自己报名？（答：不能，Partner Academy 个人无法自行注册，必须由 CPN 伙伴开通账号）
+- 报名准入怎么打通？（答：匠人通过 CPN 合规通道为你开通 Partner Academy 账号）
 - 为什么官方课免费还要报名直通包？
 - 考试费包含在包价里吗？（答：不含，账号开通后由你本人在 Partner Academy 结账时直接支付官方考试费）
 - 账号开通后接下来我要做什么？（答：你本人自行注册考试 → 结账付考试费 → 建 Pearson VUE 账号约考，每步匠人陪你）
@@ -227,7 +227,7 @@ FAQ 必须回答：
 
 朋友圈文案：
 
-> Anthropic 的 Claude 官方架构师认证已经开放。但有个坎：Partner Academy 个人无法自行注册，必须由 Claude Partner Network 伙伴在后台开通账号才进得去。匠人已注册加入 CPN，现在开放首期考试直通包，通过合规通道为你开通账号、打通报名准入。
+> Anthropic 的 Claude 官方架构师认证已经开放。匠人已注册加入 Claude Partner Network，现在开放考试直通包，通过 CPN 合规通道为你开通 Partner Academy 账号、打通报名准入。
 >
 > 首期考试直通包：为你开通 Partner Academy 账号 + 5 大 domain 备考路线 + 场景题拆解 + 全真模拟题 + 注册约考陪跑。（官方考试费另付，账号开通后你本人在 Partner Academy 结账支付。）
 >
@@ -329,4 +329,4 @@ FAQ 必须回答：
 
 要反复讲清楚：
 
-> 你买的不是 PDF，而是个人自己打不开的那道报名准入（Partner Academy 账号由匠人 CPN 通道开通）、一条不用自己摸索的备考路线，以及考前能直接上手的模拟冲刺。官方考试费另付、由你本人结账，我们负责把门打开、把路铺好、陪你走完。
+> 你买的不是 PDF，而是 CPN 合规报名准入（Partner Academy 账号由匠人 CPN 通道开通）、一条不用自己摸索的备考路线，以及考前能直接上手的模拟冲刺。官方考试费另付、由你本人结账，我们负责把准入打通、把路铺好、陪你走完。

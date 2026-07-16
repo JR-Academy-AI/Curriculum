@@ -14,7 +14,7 @@ themeColor `#C15F3C`（Claude 珊瑚色的深色调，区别于实战班的 `#D9
 
 事实链（三条，全部经 Lightman 确认 + 官方考纲 §11 佐证）：
 
-1. **个人无法自行注册 Anthropic Partner Academy。** 必须由已加入 CPN 的伙伴在后台为你开通账号，你才进得去、才报得了名。这道墙是真的，是本产品最硬的价值。
+1. **报名准入需要 Partner Academy 账号。** 匠人通过 CPN 合规通道在后台为你开通账号，打通注册与约考前置资格。这是本产品最硬的价值。
 2. **匠人不能代发、代购考试名额。** 账号开通后，**学员本人**在 Partner Academy 上自行注册考试并**自行结账支付官方考试费**，再建 Pearson VUE 账号约考。
 3. **考试费不含在包价里。**
 
@@ -22,7 +22,7 @@ themeColor `#C15F3C`（Claude 珊瑚色的深色调，区别于实战班的 `#D9
 
 | ❌ 禁止出现 | ✅ 正确说法 |
 |---|---|
-| 含 1 个官方考试名额 | 为你开通 Anthropic Partner Academy 账号（个人无法自行注册） |
+| 含 1 个官方考试名额 | 通过 CPN 合规通道为你开通 Anthropic Partner Academy 账号 |
 | 帮你拿到 / 协助申请考试名额 | 打通报名准入，并全程陪你走完注册 → 约考 → 考场 |
 | 名额已激活 / 你的考试名额 | 你的 Partner Academy 账号 / 你的报名资格 |
 | （对考试费只字不提） | 考试费按官方标准，在 Partner Academy 结账时由你直接支付 |
@@ -45,7 +45,7 @@ themeColor `#C15F3C`（Claude 珊瑚色的深色调，区别于实战班的 `#D9
 
 ### 支柱 1 · 报名准入：CPN 合规通道开通账号
 - CCAR-F 是 Anthropic 首个官方技术认证，报名与约考只走 **Anthropic Partner Academy → Pearson VUE** 这一条链路。
-- **Partner Academy 不对个人开放自助注册。** 匠人已注册加入 **Claude Partner Network（CPN）**，可以在后台为学员开通账号——没有这一步，你连报名页都进不去。
+- 匠人已注册加入 **Claude Partner Network（CPN）**，可以通过合规通道在后台为学员开通 Partner Academy 账号，打通报名准入。
 - 账号开通后：**你本人**在 Partner Academy 注册考试、直接向官方支付考试费，再建 Pearson VUE 账号选日期与考场。整条链路匠人全程陪你走（L03/L04 两个 Quest 就是干这个的）。
 - 话术：**"我们不卖名额——名额本来就该是你自己注册的。我们卖的是那把让你能注册的钥匙，加上进门之后怎么最快过考。"**
 - ⚠️ 三条合规底线：
@@ -99,7 +99,7 @@ themeColor `#C15F3C`（Claude 珊瑚色的深色调，区别于实战班的 `#D9
   - 落点：`certification.pricing.singlePrice`、后端 seed、prod 库 import-static。
   - 🚨 不写 `pricing` 会被 schema 默认 `singlePrice:0` 判成「免费获取」——踩过，见 PRD/CHANGELOG 2026-07-12。
 - **站外物料（海报、小红书、公众号、宣传长文、公开 SoT）不露出价格**，走销售私聊 / 报名确认 / EOI。
-- 对外价值解释只讲：Partner Academy 账号开通（个人无法自行注册）、5-domain 备考路线、场景题拆解、全真模拟、报名与约考全程陪跑。
+- 对外价值解释只讲：Partner Academy 账号开通、5-domain 备考路线、场景题拆解、全真模拟、报名与约考全程陪跑。
 - **考试费单独说明**：按官方标准，由学员在 Partner Academy 结账时直接支付，不含在包价内。对外不写金额，销售私聊阶段再讲。
 
 ---
@@ -107,9 +107,9 @@ themeColor `#C15F3C`（Claude 珊瑚色的深色调，区别于实战班的 `#D9
 ## ✍️ 可直接复用的 landing 首屏话术
 
 > **标题**：Claude 官方架构师认证 · 考试直通包
-> **副标题**：成为全球华人首批 Claude 官方认证架构师。Anthropic Partner Academy 不对个人开放注册——匠人以 Claude Partner Network 成员身份为你开通账号，再带你走完最短备考路线和两套全真模拟。
+> **副标题**：成为全球华人首批 Claude 官方认证架构师。匠人通过 Claude Partner Network 合规通道为你开通 Partner Academy 账号，再带你走完最短备考路线和两套全真模拟。
 > **三个 bullet**：
-> - 🔑 为你开通 Anthropic Partner Academy 账号（个人无法自行注册）
+> - 🔑 通过 CPN 合规通道为你开通 Anthropic Partner Academy 账号
 > - 🧭 注册考试 → 预约 Pearson VUE → OnVUE 环境自检，AI 全程陪跑（考试费由你在官方结账时直接支付）
 > - 🎯 对齐官方 blueprint 的 5 domain 考点精析 + 6 类场景题拆解 + 2 套全真模拟
 
@@ -137,7 +137,7 @@ themeColor `#C15F3C`（Claude 珊瑚色的深色调，区别于实战班的 `#D9
   - **🚨 权重最高的是 D1 Agentic Architecture（27%），不是 Claude Code（20%）。** 旧稿在 L02 描述、L08 标题、销售页三处把 Claude Code 说成"权重最高"，是事实错误。
   - domain 分段百分比**只出现在成绩单上供诊断，不参与判定通过与否** —— 通过只看总量表分。别写成"每个域都要过线"。
 - **🚨 考试费 $125 USD、证书有效期 12 个月（考纲 §3 §15）**：到期前可在 Partner Academy 完成一次**免费、非监考**的续证评估；**一旦过期须全价重考**。有效期这条我们旧稿从未提及，属重大遗漏，L01/L02 必须讲清楚。
-- **🚨 "含 1 个官方考试名额"永久禁用（2026-07-09 Lightman 核实定案）**：匠人**不能代发、代购**考试名额。真实链路 = 匠人在 CPN 后台为学员开通 Partner Academy 账号（个人无法自行注册）→ 学员本人注册考试并直接向官方支付考试费 → 学员建 Pearson VUE 账号约考。对外一律改写为"开通账号 / 打通报名准入 / 全程陪跑"，且必须交代考试费另付。完整用词对照表见本文件顶部「话术铁律」。
+- **🚨 "含 1 个官方考试名额"永久禁用（2026-07-09 Lightman 核实定案）**：匠人**不能代发、代购**考试名额。真实链路 = 匠人在 CPN 后台为学员开通 Partner Academy 账号 → 学员本人注册考试并直接向官方支付考试费 → 学员建 Pearson VUE 账号约考。对外一律改写为"开通账号 / 打通报名准入 / 全程陪跑"，且必须交代考试费另付。完整用词对照表见本文件顶部「话术铁律」。
 - **🚨 官方 12 道样题 + practice test 不可复用**：考纲 §9 的样题是 Anthropic 版权内容，**禁止**原文或翻译放进 L14/L15 模拟考，**禁止**照抄题干情境、选项措辞、干扰项设计。只可当难度校准样本。
 - **绝不**承诺"保过/稳过/必过"（红线 3）。
 - **🚨 Services Partner Directory 收录的是「公司」不是「个人」（2026-07-09 核实）**：Anthropic 原话 "Qualified partners will also be added to our Services Partner Directory, where enterprise buyers can find **firms**"。同一来源同时确认 "Certifications belong to individual people, not firms, and are earned through Anthropic Partner Academy exams" 与 "more than 10,000 consultants have earned a Claude certification"。因此可写"逾 1 万名顾问已持证""认证归个人"，**不可**写成"持证即可进入 Directory 被企业买家找到"。

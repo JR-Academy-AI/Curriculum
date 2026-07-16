@@ -5,7 +5,7 @@
 > 🤖 本文件由 `lineage/build_lineage.py` 从同目录 `outline.json` 自动生成 —— **勿手改**。要改大纲改 `outline.json`，再重跑 `python3 lineage/build_lineage.py`。
 > （`outline.json` 是生产管线吃的机器权威；这份 `.md` 是给人读、给谱系当真相文档的统一格式。）
 
-Anthropic 官方 Claude Certified Architect – Foundations（考试代码 CCAR-F）认证的<strong>考试直通包</strong>：成为全球华人首批 Claude 官方认证架构师。Anthropic Partner Academy 不对个人开放自助注册——匠人已注册加入 Claude Partner Network，为你开通账号打通报名准入，再全程陪你走完注册、约考、考场。同时把散落在 Anthropic Academy 的 20 门课编成一条清晰备考路线，配 2 套全真模拟题和场景题拆解。官方考试费不含在包价内，由你在 Partner Academy 结账时直接支付。
+Anthropic 官方 Claude Certified Architect – Foundations（考试代码 CCAR-F）认证的<strong>考试直通包</strong>：成为全球华人首批 Claude 官方认证架构师。匠人已注册加入 Claude Partner Network，通过 CPN 合规通道为你开通 Partner Academy 账号、打通报名准入，再全程陪你走完注册、约考、考场。同时把散落在 Anthropic Academy 的 20 门课编成一条清晰备考路线，配 2 套全真模拟题和场景题拆解。官方考试费不含在包价内，由你在 Partner Academy 结账时直接支付。
 
 **级别** 中级 · **类型** training · **时长** 12 小时自学（16 节课，自主安排节奏）+ 报名准入与全程陪跑 · **总课时** 16 · **步骤** 50 · **直播** 0 · **互动 Lab** 0 · **预计学时** 12
 
