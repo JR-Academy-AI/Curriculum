@@ -13,7 +13,7 @@
 | Course Slug | `cca-f-cert-pack`（目录名历史遗留，正文一律 CCAR-F，线上 URL 已冻结不改）|
 | Course 中文名 | Claude 官方架构师认证 · 考试直通包（Claude Certified Architect – Foundations）|
 | **🎯 Course Type** | **Type 8 · 认证课（首发窗口变体）** |
-| 类型识别理由 | 付费直通包，核心价值=「个人打不开的 CPN 报名准入」+「全球华人首批持证窗口」稀缺感。第一阶段走 launch 冲刺（非标准 Type 8 长尾），首批过考案例出来后转长尾常青。|
+| 类型识别理由 | 付费直通包，核心价值=「全球华人首批 Claude 官方认证架构师」+「CPN 合规报名准入」+「最短备考路线与全真模拟」。第一阶段走 launch 冲刺（非标准 Type 8 长尾），首批过考案例出来后转长尾常青。|
 | 两阶段 | 阶段 A 首发窗口冲刺 ✅ **首期已售罄（2026-07-15）** → **当前：常规滚动报名 + 证明期**（首批学员备考/考试，案例出来即升级口号）→ 阶段 B 长尾常青（SEO + cert 长文持续）|
 | **🧑 PERSONAS.md 状态** | ✅ 已建 [`./PERSONAS.md`](./PERSONAS.md)（2026-07-15 init）。⚠️ **Ground truth 覆盖率 ~35% 偏弱** —— 画像/不会买的人有官方依据，痛点原话/决策周期/活跃平台待补。**首期已售罄 = 真实买家名单已存在，应尽快 `/target-user-persona-mapper refresh cca-f-cert-pack --cohort=1` 拉到 70%+。** |
 | Launch Date | 2026-07-15 首期开售，**当日售罄**；现常规滚动报名 |
@@ -29,7 +29,7 @@
 
 > 🧑 **目标用户画像见 [./PERSONAS.md](./PERSONAS.md)（2026-07-15 init，⚠️ 覆盖率 ~35% 待 refresh）**。详细话术 / 卖点看 `MARKETING_PLAN.md`。本节只抽 1 屏。
 
-**一句话**：成为全球华人首批 Claude 官方认证架构师 —— 个人报不了名的那道 Partner Academy 门，匠人通过 CPN 合规通道替你打开，再给最短备考路线和全真模拟冲刺。卖的是**报名准入 + 路线 + 冲刺**，不是资料。
+**一句话**：成为全球华人首批 Claude 官方认证架构师 —— 匠人通过 CPN 合规通道为你开通 Partner Academy 账号，再给最短备考路线和全真模拟冲刺。卖的是**报名准入 + 路线 + 冲刺**，不是资料。
 
 **目标人群**（官方 Exam Guide 受众 + MARKETING_PLAN §4）：
 - P1 — 已在用 Claude / Claude Code / MCP 做项目的开发者（核心）
@@ -40,7 +40,7 @@
 
 **主推内容角度**（Type 8 首发窗口变体 · 权重排序）：
 1. ⭐⭐⭐⭐⭐ **首个 Claude 官方技术认证 + 首批持证窗口稀缺感** —— "全球华人首批"是不可复制的时间窗
-2. ⭐⭐⭐⭐⭐ **CPN 报名准入这道门个人打不开**（可信度支柱，但不做封面主钩子）
+2. ⭐⭐⭐⭐⭐ **CPN 合规通道打通 Partner Academy 报名准入**（可信度支柱，但不做封面主钩子）
 3. ⭐⭐⭐⭐ **5-domain 最短备考路线** —— 官方课免费但散，我们把它排成能过考的路线（Agentic Architecture 权重 27% 最高，备考重心先压这里）
 4. ⭐⭐⭐⭐ **Anthropic 官方 CCAR-F 专属精选页借势（2026-07 新上线）** —— Anthropic 刚为 CCAR-F 打包了 7 门免费备考课专属页（Claude Certification Exam Prep Courses：《Building with the Claude API》《Claude Code in Action》《Introduction to Model Context Protocol》等）。内容切角：「官方都替你选好课了，为什么还过不了考？」——7 门课≈20+ 小时，没有考点权重、没有题、没有反馈；我们的第一章免费预览里有**逐门解读**（哪几门真压中考点、哪几门是通用素养可跳过）。官网销售页已上线对应链接（2026-07-15 部署），小红书/公众号引流可直接落到销售页看逐门解读。
 
