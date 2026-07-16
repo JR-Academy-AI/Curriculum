@@ -159,6 +159,20 @@
 
 ## 6. 渠道打法
 
+### 宣传海报素材库
+
+统一入口：
+
+- 预览页：[`public/promotion-posters.html`](./public/promotion-posters.html)
+- 素材 manifest：[`public/assets/promotion-posters.json`](./public/assets/promotion-posters.json)
+
+使用原则：
+
+- 小红书 / 朋友圈 / 公众号配图 / 销售私聊都优先使用这套 image model 统一风格海报。
+- 不再混用旧 HTML neo-brutalism 草稿，避免视觉风格割裂。
+- 主海报用“成为全球华人首批 Claude 官方认证架构师”；功能拆解图按使用场景选择：交付内容、备考大纲、章节学习内容、Domain 学习内容、题库、双界面模考、Pearson Review、Domain 权重。
+- 公开海报不写价格，不拿报名限制做封面钩子，不承诺保过。
+
 ### 官网 / Landing Page
 
 目标：承接所有流量，解释“为什么这不是卖一堆 PDF”。

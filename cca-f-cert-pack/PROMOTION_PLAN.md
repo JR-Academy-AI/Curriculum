@@ -172,7 +172,7 @@
 | 销售助理 | Neomi | EOI 派单 / SLA 监控 |
 | Dev | — | Landing / SEO / 报名承接 |
 
-⚠️ 待补：Designer 未在本方案显式排期（小红书配图走 `/xhs-poster` 自动化，如需高保真海报单独补 `🚨 缺 Designer 档期`）。
+✅ 2026-07-16 已补：Image model 高保真海报素材 9 张入库，统一入口见 [`public/promotion-posters.html`](./public/promotion-posters.html)，素材 manifest 见 [`public/assets/promotion-posters.json`](./public/assets/promotion-posters.json)。
 
 ---
 
@@ -227,6 +227,38 @@
 | `/seo-optimizer` + `/eeat-optimizer` | 阶段 B 长尾 | D+30 起 | Dev |
 | `/course-promotion-architect audit` | 中期诊断 | D+7 + 每周一 | Lightman + Aurora |
 | `/course-promotion-architect postmortem` | 复盘回写数据 | D+30 | Aurora |
+
+---
+
+## 9. 宣传海报素材库
+
+> 2026-07-16 起，CCAR-F 对外海报统一走 image model 奶油点阵 / 棕红 CTA 风格。不要再混用旧 HTML neo-brutalism 草稿。
+
+统一预览入口：
+
+- [`public/promotion-posters.html`](./public/promotion-posters.html)
+- 素材 manifest：[`public/assets/promotion-posters.json`](./public/assets/promotion-posters.json)
+
+已入库素材：
+
+| ID | 用途 | 文件 |
+|----|------|------|
+| `cover` | 小红书首图、朋友圈首图、销售私聊首发图 | `ccar-f-poster-image-model-v2.png` |
+| `offering` | 解释 16 节课 / 50 步 / 12 小时路径 / 2 套模拟 | `ccar-f-poster-image-model-v2-offering.png` |
+| `outline` | 展示 4 阶段备考大纲 | `ccar-f-poster-image-model-v2-outline.png` |
+| `chapters` | 展示 14 章学习内容 | `ccar-f-poster-image-model-v2-chapters.png` |
+| `domain-learning` | 展示每个 Domain 学什么 | `ccar-f-poster-image-model-v2-domain-learning.png` |
+| `question-bank` | 展示约 480 道题库 + 解析 / 诊断 | `ccar-f-poster-image-model-v2-question-bank.png` |
+| `mock-modes` | 展示平台样式 + Pearson VUE 风格双界面模考 | `ccar-f-poster-image-model-v2-mock-modes.png` |
+| `exam-review` | 展示 Flag / Incomplete / Review / End Review 流程 | `ccar-f-poster-image-model-v2-exam-review.png` |
+| `domain-weights` | 展示 5 大 Domain 官方权重 | `ccar-f-poster-image-model-v2-domain-weights.png` |
+
+素材红线：
+
+- 公开海报不写价格。
+- 不拿报名限制做封面钩子。
+- 不承诺保过、包过或保证通过。
+- 简称 CCAR-F 只作为考试代码补充，主标题优先写 Claude 官方架构师认证。
 
 ---
 

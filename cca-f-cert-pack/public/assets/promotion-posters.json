@@ -1,0 +1,69 @@
+{
+  "courseSlug": "cca-f-cert-pack",
+  "courseName": "Claude 官方架构师认证 · 考试直通包",
+  "examCode": "CCAR-F",
+  "style": "Image model · warm cream dotted grid · coral CTA",
+  "updatedAt": "2026-07-16",
+  "usageRules": [
+    "公开海报不写价格",
+    "不拿报名限制做封面钩子",
+    "不承诺保过、包过或保证通过",
+    "简称 CCAR-F 只作为考试代码补充，主标题优先写 Claude 官方架构师认证"
+  ],
+  "posters": [
+    {
+      "id": "cover",
+      "title": "主海报",
+      "purpose": "朋友圈、小红书首图、销售私聊首发图",
+      "file": "ccar-f-poster-image-model-v2.png"
+    },
+    {
+      "id": "offering",
+      "title": "当前交付内容",
+      "purpose": "解释 16 节课、50 步、12 小时路径、2 套模拟",
+      "file": "ccar-f-poster-image-model-v2-offering.png"
+    },
+    {
+      "id": "outline",
+      "title": "4 阶段备考大纲",
+      "purpose": "展示从认证全景到全真模拟的路径",
+      "file": "ccar-f-poster-image-model-v2-outline.png"
+    },
+    {
+      "id": "chapters",
+      "title": "14 章学习内容",
+      "purpose": "展示 7 章匠人精析 + 7 章官方课程导学",
+      "file": "ccar-f-poster-image-model-v2-chapters.png"
+    },
+    {
+      "id": "domain-learning",
+      "title": "每个 Domain 学什么",
+      "purpose": "展示 5 大 Domain 对应的实战能力",
+      "file": "ccar-f-poster-image-model-v2-domain-learning.png"
+    },
+    {
+      "id": "question-bank",
+      "title": "约 480 道题库",
+      "purpose": "展示题库、逐题解析、错项拆解、分域诊断",
+      "file": "ccar-f-poster-image-model-v2-question-bank.png"
+    },
+    {
+      "id": "mock-modes",
+      "title": "双界面模拟考试",
+      "purpose": "展示平台样式 + Pearson VUE 风格两种模考界面",
+      "file": "ccar-f-poster-image-model-v2-mock-modes.png"
+    },
+    {
+      "id": "exam-review",
+      "title": "Pearson Review 流程",
+      "purpose": "展示 Flag、Incomplete、Review、End Review 流程熟悉度",
+      "file": "ccar-f-poster-image-model-v2-exam-review.png"
+    },
+    {
+      "id": "domain-weights",
+      "title": "5 大 Domain 权重",
+      "purpose": "展示官方 blueprint 权重与模考出卷口径",
+      "file": "ccar-f-poster-image-model-v2-domain-weights.png"
+    }
+  ]
+}

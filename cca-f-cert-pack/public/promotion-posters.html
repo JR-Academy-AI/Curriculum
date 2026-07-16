@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <title>CCAR-F 宣传海报素材库 · JR Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700;900&family=Noto+Sans+SC:wght@500;700;900&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #201714;
+      --accent: #b85235;
+      --cream: #fff7ef;
+      --paper: #fffdf8;
+      --muted: #7a6258;
+      --line: #ead8cc;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 1px 1px, rgba(184, 82, 53, 0.12) 2px, transparent 2.5px) 0 0 / 34px 34px,
+        linear-gradient(180deg, #fffaf4 0%, #fff0e5 100%);
+      color: var(--ink);
+      font-family: "DM Sans", "Noto Sans SC", system-ui, sans-serif;
+      padding: 48px 24px 80px;
+    }
+
+    .wrap { max-width: 1280px; margin: 0 auto; }
+    header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 22px;
+      border: 1px solid rgba(184, 82, 53, 0.35);
+      border-radius: 999px;
+      background: rgba(255, 253, 248, 0.78);
+      color: var(--accent);
+      font-family: "Space Mono", monospace;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.08;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+    .lead {
+      max-width: 820px;
+      margin: 16px auto 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .rules {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin: 28px 0 34px;
+    }
+    .rule {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 253, 248, 0.84);
+      padding: 15px 16px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.45;
+      box-shadow: 0 16px 48px rgba(126, 73, 50, 0.08);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 253, 248, 0.88);
+      padding: 16px;
+      box-shadow: 0 22px 70px rgba(126, 73, 50, 0.13);
+    }
+    .thumb {
+      display: block;
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid rgba(184, 82, 53, 0.18);
+      background: var(--cream);
+    }
+    .card h2 {
+      margin: 14px 2px 6px;
+      font-size: 20px;
+      line-height: 1.22;
+      font-weight: 900;
+    }
+    .card p {
+      margin: 0 2px 14px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+      min-height: 42px;
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(184, 82, 53, 0.35);
+      background: var(--paper);
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 900;
+    }
+    .btn.primary {
+      background: linear-gradient(135deg, #b85235, #d2603b);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    footer {
+      margin-top: 46px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      body { padding: 32px 16px 60px; }
+      .rules { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="pill">CCAR-F Promotion Assets</div>
+      <h1>Claude 官方架构师认证<br>宣传海报素材库</h1>
+      <p class="lead">Image model 统一风格素材，供小红书、朋友圈、公众号配图和销售私聊使用。素材从 <code>assets/promotion-posters.json</code> 加载，新增或替换海报时只改 manifest。</p>
+    </header>
+
+    <section class="rules" id="rules"></section>
+    <section class="grid" id="posterGrid" aria-label="宣传海报素材"></section>
+
+    <footer>JR Academy 匠人学院 · Claude 官方架构师认证 · 考试直通包</footer>
+  </div>
+
+  <script>
+    async function init() {
+      const res = await fetch('./assets/promotion-posters.json');
+      const data = await res.json();
+      const rules = document.getElementById('rules');
+      const grid = document.getElementById('posterGrid');
+
+      rules.innerHTML = data.usageRules.map(rule => `<div class="rule">${rule}</div>`).join('');
+      grid.innerHTML = data.posters.map(poster => {
+        const src = `./assets/${poster.file}`;
+        return `
+          <article class="card">
+            <a href="${src}" target="_blank" rel="noopener">
+              <img class="thumb" src="${src}" alt="${poster.title}">
+            </a>
+            <h2>${poster.title}</h2>
+            <p>${poster.purpose}</p>
+            <div class="actions">
+              <a class="btn primary" href="${src}" target="_blank" rel="noopener">打开原图</a>
+              <a class="btn" href="${src}" download>下载 PNG</a>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    init().catch((error) => {
+      document.getElementById('posterGrid').innerHTML = `<p>素材加载失败：${error.message}</p>`;
+    });
+  </script>
+</body>
+</html>
