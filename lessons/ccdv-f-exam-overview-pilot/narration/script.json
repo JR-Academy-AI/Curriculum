@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "deckId": "ccdv-f-exam-overview-pilot",
+  "language": "zh-CN",
+  "voiceStatus": "generated-local-review",
+  "segments": [
+    {
+      "actionId": "claude-code-weight-reveal",
+      "text": "一个叫 Developer 的考试，Claude Code 只占 3.1%。",
+      "voice": "ElevenLabs Amy",
+      "audioPath": "public/audio/claude-code-weight-reveal.mp3",
+      "durationMs": 3289,
+      "sourceRefs": [
+        "skills-data/certification-chapters/ccdv-f/01-exam-overview.md",
+        "ccdv-f-cert-pack/SYLLABUS_OFFICIAL.md"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "deckId": "ccdv-f-exam-overview-pilot",
+  "status": "local-audio-review",
+  "actions": [
+    {
+      "actionId": "claude-code-weight-reveal",
+      "slideId": "claude-code-three-percent",
+      "durationMs": 3289,
+      "cues": [
+        { "atMs": 0, "command": "SHOW_SLIDE" },
+        { "atMs": 900, "command": "SPOTLIGHT", "target": "claude-code-3-1" },
+        { "atMs": 3289, "command": "ACTION_END" }
+      ]
+    }
+  ]
+}
