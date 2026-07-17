@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:wght@500;600;700&family=Noto+Sans+SC:wght@500;700;900&display=swap");
+:root { font-family: "DM Sans", "Noto Sans SC", sans-serif; color: #10162f; background: #e9e6e1; }
+* { box-sizing: border-box; }
+html, body, #root { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+button { font: inherit; }
+.stage { width: 100%; height: 100%; padding: clamp(10px, 1.7vw, 26px); display: grid; place-items: center; }
+.slide { position: relative; width: 100%; height: 100%; overflow: hidden; padding: clamp(22px, 3.2vw, 58px) clamp(28px, 4.5vw, 82px) clamp(44px, 5.5vh, 68px); background: #fff7ef; border: clamp(2px, .25vw, 4px) solid #10162f; border-radius: clamp(14px, 1.8vw, 28px); box-shadow: clamp(6px, .8vw, 13px) clamp(6px, .8vw, 13px) 0 #10162f; }
+.topline { position: absolute; inset: 0 0 auto; height: 10px; background: #ff6846; }
+header { height: clamp(52px, 8vh, 82px); display: flex; justify-content: space-between; align-items: flex-start; }
+.eyebrow { display: inline-block; padding: 8px 13px; background: #10162f; color: #ffde59; border-radius: 999px; font-size: clamp(11px, 1.05vw, 17px); font-weight: 900; letter-spacing: .05em; }
+.progress { margin-top: 7px; color: #737985; font: 700 clamp(10px, .9vw, 14px)/1 "DM Sans"; }
+.brand-logo { width: clamp(115px, 14vw, 210px); height: auto; display: block; }
+h1 { margin: 0; font: 900 clamp(36px, 5vw, 82px)/1.03 "Bricolage Grotesque", "Noto Sans SC"; letter-spacing: -.045em; }
+h1 em { color: #ff5757; font-style: normal; }
+.kicker { margin: 0 0 clamp(12px, 2vh, 22px); color: #ff5757; font-size: clamp(14px, 1.5vw, 24px); font-weight: 900; }
+.lead { max-width: 660px; margin: clamp(14px, 2vh, 24px) 0 0; color: #535b6d; font-size: clamp(14px, 1.55vw, 24px); line-height: 1.45; font-weight: 650; }
+.hero-grid { height: calc(100% - clamp(155px, 21vh, 215px)); display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(390px, .95fr); gap: clamp(24px, 4vw, 72px); align-items: center; }
+.question-stack { display: grid; gap: clamp(10px, 1.5vh, 18px); }
+.question-card { min-height: clamp(74px, 11vh, 112px); padding: clamp(12px, 1.6vw, 22px); display: grid; grid-template-columns: clamp(40px, 4vw, 62px) 1fr; gap: 16px; align-items: center; background: #fff; border: 3px solid #10162f; border-radius: 18px; box-shadow: 6px 6px 0 #10162f; }
+.question-card > span { color: #ff5757; font-size: clamp(20px, 2vw, 31px); font-weight: 900; }
+.question-card h2 { margin: 0; font-size: clamp(17px, 1.8vw, 29px); line-height: 1.15; }
+.question-card p { margin: 5px 0 0; color: #68707d; font-size: clamp(11px, 1.05vw, 16px); font-weight: 700; }
+.takeaway { position: absolute; left: clamp(28px, 4.5vw, 82px); right: clamp(28px, 4.5vw, 82px); bottom: clamp(43px, 5.5vh, 66px); padding: clamp(12px, 1.6vh, 18px) 24px; background: #10162f; color: #ffde59; border: 3px solid #10162f; border-radius: 14px; box-shadow: 6px 6px 0 #ff5757; text-align: center; font-size: clamp(12px, 1.35vw, 21px); font-weight: 900; }
+footer { position: absolute; left: clamp(28px, 4.5vw, 82px); right: clamp(28px, 4.5vw, 82px); bottom: clamp(14px, 1.8vh, 22px); display: flex; justify-content: space-between; color: #777d88; font-size: clamp(9px, .9vw, 14px); }
+.judgement { height: calc(100% - clamp(145px, 19vh, 195px)); display: grid; grid-template-columns: .78fr 1.22fr; gap: clamp(28px, 5vw, 84px); align-items: center; }
+.purple { color: #7c3aed; }.judgement h1 em { color: #7c3aed; }
+.case-card { padding: clamp(22px, 3vw, 44px); background: #f7f2ff; border: 4px solid #10162f; border-radius: 28px; box-shadow: 10px 10px 0 #10162f; }
+.case-label { display: block; margin-bottom: clamp(15px, 2.3vh, 28px); font-size: clamp(15px, 1.5vw, 24px); font-weight: 900; }
+.choice { padding: clamp(16px, 2vw, 28px); display: flex; justify-content: space-between; gap: 16px; align-items: center; border: 3px solid #10162f; border-radius: 18px; }
+.choice b { font-size: clamp(17px, 1.8vw, 28px); }.choice span { font-size: clamp(11px, 1.05vw, 16px); font-weight: 700; text-align: right; }
+.weak { background: white; color: #7c3aed; }.strong { background: #10162f; color: white; }.strong b { color: #ffde59; }
+.versus { margin: clamp(7px, 1.1vh, 12px) 0; text-align: center; font-weight: 950; color: #7c3aed; }
+.purple-bg { background: #7c3aed; color: white; box-shadow: 6px 6px 0 #10162f; }
+.readiness { height: calc(100% - clamp(145px, 19vh, 195px)); display: grid; grid-template-columns: 1.3fr .7fr; gap: clamp(28px, 5vw, 80px); align-items: center; }
+.green { color: #0d9a68; }.readiness h1 em { color: #0d9a68; }
+.checks { display: grid; gap: clamp(8px, 1.1vh, 13px); margin-top: clamp(18px, 3vh, 34px); }
+.checks div { display: flex; align-items: center; gap: 14px; padding: clamp(10px, 1.3vh, 16px) 18px; border: 3px solid #10162f; border-radius: 15px; background: white; font-size: clamp(12px, 1.2vw, 19px); font-weight: 800; }
+.checks i { width: clamp(25px, 2.4vw, 38px); aspect-ratio: 1; display: grid; place-items: center; border-radius: 9px; background: #7ed957; color: #10162f; font-style: normal; }
+.metric { padding: clamp(24px, 3.3vw, 50px); background: #10162f; color: white; border: 4px solid #10162f; border-radius: 28px; box-shadow: 10px 10px 0 #7ed957; }
+.metric > span { color: #a7f3d0; font-size: clamp(14px, 1.3vw, 20px); font-weight: 900; }.metric strong { display: block; margin-top: 20px; color: #7ed957; font-size: clamp(62px, 8vw, 124px); line-height: .85; }.metric h2 { margin: 12px 0 0; font-size: clamp(18px, 2vw, 32px); }.metric p { margin: clamp(20px, 3vh, 36px) 0 0; padding-top: 18px; border-top: 2px solid #475168; color: #d8dee8; font-size: clamp(12px, 1.2vw, 18px); line-height: 1.55; }
+.green-bg { background: #0d8b61; color: white; box-shadow: 6px 6px 0 #10162f; }
+nav { position: fixed; right: 30px; bottom: 28px; z-index: 5; display: flex; align-items: center; gap: 10px; padding: 8px; background: #10162f; color: white; border-radius: 999px; }
+nav button { width: 36px; height: 36px; border: 0; border-radius: 50%; background: #ffde59; cursor: pointer; }
+@media (max-width: 900px) { .hero-grid, .judgement, .readiness { gap: 22px; grid-template-columns: 1fr 1fr; } .brand-logo { width: 120px; } }

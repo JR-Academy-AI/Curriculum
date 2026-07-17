@@ -1,9 +1,9 @@
 {
-  "name": "lesson-vibe-coding-master",
+  "name": "lesson-ccar-f-exam-overview",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.0",
   "type": "module",
-  "description": "JR Academy · Claude Code 大师课 — 网页版讲座 PPT",
+  "description": "CCAR-F 免费章独立 React Classroom canary deck",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -11,7 +11,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "framer-motion": "^12.38.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },

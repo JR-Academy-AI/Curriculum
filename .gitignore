@@ -3,6 +3,8 @@ dist
 .DS_Store
 *.local
 *.tsbuildinfo
+qa-results.json
+lessons/*/out/
 
 # 海报 PNG 是 CI 时通过 puppeteer 自动生成的产物（scripts/render-mp-posters.mjs）
 # 不 commit 到仓库，避免 PNG bloat git 历史
@@ -16,6 +18,8 @@ dist
 # 重新生成：cd video-ai-engineer && bun run render && bun run upload
 */public/video/*.mp4
 video-ai-engineer/out/
+cca-f-cert-pack/video-digital-teacher-pilot/out/
+cca-f-cert-pack/video-digital-teacher-pilot/.venv*/
 
 # Outline restructure backups — kept locally for safety net, not committed
 */public/outline.json.*.bak
