@@ -1,10 +1,10 @@
-import { defineConfig, type Plugin } from "vite";
-import react from "@vitejs/plugin-react";
 import { createHash } from "node:crypto";
+import react from "@vitejs/plugin-react";
+import { defineConfig, type Plugin } from "vite";
 
 import { classroomConfig } from "./classroom.config";
 
-function classroomManifestPlugin(base: string): Plugin {
+function manifestPlugin(base: string): Plugin {
   return {
     name: "jr-classroom-manifest",
     generateBundle(_options, bundle) {
@@ -12,10 +12,8 @@ function classroomManifestPlugin(base: string): Plugin {
         process.env.CLASSROOM_RELEASE_ID ||
         `source-${classroomConfig.sourceVersion}`;
       const sourceCommit = process.env.CLASSROOM_SOURCE_COMMIT || "0000000";
-      const releaseOrigin = process.env.CLASSROOM_RELEASE_ORIGIN;
-      const entryUrl = releaseOrigin
-        ? `${releaseOrigin}${base}index.html`
-        : `${base}index.html`;
+      const origin = process.env.CLASSROOM_RELEASE_ORIGIN;
+      const entryUrl = origin ? `${origin}${base}index.html` : `${base}index.html`;
       const checksum = createHash("sha256");
       for (const fileName of Object.keys(bundle).sort()) {
         const output = bundle[fileName];
@@ -42,36 +40,27 @@ function classroomManifestPlugin(base: string): Plugin {
             title: classroomConfig.title,
             entryPath: `${base}index.html`,
             entryUrl,
-            slideCount: classroomConfig.slideCount,
-            slides: Array.from(
-              { length: classroomConfig.slideCount },
-              (_, index) => ({
-                id: `slide-${index + 1}`,
-                index,
-                title: classroomConfig.slideTitles[index],
-                actions: [],
-              })
-            ),
+            slideCount: classroomConfig.slides.length,
+            slides: classroomConfig.slides.map((slide, index) => ({
+              ...slide,
+              index
+            }))
           },
           null,
           2
-        ),
+        )
       });
-    },
+    }
   };
 }
 
 const configuredBase =
   process.env.CLASSROOM_RELEASE_BASE ||
   (process.env.NODE_ENV === "production"
-    ? "/curriculum/lessons/vibe-coding-master/"
+    ? "/curriculum/lessons/ccar-f-exam-overview/"
     : "/");
 const base = configuredBase.endsWith("/")
   ? configuredBase
   : `${configuredBase}/`;
 
-export default defineConfig({
-  plugins: [react(), classroomManifestPlugin(base)],
-  // Existing standalone path remains unchanged. Classroom CI supplies an immutable release base.
-  base,
-});
+export default defineConfig({ plugins: [react(), manifestPlugin(base)], base });

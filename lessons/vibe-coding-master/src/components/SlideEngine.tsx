@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, useRef, type ReactNode } from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
 import { colors, assetPath } from './ui';
 import CameraBubble from './CameraBubble';
+import { useClassroomBridge } from '../classroomBridge';
 
 const DESIGN_WIDTH = 1600;
 const DESIGN_HEIGHT = 900;
@@ -45,6 +46,15 @@ export default function SlideEngine({ children }: SlideEngineProps) {
 	const touchStart = useRef({ x: 0, y: 0 });
 	const wheelTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 	const scale = useSlideScale();
+	const goFromClassroom = useCallback((index: number) => {
+		if (index < 0 || index >= total) return;
+		isAnimating.current = false;
+		setCurrent(index);
+	}, [total]);
+	const { isClassroom, notifySlideReady } = useClassroomBridge({
+		slideCount: total,
+		onLoadSlide: goFromClassroom,
+	});
 
 	const go = useCallback((index: number) => {
 		if (isAnimating.current || index < 0 || index >= total || index === current) return;
@@ -69,6 +79,7 @@ export default function SlideEngine({ children }: SlideEngineProps) {
 	}, [total]);
 
 	useEffect(() => {
+		if (isClassroom) return;
 		const handler = (e: KeyboardEvent) => {
 			if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); next(); }
 			else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); prev(); }
@@ -79,9 +90,10 @@ export default function SlideEngine({ children }: SlideEngineProps) {
 		};
 		window.addEventListener('keydown', handler);
 		return () => window.removeEventListener('keydown', handler);
-	}, [next, prev]);
+	}, [isClassroom, next, prev]);
 
 	useEffect(() => {
+		if (isClassroom) return;
 		const onStart = (e: TouchEvent) => { touchStart.current = { x: e.touches[0].clientX, y: e.touches[0].clientY }; };
 		const onEnd = (e: TouchEvent) => {
 			const dx = e.changedTouches[0].clientX - touchStart.current.x;
@@ -91,9 +103,10 @@ export default function SlideEngine({ children }: SlideEngineProps) {
 		window.addEventListener('touchstart', onStart, { passive: true });
 		window.addEventListener('touchend', onEnd, { passive: true });
 		return () => { window.removeEventListener('touchstart', onStart); window.removeEventListener('touchend', onEnd); };
-	}, [next, prev]);
+	}, [isClassroom, next, prev]);
 
 	useEffect(() => {
+		if (isClassroom) return;
 		const handler = (e: WheelEvent) => {
 			if (wheelTimer.current) return;
 			wheelTimer.current = setTimeout(() => { wheelTimer.current = null; }, 700);
@@ -102,25 +115,29 @@ export default function SlideEngine({ children }: SlideEngineProps) {
 		};
 		window.addEventListener('wheel', handler, { passive: true });
 		return () => window.removeEventListener('wheel', handler);
-	}, [next, prev]);
+	}, [isClassroom, next, prev]);
+
+	useEffect(() => {
+		notifySlideReady(current);
+	}, [current, notifySlideReady]);
 
 	const pad = (n: number) => String(n).padStart(2, '0');
 
 	return (
-		<div style={{ width: '100vw', height: '100vh', position: 'relative', overflow: 'hidden' }}>
+		<div data-classroom-mode={isClassroom ? 'embedded' : 'standalone'} style={{ width: '100vw', height: '100vh', position: 'relative', overflow: 'hidden' }}>
 			{/* 演讲者摄像头圆圈（按 V 开关 · 录播露脸用） */}
-			<CameraBubble />
+			{!isClassroom && <CameraBubble />}
 			<div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: 4, background: 'rgba(255,255,255,0.1)', zIndex: 1000 }}>
 				<motion.div animate={{ width: `${((current + 1) / total) * 100}%` }} transition={{ duration: 0.3 }} style={{ height: '100%', background: colors.indigo }} />
 			</div>
-			<div style={{
+			{!isClassroom && <div style={{
 				position: 'fixed', bottom: 24, right: 32, fontFamily: '"Space Mono", monospace',
 				fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.5)', zIndex: 1000, letterSpacing: 2,
 				mixBlendMode: 'difference',
 			}}>
 				{pad(current + 1)} / {pad(total)}
-			</div>
-			<div style={{ position: 'fixed', bottom: 24, left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 8, zIndex: 1000 }}>
+			</div>}
+			{!isClassroom && <div style={{ position: 'fixed', bottom: 24, left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 8, zIndex: 1000 }}>
 				{children.map((_, i) => (
 					<button key={i} onClick={() => go(i)} style={{
 						width: i === current ? 28 : 10, height: 10, borderRadius: 5, border: 'none',
@@ -128,9 +145,9 @@ export default function SlideEngine({ children }: SlideEngineProps) {
 						cursor: 'pointer', transition: 'all 0.2s',
 					}} />
 				))}
-			</div>
-			<NavArrow direction="prev" onClick={prev} disabled={current === 0} />
-			<NavArrow direction="next" onClick={next} disabled={current === total - 1} />
+			</div>}
+			{!isClassroom && <NavArrow direction="prev" onClick={prev} disabled={current === 0} />}
+			{!isClassroom && <NavArrow direction="next" onClick={next} disabled={current === total - 1} />}
 			<div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#000' }}>
 				<div style={{
 					width: DESIGN_WIDTH,

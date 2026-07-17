@@ -1,0 +1,175 @@
+name: Publish Classroom Deck Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      deck_path:
+        description: Deck directory containing classroom.config.ts
+        required: true
+        default: lessons/vibe-coding-master
+      environment:
+        description: Release environment
+        required: true
+        type: choice
+        options: [uat, production]
+        default: uat
+  push:
+    branches: [main]
+    paths:
+      - "lessons/**/classroom.config.ts"
+      - "lessons/**/src/**"
+      - "lessons/**/vite.config.ts"
+      - "lessons/**/package.json"
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    outputs:
+      decks: ${{ steps.decks.outputs.value }}
+      target: ${{ steps.target.outputs.value }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - id: target
+        run: echo "value=${{ github.event_name == 'workflow_dispatch' && inputs.environment || 'uat' }}" >> "$GITHUB_OUTPUT"
+      - id: decks
+        env:
+          INPUT_DECK: ${{ inputs.deck_path }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            test -f "$INPUT_DECK/classroom.config.ts"
+            jq -cn --arg deck "$INPUT_DECK" '[$deck]' | sed 's/^/value=/' >> "$GITHUB_OUTPUT"
+          else
+            git diff --name-only HEAD^ HEAD \
+              | awk -F/ '/^lessons\/[^/]+\// {print $1 "/" $2}' \
+              | sort -u \
+              | while read -r deck; do test -f "$deck/classroom.config.ts" && echo "$deck"; done \
+              | jq -R -s -c 'split("\n") | map(select(length > 0))' \
+              | sed 's/^/value=/' >> "$GITHUB_OUTPUT"
+          fi
+
+  publish:
+    needs: discover
+    if: needs.discover.outputs.decks != '[]'
+    strategy:
+      fail-fast: false
+      matrix:
+        deck: ${{ fromJson(needs.discover.outputs.decks) }}
+    runs-on: ubuntu-latest
+    environment: classroom-${{ needs.discover.outputs.target }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - id: chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+          install-dependencies: true
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.CLASSROOM_AWS_PUBLISH_ROLE_ARN }}
+          role-session-name: classroom-${{ needs.discover.outputs.target }}-${{ github.run_id }}
+          aws-region: ap-southeast-2
+
+      - name: Resolve immutable release identity
+        id: release
+        working-directory: ${{ matrix.deck }}
+        env:
+          TARGET: ${{ needs.discover.outputs.target }}
+        run: |
+          DECK_ID=$(bun -e 'import { classroomConfig } from "./classroom.config.ts"; console.log(classroomConfig.deckId)')
+          RELEASE_ID="$(date -u +%Y.%m.%d)-${GITHUB_SHA::7}-${GITHUB_RUN_ATTEMPT}"
+          if [ "$TARGET" = "production" ]; then
+            ORIGIN="https://slides.jiangren.com.au"
+            BUCKET="jr-classroom-viewer-prod"
+            API_BASE="https://api.jiangren.com.au"
+          else
+            ORIGIN="https://slides-uat.jiangren.com.au"
+            BUCKET="jr-classroom-viewer-uat"
+            # The retired UAT API no longer owns Classroom release metadata.
+            # UAT bundles remain isolated in the UAT bucket, while the production
+            # control plane stores their preview-only Draft/Approved records.
+            API_BASE="https://api.jiangren.com.au"
+          fi
+          echo "deck_id=$DECK_ID" >> "$GITHUB_OUTPUT"
+          echo "release_id=$RELEASE_ID" >> "$GITHUB_OUTPUT"
+          echo "origin=$ORIGIN" >> "$GITHUB_OUTPUT"
+          echo "bucket=$BUCKET" >> "$GITHUB_OUTPUT"
+          echo "api_base=$API_BASE" >> "$GITHUB_OUTPUT"
+
+      - name: Build one Deck Release
+        working-directory: ${{ matrix.deck }}
+        env:
+          CLASSROOM_RELEASE_ID: ${{ steps.release.outputs.release_id }}
+          CLASSROOM_RELEASE_BASE: /decks/${{ steps.release.outputs.deck_id }}/${{ steps.release.outputs.release_id }}/
+          CLASSROOM_RELEASE_ORIGIN: ${{ steps.release.outputs.origin }}
+          CLASSROOM_SOURCE_COMMIT: ${{ github.sha }}
+        run: |
+          bun install --frozen-lockfile
+          bun run build:classroom
+
+      - name: Browser DOM and Bridge QA
+        working-directory: ${{ matrix.deck }}
+        env:
+          PUPPETEER_EXECUTABLE_PATH: ${{ steps.chrome.outputs.chrome-path }}
+          CLASSROOM_QA_DECK_URL: http://127.0.0.1:4173/decks/${{ steps.release.outputs.deck_id }}/${{ steps.release.outputs.release_id }}
+          CLASSROOM_RELEASE_BASE: /decks/${{ steps.release.outputs.deck_id }}/${{ steps.release.outputs.release_id }}/
+        run: |
+          bunx vite preview --host 127.0.0.1 --port 4173 > /tmp/classroom-vite.log 2>&1 &
+          VITE_PID=$!
+          trap 'kill $VITE_PID' EXIT
+          for attempt in {1..30}; do curl -fsS "$CLASSROOM_QA_DECK_URL/manifest.json" >/dev/null && break; sleep 1; done
+          node scripts/qa-classroom-release.mjs
+
+      - name: Verify narration audio supports byte ranges
+        working-directory: ${{ matrix.deck }}
+        run: |
+          jq -r '.slides[].actions[]?.audioUrl // empty' dist/manifest.json | sort -u | while read -r audio_url; do
+            result=$(curl --silent --show-error --range 0-1023 --output /dev/null --write-out '%{http_code} %{content_type}' "$audio_url")
+            case "$result" in
+              "206 audio/mpeg"*) ;;
+              *) echo "Audio Range gate failed: $audio_url -> $result" >&2; exit 1 ;;
+            esac
+          done
+
+      - name: Refuse overwrite and upload immutable files
+        working-directory: ${{ matrix.deck }}
+        run: |
+          KEY="decks/${{ steps.release.outputs.deck_id }}/${{ steps.release.outputs.release_id }}/index.html"
+          if aws s3api head-object --bucket "${{ steps.release.outputs.bucket }}" --key "$KEY" >/dev/null 2>&1; then
+            echo "Release already exists: s3://${{ steps.release.outputs.bucket }}/$KEY" >&2
+            exit 1
+          fi
+          aws s3 sync dist/ "s3://${{ steps.release.outputs.bucket }}/decks/${{ steps.release.outputs.deck_id }}/${{ steps.release.outputs.release_id }}/" \
+            --cache-control "public,max-age=31536000,immutable" \
+            --no-progress
+
+      - name: Register Draft in Classroom API
+        working-directory: ${{ matrix.deck }}
+        env:
+          CLASSROOM_CI_SECRET: ${{ secrets.CLASSROOM_CI_SECRET }}
+          TARGET: ${{ needs.discover.outputs.target }}
+        run: |
+          jq -n \
+            --arg environment "$TARGET" \
+            --arg entryUrl "${{ steps.release.outputs.origin }}/decks/${{ steps.release.outputs.deck_id }}/${{ steps.release.outputs.release_id }}/index.html" \
+            --arg manifestUrl "${{ steps.release.outputs.origin }}/decks/${{ steps.release.outputs.deck_id }}/${{ steps.release.outputs.release_id }}/manifest.json" \
+            --arg allowedOrigin "${{ steps.release.outputs.origin }}" \
+            --slurpfile manifest dist/manifest.json \
+            --slurpfile qa qa-results.json \
+            '{deckId:$manifest[0].deckId,releaseId:$manifest[0].releaseId,environment:$environment,entryUrl:$entryUrl,manifestUrl:$manifestUrl,allowedOrigin:$allowedOrigin,sourceCommit:$manifest[0].sourceCommit,checksum:$manifest[0].checksum,bridgeVersion:$manifest[0].bridgeVersion,slideCount:$manifest[0].slideCount,manifest:$manifest[0],qaResults:$qa[0]}' \
+            > /tmp/classroom-release.json
+          curl --fail-with-body --silent --show-error \
+            -X POST "${{ steps.release.outputs.api_base }}/classroom-ci/releases" \
+            -H "content-type: application/json" \
+            -H "x-classroom-ci-secret: $CLASSROOM_CI_SECRET" \
+            -H "x-classroom-source: curriculum-github-actions" \
+            -H "x-github-run-url: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+            --data-binary @/tmp/classroom-release.json
