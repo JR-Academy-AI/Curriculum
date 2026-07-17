@@ -16,6 +16,6 @@ if (
   !action.text ||
   !action.audioUrl?.endsWith(".mp3") ||
   action.audioDurationMs !== 3289 ||
-  action.audioStatus !== "local-review"
+  action.audioStatus !== "approved-amy-v1"
 ) throw new Error("Pilot narration contract is incomplete");
 console.log(`Verified ${manifest.deckId}@${manifest.releaseId}: 1 slide / 1 Amy narration action`);

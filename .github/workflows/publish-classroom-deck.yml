@@ -90,10 +90,12 @@ jobs:
           RELEASE_ID="$(date -u +%Y.%m.%d)-${GITHUB_SHA::7}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
           if [ "$TARGET" = "production" ]; then
             ORIGIN="https://slides.jiangren.com.au"
+            AUDIO_BASE="https://classroom-assets.jracademy.com.au"
             BUCKET="jr-classroom-viewer-prod"
             API_BASE="https://api.jiangren.com.au"
           else
             ORIGIN="https://slides-uat.jiangren.com.au"
+            AUDIO_BASE="https://classroom-assets-uat.jracademy.com.au"
             BUCKET="jr-classroom-viewer-uat"
             # The retired UAT API no longer owns Classroom release metadata.
             # UAT bundles remain isolated in the UAT bucket, while the production
@@ -103,6 +105,7 @@ jobs:
           echo "deck_id=$DECK_ID" >> "$GITHUB_OUTPUT"
           echo "release_id=$RELEASE_ID" >> "$GITHUB_OUTPUT"
           echo "origin=$ORIGIN" >> "$GITHUB_OUTPUT"
+          echo "audio_base=$AUDIO_BASE" >> "$GITHUB_OUTPUT"
           echo "bucket=$BUCKET" >> "$GITHUB_OUTPUT"
           echo "api_base=$API_BASE" >> "$GITHUB_OUTPUT"
 
@@ -112,6 +115,7 @@ jobs:
           CLASSROOM_RELEASE_ID: ${{ steps.release.outputs.release_id }}
           CLASSROOM_RELEASE_BASE: /decks/${{ steps.release.outputs.deck_id }}/${{ steps.release.outputs.release_id }}/
           CLASSROOM_RELEASE_ORIGIN: ${{ steps.release.outputs.origin }}
+          CLASSROOM_AUDIO_BASE_URL: ${{ steps.release.outputs.audio_base }}
           CLASSROOM_SOURCE_COMMIT: ${{ github.sha }}
         run: |
           bun install --frozen-lockfile

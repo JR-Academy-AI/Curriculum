@@ -11,6 +11,7 @@ function manifestPlugin(base: string): Plugin {
       const releaseId = process.env.CLASSROOM_RELEASE_ID || `source-${classroomConfig.sourceVersion}`;
       const sourceCommit = process.env.CLASSROOM_SOURCE_COMMIT || "0000000";
       const origin = process.env.CLASSROOM_RELEASE_ORIGIN;
+      const audioBase = process.env.CLASSROOM_AUDIO_BASE_URL?.replace(/\/$/, "");
       const entryUrl = origin ? `${origin}${base}index.html` : `${base}index.html`;
       const checksum = createHash("sha256");
       for (const fileName of Object.keys(bundle).sort()) {
@@ -40,7 +41,16 @@ function manifestPlugin(base: string): Plugin {
             entryPath: `${base}index.html`,
             entryUrl,
             slideCount: classroomConfig.slides.length,
-            slides: classroomConfig.slides.map((slide, index) => ({ ...slide, index }))
+            slides: classroomConfig.slides.map((slide, index) => ({
+              ...slide,
+              actions: slide.actions.map(({ audioKey, ...action }) => ({
+                ...action,
+                audioUrl: audioBase
+                  ? `${audioBase}/${audioKey}`
+                  : `${base}audio/${audioKey.split("/").at(-1)}`
+              })),
+              index
+            }))
           },
           null,
           2
