@@ -32,10 +32,16 @@ const browser = await puppeteer.launch({
 const viewports = [
   { width: 1366, height: 768 },
   { width: 1440, height: 900 },
-  { width: 1920, height: 1080 }
+  { width: 1920, height: 1080 },
+  { width: 1024, height: 1024 },
+  { width: 2560, height: 1080 }
 ];
 const failures = [];
+const baselines = new Map();
 let checks = 0;
+
+const closeEnough = (left, right, tolerance = 0.001) =>
+  Math.abs(left - right) <= tolerance;
 
 try {
   const page = await browser.newPage();
@@ -58,12 +64,66 @@ try {
         {},
         slide
       );
-      const layout = await frame.evaluate(() => ({
-        horizontal: document.documentElement.scrollWidth > document.documentElement.clientWidth + 1,
-        vertical: document.documentElement.scrollHeight > document.documentElement.clientHeight + 1
-      }));
+      const layout = await frame.evaluate(() => {
+        const stage = document.querySelector("[data-deck-stage]");
+        const canvas = document.querySelector("[data-deck-canvas]");
+        const page = document.querySelector("[data-deck-page]");
+        if (!(stage instanceof HTMLElement) || !(canvas instanceof HTMLElement) || !(page instanceof HTMLElement))
+          throw new Error("Fixed deck canvas markers are missing");
+
+        const stageRect = stage.getBoundingClientRect();
+        const pageRect = page.getBoundingClientRect();
+        const designWidth = Number(canvas.dataset.designWidth);
+        const designHeight = Number(canvas.dataset.designHeight);
+        const landmarks = ["header", "main > section", "h1", ".takeaway"].map(selector => {
+          const element = page.querySelector(selector);
+          if (!(element instanceof HTMLElement)) throw new Error(`Missing QA landmark: ${selector}`);
+          const rect = element.getBoundingClientRect();
+          return {
+            selector,
+            x: (rect.left - pageRect.left) / pageRect.width,
+            y: (rect.top - pageRect.top) / pageRect.height,
+            width: rect.width / pageRect.width,
+            height: rect.height / pageRect.height
+          };
+        });
+
+        return {
+          horizontal: document.documentElement.scrollWidth > document.documentElement.clientWidth + 1,
+          vertical: document.documentElement.scrollHeight > document.documentElement.clientHeight + 1,
+          designRatio: designWidth / designHeight,
+          renderedRatio: pageRect.width / pageRect.height,
+          scaleX: pageRect.width / designWidth,
+          scaleY: pageRect.height / designHeight,
+          insideStage:
+            pageRect.left >= stageRect.left - 0.5 &&
+            pageRect.top >= stageRect.top - 0.5 &&
+            pageRect.right <= stageRect.right + 0.5 &&
+            pageRect.bottom <= stageRect.bottom + 0.5,
+          landmarks
+        };
+      });
       checks += 1;
-      if (layout.horizontal || layout.vertical) failures.push({ viewport, slideId: slide.id, ...layout });
+      const reason = [];
+      if (layout.horizontal || layout.vertical) reason.push("document-overflow");
+      if (!closeEnough(layout.designRatio, 16 / 9)) reason.push("design-ratio-not-16:9");
+      if (!closeEnough(layout.renderedRatio, 16 / 9)) reason.push("rendered-ratio-not-16:9");
+      if (!closeEnough(layout.scaleX, layout.scaleY)) reason.push("non-uniform-scale");
+      if (!layout.insideStage) reason.push("deck-outside-stage");
+
+      const baseline = baselines.get(slide.id);
+      if (!baseline) {
+        baselines.set(slide.id, layout.landmarks);
+      } else {
+        for (const landmark of layout.landmarks) {
+          const expected = baseline.find(item => item.selector === landmark.selector);
+          if (!expected || ["x", "y", "width", "height"].some(key =>
+            !closeEnough(landmark[key], expected[key], 0.002)
+          )) reason.push(`landmark-reflow:${landmark.selector}`);
+        }
+      }
+
+      if (reason.length > 0) failures.push({ viewport, slideId: slide.id, reason, ...layout });
     }
   }
 } finally {
@@ -76,9 +136,10 @@ const results = {
   checks,
   viewports,
   slidesChecked: manifest.slideCount,
-  overflowFailures: failures
+  fixedAspectRatio: "16:9",
+  layoutFailures: failures
 };
 await writeFile("qa-results.json", `${JSON.stringify(results, null, 2)}\n`);
 if (!results.passed)
-  throw new Error(`Classroom DOM QA found ${failures.length} overflow failures`);
-console.log(`Classroom DOM QA passed: ${checks} viewport/slide checks`);
+  throw new Error(`Classroom fixed-canvas QA found ${failures.length} layout failures`);
+console.log(`Classroom fixed-canvas QA passed: ${checks} viewport/slide checks`);
