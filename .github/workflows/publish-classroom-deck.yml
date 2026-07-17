@@ -85,7 +85,9 @@ jobs:
           TARGET: ${{ needs.discover.outputs.target }}
         run: |
           DECK_ID=$(bun -e 'import { classroomConfig } from "./classroom.config.ts"; console.log(classroomConfig.deckId)')
-          RELEASE_ID="$(date -u +%Y.%m.%d)-${GITHUB_SHA::7}-${GITHUB_RUN_ATTEMPT}"
+          # run_id keeps retries/manual republishes of the same source commit
+          # immutable without colliding with a prior successful S3 upload.
+          RELEASE_ID="$(date -u +%Y.%m.%d)-${GITHUB_SHA::7}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
           if [ "$TARGET" = "production" ]; then
             ORIGIN="https://slides.jiangren.com.au"
             BUCKET="jr-classroom-viewer-prod"
