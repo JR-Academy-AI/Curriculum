@@ -1,0 +1,27 @@
+{
+  "name": "ccar-f-digital-teacher-pilot",
+  "version": "0.1.0",
+  "description": "CCAR-F 第一章 2D 数字老师讲解样片",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts CcarfDigitalTeacher out/ccar-f-digital-teacher-pilot.mp4",
+    "render:preview": "remotion render src/index.ts CcarfDigitalTeacher out/ccar-f-digital-teacher-preview.mp4 --scale=0.5",
+    "render:real-teacher": "remotion render src/index.ts CcarfRealTeacherPilot out/ccar-f-real-teacher-first-line.mp4",
+    "still": "remotion still src/index.ts CcarfDigitalTeacher out/ccar-f-digital-teacher-cover.png --frame=240",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.448",
+    "@remotion/media": "4.0.448",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
+    "remotion": "4.0.448"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "typescript": "5.9.3"
+  }
+}
