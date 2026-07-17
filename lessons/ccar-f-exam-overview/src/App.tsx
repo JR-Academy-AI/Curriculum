@@ -1,4 +1,11 @@
-import { useCallback, useEffect, useState } from "react";
+import {
+  type CSSProperties,
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 
 import { classroomConfig } from "../classroom.config";
 import { useClassroomBridge } from "./classroomBridge";
@@ -7,9 +14,13 @@ const Logo = () => (
   <img className="brand-logo" src="https://jiangren.com.au/icon/logo-zh.svg" alt="匠人学院" />
 );
 
+const DECK_WIDTH = 1600;
+const DECK_HEIGHT = 900;
+const DECK_SHADOW_SAFE_AREA = 18;
+
 function Frame({ index, children }: { index: number; children: React.ReactNode }) {
   return (
-    <main className="slide">
+    <main className="slide" data-deck-page>
       <div className="topline" />
       <header>
         <div>
@@ -91,8 +102,26 @@ const slides = [<Questions />, <Judgement />, <Readiness />];
 
 export default function App() {
   const [index, setIndex] = useState(0);
+  const [deckScale, setDeckScale] = useState(0);
+  const stageRef = useRef<HTMLDivElement>(null);
   const loadSlide = useCallback((next: number) => setIndex(next), []);
   const { isClassroom, notifySlideReady } = useClassroomBridge(loadSlide, slides.length);
+
+  useLayoutEffect(() => {
+    const stage = stageRef.current;
+    if (!stage) return;
+
+    const fitDeck = () => {
+      const availableWidth = Math.max(0, stage.clientWidth - DECK_SHADOW_SAFE_AREA * 2);
+      const availableHeight = Math.max(0, stage.clientHeight - DECK_SHADOW_SAFE_AREA * 2);
+      setDeckScale(Math.min(availableWidth / DECK_WIDTH, availableHeight / DECK_HEIGHT));
+    };
+
+    fitDeck();
+    const observer = new ResizeObserver(fitDeck);
+    observer.observe(stage);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => notifySlideReady(index), [index, notifySlideReady]);
   useEffect(() => {
@@ -107,8 +136,16 @@ export default function App() {
   }, [isClassroom]);
 
   return (
-    <div className="stage">
-      {slides[index]}
+    <div className="stage" ref={stageRef} data-deck-stage>
+      <div
+        className="deck-canvas"
+        data-deck-canvas
+        data-design-width={DECK_WIDTH}
+        data-design-height={DECK_HEIGHT}
+        style={{ "--deck-scale": deckScale } as CSSProperties}
+      >
+        {slides[index]}
+      </div>
       {!isClassroom && (
         <nav>
           <button onClick={() => setIndex(value => Math.max(0, value - 1))}>←</button>
