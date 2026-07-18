@@ -7,14 +7,14 @@
   "level": "中级",
   "type": "training",
   "targetAudience": "有编程基础的开发者、全栈工程师、DevOps、想用 AI 提升开发效率的技术人员",
-  "totalLessons": 111,
-  "totalSteps": 137,
+  "totalLessons": 74,
+  "totalSteps": 110,
   "liveClasses": 20,
-  "estimatedHours": 107.3,
+  "estimatedHours": 83.3,
   "totalInteractiveLabs": 32,
   "title_en": "Vibe Coding Masterclass",
   "description_en": "Build full-stack apps with Claude Code and Codex. From PRD to Skills/MCP/Agent to deployment. For developers with programming experience.",
-  "timeLength": "8 周（111 节课）",
+  "timeLength": "8 周（74 节课）",
   "courseObjective": "建立从个人到企业的 AI 操作系统：用 Source of Truth 把你的经验/规范结构化成 AI 可读的第二大脑，用 ADLC 把整份 PRD 交给 Agent 端到端开发并部署，把重复流程交给 Agent 自动跑，最终能同时指挥多个 Agent 并行工作。",
   "courseObjective_en": "Master Claude Code Skills, MCP Server building, Agent architecture, and multi-model collaboration. Ship a full-stack project from PRD to deployment with AI.",
   "suitable": "有 Python/JS 基础的软件工程师\n全栈开发者想用 AI 10x 开发效率\nDevOps 工程师想了解 AI 开发工具\n技术创业者想快速出产品",
@@ -100,36 +100,6 @@
           ],
           "learningMaterial": "<h2>学习目标</h2><ul><li>说清 Vibe Coding 和 AI chat 的区别：前者用结构化的规则／流程／真相指挥 AI 把事干成，后者只是一问一答</li><li>理解 Source of Truth（SoT）——你和 AI 之间唯一的权威出处，它是 AI 产出质量的上限</li><li>分清 raw 数据区（Feedback／Reference）和 structured 区（Rules／Workflow／Profile）的区别和数据流向</li><li>用自己的简历当案例，搭出个人 AI OS 的最小骨架：PROFILE／experiences／rules 三个文件</li><li>会写一份简历 PRD 的四要素：目标／输入／输出／红线</li></ul><h2>核心概念</h2><h3>Vibe Coding 不是「让 AI 补两行代码」</h3><p>先把话说死：用 ChatGPT 补个函数、问个报错——那叫 AI chat，一分钟就会，不值得花八周。Vibe Coding 是另一件事：你来定架构、做决策、把关，AI 负责把实现写出来。一句话——AI chat 是你问它答；Vibe Coding 是你用结构化的规则、流程、真相去「指挥」AI 替你把整件事干成。</p><p>这一年我带了 15 场、面对约 300 个同学，统计过一个扎心的数字：这 300 人里真正会 AI coding 的不到 10%，能高效用起来的不到 3%，绝大多数只会 AI chat。给你一把尺自测站在哪一档：<strong>一个同时集成 LinkedIn、Google、GitHub 三方 SSO 登录的功能，你能不能一小时内全部做完？</strong> 会的人一小时交付，只会 chat 的人光配 key、调回调地址就能卡你一整天。当一个人一小时能交付你一周的活，公司留谁淘汰谁，不用我说。</p><h3>为什么先搭「个人 AI OS／第二大脑」</h3><p>关键认知：AI coding 大多数时候根本不长得像代码——它长得像一份 PROFILE、一份 rules、一份 PRD、一个 CLAUDE.md。模型只是 CPU，你还缺一个操作系统：文件系统当记忆、内核当规则、驱动当工具、调度当编排。大多数人把 AI 当 chat 工具问问题；会 Vibe Coding 的人，把 AI 当一套能替自己管事的操作系统。</p><p>这套功夫先在你自己身上跑通最划算——你对自己最熟，练手不烧脑。等你把「个人 AI OS」搭通了，换个对象就能给一家公司搭「企业 AI OS」，同一套功夫，只是对象变大。今晚从最小的一块开始：把你的简历变成第二大脑的第一个文件。</p><h3>Source of Truth：AI 产出的上限</h3><p>SoT = 一件事只有一个权威出处，所有人和所有 AI 都回到同一处读、同一处改。它管三样东西：规则／规范、数据／事实、决策／历史。题眼：<strong>AI coding 的本质就是不断确认 source of truth 的过程，AI 的能力上限 = 你给它的真相质量。</strong>没有 SoT，AI 不是读不懂你，是不知道你到底要什么——你说不清，它就猜；它一猜，你就开始返工。</p><h3>raw vs structured：真实的个人 AI OS 长什么样</h3><p>这是讲师真实在用的个人 AI OS 目录结构（<code>~/Documents/sites/ai-os/</code>）：</p><pre><code>ai-os/\n├── PROFILE.md      # 我是谁、偏好            [结构化]\n├── Rules/          # 铁律、硬约束             [结构化]\n│   └── 00-iron-laws.md\n├── Workflow/       # 我的 SOP / 标准流程       [结构化]\n├── Projects/       # 各项目知识索引            [结构化]\n├── Personal/       # experiences / 财务 / 日程  [私密]\n│   └── experiences.md\n├── Feedback/       # 反馈、历史（原始）         [Raw]\n└── Reference/      # 外部文档、范例（原始）      [Raw]</code></pre><p>核心是数据流，按信任级别分三层：</p><pre><code>Raw 进来 → Feedback/ 或 Reference/   （原封不动，先存）\n              │\n              ▼  AI 审计 / 整理\n              │\n   Rules/ · Workflow/ · Projects/    （结构化、可信、可执行）</code></pre><p>规矩很硬：Feedback／ 和 Reference／ 是 raw 区，进来什么样存什么样，存入前不许编辑；AI 整理时<strong>原始 raw 文件必须保留</strong>，提炼结果写到结构化区，并在结构化文件里注明来源文件名。Feedback = 关于「我／我的项目」的反馈历史（内部、回顾）；Reference = 外部文档、竞品、范例（外部、前瞻）。这条「raw 不可原地销毁」就是 <code>Rules/00-iron-laws.md</code> 第 2 条铁律，覆盖一切默认行为。</p><h3>用一份简历搭最小 AI OS</h3><p>反例先看：把简历原文 + 一句「帮我把这份简历改好」丢给 AI，出来还是套话、不对焦——因为简历现在是<strong>一坨 raw 数据</strong>，AI 不知道哪条重要、对着哪个岗位、能不能信。</p><p>正确做法：现场敲三个文件，就是这个人第二大脑的雏形——</p><ul><li><code>PROFILE.md</code> —— 他是谁、想投什么岗（目标）</li><li><code>Personal/experiences.md</code> —— 把简历经历抽成结构化事实，每条配真实数字（带过几人／多久／多少量／提升多少）。这是 raw→结构化：原始简历保留，提炼结果单独落一份</li><li><code>Rules/</code> —— 红线：不准编造没有的经历和数字、不准夸大</li></ul><p>然后对 AI 说：<code>读这三个文件，按目标岗位渲染一份简历，只能用 experiences 里的事实，遵守 rules</code>。出来的简历对焦、有数字、不注水。再追一句「帮我加个 AI 大项目显得厉害点」，AI 会拒绝——rules 管着它。红线是这个第二大脑的法律，它听规则，不听你一时的虚荣。简历只是这份 SoT 长出的一个产物：同一套 experiences 还能渲染 LinkedIn、求职信、个人主页；改一次 experiences，所有产物一起更新——你维护的永远是那一份真相，不是 N 份到处飘的简历。</p><h2>动手练习</h2><ol><li>打开 ChatGPT／Claude 网页版，新开一个对话（零安装，不配任何环境）。</li><li>照四个标题写自己的简历 mini-PRD，重点写「输入」和「红线」：目标——投什么岗、给谁看；输入——你真实做过的 2-3 件事，每件配一个真实数字（带过几人／做了多久／多少量／提升多少），没数字就写清事实别编；输出——几条 bullet、什么语气、突出什么；红线——至少 2 条，必须有一条「不准编造我没有的经历和数字」。</li><li>整段 PRD 一次性粘进 AI，发送。</li><li>真相校验：逐条问「这是不是我真做过？数字是不是我给的？」。发现 AI 自己加的，回 <code>第 X 条我没做过，请删掉，只用我提供的事实重写</code>。</li><li>对照完成清单：四要素都写了／输入≥2 件真实具体事／≥1 个真实数字／红线含一条禁编造／草稿里没有一条你没做过的事／你能指着某句说「这句因为 PRD 第 2 段写了 ___」。</li></ol><h2>小结</h2><p>今晚你给自己写了第一份 PRD、建了一个 SoT，并亲眼看到威力：同样让 AI 写简历，给它一份说清楚的 PRD 和直接甩一句「帮我写份简历」，出来的东西差着十万八千里。这个差距就是 Vibe Coding 的起点。但你做出来的还是一份静态文档——它不会自己动。把这份 PRD 变成能自动跑、越用越懂你的个人系统，是后面要一块一块接上去的事：下节课换到真实项目上练产品思维，第三节课上 ADLC 把需求端到端跑成产品。工具会换、模型会迭代，但「把需求说清楚」这门底功十年后照样值钱。</p>",
           "_id": "69db3dc276e3e0c1b3b66d04"
-        },
-        {
-          "code": "L02",
-          "title": "自学：AI 基础概念 — 5 分钟搞懂大模型",
-          "description": "了解什么是大语言模型、Token 的概念、System/User Prompt 的区别，以及主流 AI 模型的定位。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [],
-          "learningMaterial": "<h2>学习目标</h2><ul><li>理解什么是大语言模型（LLM），它和搜索引擎的本质区别</li><li>理解 Token 的概念——AI 怎么\"读\"你的文字，为什么它影响费用和上限</li><li>区分 System / User / Assistant 三种消息角色的作用</li><li>了解主流模型（Claude / GPT / Gemini）在 2026 的定位</li></ul><h2>核心概念</h2><h3>搜索引擎 vs 大语言模型</h3><p>很多人第一次用 ChatGPT 时把它当\"高级搜索引擎\"，但两者工作原理完全不同：</p><table><tr><th>维度</th><th>搜索引擎</th><th>大语言模型</th></tr><tr><td>工作方式</td><td>检索已有网页</td><td>按概率<strong>生成</strong>新文本</td></tr><tr><td>数据来源</td><td>实时爬取互联网</td><td>训练时学到的知识（有截止日期）</td></tr><tr><td>输出</td><td>链接列表</td><td>完整的自然语言回答</td></tr></table><blockquote><strong>一个比喻</strong>：LLM 像一个读过所有书的聪明实习生——知识渊博，但需要你给清晰指令才能发挥价值。你说\"帮我处理一下\"他一脸茫然；你说\"把这份报告第三段翻译成英文、用正式语气\"他立刻交付。</blockquote><h3>Token — AI 怎么\"读\"你的文字</h3><p>AI 不是按\"字\"或\"词\"理解文本，而是按 <strong>Token</strong>（模型处理文本的最小单位）来处理。</p><table><tr><th>语言</th><th>近似规则</th><th>示例</th></tr><tr><td>英文</td><td>1 个单词 ≈ 0.75 Token</td><td>\"Hello world\" ≈ 2 Tokens</td></tr><tr><td>中文</td><td>1 个汉字 ≈ 1.5-2 Token</td><td>\"你好世界\" ≈ 6-7 Tokens</td></tr></table><p>为什么 Token 重要：<strong>费用</strong>按 Token 计费；<strong>上下文窗口</strong>有 Token 上限，超出就\"记不住\"前面内容；<strong>速度</strong>随 Token 增多变慢。</p><h3>三种消息角色</h3><table><tr><th>角色</th><th>作用</th><th>谁来写</th></tr><tr><td>System</td><td>设定 AI 的身份和行为规则，全程生效</td><td>开发者</td></tr><tr><td>User</td><td>你的问题或指令</td><td>你</td></tr><tr><td>Assistant</td><td>AI 的回答</td><td>AI</td></tr></table><pre><code>System: 你是一个专业英语翻译，只输出翻译结果，不做解释。\nUser: 今天天气很好。\nAssistant: The weather is nice today.</code></pre><p>System Prompt 就像给实习生的\"入职须知\"——在整个对话中持续生效。这也是后面 CLAUDE.md / 规则文件的思想源头。</p><h3>LLM 不是什么</h3><ul><li><strong>不是数据库</strong>——不能精确检索特定数据，是\"概率性\"的，会\"幻觉\"</li><li><strong>不是搜索引擎</strong>——默认不能访问实时互联网（除非有联网工具）</li><li><strong>不是计算器</strong>——对精确数学计算不可靠</li></ul><h3>主流模型一览（2026）</h3><table><tr><th>模型</th><th>厂商</th><th>定位</th></tr><tr><td>Claude Opus 4.8 / Fable 5</td><td>Anthropic</td><td>复杂推理、长上下文、高自治 agentic coding</td></tr><tr><td>GPT-5.6 / Codex</td><td>OpenAI</td><td>API 工作流、本地仓库小步修改与 PR 级交付</td></tr><tr><td>Gemini</td><td>Google</td><td>多模态、Google 生态集成</td></tr></table><h2>动手练习</h2><ol><li>用同一个问题分别问一次\"一个词\"（如\"React\"）和一段完整描述（如\"用 3 句话解释 React 的 useState 适合什么场景、不适合什么\"），对比两次回答的质量差异——体会 Prompt 清晰度的威力。</li><li>找一段中英混合文本，估算它大概多少 Token（中文字数×1.75 + 英文词数×1.33），理解为什么中文对话更\"烧\" Token。</li></ol><h2>小结</h2><p>LLM = 通过统计规律预测下一个 Token 的深度学习模型，不是数据库、不是搜索引擎、不是计算器。Token 是 AI 处理文本的基本单位，决定费用和能力上限。System / User / Assistant 三角色各有分工，System Prompt 是后面所有\"给 AI 立规矩\"的起点。</p>",
-          "_id": "69dc419976e3e0c1b3c53e16"
-        },
-        {
-          "code": "L03",
-          "title": "自学：Vibe Coding 是什么",
-          "description": "阅读「Vibe Coding 是什么」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "what-is-vibe-coding"
-            }
-          ],
-          "_id": "69dc419976e3e0c1b3c53e1a"
         },
         {
           "code": "L04",
@@ -249,63 +219,6 @@
           "_id": "69dc419f76e3e0c1b3c53ea9"
         },
         {
-          "code": "L07",
-          "title": "Claude、Codex、Gemini 对比指南",
-          "description": "Claude Code 擅长大项目多文件编辑和 Agent 式自主完成任务；Codex CLI 擅长命令行一条指令搞定；Gemini 在 Google 生态和多模态场景有优势。这节课做同一个任务的三工具对比实验，让你知道什么场景用什么工具，不是「选一个用到底」。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 120,
-          "steps": [
-            {
-              "order": 1,
-              "type": "CONCEPT",
-              "title": "三大工具特点",
-              "description": "Claude Code = Agent, Codex = CLI, Gemini = 多模态",
-              "duration": 30
-            },
-            {
-              "order": 2,
-              "type": "SCENARIO",
-              "title": "同任务三工具对比",
-              "description": "写同一个组件，对比输出质量和速度",
-              "duration": 40
-            },
-            {
-              "order": 3,
-              "type": "LAB",
-              "title": "Prompt Lab: 模型参数",
-              "description": "Temperature、Top-P 对代码生成的影响",
-              "duration": 15,
-              "labSlug": "model-parameters"
-            },
-            {
-              "order": 4,
-              "type": "MCQ",
-              "title": "工具选型决策",
-              "description": "什么场景用什么工具",
-              "duration": 15
-            }
-          ],
-          "labs": [
-            {
-              "source": "prompt-lab",
-              "slug": "model-parameters"
-            }
-          ],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "tooling-updates"
-            },
-            {
-              "direction": "ai-engineer",
-              "slug": "ai-model-comparison"
-            }
-          ],
-          "learningMaterial": "<h2>学习目标</h2><ul><li>理解三大 AI 编程工具的定位差异：Claude Code = Agent，Codex = CLI，Gemini 2.5 = 多模态</li><li>用同一个任务对比三个工具的输出质量、速度、适用场景</li><li>建立「什么场景用什么工具」的决策框架</li></ul><h2>核心概念</h2><h3>三大工具定位</h3><table><tr><th>工具</th><th>定位</th><th>擅长</th><th>短板</th></tr><tr><td>Claude Code</td><td>Agent（自主执行）</td><td>多文件编辑、复杂重构、端到端任务</td><td>需要终端环境</td></tr><tr><td>Codex CLI</td><td>命令行（单次执行）</td><td>快速脚本、一条命令搞定简单任务</td><td>不适合复杂交互</td></tr><tr><td>Gemini 2.5</td><td>多模态</td><td>截图转代码、设计稿实现、长上下文</td><td>Agent 能力不如 Claude</td></tr></table><h3>同任务对比实验：写一个 React 组件</h3><p>任务：写一个带搜索过滤功能的用户列表组件。</p><pre><code># Claude Code（Agent 模式）\n# 直接在终端说需求，Claude 自动：\n# 1. 读取项目现有组件结构\n# 2. 创建新文件 UserList.tsx\n# 3. 写完整组件 + 类型定义\n# 4. 自动添加到路由\n# 5. 跑一遍 lint 确认没报错\n\n# Codex CLI\ncodex \"在 src/components/ 下创建 UserList 组件\"\n# 生成单个文件，不会自动集成\n\n# Gemini 2.5\n# 可以给它一张设计稿截图 + 描述\n# 从视觉还原度角度最好</code></pre><h3>工具选型决策树</h3><p>要改多个文件、做端到端任务？→ Claude Code。要一条命令搞定？→ Codex。有设计稿要还原？→ Gemini 2.5。实际工作中通常组合使用：Claude Code 写代码和做重构，Gemini 2.5 处理设计稿转代码。</p><h3>实际项目中的组合策略</h3><p>大多数团队不会只用一个工具。推荐组合：日常编码和复杂重构用 Claude Code（Agent 能力最强），快速脚本和一次性任务用 Codex CLI，设计稿转代码用 Gemini 2.5。关键原则：选工具看任务类型，不看个人偏好。</p><h2>动手练习</h2><ol><li>选一个你熟悉的功能（比如 TODO List），分别用三个工具实现</li><li>记录每个工具的：生成时间、代码质量（1-5分）、需要手动修改的比例</li><li>画出你的个人工具选型决策表：什么场景优先用哪个工具</li></ol><h2>小结</h2><p>没有「最好」的工具，只有最合适的场景。Claude Code 适合需要 Agent 自主完成的复杂任务，Codex 适合快速脚本，Gemini 2.5 适合多模态场景。</p>",
-          "_id": "69db3dc376e3e0c1b3b66d1c"
-        },
-        {
           "code": "L08",
           "title": "Lab: 模型与参数 — Temperature、Top-P 和模型选择",
           "description": "理解 AI 模型的核心参数——Temperature 控制创造力，Top-P 控制多样性，max_tokens 控制长度，学会针对不同任务选择最佳参数。",
@@ -391,40 +304,6 @@
           "_id": "69db3dc876e3e0c1b3b66e2d"
         },
         {
-          "code": "L09",
-          "title": "自学：工具与模型最新动态",
-          "description": "阅读「工具与模型最新动态」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "tooling-updates"
-            }
-          ],
-          "_id": "69dc419a76e3e0c1b3c53e41"
-        },
-        {
-          "code": "L10",
-          "title": "自学：AI 模型对比参考",
-          "description": "阅读「AI 模型对比参考」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "ai-engineer",
-              "slug": "ai-model-comparison"
-            }
-          ],
-          "_id": "69dc419b76e3e0c1b3c53e45"
-        },
-        {
           "code": "L05",
           "title": "自学：Cursor 入门 — Vibe Coding 的代名词",
           "description": "认识目前最流行的 AI IDE——Cursor。掌握 Composer 多文件编辑、@ 引用上下文、Tab 补全，以及如何用 .cursorrules 让 AI 记住你的项目规矩。",
@@ -436,23 +315,6 @@
           "learns": [],
           "learningMaterial": "<h2>学习目标</h2><ul><li>认识 Cursor——基于 VS Code 的 AI 代码编辑器，以及它和普通 IDE 的区别</li><li>掌握四个核心功能：Tab 补全、Cmd+K 内联编辑、Cmd+L 侧边对话、Composer 多文件编辑</li><li>学会用 @ 引用上下文，让 AI 看到对的文件</li><li>了解 .cursorrules 怎么让 Cursor 记住你的项目规矩</li></ul><h2>核心概念</h2><h3>Cursor 是什么</h3><p>Cursor 是把 AI 深度内建进编辑器的 <strong>VS Code fork</strong>（下载地址 <code>cursor.com</code>）。它不是\"装了个 AI 插件的编辑器\"，而是从补全、编辑、对话到多文件重构整条链路都由 AI 驱动。VS Code 的插件、快捷键、设置基本都能沿用，迁移成本极低。</p><h3>四个核心功能</h3><table><tr><th>功能</th><th>快捷键</th><th>用途</th></tr><tr><td>Tab 补全</td><td>Tab</td><td>预测你下一步要写的多行代码，不只补一个词</td></tr><tr><td>内联编辑</td><td>Cmd/Ctrl + K</td><td>选中代码 → 描述改动 → 原地改，适合单文件小修</td></tr><tr><td>侧边对话</td><td>Cmd/Ctrl + L</td><td>打开对话框问问题、生成代码，可 @ 引用文件</td></tr><tr><td>Composer</td><td>Cmd/Ctrl + I</td><td>多文件编辑：描述一个跨文件需求，它同时改多个文件</td></tr></table><h3>@ 引用上下文——让 AI 看到对的东西</h3><p>Cursor 的输出质量取决于它能看到什么。在对话或 Composer 里用 <code>@</code> 显式引用：</p><pre><code>@file   引用某个文件（@UserList.tsx）\n@folder 引用整个目录（@src/components）\n@code   引用一段选中的代码\n@docs   引用官方文档\n@web    让它联网搜</code></pre><p>不 @ 引用，AI 只能靠当前打开的文件猜；明确 @ 引用，它才知道你的类型定义、现有组件长什么样，输出才对得上你的项目。</p><h3>.cursorrules——项目规矩写一次，永久生效</h3><p>在项目根目录放一个 <code>.cursorrules</code> 文件，Cursor 每次生成代码前都会先读它。把\"这个项目必须遵守的约定\"写进去，就不用每次对话都重复叮嘱：</p><pre><code># .cursorrules 示例\n- 只用 TypeScript，禁止 JavaScript\n- 用函数式组件 + hooks，不用 class 组件\n- 错误处理用 Result 类型，不用 try-catch 吞错\n- 导入顺序：外部库 → 内部模块 → 类型 → 样式</code></pre><p>这和后面要讲的 Context Engineering、CLAUDE.md 是同一个思想：<strong>把\"AI 该怎么干\"写成它每次都能读到的文件，而不是靠记忆和反复叮嘱。</strong></p><h2>动手练习</h2><ol><li>下载安装 Cursor，用你熟悉的一个项目打开，试 Tab 补全写一个函数，感受它和普通补全的区别。</li><li>用 Cmd+K 选中一段代码让它\"加上完整的错误处理\"，看它改得对不对。</li><li>在项目根目录建一个 <code>.cursorrules</code>，写 3 条你项目的约定，让 Cursor 生成一个组件，检查它有没有遵守。</li></ol><h2>小结</h2><p>Cursor = AI 深度内建的 VS Code。四个核心功能覆盖从补全（Tab）、单文件改（Cmd+K）、对话（Cmd+L）到多文件重构（Composer）。用 @ 引用给它对的上下文，用 .cursorrules 把项目规矩固化下来——这就是后面 Context Engineering 的入门版。</p>",
           "_id": "69dc419a76e3e0c1b3c53e26"
-        },
-        {
-          "code": "L06",
-          "title": "自学：安装 Cursor 与环境准备",
-          "description": "阅读「安装 Cursor 与环境准备」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "install-cursor"
-            }
-          ],
-          "_id": "69dc419a76e3e0c1b3c53e2f"
         },
         {
           "code": "L11",
@@ -520,23 +382,6 @@
           ],
           "learns": [],
           "_id": "69dc419b76e3e0c1b3c53e4d"
-        },
-        {
-          "code": "L13",
-          "title": "自学：从想法到 PRD（用 AI 写 PRD）",
-          "description": "阅读「从想法到 PRD（用 AI 写 PRD）」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "ai-builder",
-              "slug": "idea-to-prd"
-            }
-          ],
-          "_id": "69dc419b76e3e0c1b3c53e51"
         },
         {
           "code": "L16",
@@ -670,23 +515,6 @@
           "_id": "69dc41a676e3e0c1b3c53f6e"
         },
         {
-          "code": "L75",
-          "title": "自学：Chain-of-Thought (CoT)",
-          "description": "阅读「Chain-of-Thought (CoT)」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "prompt-master",
-              "slug": "cot"
-            }
-          ],
-          "_id": "69dc41a676e3e0c1b3c53f84"
-        },
-        {
           "code": "L74",
           "title": "Lab: Self-Consistency — 多路推理投票",
           "description": "学习通过多次采样不同推理路径并投票选出最可靠答案的技术，显著提高关键决策的准确率。",
@@ -725,40 +553,6 @@
           ],
           "learns": [],
           "_id": "69dc419b76e3e0c1b3c53e59"
-        },
-        {
-          "code": "L76",
-          "title": "自学：Prompt Chaining",
-          "description": "阅读「Prompt Chaining」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "prompt-master",
-              "slug": "prompt-chaining"
-            }
-          ],
-          "_id": "69dc41a676e3e0c1b3c53f89"
-        },
-        {
-          "code": "L19",
-          "title": "自学：高质量 Prompt 模板",
-          "description": "阅读「高质量 Prompt 模板」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "prompt-patterns"
-            }
-          ],
-          "_id": "69dc419c76e3e0c1b3c53e68"
         },
         {
           "code": "L110",
@@ -917,40 +711,6 @@
           "_id": "69dc419d76e3e0c1b3c53e71"
         },
         {
-          "code": "L23",
-          "title": "自学：Cursor Rules 编写指南",
-          "description": "阅读「Cursor Rules 编写指南」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "cursor-rules"
-            }
-          ],
-          "_id": "69dc419d76e3e0c1b3c53e75"
-        },
-        {
-          "code": "L24",
-          "title": "自学：Context Fundamentals",
-          "description": "阅读「Context Fundamentals」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "ai-engineer",
-              "slug": "context-fundamentals"
-            }
-          ],
-          "_id": "69dc419d76e3e0c1b3c53e7f"
-        },
-        {
           "code": "Q02",
           "title": "Quest 实战：给你的真实项目写一套 CLAUDE.md + 工具规则文件",
           "type": "Quest",
@@ -1081,69 +841,6 @@
           "_id": "69dc419e76e3e0c1b3c53e87"
         },
         {
-          "code": "L28",
-          "title": "自学：用 AI 做 Debug",
-          "description": "阅读「用 AI 做 Debug」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "debug-with-ai"
-            }
-          ],
-          "_id": "69dc419e76e3e0c1b3c53e8d"
-        },
-        {
-          "code": "L29",
-          "title": "Claude Prompt 模板与上下文优化技巧",
-          "description": "把前面课讲的 Prompt 技巧和 Context Engineering 方法整理成可复用的模板。包括：Claude 的 System Prompt 最佳写法、上下文窗口管理策略（什么时候该新开对话 vs 继续当前对话）、大项目的上下文分层策略（全局规范 → 模块规范 → 任务指令）。这些模板直接写进你的 CLAUDE.md。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 120,
-          "steps": [
-            {
-              "order": 1,
-              "type": "CONCEPT",
-              "title": "上下文管理策略",
-              "description": "新开对话 vs 继续对话、上下文分层、Token 预算",
-              "duration": 30
-            },
-            {
-              "order": 2,
-              "type": "LAB",
-              "title": "Prompt Lab: 约束条件",
-              "description": "控制 AI 输出范围",
-              "duration": 15,
-              "labSlug": "constraints"
-            },
-            {
-              "order": 3,
-              "type": "PROJECT",
-              "title": "模板写入 CLAUDE.md",
-              "description": "把经验总结写进项目配置",
-              "duration": 15
-            }
-          ],
-          "labs": [
-            {
-              "source": "prompt-lab",
-              "slug": "constraints"
-            }
-          ],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "prompt-patterns"
-            }
-          ],
-          "learningMaterial": "<h2>学习目标</h2><ul><li>掌握上下文窗口管理策略：什么时候新开对话、什么时候继续当前对话</li><li>理解上下文分层：全局规范 → 模块规范 → 任务指令</li><li>把积累的 Prompt 经验总结为可复用的模板，写入 CLAUDE.md</li></ul><h2>核心概念</h2><h3>上下文窗口管理</h3><p>Claude 和其他 LLM 都有上下文窗口限制（Claude: 200K tokens）。窗口内信息越多，推理质量反而可能下降（\"迷失在中间\" 问题）。策略：</p><pre><code># 什么时候该新开对话？\n- 当前对话超过 50 轮\n- 切换到完全不同的模块\n- Claude 开始「忘记」前面的约定\n- 出现反复修同一个问题的循环\n\n# 什么时候继续当前对话？\n- 还在同一个功能的迭代\n- 需要前面讨论的上下文（比如刚定的 Schema）\n- Debug 过程中需要看到之前的分析</code></pre><h3>上下文分层策略</h3><p>大项目不能把所有信息塞进一次对话。分三层管理：</p><pre><code># Layer 1: 全局规范（始终生效）— 写在 CLAUDE.md\n项目架构、代码规范、禁止事项、命名约定\n\n# Layer 2: 模块规范（按模块切换）— 写在模块 README 或对话开头\n当前模块的数据模型、API 接口、业务逻辑\n\n# Layer 3: 任务指令（每次对话具体任务）\n\"在 user 模块添加手机号验证功能\"</code></pre><h3>Token 预算控制</h3><p>不是所有信息都需要进入上下文。精简原则：</p><pre><code># 必须放：\n- 当前任务相关的代码文件\n- 相关的类型定义和接口\n- 报错信息（如果是 Debug）\n\n# 不要放：\n- 无关模块的代码\n- 历史讨论记录（已经决定的事不用重复）\n- 整个项目的 node_modules</code></pre><h3>System Prompt 最佳写法</h3><p>Claude Code 通过 CLAUDE.md 注入 System Prompt。写法原则：具体 > 笼统，约束 > 描述，示例 > 解释。</p><pre><code># 差：笼统描述\n\"写高质量代码\"\n\n# 好：具体约束 + 示例\n\"所有 service 方法必须返回 Result<T> 类型：\ntype Result<T> = { ok: true; data: T } | { ok: false; error: string }\n不要使用 try-catch，不要 throw Error\"</code></pre><h3>CLAUDE.md 的迭代演进</h3><p>CLAUDE.md 不是一次性写完的。项目进行中不断补充：发现 Claude 用了错误的命名风格 → 加一条规范；发现 Claude 老引入不需要的依赖 → 加一条禁止；发现某个模块的上下文每次都要重新解释 → 写成模块文档。好的 CLAUDE.md 是团队和 AI 协作经验的沉淀，越用越精准。</p><h2>动手练习</h2><ol><li>审查你的 CLAUDE.md，按「全局 → 模块 → 任务」三层优化信息组织</li><li>在一个长对话中故意测试上下文边界——让 Claude 做到第 30 轮时回忆第 3 轮的约定</li><li>把前几节课用过的好 Prompt 整理成模板，追加到 CLAUDE.md</li></ol><h2>小结</h2><p>上下文管理是 Vibe Coding 的进阶技能。新开对话 vs 继续对话、分层管理信息、精简 Token 使用——这些策略直接影响 AI 输出的稳定性和质量。CLAUDE.md 不是写一次就完的，要随项目迭代持续更新。</p>",
-          "_id": "69db3dc476e3e0c1b3b66d4f"
-        },
-        {
           "code": "L30",
           "title": "Lab: 约束与负面 Prompt — 告诉 AI 不该做什么",
           "description": "学会使用约束来精确控制 AI 输出：长度限制、格式要求、内容边界、风格规定和禁止事项。",
@@ -1162,6 +859,75 @@
           ],
           "learns": [],
           "_id": "69dc419e76e3e0c1b3c53e94"
+        },
+        {
+          "code": "L112",
+          "title": "自学：Prompt 工程速查 — 模板 / CoT / Chaining 一页读懂（选修）",
+          "description": "把 Prompt-101 的自学章节合成一篇速查读物：高质量 Prompt 模板、多模型模板差异、四种模板技巧、Chain-of-Thought、Prompt Chaining。自主节奏读完即可；配套的互动 Lab（Zero/Few-shot、CoT、Self-Consistency、Chaining、Temperature、输出格式、约束负面、评估、迭代、明确任务）保留为独立 Lab，从下方链接进入实操。",
+          "type": "Information",
+          "isLive": false,
+          "duration": 60,
+          "steps": [],
+          "labs": [
+            {
+              "source": "prompt-lab",
+              "slug": "clear-task"
+            },
+            {
+              "source": "prompt-lab",
+              "slug": "zero-shot"
+            },
+            {
+              "source": "prompt-lab",
+              "slug": "few-shot"
+            },
+            {
+              "source": "prompt-lab",
+              "slug": "chain-of-thought"
+            },
+            {
+              "source": "prompt-lab",
+              "slug": "self-consistency"
+            },
+            {
+              "source": "prompt-lab",
+              "slug": "prompt-chaining"
+            },
+            {
+              "source": "prompt-lab",
+              "slug": "output-format"
+            },
+            {
+              "source": "prompt-lab",
+              "slug": "constraints"
+            },
+            {
+              "source": "prompt-lab",
+              "slug": "model-parameters"
+            },
+            {
+              "source": "prompt-lab",
+              "slug": "prompt-evaluation"
+            },
+            {
+              "source": "prompt-lab",
+              "slug": "vibe-prompt-iteration"
+            }
+          ],
+          "learns": [
+            {
+              "direction": "vibe-coding",
+              "slug": "prompt-patterns"
+            },
+            {
+              "direction": "prompt-master",
+              "slug": "cot"
+            },
+            {
+              "direction": "prompt-master",
+              "slug": "prompt-chaining"
+            }
+          ]
         }
       ]
     },
@@ -1219,23 +985,6 @@
           ],
           "learningMaterial": "<h2>学习目标</h2><ul><li>理解 Claude Code Skills 的概念：给 Claude 装上特定能力的插件机制</li><li>了解 Skill 的生命周期：定义 → 注册 → 触发 → 执行</li><li>区分 Skills 和 MCP 的关系：Skills 定义「能做什么」，MCP 是「工具调用协议」</li></ul><h2>核心概念</h2><h3>Skills 是什么</h3><p>Claude Code Skills 是插件机制。一个 Skill = 一组预定义的指令和约束，让 Claude 在特定场景下按特定方式行动。比如：</p><pre><code># 场景：每次提交代码前自动审查\n# 没有 Skill：你每次手动说 \"review 一下这些改动\"\n# 有 Skill：配置一个 code-review Skill，\n#          Claude 在你说 /review 时自动按规范审查\n\n# 一个 Skill 包含：\n# - 名称和描述（什么时候触发）\n# - System Prompt（角色和约束）\n# - 可用 Tools（能调用什么）\n# - 执行步骤（按什么顺序做）</code></pre><h3>Skill 的目录结构</h3><pre><code>.claude/\n├── settings.json          # Claude Code 全局配置\n└── commands/              # 自定义 Slash Commands\n    ├── review.md          # /review 命令\n    ├── deploy.md          # /deploy 命令\n    └── test.md            # /test 命令</code></pre><p>每个 <code>.md</code> 文件就是一个 Skill 的定义。文件名就是命令名。文件内容就是 Claude 执行这个命令时的指令。</p><h3>Skills vs MCP 的关系</h3><p>Skills 定义 Claude「能做什么」和「怎么做」（高层能力）。MCP（Model Context Protocol）是「通过什么协议调用外部工具」（底层通信）。类比：Skills 像是「工作职责描述」，MCP 像是「通信协议（HTTP/gRPC）」。一个 Skill 可能内部使用 MCP 调用外部服务。</p><h3>Skills 的价值——自动化重复工作</h3><p>没有 Skills：每次 code review 你都手动写「请检查这些改动的 bug、性能、安全问题」。有 Skills：输入 <code>/review</code>，Claude 按预定义的检查清单自动审查。差别不只是少打几个字——Skills 保证了检查的一致性，不会因为你某天偷懒少检查几项。Skills = 标准化 + 自动化。</p><h2>动手练习</h2><ol><li>在你的项目中创建 <code>.claude/commands/hello.md</code>，内容写「请列出项目结构并总结」</li><li>在 Claude Code 中输入 <code>/hello</code>，验证 Skill 被触发</li><li>思考你日常开发中有哪些重复操作可以封装成 Skill（列出 3-5 个）</li></ol><h2>小结</h2><p>Skills 是 Claude Code 的扩展机制，让你把重复的工作流封装成可复用的命令。Skills 关注「做什么」，MCP 关注「怎么调用外部工具」。后续两节课分别实操写 Skill 和深入 Skills 高级功能。</p>",
           "_id": "69db3dc476e3e0c1b3b66d57"
-        },
-        {
-          "code": "L34",
-          "title": "自学：Claude Code Skills 进阶",
-          "description": "阅读「Claude Code Skills 进阶」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "claude-code-skills"
-            }
-          ],
-          "_id": "69dc419f76e3e0c1b3c53eb2"
         },
         {
           "code": "L35",
@@ -1335,23 +1084,6 @@
           "_id": "69dc41a176e3e0c1b3c53ec0"
         },
         {
-          "code": "L38",
-          "title": "自学：Claude Skill Codebook 简明教程",
-          "description": "阅读「Claude Skill Codebook 简明教程」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "claude-skill-codebook"
-            }
-          ],
-          "_id": "69dc41a276e3e0c1b3c53ec7"
-        },
-        {
           "code": "L39",
           "title": "Claude Code Skills、Workflow 与 Schedule 实践",
           "description": "这节直播把 Claude Code 的 Skills 实践扩成完整团队工作流：内置 Skills、自定义 Slash Command、Hooks、Sub-agents、可复现 Workflow，以及 Claude Schedule 定时 Agent。课堂重点不是“知道有这些功能”，而是把代码提交、测试报告、课程 diff、依赖检查这类高频任务沉淀成可复用、可审计、可定时运行的 AI Coding 流程。",
@@ -1419,23 +1151,6 @@
           "_id": "69db3dc476e3e0c1b3b66d68"
         },
         {
-          "code": "L40",
-          "title": "自学：Claude Code 自定义命令",
-          "description": "阅读「Claude Code 自定义命令」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "claude-code-commands"
-            }
-          ],
-          "_id": "69dc41a276e3e0c1b3c53ecb"
-        },
-        {
           "code": "L41",
           "title": "Claude Skills 目录结构与 Anthropic 参考资料",
           "description": "Claude Code Skills 的目录结构、配置文件格式、Anthropic 官方文档参考。包括 .claude/ 目录下的 settings.json、commands/ 目录、skills/ 目录的组织方式。这节课是参考资料课——不是听讲的，是你配置 Skills 时随时回来查的工具书。",
@@ -1467,23 +1182,6 @@
           ],
           "learningMaterial": "<h2>学习目标</h2><ul><li>掌握 .claude/ 目录的完整结构：settings.json、commands/、CLAUDE.md 的组织方式</li><li>了解 Anthropic 官方文档中 Skills 相关的参考资料</li><li>建立 Skills 配置的查阅习惯——这节课是工具书，不是听课</li></ul><h2>核心概念</h2><h3>.claude/ 目录结构详解</h3><pre><code>project-root/\n├── CLAUDE.md                    # 项目级 Context（Claude 每次启动都会读）\n├── .claude/\n│   ├── settings.json            # Claude Code 配置\n│   │   ├── permissions          # 工具权限控制\n│   │   ├── hooks                # 前后置脚本\n│   │   └── mcpServers           # MCP Server 注册\n│   └── commands/                # 自定义 Slash Commands\n│       ├── review.md            # /review\n│       ├── deploy.md            # /deploy\n│       └── test.md              # /test</code></pre><h3>settings.json 关键字段</h3><pre><code>{\n  \"permissions\": {\n    \"allow\": [\"Read\", \"Write\", \"Bash\"],\n    \"deny\": [\"Bash(rm *)\"]       // 禁止危险命令\n  },\n  \"hooks\": {\n    \"postToolExecution\": [...]\n  },\n  \"mcpServers\": {\n    \"my-server\": {\n      \"command\": \"node\",\n      \"args\": [\"mcp-server.js\"],\n      \"transport\": \"stdio\"\n    }\n  }\n}</code></pre><h3>CLAUDE.md vs .claude/commands/ 的分工</h3><p>CLAUDE.md：全局规范和约束，每次对话都生效。<code>.claude/commands/</code>：特定任务的执行指令，只在调用对应命令时生效。不要把所有内容都塞进 CLAUDE.md——常驻信息放 CLAUDE.md，任务指令放 commands/。</p><h3>Anthropic 官方参考资料</h3><ul><li>Claude Code 文档：<code>docs.anthropic.com/claude-code</code></li><li>Skills 配置指南：<code>docs.anthropic.com/claude-code/skills</code></li><li>MCP 规范：<code>modelcontextprotocol.io</code></li><li>Claude Code GitHub：<code>github.com/anthropics/claude-code</code></li></ul><h2>操作步骤</h2><ol><li>检查你项目中的 .claude/ 目录，确认 settings.json 和 commands/ 的组织方式</li><li>把这节课的目录结构图保存为你的参考手册</li><li>访问 Anthropic 官方文档，收藏 Skills 和 MCP 的文档页面</li></ol><h2>小结</h2><p>这节课是参考资料，不需要一次记住所有配置项。核心记住：CLAUDE.md 放全局规范，.claude/commands/ 放任务指令，settings.json 放工具配置。配置 Skills 时随时回来查。</p>",
           "_id": "69db3dc576e3e0c1b3b66d70"
-        },
-        {
-          "code": "L42",
-          "title": "自学：Claude Code 全面拆解",
-          "description": "阅读「Claude Code 全面拆解」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "claude-code-full-guide"
-            }
-          ],
-          "_id": "69dc41a276e3e0c1b3c53ecf"
         },
         {
           "code": "L43",
@@ -1626,23 +1324,6 @@
           "_id": "69dc41a276e3e0c1b3c53ed3"
         },
         {
-          "code": "L46",
-          "title": "自学：MCP 服务器配置",
-          "description": "阅读「MCP 服务器配置」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "mcp-setup"
-            }
-          ],
-          "_id": "69dc41a276e3e0c1b3c53ed7"
-        },
-        {
           "code": "L32",
           "title": "Lab: Tool Use — Function Calling 实战",
           "description": "学习如何定义工具（Function）、设计参数 Schema，让 LLM 在对话中自主决定何时调用工具、如何处理结果。",
@@ -1740,41 +1421,6 @@
           "_id": "69dc41a376e3e0c1b3c53edc"
         },
         {
-          "code": "L49",
-          "title": "自学：Mcp Tool Integration",
-          "description": "阅读 ai-engineer 方向的学习章节，自主节奏完成。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [
-            {
-              "order": 1,
-              "type": "CONCEPT",
-              "title": "MCP 工具调用链路",
-              "description": "发现 → 选择 → 调用 → 回填结果四个环节",
-              "duration": 12
-            },
-            {
-              "order": 2,
-              "type": "EXERCISE",
-              "title": "给内部 API 写 tool 定义",
-              "description": "为一个真实接口写 name / description / inputSchema",
-              "duration": 12
-            },
-            {
-              "order": 3,
-              "type": "CHECKLIST",
-              "title": "集成前检查",
-              "description": "description 是否清晰、权限只读还是可写、失败返回是否可自愈",
-              "duration": 6
-            }
-          ],
-          "labs": [],
-          "learns": [],
-          "_id": "69dc41a376e3e0c1b3c53ee0",
-          "learningMaterial": "<h2>学习目标</h2><ul><li>理解 MCP Server 如何把工具（tool）和资源（resource）暴露给 Claude Code</li><li>掌握模型调用 MCP 工具的完整链路：发现 → 选择 → 调用 → 回填结果</li><li>为一个真实 MCP 工具设计 schema、错误处理和权限边界</li></ul><h2>核心概念</h2><h3>MCP 集成的四个环节</h3><pre><code>1. 发现 Discovery：Client 启动时请求 tools/list，拿到可用工具清单\n2. 选择 Selection：模型根据用户意图和工具 description 决定调用哪个\n3. 调用 Invocation：Client 发送 tools/call（名称 + 参数），Server 执行\n4. 回填 Result：Server 返回结构化结果，模型据此继续推理或再次调用</code></pre><h3>Tool vs Resource</h3><ul><li><strong>Tool</strong>：模型主动调用的动作（查数据库、发请求、跑命令），有副作用</li><li><strong>Resource</strong>：模型按需读取的只读上下文（文件、文档、schema），无副作用</li></ul><h3>一个 tool 定义长什么样</h3><pre><code>{\n  \"name\": \"query_orders\",\n  \"description\": \"按用户 ID 查询最近订单，只读\",\n  \"inputSchema\": {\n    \"type\": \"object\",\n    \"properties\": { \"userId\": { \"type\": \"string\" } },\n    \"required\": [\"userId\"]\n  }\n}</code></pre><h2>课堂练习</h2><ol><li>给你项目里的一个内部 API 写一个 MCP tool 定义（name + description + inputSchema）</li><li>把 description 写清楚——这是模型判断“要不要用它”的唯一依据</li><li>设计失败返回：参数错误、无权限、超时分别返回什么，让模型能自我修正</li></ol><h2>小结</h2><p>MCP 集成的难点不在协议本身，而在工具的 description 和 schema 写得够不够清楚。写得含糊，模型就选错工具、传错参数。把工具当成给模型看的 API 文档来写。</p>"
-        },
-        {
           "code": "L50",
           "title": "用 AI 搭建 MCP Server",
           "description": "不是理论了，这节课从零搭一个 MCP Server。用 Claude Code 辅助开发：定义 Server 的 Tool Schema（输入参数和返回格式）→ 实现 Tool Handler → 配置 Transport → 注册到 Claude Code → 测试调用。你会搭一个真实的 MCP Server，比如一个能查询数据库的 Tool 或一个能发邮件的 Tool。",
@@ -1827,23 +1473,6 @@
           ],
           "learningMaterial": "<h2>学习目标</h2><ul><li>从零搭建一个 MCP Server：定义 Tool Schema → 实现 Handler → 配置 Transport → 注册到 Claude Code</li><li>掌握 MCP Server 的开发流程和调试方法</li><li>完成一个能被 Claude 调用的真实 MCP Server</li></ul><h2>核心概念</h2><h3>MCP Server 开发步骤</h3><p>用 TypeScript + @modelcontextprotocol/sdk 搭建：</p><pre><code># Step 1: 初始化项目\nmkdir my-mcp-server && cd my-mcp-server\nnpm init -y\nnpm install @modelcontextprotocol/sdk zod\nnpm install -D typescript @types/node\n\n# Step 2: 创建 Server</code></pre><pre><code>// src/index.ts\nimport { McpServer } from \"@modelcontextprotocol/sdk/server/mcp.js\";\nimport { StdioServerTransport } from \"@modelcontextprotocol/sdk/server/stdio.js\";\nimport { z } from \"zod\";\n\nconst server = new McpServer({\n  name: \"my-tools\",\n  version: \"1.0.0\"\n});\n\n// Step 3: 定义 Tool\nserver.tool(\n  \"get_weather\",                    // Tool 名称\n  \"查询指定城市的天气\",                // 描述\n  { city: z.string() },             // 输入 Schema\n  async ({ city }) => {             // Handler\n    // 实际项目中调用天气 API\n    return {\n      content: [{\n        type: \"text\",\n        text: JSON.stringify({ city, temp: \"22°C\", condition: \"晴\" })\n      }]\n    };\n  }\n);\n\n// Step 4: 配置 Transport 并启动\nconst transport = new StdioServerTransport();\nawait server.connect(transport);</code></pre><h3>注册到 Claude Code</h3><pre><code>// .claude/settings.json\n{\n  \"mcpServers\": {\n    \"my-tools\": {\n      \"command\": \"node\",\n      \"args\": [\"./my-mcp-server/dist/index.js\"],\n      \"transport\": \"stdio\"\n    }\n  }\n}</code></pre><h3>调试方法</h3><pre><code># 方法 1: 用 MCP Inspector（官方调试工具）\nnpx @modelcontextprotocol/inspector node dist/index.js\n\n# 方法 2: 直接在 Claude Code 中测试\nclaude\n> 查一下北京的天气\n# Claude 会自动调用你注册的 get_weather Tool</code></pre><h2>操作步骤</h2><ol><li>按上面的步骤初始化 MCP Server 项目</li><li>实现一个 Tool（可以是查天气、读文件、查数据库）</li><li>编译并注册到 Claude Code 的 settings.json</li><li>在 Claude Code 中测试：给出一个需要调用你 Tool 的任务，验证 Claude 调用了你的 Server</li></ol><h2>小结</h2><p>MCP Server = Tool Schema 定义 + Handler 实现 + Transport 配置。用 @modelcontextprotocol/sdk 开发，stdio Transport 本地最简单。开发完注册到 .claude/settings.json，Claude 就能自动发现和调用。</p>",
           "_id": "69db3dc576e3e0c1b3b66d92"
-        },
-        {
-          "code": "L51",
-          "title": "自学：MCP 配置同步",
-          "description": "阅读「MCP 配置同步」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "mcp-sync"
-            }
-          ],
-          "_id": "69dc41a376e3e0c1b3c53ee4"
         },
         {
           "code": "L52",
@@ -2002,58 +1631,6 @@
           "_id": "69db3dc676e3e0c1b3b66dad"
         },
         {
-          "code": "L55",
-          "title": "自学：AI Agents 与工具调用",
-          "description": "阅读「AI Agents 与工具调用」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "ai-agents-tools"
-            }
-          ],
-          "_id": "69dc41a376e3e0c1b3c53ee8"
-        },
-        {
-          "code": "L56",
-          "title": "自学：Agent Fundamentals",
-          "description": "阅读 ai-engineer 方向的学习章节，自主节奏完成。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [
-            {
-              "order": 1,
-              "type": "CONCEPT",
-              "title": "Agent 的核心循环",
-              "description": "感知 → 推理 → 行动 → 观察，直到完成或触发停止",
-              "duration": 12
-            },
-            {
-              "order": 2,
-              "type": "EXERCISE",
-              "title": "判断 Agent 还是 Workflow",
-              "description": "拿一个真实任务判断该用哪种，并写出理由",
-              "duration": 12
-            },
-            {
-              "order": 3,
-              "type": "CHECKLIST",
-              "title": "上 Agent 前自查",
-              "description": "路径是否不可预测、完成/停止条件是否清晰、工具是否齐全",
-              "duration": 6
-            }
-          ],
-          "labs": [],
-          "learns": [],
-          "_id": "69dc41a476e3e0c1b3c53eec",
-          "learningMaterial": "<h2>学习目标</h2><ul><li>说清楚“Agent”和一次性 Prompt、固定 Workflow 的区别</li><li>理解 Agent 的核心循环：感知 → 推理 → 行动 → 观察</li><li>判断一个任务该用 Agent 还是更简单的方案</li></ul><h2>核心概念</h2><h3>Agent = LLM + 工具 + 循环 + 记忆</h3><p>Agent 不是更聪明的聊天，而是让模型在一个循环里自己决定下一步：读取当前状态 → 决定调用哪个工具 → 执行 → 看结果 → 再决定，直到任务完成或触发停止条件。</p><pre><code>while 未完成 and 未超预算:\n    观察 = 收集当前上下文（文件、报错、上一步结果）\n    计划 = 模型根据观察决定下一个动作\n    结果 = 执行动作（调用工具 / 改代码 / 跑命令）\n    if 满足完成条件: break</code></pre><h3>Agent vs Workflow</h3><ul><li><strong>Workflow</strong>：步骤固定、路径可预测，适合重复任务（补测试、跑 lint）</li><li><strong>Agent</strong>：步骤由模型动态决定，适合路径不确定的任务（debug、迁移、跨模块改造）</li></ul><h3>什么时候不该用 Agent</h3><p>任务步骤固定、可以一次说清、不需要中途看结果再决定——用 Workflow 或单次 Prompt 更快更省更可控。Agent 的自治是有成本的：更慢、更贵、更难复现。</p><h2>课堂练习</h2><ol><li>挑一个你最近做的开发任务，判断它更适合 Agent 还是 Workflow，并说明理由</li><li>为一个 Agent 任务写清“完成条件”和“停止条件”（避免死循环）</li><li>列出这个 Agent 需要哪几个工具，各自负责什么</li></ol><h2>小结</h2><p>Agent 的价值来自“动态决定下一步”，代价是可控性。先问“这个任务的路径可预测吗”——可预测就别上 Agent。用对场景，Agent 才是加速器而不是不可控的黑盒。</p>"
-        },
-        {
           "code": "L57",
           "title": "Agentic Workflow 与 Claude 多步骤工具编排实战",
           "description": "这节直播把 Agentic Workflow 和 Claude 多步骤工具编排合并成一个完整模块：单 Agent 的 ReAct 循环、多 Tool 串联、条件分支、Sub-agent 并行，以及什么任务不该 Agent 化。课堂会配置一个从读需求、改代码、跑测试到失败回退的多步骤自动化工作流。",
@@ -2127,23 +1704,6 @@
           "_id": "69dc41a476e3e0c1b3c53ef0"
         },
         {
-          "code": "L59",
-          "title": "自学：Claude Code 子代理配置",
-          "description": "阅读「Claude Code 子代理配置」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "claude-code-agents"
-            }
-          ],
-          "_id": "69dc41a476e3e0c1b3c53ef4"
-        },
-        {
           "code": "L60",
           "title": "搭建 AI Agent：Claude Agent 架构实战",
           "description": "从零搭建一个 AI Agent 项目。不是用框架（LangChain/CrewAI），而是用 Claude Code 原生的 Agent 能力：定义 Agent 的 System Prompt → 配置可用 Tools → 设置执行策略（最大步数、错误处理）→ 测试 Agent 完成一个端到端任务（比如「分析这个 PR 并写 review 意见」）。",
@@ -2194,41 +1754,6 @@
           "_id": "69db3dc676e3e0c1b3b66dc4"
         },
         {
-          "code": "L61",
-          "title": "自学：Agent Tool Use",
-          "description": "阅读 ai-engineer 方向的学习章节，自主节奏完成。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [
-            {
-              "order": 1,
-              "type": "CONCEPT",
-              "title": "function calling 闭环",
-              "description": "模型选工具 → 运行时执行 → 结果回填 → 继续推理",
-              "duration": 12
-            },
-            {
-              "order": 2,
-              "type": "EXERCISE",
-              "title": "设计 3 个工具",
-              "description": "写清 description、参数 schema 和危险操作的确认边界",
-              "duration": 12
-            },
-            {
-              "order": 3,
-              "type": "CHECKLIST",
-              "title": "工具健壮性检查",
-              "description": "幂等、可行动错误、危险操作人工确认",
-              "duration": 6
-            }
-          ],
-          "labs": [],
-          "learns": [],
-          "_id": "69dc41a476e3e0c1b3c53ef8",
-          "learningMaterial": "<h2>学习目标</h2><ul><li>理解 Agent 是怎么“决定用哪个工具、传什么参数”的</li><li>掌握 function calling 的请求-执行-回填闭环</li><li>为工具设计防错边界，避免 Agent 乱调用或失败后卡死</li></ul><h2>核心概念</h2><h3>工具调用的一个回合</h3><pre><code>1. 模型输出：我要调用 search_docs，参数 {\"q\": \"退款政策\"}\n2. 运行时执行该函数，拿到真实结果\n3. 把结果作为 tool 消息回填给模型\n4. 模型基于结果继续：再调用别的工具，或给出最终答案</code></pre><h3>模型靠什么选工具</h3><ul><li><strong>工具名 + description</strong>：写得越准选得越对；含糊 description 是选错工具的头号原因</li><li><strong>参数 schema</strong>：约束模型只能传合法参数，required 字段一定要标</li><li><strong>数量控制</strong>：工具太多会稀释判断，按场景只给相关工具</li></ul><h3>常见坑</h3><ul><li>工具没做幂等，模型重试时产生重复副作用</li><li>失败只返回 “error”，模型不知道怎么改——要返回可行动的错误信息</li><li>把高风险操作（删除、支付、部署）设成模型可直接调用，缺人工确认</li></ul><h2>课堂练习</h2><ol><li>为一个 Agent 设计 3 个工具，写清各自 description 和参数 schema</li><li>给其中的写操作加一道“执行前确认”边界</li><li>模拟一次工具调用失败，设计让模型能自我修正的错误返回</li></ol><h2>小结</h2><p>Agent 用得好不好，一半在工具设计。把工具当成给模型用的 API：description 清楚、schema 严格、错误可行动、危险操作留人工确认。工具设计到位，Agent 才稳。</p>"
-        },
-        {
           "code": "L62",
           "title": "Claude Agent 多工具执行结构解析",
           "description": "当一个 Agent 需要调用 5-10 个不同的 Tool 时，执行结构怎么设计？这节课分析 Claude Agent 的内部执行流程：思考（选择下一步）→ 调用 Tool → 处理结果 → 再次思考。重点讲多 Tool 场景的挑战：Tool 调用顺序依赖、并行 vs 串行、错误恢复、Token 消耗控制。",
@@ -2268,41 +1793,6 @@
           "learns": [],
           "learningMaterial": "<h2>学习目标</h2><ul><li>分析 5-10 个 Tool 场景下 Agent 的执行结构</li><li>理解 Tool 调用的顺序依赖、并行 vs 串行、错误恢复策略</li><li>掌握 Token 消耗控制——避免 Agent 因上下文过长而性能下降</li></ul><h2>核心概念</h2><h3>多 Tool 场景的执行结构</h3><p>当 Agent 需要调用 5-10 个 Tool 时，执行结构设计直接影响效率和准确率。</p><pre><code># 场景：从零创建一个 NestJS 模块\n# Agent 需要调用的 Tools：\n\n# Phase 1（串行 — 有依赖）\nTool 1: Read package.json        → 确认技术栈和依赖\nTool 2: Read 已有模块目录结构     → 了解代码规范\n\n# Phase 2（并行 — 无依赖）\nTool 3: Write module.ts          → 模块定义\nTool 4: Write dto/               → DTO 定义\nTool 5: Write interface/         → 接口定义\n\n# Phase 3（串行 — 依赖 Phase 2 结果）\nTool 6: Write service.ts         → 依赖 DTO 和 interface\nTool 7: Write controller.ts      → 依赖 service 和 DTO\n\n# Phase 4（串行 — 依赖 Phase 3 结果）\nTool 8: Write test file           → 依赖 service 和 controller\nTool 9: Run tests                 → 验证代码正确性\nTool 10: Run lint                 → 验证代码风格</code></pre><h3>顺序依赖分析</h3><p>在编排多 Tool 执行前，先画依赖图：</p><pre><code># 依赖图\nread(pkg.json) ──► read(existing module)\n                        │\n              ┌─────────┼──────────┐\n              ▼         ▼          ▼\n          module.ts   dto/     interface/\n              │         │          │\n              └─────────┼──────────┘\n                        ▼\n                   service.ts\n                        │\n                        ▼\n                  controller.ts\n                        │\n                        ▼\n                   test + lint</code></pre><h3>错误恢复策略</h3><pre><code># 策略 1: 重试（适合临时性错误）\n# 如 Bash 命令因网络超时失败 → 重试 2 次\n\n# 策略 2: 回退（适合逻辑错误）\n# 如生成的代码 lint 不通过 → 读取 lint 报告 → 修复 → 重新 lint\n\n# 策略 3: 跳过（适合非关键步骤）\n# 如文档生成失败 → 跳过，不影响核心功能\n\n# 策略 4: 停止并报告（适合严重错误）\n# 如测试失败超过 3 次 → 停止，输出失败分析</code></pre><h3>Token 消耗控制</h3><p>每次 Tool 调用的结果都会进入上下文窗口。10 个 Tool 调用，每个返回 1000 tokens，就占了 10K tokens。控制策略：1）Tool 结果只保留关键信息（「测试全部通过」而不是「完整测试输出」）；2）分阶段清理上下文（Phase 完成后总结结果，丢弃中间细节）；3）限制单次 Tool 输出长度。</p><h2>动手练习</h2><ol><li>选一个需要多个 Tool 的任务，画出 Tool 依赖图，标注哪些可以并行</li><li>在 Claude Code 中执行这个任务，观察 Agent 的实际执行顺序和你画的依赖图是否一致</li><li>故意制造一个中间步骤的错误，观察 Agent 的恢复行为</li></ol><h2>小结</h2><p>多 Tool 编排的关键：画依赖图确定串行/并行、每个失败点设计恢复策略、控制 Token 消耗避免上下文膨胀。Agent 效率 = 正确的执行顺序 + 高效的错误恢复 + 精简的上下文管理。</p>",
           "_id": "69db3dc776e3e0c1b3b66dd0"
-        },
-        {
-          "code": "L63",
-          "title": "自学：Multi Agent Orchestration",
-          "description": "阅读 ai-engineer 方向的学习章节，自主节奏完成。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [
-            {
-              "order": 1,
-              "type": "CONCEPT",
-              "title": "编排者 + 工作者模式",
-              "description": "Orchestrator 拆分分派汇总，Workers 专职执行",
-              "duration": 12
-            },
-            {
-              "order": 2,
-              "type": "EXERCISE",
-              "title": "给复杂任务做分工",
-              "description": "画出 Agent 分工、标出并行/串行、设计汇总",
-              "duration": 12
-            },
-            {
-              "order": 3,
-              "type": "CHECKLIST",
-              "title": "该不该上多 Agent",
-              "description": "子任务能否独立、是否需并行、成本是否划算",
-              "duration": 6
-            }
-          ],
-          "labs": [],
-          "learns": [],
-          "_id": "69dc41a576e3e0c1b3c53efc",
-          "learningMaterial": "<h2>学习目标</h2><ul><li>理解 Orchestrator + Workers（编排者 + 工作者）这种多 Agent 模式</li><li>判断什么任务值得上多 Agent，什么时候单 Agent 更好</li><li>设计 Agent 之间的分工、交接和结果汇总</li></ul><h2>核心概念</h2><h3>编排者 + 工作者</h3><pre><code>用户任务\n   ↓\n编排者 Orchestrator（拆任务、分派、汇总）\n   ├── 工作者 A：检索资料\n   ├── 工作者 B：写代码 / 生成内容\n   └── 工作者 C：审查 / 事实核查\n   ↓\n编排者整合各工作者产出 → 交付</code></pre><h3>为什么要拆成多个 Agent</h3><ul><li><strong>上下文隔离</strong>：每个工作者只带自己那块上下文，不互相污染</li><li><strong>专职专用</strong>：写代码的 Agent 和审查的 Agent 用不同 system prompt、不同工具</li><li><strong>可并行</strong>：互不依赖的子任务同时跑，缩短总时长</li></ul><h3>代价与取舍</h3><p>多 Agent 不是越多越好。每多一个 Agent 就多一份 token 成本、一层协调复杂度和一个出错点。子任务耦合紧、必须共享大量上下文时，单 Agent 反而更快更省。先问：这些子任务能独立完成吗？</p><h2>课堂练习</h2><ol><li>挑一个复杂任务（如“调研+写方案+审校”），画出编排者和工作者的分工</li><li>标出哪些工作者可以并行、哪些必须串行</li><li>设计编排者如何汇总产出、如何处理某个工作者失败</li></ol><h2>小结</h2><p>多 Agent 的价值是上下文隔离 + 专职分工 + 并行，代价是成本和协调复杂度。任务能干净拆分、子任务相对独立时才划算。拆不干净，就别硬拆。</p>"
         },
         {
           "code": "Q04",
@@ -2436,111 +1926,6 @@
           "_id": "69db3dc776e3e0c1b3b66dea"
         },
         {
-          "code": "L68",
-          "title": "多模型 Prompt Engineering 模板参考",
-          "description": "不同模型的 Prompt 写法不一样。Claude 喜欢 XML 标签结构，Gemini 喜欢简洁直接，Codex 需要更多上下文。这节课给你每个模型的 Prompt Engineering 最佳实践模板：System Prompt 怎么写、Few-shot 示例怎么给、长上下文怎么组织。同一个需求的三种 Prompt 写法对比。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 120,
-          "steps": [
-            {
-              "order": 1,
-              "type": "CONCEPT",
-              "title": "三模型 Prompt 差异",
-              "description": "Claude 喜欢 XML、Gemini 喜欢简洁、Codex 需要更多上下文",
-              "duration": 30
-            },
-            {
-              "order": 2,
-              "type": "LAB",
-              "title": "Prompt Lab: Few-shot",
-              "description": "给不同模型写不同风格的 Prompt",
-              "duration": 15,
-              "labSlug": "few-shot"
-            },
-            {
-              "order": 3,
-              "type": "SCENARIO",
-              "title": "同需求三种 Prompt",
-              "description": "对比输出差异",
-              "duration": 15
-            }
-          ],
-          "labs": [
-            {
-              "source": "prompt-lab",
-              "slug": "few-shot"
-            },
-            {
-              "source": "prompt-lab",
-              "slug": "zero-shot"
-            }
-          ],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "prompt-patterns"
-            }
-          ],
-          "learningMaterial": "<h2>学习目标</h2><ul><li>理解 Claude、Gemini、Codex 三个模型对 Prompt 格式的不同偏好</li><li>为每个模型准备可复用的 Prompt 模板</li><li>掌握从通用 Prompt 到模型特化 Prompt 的转换方法</li></ul><h2>核心概念</h2><h3>Claude：XML 标签结构化</h3><p>Claude 对 XML 标签响应好，用标签划分上下文、指令、约束：</p><pre><code>&lt;context&gt;\n你是一个 Senior TypeScript 工程师，正在维护一个 NestJS 项目。\n项目用 Mongoose 做 ORM，MongoDB 做数据库。\n&lt;/context&gt;\n\n&lt;task&gt;\n为 User 模块添加一个 PATCH /users/:id/role 接口，\n只允许 admin 角色调用。\n&lt;/task&gt;\n\n&lt;constraints&gt;\n- 用 Guard 做权限控制，不要在 Service 里判断\n- 返回更新后的完整 User 对象\n- 写单元测试\n&lt;/constraints&gt;</code></pre><h3>Gemini：简洁直接 + 示例驱动</h3><p>Gemini 偏好简短指令，多给示例少给长篇说明：</p><pre><code>任务：写一个 NestJS Guard 校验 admin 角色。\n\n示例输入：普通用户请求 PATCH /users/123/role\n期望输出：403 Forbidden\n\n示例输入：admin 用户请求 PATCH /users/123/role\n期望输出：200 + 更新后的 User\n\n技术栈：NestJS + Mongoose + TypeScript</code></pre><h3>Codex：上下文充分 + 文件引用</h3><p>Codex 在理解项目上下文方面需要更多辅助。把相关文件内容直接贴进来：</p><pre><code>参考以下已有代码：\n\n// user.schema.ts\n[粘贴 schema 内容]\n\n// roles.guard.ts\n[粘贴已有 guard]\n\n在此基础上，新增 PATCH /users/:id/role 接口。\n保持和现有代码相同的风格。</code></pre><h3>转换公式</h3><p>先写一个通用 Prompt，然后按模型偏好转换：Claude 加 XML 标签 → Gemini 精简+加示例 → Codex 加文件上下文。</p><h2>动手练习</h2><ol><li>选一个你正在做的需求，先写通用 Prompt</li><li>分别转换为 Claude / Gemini / Codex 版本</li><li>实际调用对比效果，调整模板</li></ol><h2>小结</h2><p>同一个需求，针对不同模型调整 Prompt 格式，输出质量差异显著。Claude 用 XML 结构化，Gemini 用简洁示例驱动，Codex 需要充分的文件上下文。建立自己的模板库可以大幅提升日常效率。</p>",
-          "_id": "69db3dc776e3e0c1b3b66df8"
-        },
-        {
-          "code": "L72",
-          "title": "自学：Prompt 精调结构与四种模板技巧",
-          "description": "课前复习四种 Prompt 精调模板：Step-by-step、Few-shot、Chain of Thought、Constrained Generation。直播会重点做准确率、成本和返工率对比实验。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [
-            {
-              "order": 1,
-              "type": "CONCEPT",
-              "title": "四种 Prompt 模板",
-              "description": "Step-by-step、Few-shot、CoT、Constrained Generation",
-              "duration": 30
-            },
-            {
-              "order": 2,
-              "type": "LAB",
-              "title": "Prompt Lab: Chain of Thought",
-              "description": "让 AI 展示推理过程",
-              "duration": 15,
-              "labSlug": "chain-of-thought"
-            },
-            {
-              "order": 3,
-              "type": "LAB",
-              "title": "Prompt Lab: Self-Consistency",
-              "description": "多路推理取最优",
-              "duration": 15,
-              "labSlug": "self-consistency"
-            }
-          ],
-          "labs": [
-            {
-              "source": "prompt-lab",
-              "slug": "chain-of-thought"
-            },
-            {
-              "source": "prompt-lab",
-              "slug": "self-consistency"
-            }
-          ],
-          "learns": [
-            {
-              "direction": "prompt-master",
-              "slug": "cot"
-            },
-            {
-              "direction": "prompt-master",
-              "slug": "prompt-chaining"
-            }
-          ],
-          "learningMaterial": "<h2>学习目标</h2><ul><li>掌握 Step-by-step、Few-shot、Chain of Thought、Constrained Generation 四种 Prompt 模板</li><li>理解每种模板适合的开发场景</li><li>能够在实际编码任务中选择和组合使用这些模板</li></ul><h2>核心概念</h2><h3>1. Step-by-step（分步指令）</h3><p>把复杂任务拆成明确的步骤序列，模型按顺序执行：</p><pre><code>请按以下步骤实现用户注册功能：\n\n步骤 1：创建 RegisterDto，包含 email、password、name 字段，用 class-validator 校验\n步骤 2：在 AuthService 中实现 register 方法，密码用 bcrypt hash\n步骤 3：检查 email 是否已存在，存在则抛出 ConflictException\n步骤 4：写对应的单元测试</code></pre><p>适合：流程明确的功能开发、新手引导模型做复杂任务。</p><h3>2. Few-shot（示例驱动）</h3><p>给模型 2-3 个输入输出示例，让它学会模式：</p><pre><code>请按照以下格式生成 API 错误处理：\n\n示例 1：\n输入：用户未找到\n输出：throw new NotFoundException('User not found');\n\n示例 2：\n输入：邮箱已注册\n输出：throw new ConflictException('Email already registered');\n\n现在处理：权限不足</code></pre><p>适合：格式统一的批量生成、代码风格一致性要求高的场景。</p><h3>3. Chain of Thought（思维链）</h3><p>要求模型先分析再编码，\"先想后做\"：</p><pre><code>这个函数有 bug，请先分析可能的原因（列出至少 3 个），\n然后选择最可能的原因，最后给出修复代码。\n\n```js\nasync function fetchUsers(page) {\n  const res = await fetch(`/api/users?page=${page}`);\n  const data = res.json();\n  return data.users;\n}\n```</code></pre><p>适合：调试、代码审查、架构决策等需要推理的场景。</p><h3>4. Constrained Generation（约束生成）</h3><p>用 JSON Schema 或严格格式约束输出：</p><pre><code>分析以下代码的问题，输出 JSON 格式：\n{\n  \"issues\": [{ \"line\": number, \"severity\": \"error\"|\"warning\", \"description\": string, \"fix\": string }],\n  \"overallScore\": number  // 1-10\n}</code></pre><p>适合：需要程序化处理 AI 输出的场景，如 CI/CD 集成、自动化工具。</p><h2>动手练习</h2><ol><li>用 Step-by-step 模板让 AI 实现一个完整的 CRUD 模块</li><li>用 Few-shot 模板批量生成 10 个 API 的错误处理代码</li><li>用 Chain of Thought 让 AI 分析一段有性能问题的代码</li></ol><h2>小结</h2><p>四种模板不是互斥的，实际使用中经常组合：Step-by-step + Constrained Generation 用于自动化流水线，Few-shot + Chain of Thought 用于复杂代码生成。关键是匹配任务特征选择模板。</p>",
-          "_id": "69db3dc876e3e0c1b3b66e10"
-        },
-        {
           "code": "L77",
           "title": "AI 自动化工作流：让 Agent 定时 / 自动替你干活（Schedule / Workflow / Cron）",
           "description": "前面所有课你都是「打开终端、敲一句话、等 AI 干完」——这是手动模式，AI 干一次就停。这节课把它升级成「自动模式」：用 cron 定时触发，让 agent 每天 / 每周自己醒来干活，再用 workflow 把多步骤串成一条流水线一次跑完。你会写出第一个定时任务（比如每天早上抓一次数据出份报告），并学会自动化最关键的部分——安全边界：kill-switch、人审批节点、绝不让它擅自往外发东西。",
@@ -2665,23 +2050,6 @@
           ],
           "learns": [],
           "_id": "69dc41a776e3e0c1b3c53f8d"
-        },
-        {
-          "code": "L80",
-          "title": "自学：性能与成本优化",
-          "description": "阅读「性能与成本优化」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "performance-cost"
-            }
-          ],
-          "_id": "69dc41a776e3e0c1b3c53f91"
         },
         {
           "code": "L82",
@@ -2845,23 +2213,6 @@
           "_id": "69dc41a776e3e0c1b3c53fa5"
         },
         {
-          "code": "L86",
-          "title": "自学：与 AI 结对编程",
-          "description": "阅读「与 AI 结对编程」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "pair-programming"
-            }
-          ],
-          "_id": "69dc41a876e3e0c1b3c53fad"
-        },
-        {
           "code": "L87",
           "title": "Claude 实现后端 API 与前端联调",
           "description": "前端 UI 做好了，后端 API 怎么接？这节课用 Claude 实现前后端联调：定义 API Endpoint（路径、方法、参数、返回值）→ Claude 生成后端 API 代码 → Claude 生成前端调用代码 → 联调测试 → 处理跨域和错误。你描述数据流向，Claude 两端的代码都帮你写。",
@@ -2952,23 +2303,6 @@
           "_id": "69dc41a876e3e0c1b3c53fb9"
         },
         {
-          "code": "L90",
-          "title": "自学：前后端协同与 API 生成",
-          "description": "阅读「前后端协同与 API 生成」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "api-fullstack"
-            }
-          ],
-          "_id": "69dc41a876e3e0c1b3c53fbd"
-        },
-        {
           "code": "L91",
           "title": "Claude 连接数据库（Supabase / Postgres）与建模",
           "description": "网站需要存数据——用户信息、产品列表、订单记录。Supabase 是免费的 Postgres 数据库 + API 服务，不需要自己搭服务器。这节课用 Claude 完成：设计数据库 Schema（表结构、字段类型、关系）→ 在 Supabase 创建表 → 生成 CRUD API → 前端连接数据库。Claude 帮你写 SQL 和 ORM 代码，你只需要描述业务逻辑。",
@@ -3039,23 +2373,6 @@
           "_id": "69dc41a876e3e0c1b3c53fc1"
         },
         {
-          "code": "L93",
-          "title": "自学：数据与知识库协作",
-          "description": "阅读「数据与知识库协作」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "data-rag"
-            }
-          ],
-          "_id": "69dc41a976e3e0c1b3c53fc5"
-        },
-        {
           "code": "L94",
           "title": "云端 Agent 部署：让 Agent 上云持续替企业跑（Workers / Serverless）",
           "description": "从『本地 localhost 能跑』到『部署到云端别人能访问 + agent 持续在线跑』。用 Cloudflare Workers / Serverless 把一个 agent 服务部署上云：配环境变量与密钥（wrangler secret）、用 cron trigger 让云端 agent 按时自动跑、拿到一个公网 https endpoint、再看日志与估算成本。含可直接照抄的真实部署命令。",
@@ -3119,23 +2436,6 @@
           ],
           "learns": [],
           "_id": "69dc41a976e3e0c1b3c53fc9"
-        },
-        {
-          "code": "L96",
-          "title": "自学：脚手架与自动化交付",
-          "description": "阅读「脚手架与自动化交付」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "automation-cli"
-            }
-          ],
-          "_id": "69dc41aa76e3e0c1b3c53fd4"
         },
         {
           "code": "L97",
@@ -3202,39 +2502,6 @@
           ],
           "learns": [],
           "_id": "69dc41ab76e3e0c1b3c53fed"
-        },
-        {
-          "code": "L99",
-          "title": "Serverless 部署与 Workers 模板参考",
-          "description": "Serverless 部署的参考资料：Cloudflare Workers 配置模板、Vercel 的 vercel.json 模板、Railway 的 Dockerfile 模板、环境变量管理最佳实践、CI/CD 自动部署配置。参考资料课，部署时随时查。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 120,
-          "steps": [
-            {
-              "order": 1,
-              "type": "CONCEPT",
-              "title": "Serverless 部署参考",
-              "description": "Cloudflare Workers / Vercel / Railway 模板和配置",
-              "duration": 30
-            },
-            {
-              "order": 2,
-              "type": "LEARN",
-              "title": "部署模板库",
-              "description": "配置文件样例",
-              "duration": 30
-            }
-          ],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "automation-cli"
-            }
-          ],
-          "learningMaterial": "<h2>学习目标</h2><ul><li>掌握 Cloudflare Workers、Vercel、Railway 三种平台的配置文件写法</li><li>理解 Serverless 部署的环境变量管理最佳实践</li><li>能够快速将项目部署到任意平台</li></ul><h2>核心概念</h2><h3>Cloudflare Workers — wrangler.toml</h3><pre><code>name = \"my-fullstack-app\"\nmain = \"src/index.ts\"\ncompatibility_date = \"2025-01-01\"\n\n# 静态资源\n[site]\nbucket = \"./dist\"\n\n# KV 存储绑定\n[[kv_namespaces]]\nbinding = \"CACHE\"\nid = \"your-kv-namespace-id\"\n\n# D1 数据库绑定\n[[d1_databases]]\nbinding = \"DB\"\ndatabase_name = \"my-db\"\ndatabase_id = \"your-db-id\"\n\n# 环境区分\n[env.staging]\nname = \"my-app-staging\"\nvars = { ENVIRONMENT = \"staging\" }\n\n[env.production]\nname = \"my-app-production\"\nroutes = [{ pattern = \"api.example.com/*\", zone_name = \"example.com\" }]</code></pre><h3>Vercel — vercel.json</h3><pre><code>{\n  \"framework\": \"nextjs\",\n  \"buildCommand\": \"npm run build\",\n  \"outputDirectory\": \".next\",\n  \"rewrites\": [\n    { \"source\": \"/api/:path*\", \"destination\": \"https://api.example.com/:path*\" }\n  ],\n  \"headers\": [\n    {\n      \"source\": \"/(.*)\",\n      \"headers\": [{ \"key\": \"X-Frame-Options\", \"value\": \"DENY\" }]\n    }\n  ],\n  \"env\": {\n    \"NEXT_PUBLIC_API_URL\": \"https://api.example.com\"\n  }\n}</code></pre><h3>Railway — Dockerfile</h3><pre><code>FROM node:20-alpine AS builder\nWORKDIR /app\nCOPY package*.json ./\nRUN npm ci\nCOPY . .\nRUN npm run build\n\nFROM node:20-alpine\nWORKDIR /app\nCOPY --from=builder /app/dist ./dist\nCOPY --from=builder /app/node_modules ./node_modules\nCOPY --from=builder /app/package.json ./\nEXPOSE 3000\nCMD [\"node\", \"dist/main.js\"]</code></pre><h3>环境变量管理原则</h3><ul><li>Secret（API Key、数据库密码）：用平台的 Secret 管理，不进代码仓库</li><li>配置变量（API URL、Feature Flag）：可以写在配置文件的 env/vars 中</li><li>本地开发：用 <code>.env.local</code>，加入 <code>.gitignore</code></li></ul><h2>操作步骤</h2><ol><li>根据你的项目技术栈选择部署平台</li><li>创建对应的配置文件（wrangler.toml / vercel.json / Dockerfile）</li><li>设置环境变量和 Secret</li><li>测试部署并验证功能正常</li></ol><h2>小结</h2><p>三种平台各有侧重：Workers 边缘计算最快、Vercel 对 Next.js 最友好、Railway 对传统后端最灵活。配置文件是一次性工作，本节内容建议收藏作为速查手册，需要部署时直接复制修改。</p>",
-          "_id": "69db3dca76e3e0c1b3b66ecd"
         },
         {
           "code": "L100",
@@ -3318,40 +2585,6 @@
           "_id": "69dc41ac76e3e0c1b3c53fff"
         },
         {
-          "code": "L102",
-          "title": "自学：团队协作与 PR 流程",
-          "description": "阅读「团队协作与 PR 流程」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "team-workflow"
-            }
-          ],
-          "_id": "69dc41ac76e3e0c1b3c54003"
-        },
-        {
-          "code": "L103",
-          "title": "自学：用 AI 做测试与质量保障",
-          "description": "阅读「用 AI 做测试与质量保障」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "ai-testing-quality"
-            }
-          ],
-          "_id": "69dc41ac76e3e0c1b3c54007"
-        },
-        {
           "code": "L104",
           "title": "Claude Review + 项目演示上传实战",
           "description": "最终实操：用 Claude Code Review 你的整个项目（不是单个文件，是整个 codebase），修复所有 Review 意见，录制 Demo 演示视频，上传项目到 GitHub。课后你的 GitHub 上有一个完整的、经过 Code Review 的、有 README 和 Demo 的全栈项目——可以直接放进简历。",
@@ -3414,23 +2647,6 @@
           "_id": "69dc41ac76e3e0c1b3c5400b"
         },
         {
-          "code": "L106",
-          "title": "自学：持续改进与自动化",
-          "description": "阅读「持续改进与自动化」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "continuous-improvement"
-            }
-          ],
-          "_id": "69dc41ac76e3e0c1b3c54025"
-        },
-        {
           "code": "L107",
           "title": "Claude 生成 Readme、Demo 视频脚本技巧",
           "description": "用 Claude 生成项目的完整文档：README.md（项目介绍 + 安装指南 + API 文档）、CONTRIBUTING.md（贡献指南）、Demo 视频脚本（展示顺序 + 旁白文案 + 时间节点）。好的文档让你的项目在 GitHub 上更容易被人发现和理解。这节课的技巧也适用于工作中写技术文档——让 AI 帮你写初稿，你审核调整。",
@@ -3475,23 +2691,6 @@
           ],
           "learningMaterial": "<h2>学习目标</h2><ul><li>用 Claude 生成完整的 README.md 和 CONTRIBUTING.md</li><li>用 Claude 编写结构化的 Demo 视频脚本</li><li>理解好的开源文档如何提升项目在 GitHub 上的可见度</li></ul><h2>核心概念</h2><h3>README.md 生成 Prompt</h3><pre><code>为我的项目生成 README.md，信息如下：\n\n项目名：TaskFlow\n一句话：实时协作的任务管理工具\n技术栈：React 18, Express, TypeScript, Supabase, Cloudflare Workers\n核心功能：\n- 拖拽看板（Kanban board）\n- 实时多人协作\n- 任务优先级和截止日期\n- 邮件通知\n\n要求：\n- 包含安装步骤（3 步以内跑起来）\n- 包含截图占位符（我后面替换）\n- 包含 API 文档表格\n- 包含项目目录结构\n- 用 Shield.io badge 显示技术栈\n- 写给招聘者看，突出技术决策</code></pre><h3>CONTRIBUTING.md</h3><p>如果你想让项目变成开源协作项目：</p><pre><code>生成 CONTRIBUTING.md，包含：\n- 如何 fork 和提 PR\n- 代码规范（ESLint + Prettier 配置）\n- commit message 格式（Conventional Commits）\n- Issue 模板说明\n- 本地开发环境搭建步骤</code></pre><h3>Demo 视频脚本 — 进阶版</h3><p>比 L38 更细化，精确到每一个点击操作：</p><pre><code>[场景 1 | 0:00-0:30 | 项目介绍]\n画面：浏览器打开项目首页\n旁白：\"TaskFlow 是一个支持实时协作的任务管理工具。\"\n操作：无操作，停留在首页展示 UI\n\n[场景 2 | 0:30-1:15 | 核心功能：看板]\n画面：点击进入看板页面\n旁白：\"核心功能是拖拽看板。我用 dnd-kit 实现...\"\n操作：\n1. 点击 \"+ 新任务\" 按钮\n2. 填写标题 \"完成 Demo 录制\"\n3. 设置优先级为 High\n4. 点击保存\n5. 把任务从 Todo 拖到 Doing\n过渡：停顿 2 秒</code></pre><h3>文档对 GitHub 可见度的影响</h3><p>GitHub 的搜索排名和推荐算法考虑这些因素：</p><ul><li>README 完整度 — 有描述、截图、安装步骤的仓库排名更高</li><li>LICENSE 文件 — 有开源协议的仓库更容易被发现</li><li>Topics 标签 — 添加相关话题标签增加搜索曝光</li><li>活跃度 — 有 Issues、PR、定期 commit 的仓库更受青睐</li></ul><h2>动手练习</h2><ol><li>让 Claude 生成完整 README.md，替换截图后上传</li><li>生成 CONTRIBUTING.md 并添加到仓库</li><li>生成 Demo 视频脚本，精确到每个操作步骤</li><li>在 GitHub 仓库添加 Topics、About、License</li></ol><h2>小结</h2><p>好的文档是项目价值的放大器。一个功能完整但 README 空白的项目，在 GitHub 上几乎没有存在感。花 30 分钟用 Claude 生成文档，可能带来的面试机会和 star 数远超你的预期。README 写给人看，CONTRIBUTING 写给协作者看，Demo 脚本写给自己录视频用。</p>",
           "_id": "69db3dca76e3e0c1b3b66ee5"
-        },
-        {
-          "code": "L108",
-          "title": "自学：AI 辅助 UX 文案与交互",
-          "description": "阅读「AI 辅助 UX 文案与交互」章节。自主节奏完成，巩固本节课的知识点。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 30,
-          "steps": [],
-          "labs": [],
-          "learns": [
-            {
-              "direction": "vibe-coding",
-              "slug": "ai-ux-copy"
-            }
-          ],
-          "_id": "69dc41ad76e3e0c1b3c54087"
         },
         {
           "code": "Q05",
