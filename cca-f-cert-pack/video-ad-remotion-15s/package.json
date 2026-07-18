@@ -1,0 +1,35 @@
+{
+  "name": "ccar-f-product-tour-remotion",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CCAR-F 30s horizontal Remotion product tour",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts CcarFAd out/ccar-f-30s-product-tour-16x9.mp4",
+    "render:content": "remotion render src/index.ts CcarFContentAd out/ccar-f-30s-content-power-16x9.mp4",
+    "render:content-digital-human": "remotion render src/index.ts CcarFContentAdDigitalHuman out/ccar-f-30s-content-power-digital-human-16x9.mp4",
+    "render:preview": "remotion render src/index.ts CcarFAd out/preview.mp4 --scale=0.5",
+    "render:content-preview": "remotion render src/index.ts CcarFContentAd out/content-preview.mp4 --scale=0.5",
+    "render:content-digital-human-preview": "remotion render src/index.ts CcarFContentAdDigitalHuman out/content-digital-human-preview.mp4 --scale=0.5",
+    "capture": "node scripts/capture-product-tour.mjs",
+    "voice": "node scripts/gen-elevenlabs-product-tour-voice.mjs",
+    "voice:content": "node scripts/gen-elevenlabs-content-ad-voice.mjs",
+    "voice:digital-human-intro": "node scripts/gen-elevenlabs-digital-human-intro.mjs",
+    "voice:openai": "node scripts/gen-product-tour-voice.mjs"
+  },
+  "dependencies": {
+    "@remotion/bundler": "^4.0.0",
+    "@remotion/cli": "^4.0.0",
+    "@remotion/media": "^4.0.490",
+    "@remotion/renderer": "^4.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remotion": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "playwright-core": "^1.61.1",
+    "typescript": "~5.9.0"
+  }
+}
