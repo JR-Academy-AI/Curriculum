@@ -9,8 +9,8 @@
   "targetAudience": "有编程基础的开发者、全栈工程师、DevOps、想用 AI 提升开发效率的技术人员",
   "totalLessons": 76,
   "totalSteps": 110,
-  "liveClasses": 23,
-  "estimatedHours": 85.3,
+  "liveClasses": 24,
+  "estimatedHours": 79.3,
   "totalInteractiveLabs": 32,
   "title_en": "Vibe Coding Masterclass",
   "description_en": "Build full-stack apps with Claude Code and Codex. From PRD to Skills/MCP/Agent to deployment. For developers with programming experience.",
@@ -582,11 +582,11 @@
         },
         {
           "code": "L20",
-          "title": "自学：Claude Prompt Engineering 与 Context Engineering（上下文工程）实践",
+          "title": "Context Engineering 与记忆系统：CLAUDE.md、规则分层与 auto memory",
           "description": "Prompt Engineering 管的是单条指令的质量，Context Engineering 管的是 AI 能看到的所有信息。同一条 Prompt 在不同 Context 下输出完全不同。这节课讲 Context Engineering 的核心：CLAUDE.md 文件写什么（项目规范和约束）、.claude/rules/ 怎么按领域拆分（编码风格和模式）、什么信息放上下文什么不放、怎么设计项目结构让 AI 更好理解你的代码。",
-          "type": "Information",
-          "isLive": false,
-          "duration": 90,
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 60,
           "steps": [
             {
               "order": 1,
@@ -793,7 +793,7 @@
           "description": "工作里 99% 是改老项目，不是从零做。四块能力：四问让 AI 读懂没文档的老项目、从代码反推 CLAUDE.md、用 worktree + 测试护栏架好安全改造网、用 ADLC 真改一次（新功能 work + 老功能不回归）。",
           "type": "Lesson",
           "isLive": true,
-          "duration": 60,
+          "duration": 120,
           "steps": [],
           "labs": [],
           "learns": [],
@@ -1004,7 +1004,7 @@
           "description": "这节直播把 Skills 架构和 agent.md 标准化放在一起讲透：先拆 Claude/Codex 插件机制，再写一个真实 Skill。你会定义 Skill 名称、触发条件、可用工具、执行步骤、失败处理和团队复用规范，最后注册到 Claude Code 并在真实项目里跑通。",
           "type": "Lesson",
           "isLive": true,
-          "duration": 120,
+          "duration": 60,
           "steps": [
             {
               "order": 1,
@@ -1101,7 +1101,7 @@
           "description": "这节直播把 Claude Code 的 Skills 实践扩成完整团队工作流：内置 Skills、自定义 Slash Command、Hooks、Sub-agents、可复现 Workflow，以及 Claude Schedule 定时 Agent。课堂重点不是“知道有这些功能”，而是把代码提交、测试报告、课程 diff、依赖检查这类高频任务沉淀成可复用、可审计、可定时运行的 AI Coding 流程。",
           "type": "Lesson",
           "isLive": true,
-          "duration": 180,
+          "duration": 120,
           "steps": [
             {
               "order": 1,
@@ -1361,7 +1361,7 @@
           "description": "这节直播把 MCP 概念和 Claude ToolUse 调用链合并讲透：Claude 如何选择工具、Function Calling 如何表达参数、MCP Server 如何执行外部操作、Resource 与 Tool 怎么建模、错误如何返回给 Agent 继续处理。课堂用一个完整案例追踪 Claude → ToolUse → MCP → Server → Result → 下一步决策。",
           "type": "Lesson",
           "isLive": true,
-          "duration": 150,
+          "duration": 60,
           "steps": [
             {
               "order": 1,
@@ -1648,7 +1648,7 @@
           "description": "这节直播把 Agentic Workflow 和 Claude 多步骤工具编排合并成一个完整模块：单 Agent 的 ReAct 循环、多 Tool 串联、条件分支、Sub-agent 并行，以及什么任务不该 Agent 化。课堂会配置一个从读需求、改代码、跑测试到失败回退的多步骤自动化工作流。",
           "type": "Lesson",
           "isLive": true,
-          "duration": 120,
+          "duration": 60,
           "steps": [
             {
               "order": 1,
@@ -1943,7 +1943,7 @@
           "description": "前面所有课你都是「打开终端、敲一句话、等 AI 干完」——这是手动模式，AI 干一次就停。这节课把它升级成「自动模式」：用 cron 定时触发，让 agent 每天 / 每周自己醒来干活，再用 workflow 把多步骤串成一条流水线一次跑完。你会写出第一个定时任务（比如每天早上抓一次数据出份报告），并学会自动化最关键的部分——安全边界：kill-switch、人审批节点、绝不让它擅自往外发东西。",
           "type": "Lesson",
           "isLive": true,
-          "duration": 90,
+          "duration": 60,
           "steps": [
             {
               "order": 1,
@@ -1989,7 +1989,7 @@
           "description": "上一节你会让单个 agent 定时干活了，这节把它放进真实企业：怎么从一堆业务里挑出「能安全托管给 agent」的流程，怎么把一个流程拆成 agent 跑得通的闭环（输入→处理→输出→反馈回收），怎么让多个 agent 分工（一个抓数据、一个处理、一个汇报），哪些步骤必须人在环（human-in-the-loop）审批、哪些可以全自动，最后用一笔时间账算清楚这套自动化到底替你省了多少。",
           "type": "Lesson",
           "isLive": true,
-          "duration": 150,
+          "duration": 120,
           "steps": [
             {
               "order": 1,
@@ -2402,7 +2402,7 @@
           "description": "从『本地 localhost 能跑』到『部署到云端别人能访问 + agent 持续在线跑』。用 Cloudflare Workers / Serverless 把一个 agent 服务部署上云：配环境变量与密钥（wrangler secret）、用 cron trigger 让云端 agent 按时自动跑、拿到一个公网 https endpoint、再看日志与估算成本。含可直接照抄的真实部署命令。",
           "type": "Lesson",
           "isLive": true,
-          "duration": 90,
+          "duration": 120,
           "steps": [
             {
               "order": 1,
@@ -2467,7 +2467,7 @@
           "description": "把个人 AI OS（一个人的 Markdown 操作系统）放大成团队/企业记忆系统：团队把规范、流程、岗位、决策都沉淀成 AI 可读的结构化记忆。讲清 raw（原始记录）与 structured（治理后真相）分层、共享给团队 vs 共享给 AI（直接 Read 全文 vs RAG 检索的取舍）、git/Notion 红线（脱敏知识进 git，PII/简历/薪酬只进 Notion）、以及 freshness 治理（记忆会过期，要标时间、定期刷新）。",
           "type": "Lesson",
           "isLive": true,
-          "duration": 120,
+          "duration": 60,
           "steps": [
             {
               "order": 1,
@@ -2533,7 +2533,7 @@
           "description": "代码写完了不代表能上线——需要 Review。这节课讲 AI 辅助 Code Review 的完整流程：让 Claude 审查你的代码（安全漏洞、性能问题、代码规范、可维护性）→ 根据反馈修改 → 再 Review → 通过后才合并。同时讲项目展示技巧：10 分钟怎么讲清楚你的项目、技术亮点怎么展示、Q&A 怎么应对。",
           "type": "Lesson",
           "isLive": true,
-          "duration": 90,
+          "duration": 120,
           "steps": [
             {
               "order": 1,
@@ -2614,7 +2614,7 @@
           "description": "最终实操：用 Claude Code Review 你的整个项目（不是单个文件，是整个 codebase），修复所有 Review 意见，录制 Demo 演示视频，上传项目到 GitHub。课后你的 GitHub 上有一个完整的、经过 Code Review 的、有 README 和 Demo 的全栈项目——可以直接放进简历。",
           "type": "Lesson",
           "isLive": true,
-          "duration": 120,
+          "duration": 60,
           "steps": [
             {
               "order": 1,
