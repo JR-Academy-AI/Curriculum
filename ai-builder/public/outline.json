@@ -7,14 +7,14 @@
   "level": "中级",
   "type": "training",
   "targetAudience": "有编程基础的开发者、全栈工程师、DevOps、想用 AI 提升开发效率的技术人员",
-  "totalLessons": 74,
+  "totalLessons": 76,
   "totalSteps": 110,
-  "liveClasses": 20,
-  "estimatedHours": 83.3,
+  "liveClasses": 22,
+  "estimatedHours": 86.3,
   "totalInteractiveLabs": 32,
   "title_en": "Vibe Coding Masterclass",
   "description_en": "Build full-stack apps with Claude Code and Codex. From PRD to Skills/MCP/Agent to deployment. For developers with programming experience.",
-  "timeLength": "8 周（74 节课）",
+  "timeLength": "8 周（76 节课）",
   "courseObjective": "建立从个人到企业的 AI 操作系统：用 Source of Truth 把你的经验/规范结构化成 AI 可读的第二大脑，用 ADLC 把整份 PRD 交给 Agent 端到端开发并部署，把重复流程交给 Agent 自动跑，最终能同时指挥多个 Agent 并行工作。",
   "courseObjective_en": "Master Claude Code Skills, MCP Server building, Agent architecture, and multi-model collaboration. Ship a full-stack project from PRD to deployment with AI.",
   "suitable": "有 Python/JS 基础的软件工程师\n全栈开发者想用 AI 10x 开发效率\nDevOps 工程师想了解 AI 开发工具\n技术创业者想快速出产品",
@@ -799,6 +799,18 @@
           "learns": [],
           "learningMaterial": "<h2>学习目标</h2><p>这节课结束后，你能：</p><ul><li>用四问让 AI 几小时读懂一个你没写过、没文档的老项目，每个结论都引用真实文件</li><li>从现有代码反推出 <code>CLAUDE.md</code>，每条规则配一个代码佐证</li><li>架好安全改造网：小步 + 先补测试护栏 + git worktree 隔离 + 可回滚 + 跑全量回归</li><li>用 ADLC 在老项目上真做一次改造，验收 = 新功能 work + 老功能不回归</li></ul><h2>核心概念</h2><h3>为什么 brownfield 才是真实战场</h3><p>前两节你做的都是 greenfield——自己的简历、自己的新产品，白纸一张，没有历史包袱。但你回去上班面对的是另一回事：一个几万行、你没写过、原作者跑路了、没文档、一改就怕崩的老项目。这种「在别人的旧地基上施工」就叫 brownfield，它是工作里 99% 的场景，也是最值钱的工程能力——以前要资深工程师几周才能接手，你 + AI 一晚上。</p><p>一句话钉死纪律：<strong>greenfield 错了重写就行；brownfield 错了是线上事故。</strong>所以这一节的第一原则是「先看懂，再动手」，纪律比 greenfield 严得多。今天你的角色是这个老项目的「接手人」，AI 是帮你快速 onboarding + 安全施工的搭档。</p><h3>① 让 AI 读懂老项目：四问</h3><p>把陌生 codebase 喂给 agent，让它替你几小时干完以前几周的 onboarding。依次问四个问题（投屏指令模板）：</p><pre><code># 1. 架构\n读这个项目，给我画一张架构图：有哪些模块、谁调谁、数据怎么流\n\n# 2. 入口与数据流\n这个项目的入口在哪？一个请求 / 一次操作从进来到结束走过哪些文件？\n\n# 3. 高风险区\n哪些地方是「改了容易连锁崩」的核心？哪些是边角安全区？\n\n# 4. 隐性约定 / 坑\n有哪些隐性约定（命名、错误处理、数据格式）是新人最容易踩的？</code></pre><p><strong>过关标准</strong>：你能拿着 agent 的总结，给旁边同学讲清楚这项目是干嘛的、核心在哪、你要改的那块在哪。讲不清 = 还没读懂，别往下。</p><p><strong>两个高频卡点</strong>：① 项目太大 agent 泛泛而谈 → 聚焦到你今天要改的那一块，让它只深读相关路径；② agent 瞎猜 → 要求它<strong>每个结论引用具体文件 / 行号</strong>，比如「订单状态机在 <code>src/order/state.service.ts:42-88</code>」，不许脑补。这接上第一节「不准编造」的红线。</p><h3>② 逆向补 SoT：从代码反推 CLAUDE.md</h3><p>老项目没有 <code>CLAUDE.md</code>，规则都散在代码里、在跑路的原作者脑子里。让 AI 从现有代码反推出来，写成项目级 SoT——方向和第一节相反：那时是 SoT 指导 code，现在是 code 反推 SoT。指令：</p><pre><code>基于你刚读到的真实代码，帮我起草这个项目的 CLAUDE.md：\n技术栈、目录结构含义、命名/错误处理/数据格式的约定、已知的坑、\n改动时的红线。每一条都要引用代码里的真实例子，不许写通用废话。</code></pre><p><strong>过关标准</strong>：CLAUDE.md 里是从这个项目代码里真挖出来的具体约定，配代码佐证——例如：</p><ul><li>「所有 service 不超过 600 行」← 佐证：<code>user.service.ts</code> 580 行已拆出 <code>user-query.service.ts</code></li><li>「关联一律用 ObjectId 不用 slug」← 佐证：<code>order.schema.ts</code> 的 <code>user: { ref: 'User' }</code></li><li>「API 永远返回 <code>{ data, total }</code>」← 佐证：<code>response.interceptor.ts</code></li></ul><p>而不是「要写注释、要测试」这种放之四海皆准的废话。<strong>卡点</strong>：① 写成通用模板 → 逼它每条规则配一个代码佐证；② 约定互相矛盾（老代码本身不一致，一半 ObjectId 一半 slug）→ 让它标出矛盾点，这本身就是改造的价值发现。你刚做的，就是把一个「只有原作者懂」的项目，变成「任何 AI / 任何新人 5 分钟能上手」的项目。</p><h3>③ 安全改造网：不破坏现有功能</h3><p>brownfield 最大风险 = 改坏别人正在用的东西。动手前先架好五张网：</p><ul><li><strong>小步</strong>：一次只改一件事，别让 agent 一把大重构。</li><li><strong>先加测试护栏</strong>：改之前，让 agent 给你要动的那块补上<strong>现有行为</strong>的测试（锁住「现在是对的」），改完测试还过 = 没破坏。没测试网就别让它改核心。</li><li><strong>worktree 隔离</strong>：用 git worktree 让改造在独立副本上进行，不污染主分支，多个改造还能并行。</li><li><strong>可回滚</strong>：每步 commit，随时退回。</li><li><strong>改完跑全量回归</strong>：不只看新功能，重点看老功能没坏。</li></ul><p>worktree 实操命令：</p><pre><code># 从主仓开一个独立工作副本 + 新分支，互不污染\ngit worktree add ../fix-login feat/fix-login\ncd ../fix-login          # 在这个隔离副本里让 AI 改\n\ngit worktree list        # 看当前有哪些并行副本\n\n# 改砸了？整个副本扔掉，主分支毫发无伤\ngit worktree remove ../fix-login --force</code></pre><p>每一小步都 commit，出问题用 <code>git reset --hard HEAD~1</code> 退回改前那一刻（在隔离副本里做，安全）。</p><h3>④ 用 ADLC 在老项目上跑一次真实改造</h3><p>挑一个真实需求：加一个小功能 / 修一个真 bug / 重构一块烂代码。用 ADLC 闭环走一遍：</p><ol><li><strong>需求 → PRD</strong>：基于<strong>项目现状</strong>写改造 PRD——要改哪些文件、<strong>不能动哪些</strong>、验收 = 新功能 work + 老功能不回归。</li><li><strong>交给 agent 改</strong>：指令 <code>按这份 PRD 改，先补测试锁住现有行为，再小步改，每步告诉我你动了什么</code>。</li><li><strong>回归验证</strong>：跑全量测试 + 手测关键老路径，确认没破坏。</li><li><strong>Review + 干净 PR</strong>：像 review 同事 PR 一样审 AI 的 diff（改对了吗？有没有顺手改坏的？），再让它写 commit message + PR 描述。</li></ol><p><strong>过关标准（两个都满足才算过）</strong>：① 新需求实现了；② 原有功能没坏（回归过）。</p><p><strong>brownfield 特有卡点</strong>：</p><ul><li><strong>AI 改出回归（老功能坏了）</strong> → 立刻回滚到改前 commit，缩小改动范围，先补测试再改。</li><li><strong>看不懂的依赖 / 黑盒</strong> → 让 agent 先解释「这段代码在干嘛、删了会怎样」，理解了再决定动不动，别盲删。</li><li><strong>agent 想顺手「优化」无关代码</strong> → 拦住，红线：只改 PRD 范围内的，别动别的。</li></ul><h2>动手练习</h2><ol><li>带一个真实老项目（你工作里的 repo / 一个开源项目 / 自己半年前写的代码），关键是「不熟、没文档」。</li><li>用四问让 AI 读懂它，然后<strong>对着同学讲清楚</strong>这项目是干嘛的、核心在哪、高风险区在哪——讲得清才算读懂。</li><li>让 AI 从代码反推一份 <code>CLAUDE.md</code>，挑出至少 3 条「从这个项目真挖出来的具体约定」，每条配文件佐证。</li><li>用 <code>git worktree add</code> 开一个隔离副本，挑一个真实小需求：先让 AI 补现有行为的测试，再小步改，每步 commit。</li><li>改完跑全量回归，确认<strong>新功能 work + 老功能没坏</strong>，让 AI 写一个干净 commit + PR 描述，像审同事 PR 一样审它的 diff。</li></ol><h2>常见问题</h2><h3>Q: 老项目根本没有测试，怎么「先补测试护栏」？</h3><p>正是要让 AI 先补。改之前，让它针对你要动的那一小块写「锁住当前行为」的测试（哪怕只是几个关键路径的 snapshot / 断言）。这层网只要能在你改坏时亮红灯就够了，不追求覆盖率。没有这层网就动核心，等于蒙眼施工。</p><h3>Q: 公司真实代码能喂给 AI 吗？</h3><p>看公司政策。全程红线：公司真实代码 / 数据 / 密钥不外发、不进公开 deck。没把握就用老师准备的兜底 demo 老项目练手，方法完全一样。</p><h2>小结</h2><p>brownfield = 在别人的旧地基上安全施工，是工作里 99% 的场景、最值钱的能力，纪律比 greenfield 严：先看懂再动手。四块能力——①四问让 AI 读懂（结论引用真实文件）→ ②从代码反推 CLAUDE.md（每条配代码佐证）→ ③架安全网（小步 / 先补测试 / worktree 隔离 / 可回滚 / 跑回归）→ ④用 ADLC 真改一次（验收 = 新功能 work + 老功能不回归）。记住那句：greenfield 错了重写就行，brownfield 错了是线上事故。</p>",
           "_id": "6a4310742f662a5f6d5c9bb4"
+        },
+        {
+          "code": "L113",
+          "title": "Brownfield②：老项目安全改造实战（worktree + 测试护栏 + ADLC 闭环）",
+          "description": "老项目会读懂了，接下来在不弄坏现有功能的前提下真改一次。worktree 隔离 + 测试护栏 + ADLC 闭环，验收 = 新功能 work + 老功能不回归。",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 120,
+          "steps": [],
+          "labs": [],
+          "learns": [],
+          "learningMaterial": "<h2>学习目标</h2><p>这节课结束后，你能：</p><ul><li>给老项目架好一张安全改造网：小步改 · 先补测试护栏 · git worktree 隔离 · 每步可回滚 · 全量回归</li><li>用 ADLC 在一个真实老项目上真改一次：写改造 PRD（改哪些 / <strong>不能动哪些</strong> / 验收线）→ 交 agent 先补测试锁住现有行为、再小步改 → 回归 → review</li><li>像 review 同事的 PR 一样审 AI 的 diff，产出一个干净 PR</li></ul><h2>核心概念</h2><h3>验收 = 新功能 work + 老功能不回归</h3><p>Brownfield① 已经把老项目读懂了。这节在<strong>不弄坏现有功能</strong>的前提下真改一次。和 greenfield 最大的区别：你不是从零写，而是在别人（或过去的你）留下的、没文档的代码上动刀——所以「没改坏」和「改对了」同等重要。</p><h3>五张安全网</h3><table><tr><th>网</th><th>做法</th></tr><tr><td>小步改</td><td>一次只改一个能验证的最小单元，别让 agent 一把梭</td></tr><tr><td>先补现有行为测试</td><td>改之前先让 agent 给要动的部分补测试，把「现在的行为」锁下来</td></tr><tr><td>worktree 隔离</td><td>在隔离副本里让 AI 改，主工作区不受影响</td></tr><tr><td>每步 commit 可回滚</td><td>每个小步一个 commit，出事 <code>git reset --hard HEAD~1</code> 退回</td></tr><tr><td>改完跑全量回归</td><td>不是「新功能能跑」就算完，要全量测试确认没连累别处</td></tr></table><h2>课堂主线（≈120m）</h2><ol><li><strong>五张安全网（20m）</strong>：为什么老项目必须先立规矩再动手</li><li><strong>worktree 实操（25m）</strong>：<code>git worktree add / list / remove</code>，在隔离副本里让 AI 改，<code>git reset --hard HEAD~1</code> 退回</li><li><strong>ADLC 改造闭环（45m 现场实战）</strong>：写改造 PRD → 交 agent 先补测试 → 小步改、每步汇报 → 回归验证</li><li><strong>审 diff + 干净 PR（20m）</strong>：改对了吗 / 有没有顺手改坏，让 AI 写 commit + PR 描述</li><li><strong>brownfield 特有坑（10m）</strong>：改出回归立刻回滚缩范围；看不懂的依赖先让 agent 解释再动；拦住 agent 顺手「优化」无关代码</li></ol><h2>动手产出</h2><p>在隔离 worktree 里对一个真实老项目做一次带测试护栏的小改造，<strong>回归通过 + 一个干净 PR</strong>。</p><h2>参考</h2><p>Claude Code 官方 <code>/best-practices</code>；<code>git worktree</code>。前置：Brownfield①（L109）。</p>"
         },
         {
           "code": "L26",
@@ -2134,6 +2146,18 @@
           ],
           "learningMaterial": "<h2>学习目标</h2><ul><li>建立 AI Coding 的质量、速度、成本三维优化框架</li><li>用测试、lint、截图和数据校验约束 AI 输出</li><li>减少无效上下文、重复返工和模型调用浪费</li></ul><h2>优化不是只换更强模型</h2><p>AI Coding 的瓶颈通常不是模型不够聪明，而是任务边界不清、上下文噪音太多、验证信号太弱。先把工作流变清楚，再决定是否升级模型。</p><h3>质量优化</h3><ul><li>给出成功标准：测试通过、页面无重叠、API response shape 不变</li><li>要求先读现有模式：组件风格、service 分层、schema 约束</li><li>让 AI 自己跑验证，并在结果里报告失败项</li></ul><h3>速度优化</h3><ul><li>把大任务切成可独立验证的小 slice</li><li>用固定 prompt 模板处理重复任务，例如补测试、改文案、同步 JSON</li><li>缓存稳定上下文：AGENTS、README、业务规则、常用命令</li></ul><h3>成本优化</h3><ul><li>低风险读取和整理用便宜模型，高风险改代码用强模型</li><li>减少整仓粘贴，用文件引用和搜索结果提供上下文</li><li>失败时先缩小问题，不要连续重试同一个大 prompt</li></ul><h2>课堂练习</h2><ol><li>拿一个失败的 AI Coding 对话，标出失败原因属于质量、速度还是成本</li><li>重写任务说明：范围、文件、成功标准、验证命令</li><li>对比两次执行结果，记录节省了哪些返工</li></ol><h2>小结</h2><p>AI Coding 优化的目标是减少返工。清晰的任务边界、可执行的验证命令、稳定的团队 Workflow，比单纯追求更长 Prompt 更有效。</p>",
           "_id": "6a40cbff942e9d8f32d03785"
+        },
+        {
+          "code": "L114",
+          "title": "A2UI：Agent 驱动的生成式 UI（浅讲 + 示例）",
+          "description": "Agent 不止会聊天，还能直接生成跨端原生交互界面。速览 A2UI 生成式 UI 协议在 2026 agent 协议栈里的位置，看一个 agent 生成 UI 的示例。",
+          "type": "Lesson",
+          "isLive": true,
+          "duration": 60,
+          "steps": [],
+          "labs": [],
+          "learns": [],
+          "learningMaterial": "<h2>定位</h2><p><strong>浅讲 + 一个示例。</strong>让你知道「agent 能直接生成界面」这件事、它在协议栈的哪一层，看一个能跑的例子即可，<strong>不深挖实现 / 数据模型</strong>。</p><h2>学习目标</h2><ul><li>说清 A2UI 是什么、为什么它能突破「chat 墙」</li><li>知道它在 2026 agent 协议栈的位置：<strong>A2A（协调）→ MCP（工具）→ AG-UI（运行时）→ A2UI（界面）</strong></li><li>看懂一个 agent 生成 UI 的示例：输入 → agent 输出 UI 描述 → 渲染</li></ul><h2>核心概念</h2><h3>从 text-only 到生成式 UI</h3><p>过去 agent 要么只回文字，要么手嵌一段 HTML，交互能力被「chat 墙」框死。A2UI 让 agent 用<strong>声明式</strong>的方式描述界面，由前端运行时渲染成跨端原生交互界面——agent 不止会聊天，还能直接「交付界面」。</p><h3>协议栈里各管什么（点到为止）</h3><table><tr><th>层</th><th>协议</th><th>管什么</th></tr><tr><td>协调</td><td>A2A</td><td>agent 之间怎么协作</td></tr><tr><td>工具</td><td>MCP</td><td>agent 怎么调工具 / 数据</td></tr><tr><td>运行时</td><td>AG-UI</td><td>agent 与前端运行时怎么通信</td></tr><tr><td>界面</td><td>A2UI</td><td>agent 怎么描述 / 生成界面</td></tr></table><h2>课堂主线（≈60m）</h2><ol><li><strong>是什么 + 动机（15m）</strong>：text-only / 手嵌 HTML 的局限 → 声明式生成式 UI；一句话定位 A2UI</li><li><strong>协议栈速览（15m）</strong>：A2A / MCP / AG-UI / A2UI 各管什么（不展开数据模型）</li><li><strong>示例演示（30m）</strong>：跑一个 agent 生成 UI 的最小示例，讲清「输入 → agent 输出 UI 描述 → 渲染」</li></ol><h2>动手产出</h2><p>看懂并跟着跑一遍示例（不要求从零搭）。</p><h2>参考</h2><ul><li><a href=\"https://a2aprotocol.ai/blog/a2ui-guide\" target=\"_blank\" rel=\"noopener\">The A2UI Protocol：2026 Complete Guide to Agent-Driven Interfaces</a></li><li><a href=\"https://medium.com/@visrow/a2a-mcp-ag-ui-a2ui-the-essential-2026-ai-agent-protocol-stack-ee0e65a672ef\" target=\"_blank\" rel=\"noopener\">A2A, MCP, AG-UI, A2UI：2026 AI Agent 协议栈</a></li><li><a href=\"https://atamel.dev/posts/2026/03-30_a2ui_with_adk/\" target=\"_blank\" rel=\"noopener\">Agent to UI Protocol (A2UI) with ADK — Mete Atamel</a></li></ul><p><strong>⚠️ 备课提示：</strong>A2UI 是 2026 新协议，讲师知识止于 2026-01——开课前务必实测示例能跑，别照可能过时的文档讲。前置：Agent（L60）、MCP（L50）。</p>"
         }
       ]
     },
