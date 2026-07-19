@@ -2,18 +2,18 @@ import { motion } from 'framer-motion';
 import { Slide, Inner, Half, Title, Tag, slideFromLeft, slideFromRight, colors, fonts, border, shadow } from '../ui';
 
 const TAKEAWAYS = [
-	'Scaffold first —— 先框架跑通，再做一个核心 Flow，绝不「一句话做完」',
-	'GitHub 是项目 SoT，CI 是守门人，红灯实验证明它真的拦得住',
-	'Actions 管 CI + Pages，Vercel 管 Preview + Production，各司其职',
-	'完成的标准是「对照 PRD 验收线上版本」，不是「URL 能打开」',
+	'Scaffold first —— 前端 + 后端骨架先跑通，再做一个核心 Flow，绝不「一句话做完」',
+	'GitHub monorepo 是 SoT，CI 守门；两个红灯实验（CI + CORS）证明它拦得住、也能通',
+	'Actions 发前端 Pages，Vercel 发后端 API，中间靠 API_BASE + CORS 一根线连起来',
+	'完成 = 端到端对照 PRD 验收（前端真调到后端），不是「URL 能打开」',
 ];
 
 const HOMEWORK = [
-	'从 Vercel Preview 找一个真实问题',
+	'找一个真实问题（前端展示 / 后端算错都行）',
 	'写成 PRD v1.1 的一条变更',
-	'新分支让 Agent 修改 → Actions 验证',
-	'Preview 验收通过 → merge 到 main',
-	'交：Pages URL + Vercel URL + PR 链接 + Actions 绿灯截图',
+	'新分支让 Agent 改 → Actions 验证（后端用 Vercel Preview 验）',
+	'验收通过 → merge 到 main',
+	'交：Pages URL + Vercel URL + PR + Actions 绿灯 + 前端调通后端截图',
 ];
 
 // 收尾：从文档到交付系统 + 作业
