@@ -116,5 +116,8 @@ try {
 
 const results = { passed: failures.length === 0, checks, viewports, slidesChecked: manifest.slides.length, fixedAspectRatio: "16:9", layoutFailures: failures };
 await writeFile("qa-results.json", `${JSON.stringify(results, null, 2)}\n`);
-if (!results.passed) throw new Error(`Classroom fixed-canvas QA found ${failures.length} layout failures`);
+if (!results.passed) {
+  console.error(JSON.stringify({ layoutFailures: failures }, null, 2));
+  throw new Error(`Classroom fixed-canvas QA found ${failures.length} layout failures`);
+}
 console.log(`Classroom fixed-canvas QA passed: ${checks} viewport/slide checks`);
