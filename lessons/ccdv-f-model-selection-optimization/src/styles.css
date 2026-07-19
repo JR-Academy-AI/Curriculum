@@ -153,7 +153,7 @@ footer { position: absolute; left: 46px; right: 46px; bottom: 18px; display: fle
 .slide-lavender { background: radial-gradient(circle at 84% 16%, rgba(203, 108, 230, .17), transparent 30%), radial-gradient(circle at 8% 90%, rgba(255, 87, 87, .09), transparent 28%), #f4efe8; }
 .slide-sky { background: radial-gradient(circle at 84% 12%, rgba(56, 182, 255, .18), transparent 30%), radial-gradient(circle at 8% 90%, rgba(255, 206, 68, .10), transparent 28%), #f4efe8; }
 .chapter-heading { height: 84px; display: flex; align-items: center; }
-.chapter-heading h1 { max-width: none; margin: 0; font: 800 48px/1.05 "Bricolage Grotesque", "Noto Sans SC", sans-serif; letter-spacing: -.03em; }
+.chapter-heading h1 { width: 100%; max-width: none; margin: 0; font: 800 48px/1.05 "Bricolage Grotesque", "Noto Sans SC", sans-serif; letter-spacing: -.03em; }
 .slide-body { height: 470px; position: relative; }
 .slide-body article, .slide-body code, .slide-body blockquote { border: 3px solid #111; border-radius: 20px; box-shadow: 6px 6px 0 #111; }
 
