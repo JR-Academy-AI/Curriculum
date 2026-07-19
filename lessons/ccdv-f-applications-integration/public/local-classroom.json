@@ -1,0 +1,568 @@
+{
+  "questGoalId": "local-ccdv-f-applications-integration",
+  "presentation": {
+    "renderMode": "react-deck-release",
+    "deckId": "ccdv-f-applications-integration",
+    "releaseId": "local-ccdv-f-applications-integration-20260719",
+    "entryUrl": "http://127.0.0.1:4178/",
+    "manifestUrl": "http://127.0.0.1:4178/manifest.json",
+    "allowedOrigin": "http://127.0.0.1:4178",
+    "bridgeVersion": 1,
+    "slideCount": 18
+  },
+  "steps": [
+    {
+      "id": "domain-map",
+      "stepIndex": 0,
+      "title": "整卷三分之一的 Domain",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4178/thumbnails/01-domain-map.png"
+      },
+      "actions": [
+        {
+          "id": "domain-map-01",
+          "type": "speech",
+          "text": "Applications and Integration 占整卷 33.1%，按 53 题折算大约十八题，是第二名的两倍。复习时间有限时，这一域不是平均分配，而是第一优先级。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/domain-map-01.mp3"
+        },
+        {
+          "id": "domain-map-02",
+          "type": "speech",
+          "text": "权重最高的是 Claude Application Design 8.6% 和 Software Engineering Foundations 7.4%。再加 API Mechanics、配置管理、需求分析和系统生命周期，考的是把 Claude 做成可靠应用，不只是会写 prompt。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/domain-map-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4178/audio/full/domain-map-01.mp3",
+        "http://127.0.0.1:4178/audio/full/domain-map-02.mp3"
+      ]
+    },
+    {
+      "id": "messages-endpoints",
+      "stepIndex": 1,
+      "title": "Messages API 的端点地图",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4178/thumbnails/02-messages-endpoints.png"
+      },
+      "actions": [
+        {
+          "id": "messages-endpoints-01",
+          "type": "speech",
+          "text": "工具调用、结构化输出、streaming、vision、thinking 和 prompt caching，全部从 POST v1 messages 进入，只是参数不同。看到新能力，不要先猜一个新端点。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/messages-endpoints-01.mp3"
+        },
+        {
+          "id": "messages-endpoints-02",
+          "type": "speech",
+          "text": "批处理用 messages batches，数 token 用 messages count tokens，跨请求复用文件用 Files API，发现模型能力用 models。不要拿 OpenAI 的 tiktoken 估 Claude，它会系统性低估。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/messages-endpoints-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4178/audio/full/messages-endpoints-01.mp3",
+        "http://127.0.0.1:4178/audio/full/messages-endpoints-02.mp3"
+      ]
+    },
+    {
+      "id": "request-rules",
+      "stepIndex": 2,
+      "title": "请求与响应的四条硬规则",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4178/thumbnails/03-request-rules.png"
+      },
+      "actions": [
+        {
+          "id": "request-rules-01",
+          "type": "speech",
+          "text": "max_tokens 必填；messages 第一条必须是 user；system 是顶层参数，不是 messages 里的第一条 system 消息。任何一条写错，都可能在模型运行前直接返回 400。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/request-rules-01.mp3"
+        },
+        {
+          "id": "request-rules-02",
+          "type": "speech",
+          "text": "Messages API 是无状态的。每次请求都要把需要的完整历史发回去，没有一个 session id 会替你记住上一轮。会话裁剪、持久化和租户隔离都是应用自己的责任。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/request-rules-02.mp3"
+        },
+        {
+          "id": "request-rules-03",
+          "type": "speech",
+          "text": "response.content 是 block 列表，不是字符串。开启 thinking 或 tool use 后，第一个 block 未必是 text；先处理 refusal，再按 type 过滤并拼接文本。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/request-rules-03.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4178/audio/full/request-rules-01.mp3",
+        "http://127.0.0.1:4178/audio/full/request-rules-02.mp3",
+        "http://127.0.0.1:4178/audio/full/request-rules-03.mp3"
+      ]
+    },
+    {
+      "id": "streaming",
+      "stepIndex": 3,
+      "title": "什么时候必须 Streaming",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4178/thumbnails/04-streaming.png"
+      },
+      "actions": [
+        {
+          "id": "streaming-01",
+          "type": "speech",
+          "text": "长输出、高 max_tokens、用户需要实时反馈，任何一个出现都该考虑 streaming。超过大约一万六千 token 的输出还用非流式，请求容易先撞 SDK 或网关超时。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/streaming-01.mp3"
+        },
+        {
+          "id": "streaming-02",
+          "type": "speech",
+          "text": "Streaming 还有工程价值：持续有数据可以保活连接，并让用户知道系统没挂。SDK 已经提供 finalMessage 或 get_final_message，不要再包一层 Promise 自己拼最终响应。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/streaming-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4178/audio/full/streaming-01.mp3",
+        "http://127.0.0.1:4178/audio/full/streaming-02.mp3"
+      ]
+    },
+    {
+      "id": "vision-files",
+      "stepIndex": 4,
+      "title": "图片、PDF 与 Files API",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4178/thumbnails/05-vision-files.png"
+      },
+      "actions": [
+        {
+          "id": "vision-files-01",
+          "type": "speech",
+          "text": "处理 PDF 时，document block 放在 text block 前面；base64 里不要带换行。单次上传适合一次性文件，同一个文件会被多次请求复用，就不要重复传 base64。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/vision-files-01.mp3"
+        },
+        {
+          "id": "vision-files-02",
+          "type": "speech",
+          "text": "跨请求复用文件时，用 Files API 上传一次，后续引用 file_id。这样省带宽，也避免每个请求重复搬运同一份内容；它和 prompt caching 解决的是不同层的问题。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/vision-files-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4178/audio/full/vision-files-01.mp3",
+        "http://127.0.0.1:4178/audio/full/vision-files-02.mp3"
+      ]
+    },
+    {
+      "id": "batch-api",
+      "stepIndex": 5,
+      "title": "Realtime 与 Batch 的分界线",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4178/thumbnails/06-batch-api.png"
+      },
+      "actions": [
+        {
+          "id": "batch-api-01",
+          "type": "speech",
+          "text": "用户坐在屏幕前等，就走同步 Messages API。结果明早才要、数量大而且成本敏感，就走 Message Batches API；它省百分之五十，但最长可以等二十四小时。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/batch-api-01.mp3"
+        },
+        {
+          "id": "batch-api-02",
+          "type": "speech",
+          "text": "Batch 结果可能乱序返回，必须按 custom_id 认领，绝不能按数组下标。invalid_request 修参数再提交；服务端错误才适合安全重试。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/batch-api-02.mp3"
+        },
+        {
+          "id": "batch-api-03",
+          "type": "speech",
+          "text": "Batch 支持 vision、tools 和 caching，但 Anthropic 一方 API 的能力不能想当然搬到所有平台。Bedrock 和 Vertex 当前不支持 Message Batches，题干给出平台时先查能力矩阵。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/batch-api-03.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4178/audio/full/batch-api-01.mp3",
+        "http://127.0.0.1:4178/audio/full/batch-api-02.mp3",
+        "http://127.0.0.1:4178/audio/full/batch-api-03.mp3"
+      ]
+    },
+    {
+      "id": "prompt-caching",
+      "stepIndex": 6,
+      "title": "Prompt Caching 只认前缀",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4178/thumbnails/07-prompt-caching.png"
+      },
+      "actions": [
+        {
+          "id": "prompt-caching-01",
+          "type": "speech",
+          "text": "Prompt caching 是前缀匹配，渲染顺序是 tools、system、messages。前缀任何一个字节变化，从变化点往后的缓存全部失效。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/prompt-caching-01.mp3"
+        },
+        {
+          "id": "prompt-caching-02",
+          "type": "speech",
+          "text": "时间戳、用户 ID 和按用户变化的工具集放在前缀里，都会让缓存永远失效，而且通常不报错。稳定长内容放前面，动态信息放到 messages 靠后位置。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/prompt-caching-02.mp3"
+        },
+        {
+          "id": "prompt-caching-03",
+          "type": "speech",
+          "text": "不要凭感觉判断缓存。重复请求后看 cache_read_input_tokens；它一直是零，就去前缀里找变化项。低于模型的最小缓存前缀也会静默不缓存。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/prompt-caching-03.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4178/audio/full/prompt-caching-01.mp3",
+        "http://127.0.0.1:4178/audio/full/prompt-caching-02.mp3",
+        "http://127.0.0.1:4178/audio/full/prompt-caching-03.mp3"
+      ]
+    },
+    {
+      "id": "vendor-matrix",
+      "stepIndex": 7,
+      "title": "第三方平台不是换个 base_url",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4178/thumbnails/08-vendor-matrix.png"
+      },
+      "actions": [
+        {
+          "id": "vendor-matrix-01",
+          "type": "speech",
+          "text": "Anthropic 一方 API 使用裸模型 ID。Amazon Bedrock 要用专属客户端，而且模型 ID 带 anthropic 前缀；Google Vertex 使用专属客户端，但模型 ID 不加这个前缀。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/vendor-matrix-01.mp3"
+        },
+        {
+          "id": "vendor-matrix-02",
+          "type": "speech",
+          "text": "不要用 Anthropic 加 base_url 冒充第三方平台客户端。构造完成后 messages.create 形状相似，不代表 Batch、web search 等特性都可用；选项要同时满足平台和功能两个约束。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/vendor-matrix-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4178/audio/full/vendor-matrix-01.mp3",
+        "http://127.0.0.1:4178/audio/full/vendor-matrix-02.mp3"
+      ]
+    },
+    {
+      "id": "concurrency-retry",
+      "stepIndex": 8,
+      "title": "并发闸门与重试分类",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4178/thumbnails/09-concurrency-retry.png"
+      },
+      "actions": [
+        {
+          "id": "concurrency-retry-01",
+          "type": "speech",
+          "text": "五百个请求一次 gather 不会变便宜，只会同时撞 RPM 和 token 限流。用 semaphore 限并发，429 优先读 retry-after，再做指数退避和 jitter。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/concurrency-retry-01.mp3"
+        },
+        {
+          "id": "concurrency-retry-02",
+          "type": "speech",
+          "text": "429、500、529 和连接错误可以退避重试。400、401、403、404、413 是请求、身份、权限、资源或大小问题，重试不会改变结果。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/concurrency-retry-02.mp3"
+        },
+        {
+          "id": "concurrency-retry-03",
+          "type": "speech",
+          "text": "程序要捕获 SDK 的类型化异常，catch 从具体到宽泛。字符串匹配 rate limit 既脆弱，也会把该重试和不该重试的错误混在一起。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/concurrency-retry-03.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4178/audio/full/concurrency-retry-01.mp3",
+        "http://127.0.0.1:4178/audio/full/concurrency-retry-02.mp3",
+        "http://127.0.0.1:4178/audio/full/concurrency-retry-03.mp3"
+      ]
+    },
+    {
+      "id": "timeout-budget",
+      "stepIndex": 9,
+      "title": "默认重试会偷走墙钟时间",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4178/thumbnails/10-timeout-budget.png"
+      },
+      "actions": [
+        {
+          "id": "timeout-budget-01",
+          "type": "speech",
+          "text": "SDK 默认 timeout 十分钟，并自动重试两次。最坏情况下，一次业务调用能占住三十分钟；如果服务 SLA 是三十秒，默认值就是一个隐藏事故。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/timeout-budget-01.mp3"
+        },
+        {
+          "id": "timeout-budget-02",
+          "type": "speech",
+          "text": "先定业务 SLA，再给网关、应用重试和单次模型调用分配时间预算。Python timeout 用秒，TypeScript 用毫秒；单位弄反会把二十秒写成二十毫秒或更糟。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/timeout-budget-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4178/audio/full/timeout-budget-01.mp3",
+        "http://127.0.0.1:4178/audio/full/timeout-budget-02.mp3"
+      ]
+    },
+    {
+      "id": "authority-boundaries",
+      "stepIndex": 10,
+      "title": "指令权威与内容边界",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4178/thumbnails/11-authority-boundaries.png"
+      },
+      "actions": [
+        {
+          "id": "authority-boundaries-01",
+          "type": "speech",
+          "text": "顶层 system 是操作者硬约束，user 表达用户意图，tool_result 和检索到的网页只是数据。让外部数据反过来改写高权威指令，就是 prompt injection 的入口。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/authority-boundaries-01.mp3"
+        },
+        {
+          "id": "authority-boundaries-02",
+          "type": "speech",
+          "text": "CLAUDE.md 是 Claude Code 的机制，API 调用不会读取它。Desktop、claude.ai、Claude Code 和 SDK 的指令载体不同，题目问不生效时先确认是不是放错界面。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/authority-boundaries-02.mp3"
+        },
+        {
+          "id": "authority-boundaries-03",
+          "type": "speech",
+          "text": "XML 标签可以把不可信内容圈成数据，但它只是提示。真正的安全边界是代码层最小权限：处理网页内容的链路，不要挂删除、转账或发信工具。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/authority-boundaries-03.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4178/audio/full/authority-boundaries-01.mp3",
+        "http://127.0.0.1:4178/audio/full/authority-boundaries-02.mp3",
+        "http://127.0.0.1:4178/audio/full/authority-boundaries-03.mp3"
+      ]
+    },
+    {
+      "id": "structured-output",
+      "stepIndex": 11,
+      "title": "格式约束必须落到 API 层",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4178/thumbnails/12-structured-output.png"
+      },
+      "actions": [
+        {
+          "id": "structured-output-01",
+          "type": "speech",
+          "text": "在 prompt 里写 always return valid JSON 仍然是概率要求。整个响应要结构化，用 output_config.format；工具参数要合法，用 strict true 的工具定义。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/structured-output-01.mp3"
+        },
+        {
+          "id": "structured-output-02",
+          "type": "speech",
+          "text": "required 只放真正必填的字段。简历没有 GitHub，却把 github 设为 required，模型就可能为了通过 schema 编一个值；可选字段应该允许 null 或干脆不出现。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/structured-output-02.mp3"
+        },
+        {
+          "id": "structured-output-03",
+          "type": "speech",
+          "text": "API 层结构化约束提高确定性，但应用仍要做业务校验、版本兼容和错误处理。模型生成的 JSON 文本必须实际 parse，不能对序列化字符串做原始匹配。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/structured-output-03.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4178/audio/full/structured-output-01.mp3",
+        "http://127.0.0.1:4178/audio/full/structured-output-02.mp3",
+        "http://127.0.0.1:4178/audio/full/structured-output-03.mp3"
+      ]
+    },
+    {
+      "id": "session-hygiene",
+      "stepIndex": 12,
+      "title": "Session 卫生不是一直 append",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4178/thumbnails/13-session-hygiene.png"
+      },
+      "actions": [
+        {
+          "id": "session-hygiene-01",
+          "type": "speech",
+          "text": "一个用户一个永久 session 会让无关历史越来越贵，也让旧指令污染新任务。任务边界变化时开新 session，长任务再配合 caching、compaction 和 context editing。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/session-hygiene-01.mp3"
+        },
+        {
+          "id": "session-hygiene-02",
+          "type": "speech",
+          "text": "结果不能串到错误用户，就要在 session、缓存 key、日志和存储上带租户边界。API 无状态不等于应用可以不管状态，恰恰意味着责任完全在你。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/session-hygiene-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4178/audio/full/session-hygiene-01.mp3",
+        "http://127.0.0.1:4178/audio/full/session-hygiene-02.mp3"
+      ]
+    },
+    {
+      "id": "configuration-pinning",
+      "stepIndex": 13,
+      "title": "模型与 Prompt 都必须 Pin",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4178/thumbnails/14-configuration-pinning.png"
+      },
+      "actions": [
+        {
+          "id": "configuration-pinning-01",
+          "type": "speech",
+          "text": "模型 ID 要集中 pin 在一处。升级可能带来参数移除、thinking 默认值变化、分词器变化和缓存冷启动，所以必须走 review、回归 eval 和参数重校准。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/configuration-pinning-01.mp3"
+        },
+        {
+          "id": "configuration-pinning-02",
+          "type": "speech",
+          "text": "Prompt 要带 version、进入版本控制并接受 code review。否则质量下降时无法定位是哪次修改，也无法让两个版本跑同一套 eval 做 A B 对比。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/configuration-pinning-02.mp3"
+        },
+        {
+          "id": "configuration-pinning-03",
+          "type": "speech",
+          "text": "团队共享的配置可以进 Git，但密钥不能进去。配置里只写环境变量占位符，真实 token 由部署环境提供；把整份配置 gitignore 会让团队失去共同配置。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/configuration-pinning-03.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4178/audio/full/configuration-pinning-01.mp3",
+        "http://127.0.0.1:4178/audio/full/configuration-pinning-02.mp3",
+        "http://127.0.0.1:4178/audio/full/configuration-pinning-03.mp3"
+      ]
+    },
+    {
+      "id": "requirements-map",
+      "stepIndex": 14,
+      "title": "从业务句子推出技术约束",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4178/thumbnails/15-requirements-map.png"
+      },
+      "actions": [
+        {
+          "id": "requirements-map-01",
+          "type": "speech",
+          "text": "响应两秒内，直接排除 Batch，并考虑更快模型和 streaming 首字节。结果明早才要，优先 Batch。所有交互可审计，则日志必须带模型版本、prompt 版本和请求标识。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/requirements-map-01.mp3"
+        },
+        {
+          "id": "requirements-map-02",
+          "type": "speech",
+          "text": "七乘二十四在线意味着限流退避、降级路径和告警。结果不能给错用户，意味着租户隔离、session 不串、缓存 key 带租户维度；这不是一句安全 prompt 能解决的。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/requirements-map-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4178/audio/full/requirements-map-01.mp3",
+        "http://127.0.0.1:4178/audio/full/requirements-map-02.mp3"
+      ]
+    },
+    {
+      "id": "observability",
+      "stepIndex": 15,
+      "title": "每次调用至少记录什么",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4178/thumbnails/16-observability.png"
+      },
+      "actions": [
+        {
+          "id": "observability-01",
+          "type": "speech",
+          "text": "日志至少记录 trace_id、prompt_version、model、stop_reason、输入输出 token 和 latency。stop_reason 频繁出现 max_tokens，说明输出正在被静默截断。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/observability-01.mp3"
+        },
+        {
+          "id": "observability-02",
+          "type": "speech",
+          "text": "cache_read 一直是零，说明缓存没命中；request_id 是报障时让 Anthropic 端到端追踪的关键；error_type 用于程序分类，错误文案只给人看。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/observability-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4178/audio/full/observability-01.mp3",
+        "http://127.0.0.1:4178/audio/full/observability-02.mp3"
+      ]
+    },
+    {
+      "id": "contract-question",
+      "stepIndex": 16,
+      "title": "合同审查题的两个约束",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4178/thumbnails/17-contract-question.png"
+      },
+      "actions": [
+        {
+          "id": "contract-question-01",
+          "type": "speech",
+          "text": "合同审查题里，用户正坐在网页上等结果，所以即使成本高，Message Batches 也先被排除。三万二 max_tokens 又是非流式，页面没有反馈，还可能撞超时。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/contract-question-01.mp3"
+        },
+        {
+          "id": "contract-question-02",
+          "type": "speech",
+          "text": "第一刀改 streaming，让用户尽快看到结果并保持连接；第二刀给六千 token 的稳定风险清单加缓存断点。答案是 B 加 C，不是降到小模型或粗暴截短输出。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/contract-question-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4178/audio/full/contract-question-01.mp3",
+        "http://127.0.0.1:4178/audio/full/contract-question-02.mp3"
+      ]
+    },
+    {
+      "id": "recap",
+      "stepIndex": 17,
+      "title": "本章速记",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4178/thumbnails/18-recap.png"
+      },
+      "actions": [
+        {
+          "id": "recap-01",
+          "type": "speech",
+          "text": "用户在等选同步，长输出选 streaming，结果不急的大批量选 Batch 并按 custom_id 认领。稳定前缀做 caching，复用文件走 Files API。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/recap-01.mp3"
+        },
+        {
+          "id": "recap-02",
+          "type": "speech",
+          "text": "429 和五百段错误退避重试，四百段请求错误先修原因。格式约束放 API 层，外部内容只当数据。模型和 prompt 都 pin 住，日志要能回答哪一版、花多少、为什么失败。",
+          "audioUrl": "http://127.0.0.1:4178/audio/full/recap-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4178/audio/full/recap-01.mp3",
+        "http://127.0.0.1:4178/audio/full/recap-02.mp3"
+      ]
+    }
+  ]
+}
