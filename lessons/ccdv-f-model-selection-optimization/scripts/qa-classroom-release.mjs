@@ -59,6 +59,7 @@ try {
     await page.waitForFunction(() => window.deckMessages.some(message => message?.type === "JR_DECK_READY"));
     const frame = page.frames().find(candidate => candidate.url().startsWith(deckUrl));
     if (!frame) throw new Error("Deck iframe was not created");
+    await frame.evaluate(() => document.fonts.ready);
     for (const slide of manifest.slides) {
       await page.evaluate(({ id, index }) => window.loadSlide(id, index), slide);
       await page.waitForFunction(({ id }) => window.deckMessages.some(message => message?.type === "JR_DECK_SLIDE_READY" && message.slideId === id), {}, slide);
