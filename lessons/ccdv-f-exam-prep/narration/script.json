@@ -1,0 +1,384 @@
+{
+  "schemaVersion": 1,
+  "deckId": "ccdv-f-exam-prep",
+  "course": "Claude Certified Developer – Foundations",
+  "chapterTitle": "Exam Prep",
+  "voice": {
+    "provider": "ElevenLabs",
+    "name": "Amy",
+    "voiceId": "bhJUNIXWQQ94l8eI2VUf",
+    "model": "eleven_v3",
+    "stability": 0.56,
+    "similarityBoost": 0.78,
+    "tempo": 1.18
+  },
+  "voiceStatus": "generated-local-review",
+  "generatedAt": "2026-07-19T14:32:23.898Z",
+  "summary": {
+    "sectionCount": 18,
+    "segmentCount": 36,
+    "totalDurationMs": 344983
+  },
+  "sections": [
+    {
+      "id": "format",
+      "title": "考试节奏",
+      "segments": [
+        {
+          "id": "format-01",
+          "title": "五十三题不是六十题",
+          "text": "C C D V F 是五十三题，考试时间一百二十分钟，平均每题两分十五秒。按六十题训练，会把答题节奏和权重折算一起练错。",
+          "audioPath": "audio/full/format-01.mp3",
+          "durationMs": 9563
+        },
+        {
+          "id": "format-02",
+          "title": "每题独立",
+          "text": "这门考试没有 C C A R F 那种场景抽题结构，每道题都要独立读题。多选题会明确要求选两个，必须选满。",
+          "audioPath": "audio/full/format-02.mp3",
+          "durationMs": 8858
+        }
+      ]
+    },
+    {
+      "id": "domain-weights",
+      "title": "八域权重优先级",
+      "segments": [
+        {
+          "id": "domain-weights-01",
+          "title": "前三域占近三分之二",
+          "text": "Applications and Integration 百分之三十三点一，Model Selection 百分之十六点八，Agents and Workflows 百分之十四点七，前三域合计百分之六十四点六。",
+          "audioPath": "audio/full/domain-weights-01.mp3",
+          "durationMs": 9712
+        },
+        {
+          "id": "domain-weights-02",
+          "title": "时间不够先抓大头",
+          "text": "如果只能复习一半内容，优先 D 二、D 五和 D 一。Claude Code 百分之三点一，Eval 百分之二点六，不能因为熟悉或喜欢就投入过量。",
+          "audioPath": "audio/full/domain-weights-02.mp3",
+          "durationMs": 9462
+        }
+      ]
+    },
+    {
+      "id": "top-skills",
+      "title": "最高权重子技能",
+      "segments": [
+        {
+          "id": "top-skills-01",
+          "title": "前两名都在 D2",
+          "text": "Claude Application Design 百分之八点六，Software Engineering Foundations 百分之七点四，两个子技能合计百分之十六。",
+          "audioPath": "audio/full/top-skills-01.mp3",
+          "durationMs": 7178
+        },
+        {
+          "id": "top-skills-02",
+          "title": "软件工程不能裸奔",
+          "text": "Software Engineering、Systems Life Cycle 与 Requirements 合计百分之十三点六，内容是 REST、J S O N、并发、版本控制与重构，比整个 Tools and M C P 更重。",
+          "audioPath": "audio/full/top-skills-02.mp3",
+          "durationMs": 11424
+        }
+      ]
+    },
+    {
+      "id": "time-budget",
+      "title": "四十小时复习预算",
+      "segments": [
+        {
+          "id": "time-budget-01",
+          "title": "按权重分配小时",
+          "text": "四十小时计划里，Applications 约十三小时，Model 七小时，Agents 六小时，Prompt 四点五小时，Tools 四小时，Security 三小时。",
+          "audioPath": "audio/full/time-budget-01.mp3",
+          "durationMs": 9327
+        },
+        {
+          "id": "time-budget-02",
+          "title": "给低权重域硬上限",
+          "text": "Claude Code 控制在一点五小时，Eval 控制在一小时。把一周砸在 Claude Code，相当于用四分之一时间换百分之三点一的分值。",
+          "audioPath": "audio/full/time-budget-02.mp3",
+          "durationMs": 8434
+        }
+      ]
+    },
+    {
+      "id": "two-weeks",
+      "title": "最后两周路线",
+      "segments": [
+        {
+          "id": "two-weeks-01",
+          "title": "第二周前补 D2",
+          "text": "倒数第二周集中补 Application Design、Software Engineering 与 API Mechanics。它们一起覆盖二成以上，而且是其他域的工程地基。",
+          "audioPath": "audio/full/two-weeks-01.mp3",
+          "durationMs": 8380
+        },
+        {
+          "id": "two-weeks-02",
+          "title": "最后一周与三天",
+          "text": "倒数一周扫 D 五、D 一、D 六、D 八，最后三天收尾 Security、Claude Code 与 Debug。前一天只做一套五十三题整卷和硬事实复盘。",
+          "audioPath": "audio/full/two-weeks-02.mp3",
+          "durationMs": 10033
+        }
+      ]
+    },
+    {
+      "id": "four-traps",
+      "title": "错误答案四种基因",
+      "segments": [
+        {
+          "id": "four-traps-01",
+          "title": "前三种陷阱",
+          "text": "第一类是小问题上重架构的过度工程，第二类是答案本身不错却违反题干约束，第三类是在下游吞报警而不回源头修。",
+          "audioPath": "audio/full/four-traps-01.mp3",
+          "durationMs": 9993
+        },
+        {
+          "id": "four-traps-02",
+          "title": "第四种最阴",
+          "text": "第四类用 prompt 的概率性请求去保证确定性要求，例如请模型记得授权。看到代码、配置或架构层的强制选项，它通常胜过 prompt 提醒。",
+          "audioPath": "audio/full/four-traps-02.mp3",
+          "durationMs": 10612
+        }
+      ]
+    },
+    {
+      "id": "overbuild",
+      "title": "过度工程陷阱",
+      "segments": [
+        {
+          "id": "overbuild-01",
+          "title": "First step 看比例",
+          "text": "题目问 most effective first step，不是在问最终最豪华架构。两个工具选错，先补 description，而不是立刻训练 routing classifier。",
+          "audioPath": "audio/full/overbuild-01.mp3",
+          "durationMs": 9297
+        },
+        {
+          "id": "overbuild-02",
+          "title": "简单控制流别上 Agent",
+          "text": "三步固定、路径可预测的流程直接写 workflow。Agent 只在步骤和顺序无法预先确定时才值得承担不确定性与成本。",
+          "audioPath": "audio/full/overbuild-02.mp3",
+          "durationMs": 8706
+        }
+      ]
+    },
+    {
+      "id": "constraints",
+      "title": "题干约束淘汰法",
+      "segments": [
+        {
+          "id": "constraints-01",
+          "title": "实时与平台约束",
+          "text": "用户在网页等结果，就排除最长二十四小时的 Batch；题干指定 Bedrock 或 Vertex，也排除不支持的 Batches API。",
+          "audioPath": "audio/full/constraints-01.mp3",
+          "durationMs": 8824
+        },
+        {
+          "id": "constraints-02",
+          "title": "安全与质量约束",
+          "text": "代码不能离开内网，就排除 Anthropic 托管的 Managed Agents；准确率不能下降，就先排除小模型与降低 effort。先圈约束再看选项。",
+          "audioPath": "audio/full/constraints-02.mp3",
+          "durationMs": 9863
+        }
+      ]
+    },
+    {
+      "id": "source-fix",
+      "title": "回源头修错误语义",
+      "segments": [
+        {
+          "id": "source-fix-01",
+          "title": "下游补丁会误伤",
+          "text": "空结果误标 is error 后，让 coordinator 忽略所有 is error 或 try catch 吞掉，虽然报警少了，却把 rate limit 与认证失败一起掩盖。",
+          "audioPath": "audio/full/source-fix-01.mp3",
+          "durationMs": 9633
+        },
+        {
+          "id": "source-fix-02",
+          "title": "源头恢复语义",
+          "text": "正确修法是在工具源头返回 found false 且不设 error；瞬时故障标 retryable，输入错误要求改参，不可恢复故障升级。",
+          "audioPath": "audio/full/source-fix-02.mp3",
+          "durationMs": 9663
+        }
+      ]
+    },
+    {
+      "id": "deterministic",
+      "title": "确定性要求的控制层",
+      "segments": [
+        {
+          "id": "deterministic-01",
+          "title": "格式与完整性不能靠提醒",
+          "text": "合法 J S O N 用 output config format 或 strict tool；输出完整性靠足够 max tokens 与 streaming，不是请模型保证别截断。",
+          "audioPath": "audio/full/deterministic-01.mp3",
+          "durationMs": 9272
+        },
+        {
+          "id": "deterministic-02",
+          "title": "安全边界必须是代码",
+          "text": "退款前验证身份用 PreToolUse，管理员删除权限由后端 session 检查，Prompt injection 靠最小权限切断危险工具。请求不是控制。",
+          "audioPath": "audio/full/deterministic-02.mp3",
+          "durationMs": 9745
+        }
+      ]
+    },
+    {
+      "id": "repeats",
+      "title": "跨域重复知识点",
+      "segments": [
+        {
+          "id": "repeats-01",
+          "title": "跨三个域的高频项",
+          "text": "美元花括号环境变量展开出现在 D 二、D 三、D 七；缓存前缀出现在 D 二、D 五、D 六；模型迁移出现在 D 二、D 四、D 五。",
+          "audioPath": "audio/full/repeats-01.mp3",
+          "durationMs": 10101
+        },
+        {
+          "id": "repeats-02",
+          "title": "跨两个域的连接点",
+          "text": "Pre 与 Post、空结果不是错误、最小权限、Subagent 隔离和工具结果只是数据，都在两个域重复。跨域重复通常意味着高出题概率。",
+          "audioPath": "audio/full/repeats-02.mp3",
+          "durationMs": 9790
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "title": "必须记住的数字",
+      "segments": [
+        {
+          "id": "numbers-01",
+          "title": "考试与有效期",
+          "text": "题量五十三，时长一百二十分钟，及格线七百二十是量表分，不是答对百分之七十二。证书有效十二个月。",
+          "audioPath": "audio/full/numbers-01.mp3",
+          "durationMs": 7708
+        },
+        {
+          "id": "numbers-02",
+          "title": "API 与成本数字",
+          "text": "Prompt cache 最多四个断点，回溯二十个 content block，读约零点一倍价格；Batch 省百分之五十，最长二十四小时；SDK 默认重试两次。",
+          "audioPath": "audio/full/numbers-02.mp3",
+          "durationMs": 10348
+        }
+      ]
+    },
+    {
+      "id": "stop-reasons",
+      "title": "五种 Stop Reason",
+      "segments": [
+        {
+          "id": "stop-reasons-01",
+          "title": "正常循环路径",
+          "text": "end turn 是唯一正常出口；tool use 执行工具后回 tool result，再继续循环。不要通过文本语气猜模型是否完成。",
+          "audioPath": "audio/full/stop-reasons-01.mp3",
+          "durationMs": 8459
+        },
+        {
+          "id": "stop-reasons-02",
+          "title": "三种异常分支",
+          "text": "max tokens 当失败处理，提高上限或 streaming；pause turn 原样重发完整 response content；refusal 先判断再读 content，因为它可能为空数组。",
+          "audioPath": "audio/full/stop-reasons-02.mp3",
+          "durationMs": 10508
+        }
+      ]
+    },
+    {
+      "id": "http",
+      "title": "HTTP 重试地图",
+      "segments": [
+        {
+          "id": "http-01",
+          "title": "不可原样重试",
+          "text": "四百是请求非法，四零一是凭证，四零三是权限，四零四常是模型 ID，四一三是请求太大。这些问题原样重试不会自行消失。",
+          "audioPath": "audio/full/http-01.mp3",
+          "durationMs": 10132
+        },
+        {
+          "id": "http-02",
+          "title": "可重试错误",
+          "text": "四二九读取 retry after，并使用指数退避加抖动；五百、五二九和连接错误可以重试。重试策略按错误类型，不是统一三次。",
+          "audioPath": "audio/full/http-02.mp3",
+          "durationMs": 9068
+        }
+      ]
+    },
+    {
+      "id": "breaking",
+      "title": "当前模型迁移清单",
+      "segments": [
+        {
+          "id": "breaking-01",
+          "title": "传了就四百",
+          "text": "Temperature、top p、top k、旧 thinking budget tokens、assistant prefill 和顶层 output format 都已移除或弃用，应改成当前接口。",
+          "audioPath": "audio/full/breaking-01.mp3",
+          "durationMs": 9095
+        },
+        {
+          "id": "breaking-02",
+          "title": "静默变化更危险",
+          "text": "Thinking display 默认 omitted，部分 Opus 省略 thinking 不等于 adaptive，分词器和字面遵循也会变化。升级必须 pin、review、Eval 和重新计数。",
+          "audioPath": "audio/full/breaking-02.mp3",
+          "durationMs": 10642
+        }
+      ]
+    },
+    {
+      "id": "mcp-tools",
+      "title": "Tools 与 MCP 速记",
+      "segments": [
+        {
+          "id": "mcp-tools-01",
+          "title": "四选一看复用面",
+          "text": "官方已有能力用 Builtin，单 App 业务函数用 Custom Tool，知识流程用 Skill，跨 App 与跨 Host 复用才用 M C P。",
+          "audioPath": "audio/full/mcp-tools-01.mp3",
+          "durationMs": 8033
+        },
+        {
+          "id": "mcp-tools-02",
+          "title": "MCP 的控制方与连接",
+          "text": "Tools 由模型控制，Resources 由应用控制，Prompts 由用户控制。Host 为每个 Server 建一个 Client；同机 stdio，远程 Streamable HTTP。",
+          "audioPath": "audio/full/mcp-tools-02.mp3",
+          "durationMs": 10962
+        }
+      ]
+    },
+    {
+      "id": "eight-lines",
+      "title": "八域各一句",
+      "segments": [
+        {
+          "id": "eight-lines-01",
+          "title": "D1 到 D4",
+          "text": "D 一简单优先并看 stop reason；D 二在正确层解决且约束是钥匙；D 三只抓层级、settings 与 headless；D 四用 HTTP 二百划分集成与模型层。",
+          "audioPath": "audio/full/eight-lines-01.mp3",
+          "durationMs": 12611
+        },
+        {
+          "id": "eight-lines-02",
+          "title": "D5 到 D8",
+          "text": "D 五先用不降质量的成本刀；D 六把约束放对层并验证自信输出；D 七请求不是控制；D 八回源头，并用复用面做选型。",
+          "audioPath": "audio/full/eight-lines-02.mp3",
+          "durationMs": 10053
+        }
+      ]
+    },
+    {
+      "id": "exam-loop",
+      "title": "考场二十秒决策循环",
+      "segments": [
+        {
+          "id": "exam-loop-01",
+          "title": "前四步快速落层",
+          "text": "先圈实时、成本、平台与复用约束，再定位集成、模型、工具或安全层，排除四类陷阱，选择最便宜、最对症、回源头的动作。",
+          "audioPath": "audio/full/exam-loop-01.mp3",
+          "durationMs": 10312
+        },
+        {
+          "id": "exam-loop-02",
+          "title": "保护后面的题",
+          "text": "卡住超过节奏就标记并继续。为一道题纠结五分钟，等于拿后面两道题的时间交换。我们不承诺保过，但可以让复习与答题不走弯路。",
+          "audioPath": "audio/full/exam-loop-02.mp3",
+          "durationMs": 9182
+        }
+      ]
+    }
+  ]
+}
