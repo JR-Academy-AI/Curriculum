@@ -145,21 +145,41 @@ jobs:
         working-directory: ${{ matrix.deck }}
         run: |
           AUDIO_PREFIX="audio/${{ steps.release.outputs.deck_id }}/${{ steps.release.outputs.release_id }}"
-          FIRST_AUDIO=$(find public/audio -type f -name '*.mp3' | sort | head -n 1)
-          test -n "$FIRST_AUDIO"
-          FIRST_RELATIVE=${FIRST_AUDIO#public/audio/}
-          if aws s3api head-object --bucket "${{ steps.release.outputs.asset_bucket }}" --key "$AUDIO_PREFIX/$FIRST_RELATIVE" >/dev/null 2>&1; then
-            echo "Narration release already exists: s3://${{ steps.release.outputs.asset_bucket }}/$AUDIO_PREFIX" >&2
-            exit 1
-          fi
-          aws s3 sync public/audio/ "s3://${{ steps.release.outputs.asset_bucket }}/$AUDIO_PREFIX/" \
-            --exclude '*' --include '*.mp3' \
-            --content-type 'audio/mpeg' \
-            --cache-control 'public,max-age=31536000,immutable' \
-            --no-progress
-          LOCAL_COUNT=$(find public/audio -type f -name '*.mp3' | wc -l | tr -d ' ')
-          REMOTE_COUNT=$(aws s3 ls "s3://${{ steps.release.outputs.asset_bucket }}/$AUDIO_PREFIX/" --recursive | awk '$4 ~ /\.mp3$/ { count += 1 } END { print count + 0 }')
-          test "$LOCAL_COUNT" = "$REMOTE_COUNT"
+          AUDIO_BASE="${{ steps.release.outputs.audio_base }}/"
+          mapfile -t AUDIO_RELATIVE_PATHS < <(
+            jq -r --arg base "$AUDIO_BASE" \
+              '.slides[].actions[]?.audioUrl // empty | select(startswith($base)) | ltrimstr($base)' \
+              dist/manifest.json \
+              | sort -u
+          )
+          test "${#AUDIO_RELATIVE_PATHS[@]}" -gt 0
+          for relative_path in "${AUDIO_RELATIVE_PATHS[@]}"; do
+            test -f "public/audio/$relative_path"
+            if aws s3api head-object \
+              --bucket "${{ steps.release.outputs.asset_bucket }}" \
+              --key "$AUDIO_PREFIX/$relative_path" >/dev/null 2>&1; then
+              echo "Narration object already exists: s3://${{ steps.release.outputs.asset_bucket }}/$AUDIO_PREFIX/$relative_path" >&2
+              exit 1
+            fi
+          done
+          for relative_path in "${AUDIO_RELATIVE_PATHS[@]}"; do
+            aws s3api put-object \
+              --bucket "${{ steps.release.outputs.asset_bucket }}" \
+              --key "$AUDIO_PREFIX/$relative_path" \
+              --body "public/audio/$relative_path" \
+              --content-type 'audio/mpeg' \
+              --cache-control 'public,max-age=31536000,immutable' \
+              --no-cli-pager >/dev/null
+          done
+          for relative_path in "${AUDIO_RELATIVE_PATHS[@]}"; do
+            aws s3api head-object \
+              --bucket "${{ steps.release.outputs.asset_bucket }}" \
+              --key "$AUDIO_PREFIX/$relative_path" \
+              --query '[ContentType,CacheControl]' \
+              --output text \
+              | grep -F $'audio/mpeg\tpublic,max-age=31536000,immutable' >/dev/null
+          done
+          echo "Verified ${#AUDIO_RELATIVE_PATHS[@]} manifest-referenced narration objects without bucket-list access"
 
       - name: Verify narration audio supports byte ranges
         working-directory: ${{ matrix.deck }}
