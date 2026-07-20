@@ -5,10 +5,11 @@ export const classroomConfig = {
   deckId: "ccdv-f-exam-overview-pilot",
   title: "CCDV-F 第一课：认证全景与报名链路",
   sourceVersion: "0.3.0",
-  status: "uat-release-candidate",
-  slides: narration.sections.map((section) => ({
+  status: "production",
+  slides: narration.sections.map((section, index) => ({
     id: section.id,
     title: section.title,
+    thumbnailPath: `thumbnails/${String(index + 1).padStart(2, "0")}-${section.id}.png`,
     actions: section.segments.map((segment) => ({
       id: segment.id,
       type: "speech" as const,

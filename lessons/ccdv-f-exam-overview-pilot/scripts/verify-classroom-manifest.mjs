@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 
 const manifest = JSON.parse(readFileSync("dist/manifest.json", "utf8"));
 const narration = JSON.parse(readFileSync("narration/script.json", "utf8"));
@@ -14,6 +14,9 @@ if (!manifest.entryUrl.endsWith(manifest.entryPath)) throw new Error("entryUrl m
 
 const actions = manifest.slides.flatMap((slide, index) => {
   if (slide.index !== index || !slide.id || !slide.title || !slide.actions?.length) throw new Error(`Slide ${index + 1} is incomplete`);
+  const expectedThumbnail = `thumbnails/${String(index + 1).padStart(2, "0")}-${slide.id}.png`;
+  if (!slide.thumbnailUrl?.endsWith(expectedThumbnail)) throw new Error(`Slide ${index + 1} thumbnail URL is invalid`);
+  if (!existsSync(`public/${expectedThumbnail}`)) throw new Error(`Slide ${index + 1} thumbnail file is missing`);
   return slide.actions;
 });
 if (actions.length !== expectedSegments.length) throw new Error("Narration action count mismatch");
