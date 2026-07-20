@@ -13,11 +13,11 @@
     "tempo": 1.18
   },
   "voiceStatus": "generated-local-review",
-  "generatedAt": "2026-07-19T13:18:32.961Z",
+  "generatedAt": "2026-07-20T13:52:57.253Z",
   "summary": {
     "sectionCount": 13,
     "segmentCount": 28,
-    "totalDurationMs": 266092
+    "totalDurationMs": 273137
   },
   "sections": [
     {
@@ -95,8 +95,9 @@
           "id": "error-matrix-02",
           "title": "可以重试的一组",
           "text": "429、500、529 和连接错误属于瞬时故障。429 优先读取 retry-after，再做退避和抖动；五百和过载错误做指数退避，必要时降级模型档。",
+          "speechText": "状态码四、二、九，状态码五、零、零，状态码五、二、九，以及连接错误属于瞬时故障。状态码四、二、九优先读取 retry after，再做退避和抖动；状态码五、零、零和过载错误做指数退避，必要时降级模型档。",
           "audioPath": "audio/full/error-matrix-02.mp3",
-          "durationMs": 11290
+          "durationMs": 18335
         },
         {
           "id": "error-matrix-03",

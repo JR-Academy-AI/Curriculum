@@ -13,6 +13,10 @@ const scriptPath = path.resolve("narration/script.json");
 const script = JSON.parse(readFileSync(scriptPath, "utf8"));
 const outputRoot = path.resolve("public");
 const force = process.argv.includes("--force");
+const onlyArgument = process.argv.find((argument) => argument.startsWith("--only="));
+const onlySegmentIds = onlyArgument
+  ? new Set(onlyArgument.slice("--only=".length).split(",").map((id) => id.trim()).filter(Boolean))
+  : null;
 
 const pronunciationRules = [
   [/CCDV-F/g, "C C D V F"],
@@ -108,7 +112,7 @@ async function synthesize(apiKey, segment) {
       method: "POST",
       headers: { "xi-api-key": apiKey, "Content-Type": "application/json; charset=utf-8" },
       body: JSON.stringify({
-        text: textForSpeech(segment.text),
+        text: segment.speechText ?? textForSpeech(segment.text),
         model_id: script.voice.model,
         voice_settings: {
           stability: script.voice.stability,
@@ -159,10 +163,21 @@ try {
   for (const section of script.sections) {
     console.log(`\n[${section.title}]`);
     for (const segment of section.segments) {
+      if (onlySegmentIds && !onlySegmentIds.has(segment.id)) {
+        totalDurationMs += segment.durationMs;
+        segmentCount += 1;
+        continue;
+      }
       segment.durationMs = await synthesize(apiKey, segment);
       totalDurationMs += segment.durationMs;
       segmentCount += 1;
     }
+  }
+
+  if (onlySegmentIds) {
+    const allSegmentIds = new Set(script.sections.flatMap((section) => section.segments.map((segment) => segment.id)));
+    const missingIds = [...onlySegmentIds].filter((id) => !allSegmentIds.has(id));
+    if (missingIds.length) throw new Error(`Unknown narration segment id(s): ${missingIds.join(", ")}`);
   }
 
   script.voiceStatus = "generated-local-review";
