@@ -8,10 +8,14 @@
     "provider": "ElevenLabs",
     "name": "Amy",
     "voiceId": "bhJUNIXWQQ94l8eI2VUf",
-    "model": "eleven_v3",
-    "stability": 0.56,
-    "similarityBoost": 0.78,
-    "tempo": 1.18
+    "model": "eleven_multilingual_v2",
+    "stability": 0.82,
+    "similarityBoost": 0.85,
+    "style": 0,
+    "useSpeakerBoost": true,
+    "speed": 0.92,
+    "seed": 20260720,
+    "contextSegments": 1
   },
   "sourceRefs": [
     "skills-data/certification-chapters/ccdv-f/01-exam-overview.md",
@@ -28,14 +32,14 @@
           "title": "53 题，不是 60 题",
           "text": "先记住这门考试最容易被说错的数字：CCDV-F 是 53 题，不是 60 题。考试一共 120 分钟，平均每题约两分十五秒。题目经常带代码、报错栈和 JSON，真正留给判断选项的时间并不宽裕。",
           "audioPath": "audio/full/opening-01.mp3",
-          "durationMs": 15668
+          "durationMs": 23917
         },
         {
           "id": "opening-02",
           "title": "它验证什么",
           "text": "CCDV-F 的全名是 Claude Certified Developer – Foundations。它验证的不是你会不会在聊天窗口里使用 Claude，而是你能不能把 Claude 接进代码，处理工具调用、错误、上下文、成本和安全，并让应用在生产环境里稳定运行。",
           "audioPath": "audio/full/opening-02.mp3",
-          "durationMs": 16256
+          "durationMs": 24567
         }
       ]
     },
@@ -48,28 +52,28 @@
           "title": "八域完整权重",
           "text": "官方考纲分成八个 Domain。Applications and Integration 占 33.1%；Model Selection and Optimization 占 16.8%；Agents and Workflows 占 14.7%；Prompt and Context Engineering 占 11%；Tools and MCPs 占 10.6%；Security and Safety 占 8.1%；Claude Code 占 3.1%；Eval、Testing and Debugging 占 2.6%。",
           "audioPath": "audio/full/domains-01.mp3",
-          "durationMs": 22952
+          "durationMs": 26053
         },
         {
           "id": "domains-02",
           "title": "最大域占三分之一",
           "text": "Applications and Integration 一个域就占整卷三分之一，按 53 题折算，大约是 18 题。它的权重是第二名的接近两倍，也大约是最后两个域相加的六倍。所以复习时间的三分之一，应该优先放在这个域。",
           "audioPath": "audio/full/domains-02.mp3",
-          "durationMs": 13764
+          "durationMs": 19087
         },
         {
           "id": "domains-03",
           "title": "Claude Code 只有 3.1%",
           "text": "最反直觉的一点是：一个叫 Developer 的考试，Claude Code 只占 3.1%，大约两题。不要把 CCAR-F 的复习惯性搬过来。CCAR-F 里 Claude Code 很重要，但在 CCDV-F 里，把一周都花在它上面，回报可能只有两道题。",
           "audioPath": "audio/full/domains-03.mp3",
-          "durationMs": 14775
+          "durationMs": 23081
         },
         {
           "id": "domains-04",
           "title": "传统工程占 13.6%",
           "text": "还有一个容易漏掉的事实：Software Engineering Foundations、Systems Life Cycle 和 Understanding Requirements 合计占 13.6%。REST、JSON、异步编程、版本控制、代码评审和重构，都是传统工程基本功。这一块甚至比整个 Tools and MCPs 域还重。",
           "audioPath": "audio/full/domains-04.mp3",
-          "durationMs": 17614
+          "durationMs": 28839
         }
       ]
     },
@@ -82,21 +86,21 @@
           "title": "题型与结构",
           "text": "考试是单选和多选混合，每道多选题都会明确告诉你要选几个。CCDV-F 没有 CCAR-F 那种场景抽题结构，每道题都要独立阅读。很多题自带代码或错误信息，因此不能指望读懂一个背景，就连续解决几道题。",
           "audioPath": "audio/full/exam-details-01.mp3",
-          "durationMs": 16400
+          "durationMs": 22663
         },
         {
           "id": "exam-details-02",
           "title": "720 不是 72%",
           "text": "及格线是 720，但这是 100 到 1000 区间的量表分，不是答对 72%。不同试卷会做难度校准，所以不能用答对多少题直接倒推是否通过。成绩单里的各域百分比只用于诊断，通过与否看总量表分，不存在每个域单独过线。",
           "audioPath": "audio/full/exam-details-02.mp3",
-          "durationMs": 14670
+          "durationMs": 22198
         },
         {
           "id": "exam-details-03",
           "title": "闭卷与有效期",
           "text": "考试通过 Pearson VUE 交付，可以选择线上 OnVUE 或线下考场，全程闭卷监考。开考前要签 NDA，不能记录、拍照、复制或传播考题。认证从授予日起有效 12 个月，不是终身证书，而且官方没有规定任何前置认证。",
           "audioPath": "audio/full/exam-details-03.mp3",
-          "durationMs": 14957
+          "durationMs": 22941
         }
       ]
     },
@@ -109,21 +113,21 @@
           "title": "官方目标读者",
           "text": "官方目标读者通常有一到五年软件工程经验，至少六个月 Claude 或同类大模型系统的动手经验，熟悉 Python 或 TypeScript、REST API 和命令行工具，并对大模型基础、Agent、上下文管理与 MCP 有可用的理解。",
           "audioPath": "audio/full/fit-check-01.mp3",
-          "durationMs": 12129
+          "durationMs": 24427
         },
         {
           "id": "fit-check-02",
           "title": "哪些人先别报",
           "text": "如果你没独立写过一个可以运行的服务，或者只在网页和桌面端与 Claude 聊天，从没调用过 Messages API，建议先别报。至少先完成一次 API 调用，接入一个工具，处理一次 429，再跑通一次流式输出。只会写 Prompt，不足以覆盖这门考试。",
           "audioPath": "audio/full/fit-check-02.mp3",
-          "durationMs": 13848
+          "durationMs": 24845
         },
         {
           "id": "fit-check-03",
           "title": "一句话自检",
           "text": "最直接的自检问题是：当 stop_reason 等于 tool_use 时，你的代码下一步该做什么？如果你能立刻说出要执行工具、把结果包装成 tool_result，再继续消息循环，说明你已经有开发经验；如果说不出，先亲手写一遍，比背定义有效。",
           "audioPath": "audio/full/fit-check-03.mp3",
-          "durationMs": 15300
+          "durationMs": 24242
         }
       ]
     },
@@ -136,14 +140,14 @@
           "title": "40 小时怎么分",
           "text": "如果有 40 小时冲刺，建议 D2 用约 13 小时，D5 用 7 小时，D1 用 6 小时，D6 用四个半小时，D8 用 4 小时，D7 用 3 小时，D3 只用一个半小时，D4 用 1 小时。按权重分配，不要按 Domain 编号从头平均学。",
           "audioPath": "audio/full/study-allocation-01.mp3",
-          "durationMs": 15259
+          "durationMs": 22059
         },
         {
           "id": "study-allocation-02",
           "title": "时间只有一半",
           "text": "如果只有 20 小时，最优先吃透 D2、D5 和 D1。这三个域合计 64.6%。D3 与 D4 内容少、权重低，可以设置硬时间上限快速扫完，但也不要完全放弃，因为少量时间就可能换回几道确定的分数。",
           "audioPath": "audio/full/study-allocation-02.mp3",
-          "durationMs": 14365
+          "durationMs": 21316
         }
       ]
     },
@@ -156,21 +160,21 @@
           "title": "结构化输出场景",
           "text": "看一个自编场景。简历解析服务要求 Claude 返回结构化 JSON，但 years_of_experience 有时是数字，有时是字符串，偶尔前面还多一句说明。题目问最有效的第一步。关键不是继续强化 Prompt，而是先判断问题应该在哪一层解决。",
           "audioPath": "audio/full/question-demo-01.mp3",
-          "durationMs": 14904
+          "durationMs": 25681
         },
         {
           "id": "question-demo-02",
           "title": "为什么选 Schema",
           "text": "正确方向是使用 structured outputs，通过 output_config.format 和 JSON schema 在 API 层约束格式，同时在解析侧做校验、重试或降级。自然语言指令只能提高遵守概率，Schema 才能把字段类型和响应结构变成机器可检查的约束。",
           "audioPath": "audio/full/question-demo-02.mp3",
-          "durationMs": 13879
+          "durationMs": 25124
         },
         {
           "id": "question-demo-03",
           "title": "识别诱人但次优的选项",
           "text": "把 temperature 调低、换更强模型，或者在 System Prompt 里再加一句只输出 JSON，都可能有一点帮助，但没有处理根因。考试常问 most effective first step、most likely root cause 或 best fits the requirement。四个选项可能都能跑，只有一个最对症、代价最小。",
           "audioPath": "audio/full/question-demo-03.mp3",
-          "durationMs": 15763
+          "durationMs": 25124
         }
       ]
     },
@@ -183,35 +187,35 @@
           "title": "个人不能自助注册",
           "text": "报名最容易卡住的地方是：Anthropic Partner Academy 不对个人开放自助注册。你在网上找不到一个可以直接付款报名的个人入口，不是页面藏得深，而是平台机制本来就要求通过 Claude Partner Network 的通道开通账号。",
           "audioPath": "audio/full/registration-01.mp3",
-          "durationMs": 13172
+          "durationMs": 20759
         },
         {
           "id": "registration-02",
           "title": "匠人负责开账号",
           "text": "匠人目前通过 CPN 的合规通道，在后台为学员开通 Partner Academy 账号。这里必须区分两件事：开通账号，不等于代购考试名额。账号开通后，报名和付款的主动权回到学员本人手里。",
           "audioPath": "audio/full/registration-02.mp3",
-          "durationMs": 13504
+          "durationMs": 17926
         },
         {
           "id": "registration-03",
           "title": "本人报名、本人付费",
           "text": "完整链路是：个人无法自助注册；匠人在 CPN 后台开通账号；你本人进入 Partner Academy 注册考试，并直接支付官方考试费；然后你自己创建 Pearson VUE 账号，选择日期，以及线上 OnVUE 或线下考场。课程费用不包含考试费。",
           "audioPath": "audio/full/registration-03.mp3",
-          "durationMs": 15826
+          "durationMs": 23406
         },
         {
           "id": "registration-04",
           "title": "报名前准备",
           "text": "报名前准备一张政府签发且未过期的带照片证件，注册姓名必须与证件完全一致；准备一个稳定收信的邮箱；提前决定线上还是线下。线上考试要有能独处两小时的房间、稳定网络、摄像头和干净桌面。需要特殊便利，要先获 Pearson VUE 批准再约考。",
           "audioPath": "audio/full/registration-04.mp3",
-          "durationMs": 16776
+          "durationMs": 25356
         },
         {
           "id": "registration-05",
           "title": "合作身份的准确说法",
           "text": "对外表述也要准确。匠人目前在 CPN 是 Registered 级，正确说法是：匠人已注册加入 Claude Partner Network，通过合规通道为学员开通报名资格。不要把它包装成 Anthropic 官方授权，也不要使用未经允许的官方 Partner 标识。",
           "audioPath": "audio/full/registration-05.mp3",
-          "durationMs": 13324
+          "durationMs": 21827
         }
       ]
     },
@@ -224,28 +228,28 @@
           "title": "题量、分数与分域",
           "text": "前三个误解一起纠正：第一，CCDV-F 是 53 题，不是 60 题；第二，720 是量表分，不是 72%；第三，各 Domain 百分比只用于诊断，不要求每个域单独过线。决定通过与否的，是总量表分。",
           "audioPath": "audio/full/misconceptions-01.mp3",
-          "durationMs": 14327
+          "durationMs": 22709
         },
         {
           "id": "misconceptions-02",
           "title": "Developer 不等于 Claude Code",
           "text": "第四个误解是 Developer 认证主考 Claude Code。实际上它只占 3.1%。第五个误解是传统工程功底没用，实际上相关子技能合计 13.6%。写过真实服务、处理过异步、错误、版本与重构的人，优势比自己想象得更大。",
           "audioPath": "audio/full/misconceptions-02.mp3",
-          "durationMs": 12100
+          "durationMs": 22013
         },
         {
           "id": "misconceptions-03",
           "title": "证书与 API 背诵",
           "text": "第六，证书不是终身的，12 个月后需要续证。第七，背熟 API 参数也不等于能过。题干中的约束才是答案钥匙：成本优先、延迟优先、结果明早才要，或者能力要跨应用复用，这些条件会直接决定最合适的方案。",
           "audioPath": "audio/full/misconceptions-03.mp3",
-          "durationMs": 16064
+          "durationMs": 23127
         },
         {
           "id": "misconceptions-04",
           "title": "名额与前置认证",
           "text": "最后两条：匠人不能替你购买考试名额，只能按合规流程开通账号并陪你完成报名；另外，四门 Claude 认证互不设置前置要求，不需要先考 Associate，也可以直接报 CCDV-F。",
           "audioPath": "audio/full/misconceptions-04.mp3",
-          "durationMs": 11529
+          "durationMs": 21920
         }
       ]
     },
@@ -258,14 +262,14 @@
           "title": "线上监考环境",
           "text": "线上考试前，监考员会检查房间和桌面。纸笔、书、笔记、手机、智能手表、耳机和第二块屏幕都要移走。全程不能离开摄像头视野，也不能出声和别人交流。证件名字必须与注册姓名完全一致。",
           "audioPath": "audio/full/exam-day-01.mp3",
-          "durationMs": 13247
+          "durationMs": 21177
         },
         {
           "id": "exam-day-02",
           "title": "NDA 与改期",
           "text": "开考前必须接受 NDA；拒绝接受会终止考试，而且不退费。改期或取消要在考前 24 小时之外完成。进入最后 24 小时再改、缺考，或超过允许的迟到窗口，考试费都会作废，需要重新报名。",
           "audioPath": "audio/full/exam-day-02.mp3",
-          "durationMs": 11427
+          "durationMs": 21130
         }
       ]
     },
@@ -278,14 +282,14 @@
           "title": "按时续证",
           "text": "CCDV-F 自授予日起有效 12 个月。到期前按时续证，通常只要复习考纲变更点，并在 Partner Academy 完成一次免费、非监考的续证评估。拿到证书当天，就应该设置 11 个月后的提醒。",
           "audioPath": "audio/full/renewal-01.mp3",
-          "durationMs": 12971
+          "durationMs": 20248
         },
         {
           "id": "renewal-02",
           "title": "过期的代价",
           "text": "如果错过窗口导致证书过期，就要重新支付全额考试费，从头参加一次监考考试。如果 Anthropic 对考纲做重大调整，也保留要求持证人重考的权利。按时续证省下的不只是钱，也省下一次完整监考。",
           "audioPath": "audio/full/renewal-02.mp3",
-          "durationMs": 12136
+          "durationMs": 20898
         }
       ]
     },
@@ -298,14 +302,14 @@
           "title": "重考冷却期",
           "text": "第一次没通过，要等 14 天；第二次没通过，等 30 天；第三次没通过，等 90 天。滚动 12 个月内，同一门考试最多参加 4 次，而且每一次都要重新支付考试费。不要把裸考当成刷次数。",
           "audioPath": "audio/full/retake-01.mp3",
-          "durationMs": 13213
+          "durationMs": 19551
         },
         {
           "id": "retake-02",
           "title": "限制与申诉",
           "text": "重考限制按单门考试计算，CCDV-F 没通过，不影响报名另外三门认证。对成绩有异议，要在考试日起 14 天内向 Pearson VUE 提出，但标准设定结果和具体单题内容不能申诉。",
           "audioPath": "audio/full/retake-02.mp3",
-          "durationMs": 10646
+          "durationMs": 18762
         }
       ]
     },
@@ -318,28 +322,28 @@
           "title": "第一、二周：D2",
           "text": "第一和第二周死磕 D2。亲手跑通 Messages API、工具调用循环、流式输出、结构化输出、校验重试，以及 429、5xx 和 529 的退避策略。同时复习 REST、JSON、异步、版本控制、重构和配置管理。",
           "audioPath": "audio/full/four-week-plan-01.mp3",
-          "durationMs": 14921
+          "durationMs": 25588
         },
         {
           "id": "four-week-plan-02",
           "title": "第三周：D5 与 D1",
           "text": "第三周学习 D5 和 D1。D5 重点是 Token、上下文窗口、模型取舍、Prompt Caching，以及 Batch 和实时请求在成本与延迟上的选择。D1 重点是 Workflow 与 Agent 的边界、Manager 和 Subagent，以及 Agent SDK 与自建循环的取舍。",
           "audioPath": "audio/full/four-week-plan-02.mp3",
-          "durationMs": 14119
+          "durationMs": 26192
         },
         {
           "id": "four-week-plan-03",
           "title": "第四周上半",
           "text": "第四周上半处理 D6、D8 和 D7。包括指令清晰度、Few-shot、System 与 User 指令边界、上下文裁剪、工具描述、客户端与服务端工具、MCP Server、Prompt Injection、防护分层、最小权限与密钥管理。",
           "audioPath": "audio/full/four-week-plan-03.mp3",
-          "durationMs": 12244
+          "durationMs": 21084
         },
         {
           "id": "four-week-plan-04",
           "title": "第四周下半",
           "text": "第四周下半用约两个半小时扫完 D3 和 D4，然后严格按 120 分钟完成一整套 53 题模拟卷。不要一题一题松散地刷。你要练的是在两分十五秒内读代码、判断根因，并排除三个看起来也能工作的诱人选项。",
           "audioPath": "audio/full/four-week-plan-04.mp3",
-          "durationMs": 15004
+          "durationMs": 20898
         }
       ]
     },
@@ -352,14 +356,14 @@
           "title": "至少做一个真实应用",
           "text": "官方建议的重心不是读完某一本书，而是至少构建并运营一个 Claude 应用：调用 API，集成一个或多个工具，应用基本的 Prompt 与上下文工程，并包含简单的安全和评估实践。代码、报错和边界情况，只有真正跑过才会熟悉。",
           "audioPath": "audio/full/official-prep-01.mp3",
-          "durationMs": 13137
+          "durationMs": 25960
         },
         {
           "id": "official-prep-02",
           "title": "没有保过资源",
           "text": "官方还明确说明：没有唯一必修课程，也不保证任何特定资源能够确保通过。Blueprint、官方文档、真实项目和模拟练习要互相配合。只读课程，不亲手构建和排错，会让知识停留在能认词、不能做判断的层面。",
           "audioPath": "audio/full/official-prep-02.mp3",
-          "durationMs": 13611
+          "durationMs": 22338
         }
       ]
     },
@@ -372,7 +376,7 @@
           "title": "不承诺保过",
           "text": "匠人不承诺稳过、必过或包通过。我们能做的是让内容对齐官方 Blueprint，通过合规通道打通报名账号，并按权重安排复习路线。最终结果仍然取决于你的工程经验、复习投入和考场发挥。",
           "audioPath": "audio/full/honesty-01.mp3",
-          "durationMs": 11939
+          "durationMs": 17833
         }
       ]
     },
@@ -385,22 +389,28 @@
           "title": "数字速记",
           "text": "最后速记关键数字：53 题，120 分钟；720 是量表分；8 个 Domain；D2 占 33.1%；前三大域合计 64.6%；Claude Code 只有 3.1%；传统软件工程合计 13.6%；证书有效 12 个月。",
           "audioPath": "audio/full/recap-01.mp3",
-          "durationMs": 14759
+          "durationMs": 21037
         },
         {
           "id": "recap-02",
           "title": "流程速记",
           "text": "流程再记一遍：个人不能在 Partner Academy 自助注册；匠人通过 CPN 合规通道开账号；你本人报名并支付官方考试费；你自己在 Pearson VUE 约考。没有前置认证。重考冷却期是 14、30、90 天。改期或取消必须在考前 24 小时之外。",
           "audioPath": "audio/full/recap-02.mp3",
-          "durationMs": 16226
+          "durationMs": 26053
         }
       ]
     }
   ],
-  "generatedAt": "2026-07-19T02:21:13.991Z",
+  "generatedAt": "2026-07-20T13:20:50.701Z",
   "summary": {
     "sectionCount": 15,
     "segmentCount": 41,
-    "totalDurationMs": 588725
+    "totalDurationMs": 933956
+  },
+  "generation": {
+    "providerSpeed": 0.92,
+    "postProcessing": "none-preserve-natural-pauses",
+    "deterministicSeed": 20260720,
+    "contextSegments": 1
   }
 }

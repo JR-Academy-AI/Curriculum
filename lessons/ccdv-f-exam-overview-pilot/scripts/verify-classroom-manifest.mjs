@@ -21,6 +21,6 @@ const actions = manifest.slides.flatMap((slide, index) => {
 });
 if (actions.length !== expectedSegments.length) throw new Error("Narration action count mismatch");
 for (const action of actions) {
-  if (action.type !== "speech" || !action.text || !action.audioUrl?.endsWith(".mp3") || action.audioDurationMs <= 0 || action.audioStatus !== "generated-local-review") throw new Error(`Narration contract is incomplete for ${action.id}`);
+  if (action.type !== "speech" || !action.text || !action.audioUrl?.endsWith(".mp3") || action.audioDurationMs <= 0 || action.audioStatus !== "generated-consistent-pace-review") throw new Error(`Narration contract is incomplete for ${action.id}`);
 }
 console.log(`Verified ${manifest.deckId}@${manifest.releaseId}: ${manifest.slideCount} slides / ${actions.length} Amy narration actions`);

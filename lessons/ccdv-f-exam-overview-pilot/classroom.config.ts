@@ -4,7 +4,7 @@ export const classroomConfig = {
   bridgeVersion: 1,
   deckId: "ccdv-f-exam-overview-pilot",
   title: "CCDV-F 第一课：认证全景与报名链路",
-  sourceVersion: "0.3.0",
+  sourceVersion: "0.4.0",
   status: "production",
   slides: narration.sections.map((section, index) => ({
     id: section.id,
@@ -17,7 +17,7 @@ export const classroomConfig = {
       audioKey: segment.audioPath.replace(/^audio\//, ""),
       audioDurationMs: segment.durationMs,
       voice: "ElevenLabs Amy",
-      audioStatus: "generated-local-review"
+      audioStatus: "generated-consistent-pace-review"
     }))
   }))
 } as const;
