@@ -1,0 +1,533 @@
+{
+  "questGoalId": "local-ccdv-f-claude-code",
+  "presentation": {
+    "renderMode": "react-deck-release",
+    "deckId": "ccdv-f-model-selection-optimization",
+    "releaseId": "local-ccdv-f-claude-code-20260719",
+    "entryUrl": "http://127.0.0.1:4184/",
+    "manifestUrl": "http://127.0.0.1:4184/manifest.json",
+    "allowedOrigin": "http://127.0.0.1:4184",
+    "bridgeVersion": 1,
+    "slideCount": 18
+  },
+  "steps": [
+    {
+      "id": "domain-weight",
+      "stepIndex": 0,
+      "title": "第二重的 Domain",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4184/thumbnails/01-domain-weight.png"
+      },
+      "actions": [
+        {
+          "id": "domain-weight-01",
+          "type": "speech",
+          "text": "Model Selection and Optimization 占 16.8%，按 53 题折算约九题，仅次于 Applications and Integration，是必须投入时间的第二重 Domain。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/domain-weight-01.mp3"
+        },
+        {
+          "id": "domain-weight-02",
+          "type": "speech",
+          "text": "真正叫 Model Selection 的子技能只占 2.7%。Technical Fundamentals 和 LLM Fundamentals 合计 11.3%，大头是 SDK、REST、token 与模型工作原理。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/domain-weight-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4184/audio/full/domain-weight-01.mp3",
+        "http://127.0.0.1:4184/audio/full/domain-weight-02.mp3"
+      ]
+    },
+    {
+      "id": "non-determinism",
+      "stepIndex": 1,
+      "title": "非确定性是设计前提",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4184/thumbnails/02-non-determinism.png"
+      },
+      "actions": [
+        {
+          "id": "non-determinism-01",
+          "type": "speech",
+          "text": "LLM 每次预测下一个 token 的概率分布并采样。temperature 等于零只偏向最高概率，从来不保证逐字相同；当前模型甚至移除了这些采样参数。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/non-determinism-01.mp3"
+        },
+        {
+          "id": "non-determinism-02",
+          "type": "speech",
+          "text": "系统需要幂等，就在代码层做结果缓存和幂等键；需要稳定格式，就用结构化输出。测试要校验 schema、语义或多次失败率，不能断言全文完全相同。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/non-determinism-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4184/audio/full/non-determinism-01.mp3",
+        "http://127.0.0.1:4184/audio/full/non-determinism-02.mp3"
+      ]
+    },
+    {
+      "id": "two-ceilings",
+      "stepIndex": 2,
+      "title": "Context Window 与 max_tokens",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4184/thumbnails/03-two-ceilings.png"
+      },
+      "actions": [
+        {
+          "id": "two-ceilings-01",
+          "type": "speech",
+          "text": "上下文窗口限制输入加输出总量，是模型固有属性；max tokens 是每次请求设置的输出上限。两者都涉及 token，但控制的是不同边界。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/two-ceilings-01.mp3"
+        },
+        {
+          "id": "two-ceilings-02",
+          "type": "speech",
+          "text": "stop reason 等于 max tokens，说明输出被腰斩，应提高上限，超过约一万六千 token 就改用 streaming。换大上下文模型不改变你传入的输出上限。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/two-ceilings-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4184/audio/full/two-ceilings-01.mp3",
+        "http://127.0.0.1:4184/audio/full/two-ceilings-02.mp3"
+      ]
+    },
+    {
+      "id": "token-counting",
+      "stepIndex": 3,
+      "title": "Token 计数必须跟着模型",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4184/thumbnails/04-token-counting.png"
+      },
+      "actions": [
+        {
+          "id": "token-counting-01",
+          "type": "speech",
+          "text": "tiktoken 是 OpenAI 的分词器，用它估 Claude 通常低估百分之十五到二十，代码和非英文更明显。应调用 messages count tokens，并传入真实模型、system、messages 和 tools。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/token-counting-01.mp3"
+        },
+        {
+          "id": "token-counting-02",
+          "type": "speech",
+          "text": "分词器会随模型代际变化。同一文本在新模型上 token 增多，会同时抬高成本、压缩可用上下文，也让旧 max tokens 配置不足；升级必须重新计数。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/token-counting-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4184/audio/full/token-counting-01.mp3",
+        "http://127.0.0.1:4184/audio/full/token-counting-02.mp3"
+      ]
+    },
+    {
+      "id": "adaptive-effort",
+      "stepIndex": 4,
+      "title": "Adaptive Thinking 与 Effort",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4184/thumbnails/05-adaptive-effort.png"
+      },
+      "actions": [
+        {
+          "id": "adaptive-effort-01",
+          "type": "speech",
+          "text": "当前模型用 thinking type adaptive，让模型决定何时思考；再用 output config effort 控制深度和总 token 开销。旧的 enabled 加 budget tokens 会直接返回 400。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/adaptive-effort-01.mp3"
+        },
+        {
+          "id": "adaptive-effort-02",
+          "type": "speech",
+          "text": "low 适合短而明确的任务，high 是默认，xhigh 适合编码和 agentic，max 只给正确性远高于成本的场景。更高可能过度思考并出现收益递减。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/adaptive-effort-02.mp3"
+        },
+        {
+          "id": "adaptive-effort-03",
+          "type": "speech",
+          "text": "省略 thinking 在部分 Opus 版本等于不思考；thinking display 默认 omitted；xhigh 或 max 又需要足够的 max tokens，否则思考吃完预算，答案反而被截断。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/adaptive-effort-03.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4184/audio/full/adaptive-effort-01.mp3",
+        "http://127.0.0.1:4184/audio/full/adaptive-effort-02.mp3",
+        "http://127.0.0.1:4184/audio/full/adaptive-effort-03.mp3"
+      ]
+    },
+    {
+      "id": "shot-strategy",
+      "stepIndex": 5,
+      "title": "Zero、Single、Multi Shot",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4184/thumbnails/06-shot-strategy.png"
+      },
+      "actions": [
+        {
+          "id": "shot-strategy-01",
+          "type": "speech",
+          "text": "简单常见任务用 zero shot，一个例子锚定风格用 single shot，边界难以语言描述时用三到五个正反例做 multi shot。例子会占上下文，是 token 换准确率。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/shot-strategy-01.mp3"
+        },
+        {
+          "id": "shot-strategy-02",
+          "type": "speech",
+          "text": "格式不稳先用结构化输出，工具选错先补工具描述，能用一句清晰指令说清就直接说。few shot 的真正场地是规则说不清但例子能说清的边界。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/shot-strategy-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4184/audio/full/shot-strategy-01.mp3",
+        "http://127.0.0.1:4184/audio/full/shot-strategy-02.mp3"
+      ]
+    },
+    {
+      "id": "sdk-rest",
+      "stepIndex": 6,
+      "title": "SDK 只是 REST 的工程封装",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4184/thumbnails/07-sdk-rest.png"
+      },
+      "actions": [
+        {
+          "id": "sdk-rest-01",
+          "type": "speech",
+          "text": "client messages create 最终仍是对 v1 messages 发 POST，带认证、版本和 JSON body。SDK 的价值是类型、认证头、自动重试、异常、流式解析与分页，不是另一套 API。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/sdk-rest-01.mp3"
+        },
+        {
+          "id": "sdk-rest-02",
+          "type": "speech",
+          "text": "API key 走 x-api-key，OAuth token 走 Authorization Bearer。两个环境变量同时设置，SDK 可能两个头都发，服务端就返回 401；排查时先确认只存在一种凭据。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/sdk-rest-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4184/audio/full/sdk-rest-01.mp3",
+        "http://127.0.0.1:4184/audio/full/sdk-rest-02.mp3"
+      ]
+    },
+    {
+      "id": "sse-topology",
+      "stepIndex": 7,
+      "title": "Claude Streaming 用 SSE",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4184/thumbnails/08-sse-topology.png"
+      },
+      "actions": [
+        {
+          "id": "sse-topology-01",
+          "type": "speech",
+          "text": "Claude Messages API 的 streaming 使用 Server-Sent Events，服务端通过普通 HTTP 单向推事件，不是 WebSocket。SDK 把原始 SSE 解析成事件对象。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/sse-topology-01.mp3"
+        },
+        {
+          "id": "sse-topology-02",
+          "type": "speech",
+          "text": "你的后端把结果送给浏览器，可以再选 SSE、WebSocket 或轮询。不要把这段应用传输和 Claude API 那一段混在一起；前者可选，后者固定是 SSE。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/sse-topology-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4184/audio/full/sse-topology-01.mp3",
+        "http://127.0.0.1:4184/audio/full/sse-topology-02.mp3"
+      ]
+    },
+    {
+      "id": "model-triangle",
+      "stepIndex": 8,
+      "title": "Opus、Sonnet、Haiku 的三角",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4184/thumbnails/09-model-triangle.png"
+      },
+      "actions": [
+        {
+          "id": "model-triangle-01",
+          "type": "speech",
+          "text": "Haiku 最快最便宜，适合分类、路由和简单抽取；Sonnet 平衡智能、延迟和成本，是多数生产任务默认；Opus 给最难的长程自主执行与深度推理。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/model-triangle-01.mp3"
+        },
+        {
+          "id": "model-triangle-02",
+          "type": "speech",
+          "text": "拿不准时，先用 Sonnet 跑固定 Eval，达标就停；不达标再上 Opus，并用同一数据集量化提升。感觉更强不是购买五倍成本的证据。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/model-triangle-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4184/audio/full/model-triangle-01.mp3",
+        "http://127.0.0.1:4184/audio/full/model-triangle-02.mp3"
+      ]
+    },
+    {
+      "id": "routing-latency",
+      "stepIndex": 9,
+      "title": "模型分层也会增加延迟",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4184/thumbnails/10-routing-latency.png"
+      },
+      "actions": [
+        {
+          "id": "routing-latency-01",
+          "type": "speech",
+          "text": "如果八成请求很简单，可以先用 Haiku 分类，再把复杂请求交给 Sonnet 或 Opus。这样大多数流量用最低价处理，是实用的分层模式。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/routing-latency-01.mp3"
+        },
+        {
+          "id": "routing-latency-02",
+          "type": "speech",
+          "text": "分层多了一次模型调用，也多了一次网络和推理延迟。SLA 只有五百毫秒时，路由层可能直接让系统超标；延迟锁死就直接选一档。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/routing-latency-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4184/audio/full/routing-latency-01.mp3",
+        "http://127.0.0.1:4184/audio/full/routing-latency-02.mp3"
+      ]
+    },
+    {
+      "id": "model-migration",
+      "stepIndex": 10,
+      "title": "升级模型是代码变更",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4184/thumbnails/11-model-migration.png"
+      },
+      "actions": [
+        {
+          "id": "model-migration-01",
+          "type": "speech",
+          "text": "移除 temperature、旧 thinking 或 assistant prefill 会直接 400；thinking display、分词器、字面指令遵守和工具倾向变化则不报错，却会改变产品行为。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/model-migration-01.mp3"
+        },
+        {
+          "id": "model-migration-02",
+          "type": "speech",
+          "text": "模型 ID 要集中 pin 住。升级要走 review，重跑 Eval，重调 effort 和 max tokens，重新 count tokens；缓存按模型隔离，切换后第一批请求还会全部冷启动。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/model-migration-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4184/audio/full/model-migration-01.mp3",
+        "http://127.0.0.1:4184/audio/full/model-migration-02.mp3"
+      ]
+    },
+    {
+      "id": "four-knives",
+      "stepIndex": 11,
+      "title": "省钱的四把刀",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4184/thumbnails/12-four-knives.png"
+      },
+      "actions": [
+        {
+          "id": "four-knives-01",
+          "type": "speech",
+          "text": "优化顺序先看 Prompt Caching，再看结果是否不急可用 Batch。这两把刀不降低回答质量；缓存读约零点一倍，Batch 直接省一半。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/four-knives-01.mp3"
+        },
+        {
+          "id": "four-knives-02",
+          "type": "speech",
+          "text": "第三把刀是模型分层，第四把是降低 effort，它们都可能损失智能。agentic 任务上低 effort 还可能多走几轮，总 token 反而更高，所以必须用 Eval 测。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/four-knives-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4184/audio/full/four-knives-01.mp3",
+        "http://127.0.0.1:4184/audio/full/four-knives-02.mp3"
+      ]
+    },
+    {
+      "id": "cache-economics",
+      "stepIndex": 12,
+      "title": "Prompt Cache 的盈亏平衡",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4184/thumbnails/13-cache-economics.png"
+      },
+      "actions": [
+        {
+          "id": "cache-economics-01",
+          "type": "speech",
+          "text": "缓存读约基础输入价的零点一倍。五分钟缓存写约一点二五倍，第二次请求就回本；一小时写约两倍，至少第三次请求才开始占便宜。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/cache-economics-01.mp3"
+        },
+        {
+          "id": "cache-economics-02",
+          "type": "speech",
+          "text": "缓存按 tools、system、messages 的前缀逐字匹配。时间戳、用户 ID 或变化的工具集放在前缀里，会从变动点开始全部失效；动态内容应放到断点之后。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/cache-economics-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4184/audio/full/cache-economics-01.mp3",
+        "http://127.0.0.1:4184/audio/full/cache-economics-02.mp3"
+      ]
+    },
+    {
+      "id": "cache-edge-cases",
+      "stepIndex": 13,
+      "title": "缓存的三个静默陷阱",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4184/thumbnails/14-cache-edge-cases.png"
+      },
+      "actions": [
+        {
+          "id": "cache-edge-cases-01",
+          "type": "speech",
+          "text": "可缓存前缀有模型相关的最小 token 下限，低于约一千到四千时会静默不缓存。加更多断点没有用，先确认内容足够长并查看 cache read token。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/cache-edge-cases-01.mp3"
+        },
+        {
+          "id": "cache-edge-cases-02",
+          "type": "speech",
+          "text": "缓存要等第一个响应开始返回后才可读。相同前缀的请求一次全部并发，会全部付全价；应先发一个，等流开始，再发剩余请求。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/cache-edge-cases-02.mp3"
+        },
+        {
+          "id": "cache-edge-cases-03",
+          "type": "speech",
+          "text": "Agent 一轮产生太多 tool use 和 result block，下一轮断点可能找不到旧缓存。长轮次每隔约十五个 block 加中间断点，避免超过二十个 block 的回溯窗口。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/cache-edge-cases-03.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4184/audio/full/cache-edge-cases-01.mp3",
+        "http://127.0.0.1:4184/audio/full/cache-edge-cases-02.mp3",
+        "http://127.0.0.1:4184/audio/full/cache-edge-cases-03.mp3"
+      ]
+    },
+    {
+      "id": "usage-accounting",
+      "stepIndex": 14,
+      "title": "成本要看三类输入总和",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4184/thumbnails/15-usage-accounting.png"
+      },
+      "actions": [
+        {
+          "id": "usage-accounting-01",
+          "type": "speech",
+          "text": "总输入量等于 input tokens、cache creation input tokens 和 cache read input tokens 三项之和。input tokens 只代表未缓存部分，单看它会严重低估总流量。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/usage-accounting-01.mp3"
+        },
+        {
+          "id": "usage-accounting-02",
+          "type": "speech",
+          "text": "成本模型要让未缓存输入、缓存写、缓存读和输出分别乘对应费率，再按模型档换算。相对模型足以比较方案，绝对价格应读当前官方定价。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/usage-accounting-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4184/audio/full/usage-accounting-01.mp3",
+        "http://127.0.0.1:4184/audio/full/usage-accounting-02.mp3"
+      ]
+    },
+    {
+      "id": "support-question",
+      "stepIndex": 15,
+      "title": "实时客服的第一把省钱刀",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4184/thumbnails/16-support-question.png"
+      },
+      "actions": [
+        {
+          "id": "support-question-01",
+          "type": "speech",
+          "text": "客服机器人每次带八千 token 稳定知识前缀，用户在网页上等结果。实时约束排除最长二十四小时的 Batch，稳定长前缀直接指向 Prompt Caching。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/support-question-01.mp3"
+        },
+        {
+          "id": "support-question-02",
+          "type": "speech",
+          "text": "缓存读把稳定输入成本降到约十分之一，不降质量也不加延迟。先做这把纯收益的刀；仍不够再用 Eval 评估 Haiku 或较低 effort 的质量损失。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/support-question-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4184/audio/full/support-question-01.mp3",
+        "http://127.0.0.1:4184/audio/full/support-question-02.mp3"
+      ]
+    },
+    {
+      "id": "translation-question",
+      "stepIndex": 16,
+      "title": "长翻译为什么被截断",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4184/thumbnails/17-translation-question.png"
+      },
+      "actions": [
+        {
+          "id": "translation-question-01",
+          "type": "speech",
+          "text": "三百页原文能放入上下文，但翻译在中途 stop reason 等于 max tokens，瓶颈是输出上限，不是输入窗口。换大窗口、提高 effort 或改 Batch 都不改变它。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/translation-question-01.mp3"
+        },
+        {
+          "id": "translation-question-02",
+          "type": "speech",
+          "text": "正确动作是提高 max tokens；如果期望输出超过约一万六千 token，同时改用 streaming 维持连接。高 effort 还可能占更多预算，让最终答案更早截断。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/translation-question-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4184/audio/full/translation-question-01.mp3",
+        "http://127.0.0.1:4184/audio/full/translation-question-02.mp3"
+      ]
+    },
+    {
+      "id": "recap",
+      "stepIndex": 17,
+      "title": "成本、质量、延迟的决策顺序",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4184/thumbnails/18-recap.png"
+      },
+      "actions": [
+        {
+          "id": "recap-01",
+          "type": "speech",
+          "text": "先看质量、延迟和成本里哪一项被锁死。实时任务不能 Batch，机械任务不必 Opus，最难任务才值得高 effort 与强模型。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/recap-01.mp3"
+        },
+        {
+          "id": "recap-02",
+          "type": "speech",
+          "text": "省钱先缓存，再在结果不急时 Batch，之后才考虑模型降档与降低 effort。上下文窗口管输入加输出总量，max tokens 专管输出上限。",
+          "audioUrl": "http://127.0.0.1:4184/audio/full/recap-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4184/audio/full/recap-01.mp3",
+        "http://127.0.0.1:4184/audio/full/recap-02.mp3"
+      ]
+    }
+  ]
+}

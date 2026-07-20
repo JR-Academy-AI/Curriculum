@@ -47,7 +47,7 @@ function manifestPlugin(base: string): Plugin {
                 ...action,
                 audioUrl: audioBase
                   ? `${audioBase}/${audioKey}`
-                  : `${base}audio/${audioKey.split("/").at(-1)}`
+                  : `${base}audio/${audioKey}`
               })),
               index
             }))

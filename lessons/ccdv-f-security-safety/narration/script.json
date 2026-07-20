@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "deckId": "ccdv-f-security-safety",
+  "course": "Claude Certified Developer – Foundations",
+  "chapterTitle": "Security and Safety",
+  "voice": {
+    "provider": "ElevenLabs",
+    "name": "Amy",
+    "voiceId": "bhJUNIXWQQ94l8eI2VUf",
+    "model": "eleven_v3",
+    "stability": 0.56,
+    "similarityBoost": 0.78,
+    "tempo": 1.18
+  },
+  "voiceStatus": "generated-local-review",
+  "generatedAt": "2026-07-19T14:09:19.653Z",
+  "summary": {
+    "sectionCount": 16,
+    "segmentCount": 32,
+    "totalDurationMs": 277953
+  },
+  "sections": [
+    {
+      "id": "weight",
+      "title": "Domain 7 权重地图",
+      "segments": [
+        {
+          "id": "weight-01",
+          "title": "约四题的安全域",
+          "text": "Security and Safety 占百分之八点一，按五十三题约四题。AI Application Security 百分之三点二，是最大子技能；Guardrails、Identity Secrets 和 Hooks 合计覆盖其余部分。",
+          "audioPath": "audio/full/weight-01.mp3",
+          "durationMs": 9352
+        },
+        {
+          "id": "weight-02",
+          "title": "考缓解手段选择",
+          "text": "题目不会只问你知不知道 prompt injection，而会给出四种缓解手段，让你选真正可执行的控制。判断关键是它是否依赖模型愿意配合。",
+          "audioPath": "audio/full/weight-02.mp3",
+          "durationMs": 7657
+        }
+      ]
+    },
+    {
+      "id": "request-control",
+      "title": "请求与控制",
+      "segments": [
+        {
+          "id": "request-control-01",
+          "title": "Prompt 是概率层",
+          "text": "在 system prompt 写请忽略数据里的指令，属于请求。它可以降低攻击成功率，却不能把概率降到零，也可能被另一段精心设计的文字绕过。",
+          "audioPath": "audio/full/request-control-01.mp3",
+          "durationMs": 8977
+        },
+        {
+          "id": "request-control-02",
+          "title": "代码才可强制",
+          "text": "工具集裁剪、后端权限、PreToolUse、参数白名单和人工审批不依赖模型态度。四选一同时出现 prompt 警告与代码闸门，通常选后者。",
+          "audioPath": "audio/full/request-control-02.mp3",
+          "durationMs": 7780
+        }
+      ]
+    },
+    {
+      "id": "attack-surface",
+      "title": "Prompt Injection 攻击面",
+      "segments": [
+        {
+          "id": "attack-surface-01",
+          "title": "外部内容都可能注入",
+          "text": "用户上传的 PDF、简历、合同，GitHub issue 和代码注释，客服工单与邮件，只要第三方可以写并进入 context，就属于不可信输入。",
+          "audioPath": "audio/full/attack-surface-01.mp3",
+          "durationMs": 8421
+        },
+        {
+          "id": "attack-surface-02",
+          "title": "工具与数据库也不例外",
+          "text": "社区 M C P server 的 tool result、第三方 API 字段，甚至数据库里源自用户输入的字段，都可能藏指令。数据库保存过，不代表数据可信。",
+          "audioPath": "audio/full/attack-surface-02.mp3",
+          "durationMs": 9400
+        }
+      ]
+    },
+    {
+      "id": "weak-defenses",
+      "title": "四种伪防御",
+      "segments": [
+        {
+          "id": "weak-defenses-01",
+          "title": "更强模型可能更糟",
+          "text": "更会遵守指令的模型，也可能更忠实执行注入文字。调 temperature 与 injection 无关，而且当前模型已移除这类采样参数。",
+          "audioPath": "audio/full/weak-defenses-01.mp3",
+          "durationMs": 7805
+        },
+        {
+          "id": "weak-defenses-02",
+          "title": "关键词过滤是打地鼠",
+          "text": "过滤 ignore previous instructions 挡不住同义词、编码、其他语言和拆分指令。黑名单只能拦已知字符串，不能建立安全边界。",
+          "audioPath": "audio/full/weak-defenses-02.mp3",
+          "durationMs": 8039
+        }
+      ]
+    },
+    {
+      "id": "three-layer",
+      "title": "Injection 三层防御",
+      "segments": [
+        {
+          "id": "three-layer-01",
+          "title": "隔离与最小权限",
+          "text": "第一层用标签和明确声明把不可信内容当数据，降低混淆概率；第二层只挂任务真正需要的工具，让危险能力根本不存在。",
+          "audioPath": "audio/full/three-layer-01.mp3",
+          "durationMs": 8529
+        },
+        {
+          "id": "three-layer-02",
+          "title": "执行前最后把关",
+          "text": "第三层在执行工具前做代码白名单、参数验证与审批。最小权限最强，因为模型即使完全被说服，也调用不了一个手上没有的工具。",
+          "audioPath": "audio/full/three-layer-02.mp3",
+          "durationMs": 7586
+        }
+      ]
+    },
+    {
+      "id": "injection-vs-jailbreak",
+      "title": "Injection 与 Jailbreak",
+      "segments": [
+        {
+          "id": "injection-vs-jailbreak-01",
+          "title": "攻击者位置不同",
+          "text": "Prompt injection 的攻击者是写网页、文档或工具结果的第三方，用户可能只是无辜地要求总结文档。Jailbreak 的攻击者则是直接对话的用户本人。",
+          "audioPath": "audio/full/injection-vs-jailbreak-01.mp3",
+          "durationMs": 9623
+        },
+        {
+          "id": "injection-vs-jailbreak-02",
+          "title": "信任用户不能解决注入",
+          "text": "Injection 应使用隔离、最小权限和护栏；Jailbreak 更依赖内容政策、输出过滤和模型安全训练。信任当前用户无法证明外部文档可信。",
+          "audioPath": "audio/full/injection-vs-jailbreak-02.mp3",
+          "durationMs": 8181
+        }
+      ]
+    },
+    {
+      "id": "guardrail-stack",
+      "title": "六层纵深防御",
+      "segments": [
+        {
+          "id": "guardrail-stack-01",
+          "title": "每层挡不同失败",
+          "text": "输入层做净化隔离，模型层设置边界，工具层落实最小权限，执行层用 Hook 和审批，输出层过滤 PII，审计层记录与告警。",
+          "audioPath": "audio/full/guardrail-stack-01.mp3",
+          "durationMs": 7976
+        },
+        {
+          "id": "guardrail-stack-02",
+          "title": "中间两层才是墙",
+          "text": "输入与模型层都是概率性的。工具权限与执行 Hook 是确定性的控制。题目问最有效缓解时，选择真正限制能力或副作用的层。",
+          "audioPath": "audio/full/guardrail-stack-02.mp3",
+          "durationMs": 7931
+        }
+      ]
+    },
+    {
+      "id": "least-privilege",
+      "title": "最小权限三层",
+      "segments": [
+        {
+          "id": "least-privilege-01",
+          "title": "工具与凭证都要窄",
+          "text": "总结文档的 agent 不需要 delete file；create ticket 可以只创建，不能删除；数据库凭证应该只读。工具名称安全，不代表后端权限安全。",
+          "audioPath": "audio/full/least-privilege-01.mp3",
+          "durationMs": 9302
+        },
+        {
+          "id": "least-privilege-02",
+          "title": "数据返回也最小化",
+          "text": "查会员资料的工具不应因为数据库里有身份证号和支付信息就全部返回。Agent 能看到的数据也属于权限，给 agent 的凭证通常应比给人的更窄。",
+          "audioPath": "audio/full/least-privilege-02.mp3",
+          "durationMs": 9914
+        }
+      ]
+    },
+    {
+      "id": "pii-boundary",
+      "title": "PII 与秘密边界",
+      "segments": [
+        {
+          "id": "pii-boundary-01",
+          "title": "敏感值不要进 Context",
+          "text": "信用卡号、API key 和个人信息一旦进入 prompt，就可能复制到请求日志、session 历史、compaction 摘要和下一轮请求。后补日志脱敏不够。",
+          "audioPath": "audio/full/pii-boundary-01.mp3",
+          "durationMs": 7074
+        },
+        {
+          "id": "pii-boundary-02",
+          "title": "服务器替模型持有秘密",
+          "text": "需要凭证调用外部 API 时，让服务器工具使用 secret，模型只传引用 ID 并接收脱敏后的最小结果。输出流回用户前还要做 PII 检测。",
+          "audioPath": "audio/full/pii-boundary-02.mp3",
+          "durationMs": 9234
+        }
+      ]
+    },
+    {
+      "id": "pre-post",
+      "title": "Pre 与 Post Hook",
+      "segments": [
+        {
+          "id": "pre-post-01",
+          "title": "阻止必须在执行前",
+          "text": "PreToolUse 在工具执行前触发，可以 deny、ask 或改写参数，所以能阻止删除、转账和敏感查询。",
+          "audioPath": "audio/full/pre-post-01.mp3",
+          "durationMs": 7380
+        },
+        {
+          "id": "pre-post-02",
+          "title": "Post 只能处理结果",
+          "text": "PostToolUse 触发时副作用已经发生，适合规范化输出或追加上下文，不能撤回转账。口诀是要拦用 Pre，要洗数据用 Post。",
+          "audioPath": "audio/full/pre-post-02.mp3",
+          "durationMs": 9661
+        }
+      ]
+    },
+    {
+      "id": "refund-gate",
+      "title": "退款身份 Gate",
+      "segments": [
+        {
+          "id": "refund-gate-01",
+          "title": "代码保证安全顺序",
+          "text": "issue refund 发起前，PreToolUse 检查可信 session 是否完成身份验证。没有验证就 deny，这个检查不会忘记，也不会被 prompt injection 说服。",
+          "audioPath": "audio/full/refund-gate-01.mp3",
+          "durationMs": 9320
+        },
+        {
+          "id": "refund-gate-02",
+          "title": "Deny 要说明下一步",
+          "text": "拒绝时给 permission decision reason，告诉模型先调用 verify identity。只返回 deny 没有原因，模型可能原样重试，浪费 turn 与 token。",
+          "audioPath": "audio/full/refund-gate-02.mp3",
+          "durationMs": 8525
+        }
+      ]
+    },
+    {
+      "id": "secret-config",
+      "title": "密钥配置边界",
+      "segments": [
+        {
+          "id": "secret-config-01",
+          "title": "配置与密钥分离",
+          "text": "dot M C P J S O N 或 settings J S O N 可以提交 Git，但只写美元花括号变量引用。真正 token 放环境变量或 Secret Manager。",
+          "audioPath": "audio/full/secret-config-01.mp3",
+          "durationMs": 10395
+        },
+        {
+          "id": "secret-config-02",
+          "title": "按环境和服务拆 Key",
+          "text": "把整个配置文件 git ignore 会让团队失去共享配置。开发与生产不能共用 key，不同服务也应拆分，才能独立收权、轮换与审计。",
+          "audioPath": "audio/full/secret-config-02.mp3",
+          "durationMs": 8693
+        }
+      ]
+    },
+    {
+      "id": "auth-headers",
+      "title": "API Key 与 OAuth",
+      "segments": [
+        {
+          "id": "auth-headers-01",
+          "title": "Header 路径不同",
+          "text": "API key 使用 x api key；OAuth token 使用 Authorization Bearer，并带指定 anthropic beta 头。从 key 切到 OAuth 不是只换字符串值。",
+          "audioPath": "audio/full/auth-headers-01.mp3",
+          "durationMs": 8008
+        },
+        {
+          "id": "auth-headers-02",
+          "title": "两个凭证同时存在会 401",
+          "text": "同时设置 ANTHROPIC API KEY 与 ANTHROPIC AUTH TOKEN，SDK 可能把两个认证头一起发出并被拒绝。Key 明明正确却 401，先查这个环境冲突。",
+          "audioPath": "audio/full/auth-headers-02.mp3",
+          "durationMs": 9087
+        }
+      ]
+    },
+    {
+      "id": "authorization",
+      "title": "身份与授权",
+      "segments": [
+        {
+          "id": "authorization-01",
+          "title": "用户声明不是证据",
+          "text": "用户在消息里说自己是 admin，只是不可信文本。身份与角色必须来自后端验证过的 session，模型不能决定用户是否有 delete 权限。",
+          "audioPath": "audio/full/authorization-01.mp3",
+          "durationMs": 7146
+        },
+        {
+          "id": "authorization-02",
+          "title": "审计必须可追踪",
+          "text": "代码在执行工具前检查 user has permission，并记录谁、何时、调用哪个工具、参数与结果。没有这份日志，连是否发生攻击都无法判断。",
+          "audioPath": "audio/full/authorization-02.mp3",
+          "durationMs": 8994
+        }
+      ]
+    },
+    {
+      "id": "refusal",
+      "title": "Refusal 安全处理",
+      "segments": [
+        {
+          "id": "refusal-01",
+          "title": "Content 可能为空",
+          "text": "stop reason 等于 refusal 时，content 可能是空数组，直接读取 response content 零会抛 IndexError。stop details 也只在 refusal 时有值。",
+          "audioPath": "audio/full/refusal-01.mp3",
+          "durationMs": 9692
+        },
+        {
+          "id": "refusal-02",
+          "title": "先分支再读内容",
+          "text": "安全顺序是先判断 stop reason，refusal 进入专门处理，其余情况再收集 text blocks。不要用 try catch 吞掉，它会把安全状态伪装成普通空回答。",
+          "audioPath": "audio/full/refusal-02.mp3",
+          "durationMs": 9563
+        }
+      ]
+    },
+    {
+      "id": "ticket-question",
+      "title": "工单 PII 外泄考题",
+      "segments": [
+        {
+          "id": "ticket-question-01",
+          "title": "攻击链的致命能力",
+          "text": "恶意工单诱导 agent 查询用户资料，再把结果发到攻击者邮箱。真正的问题是处理不可信工单的链路上竟然同时有 PII 查询与任意地址发信能力。",
+          "audioPath": "audio/full/ticket-question-01.mp3",
+          "durationMs": 9572
+        },
+        {
+          "id": "ticket-question-02",
+          "title": "答案 D 加 E",
+          "text": "最有效的两个修法是移除 send email，让代码只发登记邮箱；并用 PreToolUse 对 PII 工具做人工审批。Delimiter 值得做，但不是最强制的答案。",
+          "audioPath": "audio/full/ticket-question-02.mp3",
+          "durationMs": 9136
+        }
+      ]
+    }
+  ]
+}

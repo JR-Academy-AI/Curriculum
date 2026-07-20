@@ -1,0 +1,393 @@
+{
+  "questGoalId": "local-ccdv-f-claude-code",
+  "presentation": {
+    "renderMode": "react-deck-release",
+    "deckId": "ccdv-f-eval-testing-debugging",
+    "releaseId": "local-ccdv-f-claude-code-20260719",
+    "entryUrl": "http://127.0.0.1:4182/",
+    "manifestUrl": "http://127.0.0.1:4182/manifest.json",
+    "allowedOrigin": "http://127.0.0.1:4182",
+    "bridgeVersion": 1,
+    "slideCount": 13
+  },
+  "steps": [
+    {
+      "id": "weight-focus",
+      "stepIndex": 0,
+      "title": "全卷最低，但只有一个核心判断",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4182/thumbnails/01-weight-focus.png"
+      },
+      "actions": [
+        {
+          "id": "weight-focus-01",
+          "type": "speech",
+          "text": "Eval、Testing、Debugging 这个域只占 2.6%，按 53 题折算约一道，是全卷最低。不要为它搭一套完整评测平台，但这道边界判断也不该白丢。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/weight-focus-01.mp3"
+        },
+        {
+          "id": "weight-focus-02",
+          "type": "speech",
+          "text": "名字里虽然有 Eval 和 Testing，官方有权重的子技能只有 Debugging and Error Handling。复习目标是识别错误、选恢复策略、读 trace，并隔离集成层与模型输出。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/weight-focus-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4182/audio/full/weight-focus-01.mp3",
+        "http://127.0.0.1:4182/audio/full/weight-focus-02.mp3"
+      ]
+    },
+    {
+      "id": "http-fault-line",
+      "stepIndex": 1,
+      "title": "HTTP 200 是根因分界线",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4182/thumbnails/02-http-fault-line.png"
+      },
+      "actions": [
+        {
+          "id": "http-fault-line-01",
+          "type": "speech",
+          "text": "HTTP 不是 200，优先归到集成层：参数、鉴权、模型 ID、请求大小、限流、网络或服务端。模型往往根本没机会回答，改 prompt 没有作用。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/http-fault-line-01.mp3"
+        },
+        {
+          "id": "http-fault-line-02",
+          "type": "speech",
+          "text": "HTTP 200 但字段错误、格式不合法、该调工具却没调，才进入模型输出层。对应手段是 prompt、schema、工具描述、few-shot、effort 或模型档。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/http-fault-line-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4182/audio/full/http-fault-line-01.mp3",
+        "http://127.0.0.1:4182/audio/full/http-fault-line-02.mp3"
+      ]
+    },
+    {
+      "id": "wrong-layer",
+      "stepIndex": 2,
+      "title": "两种反向误诊",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4182/thumbnails/03-wrong-layer.png"
+      },
+      "actions": [
+        {
+          "id": "wrong-layer-01",
+          "type": "speech",
+          "text": "十五%的请求返回 400，却在 system prompt 里要求返回合法响应，这是用模型手段修集成问题。请求不合法时模型没收到内容；应该查升级后仍在发送的废弃参数。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/wrong-layer-01.mp3"
+        },
+        {
+          "id": "wrong-layer-02",
+          "type": "speech",
+          "text": "HTTP 200，但 years 字段偶尔变成字符串，就加重试碰运气，这是用成本和延迟买概率。正确做法是结构化输出和解析侧校验，把格式约束放到 API 层。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/wrong-layer-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4182/audio/full/wrong-layer-01.mp3",
+        "http://127.0.0.1:4182/audio/full/wrong-layer-02.mp3"
+      ]
+    },
+    {
+      "id": "error-matrix",
+      "stepIndex": 3,
+      "title": "错误码决定恢复策略",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4182/thumbnails/04-error-matrix.png"
+      },
+      "actions": [
+        {
+          "id": "error-matrix-01",
+          "type": "speech",
+          "text": "400、401、403、404 和 413 都不该原样重试。分别修请求、密钥、权限、模型 ID，或先裁剪请求；重复发送相同输入不会改变结果。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/error-matrix-01.mp3"
+        },
+        {
+          "id": "error-matrix-02",
+          "type": "speech",
+          "text": "429、500、529 和连接错误属于瞬时故障。429 优先读取 retry-after，再做退避和抖动；五百和过载错误做指数退避，必要时降级模型档。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/error-matrix-02.mp3"
+        },
+        {
+          "id": "error-matrix-03",
+          "type": "speech",
+          "text": "程序化分类要读 error.type 并使用 SDK 的类型化异常。相同 403 可能是权限，也可能是欠费；字符串匹配文案会在服务端改措辞后静默失效。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/error-matrix-03.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4182/audio/full/error-matrix-01.mp3",
+        "http://127.0.0.1:4182/audio/full/error-matrix-02.mp3",
+        "http://127.0.0.1:4182/audio/full/error-matrix-03.mp3"
+      ]
+    },
+    {
+      "id": "catch-order",
+      "stepIndex": 4,
+      "title": "异常链必须从具体到宽泛",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4182/thumbnails/05-catch-order.png"
+      },
+      "actions": [
+        {
+          "id": "catch-order-01",
+          "type": "speech",
+          "text": "如果最前面就 catch Exception 或 APIStatusError，后面的 RateLimitError 和 BadRequestError 分支永远执行不到。可重试与不可重试错误会被混成一类。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/catch-order-01.mp3"
+        },
+        {
+          "id": "catch-order-02",
+          "type": "speech",
+          "text": "需要自定义恢复时，先把 SDK 自动重试设为零，再按 Rate Limit、Server、Connection 的具体顺序处理，最后才放宽泛兜底并保留原异常。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/catch-order-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4182/audio/full/catch-order-01.mp3",
+        "http://127.0.0.1:4182/audio/full/catch-order-02.mp3"
+      ]
+    },
+    {
+      "id": "retry-budget",
+      "stepIndex": 5,
+      "title": "默认重试会放大墙钟时间",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4182/thumbnails/06-retry-budget.png"
+      },
+      "actions": [
+        {
+          "id": "retry-budget-01",
+          "type": "speech",
+          "text": "SDK 默认 timeout 十分钟、max retries 两次。最坏情况下是首次请求加两次重试，总墙钟接近三十分钟；有 SLA 就必须显式压缩两个参数。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/retry-budget-01.mp3"
+        },
+        {
+          "id": "retry-budget-02",
+          "type": "speech",
+          "text": "Python 的 timeout 用秒，TypeScript 常用毫秒。迁移代码时如果只复制数字，二十秒可能变成二十毫秒；这不是模型质量问题，而是客户端配置问题。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/retry-budget-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4182/audio/full/retry-budget-01.mp3",
+        "http://127.0.0.1:4182/audio/full/retry-budget-02.mp3"
+      ]
+    },
+    {
+      "id": "trace-dashboard",
+      "stepIndex": 6,
+      "title": "Trace 至少记录八类字段",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4182/thumbnails/07-trace-dashboard.png"
+      },
+      "actions": [
+        {
+          "id": "trace-dashboard-01",
+          "type": "speech",
+          "text": "request id 是 Anthropic 能做端到端排查的唯一凭据。还要记 prompt version 和 model，质量回退时才能定位是提示改动还是模型版本变化。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/trace-dashboard-01.mp3"
+        },
+        {
+          "id": "trace-dashboard-02",
+          "type": "speech",
+          "text": "stop reason 能暴露 max tokens 截断；input、output 和 cache read token 能解释成本、Session 膨胀与缓存失效。只记 HTTP 状态码远远不够。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/trace-dashboard-02.mp3"
+        },
+        {
+          "id": "trace-dashboard-03",
+          "type": "speech",
+          "text": "延迟不要只看平均值，要看 p50、p95 和 p99。p99 突然暴涨但错误率没变，常见原因是重试正在兜底，把故障隐藏成尾延迟。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/trace-dashboard-03.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4182/audio/full/trace-dashboard-01.mp3",
+        "http://127.0.0.1:4182/audio/full/trace-dashboard-02.mp3",
+        "http://127.0.0.1:4182/audio/full/trace-dashboard-03.mp3"
+      ]
+    },
+    {
+      "id": "silent-failures",
+      "stepIndex": 7,
+      "title": "三个 HTTP 200 的静默失败",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4182/thumbnails/08-silent-failures.png"
+      },
+      "actions": [
+        {
+          "id": "silent-failures-01",
+          "type": "speech",
+          "text": "stop reason 等于 max tokens 时，用户拿到被腰斩的答案，但系统仍返回 200。cache read token 长期为零时，功能正常，账单却可能高出一个数量级。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/silent-failures-01.mp3"
+        },
+        {
+          "id": "silent-failures-02",
+          "type": "speech",
+          "text": "定义过的工具从未出现 tool use，通常不是模型忘记了，而是描述没有写清什么时候用、什么时候不用。先修描述边界，不要只在 system 里喊记得调用。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/silent-failures-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4182/audio/full/silent-failures-01.mp3",
+        "http://127.0.0.1:4182/audio/full/silent-failures-02.mp3"
+      ]
+    },
+    {
+      "id": "debug-loop",
+      "stepIndex": 8,
+      "title": "可复现的四步调试闭环",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4182/thumbnails/09-debug-loop.png"
+      },
+      "actions": [
+        {
+          "id": "debug-loop-01",
+          "type": "speech",
+          "text": "先固定输入跑二十次，记录失败率。把失败轮次的完整 content 保存下来，再判断是格式、工具选择、编造还是复杂推理错误。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/debug-loop-01.mp3"
+        },
+        {
+          "id": "debug-loop-02",
+          "type": "speech",
+          "text": "格式问题上 schema，工具问题改描述，缺失事实返回 null，复杂推理最后才加 effort 或换模型。改完用同一批输入再跑二十次，没有前后数字就不能说修好了。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/debug-loop-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4182/audio/full/debug-loop-01.mp3",
+        "http://127.0.0.1:4182/audio/full/debug-loop-02.mp3"
+      ]
+    },
+    {
+      "id": "minimal-eval",
+      "stepIndex": 9,
+      "title": "最小 Eval 不需要大平台",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4182/thumbnails/10-minimal-eval.png"
+      },
+      "actions": [
+        {
+          "id": "minimal-eval-01",
+          "type": "speech",
+          "text": "一个可用的最小 Eval 只需要固定输入集、可自动比较的期望输出和边界案例。没有写年限时，期望应是 null，而不是让模型猜一个数字。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/minimal-eval-01.mp3"
+        },
+        {
+          "id": "minimal-eval-02",
+          "type": "speech",
+          "text": "每次改 prompt、换模型或调参数，都跑同一个 Eval 集。抽取任务可以直接比字段，生成任务再用人工抽检或 judge；关键是判分规则必须稳定。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/minimal-eval-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4182/audio/full/minimal-eval-01.mp3",
+        "http://127.0.0.1:4182/audio/full/minimal-eval-02.mp3"
+      ]
+    },
+    {
+      "id": "failure-gallery",
+      "stepIndex": 10,
+      "title": "六个症状的正确层级",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4182/thumbnails/11-failure-gallery.png"
+      },
+      "actions": [
+        {
+          "id": "failure-gallery-01",
+          "type": "speech",
+          "text": "升级后 400、并发导致 429 雪崩、输出被 max tokens 截断，都应修代码或配置。分别删废弃参数、限并发加抖动、提高输出上限并记录 stop reason。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/failure-gallery-01.mp3"
+        },
+        {
+          "id": "failure-gallery-02",
+          "type": "speech",
+          "text": "字段类型偶发错误和工具从不调用，分别用结构化输出与完整工具描述。改完凭感觉上线则是流程错误，要用固定 Eval 集比较失败率。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/failure-gallery-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4182/audio/full/failure-gallery-01.mp3",
+        "http://127.0.0.1:4182/audio/full/failure-gallery-02.mp3"
+      ]
+    },
+    {
+      "id": "truncation-question",
+      "stepIndex": 11,
+      "title": "长文摘要在半句话处断掉",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4182/thumbnails/12-truncation-question.png"
+      },
+      "actions": [
+        {
+          "id": "truncation-question-01",
+          "type": "speech",
+          "text": "所有请求都是 HTTP 200，没有错误和限流，但长摘要停在半句话。能力不足通常产生差答案，不会稳定地戛然而止；这是硬上限截断的症状指纹。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/truncation-question-01.mp3"
+        },
+        {
+          "id": "truncation-question-02",
+          "type": "speech",
+          "text": "最有效的第一步是检查 stop reason。如果等于 max tokens，就提高上限，超长输出改用 streaming，并把该字段加入日志告警。重试和换大上下文窗口都不解决输出上限。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/truncation-question-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4182/audio/full/truncation-question-01.mp3",
+        "http://127.0.0.1:4182/audio/full/truncation-question-02.mp3"
+      ]
+    },
+    {
+      "id": "recap",
+      "stepIndex": 12,
+      "title": "一道题的排查顺序",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4182/thumbnails/13-recap.png"
+      },
+      "actions": [
+        {
+          "id": "recap-01",
+          "type": "speech",
+          "text": "先看 HTTP：非 200 修集成层；200 再看 stop reason 和完整 content。可重试只有 429、五百、529 和连接错误，不可重试先改输入。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/recap-01.mp3"
+        },
+        {
+          "id": "recap-02",
+          "type": "speech",
+          "text": "request id、stop reason、usage、模型和 prompt 版本组成可追踪证据；固定输入集则证明改动有效。这个域只有约一道题，记住顺序就够。",
+          "audioUrl": "http://127.0.0.1:4182/audio/full/recap-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4182/audio/full/recap-01.mp3",
+        "http://127.0.0.1:4182/audio/full/recap-02.mp3"
+      ]
+    }
+  ]
+}

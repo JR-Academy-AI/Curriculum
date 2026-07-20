@@ -1,0 +1,519 @@
+{
+  "questGoalId": "local-ccdv-f-prompt-context-engineering",
+  "presentation": {
+    "renderMode": "react-deck-release",
+    "deckId": "ccdv-f-prompt-context-engineering",
+    "releaseId": "local-ccdv-f-prompt-context-engineering-20260719",
+    "entryUrl": "http://127.0.0.1:4186/",
+    "manifestUrl": "http://127.0.0.1:4186/manifest.json",
+    "allowedOrigin": "http://127.0.0.1:4186",
+    "bridgeVersion": 1,
+    "slideCount": 18
+  },
+  "steps": [
+    {
+      "id": "domain-map",
+      "stepIndex": 0,
+      "title": "Domain 6 权重地图",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4186/thumbnails/01-domain-map.png"
+      },
+      "actions": [
+        {
+          "id": "domain-map-01",
+          "type": "speech",
+          "text": "Prompt and Context Engineering 占考试百分之十一，按五十三题折算大约六题。Prompt Engineering 占百分之四点六，Context Engineering 占百分之三点八，Output Handling 占百分之二点六。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/domain-map-01.mp3"
+        },
+        {
+          "id": "domain-map-02",
+          "type": "speech",
+          "text": "这章不是比谁写的提示词更华丽，考的是约束放在哪一层、上下文怎样变短、输出失败由哪一层兜底。先判断控制面，再选择技术。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/domain-map-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4186/audio/full/domain-map-01.mp3",
+        "http://127.0.0.1:4186/audio/full/domain-map-02.mp3"
+      ]
+    },
+    {
+      "id": "authority-ladder",
+      "stepIndex": 1,
+      "title": "指令权威层级",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4186/thumbnails/02-authority-ladder.png"
+      },
+      "actions": [
+        {
+          "id": "authority-ladder-01",
+          "type": "speech",
+          "text": "System 放角色、硬约束、安全规则、输出格式和工具规范；user 放本次意图与动态输入。稳定规则不要散落到每条用户消息里。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/authority-ladder-01.mp3"
+        },
+        {
+          "id": "authority-ladder-02",
+          "type": "speech",
+          "text": "tool result、检索文档、网页和用户文件都可能包含恶意文字，它们是数据，不是新指令。看到文件里写忽略之前规则，也不能提升它的权威。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/authority-ladder-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4186/audio/full/authority-ladder-01.mp3",
+        "http://127.0.0.1:4186/audio/full/authority-ladder-02.mp3"
+      ]
+    },
+    {
+      "id": "stable-prefix",
+      "stepIndex": 2,
+      "title": "稳定前缀与动态内容",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4186/thumbnails/03-stable-prefix.png"
+      },
+      "actions": [
+        {
+          "id": "stable-prefix-01",
+          "type": "speech",
+          "text": "Prompt Caching 依赖稳定前缀。system 规则、工具定义和长参考资料放前面，用户意图、检索结果和工具返回放后面，才能让多个请求复用前缀。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/stable-prefix-01.mp3"
+        },
+        {
+          "id": "stable-prefix-02",
+          "type": "speech",
+          "text": "把日期、用户姓名或每次变化的业务数据插入 system 前部，会让后面的长内容一起失去缓存命中。动态不是不能传，而是应该靠后放。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/stable-prefix-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4186/audio/full/stable-prefix-01.mp3",
+        "http://127.0.0.1:4186/audio/full/stable-prefix-02.mp3"
+      ]
+    },
+    {
+      "id": "placement-map",
+      "stepIndex": 3,
+      "title": "跨组件指令放置",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4186/thumbnails/04-placement-map.png"
+      },
+      "actions": [
+        {
+          "id": "placement-map-01",
+          "type": "speech",
+          "text": "API 行为写 system，工具选择依赖 tool description，参数填写依赖 input schema 字段说明，可复用专家知识放 SKILL dot M D。每个控制面解决不同问题。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/placement-map-01.mp3"
+        },
+        {
+          "id": "placement-map-02",
+          "type": "speech",
+          "text": "CLAUDE dot M D 是 Claude Code 的仓库规则文件，Messages API 不会自动读取它。服务端应用需要自己把规则放进 system，不能假设模型知道仓库文件。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/placement-map-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4186/audio/full/placement-map-01.mp3",
+        "http://127.0.0.1:4186/audio/full/placement-map-02.mp3"
+      ]
+    },
+    {
+      "id": "literal-models",
+      "stepIndex": 4,
+      "title": "新模型的字面遵循",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4186/thumbnails/05-literal-models.png"
+      },
+      "actions": [
+        {
+          "id": "literal-models-01",
+          "type": "speech",
+          "text": "新模型更严格执行字面约束。旧 prompt 写 CRITICAL，MUST 每次调用工具，升级后可能从偶尔调用变成所有请求都调用，这不是模型退化，是旧指令被更认真执行。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/literal-models-01.mp3"
+        },
+        {
+          "id": "literal-models-02",
+          "type": "speech",
+          "text": "只报告高严重度问题这样的阈值，也可能因为更强遵循而降低召回率。模型升级要清理夸张措辞，并重跑 Eval 校准精确率与召回率。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/literal-models-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4186/audio/full/literal-models-01.mp3",
+        "http://127.0.0.1:4186/audio/full/literal-models-02.mp3"
+      ]
+    },
+    {
+      "id": "few-shot",
+      "stepIndex": 5,
+      "title": "Few-shot 决策",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4186/thumbnails/06-few-shot.png"
+      },
+      "actions": [
+        {
+          "id": "few-shot-01",
+          "type": "speech",
+          "text": "规则一句话能说清就用 zero shot；单个例子锚定风格用 one shot；正反边界很难描述时才用三到五个 few shot 示例。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/few-shot-01.mp3"
+        },
+        {
+          "id": "few-shot-02",
+          "type": "speech",
+          "text": "JSON 格式不稳应使用 Structured Output，工具选错应改 tool description。Few shot 会占上下文，只有它能提供额外边界信息时才值得。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/few-shot-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4186/audio/full/few-shot-01.mp3",
+        "http://127.0.0.1:4186/audio/full/few-shot-02.mp3"
+      ]
+    },
+    {
+      "id": "untrusted-data",
+      "stepIndex": 6,
+      "title": "不可信内容与注入",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4186/thumbnails/07-untrusted-data.png"
+      },
+      "actions": [
+        {
+          "id": "untrusted-data-01",
+          "type": "speech",
+          "text": "用 XML 标签包裹外部文档，并明确说明它是数据而非指令，可以降低混淆，但标签仍然只是 prompt 文字，不构成真正的安全边界。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/untrusted-data-01.mp3"
+        },
+        {
+          "id": "untrusted-data-02",
+          "type": "speech",
+          "text": "真正的防线是最小权限、工具 allow list、敏感操作审批和参数验证。即使模型受骗，它也不应拥有直接删库、转账或发送秘密的权限。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/untrusted-data-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4186/audio/full/untrusted-data-01.mp3",
+        "http://127.0.0.1:4186/audio/full/untrusted-data-02.mp3"
+      ]
+    },
+    {
+      "id": "context-decay",
+      "stepIndex": 7,
+      "title": "Context Decay 三种病",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4186/thumbnails/08-context-decay.png"
+      },
+      "actions": [
+        {
+          "id": "context-decay-01",
+          "type": "speech",
+          "text": "Bloat 是完整历史反复发送，成本和延迟不断升高；Drift 是早期约束被后续内容稀释。前者要裁剪，后者要把硬约束放 system 并重申关键状态。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/context-decay-01.mp3"
+        },
+        {
+          "id": "context-decay-02",
+          "type": "speech",
+          "text": "真正撞上 context window 时，仅重申规则没有用，必须 context editing、compaction 或 subagent 隔离。先认清是哪种病，修法才不会错。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/context-decay-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4186/audio/full/context-decay-01.mp3",
+        "http://127.0.0.1:4186/audio/full/context-decay-02.mp3"
+      ]
+    },
+    {
+      "id": "three-controls",
+      "stepIndex": 8,
+      "title": "三种 Context 控制",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4186/thumbnails/09-three-controls.png"
+      },
+      "actions": [
+        {
+          "id": "three-controls-01",
+          "type": "speech",
+          "text": "Context editing 直接删除旧工具结果与 thinking 等低价值内容；compaction 把较早上下文压成一个可继续工作的摘要 block。一个是删，一个是压。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/three-controls-01.mp3"
+        },
+        {
+          "id": "three-controls-02",
+          "type": "speech",
+          "text": "Subagent 让搜索、长日志和失败尝试留在子上下文，主线程只接收结论与证据。它不是摘要算法，而是架构级的上下文隔离。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/three-controls-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4186/audio/full/three-controls-01.mp3",
+        "http://127.0.0.1:4186/audio/full/three-controls-02.mp3"
+      ]
+    },
+    {
+      "id": "compaction-trap",
+      "stepIndex": 9,
+      "title": "Compaction 协议陷阱",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4186/thumbnails/10-compaction-trap.png"
+      },
+      "actions": [
+        {
+          "id": "compaction-trap-01",
+          "type": "speech",
+          "text": "Compaction 发生后，如果应用只把 response text 追加到消息历史，就会丢掉 tool use、thinking 和 compaction block，下一轮协议状态可能断裂。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/compaction-trap-01.mp3"
+        },
+        {
+          "id": "compaction-trap-02",
+          "type": "speech",
+          "text": "正确做法是把完整 response content 追加回历史，让所有内容块按原结构保留。考试看到只提取文本，优先怀疑它破坏了 compaction。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/compaction-trap-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4186/audio/full/compaction-trap-01.mp3",
+        "http://127.0.0.1:4186/audio/full/compaction-trap-02.mp3"
+      ]
+    },
+    {
+      "id": "tool-pruning",
+      "stepIndex": 10,
+      "title": "工具输出裁剪",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4186/thumbnails/11-tool-pruning.png"
+      },
+      "actions": [
+        {
+          "id": "tool-pruning-01",
+          "type": "speech",
+          "text": "工具返回八千字对象，模型可能只需要 id、status、owner、due date、url 和 error。应在进入上下文前规范化，只保留高信号字段。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/tool-pruning-01.mp3"
+        },
+        {
+          "id": "tool-pruning-02",
+          "type": "speech",
+          "text": "如果第三方 M C P 返回内容无法控制，可以用 PostToolUse hook 过滤或摘要，再交给模型。这样同时降低 token、注入面和无关信息干扰。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/tool-pruning-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4186/audio/full/tool-pruning-01.mp3",
+        "http://127.0.0.1:4186/audio/full/tool-pruning-02.mp3"
+      ]
+    },
+    {
+      "id": "subagent-isolation",
+      "stepIndex": 11,
+      "title": "Subagent 使用边界",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4186/thumbnails/12-subagent-isolation.png"
+      },
+      "actions": [
+        {
+          "id": "subagent-isolation-01",
+          "type": "speech",
+          "text": "代码库搜索、资料研究、长日志分析既独立又会产生大量中间噪音，适合交给 subagent，最后只返回结论和引用。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/subagent-isolation-01.mp3"
+        },
+        {
+          "id": "subagent-isolation-02",
+          "type": "speech",
+          "text": "后一步强依赖前一步的精确状态、任务很短、或者每个中间动作必须在主线程复现时，subagent 的协调成本会超过上下文收益。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/subagent-isolation-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4186/audio/full/subagent-isolation-01.mp3",
+        "http://127.0.0.1:4186/audio/full/subagent-isolation-02.mp3"
+      ]
+    },
+    {
+      "id": "output-layers",
+      "stepIndex": 12,
+      "title": "输出防御三层",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4186/thumbnails/13-output-layers.png"
+      },
+      "actions": [
+        {
+          "id": "output-layers-01",
+          "type": "speech",
+          "text": "第一层用 output config format 或 strict tool 约束输出形状；第二层在代码里防御性解析和 schema 验证，挡住缺字段与类型错误。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/output-layers-01.mp3"
+        },
+        {
+          "id": "output-layers-02",
+          "type": "speech",
+          "text": "Schema 通过只能说明结构正确，不能证明 customer id 真的存在。第三层要查数据库、允许列表或来源证据，验证值的业务语义。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/output-layers-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4186/audio/full/output-layers-01.mp3",
+        "http://127.0.0.1:4186/audio/full/output-layers-02.mp3"
+      ]
+    },
+    {
+      "id": "defensive-parse",
+      "stepIndex": 13,
+      "title": "防御性解析流程",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4186/thumbnails/14-defensive-parse.png"
+      },
+      "actions": [
+        {
+          "id": "defensive-parse-01",
+          "type": "speech",
+          "text": "即使用 Structured Output，parsed output 仍可能是 None，例如输出被 max tokens 截断、模型拒答或解析失败。代码不能直接解引用。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/defensive-parse-01.mp3"
+        },
+        {
+          "id": "defensive-parse-02",
+          "type": "speech",
+          "text": "先检查 stop reason，再检查 parsed output 是否存在，然后验证 schema，最后验证语义。每一层失败都应该进入明确的重试、降级或人工处理路径。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/defensive-parse-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4186/audio/full/defensive-parse-01.mp3",
+        "http://127.0.0.1:4186/audio/full/defensive-parse-02.mp3"
+      ]
+    },
+    {
+      "id": "structured-modes",
+      "stepIndex": 14,
+      "title": "两种严格结构化模式",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4186/thumbnails/15-structured-modes.png"
+      },
+      "actions": [
+        {
+          "id": "structured-modes-01",
+          "type": "speech",
+          "text": "让普通响应符合 JSON Schema，应使用 output config format。旧的顶层 output format 已弃用，不要在新代码或考试答案里继续选择旧参数。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/structured-modes-01.mp3"
+        },
+        {
+          "id": "structured-modes-02",
+          "type": "speech",
+          "text": "工具输入要严格校验，strict true 放在 tool definition 顶层，不是 input schema 内部，同时对象 schema 要设置 additional properties false。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/structured-modes-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4186/audio/full/structured-modes-01.mp3",
+        "http://127.0.0.1:4186/audio/full/structured-modes-02.mp3"
+      ]
+    },
+    {
+      "id": "schema-boundaries",
+      "stepIndex": 15,
+      "title": "JSON Schema 能力边界",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4186/thumbnails/16-schema-boundaries.png"
+      },
+      "actions": [
+        {
+          "id": "schema-boundaries-01",
+          "type": "speech",
+          "text": "当前 Structured Output 不支持递归 schema、数字 min max、字符串长度和部分复杂数组约束。这些业务边界必须在代码里二次验证。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/schema-boundaries-01.mp3"
+        },
+        {
+          "id": "schema-boundaries-02",
+          "type": "speech",
+          "text": "字段可以是 required，同时类型允许 null。这样响应形状稳定，但输入没提供 owner 或 due date 时，模型可以诚实写 null，不必编造一个合法字符串。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/schema-boundaries-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4186/audio/full/schema-boundaries-01.mp3",
+        "http://127.0.0.1:4186/audio/full/schema-boundaries-02.mp3"
+      ]
+    },
+    {
+      "id": "failure-tree",
+      "stepIndex": 16,
+      "title": "输出失败决策树",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4186/thumbnails/17-failure-tree.png"
+      },
+      "actions": [
+        {
+          "id": "failure-tree-01",
+          "type": "speech",
+          "text": "不是 JSON，修 format enforcement；字段和类型错，修 schema 与 parser；值不存在，修 semantic validation；缺信息却硬填，修 nullable 设计。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/failure-tree-01.mp3"
+        },
+        {
+          "id": "failure-tree-02",
+          "type": "speech",
+          "text": "在 prompt 里多写一句不要幻觉，无法替代数据库校验。每类失败都有更可靠的控制面，考试会用相似选项测试你是否分得清。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/failure-tree-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4186/audio/full/failure-tree-01.mp3",
+        "http://127.0.0.1:4186/audio/full/failure-tree-02.mp3"
+      ]
+    },
+    {
+      "id": "meeting-question",
+      "stepIndex": 17,
+      "title": "会议行动项考题",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4186/thumbnails/18-meeting-question.png"
+      },
+      "actions": [
+        {
+          "id": "meeting-question-01",
+          "type": "speech",
+          "text": "会议记录只说跟进登录故障，没有负责人和日期。如果 schema 要求 owner 与 due date 必须是非空字符串，模型为了通过结构验证就可能发明 Alice 和星期五。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/meeting-question-01.mp3"
+        },
+        {
+          "id": "meeting-question-02",
+          "type": "speech",
+          "text": "正确答案是两个字段仍然 required，但类型允许 null，prompt 明确缺失就写 null，再用语义验证确认出现的姓名和日期确实来自输入。",
+          "audioUrl": "http://127.0.0.1:4186/audio/full/meeting-question-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4186/audio/full/meeting-question-01.mp3",
+        "http://127.0.0.1:4186/audio/full/meeting-question-02.mp3"
+      ]
+    }
+  ]
+}

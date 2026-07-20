@@ -1,0 +1,271 @@
+{
+  "schemaVersion": 1,
+  "deckId": "ccdv-f-claude-code",
+  "course": "Claude Certified Developer – Foundations",
+  "chapterTitle": "Claude Code",
+  "voice": {
+    "provider": "ElevenLabs",
+    "name": "Amy",
+    "voiceId": "bhJUNIXWQQ94l8eI2VUf",
+    "model": "eleven_v3",
+    "stability": 0.56,
+    "similarityBoost": 0.78,
+    "tempo": 1.18
+  },
+  "voiceStatus": "generated-local-review",
+  "generatedAt": "2026-07-19T13:03:22.407Z",
+  "summary": {
+    "sectionCount": 12,
+    "segmentCount": 25,
+    "totalDurationMs": 241440
+  },
+  "sections": [
+    {
+      "id": "weight-trap",
+      "title": "Developer 考试却只占 3.1%",
+      "segments": [
+        {
+          "id": "weight-trap-01",
+          "title": "约两题",
+          "text": "Claude Code 在 CCDV-F 只占 3.1%，按 53 题折算大约两题，在八个 Domain 里倒数第二。别把产品名里的 Developer 误读成考试主轴。",
+          "audioPath": "audio/full/weight-trap-01.mp3",
+          "durationMs": 9993
+        },
+        {
+          "id": "weight-trap-02",
+          "title": "不要套 CCAR-F 的复习配比",
+          "text": "CCAR-F 里 Claude Code 占百分之二十，但这门只有 3.1%。同一套资料和学习惯性不能直接搬过来；这一章的目标是识别组件、层级、作用域和运行模式。",
+          "audioPath": "audio/full/weight-trap-02.mp3",
+          "durationMs": 12429
+        }
+      ]
+    },
+    {
+      "id": "five-components",
+      "title": "五个核心组件",
+      "segments": [
+        {
+          "id": "five-components-01",
+          "title": "Rules、Skills、Commands",
+          "text": "Rules 是作用域内始终生效的约束；Skills 是模型判断相关时才加载的流程；Commands 是用户明确输入 slash command 才触发的提示模板。",
+          "audioPath": "audio/full/five-components-01.mp3",
+          "durationMs": 8498
+        },
+        {
+          "id": "five-components-02",
+          "title": "Agents 与 Agent Memory",
+          "text": "Agents 是拥有独立上下文和工具集的 subagent，适合隔离脏活。Agent Memory 是跨 session 的持久记忆，不等于把所有旧对话永远塞进当前上下文。",
+          "audioPath": "audio/full/five-components-02.mp3",
+          "durationMs": 9700
+        }
+      ]
+    },
+    {
+      "id": "trigger-model",
+      "title": "Rules、Skills、Commands 的触发模型",
+      "segments": [
+        {
+          "id": "trigger-model-01",
+          "title": "谁触发决定放哪里",
+          "text": "无条件规则放 Rules，模型自己判断相关的长流程放 Skill，必须由用户显式发起的固定动作放 Command。三者的分界线是触发者和进入上下文的时机。",
+          "audioPath": "audio/full/trigger-model-01.mp3",
+          "durationMs": 10120
+        },
+        {
+          "id": "trigger-model-02",
+          "title": "长流程做 Skill",
+          "text": "三千字的 API 文档流程如果写进 CLAUDE.md，每次对话都付 token，还会稀释重要规则。做成 Skill 后默认只暴露描述，任务相关时才渐进加载全文。",
+          "audioPath": "audio/full/trigger-model-02.mp3",
+          "durationMs": 8445
+        }
+      ]
+    },
+    {
+      "id": "claude-md-hierarchy",
+      "title": "CLAUDE.md 的层级与 Git 边界",
+      "segments": [
+        {
+          "id": "claude-md-hierarchy-01",
+          "title": "越具体越优先",
+          "text": "子目录 CLAUDE.md 最具体，再向上合并项目根；用户全局的 home 目录 CLAUDE.md 是个人偏好。项目规则跟团队共享并进入 Git，个人偏好不要提交到项目根。",
+          "audioPath": "audio/full/claude-md-hierarchy-01.mp3",
+          "durationMs": 10883
+        },
+        {
+          "id": "claude-md-hierarchy-02",
+          "title": "local 文件只属于个人",
+          "text": "项目里的 CLAUDE.local.md 用于个人覆写，不进版本控制。import 只是拆文件，被引入内容仍然常驻上下文；真正按需加载要用 Skill。",
+          "audioPath": "audio/full/claude-md-hierarchy-02.mp3",
+          "durationMs": 7650
+        }
+      ]
+    },
+    {
+      "id": "settings-precedence",
+      "title": "settings.json 的覆盖顺序",
+      "segments": [
+        {
+          "id": "settings-precedence-01",
+          "title": "三层配置",
+          "text": "settings.local.json 最具体，覆盖项目 .claude settings.json，再覆盖用户 home 目录的 settings.json。越具体越优先，但共享边界和优先级是两件事。",
+          "audioPath": "audio/full/settings-precedence-01.mp3",
+          "durationMs": 11161
+        },
+        {
+          "id": "settings-precedence-02",
+          "title": "团队配置与本地覆写",
+          "text": "团队权限允许清单放项目 settings.json 并进入 Git。个人本地覆写放 settings.local.json 并 gitignore。任何密钥都不该直接写进这些配置文件。",
+          "audioPath": "audio/full/settings-precedence-02.mp3",
+          "durationMs": 10913
+        }
+      ]
+    },
+    {
+      "id": "mcp-scopes",
+      "title": "MCP 的三个 Scope",
+      "segments": [
+        {
+          "id": "mcp-scopes-01",
+          "title": "local、project、user",
+          "text": "local 只在当前项目为自己加载，user 在所有项目为自己加载，project 才是当前项目的团队共享配置，存放在项目根 .mcp.json 并进入版本控制。",
+          "audioPath": "audio/full/mcp-scopes-01.mp3",
+          "durationMs": 10648
+        },
+        {
+          "id": "mcp-scopes-02",
+          "title": "团队共享的唯一正确组合",
+          "text": "内部 MCP 要全队共享又不能泄 token，标准组合是 project scope 的 .mcp.json，加环境变量占位符。把 .mcp.json gitignore 会让共享目标直接失效。",
+          "audioPath": "audio/full/mcp-scopes-02.mp3",
+          "durationMs": 11417
+        }
+      ]
+    },
+    {
+      "id": "runtime-modes",
+      "title": "Interactive、Headless、Streaming、Auto",
+      "segments": [
+        {
+          "id": "runtime-modes-01",
+          "title": "CI 必须 Headless",
+          "text": "交互模式适合人坐在终端前。脚本和 CI 没人回答提示，必须用 headless，也就是 claude -p；要边跑边解析事件，再选 streaming JSON 输出。",
+          "audioPath": "audio/full/runtime-modes-01.mp3",
+          "durationMs": 8989
+        },
+        {
+          "id": "runtime-modes-02",
+          "title": "Auto 风险最大",
+          "text": "Auto 模式会减少人工确认，但这不等于安全。自动化环境里必须同时限制工具与命令权限；否则一个只读 review 任务也可能获得写文件、删文件或 push 的能力。",
+          "audioPath": "audio/full/runtime-modes-02.mp3",
+          "durationMs": 9500
+        }
+      ]
+    },
+    {
+      "id": "ci-permissions",
+      "title": "CI 自动化的权限包络",
+      "segments": [
+        {
+          "id": "ci-permissions-01",
+          "title": "模式解决卡死",
+          "text": "CI 停在是否允许执行的提示上，根因是模式选错，先切 Headless。调大 job 超时只会让它多等，往 CLAUDE.md 写不要询问也改变不了程序层交互。",
+          "audioPath": "audio/full/ci-permissions-01.mp3",
+          "durationMs": 9484
+        },
+        {
+          "id": "ci-permissions-02",
+          "title": "权限解决风险",
+          "text": "Headless 解决无人输入，权限 allowlist 解决能做什么。自动 code review 只需要读 diff、跑受控检查和发评论，就不该得到任意 Bash、写仓库或 git push 权限。",
+          "audioPath": "audio/full/ci-permissions-02.mp3",
+          "durationMs": 10000
+        },
+        {
+          "id": "ci-permissions-03",
+          "title": "Prompt 不是强制边界",
+          "text": "在 prompt 里写请不要删文件，只是概率约束。确定性安全必须由 settings 和执行环境限制；这是用程序机制解决程序问题，而不是靠模型自觉。",
+          "audioPath": "audio/full/ci-permissions-03.mp3",
+          "durationMs": 9444
+        }
+      ]
+    },
+    {
+      "id": "session-init",
+      "title": "Session 卫生与仓库初始化",
+      "segments": [
+        {
+          "id": "session-init-01",
+          "title": "任务切换就 clear",
+          "text": "每个 Claude Code session 有独立上下文，也可以恢复旧 session。完成一个 bug 后开始无关功能，应该 clear 或开新 session，避免旧信息继续占 token 并干扰注意力。",
+          "audioPath": "audio/full/session-init-01.mp3",
+          "durationMs": 7370
+        },
+        {
+          "id": "session-init-02",
+          "title": "init 只是起点",
+          "text": "init 会扫描仓库并生成初始 CLAUDE.md，但它只能看到结构，扫不出团队真正的红线。生成后要人工补上 URL 不可变、测试闸门和禁止操作等约束。",
+          "audioPath": "audio/full/session-init-02.mp3",
+          "durationMs": 9197
+        }
+      ]
+    },
+    {
+      "id": "failure-gallery",
+      "title": "六个常见错层",
+      "segments": [
+        {
+          "id": "failure-gallery-01",
+          "title": "上下文与配置错误",
+          "text": "长流程塞 Rules、个人偏好进项目根、个人覆写改项目 settings，分别错在按需加载、团队边界和配置作用域。先问谁需要、何时加载、是否共享。",
+          "audioPath": "audio/full/failure-gallery-01.mp3",
+          "durationMs": 10295
+        },
+        {
+          "id": "failure-gallery-02",
+          "title": "自动化与跨界面错误",
+          "text": "CI 用交互模式、Auto 不限权限、任务切换不 clear，以及期待 Messages API 读取 CLAUDE.md，分别错在运行模式、权限边界、Session 卫生和跨界面机制。",
+          "audioPath": "audio/full/failure-gallery-02.mp3",
+          "durationMs": 8308
+        }
+      ]
+    },
+    {
+      "id": "ci-question",
+      "title": "GitHub Actions Code Review 题",
+      "segments": [
+        {
+          "id": "ci-question-01",
+          "title": "十分钟超时不是根因",
+          "text": "工作流日志停在等待输入，说明交互模式在没有人的 CI 环境里等确认。把十分钟改成三十分钟，只会延后失败；Auto 全接受又会过度扩权。",
+          "audioPath": "audio/full/ci-question-01.mp3",
+          "durationMs": 9409
+        },
+        {
+          "id": "ci-question-02",
+          "title": "答案是 B",
+          "text": "最有效的第一步是 Headless claude -p，同时用权限允许清单限制为只读和受控评论能力。模式解决可运行，权限解决可控，两者缺一不可。",
+          "audioPath": "audio/full/ci-question-02.mp3",
+          "durationMs": 8114
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "title": "本章速记",
+      "segments": [
+        {
+          "id": "recap-01",
+          "title": "组件与层级",
+          "text": "Rules 常驻，Skills 按需，Commands 用户触发，Agents 隔离上下文，Memory 跨 session。团队规则进项目根，个人偏好进用户或 local 文件。",
+          "audioPath": "audio/full/recap-01.mp3",
+          "durationMs": 9697
+        },
+        {
+          "id": "recap-02",
+          "title": "共享与自动化",
+          "text": "团队 MCP 用 project scope 加环境变量。CI 用 Headless，Streaming 用于事件流，Auto 必须锁权限。任务切换 clear，Messages API 不读取 CLAUDE.md。",
+          "audioPath": "audio/full/recap-02.mp3",
+          "durationMs": 9776
+        }
+      ]
+    }
+  ]
+}

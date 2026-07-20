@@ -1,0 +1,512 @@
+{
+  "questGoalId": "local-ccdv-f-agents-workflows",
+  "presentation": {
+    "renderMode": "react-deck-release",
+    "deckId": "ccdv-f-agents-workflows",
+    "releaseId": "local-ccdv-f-agents-workflows-20260719",
+    "entryUrl": "http://127.0.0.1:4176/",
+    "manifestUrl": "http://127.0.0.1:4176/manifest.json",
+    "allowedOrigin": "http://127.0.0.1:4176",
+    "bridgeVersion": 1,
+    "slideCount": 16
+  },
+  "steps": [
+    {
+      "id": "weight-map",
+      "stepIndex": 0,
+      "title": "三个子技能与权重",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4176/thumbnails/01-weight-map.png"
+      },
+      "actions": [
+        {
+          "id": "weight-map-01",
+          "type": "speech",
+          "text": "Agents and Workflows 占整卷 14.7%，按 53 题折算大约八题，在八个 Domain 里排第三。它不是只考 agent loop，而是把架构、构建和框架生态分成三个接近等重的子技能。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/weight-map-01.mp3"
+        },
+        {
+          "id": "weight-map-02",
+          "type": "speech",
+          "text": "Agent Construction 占 5.3%，Patterns and Frameworks 占 4.9%，Agent Architecture 占 4.5%。最容易漏的是第三方框架：Strands、LangGraph 和 PydanticAI 都被 Blueprint 点名。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/weight-map-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4176/audio/full/weight-map-01.mp3",
+        "http://127.0.0.1:4176/audio/full/weight-map-02.mp3"
+      ]
+    },
+    {
+      "id": "simple-first",
+      "stepIndex": 1,
+      "title": "能简单就不要上 Agent",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4176/thumbnails/02-simple-first.png"
+      },
+      "actions": [
+        {
+          "id": "simple-first-01",
+          "type": "speech",
+          "text": "Agent 用延迟、成本和不确定性，换取对无法预先穷举任务的处理能力。如果任务路径本来就能写清楚，上 Agent 等于付了代价，却没有换到真正的灵活性。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/simple-first-01.mp3"
+        },
+        {
+          "id": "simple-first-02",
+          "type": "speech",
+          "text": "先翻译、再润色、最后做合规检查，顺序完全固定。这是 prompt chaining workflow，不是 Agent。控制流应该由代码保证，模型只完成每一步里的语言任务。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/simple-first-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4176/audio/full/simple-first-01.mp3",
+        "http://127.0.0.1:4176/audio/full/simple-first-02.mp3"
+      ]
+    },
+    {
+      "id": "complexity-ladder",
+      "stepIndex": 2,
+      "title": "从单次调用到 Agent",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4176/thumbnails/03-complexity-ladder.png"
+      },
+      "actions": [
+        {
+          "id": "complexity-ladder-01",
+          "type": "speech",
+          "text": "第一层是单次调用，适合分类、摘要和抽取。第二层是 Workflow，步骤由代码编排。第三层才是 Agent，模型在运行时决定调什么工具、调几次以及什么时候结束。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/complexity-ladder-01.mp3"
+        },
+        {
+          "id": "complexity-ladder-02",
+          "type": "speech",
+          "text": "做题时从最简单的一层往下问。一次请求能解决就停在单次调用；多步但顺序明确就选 Workflow；只有路径无法提前写清，才继续评估 Agent。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/complexity-ladder-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4176/audio/full/complexity-ladder-01.mp3",
+        "http://127.0.0.1:4176/audio/full/complexity-ladder-02.mp3"
+      ]
+    },
+    {
+      "id": "four-gates",
+      "stepIndex": 3,
+      "title": "上 Agent 前的四道闸",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4176/thumbnails/04-four-gates.png"
+      },
+      "actions": [
+        {
+          "id": "four-gates-01",
+          "type": "speech",
+          "text": "第一道闸看复杂度：任务是否多步，而且无法事先完整指定。第二道闸看价值：结果是否值得更高的成本和延迟。任何一道答否，都应该退回更简单的方案。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/four-gates-01.mp3"
+        },
+        {
+          "id": "four-gates-02",
+          "type": "speech",
+          "text": "第三道闸看 Claude 在这类任务上到底能不能稳定完成。第四道闸看错误是否能发现和恢复，比如有没有测试、人工 review 和回滚。四道闸必须全部通过。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/four-gates-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4176/audio/full/four-gates-01.mp3",
+        "http://127.0.0.1:4176/audio/full/four-gates-02.mp3"
+      ]
+    },
+    {
+      "id": "supervisor-subagent",
+      "stepIndex": 4,
+      "title": "Supervisor 与 Subagent",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4176/thumbnails/05-supervisor-subagent.png"
+      },
+      "actions": [
+        {
+          "id": "supervisor-subagent-01",
+          "type": "speech",
+          "text": "Manager、orchestrator 和 supervisor 指的是同一个角色：主 Agent 拆任务、分派并汇总。Subagent 完成具体子任务，而且拥有自己独立的上下文窗口。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/supervisor-subagent-01.mp3"
+        },
+        {
+          "id": "supervisor-subagent-02",
+          "type": "speech",
+          "text": "Subagent 的第一个价值是上下文隔离。它读了几十个文件、跑了许多工具，这些中间噪音不会污染主 Agent；主 Agent 只接收最后的高信号结论。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/supervisor-subagent-02.mp3"
+        },
+        {
+          "id": "supervisor-subagent-03",
+          "type": "speech",
+          "text": "五个互相独立的数据源可以并行派给五个 Subagent。但如果 B 依赖 A 的中间结果，或者任务只是读一个文件，启动 Subagent 的成本反而更高。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/supervisor-subagent-03.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4176/audio/full/supervisor-subagent-01.mp3",
+        "http://127.0.0.1:4176/audio/full/supervisor-subagent-02.mp3",
+        "http://127.0.0.1:4176/audio/full/supervisor-subagent-03.mp3"
+      ]
+    },
+    {
+      "id": "stop-reasons",
+      "stepIndex": 5,
+      "title": "循环只认 stop_reason",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4176/thumbnails/06-stop-reasons.png"
+      },
+      "actions": [
+        {
+          "id": "stop-reasons-01",
+          "type": "speech",
+          "text": "end_turn 才是正常出口；tool_use 表示执行工具、回填 tool_result，再继续循环；max_tokens 表示响应被截断，必须当失败处理，不能把半截内容直接交给用户。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/stop-reasons-01.mp3"
+        },
+        {
+          "id": "stop-reasons-02",
+          "type": "speech",
+          "text": "pause_turn 通常来自服务端工具达到迭代上限，要把 assistant 内容原样写回再发一次，不要额外塞一句 Continue。refusal 要先检查，因为拒答时 content 可能为空。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/stop-reasons-02.mp3"
+        },
+        {
+          "id": "stop-reasons-03",
+          "type": "speech",
+          "text": "模型可以一边输出一句说明，一边请求工具调用。所以响应里有 text，不代表已经结束。判断循环方向只能看 stop_reason，不能拿有没有文本当方向盘。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/stop-reasons-03.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4176/audio/full/stop-reasons-01.mp3",
+        "http://127.0.0.1:4176/audio/full/stop-reasons-02.mp3",
+        "http://127.0.0.1:4176/audio/full/stop-reasons-03.mp3"
+      ]
+    },
+    {
+      "id": "loop-invariants",
+      "stepIndex": 6,
+      "title": "Agent Loop 的四条不变式",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4176/thumbnails/07-loop-invariants.png"
+      },
+      "actions": [
+        {
+          "id": "loop-invariants-01",
+          "type": "speech",
+          "text": "每一轮 assistant 的 response.content 必须完整写回 messages。只保留 text 会丢掉 tool_use 或 compaction block，下一轮的 tool_result 就无法匹配，API 可能直接返回 400。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/loop-invariants-01.mp3"
+        },
+        {
+          "id": "loop-invariants-02",
+          "type": "speech",
+          "text": "每一个 tool_result 都必须带回对应的 tool_use_id。工具执行失败也不能跳过，要返回 is_error true，并写清错误和恢复建议。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/loop-invariants-02.mp3"
+        },
+        {
+          "id": "loop-invariants-03",
+          "type": "speech",
+          "text": "同一轮产生的多个 tool_result 要放进同一条 user 消息。拆成多条虽然不一定立刻报错，却会让模型逐渐放弃并行工具调用，形成静默性能退化。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/loop-invariants-03.mp3"
+        },
+        {
+          "id": "loop-invariants-04",
+          "type": "speech",
+          "text": "Agent loop 必须设置 max_turns。工具描述含糊或空结果反复出现时，没有硬上限的循环会一直消耗 token 和 API 额度。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/loop-invariants-04.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4176/audio/full/loop-invariants-01.mp3",
+        "http://127.0.0.1:4176/audio/full/loop-invariants-02.mp3",
+        "http://127.0.0.1:4176/audio/full/loop-invariants-03.mp3",
+        "http://127.0.0.1:4176/audio/full/loop-invariants-04.mp3"
+      ]
+    },
+    {
+      "id": "runner-sdk",
+      "stepIndex": 7,
+      "title": "Tool Runner 不是 Agent SDK",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4176/thumbnails/08-runner-sdk.png"
+      },
+      "actions": [
+        {
+          "id": "runner-sdk-01",
+          "type": "speech",
+          "text": "Tool Runner 是普通 Anthropic SDK 里的 helper，它替你驱动工具循环，但工具仍然全部由你定义和实现。它不自带文件系统、bash、grep 或执行沙箱。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/runner-sdk-01.mp3"
+        },
+        {
+          "id": "runner-sdk-02",
+          "type": "speech",
+          "text": "Claude Agent SDK 是把 Claude Code 的能力打包成库，自带 Read、Write、Edit、Bash、Grep 等工具，以及权限、session、hooks 和 Subagent。它运行在你自己的基础设施上。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/runner-sdk-02.mp3"
+        },
+        {
+          "id": "runner-sdk-03",
+          "type": "speech",
+          "text": "如果只需要循环调用你自己的业务工具，默认先选 Tool Runner。只有需要更细控制、自定义传输或 SDK 无法构造的请求形状时，才值得手搓 loop。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/runner-sdk-03.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4176/audio/full/runner-sdk-01.mp3",
+        "http://127.0.0.1:4176/audio/full/runner-sdk-02.mp3",
+        "http://127.0.0.1:4176/audio/full/runner-sdk-03.mp3"
+      ]
+    },
+    {
+      "id": "hooks",
+      "stepIndex": 8,
+      "title": "确定性动作交给 Hook",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4176/thumbnails/09-hooks.png"
+      },
+      "actions": [
+        {
+          "id": "hooks-01",
+          "type": "speech",
+          "text": "PreToolUse 在工具执行前触发，可以 deny、ask 或改写参数。PostToolUse 在工具已经执行后触发，只能记录、转换结果或追加反馈。要阻止退款或删除，只能在 Pre 阶段。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/hooks-01.mp3"
+        },
+        {
+          "id": "hooks-02",
+          "type": "speech",
+          "text": "把退款前验证身份写在 prompt 里，只能提高模型遵守概率。Hook 是代码，可以形成确定性护栏。必须发生或绝不能发生的动作，都应该交给可执行控制。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/hooks-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4176/audio/full/hooks-01.mp3",
+        "http://127.0.0.1:4176/audio/full/hooks-02.mp3"
+      ]
+    },
+    {
+      "id": "deployment-models",
+      "stepIndex": 9,
+      "title": "Harness 跑在哪里",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4176/thumbnails/10-deployment-models.png"
+      },
+      "actions": [
+        {
+          "id": "deployment-models-01",
+          "type": "speech",
+          "text": "手搓 loop、Tool Runner 和 Claude Agent SDK 都只解决 harness，部署仍然由你负责。代码、工具和工作区都运行在你自己的基础设施上。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/deployment-models-01.mp3"
+        },
+        {
+          "id": "deployment-models-02",
+          "type": "speech",
+          "text": "Managed Agents 是唯一同时托管 agent harness 和工具执行沙箱的选项，适合长时间、有状态、需要持久工作区或定时触发，而且团队不想维护容器的任务。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/deployment-models-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4176/audio/full/deployment-models-01.mp3",
+        "http://127.0.0.1:4176/audio/full/deployment-models-02.mp3"
+      ]
+    },
+    {
+      "id": "memory-context",
+      "stepIndex": 10,
+      "title": "Memory 与 Context 管理",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4176/thumbnails/11-memory-context.png"
+      },
+      "actions": [
+        {
+          "id": "memory-context-01",
+          "type": "speech",
+          "text": "会话内记忆就是 messages；跨会话偏好必须写到 Agent 外部的数据库、文件式 memory 后端或 managed memory store。API 是无状态的，堆 messages 不能形成真正的长期记忆。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/memory-context-01.mp3"
+        },
+        {
+          "id": "memory-context-02",
+          "type": "speech",
+          "text": "Context editing 是清理，直接删掉已经没用的旧 tool result 或 thinking block。Compaction 是压缩，把早期上下文总结成 compaction block。一个是删，一个是总结，不能混用。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/memory-context-02.mp3"
+        },
+        {
+          "id": "memory-context-03",
+          "type": "speech",
+          "text": "启用 compaction 后，仍然要完整写回 response.content。只抽取文本会静默丢掉 compaction block，下一轮上下文又从头膨胀。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/memory-context-03.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4176/audio/full/memory-context-01.mp3",
+        "http://127.0.0.1:4176/audio/full/memory-context-02.mp3",
+        "http://127.0.0.1:4176/audio/full/memory-context-03.mp3"
+      ]
+    },
+    {
+      "id": "frameworks",
+      "stepIndex": 11,
+      "title": "三个第三方框架怎么选",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4176/thumbnails/12-frameworks.png"
+      },
+      "actions": [
+        {
+          "id": "frameworks-01",
+          "type": "speech",
+          "text": "LangGraph 的核心抽象是图和状态机。题干强调显式控制流、复杂分支、中间状态持久化、人工介入后继续，优先想到 LangGraph。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/frameworks-01.mp3"
+        },
+        {
+          "id": "frameworks-02",
+          "type": "speech",
+          "text": "PydanticAI 强调 Python 类型安全和结构化输出验证。题干要求依赖与结果都有强类型、Schema 不合格就失败，并且像普通 Python 一样测试，优先想到它。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/frameworks-02.mp3"
+        },
+        {
+          "id": "frameworks-03",
+          "type": "speech",
+          "text": "Strands 强调轻量、模型驱动的 Agent 循环，以及多 provider 和灵活部署。题干说不想自己写循环，又希望部署到 Lambda 或 Fargate，可以优先考虑 Strands。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/frameworks-03.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4176/audio/full/frameworks-01.mp3",
+        "http://127.0.0.1:4176/audio/full/frameworks-02.mp3",
+        "http://127.0.0.1:4176/audio/full/frameworks-03.mp3"
+      ]
+    },
+    {
+      "id": "decision-tree",
+      "stepIndex": 12,
+      "title": "选实现方式的顺序",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4176/thumbnails/13-decision-tree.png"
+      },
+      "actions": [
+        {
+          "id": "decision-tree-01",
+          "type": "speech",
+          "text": "先排除单次调用和固定 Workflow，再检查四道 Agent 闸门。不要因为选项里全是框架名，就忘了最正确的答案可能只是三次按顺序执行的 API 调用。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/decision-tree-01.mp3"
+        },
+        {
+          "id": "decision-tree-02",
+          "type": "speech",
+          "text": "只循环业务工具选 Tool Runner；需要内置文件和 Bash 工具选 Agent SDK；不想维护运行环境选 Managed Agents；显式状态机选 LangGraph；Python 强类型选 PydanticAI。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/decision-tree-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4176/audio/full/decision-tree-01.mp3",
+        "http://127.0.0.1:4176/audio/full/decision-tree-02.mp3"
+      ]
+    },
+    {
+      "id": "failure-gallery",
+      "stepIndex": 13,
+      "title": "五个会炸的写法",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4176/thumbnails/14-failure-gallery.png"
+      },
+      "actions": [
+        {
+          "id": "failure-gallery-01",
+          "type": "speech",
+          "text": "只 append 文本、丢 tool_use block；工具报错直接跳过；tool_result 没带 tool_use_id。这三类错误都会破坏消息配对，常见结果是 400 invalid request。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/failure-gallery-01.mp3"
+        },
+        {
+          "id": "failure-gallery-02",
+          "type": "speech",
+          "text": "拿有没有 text 判断结束、固定三步却上 Agent、用 PostToolUse 拦危险动作，分别错在循环方向、抽象层级和执行时机。读题先定位错误发生在哪一层。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/failure-gallery-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4176/audio/full/failure-gallery-01.mp3",
+        "http://127.0.0.1:4176/audio/full/failure-gallery-02.mp3"
+      ]
+    },
+    {
+      "id": "question-walkthrough",
+      "stepIndex": 14,
+      "title": "代码库现代化题怎么选",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4176/thumbnails/15-question-walkthrough.png"
+      },
+      "actions": [
+        {
+          "id": "question-walkthrough-01",
+          "type": "speech",
+          "text": "题目要求代码不能离开公司内网，所以直接排除托管执行沙箱的 Managed Agents。剩下手搓 loop、Tool Runner 和 Claude Agent SDK 都可以在自己的基础设施运行。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/question-walkthrough-01.mp3"
+        },
+        {
+          "id": "question-walkthrough-02",
+          "type": "speech",
+          "text": "题目还要求尽量少写脚手架。手搓 loop 要写循环和四个工具；Tool Runner 只省循环；Agent SDK 已经自带 Read、Grep、Edit 和 Bash。因此答案是 Claude Agent SDK。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/question-walkthrough-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4176/audio/full/question-walkthrough-01.mp3",
+        "http://127.0.0.1:4176/audio/full/question-walkthrough-02.mp3"
+      ]
+    },
+    {
+      "id": "recap",
+      "stepIndex": 15,
+      "title": "本章速记",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4176/thumbnails/16-recap.png"
+      },
+      "actions": [
+        {
+          "id": "recap-01",
+          "type": "speech",
+          "text": "单次调用优先于 Workflow，Workflow 优先于 Agent。Subagent 只在能换来上下文隔离或并行时值得使用。必须发生的动作交给 Hook，不交给 prompt。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/recap-01.mp3"
+        },
+        {
+          "id": "recap-02",
+          "type": "speech",
+          "text": "循环只认 stop_reason；完整写回 content；工具结果必须配对并放进同一条 user 消息；只有 Managed Agents 同时托管 harness 和部署。LangGraph 看图，PydanticAI 看类型，Strands 看轻量模型驱动。",
+          "audioUrl": "http://127.0.0.1:4176/audio/full/recap-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4176/audio/full/recap-01.mp3",
+        "http://127.0.0.1:4176/audio/full/recap-02.mp3"
+      ]
+    }
+  ]
+}
