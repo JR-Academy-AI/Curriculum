@@ -76,6 +76,10 @@ jobs:
         with:
           chrome-version: stable
           install-dependencies: true
+      - name: Install narration media QA tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes ffmpeg
       - uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ vars.CLASSROOM_AWS_PUBLISH_ROLE_ARN }}
