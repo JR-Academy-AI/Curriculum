@@ -78,6 +78,21 @@ try {
           const rect = element.getBoundingClientRect();
           return { selector, x: (rect.left - pageRect.left) / pageRect.width, y: (rect.top - pageRect.top) / pageRect.height, width: rect.width / pageRect.width, height: rect.height / pageRect.height };
         });
+        const weightBars = [...page.querySelectorAll("[data-qa-weight-bar]")].map((bar, index) => {
+          const heading = bar.querySelector("[data-qa-weight-heading]");
+          const track = bar.querySelector("[data-qa-weight-track]");
+          if (!(bar instanceof HTMLElement) || !(heading instanceof HTMLElement) || !(track instanceof HTMLElement)) throw new Error(`Missing weight bar QA marker: ${index}`);
+          const barRect = bar.getBoundingClientRect();
+          const headingRect = heading.getBoundingClientRect();
+          const trackRect = track.getBoundingClientRect();
+          return {
+            index,
+            label: heading.querySelector("strong")?.textContent?.trim() || `bar-${index}`,
+            headingTrackGap: trackRect.top - headingRect.bottom,
+            headingInside: headingRect.left >= barRect.left - .5 && headingRect.right <= barRect.right + .5,
+            trackInside: trackRect.left >= barRect.left - .5 && trackRect.right <= barRect.right + .5
+          };
+        });
         return {
           horizontal: document.documentElement.scrollWidth > document.documentElement.clientWidth + 1,
           vertical: document.documentElement.scrollHeight > document.documentElement.clientHeight + 1,
@@ -86,7 +101,8 @@ try {
           scaleX: pageRect.width / designWidth,
           scaleY: pageRect.height / designHeight,
           insideStage: pageRect.left >= stageRect.left - .5 && pageRect.top >= stageRect.top - .5 && pageRect.right <= stageRect.right + .5 && pageRect.bottom <= stageRect.bottom + .5,
-          landmarks
+          landmarks,
+          weightBars
         };
       });
       checks += 1;
@@ -96,6 +112,14 @@ try {
       if (!closeEnough(layout.renderedRatio, 16 / 9)) reason.push("rendered-ratio-not-16:9");
       if (!closeEnough(layout.scaleX, layout.scaleY)) reason.push("non-uniform-scale");
       if (!layout.insideStage) reason.push("deck-outside-stage");
+      if (slide.id === "domain-weight") {
+        if (layout.weightBars.length !== 4) reason.push(`weight-bar-count:${layout.weightBars.length}`);
+        for (const weightBar of layout.weightBars) {
+          if (weightBar.headingTrackGap < 6) reason.push(`weight-bar-overlap:${weightBar.label}`);
+          if (!weightBar.headingInside) reason.push(`weight-bar-heading-outside:${weightBar.label}`);
+          if (!weightBar.trackInside) reason.push(`weight-bar-track-outside:${weightBar.label}`);
+        }
+      }
       const baseline = baselines.get(slide.id);
       if (!baseline) baselines.set(slide.id, layout.landmarks);
       else {
