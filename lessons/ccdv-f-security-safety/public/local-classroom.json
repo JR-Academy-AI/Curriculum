@@ -1,0 +1,463 @@
+{
+  "questGoalId": "local-ccdv-f-security-safety",
+  "presentation": {
+    "renderMode": "react-deck-release",
+    "deckId": "ccdv-f-security-safety",
+    "releaseId": "local-ccdv-f-security-safety-20260719",
+    "entryUrl": "http://127.0.0.1:4188/",
+    "manifestUrl": "http://127.0.0.1:4188/manifest.json",
+    "allowedOrigin": "http://127.0.0.1:4188",
+    "bridgeVersion": 1,
+    "slideCount": 16
+  },
+  "steps": [
+    {
+      "id": "weight",
+      "stepIndex": 0,
+      "title": "Domain 7 权重地图",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4188/thumbnails/01-weight.png"
+      },
+      "actions": [
+        {
+          "id": "weight-01",
+          "type": "speech",
+          "text": "Security and Safety 占百分之八点一，按五十三题约四题。AI Application Security 百分之三点二，是最大子技能；Guardrails、Identity Secrets 和 Hooks 合计覆盖其余部分。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/weight-01.mp3"
+        },
+        {
+          "id": "weight-02",
+          "type": "speech",
+          "text": "题目不会只问你知不知道 prompt injection，而会给出四种缓解手段，让你选真正可执行的控制。判断关键是它是否依赖模型愿意配合。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/weight-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4188/audio/full/weight-01.mp3",
+        "http://127.0.0.1:4188/audio/full/weight-02.mp3"
+      ]
+    },
+    {
+      "id": "request-control",
+      "stepIndex": 1,
+      "title": "请求与控制",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4188/thumbnails/02-request-control.png"
+      },
+      "actions": [
+        {
+          "id": "request-control-01",
+          "type": "speech",
+          "text": "在 system prompt 写请忽略数据里的指令，属于请求。它可以降低攻击成功率，却不能把概率降到零，也可能被另一段精心设计的文字绕过。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/request-control-01.mp3"
+        },
+        {
+          "id": "request-control-02",
+          "type": "speech",
+          "text": "工具集裁剪、后端权限、PreToolUse、参数白名单和人工审批不依赖模型态度。四选一同时出现 prompt 警告与代码闸门，通常选后者。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/request-control-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4188/audio/full/request-control-01.mp3",
+        "http://127.0.0.1:4188/audio/full/request-control-02.mp3"
+      ]
+    },
+    {
+      "id": "attack-surface",
+      "stepIndex": 2,
+      "title": "Prompt Injection 攻击面",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4188/thumbnails/03-attack-surface.png"
+      },
+      "actions": [
+        {
+          "id": "attack-surface-01",
+          "type": "speech",
+          "text": "用户上传的 PDF、简历、合同，GitHub issue 和代码注释，客服工单与邮件，只要第三方可以写并进入 context，就属于不可信输入。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/attack-surface-01.mp3"
+        },
+        {
+          "id": "attack-surface-02",
+          "type": "speech",
+          "text": "社区 M C P server 的 tool result、第三方 API 字段，甚至数据库里源自用户输入的字段，都可能藏指令。数据库保存过，不代表数据可信。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/attack-surface-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4188/audio/full/attack-surface-01.mp3",
+        "http://127.0.0.1:4188/audio/full/attack-surface-02.mp3"
+      ]
+    },
+    {
+      "id": "weak-defenses",
+      "stepIndex": 3,
+      "title": "四种伪防御",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4188/thumbnails/04-weak-defenses.png"
+      },
+      "actions": [
+        {
+          "id": "weak-defenses-01",
+          "type": "speech",
+          "text": "更会遵守指令的模型，也可能更忠实执行注入文字。调 temperature 与 injection 无关，而且当前模型已移除这类采样参数。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/weak-defenses-01.mp3"
+        },
+        {
+          "id": "weak-defenses-02",
+          "type": "speech",
+          "text": "过滤 ignore previous instructions 挡不住同义词、编码、其他语言和拆分指令。黑名单只能拦已知字符串，不能建立安全边界。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/weak-defenses-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4188/audio/full/weak-defenses-01.mp3",
+        "http://127.0.0.1:4188/audio/full/weak-defenses-02.mp3"
+      ]
+    },
+    {
+      "id": "three-layer",
+      "stepIndex": 4,
+      "title": "Injection 三层防御",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4188/thumbnails/05-three-layer.png"
+      },
+      "actions": [
+        {
+          "id": "three-layer-01",
+          "type": "speech",
+          "text": "第一层用标签和明确声明把不可信内容当数据，降低混淆概率；第二层只挂任务真正需要的工具，让危险能力根本不存在。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/three-layer-01.mp3"
+        },
+        {
+          "id": "three-layer-02",
+          "type": "speech",
+          "text": "第三层在执行工具前做代码白名单、参数验证与审批。最小权限最强，因为模型即使完全被说服，也调用不了一个手上没有的工具。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/three-layer-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4188/audio/full/three-layer-01.mp3",
+        "http://127.0.0.1:4188/audio/full/three-layer-02.mp3"
+      ]
+    },
+    {
+      "id": "injection-vs-jailbreak",
+      "stepIndex": 5,
+      "title": "Injection 与 Jailbreak",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4188/thumbnails/06-injection-vs-jailbreak.png"
+      },
+      "actions": [
+        {
+          "id": "injection-vs-jailbreak-01",
+          "type": "speech",
+          "text": "Prompt injection 的攻击者是写网页、文档或工具结果的第三方，用户可能只是无辜地要求总结文档。Jailbreak 的攻击者则是直接对话的用户本人。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/injection-vs-jailbreak-01.mp3"
+        },
+        {
+          "id": "injection-vs-jailbreak-02",
+          "type": "speech",
+          "text": "Injection 应使用隔离、最小权限和护栏；Jailbreak 更依赖内容政策、输出过滤和模型安全训练。信任当前用户无法证明外部文档可信。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/injection-vs-jailbreak-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4188/audio/full/injection-vs-jailbreak-01.mp3",
+        "http://127.0.0.1:4188/audio/full/injection-vs-jailbreak-02.mp3"
+      ]
+    },
+    {
+      "id": "guardrail-stack",
+      "stepIndex": 6,
+      "title": "六层纵深防御",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4188/thumbnails/07-guardrail-stack.png"
+      },
+      "actions": [
+        {
+          "id": "guardrail-stack-01",
+          "type": "speech",
+          "text": "输入层做净化隔离，模型层设置边界，工具层落实最小权限，执行层用 Hook 和审批，输出层过滤 PII，审计层记录与告警。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/guardrail-stack-01.mp3"
+        },
+        {
+          "id": "guardrail-stack-02",
+          "type": "speech",
+          "text": "输入与模型层都是概率性的。工具权限与执行 Hook 是确定性的控制。题目问最有效缓解时，选择真正限制能力或副作用的层。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/guardrail-stack-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4188/audio/full/guardrail-stack-01.mp3",
+        "http://127.0.0.1:4188/audio/full/guardrail-stack-02.mp3"
+      ]
+    },
+    {
+      "id": "least-privilege",
+      "stepIndex": 7,
+      "title": "最小权限三层",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4188/thumbnails/08-least-privilege.png"
+      },
+      "actions": [
+        {
+          "id": "least-privilege-01",
+          "type": "speech",
+          "text": "总结文档的 agent 不需要 delete file；create ticket 可以只创建，不能删除；数据库凭证应该只读。工具名称安全，不代表后端权限安全。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/least-privilege-01.mp3"
+        },
+        {
+          "id": "least-privilege-02",
+          "type": "speech",
+          "text": "查会员资料的工具不应因为数据库里有身份证号和支付信息就全部返回。Agent 能看到的数据也属于权限，给 agent 的凭证通常应比给人的更窄。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/least-privilege-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4188/audio/full/least-privilege-01.mp3",
+        "http://127.0.0.1:4188/audio/full/least-privilege-02.mp3"
+      ]
+    },
+    {
+      "id": "pii-boundary",
+      "stepIndex": 8,
+      "title": "PII 与秘密边界",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4188/thumbnails/09-pii-boundary.png"
+      },
+      "actions": [
+        {
+          "id": "pii-boundary-01",
+          "type": "speech",
+          "text": "信用卡号、API key 和个人信息一旦进入 prompt，就可能复制到请求日志、session 历史、compaction 摘要和下一轮请求。后补日志脱敏不够。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/pii-boundary-01.mp3"
+        },
+        {
+          "id": "pii-boundary-02",
+          "type": "speech",
+          "text": "需要凭证调用外部 API 时，让服务器工具使用 secret，模型只传引用 ID 并接收脱敏后的最小结果。输出流回用户前还要做 PII 检测。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/pii-boundary-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4188/audio/full/pii-boundary-01.mp3",
+        "http://127.0.0.1:4188/audio/full/pii-boundary-02.mp3"
+      ]
+    },
+    {
+      "id": "pre-post",
+      "stepIndex": 9,
+      "title": "Pre 与 Post Hook",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4188/thumbnails/10-pre-post.png"
+      },
+      "actions": [
+        {
+          "id": "pre-post-01",
+          "type": "speech",
+          "text": "PreToolUse 在工具执行前触发，可以 deny、ask 或改写参数，所以能阻止删除、转账和敏感查询。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/pre-post-01.mp3"
+        },
+        {
+          "id": "pre-post-02",
+          "type": "speech",
+          "text": "PostToolUse 触发时副作用已经发生，适合规范化输出或追加上下文，不能撤回转账。口诀是要拦用 Pre，要洗数据用 Post。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/pre-post-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4188/audio/full/pre-post-01.mp3",
+        "http://127.0.0.1:4188/audio/full/pre-post-02.mp3"
+      ]
+    },
+    {
+      "id": "refund-gate",
+      "stepIndex": 10,
+      "title": "退款身份 Gate",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4188/thumbnails/11-refund-gate.png"
+      },
+      "actions": [
+        {
+          "id": "refund-gate-01",
+          "type": "speech",
+          "text": "issue refund 发起前，PreToolUse 检查可信 session 是否完成身份验证。没有验证就 deny，这个检查不会忘记，也不会被 prompt injection 说服。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/refund-gate-01.mp3"
+        },
+        {
+          "id": "refund-gate-02",
+          "type": "speech",
+          "text": "拒绝时给 permission decision reason，告诉模型先调用 verify identity。只返回 deny 没有原因，模型可能原样重试，浪费 turn 与 token。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/refund-gate-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4188/audio/full/refund-gate-01.mp3",
+        "http://127.0.0.1:4188/audio/full/refund-gate-02.mp3"
+      ]
+    },
+    {
+      "id": "secret-config",
+      "stepIndex": 11,
+      "title": "密钥配置边界",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4188/thumbnails/12-secret-config.png"
+      },
+      "actions": [
+        {
+          "id": "secret-config-01",
+          "type": "speech",
+          "text": "dot M C P J S O N 或 settings J S O N 可以提交 Git，但只写美元花括号变量引用。真正 token 放环境变量或 Secret Manager。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/secret-config-01.mp3"
+        },
+        {
+          "id": "secret-config-02",
+          "type": "speech",
+          "text": "把整个配置文件 git ignore 会让团队失去共享配置。开发与生产不能共用 key，不同服务也应拆分，才能独立收权、轮换与审计。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/secret-config-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4188/audio/full/secret-config-01.mp3",
+        "http://127.0.0.1:4188/audio/full/secret-config-02.mp3"
+      ]
+    },
+    {
+      "id": "auth-headers",
+      "stepIndex": 12,
+      "title": "API Key 与 OAuth",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4188/thumbnails/13-auth-headers.png"
+      },
+      "actions": [
+        {
+          "id": "auth-headers-01",
+          "type": "speech",
+          "text": "API key 使用 x api key；OAuth token 使用 Authorization Bearer，并带指定 anthropic beta 头。从 key 切到 OAuth 不是只换字符串值。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/auth-headers-01.mp3"
+        },
+        {
+          "id": "auth-headers-02",
+          "type": "speech",
+          "text": "同时设置 ANTHROPIC API KEY 与 ANTHROPIC AUTH TOKEN，SDK 可能把两个认证头一起发出并被拒绝。Key 明明正确却 401，先查这个环境冲突。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/auth-headers-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4188/audio/full/auth-headers-01.mp3",
+        "http://127.0.0.1:4188/audio/full/auth-headers-02.mp3"
+      ]
+    },
+    {
+      "id": "authorization",
+      "stepIndex": 13,
+      "title": "身份与授权",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4188/thumbnails/14-authorization.png"
+      },
+      "actions": [
+        {
+          "id": "authorization-01",
+          "type": "speech",
+          "text": "用户在消息里说自己是 admin，只是不可信文本。身份与角色必须来自后端验证过的 session，模型不能决定用户是否有 delete 权限。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/authorization-01.mp3"
+        },
+        {
+          "id": "authorization-02",
+          "type": "speech",
+          "text": "代码在执行工具前检查 user has permission，并记录谁、何时、调用哪个工具、参数与结果。没有这份日志，连是否发生攻击都无法判断。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/authorization-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4188/audio/full/authorization-01.mp3",
+        "http://127.0.0.1:4188/audio/full/authorization-02.mp3"
+      ]
+    },
+    {
+      "id": "refusal",
+      "stepIndex": 14,
+      "title": "Refusal 安全处理",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4188/thumbnails/15-refusal.png"
+      },
+      "actions": [
+        {
+          "id": "refusal-01",
+          "type": "speech",
+          "text": "stop reason 等于 refusal 时，content 可能是空数组，直接读取 response content 零会抛 IndexError。stop details 也只在 refusal 时有值。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/refusal-01.mp3"
+        },
+        {
+          "id": "refusal-02",
+          "type": "speech",
+          "text": "安全顺序是先判断 stop reason，refusal 进入专门处理，其余情况再收集 text blocks。不要用 try catch 吞掉，它会把安全状态伪装成普通空回答。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/refusal-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4188/audio/full/refusal-01.mp3",
+        "http://127.0.0.1:4188/audio/full/refusal-02.mp3"
+      ]
+    },
+    {
+      "id": "ticket-question",
+      "stepIndex": 15,
+      "title": "工单 PII 外泄考题",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4188/thumbnails/16-ticket-question.png"
+      },
+      "actions": [
+        {
+          "id": "ticket-question-01",
+          "type": "speech",
+          "text": "恶意工单诱导 agent 查询用户资料，再把结果发到攻击者邮箱。真正的问题是处理不可信工单的链路上竟然同时有 PII 查询与任意地址发信能力。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/ticket-question-01.mp3"
+        },
+        {
+          "id": "ticket-question-02",
+          "type": "speech",
+          "text": "最有效的两个修法是移除 send email，让代码只发登记邮箱；并用 PreToolUse 对 PII 工具做人工审批。Delimiter 值得做，但不是最强制的答案。",
+          "audioUrl": "http://127.0.0.1:4188/audio/full/ticket-question-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4188/audio/full/ticket-question-01.mp3",
+        "http://127.0.0.1:4188/audio/full/ticket-question-02.mp3"
+      ]
+    }
+  ]
+}

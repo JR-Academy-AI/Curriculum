@@ -1,0 +1,519 @@
+{
+  "questGoalId": "local-ccdv-f-exam-prep",
+  "presentation": {
+    "renderMode": "react-deck-release",
+    "deckId": "ccdv-f-exam-prep",
+    "releaseId": "local-ccdv-f-exam-prep-20260719",
+    "entryUrl": "http://127.0.0.1:4194/",
+    "manifestUrl": "http://127.0.0.1:4194/manifest.json",
+    "allowedOrigin": "http://127.0.0.1:4194",
+    "bridgeVersion": 1,
+    "slideCount": 18
+  },
+  "steps": [
+    {
+      "id": "format",
+      "stepIndex": 0,
+      "title": "考试节奏",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4194/thumbnails/01-format.png"
+      },
+      "actions": [
+        {
+          "id": "format-01",
+          "type": "speech",
+          "text": "C C D V F 是五十三题，考试时间一百二十分钟，平均每题两分十五秒。按六十题训练，会把答题节奏和权重折算一起练错。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/format-01.mp3"
+        },
+        {
+          "id": "format-02",
+          "type": "speech",
+          "text": "这门考试没有 C C A R F 那种场景抽题结构，每道题都要独立读题。多选题会明确要求选两个，必须选满。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/format-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4194/audio/full/format-01.mp3",
+        "http://127.0.0.1:4194/audio/full/format-02.mp3"
+      ]
+    },
+    {
+      "id": "domain-weights",
+      "stepIndex": 1,
+      "title": "八域权重优先级",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4194/thumbnails/02-domain-weights.png"
+      },
+      "actions": [
+        {
+          "id": "domain-weights-01",
+          "type": "speech",
+          "text": "Applications and Integration 百分之三十三点一，Model Selection 百分之十六点八，Agents and Workflows 百分之十四点七，前三域合计百分之六十四点六。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/domain-weights-01.mp3"
+        },
+        {
+          "id": "domain-weights-02",
+          "type": "speech",
+          "text": "如果只能复习一半内容，优先 D 二、D 五和 D 一。Claude Code 百分之三点一，Eval 百分之二点六，不能因为熟悉或喜欢就投入过量。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/domain-weights-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4194/audio/full/domain-weights-01.mp3",
+        "http://127.0.0.1:4194/audio/full/domain-weights-02.mp3"
+      ]
+    },
+    {
+      "id": "top-skills",
+      "stepIndex": 2,
+      "title": "最高权重子技能",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4194/thumbnails/03-top-skills.png"
+      },
+      "actions": [
+        {
+          "id": "top-skills-01",
+          "type": "speech",
+          "text": "Claude Application Design 百分之八点六，Software Engineering Foundations 百分之七点四，两个子技能合计百分之十六。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/top-skills-01.mp3"
+        },
+        {
+          "id": "top-skills-02",
+          "type": "speech",
+          "text": "Software Engineering、Systems Life Cycle 与 Requirements 合计百分之十三点六，内容是 REST、J S O N、并发、版本控制与重构，比整个 Tools and M C P 更重。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/top-skills-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4194/audio/full/top-skills-01.mp3",
+        "http://127.0.0.1:4194/audio/full/top-skills-02.mp3"
+      ]
+    },
+    {
+      "id": "time-budget",
+      "stepIndex": 3,
+      "title": "四十小时复习预算",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4194/thumbnails/04-time-budget.png"
+      },
+      "actions": [
+        {
+          "id": "time-budget-01",
+          "type": "speech",
+          "text": "四十小时计划里，Applications 约十三小时，Model 七小时，Agents 六小时，Prompt 四点五小时，Tools 四小时，Security 三小时。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/time-budget-01.mp3"
+        },
+        {
+          "id": "time-budget-02",
+          "type": "speech",
+          "text": "Claude Code 控制在一点五小时，Eval 控制在一小时。把一周砸在 Claude Code，相当于用四分之一时间换百分之三点一的分值。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/time-budget-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4194/audio/full/time-budget-01.mp3",
+        "http://127.0.0.1:4194/audio/full/time-budget-02.mp3"
+      ]
+    },
+    {
+      "id": "two-weeks",
+      "stepIndex": 4,
+      "title": "最后两周路线",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4194/thumbnails/05-two-weeks.png"
+      },
+      "actions": [
+        {
+          "id": "two-weeks-01",
+          "type": "speech",
+          "text": "倒数第二周集中补 Application Design、Software Engineering 与 API Mechanics。它们一起覆盖二成以上，而且是其他域的工程地基。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/two-weeks-01.mp3"
+        },
+        {
+          "id": "two-weeks-02",
+          "type": "speech",
+          "text": "倒数一周扫 D 五、D 一、D 六、D 八，最后三天收尾 Security、Claude Code 与 Debug。前一天只做一套五十三题整卷和硬事实复盘。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/two-weeks-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4194/audio/full/two-weeks-01.mp3",
+        "http://127.0.0.1:4194/audio/full/two-weeks-02.mp3"
+      ]
+    },
+    {
+      "id": "four-traps",
+      "stepIndex": 5,
+      "title": "错误答案四种基因",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4194/thumbnails/06-four-traps.png"
+      },
+      "actions": [
+        {
+          "id": "four-traps-01",
+          "type": "speech",
+          "text": "第一类是小问题上重架构的过度工程，第二类是答案本身不错却违反题干约束，第三类是在下游吞报警而不回源头修。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/four-traps-01.mp3"
+        },
+        {
+          "id": "four-traps-02",
+          "type": "speech",
+          "text": "第四类用 prompt 的概率性请求去保证确定性要求，例如请模型记得授权。看到代码、配置或架构层的强制选项，它通常胜过 prompt 提醒。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/four-traps-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4194/audio/full/four-traps-01.mp3",
+        "http://127.0.0.1:4194/audio/full/four-traps-02.mp3"
+      ]
+    },
+    {
+      "id": "overbuild",
+      "stepIndex": 6,
+      "title": "过度工程陷阱",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4194/thumbnails/07-overbuild.png"
+      },
+      "actions": [
+        {
+          "id": "overbuild-01",
+          "type": "speech",
+          "text": "题目问 most effective first step，不是在问最终最豪华架构。两个工具选错，先补 description，而不是立刻训练 routing classifier。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/overbuild-01.mp3"
+        },
+        {
+          "id": "overbuild-02",
+          "type": "speech",
+          "text": "三步固定、路径可预测的流程直接写 workflow。Agent 只在步骤和顺序无法预先确定时才值得承担不确定性与成本。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/overbuild-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4194/audio/full/overbuild-01.mp3",
+        "http://127.0.0.1:4194/audio/full/overbuild-02.mp3"
+      ]
+    },
+    {
+      "id": "constraints",
+      "stepIndex": 7,
+      "title": "题干约束淘汰法",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4194/thumbnails/08-constraints.png"
+      },
+      "actions": [
+        {
+          "id": "constraints-01",
+          "type": "speech",
+          "text": "用户在网页等结果，就排除最长二十四小时的 Batch；题干指定 Bedrock 或 Vertex，也排除不支持的 Batches API。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/constraints-01.mp3"
+        },
+        {
+          "id": "constraints-02",
+          "type": "speech",
+          "text": "代码不能离开内网，就排除 Anthropic 托管的 Managed Agents；准确率不能下降，就先排除小模型与降低 effort。先圈约束再看选项。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/constraints-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4194/audio/full/constraints-01.mp3",
+        "http://127.0.0.1:4194/audio/full/constraints-02.mp3"
+      ]
+    },
+    {
+      "id": "source-fix",
+      "stepIndex": 8,
+      "title": "回源头修错误语义",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4194/thumbnails/09-source-fix.png"
+      },
+      "actions": [
+        {
+          "id": "source-fix-01",
+          "type": "speech",
+          "text": "空结果误标 is error 后，让 coordinator 忽略所有 is error 或 try catch 吞掉，虽然报警少了，却把 rate limit 与认证失败一起掩盖。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/source-fix-01.mp3"
+        },
+        {
+          "id": "source-fix-02",
+          "type": "speech",
+          "text": "正确修法是在工具源头返回 found false 且不设 error；瞬时故障标 retryable，输入错误要求改参，不可恢复故障升级。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/source-fix-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4194/audio/full/source-fix-01.mp3",
+        "http://127.0.0.1:4194/audio/full/source-fix-02.mp3"
+      ]
+    },
+    {
+      "id": "deterministic",
+      "stepIndex": 9,
+      "title": "确定性要求的控制层",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4194/thumbnails/10-deterministic.png"
+      },
+      "actions": [
+        {
+          "id": "deterministic-01",
+          "type": "speech",
+          "text": "合法 J S O N 用 output config format 或 strict tool；输出完整性靠足够 max tokens 与 streaming，不是请模型保证别截断。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/deterministic-01.mp3"
+        },
+        {
+          "id": "deterministic-02",
+          "type": "speech",
+          "text": "退款前验证身份用 PreToolUse，管理员删除权限由后端 session 检查，Prompt injection 靠最小权限切断危险工具。请求不是控制。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/deterministic-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4194/audio/full/deterministic-01.mp3",
+        "http://127.0.0.1:4194/audio/full/deterministic-02.mp3"
+      ]
+    },
+    {
+      "id": "repeats",
+      "stepIndex": 10,
+      "title": "跨域重复知识点",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4194/thumbnails/11-repeats.png"
+      },
+      "actions": [
+        {
+          "id": "repeats-01",
+          "type": "speech",
+          "text": "美元花括号环境变量展开出现在 D 二、D 三、D 七；缓存前缀出现在 D 二、D 五、D 六；模型迁移出现在 D 二、D 四、D 五。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/repeats-01.mp3"
+        },
+        {
+          "id": "repeats-02",
+          "type": "speech",
+          "text": "Pre 与 Post、空结果不是错误、最小权限、Subagent 隔离和工具结果只是数据，都在两个域重复。跨域重复通常意味着高出题概率。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/repeats-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4194/audio/full/repeats-01.mp3",
+        "http://127.0.0.1:4194/audio/full/repeats-02.mp3"
+      ]
+    },
+    {
+      "id": "numbers",
+      "stepIndex": 11,
+      "title": "必须记住的数字",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4194/thumbnails/12-numbers.png"
+      },
+      "actions": [
+        {
+          "id": "numbers-01",
+          "type": "speech",
+          "text": "题量五十三，时长一百二十分钟，及格线七百二十是量表分，不是答对百分之七十二。证书有效十二个月。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/numbers-01.mp3"
+        },
+        {
+          "id": "numbers-02",
+          "type": "speech",
+          "text": "Prompt cache 最多四个断点，回溯二十个 content block，读约零点一倍价格；Batch 省百分之五十，最长二十四小时；SDK 默认重试两次。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/numbers-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4194/audio/full/numbers-01.mp3",
+        "http://127.0.0.1:4194/audio/full/numbers-02.mp3"
+      ]
+    },
+    {
+      "id": "stop-reasons",
+      "stepIndex": 12,
+      "title": "五种 Stop Reason",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4194/thumbnails/13-stop-reasons.png"
+      },
+      "actions": [
+        {
+          "id": "stop-reasons-01",
+          "type": "speech",
+          "text": "end turn 是唯一正常出口；tool use 执行工具后回 tool result，再继续循环。不要通过文本语气猜模型是否完成。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/stop-reasons-01.mp3"
+        },
+        {
+          "id": "stop-reasons-02",
+          "type": "speech",
+          "text": "max tokens 当失败处理，提高上限或 streaming；pause turn 原样重发完整 response content；refusal 先判断再读 content，因为它可能为空数组。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/stop-reasons-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4194/audio/full/stop-reasons-01.mp3",
+        "http://127.0.0.1:4194/audio/full/stop-reasons-02.mp3"
+      ]
+    },
+    {
+      "id": "http",
+      "stepIndex": 13,
+      "title": "HTTP 重试地图",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4194/thumbnails/14-http.png"
+      },
+      "actions": [
+        {
+          "id": "http-01",
+          "type": "speech",
+          "text": "四百是请求非法，四零一是凭证，四零三是权限，四零四常是模型 ID，四一三是请求太大。这些问题原样重试不会自行消失。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/http-01.mp3"
+        },
+        {
+          "id": "http-02",
+          "type": "speech",
+          "text": "四二九读取 retry after，并使用指数退避加抖动；五百、五二九和连接错误可以重试。重试策略按错误类型，不是统一三次。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/http-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4194/audio/full/http-01.mp3",
+        "http://127.0.0.1:4194/audio/full/http-02.mp3"
+      ]
+    },
+    {
+      "id": "breaking",
+      "stepIndex": 14,
+      "title": "当前模型迁移清单",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4194/thumbnails/15-breaking.png"
+      },
+      "actions": [
+        {
+          "id": "breaking-01",
+          "type": "speech",
+          "text": "Temperature、top p、top k、旧 thinking budget tokens、assistant prefill 和顶层 output format 都已移除或弃用，应改成当前接口。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/breaking-01.mp3"
+        },
+        {
+          "id": "breaking-02",
+          "type": "speech",
+          "text": "Thinking display 默认 omitted，部分 Opus 省略 thinking 不等于 adaptive，分词器和字面遵循也会变化。升级必须 pin、review、Eval 和重新计数。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/breaking-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4194/audio/full/breaking-01.mp3",
+        "http://127.0.0.1:4194/audio/full/breaking-02.mp3"
+      ]
+    },
+    {
+      "id": "mcp-tools",
+      "stepIndex": 15,
+      "title": "Tools 与 MCP 速记",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4194/thumbnails/16-mcp-tools.png"
+      },
+      "actions": [
+        {
+          "id": "mcp-tools-01",
+          "type": "speech",
+          "text": "官方已有能力用 Builtin，单 App 业务函数用 Custom Tool，知识流程用 Skill，跨 App 与跨 Host 复用才用 M C P。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/mcp-tools-01.mp3"
+        },
+        {
+          "id": "mcp-tools-02",
+          "type": "speech",
+          "text": "Tools 由模型控制，Resources 由应用控制，Prompts 由用户控制。Host 为每个 Server 建一个 Client；同机 stdio，远程 Streamable HTTP。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/mcp-tools-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4194/audio/full/mcp-tools-01.mp3",
+        "http://127.0.0.1:4194/audio/full/mcp-tools-02.mp3"
+      ]
+    },
+    {
+      "id": "eight-lines",
+      "stepIndex": 16,
+      "title": "八域各一句",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4194/thumbnails/17-eight-lines.png"
+      },
+      "actions": [
+        {
+          "id": "eight-lines-01",
+          "type": "speech",
+          "text": "D 一简单优先并看 stop reason；D 二在正确层解决且约束是钥匙；D 三只抓层级、settings 与 headless；D 四用 HTTP 二百划分集成与模型层。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/eight-lines-01.mp3"
+        },
+        {
+          "id": "eight-lines-02",
+          "type": "speech",
+          "text": "D 五先用不降质量的成本刀；D 六把约束放对层并验证自信输出；D 七请求不是控制；D 八回源头，并用复用面做选型。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/eight-lines-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4194/audio/full/eight-lines-01.mp3",
+        "http://127.0.0.1:4194/audio/full/eight-lines-02.mp3"
+      ]
+    },
+    {
+      "id": "exam-loop",
+      "stepIndex": 17,
+      "title": "考场二十秒决策循环",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4194/thumbnails/18-exam-loop.png"
+      },
+      "actions": [
+        {
+          "id": "exam-loop-01",
+          "type": "speech",
+          "text": "先圈实时、成本、平台与复用约束，再定位集成、模型、工具或安全层，排除四类陷阱，选择最便宜、最对症、回源头的动作。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/exam-loop-01.mp3"
+        },
+        {
+          "id": "exam-loop-02",
+          "type": "speech",
+          "text": "卡住超过节奏就标记并继续。为一道题纠结五分钟，等于拿后面两道题的时间交换。我们不承诺保过，但可以让复习与答题不走弯路。",
+          "audioUrl": "http://127.0.0.1:4194/audio/full/exam-loop-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4194/audio/full/exam-loop-01.mp3",
+        "http://127.0.0.1:4194/audio/full/exam-loop-02.mp3"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "questGoalId": "local-ccdv-f-claude-code",
+  "presentation": {
+    "renderMode": "react-deck-release",
+    "deckId": "ccdv-f-claude-code",
+    "releaseId": "local-ccdv-f-claude-code-20260719",
+    "entryUrl": "http://127.0.0.1:4180/",
+    "manifestUrl": "http://127.0.0.1:4180/manifest.json",
+    "allowedOrigin": "http://127.0.0.1:4180",
+    "bridgeVersion": 1,
+    "slideCount": 12
+  },
+  "steps": [
+    {
+      "id": "weight-trap",
+      "stepIndex": 0,
+      "title": "Developer 考试却只占 3.1%",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4180/thumbnails/01-weight-trap.png"
+      },
+      "actions": [
+        {
+          "id": "weight-trap-01",
+          "type": "speech",
+          "text": "Claude Code 在 CCDV-F 只占 3.1%，按 53 题折算大约两题，在八个 Domain 里倒数第二。别把产品名里的 Developer 误读成考试主轴。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/weight-trap-01.mp3"
+        },
+        {
+          "id": "weight-trap-02",
+          "type": "speech",
+          "text": "CCAR-F 里 Claude Code 占百分之二十，但这门只有 3.1%。同一套资料和学习惯性不能直接搬过来；这一章的目标是识别组件、层级、作用域和运行模式。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/weight-trap-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4180/audio/full/weight-trap-01.mp3",
+        "http://127.0.0.1:4180/audio/full/weight-trap-02.mp3"
+      ]
+    },
+    {
+      "id": "five-components",
+      "stepIndex": 1,
+      "title": "五个核心组件",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4180/thumbnails/02-five-components.png"
+      },
+      "actions": [
+        {
+          "id": "five-components-01",
+          "type": "speech",
+          "text": "Rules 是作用域内始终生效的约束；Skills 是模型判断相关时才加载的流程；Commands 是用户明确输入 slash command 才触发的提示模板。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/five-components-01.mp3"
+        },
+        {
+          "id": "five-components-02",
+          "type": "speech",
+          "text": "Agents 是拥有独立上下文和工具集的 subagent，适合隔离脏活。Agent Memory 是跨 session 的持久记忆，不等于把所有旧对话永远塞进当前上下文。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/five-components-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4180/audio/full/five-components-01.mp3",
+        "http://127.0.0.1:4180/audio/full/five-components-02.mp3"
+      ]
+    },
+    {
+      "id": "trigger-model",
+      "stepIndex": 2,
+      "title": "Rules、Skills、Commands 的触发模型",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4180/thumbnails/03-trigger-model.png"
+      },
+      "actions": [
+        {
+          "id": "trigger-model-01",
+          "type": "speech",
+          "text": "无条件规则放 Rules，模型自己判断相关的长流程放 Skill，必须由用户显式发起的固定动作放 Command。三者的分界线是触发者和进入上下文的时机。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/trigger-model-01.mp3"
+        },
+        {
+          "id": "trigger-model-02",
+          "type": "speech",
+          "text": "三千字的 API 文档流程如果写进 CLAUDE.md，每次对话都付 token，还会稀释重要规则。做成 Skill 后默认只暴露描述，任务相关时才渐进加载全文。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/trigger-model-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4180/audio/full/trigger-model-01.mp3",
+        "http://127.0.0.1:4180/audio/full/trigger-model-02.mp3"
+      ]
+    },
+    {
+      "id": "claude-md-hierarchy",
+      "stepIndex": 3,
+      "title": "CLAUDE.md 的层级与 Git 边界",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4180/thumbnails/04-claude-md-hierarchy.png"
+      },
+      "actions": [
+        {
+          "id": "claude-md-hierarchy-01",
+          "type": "speech",
+          "text": "子目录 CLAUDE.md 最具体，再向上合并项目根；用户全局的 home 目录 CLAUDE.md 是个人偏好。项目规则跟团队共享并进入 Git，个人偏好不要提交到项目根。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/claude-md-hierarchy-01.mp3"
+        },
+        {
+          "id": "claude-md-hierarchy-02",
+          "type": "speech",
+          "text": "项目里的 CLAUDE.local.md 用于个人覆写，不进版本控制。import 只是拆文件，被引入内容仍然常驻上下文；真正按需加载要用 Skill。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/claude-md-hierarchy-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4180/audio/full/claude-md-hierarchy-01.mp3",
+        "http://127.0.0.1:4180/audio/full/claude-md-hierarchy-02.mp3"
+      ]
+    },
+    {
+      "id": "settings-precedence",
+      "stepIndex": 4,
+      "title": "settings.json 的覆盖顺序",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4180/thumbnails/05-settings-precedence.png"
+      },
+      "actions": [
+        {
+          "id": "settings-precedence-01",
+          "type": "speech",
+          "text": "settings.local.json 最具体，覆盖项目 .claude settings.json，再覆盖用户 home 目录的 settings.json。越具体越优先，但共享边界和优先级是两件事。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/settings-precedence-01.mp3"
+        },
+        {
+          "id": "settings-precedence-02",
+          "type": "speech",
+          "text": "团队权限允许清单放项目 settings.json 并进入 Git。个人本地覆写放 settings.local.json 并 gitignore。任何密钥都不该直接写进这些配置文件。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/settings-precedence-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4180/audio/full/settings-precedence-01.mp3",
+        "http://127.0.0.1:4180/audio/full/settings-precedence-02.mp3"
+      ]
+    },
+    {
+      "id": "mcp-scopes",
+      "stepIndex": 5,
+      "title": "MCP 的三个 Scope",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4180/thumbnails/06-mcp-scopes.png"
+      },
+      "actions": [
+        {
+          "id": "mcp-scopes-01",
+          "type": "speech",
+          "text": "local 只在当前项目为自己加载，user 在所有项目为自己加载，project 才是当前项目的团队共享配置，存放在项目根 .mcp.json 并进入版本控制。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/mcp-scopes-01.mp3"
+        },
+        {
+          "id": "mcp-scopes-02",
+          "type": "speech",
+          "text": "内部 MCP 要全队共享又不能泄 token，标准组合是 project scope 的 .mcp.json，加环境变量占位符。把 .mcp.json gitignore 会让共享目标直接失效。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/mcp-scopes-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4180/audio/full/mcp-scopes-01.mp3",
+        "http://127.0.0.1:4180/audio/full/mcp-scopes-02.mp3"
+      ]
+    },
+    {
+      "id": "runtime-modes",
+      "stepIndex": 6,
+      "title": "Interactive、Headless、Streaming、Auto",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4180/thumbnails/07-runtime-modes.png"
+      },
+      "actions": [
+        {
+          "id": "runtime-modes-01",
+          "type": "speech",
+          "text": "交互模式适合人坐在终端前。脚本和 CI 没人回答提示，必须用 headless，也就是 claude -p；要边跑边解析事件，再选 streaming JSON 输出。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/runtime-modes-01.mp3"
+        },
+        {
+          "id": "runtime-modes-02",
+          "type": "speech",
+          "text": "Auto 模式会减少人工确认，但这不等于安全。自动化环境里必须同时限制工具与命令权限；否则一个只读 review 任务也可能获得写文件、删文件或 push 的能力。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/runtime-modes-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4180/audio/full/runtime-modes-01.mp3",
+        "http://127.0.0.1:4180/audio/full/runtime-modes-02.mp3"
+      ]
+    },
+    {
+      "id": "ci-permissions",
+      "stepIndex": 7,
+      "title": "CI 自动化的权限包络",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4180/thumbnails/08-ci-permissions.png"
+      },
+      "actions": [
+        {
+          "id": "ci-permissions-01",
+          "type": "speech",
+          "text": "CI 停在是否允许执行的提示上，根因是模式选错，先切 Headless。调大 job 超时只会让它多等，往 CLAUDE.md 写不要询问也改变不了程序层交互。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/ci-permissions-01.mp3"
+        },
+        {
+          "id": "ci-permissions-02",
+          "type": "speech",
+          "text": "Headless 解决无人输入，权限 allowlist 解决能做什么。自动 code review 只需要读 diff、跑受控检查和发评论，就不该得到任意 Bash、写仓库或 git push 权限。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/ci-permissions-02.mp3"
+        },
+        {
+          "id": "ci-permissions-03",
+          "type": "speech",
+          "text": "在 prompt 里写请不要删文件，只是概率约束。确定性安全必须由 settings 和执行环境限制；这是用程序机制解决程序问题，而不是靠模型自觉。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/ci-permissions-03.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4180/audio/full/ci-permissions-01.mp3",
+        "http://127.0.0.1:4180/audio/full/ci-permissions-02.mp3",
+        "http://127.0.0.1:4180/audio/full/ci-permissions-03.mp3"
+      ]
+    },
+    {
+      "id": "session-init",
+      "stepIndex": 8,
+      "title": "Session 卫生与仓库初始化",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4180/thumbnails/09-session-init.png"
+      },
+      "actions": [
+        {
+          "id": "session-init-01",
+          "type": "speech",
+          "text": "每个 Claude Code session 有独立上下文，也可以恢复旧 session。完成一个 bug 后开始无关功能，应该 clear 或开新 session，避免旧信息继续占 token 并干扰注意力。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/session-init-01.mp3"
+        },
+        {
+          "id": "session-init-02",
+          "type": "speech",
+          "text": "init 会扫描仓库并生成初始 CLAUDE.md，但它只能看到结构，扫不出团队真正的红线。生成后要人工补上 URL 不可变、测试闸门和禁止操作等约束。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/session-init-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4180/audio/full/session-init-01.mp3",
+        "http://127.0.0.1:4180/audio/full/session-init-02.mp3"
+      ]
+    },
+    {
+      "id": "failure-gallery",
+      "stepIndex": 9,
+      "title": "六个常见错层",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4180/thumbnails/10-failure-gallery.png"
+      },
+      "actions": [
+        {
+          "id": "failure-gallery-01",
+          "type": "speech",
+          "text": "长流程塞 Rules、个人偏好进项目根、个人覆写改项目 settings，分别错在按需加载、团队边界和配置作用域。先问谁需要、何时加载、是否共享。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/failure-gallery-01.mp3"
+        },
+        {
+          "id": "failure-gallery-02",
+          "type": "speech",
+          "text": "CI 用交互模式、Auto 不限权限、任务切换不 clear，以及期待 Messages API 读取 CLAUDE.md，分别错在运行模式、权限边界、Session 卫生和跨界面机制。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/failure-gallery-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4180/audio/full/failure-gallery-01.mp3",
+        "http://127.0.0.1:4180/audio/full/failure-gallery-02.mp3"
+      ]
+    },
+    {
+      "id": "ci-question",
+      "stepIndex": 10,
+      "title": "GitHub Actions Code Review 题",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4180/thumbnails/11-ci-question.png"
+      },
+      "actions": [
+        {
+          "id": "ci-question-01",
+          "type": "speech",
+          "text": "工作流日志停在等待输入，说明交互模式在没有人的 CI 环境里等确认。把十分钟改成三十分钟，只会延后失败；Auto 全接受又会过度扩权。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/ci-question-01.mp3"
+        },
+        {
+          "id": "ci-question-02",
+          "type": "speech",
+          "text": "最有效的第一步是 Headless claude -p，同时用权限允许清单限制为只读和受控评论能力。模式解决可运行，权限解决可控，两者缺一不可。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/ci-question-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4180/audio/full/ci-question-01.mp3",
+        "http://127.0.0.1:4180/audio/full/ci-question-02.mp3"
+      ]
+    },
+    {
+      "id": "recap",
+      "stepIndex": 11,
+      "title": "本章速记",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4180/thumbnails/12-recap.png"
+      },
+      "actions": [
+        {
+          "id": "recap-01",
+          "type": "speech",
+          "text": "Rules 常驻，Skills 按需，Commands 用户触发，Agents 隔离上下文，Memory 跨 session。团队规则进项目根，个人偏好进用户或 local 文件。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/recap-01.mp3"
+        },
+        {
+          "id": "recap-02",
+          "type": "speech",
+          "text": "团队 MCP 用 project scope 加环境变量。CI 用 Headless，Streaming 用于事件流，Auto 必须锁权限。任务切换 clear，Messages API 不读取 CLAUDE.md。",
+          "audioUrl": "http://127.0.0.1:4180/audio/full/recap-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4180/audio/full/recap-01.mp3",
+        "http://127.0.0.1:4180/audio/full/recap-02.mp3"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "schemaVersion": 1,
+  "deckId": "ccdv-f-eval-testing-debugging",
+  "course": "Claude Certified Developer – Foundations",
+  "chapterTitle": "Eval, Testing, and Debugging",
+  "voice": {
+    "provider": "ElevenLabs",
+    "name": "Amy",
+    "voiceId": "bhJUNIXWQQ94l8eI2VUf",
+    "model": "eleven_v3",
+    "stability": 0.56,
+    "similarityBoost": 0.78,
+    "tempo": 1.18
+  },
+  "voiceStatus": "generated-local-review",
+  "generatedAt": "2026-07-19T13:18:32.961Z",
+  "summary": {
+    "sectionCount": 13,
+    "segmentCount": 28,
+    "totalDurationMs": 266092
+  },
+  "sections": [
+    {
+      "id": "weight-focus",
+      "title": "全卷最低，但只有一个核心判断",
+      "segments": [
+        {
+          "id": "weight-focus-01",
+          "title": "2.6% 约一道题",
+          "text": "Eval、Testing、Debugging 这个域只占 2.6%，按 53 题折算约一道，是全卷最低。不要为它搭一套完整评测平台，但这道边界判断也不该白丢。",
+          "audioPath": "audio/full/weight-focus-01.mp3",
+          "durationMs": 10218
+        },
+        {
+          "id": "weight-focus-02",
+          "title": "官方只列一个子技能",
+          "text": "名字里虽然有 Eval 和 Testing，官方有权重的子技能只有 Debugging and Error Handling。复习目标是识别错误、选恢复策略、读 trace，并隔离集成层与模型输出。",
+          "audioPath": "audio/full/weight-focus-02.mp3",
+          "durationMs": 9931
+        }
+      ]
+    },
+    {
+      "id": "http-fault-line",
+      "title": "HTTP 200 是根因分界线",
+      "segments": [
+        {
+          "id": "http-fault-line-01",
+          "title": "200 之前修集成层",
+          "text": "HTTP 不是 200，优先归到集成层：参数、鉴权、模型 ID、请求大小、限流、网络或服务端。模型往往根本没机会回答，改 prompt 没有作用。",
+          "audioPath": "audio/full/http-fault-line-01.mp3",
+          "durationMs": 9290
+        },
+        {
+          "id": "http-fault-line-02",
+          "title": "200 之后检查内容层",
+          "text": "HTTP 200 但字段错误、格式不合法、该调工具却没调，才进入模型输出层。对应手段是 prompt、schema、工具描述、few-shot、effort 或模型档。",
+          "audioPath": "audio/full/http-fault-line-02.mp3",
+          "durationMs": 9704
+        }
+      ]
+    },
+    {
+      "id": "wrong-layer",
+      "title": "两种反向误诊",
+      "segments": [
+        {
+          "id": "wrong-layer-01",
+          "title": "用 Prompt 修 400",
+          "text": "十五%的请求返回 400，却在 system prompt 里要求返回合法响应，这是用模型手段修集成问题。请求不合法时模型没收到内容；应该查升级后仍在发送的废弃参数。",
+          "audioPath": "audio/full/wrong-layer-01.mp3",
+          "durationMs": 10510
+        },
+        {
+          "id": "wrong-layer-02",
+          "title": "用重试修字段类型",
+          "text": "HTTP 200，但 years 字段偶尔变成字符串，就加重试碰运气，这是用成本和延迟买概率。正确做法是结构化输出和解析侧校验，把格式约束放到 API 层。",
+          "audioPath": "audio/full/wrong-layer-02.mp3",
+          "durationMs": 10909
+        }
+      ]
+    },
+    {
+      "id": "error-matrix",
+      "title": "错误码决定恢复策略",
+      "segments": [
+        {
+          "id": "error-matrix-01",
+          "title": "不可重试的一组",
+          "text": "400、401、403、404 和 413 都不该原样重试。分别修请求、密钥、权限、模型 ID，或先裁剪请求；重复发送相同输入不会改变结果。",
+          "audioPath": "audio/full/error-matrix-01.mp3",
+          "durationMs": 11143
+        },
+        {
+          "id": "error-matrix-02",
+          "title": "可以重试的一组",
+          "text": "429、500、529 和连接错误属于瞬时故障。429 优先读取 retry-after，再做退避和抖动；五百和过载错误做指数退避，必要时降级模型档。",
+          "audioPath": "audio/full/error-matrix-02.mp3",
+          "durationMs": 11290
+        },
+        {
+          "id": "error-matrix-03",
+          "title": "同状态码还要看 type",
+          "text": "程序化分类要读 error.type 并使用 SDK 的类型化异常。相同 403 可能是权限，也可能是欠费；字符串匹配文案会在服务端改措辞后静默失效。",
+          "audioPath": "audio/full/error-matrix-03.mp3",
+          "durationMs": 9345
+        }
+      ]
+    },
+    {
+      "id": "catch-order",
+      "title": "异常链必须从具体到宽泛",
+      "segments": [
+        {
+          "id": "catch-order-01",
+          "title": "宽泛 Catch 会吃掉策略",
+          "text": "如果最前面就 catch Exception 或 APIStatusError，后面的 RateLimitError 和 BadRequestError 分支永远执行不到。可重试与不可重试错误会被混成一类。",
+          "audioPath": "audio/full/catch-order-01.mp3",
+          "durationMs": 9441
+        },
+        {
+          "id": "catch-order-02",
+          "title": "关闭隐式重试再接管",
+          "text": "需要自定义恢复时，先把 SDK 自动重试设为零，再按 Rate Limit、Server、Connection 的具体顺序处理，最后才放宽泛兜底并保留原异常。",
+          "audioPath": "audio/full/catch-order-02.mp3",
+          "durationMs": 7984
+        }
+      ]
+    },
+    {
+      "id": "retry-budget",
+      "title": "默认重试会放大墙钟时间",
+      "segments": [
+        {
+          "id": "retry-budget-01",
+          "title": "十分钟乘三次",
+          "text": "SDK 默认 timeout 十分钟、max retries 两次。最坏情况下是首次请求加两次重试，总墙钟接近三十分钟；有 SLA 就必须显式压缩两个参数。",
+          "audioPath": "audio/full/retry-budget-01.mp3",
+          "durationMs": 10528
+        },
+        {
+          "id": "retry-budget-02",
+          "title": "Python 与 TypeScript 单位不同",
+          "text": "Python 的 timeout 用秒，TypeScript 常用毫秒。迁移代码时如果只复制数字，二十秒可能变成二十毫秒；这不是模型质量问题，而是客户端配置问题。",
+          "audioPath": "audio/full/retry-budget-02.mp3",
+          "durationMs": 8746
+        }
+      ]
+    },
+    {
+      "id": "trace-dashboard",
+      "title": "Trace 至少记录八类字段",
+      "segments": [
+        {
+          "id": "trace-dashboard-01",
+          "title": "先保留追踪身份",
+          "text": "request id 是 Anthropic 能做端到端排查的唯一凭据。还要记 prompt version 和 model，质量回退时才能定位是提示改动还是模型版本变化。",
+          "audioPath": "audio/full/trace-dashboard-01.mp3",
+          "durationMs": 8919
+        },
+        {
+          "id": "trace-dashboard-02",
+          "title": "记录停止与用量",
+          "text": "stop reason 能暴露 max tokens 截断；input、output 和 cache read token 能解释成本、Session 膨胀与缓存失效。只记 HTTP 状态码远远不够。",
+          "audioPath": "audio/full/trace-dashboard-02.mp3",
+          "durationMs": 9766
+        },
+        {
+          "id": "trace-dashboard-03",
+          "title": "延迟看分位数",
+          "text": "延迟不要只看平均值，要看 p50、p95 和 p99。p99 突然暴涨但错误率没变，常见原因是重试正在兜底，把故障隐藏成尾延迟。",
+          "audioPath": "audio/full/trace-dashboard-03.mp3",
+          "durationMs": 8709
+        }
+      ]
+    },
+    {
+      "id": "silent-failures",
+      "title": "三个 HTTP 200 的静默失败",
+      "segments": [
+        {
+          "id": "silent-failures-01",
+          "title": "截断与缓存未命中",
+          "text": "stop reason 等于 max tokens 时，用户拿到被腰斩的答案，但系统仍返回 200。cache read token 长期为零时，功能正常，账单却可能高出一个数量级。",
+          "audioPath": "audio/full/silent-failures-01.mp3",
+          "durationMs": 10272
+        },
+        {
+          "id": "silent-failures-02",
+          "title": "工具调用次数为零",
+          "text": "定义过的工具从未出现 tool use，通常不是模型忘记了，而是描述没有写清什么时候用、什么时候不用。先修描述边界，不要只在 system 里喊记得调用。",
+          "audioPath": "audio/full/silent-failures-02.mp3",
+          "durationMs": 10007
+        }
+      ]
+    },
+    {
+      "id": "debug-loop",
+      "title": "可复现的四步调试闭环",
+      "segments": [
+        {
+          "id": "debug-loop-01",
+          "title": "固定输入并保存完整失败",
+          "text": "先固定输入跑二十次，记录失败率。把失败轮次的完整 content 保存下来，再判断是格式、工具选择、编造还是复杂推理错误。",
+          "audioPath": "audio/full/debug-loop-01.mp3",
+          "durationMs": 7520
+        },
+        {
+          "id": "debug-loop-02",
+          "title": "对症修复再复跑",
+          "text": "格式问题上 schema，工具问题改描述，缺失事实返回 null，复杂推理最后才加 effort 或换模型。改完用同一批输入再跑二十次，没有前后数字就不能说修好了。",
+          "audioPath": "audio/full/debug-loop-02.mp3",
+          "durationMs": 10077
+        }
+      ]
+    },
+    {
+      "id": "minimal-eval",
+      "title": "最小 Eval 不需要大平台",
+      "segments": [
+        {
+          "id": "minimal-eval-01",
+          "title": "固定输入、期望和边界",
+          "text": "一个可用的最小 Eval 只需要固定输入集、可自动比较的期望输出和边界案例。没有写年限时，期望应是 null，而不是让模型猜一个数字。",
+          "audioPath": "audio/full/minimal-eval-01.mp3",
+          "durationMs": 8628
+        },
+        {
+          "id": "minimal-eval-02",
+          "title": "所有变化跑同一个集",
+          "text": "每次改 prompt、换模型或调参数，都跑同一个 Eval 集。抽取任务可以直接比字段，生成任务再用人工抽检或 judge；关键是判分规则必须稳定。",
+          "audioPath": "audio/full/minimal-eval-02.mp3",
+          "durationMs": 8977
+        }
+      ]
+    },
+    {
+      "id": "failure-gallery",
+      "title": "六个症状的正确层级",
+      "segments": [
+        {
+          "id": "failure-gallery-01",
+          "title": "集成层的三类错误",
+          "text": "升级后 400、并发导致 429 雪崩、输出被 max tokens 截断，都应修代码或配置。分别删废弃参数、限并发加抖动、提高输出上限并记录 stop reason。",
+          "audioPath": "audio/full/failure-gallery-01.mp3",
+          "durationMs": 8724
+        },
+        {
+          "id": "failure-gallery-02",
+          "title": "内容层与流程错误",
+          "text": "字段类型偶发错误和工具从不调用，分别用结构化输出与完整工具描述。改完凭感觉上线则是流程错误，要用固定 Eval 集比较失败率。",
+          "audioPath": "audio/full/failure-gallery-02.mp3",
+          "durationMs": 8467
+        }
+      ]
+    },
+    {
+      "id": "truncation-question",
+      "title": "长文摘要在半句话处断掉",
+      "segments": [
+        {
+          "id": "truncation-question-01",
+          "title": "先抓症状指纹",
+          "text": "所有请求都是 HTTP 200，没有错误和限流，但长摘要停在半句话。能力不足通常产生差答案，不会稳定地戛然而止；这是硬上限截断的症状指纹。",
+          "audioPath": "audio/full/truncation-question-01.mp3",
+          "durationMs": 9824
+        },
+        {
+          "id": "truncation-question-02",
+          "title": "答案是检查 stop reason",
+          "text": "最有效的第一步是检查 stop reason。如果等于 max tokens，就提高上限，超长输出改用 streaming，并把该字段加入日志告警。重试和换大上下文窗口都不解决输出上限。",
+          "audioPath": "audio/full/truncation-question-02.mp3",
+          "durationMs": 9360
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "title": "一道题的排查顺序",
+      "segments": [
+        {
+          "id": "recap-01",
+          "title": "先状态，再停止原因",
+          "text": "先看 HTTP：非 200 修集成层；200 再看 stop reason 和完整 content。可重试只有 429、五百、529 和连接错误，不可重试先改输入。",
+          "audioPath": "audio/full/recap-01.mp3",
+          "durationMs": 9166
+        },
+        {
+          "id": "recap-02",
+          "title": "Trace 与 Eval 合起来",
+          "text": "request id、stop reason、usage、模型和 prompt 版本组成可追踪证据；固定输入集则证明改动有效。这个域只有约一道题，记住顺序就够。",
+          "audioPath": "audio/full/recap-02.mp3",
+          "durationMs": 8637
+        }
+      ]
+    }
+  ]
+}
