@@ -364,14 +364,14 @@
           <span class="badge badge-react">React SlideEngine</span>
           <span class="badge badge-status-local">⚙ 本地已构建 · 待部署</span>
         </div>
-        <h2>Vibe Coding 大师课 · 第四节课 — 从 PRD 到 Production</h2>
+        <h2>Vibe Coding 大师课 · 第四节课 — 从 PRD 到 Production（前后端分离）</h2>
         <p class="desc">
-          动手工作坊。把前三节的三层 Source of Truth（PRD / CLAUDE.md / tokens.css）接成一条真实交付链路：<code>PRD → Scaffold → GitHub → Actions ↘ Pages / Vercel</code>。全程 <strong>Vibe Coding 口径 —— 不背 git 命令、不手写 YAML，而是「你对 Agent 说人话 → Agent 执行 → 你 review + 验证结果」</strong>。先建立「本地能跑 ≠ 交付」的问题意识，再走 Scaffold First（先出 plan 再生成，且今天要做一个真实核心 Flow）→ 本地绿色基线 → 让 Agent 把项目变成 GitHub repo → 让 Agent 写最小 CI + 「红灯实验」（故意搞坏看它拦不拦得住）→ 让 Agent 配 GitHub Pages 发布（含 Vite base / 404 高频坑）→ Vercel 三环境 + PR→Preview→Merge→Production，最后对照 PRD 验收清单收尾。22 页，含「你对 Agent 说」提示框范例 + 通用 PR body 模板骨架。
+          动手工作坊。把前三节的三层 Source of Truth（PRD / CLAUDE.md / tokens.css）接成一条<strong>前后端分离</strong>的真实交付链路：<code>Scaffold（前端 src/ + 后端 api/）→ GitHub monorepo → Actions ↘ 前端 Pages · Vercel ↘ 后端 API</code>，中间靠一根 HTTP 线（<code>VITE_API_BASE</code> + CORS）连起来。全程 <strong>Vibe Coding 口径 —— 不背 git 命令、不手写 YAML / CORS 头，而是「你对 Agent 说人话 → Agent 执行 → 你 review + 验证结果」</strong>。先建立「本地能跑 ≠ 交付、前端能开 ≠ 能用」的问题意识，再走 Scaffold First（先出 plan + API 契约再生成）→ 本地 <code>vercel dev</code> 联调绿基线 → GitHub monorepo → 最小 CI +「🔴 红灯实验①」→ <strong>后端先上 Vercel</strong>（只当 API + curl 验活 + Supabase 密钥放环境变量）→ 前端上 Pages（base + API_BASE）+「🔴 CORS 红灯实验②」→ PR→Preview→Merge→端到端对照 PRD 验收。24 页，含「你对 Agent 说」提示框范例 + 通用 PR body 模板骨架 + 两个「红→绿」实验（CI / CORS）。
         </p>
         <div class="meta-row">
           <div class="meta-item"><div class="k">讲师</div><div class="v">Lightman</div></div>
-          <div class="meta-item"><div class="k">时长</div><div class="v">120 min+（可延长）</div></div>
-          <div class="meta-item"><div class="k">Slide 数</div><div class="v">22</div></div>
+          <div class="meta-item"><div class="k">时长</div><div class="v">130 min+（登录/历史占位可回 120）</div></div>
+          <div class="meta-item"><div class="k">Slide 数</div><div class="v">24</div></div>
           <div class="meta-item"><div class="k">技术栈</div><div class="v">React 19 + framer-motion</div></div>
         </div>
         <div class="reuse-label">跨课复用 · 在以下 Bootcamp 出现</div>

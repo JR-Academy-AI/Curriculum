@@ -3,8 +3,8 @@ import { Slide, Inner, Half, Title, Tag, slideFromLeft, slideFromRight, colors, 
 import { PromptBox } from '../PromptBox';
 
 const PROMPT = `帮我加一个最小的 GitHub Actions CI：
-push 和 PR 时，装依赖 → typecheck → build，
-任何一步失败就标红。
+push 和 PR 时，装依赖 → typecheck → build
+（前端和 api/ 后端都覆盖），任一步失败就标红。
 
 先逐行讲清这个 workflow 在拦什么，
 再创建 .github/workflows/ci.yml。`;
@@ -19,7 +19,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 20 }
       - run: npm ci
-      - run: npm run typecheck
+      - run: npm run typecheck   # 前端 + api/
       - run: npm run build`;
 
 // 阶段 E：最小 CI（让 Agent 写，你读懂它拦什么）

@@ -61,7 +61,7 @@ export default function L4P02_LocalIsNotDelivery() {
 					<motion.p
 						initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}
 						style={{ marginTop: 24, fontSize: 19, fontWeight: 600, textAlign: 'center' }}>
-						今天这 120 分钟，就是把左边那台孤零零的电脑，接成右边这条链路。
+						今天这两个多小时，把左边那台孤零零的电脑接成右边这条链路 —— 而且产品有两层：<span style={{ background: colors.yellow, padding: '0 8px' }}>前端</span>让人看得见，<span style={{ background: colors.dark, color: colors.white, padding: '0 8px' }}>后端</span>替你算、替你记住登录过的人。
 					</motion.p>
 				</div>
 			</Inner>
