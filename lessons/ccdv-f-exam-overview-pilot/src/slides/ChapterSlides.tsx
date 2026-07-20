@@ -25,7 +25,7 @@ function Frame({ number, label, title, takeaway, tone = "cream", children }: {
         <section className="chapter-heading"><h1>{title}</h1></section>
         <section className="slide-body">{children}</section>
         <aside className="takeaway"><span>本页结论</span><strong>{takeaway}</strong></aside>
-        <footer><span>Claude Certified Developer – Foundations</span><strong>JR Course Studio · Local Classroom Pilot</strong></footer>
+        <footer><span>Claude Certified Developer – Foundations</span><strong>JR Course Studio · Exam Overview</strong></footer>
       </section>
     </main>
   );
