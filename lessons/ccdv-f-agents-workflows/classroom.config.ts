@@ -4,11 +4,12 @@ export const classroomConfig = {
   bridgeVersion: 1,
   deckId: "ccdv-f-agents-workflows",
   title: "CCDV-F 第二课：Agents and Workflows",
-  sourceVersion: "0.1.0",
-  status: "uat-release-candidate",
-  slides: narration.sections.map((section) => ({
+  sourceVersion: "0.1.1",
+  status: "production",
+  slides: narration.sections.map((section, index) => ({
     id: section.id,
     title: section.title,
+    thumbnailPath: `thumbnails/${String(index + 1).padStart(2, "0")}-${section.id}.png`,
     actions: section.segments.map((segment) => ({
       id: segment.id,
       type: "speech" as const,
