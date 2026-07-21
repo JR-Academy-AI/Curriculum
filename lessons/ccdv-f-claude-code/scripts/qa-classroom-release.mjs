@@ -63,6 +63,10 @@ try {
     for (const slide of manifest.slides) {
       await page.evaluate(({ id, index }) => window.loadSlide(id, index), slide);
       await page.waitForFunction(({ id }) => window.deckMessages.some(message => message?.type === "JR_DECK_SLIDE_READY" && message.slideId === id), {}, slide);
+      await frame.evaluate(async () => {
+        await document.fonts.ready;
+        await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+      });
       const layout = await frame.evaluate(() => {
         const stage = document.querySelector("[data-deck-stage]");
         const canvas = document.querySelector("[data-deck-canvas]");
