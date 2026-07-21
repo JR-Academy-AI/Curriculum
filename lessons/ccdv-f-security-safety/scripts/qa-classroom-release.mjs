@@ -53,16 +53,22 @@ const closeEnough = (left, right, tolerance = 0.001) => Math.abs(left - right) <
 
 try {
   const page = await browser.newPage();
+  page.setDefaultTimeout(15000);
   for (const viewport of viewports) {
+    console.log(`QA viewport ${viewport.width}x${viewport.height}`);
     await page.setViewport(viewport);
     await page.goto(parentOrigin, { waitUntil: "networkidle0" });
     await page.waitForFunction(() => window.deckMessages.some(message => message?.type === "JR_DECK_READY"));
     const frame = page.frames().find(candidate => candidate.url().startsWith(deckUrl));
     if (!frame) throw new Error("Deck iframe was not created");
-    await frame.evaluate(() => document.fonts.ready);
+    await frame.evaluate(() => Promise.race([document.fonts.ready, new Promise((_, reject) => setTimeout(() => reject(new Error("Fonts did not settle within 15 seconds")), 15000))]));
     for (const slide of manifest.slides) {
       await page.evaluate(({ id, index }) => window.loadSlide(id, index), slide);
       await page.waitForFunction(({ id }) => window.deckMessages.some(message => message?.type === "JR_DECK_SLIDE_READY" && message.slideId === id), {}, slide);
+      await frame.evaluate(async () => {
+        await Promise.race([document.fonts.ready, new Promise((_, reject) => setTimeout(() => reject(new Error("Slide fonts did not settle within 15 seconds")), 15000))]);
+        await new Promise(resolve => setTimeout(resolve, 100));
+      });
       const layout = await frame.evaluate(() => {
         const stage = document.querySelector("[data-deck-stage]");
         const canvas = document.querySelector("[data-deck-canvas]");
@@ -106,7 +112,7 @@ try {
       }
       if (reason.length) failures.push({ viewport, slideId: slide.id, reason, ...layout });
     }
-    await page.screenshot({ path: `out/qa/slide-1-${viewport.width}x${viewport.height}.png`, fullPage: true });
+    if (viewport.width !== 2560) await page.screenshot({ path: `out/qa/slide-1-${viewport.width}x${viewport.height}.png`, fullPage: false, captureBeyondViewport: false });
   }
 } finally {
   await browser.close();
