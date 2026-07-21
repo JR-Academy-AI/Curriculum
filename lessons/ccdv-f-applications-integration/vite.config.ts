@@ -33,8 +33,9 @@ function manifestPlugin(base: string): Plugin {
           entryPath: `${base}index.html`,
           entryUrl,
           slideCount: classroomConfig.slides.length,
-          slides: classroomConfig.slides.map((slide, index) => ({
+          slides: classroomConfig.slides.map(({ thumbnailPath, ...slide }, index) => ({
             ...slide,
+            thumbnailUrl: origin ? `${origin}${base}${thumbnailPath}` : `${base}${thumbnailPath}`,
             actions: slide.actions.map(({ audioKey, ...action }) => ({
               ...action,
               audioUrl: audioBase ? `${audioBase}/${audioKey}` : `${base}audio/${audioKey}`
