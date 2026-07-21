@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "deckId": "ccdv-f-applications-integration",
+  "source": "narration/script.json",
+  "clock": "shell-audio-engine",
+  "cues": []
+}

@@ -2,15 +2,16 @@ import { motion } from 'framer-motion';
 import { Slide, Inner, Half, Title, Tag, slideFromLeft, colors, fonts, border, shadow } from '../ui';
 import { PromptBox } from '../PromptBox';
 
-const PROMPT = `开一个新分支 feat/change-cta，
-按这条 PRD 反馈改一下 CTA，
+const PROMPT = `开新分支 feat/add-star-lord，
+给 /api/compute 多返回「值日星君」字段，
+结果页顺带展示它。
 提交、推上去，然后开一个 PR。`;
 
 const CHECKS = [
-	['GitHub Actions CI', '这次分支改动是否通过验证'],
-	['Vercel Preview URL', '自动生成，点开看这次改动长啥样'],
-	['在 Preview 上验收', '在这个独立 URL 上对照 PRD 检查'],
-	['验收通过再 merge', '别在没看过 Preview 前就合并'],
+	['GitHub Actions CI', '这次分支改动是否通过验证（前后端）'],
+	['Vercel 后端 Preview URL', '自动生成，打开 curl 这次的 /api/compute'],
+	['在 Preview 上验收', '确认多返回了「值日星君」'],
+	['验收通过再 merge', '别在没验过 Preview 前就合并'],
 ];
 
 // 阶段 G：PR → Preview（让 Agent 开分支提 PR，你验证 Preview）
@@ -47,6 +48,9 @@ export default function L4P16_PRPreview() {
 									</div>
 								</motion.div>
 							))}
+						</div>
+						<div style={{ marginTop: 15, paddingTop: 12, borderTop: '2px dashed #ddd', fontSize: 13.5, color: '#777', lineHeight: 1.5 }}>
+							<strong style={{ color: colors.red }}>诚实说：</strong>Vercel 每个 PR 给<strong>后端</strong>一个 Preview；前端 Pages <strong>没有</strong> per-PR 预览 —— 靠 CI + 本地 + 合并后验。
 						</div>
 					</motion.div>
 				</Half>

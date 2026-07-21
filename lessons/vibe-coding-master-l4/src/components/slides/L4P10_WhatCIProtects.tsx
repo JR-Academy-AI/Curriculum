@@ -14,7 +14,7 @@ export default function L4P10_WhatCIProtects() {
 						CI 到底在<span style={{ background: colors.purple, color: colors.white, padding: '0 10px' }}>保护</span>什么？
 					</Title>
 					<p style={{ fontSize: 20, color: '#555', fontWeight: 500, marginBottom: 36 }}>
-						每次 push 或 PR，GitHub 替你在一台干净机器上重跑一遍验证 —— 坏代码进不了 <code style={{ fontFamily: fonts.mono }}>main</code>。
+						每次 push 或 PR，GitHub 在一台干净机器上重跑验证（<strong>前端 + 后端 api/ 一起</strong>）—— 坏代码进不了 <code style={{ fontFamily: fonts.mono }}>main</code>。
 					</p>
 
 					<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: 6, marginBottom: 34 }}>

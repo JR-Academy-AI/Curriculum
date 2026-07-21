@@ -1,21 +1,26 @@
 #!/usr/bin/env node
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 
 const manifest = JSON.parse(readFileSync("dist/manifest.json", "utf8"));
+const narration = JSON.parse(readFileSync("narration/script.json", "utf8"));
+const expectedSegments = narration.sections.flatMap(section => section.segments);
+
 if (manifest.schemaVersion !== 1 || manifest.bridgeVersion !== 1) throw new Error("Unsupported Classroom contract");
 if (manifest.deckId !== "ccdv-f-exam-overview-pilot") throw new Error(`Unexpected deckId: ${manifest.deckId}`);
-if (manifest.slideCount !== 1 || manifest.slides.length !== 1) throw new Error("CCDV-F first-line pilot must contain exactly one slide");
+if (manifest.slideCount !== narration.sections.length || manifest.slides.length !== narration.sections.length) throw new Error("Slide count does not match narration sections");
 if (!/^[a-f0-9]{7,40}$/i.test(manifest.sourceCommit)) throw new Error("sourceCommit must be a git commit");
 if (!/^[a-f0-9]{64}$/i.test(manifest.checksum)) throw new Error("checksum must be SHA-256");
 if (!manifest.entryUrl.endsWith(manifest.entryPath)) throw new Error("entryUrl must end with entryPath");
-const [slide] = manifest.slides;
-if (slide.index !== 0 || !slide.id || !slide.title || slide.actions?.length !== 1) throw new Error("Pilot slide is incomplete");
-const [action] = slide.actions;
-if (
-  action.type !== "speech" ||
-  !action.text ||
-  !action.audioUrl?.endsWith(".mp3") ||
-  action.audioDurationMs !== 3289 ||
-  action.audioStatus !== "approved-amy-v1"
-) throw new Error("Pilot narration contract is incomplete");
-console.log(`Verified ${manifest.deckId}@${manifest.releaseId}: 1 slide / 1 Amy narration action`);
+
+const actions = manifest.slides.flatMap((slide, index) => {
+  if (slide.index !== index || !slide.id || !slide.title || !slide.actions?.length) throw new Error(`Slide ${index + 1} is incomplete`);
+  const expectedThumbnail = `thumbnails/${String(index + 1).padStart(2, "0")}-${slide.id}.png`;
+  if (!slide.thumbnailUrl?.endsWith(expectedThumbnail)) throw new Error(`Slide ${index + 1} thumbnail URL is invalid`);
+  if (!existsSync(`public/${expectedThumbnail}`)) throw new Error(`Slide ${index + 1} thumbnail file is missing`);
+  return slide.actions;
+});
+if (actions.length !== expectedSegments.length) throw new Error("Narration action count mismatch");
+for (const action of actions) {
+  if (action.type !== "speech" || !action.text || !action.audioUrl?.endsWith(".mp3") || action.audioDurationMs <= 0 || action.audioStatus !== "generated-consistent-pace-review") throw new Error(`Narration contract is incomplete for ${action.id}`);
+}
+console.log(`Verified ${manifest.deckId}@${manifest.releaseId}: ${manifest.slideCount} slides / ${actions.length} Amy narration actions`);

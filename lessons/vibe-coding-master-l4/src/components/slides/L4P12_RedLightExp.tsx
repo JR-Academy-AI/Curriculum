@@ -3,7 +3,7 @@ import { Slide, Inner, Title, Tag, colors, fonts, border, shadow } from '../ui';
 
 const STEPS = [
 	{ n: '1', light: '🟢', t: '让 Agent 建 ci.yml 并 push', d: '打开 Actions 页面，看它第一次跑绿', c: colors.green },
-	{ n: '2', light: '🔴', t: '故意提交一个 TS error', d: '比如给字符串赋个 number，push', c: colors.red },
+	{ n: '2', light: '🔴', t: '在 api/compute.ts 故意写 TS error', d: '比如给字符串赋个 number，push', c: colors.red },
 	{ n: '3', light: '🔴', t: '观察 workflow 变红', d: 'GitHub 拦住这次改动，PR 上出现红叉', c: colors.red },
 	{ n: '4', light: '🟢', t: '修复后重新 push', d: '亲眼看红灯重新变绿', c: colors.green },
 ];
@@ -14,7 +14,7 @@ export default function L4P12_RedLightExp() {
 		<Slide bg={colors.warmBg}>
 			<Inner>
 				<div style={{ width: '100%' }}>
-				<Tag bg={colors.red}>红灯实验 · 本节最关键的动手</Tag>
+				<Tag bg={colors.red}>红灯实验① · 今晚两个「红 → 绿」的第一个</Tag>
 				<Title size="48px" style={{ marginTop: 14, marginBottom: 8 }}>
 					故意搞坏它，看 CI 拦不拦得住
 				</Title>

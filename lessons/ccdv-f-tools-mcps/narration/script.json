@@ -1,0 +1,394 @@
+{
+  "schemaVersion": 1,
+  "deckId": "ccdv-f-tools-mcps",
+  "course": "Claude Certified Developer – Foundations",
+  "chapterTitle": "Tools and MCPs",
+  "voice": {
+    "provider": "ElevenLabs",
+    "name": "Amy",
+    "voiceId": "bhJUNIXWQQ94l8eI2VUf",
+    "model": "eleven_multilingual_v2",
+    "stability": 0.82,
+    "similarityBoost": 0.85,
+    "style": 0,
+    "useSpeakerBoost": true,
+    "speed": 0.92,
+    "seed": 20260721,
+    "contextSegments": 1
+  },
+  "voiceStatus": "generated-local-review",
+  "generatedAt": "2026-07-21T01:00:59.893Z",
+  "summary": {
+    "sectionCount": 18,
+    "segmentCount": 36,
+    "totalDurationMs": 479167
+  },
+  "sections": [
+    {
+      "id": "weight",
+      "title": "Domain 8 权重地图",
+      "segments": [
+        {
+          "id": "weight-01",
+          "title": "约六题的工具域",
+          "text": "Tools and M C P 占百分之十点六，按五十三题约六题。Tool Implementation 百分之四点四，Agentic Customization 百分之四点一，两者占本域八成。",
+          "audioPath": "audio/full/weight-01.mp3",
+          "durationMs": 15836
+        },
+        {
+          "id": "weight-02",
+          "title": "MCP 代码不是主角",
+          "text": "M C P Server Development 只有百分之二点一。复习重点应放在工具描述、错误语义，以及 Builtin、Custom Tool、Skill 和 M C P 的选型。",
+          "audioPath": "audio/full/weight-02.mp3",
+          "durationMs": 13886
+        }
+      ]
+    },
+    {
+      "id": "description",
+      "title": "Tool Description",
+      "segments": [
+        {
+          "id": "description-01",
+          "title": "描述是选择主机制",
+          "text": "模型没有你的业务背景，对两个工具的认知主要来自 description。只写查会员资料，模型无法知道该在什么问题下选择它。",
+          "audioPath": "audio/full/description-01.mp3",
+          "durationMs": 11146
+        },
+        {
+          "id": "description-02",
+          "title": "至少写四类信息",
+          "text": "详细描述应包含工具做什么、何时用与何时不用、参数含义格式，以及重要限制和不返回什么。官方把它称为远远最重要的工具性能因素。",
+          "audioPath": "audio/full/description-02.mp3",
+          "durationMs": 13560
+        }
+      ]
+    },
+    {
+      "id": "symmetric",
+      "title": "对称反向边界",
+      "segments": [
+        {
+          "id": "symmetric-01",
+          "title": "A 要明确指向 B",
+          "text": "会员资料工具要写不返回学习进度，查课次与完课率请用 learning progress。否定边界给模型一个清晰的转向。",
+          "audioPath": "audio/full/symmetric-01.mp3",
+          "durationMs": 10588
+        },
+        {
+          "id": "symmetric-02",
+          "title": "B 也必须指回 A",
+          "text": "Learning progress 也要对称写不返回订阅档位与邮箱，查账户请用 member profile。只写一边，模型仍可能从另一方向选错。",
+          "audioPath": "audio/full/symmetric-02.mp3",
+          "durationMs": 11238
+        }
+      ]
+    },
+    {
+      "id": "schema",
+      "title": "Input Schema 护栏",
+      "segments": [
+        {
+          "id": "schema-01",
+          "title": "字段层先挡错误",
+          "text": "member id 可用 pattern 限制 M 开头八位数字，用 description 说明不是邮箱或手机号；枚举与 format 也能在 schema 层缩小错误空间。",
+          "audioPath": "audio/full/schema-01.mp3",
+          "durationMs": 13189
+        },
+        {
+          "id": "schema-02",
+          "title": "Required 只放真必填",
+          "text": "Required 列表越长，输入信息不足时模型越容易卡住或编造。可缺字段应允许省略或 nullable，不要为了形状把幻觉写进 schema。",
+          "audioPath": "audio/full/schema-02.mp3",
+          "durationMs": 10913
+        }
+      ]
+    },
+    {
+      "id": "granularity",
+      "title": "工具粒度与命名空间",
+      "segments": [
+        {
+          "id": "granularity-01",
+          "title": "相关动作可以合并",
+          "text": "Create、review、merge 和 close P R 若拆成多个高度相似工具，会增加选择歧义。合成一个带 action 参数的工具往往更稳。",
+          "audioPath": "audio/full/granularity-01.mp3",
+          "durationMs": 13978
+        },
+        {
+          "id": "granularity-02",
+          "title": "跨服务加命名空间",
+          "text": "工具库变大时使用 github list P R、slack send message 这类服务前缀，避免撞名。返回值只保留下一步需要的高信号字段。",
+          "audioPath": "audio/full/granularity-02.mp3",
+          "durationMs": 12725
+        }
+      ]
+    },
+    {
+      "id": "tool-choice",
+      "title": "Tool Choice 四档",
+      "segments": [
+        {
+          "id": "tool-choice-01",
+          "title": "Auto 与 Any",
+          "text": "Auto 允许模型不调工具并自行选择，是 agentic loop 默认。Any 强制必须调一个工具，但具体哪个由模型选择，适合必须建单但类别未知。",
+          "audioPath": "audio/full/tool-choice-01.mp3",
+          "durationMs": 14675
+        },
+        {
+          "id": "tool-choice-02",
+          "title": "Tool 与 None",
+          "text": "Tool 加 name 锁定指定工具，适合第一轮必须先 triage；None 禁止任何工具。Any 和 Tool 会预填 assistant，因此调用前不会先说自然语言。",
+          "audioPath": "audio/full/tool-choice-02.mp3",
+          "durationMs": 14396
+        }
+      ]
+    },
+    {
+      "id": "any-loop",
+      "title": "Any 死循环陷阱",
+      "segments": [
+        {
+          "id": "any-loop-01",
+          "title": "收尾轮也被逼调用",
+          "text": "如果整个 agent loop 长期使用 tool choice any，本应 end turn 的最后一轮仍被要求调用工具，系统就会无限继续。",
+          "audioPath": "audio/full/any-loop-01.mp3",
+          "durationMs": 11285
+        },
+        {
+          "id": "any-loop-02",
+          "title": "强制一轮后切回 Auto",
+          "text": "Any 或指定 Tool 只用于单次强制动作，例如首轮建单或 triage。拿到结果后切回 auto，让模型可以继续调工具，也可以正常结束。",
+          "audioPath": "audio/full/any-loop-02.mp3",
+          "durationMs": 12771
+        }
+      ]
+    },
+    {
+      "id": "error-matrix",
+      "title": "四类工具结果",
+      "segments": [
+        {
+          "id": "error-matrix-01",
+          "title": "is_error 只是起点",
+          "text": "Rate limit、输入非法和认证失败都可设 is error true，但恢复动作不同。错误载荷还要提供 category、retryable 和有指导性的消息。",
+          "audioPath": "audio/full/error-matrix-01.mp3",
+          "durationMs": 14303
+        },
+        {
+          "id": "error-matrix-02",
+          "title": "按类别决定恢复",
+          "text": "瞬时错误退避重试，输入错误先改参数，不可恢复的认证与权限错误升级人工。只返回字符串 error，模型不知道下一步该做什么。",
+          "audioPath": "audio/full/error-matrix-02.mp3",
+          "durationMs": 11981
+        }
+      ]
+    },
+    {
+      "id": "empty-result",
+      "title": "空结果不是错误",
+      "segments": [
+        {
+          "id": "empty-result-01",
+          "title": "没有匹配也是答案",
+          "text": "数据库查询成功但没有该会员，应返回 found false，并且 is error 为 false。这表示我查过了，没有，是可直接告诉用户的正常答案。",
+          "audioPath": "audio/full/empty-result-01.mp3",
+          "durationMs": 13560
+        },
+        {
+          "id": "empty-result-02",
+          "title": "误标会重试到死",
+          "text": "如果把空结果标成错误，上游 agent 会认为抓取失败，重复查询相同不存在记录，最后误报服务故障或白白升级人工。",
+          "audioPath": "audio/full/empty-result-02.mp3",
+          "durationMs": 11889
+        }
+      ]
+    },
+    {
+      "id": "client-server",
+      "title": "客户端与服务端工具",
+      "segments": [
+        {
+          "id": "client-server-01",
+          "title": "谁负责执行",
+          "text": "自定义工具由你的代码执行 tool use 循环。Web search、web fetch 和 code execution 等服务端工具由 Anthropic 基础设施执行，结果在同一响应返回。",
+          "audioPath": "audio/full/client-server-01.mp3",
+          "durationMs": 15418
+        },
+        {
+          "id": "client-server-02",
+          "title": "两个容易错的边界",
+          "text": "Bash 与 text editor 的 schema 由 Anthropic 内建，但仍由客户端执行。服务端工具失败可能返回 HTTP 二百，错误藏在结果 block，不能只靠异常捕获。",
+          "audioPath": "audio/full/client-server-02.mp3",
+          "durationMs": 17647
+        }
+      ]
+    },
+    {
+      "id": "four-ways",
+      "title": "四种扩展方式",
+      "segments": [
+        {
+          "id": "four-ways-01",
+          "title": "Builtin 与 Custom",
+          "text": "官方已经提供网页搜索、代码执行或文件操作，就用 Builtin Tool。仅在一个应用内部执行的业务函数，直接写 Custom Tool。",
+          "audioPath": "audio/full/four-ways-01.mp3",
+          "durationMs": 12585
+        },
+        {
+          "id": "four-ways-02",
+          "title": "Skill 与 MCP",
+          "text": "Skill 装知识和流程，相关时才渐进加载，不是可执行函数。M C P 把工具与数据源标准化给多个应用和 Host 复用，并可独立维护。",
+          "audioPath": "audio/full/four-ways-02.mp3",
+          "durationMs": 14768
+        }
+      ]
+    },
+    {
+      "id": "decision-tree",
+      "title": "扩展方式决策树",
+      "segments": [
+        {
+          "id": "decision-tree-01",
+          "title": "先问能力类型",
+          "text": "先看官方是否已有，再判断加入的是知识流程还是可执行能力。知识选 Skill，可执行能力再看复用范围。",
+          "audioPath": "audio/full/decision-tree-01.mp3",
+          "durationMs": 10728
+        },
+        {
+          "id": "decision-tree-02",
+          "title": "复用面决定 MCP",
+          "text": "只在这个 App 用就写 Custom Tool；要跨多个 App、Claude Code 等 Host，或独立演进才做 M C P。M C P 不是更高级，而是复用协议。",
+          "audioPath": "audio/full/decision-tree-02.mp3",
+          "durationMs": 14443
+        }
+      ]
+    },
+    {
+      "id": "mcp-roles",
+      "title": "MCP Host Client Server",
+      "segments": [
+        {
+          "id": "mcp-roles-01",
+          "title": "Host 管理多个 Client",
+          "text": "M C P Host 是 AI 应用，为每一个 Server 创建一个 Client，每个 Client 维护一条到对应 Server 的专属连接，彼此不共享连接状态。",
+          "audioPath": "audio/full/mcp-roles-01.mp3",
+          "durationMs": 11146
+        },
+        {
+          "id": "mcp-roles-02",
+          "title": "一对一关系别说反",
+          "text": "Host 接三个 Server，就有三个 Client 和三条连接。不是一个 Client 连三个 Server，也不是 Server 主动连接 Host。",
+          "audioPath": "audio/full/mcp-roles-02.mp3",
+          "durationMs": 10960
+        }
+      ]
+    },
+    {
+      "id": "transports",
+      "title": "MCP 两层与 Transport",
+      "segments": [
+        {
+          "id": "transports-01",
+          "title": "Data Layer 始终一致",
+          "text": "M C P 内层用 J S O N R P C 二点零定义初始化、消息语义和 primitives。无论 transport 如何变化，这套消息结构保持一致。",
+          "audioPath": "audio/full/transports-01.mp3",
+          "durationMs": 14861
+        },
+        {
+          "id": "transports-02",
+          "title": "本地与远程分别选",
+          "text": "Server 与 Host 同机用 stdio，没有网络开销；远程服务用 Streamable HTTP，支持标准认证和可选 S S E。旧的纯 S S E transport 已弃用。",
+          "audioPath": "audio/full/transports-02.mp3",
+          "durationMs": 16765
+        }
+      ]
+    },
+    {
+      "id": "primitives",
+      "title": "MCP 三种 Primitive",
+      "segments": [
+        {
+          "id": "primitives-01",
+          "title": "Tools 与 Resources",
+          "text": "Tools 是可执行函数，由模型决定何时调用，让 agent 能做事；Resources 是只读上下文，由应用控制，让 agent 看见文件或数据库 schema。",
+          "audioPath": "audio/full/primitives-01.mp3",
+          "durationMs": 13514
+        },
+        {
+          "id": "primitives-02",
+          "title": "Prompts 由用户控制",
+          "text": "Prompts 是可复用交互模板，由用户显式触发，例如 slash command。表结构要前置可见，应做 resource，不是让模型反复调用 get schema tool。",
+          "audioPath": "audio/full/primitives-02.mp3",
+          "durationMs": 14907
+        }
+      ]
+    },
+    {
+      "id": "scopes",
+      "title": "Claude Code MCP Scope",
+      "segments": [
+        {
+          "id": "scopes-01",
+          "title": "Project Scope 才能团队共享",
+          "text": "Local 只在当前项目给自己用，User 在所有项目给自己用。团队共享内部 M C P 应用 Project scope，配置位于项目根 dot M C P J S O N。",
+          "audioPath": "audio/full/scopes-01.mp3",
+          "durationMs": 14861
+        },
+        {
+          "id": "scopes-02",
+          "title": "配置进 Git 密钥不进",
+          "text": "dot M C P J S O N 应提交版本控制，认证头使用美元花括号环境变量展开。明文 token、user scope 或 git ignore 配置都不满足团队共享。",
+          "audioPath": "audio/full/scopes-02.mp3",
+          "durationMs": 15697
+        }
+      ]
+    },
+    {
+      "id": "routing-debug",
+      "title": "Tool Routing 排障顺序",
+      "segments": [
+        {
+          "id": "routing-debug-01",
+          "title": "先做最便宜的修复",
+          "text": "两个工具选错，先扩 description 并加对称反向边界；描述清楚仍偶发，再查 system prompt 是否有全局指令抢路由。",
+          "audioPath": "audio/full/routing-debug-01.mp3",
+          "durationMs": 11192
+        },
+        {
+          "id": "routing-debug-02",
+          "title": "重武器最后才上",
+          "text": "边界依赖复杂上下文才加 few shot，能力确实重叠才合并工具，意图很多且要跨系统预分流才上分类器。顺序按成本从低到高。",
+          "audioPath": "audio/full/routing-debug-02.mp3",
+          "durationMs": 12492
+        }
+      ]
+    },
+    {
+      "id": "mcp-question",
+      "title": "跨 Host MCP 考题",
+      "segments": [
+        {
+          "id": "mcp-question-01",
+          "title": "三个产品线共享查询",
+          "text": "客服 bot、Slack 助手和 Claude Code 工作流都要查询同一课程库，schema 变更只想改一处。共享 Python package 够不着独立的 Claude Code Host。",
+          "audioPath": "audio/full/mcp-question-01.mp3",
+          "durationMs": 14536
+        },
+        {
+          "id": "mcp-question-02",
+          "title": "答案是 Tool 加 Resource",
+          "text": "正确方案是一个独立 M C P Server 暴露课程查询 Tools，三个 Host 都连接它；只读数据库表结构作为 Resource 前置提供。",
+          "audioPath": "audio/full/mcp-question-02.mp3",
+          "durationMs": 10728
+        }
+      ]
+    }
+  ],
+  "generation": {
+    "providerSpeed": 0.92,
+    "postProcessing": "none-preserve-natural-pauses",
+    "deterministicSeed": 20260721,
+    "contextSegments": 1
+  }
+}

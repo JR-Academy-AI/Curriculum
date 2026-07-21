@@ -17,8 +17,8 @@ export default function L4P08_LocalGate() {
 					<Title size="52px" style={{ marginTop: 14, marginBottom: 12 }}>
 						本地绿色基线：三条命令全过
 					</Title>
-					<p style={{ fontSize: 20, color: '#555', fontWeight: 500, marginBottom: 30 }}>
-						推到云上之前，先在自己电脑上确认它是活的。任何一条红，先修，不要 push。
+					<p style={{ fontSize: 19, color: '#555', fontWeight: 500, marginBottom: 28 }}>
+						推到云上之前，先在自己电脑上确认它是活的。分离架构用 <code style={{ fontFamily: fonts.mono, background: '#eee', padding: '1px 6px' }}>vercel dev</code> 同起前后端 —— 同域，本地先不碰 CORS。
 					</p>
 					<div style={{ display: 'flex', gap: 22, justifyContent: 'center', marginBottom: 28 }}>
 						{STEPS.map((s, i) => (
@@ -39,10 +39,10 @@ export default function L4P08_LocalGate() {
 					</div>
 					<motion.div
 						initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}
-						style={{ display: 'inline-flex', alignItems: 'center', gap: 14, background: colors.white, border, boxShadow: shadow, padding: '16px 26px' }}>
+						style={{ display: 'inline-flex', alignItems: 'center', gap: 14, background: colors.white, border, boxShadow: shadow, padding: '16px 26px', maxWidth: 1080 }}>
 						<span style={{ fontSize: 24 }}>🎨</span>
-						<span style={{ fontSize: 18.5, fontWeight: 700 }}>
-							过关标准：三条全绿 <span style={{ color: colors.red }}>且</span> 页面已经引用第三节的 <code style={{ fontFamily: fonts.mono, background: '#eee', padding: '1px 6px' }}>tokens.css</code>
+						<span style={{ fontSize: 17.5, fontWeight: 700, textAlign: 'left', lineHeight: 1.45 }}>
+							过关标准：三条全绿 · 页面走 <code style={{ fontFamily: fonts.mono, background: '#eee', padding: '1px 6px' }}>tokens.css</code> <span style={{ color: colors.red }}>且</span> <code style={{ fontFamily: fonts.mono, background: '#eee', padding: '1px 6px' }}>vercel dev</code> 下前端点按钮<span style={{ background: colors.yellow, padding: '0 6px' }}>真调到 /api/compute 出本命宿</span>
 						</span>
 					</motion.div>
 				</div>

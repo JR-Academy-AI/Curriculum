@@ -364,14 +364,14 @@
           <span class="badge badge-react">React SlideEngine</span>
           <span class="badge badge-status-local">⚙ 本地已构建 · 待部署</span>
         </div>
-        <h2>Vibe Coding 大师课 · 第四节课 — 从 PRD 到 Production</h2>
+        <h2>Vibe Coding 大师课 · 第四节课 — 从 PRD 到 Production（前后端分离）</h2>
         <p class="desc">
-          动手工作坊。把前三节的三层 Source of Truth（PRD / CLAUDE.md / tokens.css）接成一条真实交付链路：<code>PRD → Scaffold → GitHub → Actions ↘ Pages / Vercel</code>。全程 <strong>Vibe Coding 口径 —— 不背 git 命令、不手写 YAML，而是「你对 Agent 说人话 → Agent 执行 → 你 review + 验证结果」</strong>。先建立「本地能跑 ≠ 交付」的问题意识，再走 Scaffold First（先出 plan 再生成，且今天要做一个真实核心 Flow）→ 本地绿色基线 → 让 Agent 把项目变成 GitHub repo → 让 Agent 写最小 CI + 「红灯实验」（故意搞坏看它拦不拦得住）→ 让 Agent 配 GitHub Pages 发布（含 Vite base / 404 高频坑）→ Vercel 三环境 + PR→Preview→Merge→Production，最后对照 PRD 验收清单收尾。22 页，含「你对 Agent 说」提示框范例 + 通用 PR body 模板骨架。
+          动手工作坊。把前三节的三层 Source of Truth（PRD / CLAUDE.md / tokens.css）接成一条<strong>前后端分离</strong>的真实交付链路：<code>Scaffold（前端 src/ + 后端 api/）→ GitHub monorepo → Actions ↘ 前端 Pages · Vercel ↘ 后端 API</code>，中间靠一根 HTTP 线（<code>VITE_API_BASE</code> + CORS）连起来。全程 <strong>Vibe Coding 口径 —— 不背 git 命令、不手写 YAML / CORS 头，而是「你对 Agent 说人话 → Agent 执行 → 你 review + 验证结果」</strong>。先建立「本地能跑 ≠ 交付、前端能开 ≠ 能用」的问题意识，再走 Scaffold First（先出 plan + API 契约再生成）→ 本地 <code>vercel dev</code> 联调绿基线 → GitHub monorepo → 最小 CI +「🔴 红灯实验①」→ <strong>后端先上 Vercel</strong>（只当 API + curl 验活 + Supabase 密钥放环境变量）→ 前端上 Pages（base + API_BASE）+「🔴 CORS 红灯实验②」→ PR→Preview→Merge→端到端对照 PRD 验收。24 页，含「你对 Agent 说」提示框范例 + 通用 PR body 模板骨架 + 两个「红→绿」实验（CI / CORS）。
         </p>
         <div class="meta-row">
           <div class="meta-item"><div class="k">讲师</div><div class="v">Lightman</div></div>
-          <div class="meta-item"><div class="k">时长</div><div class="v">120 min+（可延长）</div></div>
-          <div class="meta-item"><div class="k">Slide 数</div><div class="v">22</div></div>
+          <div class="meta-item"><div class="k">时长</div><div class="v">130 min+（登录/历史占位可回 120）</div></div>
+          <div class="meta-item"><div class="k">Slide 数</div><div class="v">24</div></div>
           <div class="meta-item"><div class="k">技术栈</div><div class="v">React 19 + framer-motion</div></div>
         </div>
         <div class="reuse-label">跨课复用 · 在以下 Bootcamp 出现</div>
@@ -630,31 +630,302 @@
         </div>
       </div>
 
-      <!-- ========== CCDV-F First-Line Classroom Pilot ========== -->
+      <!-- ========== CCDV-F Exam Overview Production Classroom ========== -->
       <div class="card">
         <div class="card-head">
           <span class="badge badge-react">React + Vite · Bridge v1</span>
-          <span class="badge badge-status-local">UAT · Release Candidate</span>
+          <span class="badge badge-status-live">✓ Production Published</span>
         </div>
         <h2>CCDV-F 第一课 · Developer 认证最反直觉的 3.1%</h2>
         <p class="desc">
-          新认证独立试验的第一张 Slide，只承担一个教学动作：“一个叫 Developer 的考试，Claude Code 只占 3.1%。”页面用官方 blueprint 的 33.1% 对 3.1% 作为视觉证据，明确把复习主线从 Claude Code 拉回 Applications &amp; Integration。固定 1600×900（16:9）设计画布，方形、竖向和超宽容器只做等比缩放与居中留边；不修改、复用或绑定现有 CCAR-F 生产内容。
+          CCDV-F exam-overview 第一章完整 React Classroom：视觉对齐用户确认的 JR Course Studio 演播室样片，使用暖灰渐变外场、官方 Logo 顶栏、独立圆角白色教学主板和克制硬阴影。15 个教学部分分别采用指标、权重条、决策流、时间分配、题型拆解、报名流程、误区、考场、续证、重考、四周计划与速记构图，不用一张固定模板灌数据。41 段 Amy 配音使用 Multilingual v2、固定 seed、前后文衔接与 0.92 速度生成，不删除段内自然停顿；由真实 Classroom Shell 统一播放，Bridge 自动切页，字幕、讲义、进度和 15 张真实缩略图同步。缩略图由同一不可变 Release Manifest 显式声明并受 Signed Viewer 保护。每张 Slide 固定 1600×900（16:9）画布，15 页 × 5 种容器共 75 项比例 QA 通过；已发布 Production Release 并绑定 CCDV-F exam-overview，CCAR-F 未修改。
         </p>
         <div class="meta-row">
-          <div class="meta-item"><div class="k">讲师</div><div class="v">专业讲师轨道待选</div></div>
-          <div class="meta-item"><div class="k">时长</div><div class="v">3.29 sec · ElevenLabs Amy</div></div>
-          <div class="meta-item"><div class="k">Slide 数</div><div class="v">1 个认知纠偏场景</div></div>
-          <div class="meta-item"><div class="k">技术栈</div><div class="v">React 19 · Vite 8 · Bridge v1</div></div>
+          <div class="meta-item"><div class="k">讲师</div><div class="v">ElevenLabs Amy · 固定声线参数</div></div>
+          <div class="meta-item"><div class="k">时长</div><div class="v">15:34 · 41 段一致语速 QA</div></div>
+          <div class="meta-item"><div class="k">Slide 数</div><div class="v">15 张内容驱动页面</div></div>
+          <div class="meta-item"><div class="k">技术栈</div><div class="v">React 19 · Vite 8 · Bridge v1 · 75/75 QA</div></div>
         </div>
         <div class="reuse-label">跨课复用 · 适用范围</div>
         <div class="reuse-chips">
           <span class="chip locked">CCDV-F · exam-overview</span>
-          <span class="chip locked">Blueprint 权重纠偏</span>
-          <span class="chip locked">UAT 隔离试验</span>
+          <span class="chip locked">真实 Classroom Shell</span>
+          <span class="chip locked">Production · 已绑定</span>
         </div>
         <div class="actions">
+          <a class="btn primary" href="https://jiangren.com.au/certifications/exam/ccdv-f/learn/exam-overview/classroom" target="_blank" rel="noopener">▶ 打开生产 Classroom</a>
           <a class="btn primary" href="./lessons/ccdv-f-exam-overview-pilot/" target="_blank" rel="noopener">▶ 打开本地 Slides</a>
-          <a class="btn" href="./lessons/ccdv-f-exam-overview-pilot/narration/script.json" target="_blank" rel="noopener">📝 第一段讲稿</a>
+          <a class="btn" href="./lessons/ccdv-f-exam-overview-pilot/narration/script.json" target="_blank" rel="noopener">📝 完整试听讲稿</a>
+          <a class="btn" href="../docs/IMMERSIVE_CLASSROOM_PRD.md" target="_blank" rel="noopener">📋 Classroom PRD</a>
+        </div>
+      </div>
+
+      <!-- ========== CCDV-F Agents and Workflows Classroom Deck ========== -->
+      <div class="card">
+        <div class="card-head">
+          <span class="badge badge-react">React + Vite · Bridge v1</span>
+          <span class="badge badge-status-live">✓ Production Published</span>
+        </div>
+        <h2>CCDV-F 第二课 · Agents and Workflows</h2>
+        <p class="desc">
+          CCDV-F Domain 1 的独立 React Classroom Deck。16 个教学部分按知识形态分别使用权重地图、复杂度阶梯、Agent 四道闸、Supervisor/Subagent 拓扑、stop_reason 控制台、Agent Loop 不变式、Tool Runner 与 Agent SDK 对照、Hook 时间线、部署边界、记忆层、框架选择树、失败画廊和内网代码库真题拆解，不用固定页面模板灌数据。39 段 Amy 配音总长 6:25，单段 7.19–13.50 秒；Bridge 负责逐段播音和自动翻页。16 张缩略图由同一不可变 Release Manifest 显式声明并受 Signed Viewer 保护。画布固定 1600×900（16:9），16 页 × 5 种容器共 80 项比例与无重排 QA 通过；已发布 Production Release 并绑定 CCDV-F agents-and-workflows，CCAR-F 未修改。
+        </p>
+        <div class="meta-row">
+          <div class="meta-item"><div class="k">讲师</div><div class="v">ElevenLabs Amy · 固定声线参数</div></div>
+          <div class="meta-item"><div class="k">时长</div><div class="v">6:25 · 39 段完整配音</div></div>
+          <div class="meta-item"><div class="k">Slide 数</div><div class="v">16 张独立语义页面</div></div>
+          <div class="meta-item"><div class="k">技术栈</div><div class="v">React 19 · Vite 8 · Bridge v1 · 80/80 QA</div></div>
+        </div>
+        <div class="reuse-label">跨课复用 · 适用范围</div>
+        <div class="reuse-chips">
+          <span class="chip locked">CCDV-F · agents-and-workflows</span>
+          <span class="chip locked">Agent Loop / SDK 选型</span>
+          <span class="chip locked">Production · 已绑定</span>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="https://jiangren.com.au/certifications/exam/ccdv-f/learn/agents-and-workflows/classroom" target="_blank" rel="noopener">▶ 打开生产 Classroom</a>
+          <a class="btn primary" href="./lessons/ccdv-f-agents-workflows/" target="_blank" rel="noopener">▶ 打开本地 Slides</a>
+          <a class="btn" href="./lessons/ccdv-f-agents-workflows/narration/script.json" target="_blank" rel="noopener">📝 完整试听讲稿</a>
+          <a class="btn" href="../docs/IMMERSIVE_CLASSROOM_PRD.md" target="_blank" rel="noopener">📋 Classroom PRD</a>
+        </div>
+      </div>
+
+      <!-- ========== CCDV-F Applications and Integration Classroom Deck ========== -->
+      <div class="card">
+        <div class="card-head">
+          <span class="badge badge-react">React + Vite · Bridge v1</span>
+          <span class="badge badge-status-live">✓ Production Published</span>
+        </div>
+        <h2>CCDV-F 第三课 · Applications and Integration</h2>
+        <p class="desc">
+          CCDV-F Domain 2 的独立 React Classroom Deck。18 个教学部分按知识形态分别使用 33.1% 权重地图、Messages 端点地图、请求协议卡、Streaming 数据流、PDF/File 复用流程、Realtime/Batch 天平、缓存前缀剖面、第三方平台矩阵、Semaphore 与错误分类、SLA 时间预算、指令权威阶梯、Schema 约束层、Session 卫生、模型与 Prompt pinning、业务需求映射、可观测字段和合同审查双选题，不复用固定页面模板。43 段 Amy 配音总长 6:55，单段 7.35–12.09 秒。18 张缩略图由同一不可变 Release Manifest 显式声明并受 Signed Viewer 保护。画布固定 1600×900（16:9），18 页 × 5 种容器共 90 项比例与无重排 QA 通过；已发布 Production Release 并绑定 CCDV-F applications-and-integration，CCAR-F 未修改。
+        </p>
+        <div class="meta-row">
+          <div class="meta-item"><div class="k">讲师</div><div class="v">ElevenLabs Amy · 固定声线参数</div></div>
+          <div class="meta-item"><div class="k">时长</div><div class="v">6:55 · 43 段完整配音</div></div>
+          <div class="meta-item"><div class="k">Slide 数</div><div class="v">18 张独立语义页面</div></div>
+          <div class="meta-item"><div class="k">技术栈</div><div class="v">React 19 · Vite 8 · Bridge v1 · 90/90 QA</div></div>
+        </div>
+        <div class="reuse-label">跨课复用 · 适用范围</div>
+        <div class="reuse-chips">
+          <span class="chip locked">CCDV-F · applications-and-integration</span>
+          <span class="chip locked">Messages / Batch / Cache / SDLC</span>
+          <span class="chip locked">Production · 已绑定</span>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="https://jiangren.com.au/certifications/exam/ccdv-f/learn/applications-and-integration/classroom" target="_blank" rel="noopener">▶ 打开生产 Classroom</a>
+          <a class="btn primary" href="./lessons/ccdv-f-applications-integration/" target="_blank" rel="noopener">▶ 打开本地 Slides</a>
+          <a class="btn" href="./lessons/ccdv-f-applications-integration/narration/script.json" target="_blank" rel="noopener">📝 完整试听讲稿</a>
+          <a class="btn" href="../docs/IMMERSIVE_CLASSROOM_PRD.md" target="_blank" rel="noopener">📋 Classroom PRD</a>
+        </div>
+      </div>
+
+      <!-- ========== CCDV-F Claude Code Classroom Deck ========== -->
+      <div class="card">
+        <div class="card-head">
+          <span class="badge badge-react">React + Vite · Bridge v1</span>
+          <span class="badge badge-status-live">✓ Production Published</span>
+        </div>
+        <h2>CCDV-F 第四课 · Claude Code</h2>
+        <p class="desc">
+          CCDV-F Domain 3 的独立 React Classroom Deck。12 个教学部分按知识关系分别使用 CCDV-F/CCAR-F 权重对照、五组件触发地图、渐进式披露流程、CLAUDE.md 层级、settings 覆盖矩阵、MCP Scope 表、运行模式卡、CI 权限包络、Session/Init 对照、失败画廊和 GitHub Actions 真题拆解。25 段 Amy 配音总长 4:01，单段 7.37–12.43 秒；Bridge 负责逐段播音和自动翻页。12 张缩略图由同一不可变 Release Manifest 显式声明并受 Signed Viewer 保护。画布固定 1600×900（16:9），12 页 × 5 种容器共 60 项比例与无重排 QA 通过；已发布 Production Release 并绑定 CCDV-F claude-code，CCAR-F 未修改。
+        </p>
+        <div class="meta-row">
+          <div class="meta-item"><div class="k">讲师</div><div class="v">ElevenLabs Amy · 固定声线参数</div></div>
+          <div class="meta-item"><div class="k">时长</div><div class="v">4:01 · 25 段完整配音</div></div>
+          <div class="meta-item"><div class="k">Slide 数</div><div class="v">12 张独立语义页面</div></div>
+          <div class="meta-item"><div class="k">技术栈</div><div class="v">React 19 · Vite 8 · Bridge v1 · 60/60 QA</div></div>
+        </div>
+        <div class="reuse-label">跨课复用 · 适用范围</div>
+        <div class="reuse-chips">
+          <span class="chip locked">CCDV-F · claude-code</span>
+          <span class="chip locked">Rules / Skills / MCP / CI</span>
+          <span class="chip locked">Production · 已绑定</span>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="https://jiangren.com.au/certifications/exam/ccdv-f/learn/claude-code/classroom" target="_blank" rel="noopener">▶ 打开生产 Classroom</a>
+          <a class="btn primary" href="./lessons/ccdv-f-claude-code/" target="_blank" rel="noopener">▶ 打开本地 Slides</a>
+          <a class="btn" href="./lessons/ccdv-f-claude-code/narration/script.json" target="_blank" rel="noopener">📝 完整试听讲稿</a>
+          <a class="btn" href="../docs/IMMERSIVE_CLASSROOM_PRD.md" target="_blank" rel="noopener">📋 Classroom PRD</a>
+        </div>
+      </div>
+
+      <!-- ========== CCDV-F Eval, Testing, and Debugging Classroom Deck ========== -->
+      <div class="card">
+        <div class="card-head">
+          <span class="badge badge-react">React + Vite · Bridge v1</span>
+          <span class="badge badge-status-live">✓ Production Published</span>
+        </div>
+        <h2>CCDV-F 第五课 · Eval, Testing, and Debugging</h2>
+        <p class="desc">
+          CCDV-F Domain 4 的独立 React Classroom Deck。13 个教学部分按知识关系分别使用考试权重对照、HTTP 200 故障分界线、反向误诊双栏、可重试矩阵、异常 Catch 顺序、30 分钟墙钟时间轴、Trace 八字段面板、静默失败表、四步调试闭环、最小 Eval 数据集、失败画廊与截断真题拆解。28 段 Amy 配音总长 4:26，单段 7.52–11.29 秒；Bridge 负责逐段播音和自动翻页。13 张缩略图由同一不可变 Release Manifest 显式声明并受 Signed Viewer 保护。画布固定 1600×900（16:9），13 页 × 5 种容器共 65 项比例与无重排 QA 通过；已发布 Production Release 并绑定 CCDV-F eval-testing-debugging，CCAR-F 未修改。
+        </p>
+        <div class="meta-row">
+          <div class="meta-item"><div class="k">讲师</div><div class="v">ElevenLabs Amy · 固定声线参数</div></div>
+          <div class="meta-item"><div class="k">时长</div><div class="v">4:26 · 28 段完整配音</div></div>
+          <div class="meta-item"><div class="k">Slide 数</div><div class="v">13 张独立语义页面</div></div>
+          <div class="meta-item"><div class="k">技术栈</div><div class="v">React 19 · Vite 8 · Bridge v1 · 65/65 QA</div></div>
+        </div>
+        <div class="reuse-label">跨课复用 · 适用范围</div>
+        <div class="reuse-chips">
+          <span class="chip locked">CCDV-F · eval-testing-debugging</span>
+          <span class="chip locked">HTTP / Trace / Retry / Eval</span>
+          <span class="chip locked">Production · 已绑定</span>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="https://jiangren.com.au/certifications/exam/ccdv-f/learn/eval-testing-debugging/classroom" target="_blank" rel="noopener">▶ 打开生产 Classroom</a>
+          <a class="btn primary" href="./lessons/ccdv-f-eval-testing-debugging/" target="_blank" rel="noopener">▶ 打开本地 Slides</a>
+          <a class="btn" href="./lessons/ccdv-f-eval-testing-debugging/narration/script.json" target="_blank" rel="noopener">📝 完整试听讲稿</a>
+          <a class="btn" href="../docs/IMMERSIVE_CLASSROOM_PRD.md" target="_blank" rel="noopener">📋 Classroom PRD</a>
+        </div>
+      </div>
+
+      <!-- ========== CCDV-F Model Selection and Optimization Classroom Deck ========== -->
+      <div class="card">
+        <div class="card-head">
+          <span class="badge badge-react">React + Vite · Bridge v1</span>
+          <span class="badge badge-status-live">✓ Production Published</span>
+        </div>
+        <h2>CCDV-F 第六课 · Model Selection and Optimization</h2>
+        <p class="desc">
+          CCDV-F Domain 5 的独立 React Classroom Deck。18 个教学部分按知识关系分别使用子技能权重图、Token 采样链、Context/max_tokens 双上限、Token 计数迁移、Adaptive Thinking/Effort 控制台、Shot 策略卡、SDK/REST 封装、SSE 传输拓扑、三档模型阶梯、分层路由延迟、模型迁移双栏、四把成本刀、缓存盈亏平衡、缓存静默陷阱、Usage 三项账本与两道题型拆解。38 段 Amy 配音总长 6:02，单段 7.84–12.99 秒。18 张缩略图由同一不可变 Release Manifest 显式声明并受 Signed Viewer 保护。画布固定 1600×900（16:9），18 页 × 5 种容器共 90 项比例与无重排 QA 通过；已发布 Production Release 并绑定 CCDV-F model-selection-optimization，CCAR-F 未修改。
+        </p>
+        <div class="meta-row">
+          <div class="meta-item"><div class="k">讲师</div><div class="v">ElevenLabs Amy · 固定声线参数</div></div>
+          <div class="meta-item"><div class="k">时长</div><div class="v">6:02 · 38 段完整配音</div></div>
+          <div class="meta-item"><div class="k">Slide 数</div><div class="v">18 张独立语义页面</div></div>
+          <div class="meta-item"><div class="k">技术栈</div><div class="v">React 19 · Vite 8 · Bridge v1 · 90/90 QA</div></div>
+        </div>
+        <div class="reuse-label">跨课复用 · 适用范围</div>
+        <div class="reuse-chips">
+          <span class="chip locked">CCDV-F · model-selection-optimization</span>
+          <span class="chip locked">Model / Token / Cache / SSE</span>
+          <span class="chip locked">Production · 已绑定</span>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="https://jiangren.com.au/certifications/exam/ccdv-f/learn/model-selection-optimization/classroom" target="_blank" rel="noopener">▶ 打开生产 Classroom</a>
+          <a class="btn primary" href="./lessons/ccdv-f-model-selection-optimization/" target="_blank" rel="noopener">▶ 打开本地 Slides</a>
+          <a class="btn" href="./lessons/ccdv-f-model-selection-optimization/narration/script.json" target="_blank" rel="noopener">📝 完整试听讲稿</a>
+          <a class="btn" href="../docs/IMMERSIVE_CLASSROOM_PRD.md" target="_blank" rel="noopener">📋 Classroom PRD</a>
+        </div>
+      </div>
+
+      <!-- ========== CCDV-F Prompt and Context Engineering Classroom Deck ========== -->
+      <div class="card">
+        <div class="card-head">
+          <span class="badge badge-react">React + Vite · Bridge v1</span>
+          <span class="badge badge-status-live">✓ Production Published</span>
+        </div>
+        <h2>CCDV-F 第七课 · Prompt and Context Engineering</h2>
+        <p class="desc">
+          CCDV-F Domain 6 的独立 React Classroom Deck。18 个教学部分按知识关系分别使用子技能权重图、指令权威阶梯、稳定缓存前缀、跨组件 placement 映射、字面遵循故障卡、Few-shot 决策卡、Prompt Injection 权限边界、Context Decay 三分法、Editing/Compaction/Subagent 控制面、完整 content 陷阱、Tool Output 裁剪、Subagent 隔离拓扑、输出三层防御、Defensive Parsing Gate、两种 Strict Schema、JSON Schema 能力边界、失败决策树与会议行动项真题拆解。36 段 Amy Multilingual v2 配音总长 8:13，固定 seed、0.92 语速并保留自然停顿，单段 11.15–17.37 秒。画布固定 1600×900（16:9），18 页 × 5 种容器共 90 项比例与无重排 QA 通过；18 张同 Release 缩略图与完整 MP3 契约已发布 Production Release 并绑定 `prompt-context-engineering` 章节。
+        </p>
+        <div class="meta-row">
+          <div class="meta-item"><div class="k">讲师</div><div class="v">Amy Multilingual v2 · 0.92 · 固定 seed</div></div>
+          <div class="meta-item"><div class="k">时长</div><div class="v">8:13 · 36 段完整配音</div></div>
+          <div class="meta-item"><div class="k">Slide 数</div><div class="v">18 张独立语义页面</div></div>
+          <div class="meta-item"><div class="k">技术栈</div><div class="v">React 19 · Vite 8 · Bridge v1 · 90/90 QA</div></div>
+        </div>
+        <div class="reuse-label">跨课复用 · 适用范围</div>
+        <div class="reuse-chips">
+          <span class="chip locked">CCDV-F · prompt-context-engineering</span>
+          <span class="chip locked">Prompt / Context / Schema / Validation</span>
+          <span class="chip locked">Production · 已绑定</span>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="https://jiangren.com.au/certifications/exam/ccdv-f/learn/prompt-context-engineering/classroom" target="_blank" rel="noopener">▶ 打开生产 Classroom</a>
+          <a class="btn primary" href="./lessons/ccdv-f-prompt-context-engineering/" target="_blank" rel="noopener">▶ 打开本地 Slides</a>
+          <a class="btn" href="./lessons/ccdv-f-prompt-context-engineering/narration/script.json" target="_blank" rel="noopener">📝 完整试听讲稿</a>
+          <a class="btn" href="../docs/IMMERSIVE_CLASSROOM_PRD.md" target="_blank" rel="noopener">📋 Classroom PRD</a>
+        </div>
+      </div>
+
+      <!-- ========== CCDV-F Security and Safety Classroom Deck ========== -->
+      <div class="card">
+        <div class="card-head">
+          <span class="badge badge-react">React + Vite · Bridge v1</span>
+          <span class="badge badge-status-live">✓ Production Published</span>
+        </div>
+        <h2>CCDV-F 第八课 · Security and Safety</h2>
+        <p class="desc">
+          CCDV-F Domain 7 的独立 React Classroom Deck。16 个教学部分按知识关系分别使用权重图、请求/控制对照、不可信输入攻击面、四种伪防御卡、Injection 三层防线、Injection/Jailbreak 威胁模型、六层纵深护栏、最小权限三面、PII 复制链、Pre/Post Hook 方向、退款身份 Gate、Secret 配置边界、API Key/OAuth 认证头、后端 RBAC、Refusal 分支与 PII 工单真题拆解。32 段 Amy Multilingual v2 配音总长 7:09，固定 seed、0.92 语速并保留自然停顿，单段 11.10–17.51 秒。画布固定 1600×900（16:9），16 页 × 5 种容器共 80 项比例与无重排 QA 通过；16 张同 Release 缩略图与完整 MP3 契约已发布 Production Release 并绑定 `security-and-safety` 章节。
+        </p>
+        <div class="meta-row">
+          <div class="meta-item"><div class="k">讲师</div><div class="v">Amy Multilingual v2 · 0.92 · 固定 seed</div></div>
+          <div class="meta-item"><div class="k">时长</div><div class="v">7:09 · 32 段完整配音</div></div>
+          <div class="meta-item"><div class="k">Slide 数</div><div class="v">16 张独立语义页面</div></div>
+          <div class="meta-item"><div class="k">技术栈</div><div class="v">React 19 · Vite 8 · Bridge v1 · 80/80 QA</div></div>
+        </div>
+        <div class="reuse-label">跨课复用 · 适用范围</div>
+        <div class="reuse-chips">
+          <span class="chip locked">CCDV-F · security-safety</span>
+          <span class="chip locked">Injection / Guardrails / Hooks / PII</span>
+          <span class="chip locked">Production · 已绑定</span>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="https://jiangren.com.au/certifications/exam/ccdv-f/learn/security-and-safety/classroom" target="_blank" rel="noopener">▶ 打开生产 Classroom</a>
+          <a class="btn primary" href="./lessons/ccdv-f-security-safety/" target="_blank" rel="noopener">▶ 打开本地 Slides</a>
+          <a class="btn" href="./lessons/ccdv-f-security-safety/narration/script.json" target="_blank" rel="noopener">📝 完整试听讲稿</a>
+          <a class="btn" href="../docs/IMMERSIVE_CLASSROOM_PRD.md" target="_blank" rel="noopener">📋 Classroom PRD</a>
+        </div>
+      </div>
+
+      <!-- ========== CCDV-F Tools and MCPs Classroom Deck ========== -->
+      <div class="card">
+        <div class="card-head">
+          <span class="badge badge-react">React + Vite · Bridge v1</span>
+          <span class="badge badge-status-live">✓ Production Published</span>
+        </div>
+        <h2>CCDV-F 第九课 · Tools and MCPs</h2>
+        <p class="desc">
+          CCDV-F Domain 8 的独立 React Classroom Deck。18 个教学部分按知识关系分别使用权重图、Tool Description 四要素、对称反向边界、Input Schema 护栏、工具合并、tool_choice 四档、Any Loop 陷阱、错误语义矩阵、空结果对照、Client/Server 执行侧、Builtin/Custom/Skill/MCP 四选一、选型树、MCP Host/Client/Server、Transport、三种 Primitive、MCP Scope、Routing 排障阶梯与跨 Host 真题拆解。36 段 Amy Multilingual v2 配音总长 7:59，固定 seed、0.92 语速并保留自然停顿，单段 10.59–17.65 秒。画布固定 1600×900（16:9），18 页 × 5 种容器共 90 项比例与无重排 QA 通过；18 张同 Release 缩略图与完整 MP3 契约已发布 Production Release 并绑定 `tools-and-mcps` 章节。
+        </p>
+        <div class="meta-row">
+          <div class="meta-item"><div class="k">讲师</div><div class="v">Amy Multilingual v2 · 0.92 · 固定 seed</div></div>
+          <div class="meta-item"><div class="k">时长</div><div class="v">7:59 · 36 段完整配音</div></div>
+          <div class="meta-item"><div class="k">Slide 数</div><div class="v">18 张独立语义页面</div></div>
+          <div class="meta-item"><div class="k">技术栈</div><div class="v">React 19 · Vite 8 · Bridge v1 · 90/90 QA</div></div>
+        </div>
+        <div class="reuse-label">跨课复用 · 适用范围</div>
+        <div class="reuse-chips">
+          <span class="chip locked">CCDV-F · tools-mcps</span>
+          <span class="chip locked">Tool Choice / Errors / Skills / MCP</span>
+          <span class="chip locked">Production · 已绑定</span>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="https://jiangren.com.au/certifications/exam/ccdv-f/learn/tools-and-mcps/classroom" target="_blank" rel="noopener">▶ 打开生产 Classroom</a>
+          <a class="btn primary" href="./lessons/ccdv-f-tools-mcps/" target="_blank" rel="noopener">▶ 打开本地 Slides</a>
+          <a class="btn" href="./lessons/ccdv-f-tools-mcps/narration/script.json" target="_blank" rel="noopener">📝 完整试听讲稿</a>
+          <a class="btn" href="../docs/IMMERSIVE_CLASSROOM_PRD.md" target="_blank" rel="noopener">📋 Classroom PRD</a>
+        </div>
+      </div>
+
+      <!-- ========== CCDV-F Exam Prep Classroom Deck ========== -->
+      <div class="card">
+        <div class="card-head">
+          <span class="badge badge-react">React + Vite · Bridge v1</span>
+          <span class="badge badge-status-live">✓ Production Published</span>
+        </div>
+        <h2>CCDV-F 第十课 · Exam Prep</h2>
+        <p class="desc">
+          CCDV-F 全课程收束的独立 React Classroom Deck。18 个教学部分按知识关系分别使用 53 题考场时钟、八域权重排序、子技能领奖台、40 小时时间预算、最后两周路线、四类错项 DNA、过度工程天平、题干约束淘汰器、源头修复对照、确定性控制层、跨域重复矩阵、硬数字卡、Stop Reason 协议表、HTTP 重试分区、模型迁移双栏、Tools/MCP 速记、八域一句话与 20 秒考场决策循环。36 段 Amy Multilingual v2 配音总长 7:50，固定 seed、0.92 语速并保留自然停顿，单段 9.89–16.53 秒。画布固定 1600×900（16:9），18 页 × 5 种容器共 90 项比例与无重排 QA 通过；18 张同 Release 缩略图与完整 MP3 契约已发布 Production Release 并绑定 `exam-prep` 章节。
+        </p>
+        <div class="meta-row">
+          <div class="meta-item"><div class="k">讲师</div><div class="v">Amy Multilingual v2 · 0.92 · 固定 seed</div></div>
+          <div class="meta-item"><div class="k">时长</div><div class="v">7:50 · 36 段完整配音</div></div>
+          <div class="meta-item"><div class="k">Slide 数</div><div class="v">18 张独立语义页面</div></div>
+          <div class="meta-item"><div class="k">技术栈</div><div class="v">React 19 · Vite 8 · Bridge v1 · 90/90 QA</div></div>
+        </div>
+        <div class="reuse-label">跨课复用 · 适用范围</div>
+        <div class="reuse-chips">
+          <span class="chip locked">CCDV-F · exam-prep</span>
+          <span class="chip locked">Weight / Traps / Hard Facts / Exam Loop</span>
+          <span class="chip locked">Production · 已绑定</span>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="https://jiangren.com.au/certifications/exam/ccdv-f/learn/exam-prep/classroom" target="_blank" rel="noopener">▶ 打开生产 Classroom</a>
+          <a class="btn primary" href="./lessons/ccdv-f-exam-prep/" target="_blank" rel="noopener">▶ 打开本地 Slides</a>
+          <a class="btn" href="./lessons/ccdv-f-exam-prep/narration/script.json" target="_blank" rel="noopener">📝 完整试听讲稿</a>
           <a class="btn" href="../docs/IMMERSIVE_CLASSROOM_PRD.md" target="_blank" rel="noopener">📋 Classroom PRD</a>
         </div>
       </div>

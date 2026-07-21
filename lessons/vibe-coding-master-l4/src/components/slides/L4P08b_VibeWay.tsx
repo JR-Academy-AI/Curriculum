@@ -3,7 +3,7 @@ import { Slide, Inner, Title, Tag, colors, fonts, border, shadowSm } from '../ui
 
 const STEPS = [
 	{ n: '①', t: '你说意图', d: '用人话告诉 Agent 你要什么', bg: colors.yellow, dark: false },
-	{ n: '②', t: 'Agent 执行', d: 'git · workflow · PR · 部署配置，它来写、来跑', bg: colors.blue, dark: true },
+	{ n: '②', t: 'Agent 执行', d: 'git · workflow · PR · 部署配置 · CORS 头，它来写、来跑', bg: colors.blue, dark: true },
 	{ n: '③', t: '你 review + 验证', d: '它做对没 · 结果真跑通没 · 该你定的定了没', bg: colors.green, dark: false },
 ];
 
@@ -18,7 +18,7 @@ export default function L4P08b_VibeWay() {
 						接下来，你<span style={{ color: colors.yellow }}>不敲命令</span> —— 你指挥 Agent
 					</Title>
 					<p style={{ fontSize: 19, color: '#c9cfe0', fontWeight: 500, marginBottom: 34 }}>
-						GitHub、CI、部署 —— git 命令和 YAML 都是 Agent 的活。这一段，还是 Vibe Coding。
+						GitHub、CI、部署、CORS —— git 命令、YAML、跨域配置都是 Agent 的活。这一段，还是 Vibe Coding。
 					</p>
 
 					<div style={{ display: 'flex', alignItems: 'stretch', justifyContent: 'center', gap: 8 }}>

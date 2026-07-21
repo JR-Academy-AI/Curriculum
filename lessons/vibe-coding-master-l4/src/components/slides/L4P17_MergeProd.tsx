@@ -4,8 +4,8 @@ import { Slide, Inner, Title, Tag, colors, fonts, border, shadowSm } from '../ui
 const CHAIN = [
 	{ t: 'Preview 验收通过', d: '在 PR 的独立 URL 上确认改动对了', bg: colors.yellow, dark: false },
 	{ t: 'Merge 到 main', d: '点 Merge，分支合入主线', bg: colors.blue, dark: true },
-	{ t: 'Actions 发布 Pages', d: 'main 触发 deploy-pages，Pages 更新', bg: colors.green, dark: false },
-	{ t: 'Vercel 发布 Production', d: 'Vercel 检测到 main，Production URL 更新', bg: colors.orange, dark: true },
+	{ t: 'Actions 发前端', d: 'main 触发 deploy-pages，Pages 更新', bg: colors.green, dark: false },
+	{ t: 'Vercel 发后端', d: 'Vercel 检测到 main，后端 API 重部署', bg: colors.orange, dark: true },
 ];
 
 // 阶段 G：Merge → Production
@@ -16,10 +16,10 @@ export default function L4P17_MergeProd() {
 				<div style={{ width: '100%', textAlign: 'center' }}>
 					<Tag bg={colors.green} color={colors.black}>Merge → Production</Tag>
 					<Title size="48px" style={{ marginTop: 14, marginBottom: 12 }}>
-						合并那一刻，两个线上版本一起更新
+						合并那一刻，前端后端两条腿一起更新
 					</Title>
 					<p style={{ fontSize: 20, color: '#555', fontWeight: 500, marginBottom: 34 }}>
-						你不用手动部署 —— <code style={{ fontFamily: fonts.mono }}>main</code> 是唯一的开关，推上去就上线。
+						你不用手动碰任何一个 —— <code style={{ fontFamily: fonts.mono }}>main</code> 一动，Pages 重发、Vercel 重部署。
 					</p>
 					<div style={{ display: 'flex', alignItems: 'stretch', justifyContent: 'center', gap: 6, flexWrap: 'wrap' }}>
 						{CHAIN.map((c, i) => (

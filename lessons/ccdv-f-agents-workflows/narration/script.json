@@ -1,0 +1,397 @@
+{
+  "schemaVersion": 2,
+  "deckId": "ccdv-f-agents-workflows",
+  "chapterId": "agents-and-workflows",
+  "language": "zh-CN",
+  "voiceStatus": "generated-local-review",
+  "voice": {
+    "provider": "ElevenLabs",
+    "name": "Amy",
+    "voiceId": "bhJUNIXWQQ94l8eI2VUf",
+    "model": "eleven_v3",
+    "stability": 0.56,
+    "similarityBoost": 0.78,
+    "tempo": 1.18
+  },
+  "sourceRefs": [
+    "skills-data/certification-chapters/ccdv-f/02-agents-and-workflows.md",
+    "ccdv-f-cert-pack/SYLLABUS_OFFICIAL.md"
+  ],
+  "sections": [
+    {
+      "id": "weight-map",
+      "title": "三个子技能与权重",
+      "segments": [
+        {
+          "id": "weight-map-01",
+          "title": "这一域值多少题",
+          "text": "Agents and Workflows 占整卷 14.7%，按 53 题折算大约八题，在八个 Domain 里排第三。它不是只考 agent loop，而是把架构、构建和框架生态分成三个接近等重的子技能。",
+          "audioPath": "audio/full/weight-map-01.mp3",
+          "durationMs": 12977
+        },
+        {
+          "id": "weight-map-02",
+          "title": "最容易漏的 4.9%",
+          "text": "Agent Construction 占 5.3%，Patterns and Frameworks 占 4.9%，Agent Architecture 占 4.5%。最容易漏的是第三方框架：Strands、LangGraph 和 PydanticAI 都被 Blueprint 点名。",
+          "audioPath": "audio/full/weight-map-02.mp3",
+          "durationMs": 11740
+        }
+      ]
+    },
+    {
+      "id": "simple-first",
+      "title": "能简单就不要上 Agent",
+      "segments": [
+        {
+          "id": "simple-first-01",
+          "title": "Agent 用什么换什么",
+          "text": "Agent 用延迟、成本和不确定性，换取对无法预先穷举任务的处理能力。如果任务路径本来就能写清楚，上 Agent 等于付了代价，却没有换到真正的灵活性。",
+          "audioPath": "audio/full/simple-first-01.mp3",
+          "durationMs": 9885
+        },
+        {
+          "id": "simple-first-02",
+          "title": "固定三步是 Workflow",
+          "text": "先翻译、再润色、最后做合规检查，顺序完全固定。这是 prompt chaining workflow，不是 Agent。控制流应该由代码保证，模型只完成每一步里的语言任务。",
+          "audioPath": "audio/full/simple-first-02.mp3",
+          "durationMs": 9929
+        }
+      ]
+    },
+    {
+      "id": "complexity-ladder",
+      "title": "从单次调用到 Agent",
+      "segments": [
+        {
+          "id": "complexity-ladder-01",
+          "title": "三个层级",
+          "text": "第一层是单次调用，适合分类、摘要和抽取。第二层是 Workflow，步骤由代码编排。第三层才是 Agent，模型在运行时决定调什么工具、调几次以及什么时候结束。",
+          "audioPath": "audio/full/complexity-ladder-01.mp3",
+          "durationMs": 9865
+        },
+        {
+          "id": "complexity-ladder-02",
+          "title": "第一个是就是答案",
+          "text": "做题时从最简单的一层往下问。一次请求能解决就停在单次调用；多步但顺序明确就选 Workflow；只有路径无法提前写清，才继续评估 Agent。",
+          "audioPath": "audio/full/complexity-ladder-02.mp3",
+          "durationMs": 9155
+        }
+      ]
+    },
+    {
+      "id": "four-gates",
+      "title": "上 Agent 前的四道闸",
+      "segments": [
+        {
+          "id": "four-gates-01",
+          "title": "复杂度与价值",
+          "text": "第一道闸看复杂度：任务是否多步，而且无法事先完整指定。第二道闸看价值：结果是否值得更高的成本和延迟。任何一道答否，都应该退回更简单的方案。",
+          "audioPath": "audio/full/four-gates-01.mp3",
+          "durationMs": 9856
+        },
+        {
+          "id": "four-gates-02",
+          "title": "可行性与错误成本",
+          "text": "第三道闸看 Claude 在这类任务上到底能不能稳定完成。第四道闸看错误是否能发现和恢复，比如有没有测试、人工 review 和回滚。四道闸必须全部通过。",
+          "audioPath": "audio/full/four-gates-02.mp3",
+          "durationMs": 10308
+        }
+      ]
+    },
+    {
+      "id": "supervisor-subagent",
+      "title": "Supervisor 与 Subagent",
+      "segments": [
+        {
+          "id": "supervisor-subagent-01",
+          "title": "主 Agent 负责什么",
+          "text": "Manager、orchestrator 和 supervisor 指的是同一个角色：主 Agent 拆任务、分派并汇总。Subagent 完成具体子任务，而且拥有自己独立的上下文窗口。",
+          "audioPath": "audio/full/supervisor-subagent-01.mp3",
+          "durationMs": 9198
+        },
+        {
+          "id": "supervisor-subagent-02",
+          "title": "上下文隔离",
+          "text": "Subagent 的第一个价值是上下文隔离。它读了几十个文件、跑了许多工具，这些中间噪音不会污染主 Agent；主 Agent 只接收最后的高信号结论。",
+          "audioPath": "audio/full/supervisor-subagent-02.mp3",
+          "durationMs": 9756
+        },
+        {
+          "id": "supervisor-subagent-03",
+          "title": "什么时候别用",
+          "text": "五个互相独立的数据源可以并行派给五个 Subagent。但如果 B 依赖 A 的中间结果，或者任务只是读一个文件，启动 Subagent 的成本反而更高。",
+          "audioPath": "audio/full/supervisor-subagent-03.mp3",
+          "durationMs": 8471
+        }
+      ]
+    },
+    {
+      "id": "stop-reasons",
+      "title": "循环只认 stop_reason",
+      "segments": [
+        {
+          "id": "stop-reasons-01",
+          "title": "三个主要方向",
+          "text": "end_turn 才是正常出口；tool_use 表示执行工具、回填 tool_result，再继续循环；max_tokens 表示响应被截断，必须当失败处理，不能把半截内容直接交给用户。",
+          "audioPath": "audio/full/stop-reasons-01.mp3",
+          "durationMs": 11206
+        },
+        {
+          "id": "stop-reasons-02",
+          "title": "pause_turn 与 refusal",
+          "text": "pause_turn 通常来自服务端工具达到迭代上限，要把 assistant 内容原样写回再发一次，不要额外塞一句 Continue。refusal 要先检查，因为拒答时 content 可能为空。",
+          "audioPath": "audio/full/stop-reasons-02.mp3",
+          "durationMs": 10549
+        },
+        {
+          "id": "stop-reasons-03",
+          "title": "不要看有没有文本",
+          "text": "模型可以一边输出一句说明，一边请求工具调用。所以响应里有 text，不代表已经结束。判断循环方向只能看 stop_reason，不能拿有没有文本当方向盘。",
+          "audioPath": "audio/full/stop-reasons-03.mp3",
+          "durationMs": 9476
+        }
+      ]
+    },
+    {
+      "id": "loop-invariants",
+      "title": "Agent Loop 的四条不变式",
+      "segments": [
+        {
+          "id": "loop-invariants-01",
+          "title": "完整写回 content",
+          "text": "每一轮 assistant 的 response.content 必须完整写回 messages。只保留 text 会丢掉 tool_use 或 compaction block，下一轮的 tool_result 就无法匹配，API 可能直接返回 400。",
+          "audioPath": "audio/full/loop-invariants-01.mp3",
+          "durationMs": 9726
+        },
+        {
+          "id": "loop-invariants-02",
+          "title": "tool_use_id 必须配对",
+          "text": "每一个 tool_result 都必须带回对应的 tool_use_id。工具执行失败也不能跳过，要返回 is_error true，并写清错误和恢复建议。",
+          "audioPath": "audio/full/loop-invariants-02.mp3",
+          "durationMs": 7578
+        },
+        {
+          "id": "loop-invariants-03",
+          "title": "结果放同一条消息",
+          "text": "同一轮产生的多个 tool_result 要放进同一条 user 消息。拆成多条虽然不一定立刻报错，却会让模型逐渐放弃并行工具调用，形成静默性能退化。",
+          "audioPath": "audio/full/loop-invariants-03.mp3",
+          "durationMs": 9301
+        },
+        {
+          "id": "loop-invariants-04",
+          "title": "必须有硬上限",
+          "text": "Agent loop 必须设置 max_turns。工具描述含糊或空结果反复出现时，没有硬上限的循环会一直消耗 token 和 API 额度。",
+          "audioPath": "audio/full/loop-invariants-04.mp3",
+          "durationMs": 7883
+        }
+      ]
+    },
+    {
+      "id": "runner-sdk",
+      "title": "Tool Runner 不是 Agent SDK",
+      "segments": [
+        {
+          "id": "runner-sdk-01",
+          "title": "Tool Runner 的边界",
+          "text": "Tool Runner 是普通 Anthropic SDK 里的 helper，它替你驱动工具循环，但工具仍然全部由你定义和实现。它不自带文件系统、bash、grep 或执行沙箱。",
+          "audioPath": "audio/full/runner-sdk-01.mp3",
+          "durationMs": 7725
+        },
+        {
+          "id": "runner-sdk-02",
+          "title": "Agent SDK 的边界",
+          "text": "Claude Agent SDK 是把 Claude Code 的能力打包成库，自带 Read、Write、Edit、Bash、Grep 等工具，以及权限、session、hooks 和 Subagent。它运行在你自己的基础设施上。",
+          "audioPath": "audio/full/runner-sdk-02.mp3",
+          "durationMs": 10283
+        },
+        {
+          "id": "runner-sdk-03",
+          "title": "默认先选 Runner",
+          "text": "如果只需要循环调用你自己的业务工具，默认先选 Tool Runner。只有需要更细控制、自定义传输或 SDK 无法构造的请求形状时，才值得手搓 loop。",
+          "audioPath": "audio/full/runner-sdk-03.mp3",
+          "durationMs": 9686
+        }
+      ]
+    },
+    {
+      "id": "hooks",
+      "title": "确定性动作交给 Hook",
+      "segments": [
+        {
+          "id": "hooks-01",
+          "title": "Pre 与 Post 的方向",
+          "text": "PreToolUse 在工具执行前触发，可以 deny、ask 或改写参数。PostToolUse 在工具已经执行后触发，只能记录、转换结果或追加反馈。要阻止退款或删除，只能在 Pre 阶段。",
+          "audioPath": "audio/full/hooks-01.mp3",
+          "durationMs": 13233
+        },
+        {
+          "id": "hooks-02",
+          "title": "概率与确定性",
+          "text": "把退款前验证身份写在 prompt 里，只能提高模型遵守概率。Hook 是代码，可以形成确定性护栏。必须发生或绝不能发生的动作，都应该交给可执行控制。",
+          "audioPath": "audio/full/hooks-02.mp3",
+          "durationMs": 8137
+        }
+      ]
+    },
+    {
+      "id": "deployment-models",
+      "title": "Harness 跑在哪里",
+      "segments": [
+        {
+          "id": "deployment-models-01",
+          "title": "前三种都要自托管",
+          "text": "手搓 loop、Tool Runner 和 Claude Agent SDK 都只解决 harness，部署仍然由你负责。代码、工具和工作区都运行在你自己的基础设施上。",
+          "audioPath": "audio/full/deployment-models-01.mp3",
+          "durationMs": 7520
+        },
+        {
+          "id": "deployment-models-02",
+          "title": "Managed Agents 的区别",
+          "text": "Managed Agents 是唯一同时托管 agent harness 和工具执行沙箱的选项，适合长时间、有状态、需要持久工作区或定时触发，而且团队不想维护容器的任务。",
+          "audioPath": "audio/full/deployment-models-02.mp3",
+          "durationMs": 9729
+        }
+      ]
+    },
+    {
+      "id": "memory-context",
+      "title": "Memory 与 Context 管理",
+      "segments": [
+        {
+          "id": "memory-context-01",
+          "title": "跨会话必须外置",
+          "text": "会话内记忆就是 messages；跨会话偏好必须写到 Agent 外部的数据库、文件式 memory 后端或 managed memory store。API 是无状态的，堆 messages 不能形成真正的长期记忆。",
+          "audioPath": "audio/full/memory-context-01.mp3",
+          "durationMs": 11075
+        },
+        {
+          "id": "memory-context-02",
+          "title": "Clear 与 Compact",
+          "text": "Context editing 是清理，直接删掉已经没用的旧 tool result 或 thinking block。Compaction 是压缩，把早期上下文总结成 compaction block。一个是删，一个是总结，不能混用。",
+          "audioPath": "audio/full/memory-context-02.mp3",
+          "durationMs": 10062
+        },
+        {
+          "id": "memory-context-03",
+          "title": "压缩状态别丢",
+          "text": "启用 compaction 后，仍然要完整写回 response.content。只抽取文本会静默丢掉 compaction block，下一轮上下文又从头膨胀。",
+          "audioPath": "audio/full/memory-context-03.mp3",
+          "durationMs": 7191
+        }
+      ]
+    },
+    {
+      "id": "frameworks",
+      "title": "三个第三方框架怎么选",
+      "segments": [
+        {
+          "id": "frameworks-01",
+          "title": "LangGraph",
+          "text": "LangGraph 的核心抽象是图和状态机。题干强调显式控制流、复杂分支、中间状态持久化、人工介入后继续，优先想到 LangGraph。",
+          "audioPath": "audio/full/frameworks-01.mp3",
+          "durationMs": 9222
+        },
+        {
+          "id": "frameworks-02",
+          "title": "PydanticAI",
+          "text": "PydanticAI 强调 Python 类型安全和结构化输出验证。题干要求依赖与结果都有强类型、Schema 不合格就失败，并且像普通 Python 一样测试，优先想到它。",
+          "audioPath": "audio/full/frameworks-02.mp3",
+          "durationMs": 10533
+        },
+        {
+          "id": "frameworks-03",
+          "title": "Strands",
+          "text": "Strands 强调轻量、模型驱动的 Agent 循环，以及多 provider 和灵活部署。题干说不想自己写循环，又希望部署到 Lambda 或 Fargate，可以优先考虑 Strands。",
+          "audioPath": "audio/full/frameworks-03.mp3",
+          "durationMs": 9215
+        }
+      ]
+    },
+    {
+      "id": "decision-tree",
+      "title": "选实现方式的顺序",
+      "segments": [
+        {
+          "id": "decision-tree-01",
+          "title": "先判断是否需要 Agent",
+          "text": "先排除单次调用和固定 Workflow，再检查四道 Agent 闸门。不要因为选项里全是框架名，就忘了最正确的答案可能只是三次按顺序执行的 API 调用。",
+          "audioPath": "audio/full/decision-tree-01.mp3",
+          "durationMs": 9213
+        },
+        {
+          "id": "decision-tree-02",
+          "title": "再看题干约束",
+          "text": "只循环业务工具选 Tool Runner；需要内置文件和 Bash 工具选 Agent SDK；不想维护运行环境选 Managed Agents；显式状态机选 LangGraph；Python 强类型选 PydanticAI。",
+          "audioPath": "audio/full/decision-tree-02.mp3",
+          "durationMs": 11584
+        }
+      ]
+    },
+    {
+      "id": "failure-gallery",
+      "title": "五个会炸的写法",
+      "segments": [
+        {
+          "id": "failure-gallery-01",
+          "title": "协议层错误",
+          "text": "只 append 文本、丢 tool_use block；工具报错直接跳过；tool_result 没带 tool_use_id。这三类错误都会破坏消息配对，常见结果是 400 invalid request。",
+          "audioPath": "audio/full/failure-gallery-01.mp3",
+          "durationMs": 10038
+        },
+        {
+          "id": "failure-gallery-02",
+          "title": "架构层错误",
+          "text": "拿有没有 text 判断结束、固定三步却上 Agent、用 PostToolUse 拦危险动作，分别错在循环方向、抽象层级和执行时机。读题先定位错误发生在哪一层。",
+          "audioPath": "audio/full/failure-gallery-02.mp3",
+          "durationMs": 10428
+        }
+      ]
+    },
+    {
+      "id": "question-walkthrough",
+      "title": "代码库现代化题怎么选",
+      "segments": [
+        {
+          "id": "question-walkthrough-01",
+          "title": "先用内网约束排除",
+          "text": "题目要求代码不能离开公司内网，所以直接排除托管执行沙箱的 Managed Agents。剩下手搓 loop、Tool Runner 和 Claude Agent SDK 都可以在自己的基础设施运行。",
+          "audioPath": "audio/full/question-walkthrough-01.mp3",
+          "durationMs": 9733
+        },
+        {
+          "id": "question-walkthrough-02",
+          "title": "再用脚手架约束决定",
+          "text": "题目还要求尽量少写脚手架。手搓 loop 要写循环和四个工具；Tool Runner 只省循环；Agent SDK 已经自带 Read、Grep、Edit 和 Bash。因此答案是 Claude Agent SDK。",
+          "audioPath": "audio/full/question-walkthrough-02.mp3",
+          "durationMs": 11599
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "title": "本章速记",
+      "segments": [
+        {
+          "id": "recap-01",
+          "title": "架构速记",
+          "text": "单次调用优先于 Workflow，Workflow 优先于 Agent。Subagent 只在能换来上下文隔离或并行时值得使用。必须发生的动作交给 Hook，不交给 prompt。",
+          "audioPath": "audio/full/recap-01.mp3",
+          "durationMs": 8673
+        },
+        {
+          "id": "recap-02",
+          "title": "循环与框架速记",
+          "text": "循环只认 stop_reason；完整写回 content；工具结果必须配对并放进同一条 user 消息；只有 Managed Agents 同时托管 harness 和部署。LangGraph 看图，PydanticAI 看类型，Strands 看轻量模型驱动。",
+          "audioPath": "audio/full/recap-02.mp3",
+          "durationMs": 13499
+        }
+      ]
+    }
+  ],
+  "generatedAt": "2026-07-19T12:23:03.021Z",
+  "summary": {
+    "sectionCount": 16,
+    "segmentCount": 39,
+    "totalDurationMs": 385237
+  }
+}

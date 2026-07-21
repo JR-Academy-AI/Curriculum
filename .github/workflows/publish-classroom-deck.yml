@@ -20,6 +20,10 @@ on:
       - "lessons/**/src/**"
       - "lessons/**/vite.config.ts"
       - "lessons/**/package.json"
+      - "lessons/**/narration/**"
+      - "lessons/**/public/audio/**"
+      - "lessons/**/public/thumbnails/**"
+      - "lessons/**/scripts/**"
 
 permissions:
   contents: read
@@ -72,6 +76,10 @@ jobs:
         with:
           chrome-version: stable
           install-dependencies: true
+      - name: Install narration media QA tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes ffmpeg
       - uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ vars.CLASSROOM_AWS_PUBLISH_ROLE_ARN }}
@@ -90,12 +98,14 @@ jobs:
           RELEASE_ID="$(date -u +%Y.%m.%d)-${GITHUB_SHA::7}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
           if [ "$TARGET" = "production" ]; then
             ORIGIN="https://slides.jiangren.com.au"
-            AUDIO_BASE="https://classroom-assets.jracademy.com.au"
+            AUDIO_ORIGIN="https://classroom-assets.jracademy.com.au"
+            ASSET_BUCKET="jr-classroom-assets-prod"
             BUCKET="jr-classroom-viewer-prod"
             API_BASE="https://api.jiangren.com.au"
           else
             ORIGIN="https://slides-uat.jiangren.com.au"
-            AUDIO_BASE="https://classroom-assets-uat.jracademy.com.au"
+            AUDIO_ORIGIN="https://classroom-assets-uat.jracademy.com.au"
+            ASSET_BUCKET="jr-classroom-assets-uat"
             BUCKET="jr-classroom-viewer-uat"
             # The retired UAT API no longer owns Classroom release metadata.
             # UAT bundles remain isolated in the UAT bucket, while the production
@@ -105,7 +115,8 @@ jobs:
           echo "deck_id=$DECK_ID" >> "$GITHUB_OUTPUT"
           echo "release_id=$RELEASE_ID" >> "$GITHUB_OUTPUT"
           echo "origin=$ORIGIN" >> "$GITHUB_OUTPUT"
-          echo "audio_base=$AUDIO_BASE" >> "$GITHUB_OUTPUT"
+          echo "audio_base=$AUDIO_ORIGIN/audio/$DECK_ID/$RELEASE_ID" >> "$GITHUB_OUTPUT"
+          echo "asset_bucket=$ASSET_BUCKET" >> "$GITHUB_OUTPUT"
           echo "bucket=$BUCKET" >> "$GITHUB_OUTPUT"
           echo "api_base=$API_BASE" >> "$GITHUB_OUTPUT"
 
@@ -134,11 +145,58 @@ jobs:
           for attempt in {1..30}; do curl -fsS "$CLASSROOM_QA_DECK_URL/manifest.json" >/dev/null && break; sleep 1; done
           node scripts/qa-classroom-release.mjs
 
+      - name: Refuse overwrite and upload immutable narration audio
+        working-directory: ${{ matrix.deck }}
+        run: |
+          AUDIO_PREFIX="audio/${{ steps.release.outputs.deck_id }}/${{ steps.release.outputs.release_id }}"
+          AUDIO_BASE="${{ steps.release.outputs.audio_base }}/"
+          mapfile -t AUDIO_RELATIVE_PATHS < <(
+            jq -r --arg base "$AUDIO_BASE" \
+              '.slides[].actions[]?.audioUrl // empty | select(startswith($base)) | ltrimstr($base)' \
+              dist/manifest.json \
+              | sort -u
+          )
+          test "${#AUDIO_RELATIVE_PATHS[@]}" -gt 0
+          for relative_path in "${AUDIO_RELATIVE_PATHS[@]}"; do
+            test -f "public/audio/$relative_path"
+            if aws s3api head-object \
+              --bucket "${{ steps.release.outputs.asset_bucket }}" \
+              --key "$AUDIO_PREFIX/$relative_path" >/dev/null 2>&1; then
+              echo "Narration object already exists: s3://${{ steps.release.outputs.asset_bucket }}/$AUDIO_PREFIX/$relative_path" >&2
+              exit 1
+            fi
+          done
+          for relative_path in "${AUDIO_RELATIVE_PATHS[@]}"; do
+            aws s3api put-object \
+              --bucket "${{ steps.release.outputs.asset_bucket }}" \
+              --key "$AUDIO_PREFIX/$relative_path" \
+              --body "public/audio/$relative_path" \
+              --content-type 'audio/mpeg' \
+              --cache-control 'public,max-age=31536000,immutable' \
+              --no-cli-pager >/dev/null
+          done
+          for relative_path in "${AUDIO_RELATIVE_PATHS[@]}"; do
+            aws s3api head-object \
+              --bucket "${{ steps.release.outputs.asset_bucket }}" \
+              --key "$AUDIO_PREFIX/$relative_path" \
+              --query '[ContentType,CacheControl]' \
+              --output text \
+              | grep -F $'audio/mpeg\tpublic,max-age=31536000,immutable' >/dev/null
+          done
+          echo "Verified ${#AUDIO_RELATIVE_PATHS[@]} manifest-referenced narration objects without bucket-list access"
+
       - name: Verify narration audio supports byte ranges
         working-directory: ${{ matrix.deck }}
         run: |
           jq -r '.slides[].actions[]?.audioUrl // empty' dist/manifest.json | sort -u | while read -r audio_url; do
-            result=$(curl --silent --show-error --range 0-1023 --output /dev/null --write-out '%{http_code} %{content_type}' "$audio_url")
+            result=''
+            for attempt in {1..15}; do
+              result=$(curl --silent --show-error --range 0-1023 --output /dev/null --write-out '%{http_code} %{content_type}' "$audio_url" || true)
+              case "$result" in
+                "206 audio/mpeg"*) break ;;
+              esac
+              sleep 2
+            done
             case "$result" in
               "206 audio/mpeg"*) ;;
               *) echo "Audio Range gate failed: $audio_url -> $result" >&2; exit 1 ;;
@@ -154,6 +212,8 @@ jobs:
             exit 1
           fi
           aws s3 sync dist/ "s3://${{ steps.release.outputs.bucket }}/decks/${{ steps.release.outputs.deck_id }}/${{ steps.release.outputs.release_id }}/" \
+            --exclude 'audio/*' \
+            --exclude 'local-classroom.json' \
             --cache-control "public,max-age=31536000,immutable" \
             --no-progress
 

@@ -1,0 +1,519 @@
+{
+  "questGoalId": "local-ccdv-f-tools-mcps",
+  "presentation": {
+    "renderMode": "react-deck-release",
+    "deckId": "ccdv-f-tools-mcps",
+    "releaseId": "local-ccdv-f-tools-mcps-20260719",
+    "entryUrl": "http://127.0.0.1:4192/",
+    "manifestUrl": "http://127.0.0.1:4192/manifest.json",
+    "allowedOrigin": "http://127.0.0.1:4192",
+    "bridgeVersion": 1,
+    "slideCount": 18
+  },
+  "steps": [
+    {
+      "id": "weight",
+      "stepIndex": 0,
+      "title": "Domain 8 权重地图",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4192/thumbnails/01-weight.png"
+      },
+      "actions": [
+        {
+          "id": "weight-01",
+          "type": "speech",
+          "text": "Tools and M C P 占百分之十点六，按五十三题约六题。Tool Implementation 百分之四点四，Agentic Customization 百分之四点一，两者占本域八成。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/weight-01.mp3"
+        },
+        {
+          "id": "weight-02",
+          "type": "speech",
+          "text": "M C P Server Development 只有百分之二点一。复习重点应放在工具描述、错误语义，以及 Builtin、Custom Tool、Skill 和 M C P 的选型。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/weight-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4192/audio/full/weight-01.mp3",
+        "http://127.0.0.1:4192/audio/full/weight-02.mp3"
+      ]
+    },
+    {
+      "id": "description",
+      "stepIndex": 1,
+      "title": "Tool Description",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4192/thumbnails/02-description.png"
+      },
+      "actions": [
+        {
+          "id": "description-01",
+          "type": "speech",
+          "text": "模型没有你的业务背景，对两个工具的认知主要来自 description。只写查会员资料，模型无法知道该在什么问题下选择它。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/description-01.mp3"
+        },
+        {
+          "id": "description-02",
+          "type": "speech",
+          "text": "详细描述应包含工具做什么、何时用与何时不用、参数含义格式，以及重要限制和不返回什么。官方把它称为远远最重要的工具性能因素。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/description-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4192/audio/full/description-01.mp3",
+        "http://127.0.0.1:4192/audio/full/description-02.mp3"
+      ]
+    },
+    {
+      "id": "symmetric",
+      "stepIndex": 2,
+      "title": "对称反向边界",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4192/thumbnails/03-symmetric.png"
+      },
+      "actions": [
+        {
+          "id": "symmetric-01",
+          "type": "speech",
+          "text": "会员资料工具要写不返回学习进度，查课次与完课率请用 learning progress。否定边界给模型一个清晰的转向。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/symmetric-01.mp3"
+        },
+        {
+          "id": "symmetric-02",
+          "type": "speech",
+          "text": "Learning progress 也要对称写不返回订阅档位与邮箱，查账户请用 member profile。只写一边，模型仍可能从另一方向选错。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/symmetric-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4192/audio/full/symmetric-01.mp3",
+        "http://127.0.0.1:4192/audio/full/symmetric-02.mp3"
+      ]
+    },
+    {
+      "id": "schema",
+      "stepIndex": 3,
+      "title": "Input Schema 护栏",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4192/thumbnails/04-schema.png"
+      },
+      "actions": [
+        {
+          "id": "schema-01",
+          "type": "speech",
+          "text": "member id 可用 pattern 限制 M 开头八位数字，用 description 说明不是邮箱或手机号；枚举与 format 也能在 schema 层缩小错误空间。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/schema-01.mp3"
+        },
+        {
+          "id": "schema-02",
+          "type": "speech",
+          "text": "Required 列表越长，输入信息不足时模型越容易卡住或编造。可缺字段应允许省略或 nullable，不要为了形状把幻觉写进 schema。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/schema-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4192/audio/full/schema-01.mp3",
+        "http://127.0.0.1:4192/audio/full/schema-02.mp3"
+      ]
+    },
+    {
+      "id": "granularity",
+      "stepIndex": 4,
+      "title": "工具粒度与命名空间",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4192/thumbnails/05-granularity.png"
+      },
+      "actions": [
+        {
+          "id": "granularity-01",
+          "type": "speech",
+          "text": "Create、review、merge 和 close P R 若拆成多个高度相似工具，会增加选择歧义。合成一个带 action 参数的工具往往更稳。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/granularity-01.mp3"
+        },
+        {
+          "id": "granularity-02",
+          "type": "speech",
+          "text": "工具库变大时使用 github list P R、slack send message 这类服务前缀，避免撞名。返回值只保留下一步需要的高信号字段。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/granularity-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4192/audio/full/granularity-01.mp3",
+        "http://127.0.0.1:4192/audio/full/granularity-02.mp3"
+      ]
+    },
+    {
+      "id": "tool-choice",
+      "stepIndex": 5,
+      "title": "Tool Choice 四档",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4192/thumbnails/06-tool-choice.png"
+      },
+      "actions": [
+        {
+          "id": "tool-choice-01",
+          "type": "speech",
+          "text": "Auto 允许模型不调工具并自行选择，是 agentic loop 默认。Any 强制必须调一个工具，但具体哪个由模型选择，适合必须建单但类别未知。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/tool-choice-01.mp3"
+        },
+        {
+          "id": "tool-choice-02",
+          "type": "speech",
+          "text": "Tool 加 name 锁定指定工具，适合第一轮必须先 triage；None 禁止任何工具。Any 和 Tool 会预填 assistant，因此调用前不会先说自然语言。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/tool-choice-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4192/audio/full/tool-choice-01.mp3",
+        "http://127.0.0.1:4192/audio/full/tool-choice-02.mp3"
+      ]
+    },
+    {
+      "id": "any-loop",
+      "stepIndex": 6,
+      "title": "Any 死循环陷阱",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4192/thumbnails/07-any-loop.png"
+      },
+      "actions": [
+        {
+          "id": "any-loop-01",
+          "type": "speech",
+          "text": "如果整个 agent loop 长期使用 tool choice any，本应 end turn 的最后一轮仍被要求调用工具，系统就会无限继续。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/any-loop-01.mp3"
+        },
+        {
+          "id": "any-loop-02",
+          "type": "speech",
+          "text": "Any 或指定 Tool 只用于单次强制动作，例如首轮建单或 triage。拿到结果后切回 auto，让模型可以继续调工具，也可以正常结束。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/any-loop-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4192/audio/full/any-loop-01.mp3",
+        "http://127.0.0.1:4192/audio/full/any-loop-02.mp3"
+      ]
+    },
+    {
+      "id": "error-matrix",
+      "stepIndex": 7,
+      "title": "四类工具结果",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4192/thumbnails/08-error-matrix.png"
+      },
+      "actions": [
+        {
+          "id": "error-matrix-01",
+          "type": "speech",
+          "text": "Rate limit、输入非法和认证失败都可设 is error true，但恢复动作不同。错误载荷还要提供 category、retryable 和有指导性的消息。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/error-matrix-01.mp3"
+        },
+        {
+          "id": "error-matrix-02",
+          "type": "speech",
+          "text": "瞬时错误退避重试，输入错误先改参数，不可恢复的认证与权限错误升级人工。只返回字符串 error，模型不知道下一步该做什么。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/error-matrix-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4192/audio/full/error-matrix-01.mp3",
+        "http://127.0.0.1:4192/audio/full/error-matrix-02.mp3"
+      ]
+    },
+    {
+      "id": "empty-result",
+      "stepIndex": 8,
+      "title": "空结果不是错误",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4192/thumbnails/09-empty-result.png"
+      },
+      "actions": [
+        {
+          "id": "empty-result-01",
+          "type": "speech",
+          "text": "数据库查询成功但没有该会员，应返回 found false，并且 is error 为 false。这表示我查过了，没有，是可直接告诉用户的正常答案。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/empty-result-01.mp3"
+        },
+        {
+          "id": "empty-result-02",
+          "type": "speech",
+          "text": "如果把空结果标成错误，上游 agent 会认为抓取失败，重复查询相同不存在记录，最后误报服务故障或白白升级人工。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/empty-result-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4192/audio/full/empty-result-01.mp3",
+        "http://127.0.0.1:4192/audio/full/empty-result-02.mp3"
+      ]
+    },
+    {
+      "id": "client-server",
+      "stepIndex": 9,
+      "title": "客户端与服务端工具",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4192/thumbnails/10-client-server.png"
+      },
+      "actions": [
+        {
+          "id": "client-server-01",
+          "type": "speech",
+          "text": "自定义工具由你的代码执行 tool use 循环。Web search、web fetch 和 code execution 等服务端工具由 Anthropic 基础设施执行，结果在同一响应返回。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/client-server-01.mp3"
+        },
+        {
+          "id": "client-server-02",
+          "type": "speech",
+          "text": "Bash 与 text editor 的 schema 由 Anthropic 内建，但仍由客户端执行。服务端工具失败可能返回 HTTP 二百，错误藏在结果 block，不能只靠异常捕获。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/client-server-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4192/audio/full/client-server-01.mp3",
+        "http://127.0.0.1:4192/audio/full/client-server-02.mp3"
+      ]
+    },
+    {
+      "id": "four-ways",
+      "stepIndex": 10,
+      "title": "四种扩展方式",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4192/thumbnails/11-four-ways.png"
+      },
+      "actions": [
+        {
+          "id": "four-ways-01",
+          "type": "speech",
+          "text": "官方已经提供网页搜索、代码执行或文件操作，就用 Builtin Tool。仅在一个应用内部执行的业务函数，直接写 Custom Tool。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/four-ways-01.mp3"
+        },
+        {
+          "id": "four-ways-02",
+          "type": "speech",
+          "text": "Skill 装知识和流程，相关时才渐进加载，不是可执行函数。M C P 把工具与数据源标准化给多个应用和 Host 复用，并可独立维护。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/four-ways-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4192/audio/full/four-ways-01.mp3",
+        "http://127.0.0.1:4192/audio/full/four-ways-02.mp3"
+      ]
+    },
+    {
+      "id": "decision-tree",
+      "stepIndex": 11,
+      "title": "扩展方式决策树",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4192/thumbnails/12-decision-tree.png"
+      },
+      "actions": [
+        {
+          "id": "decision-tree-01",
+          "type": "speech",
+          "text": "先看官方是否已有，再判断加入的是知识流程还是可执行能力。知识选 Skill，可执行能力再看复用范围。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/decision-tree-01.mp3"
+        },
+        {
+          "id": "decision-tree-02",
+          "type": "speech",
+          "text": "只在这个 App 用就写 Custom Tool；要跨多个 App、Claude Code 等 Host，或独立演进才做 M C P。M C P 不是更高级，而是复用协议。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/decision-tree-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4192/audio/full/decision-tree-01.mp3",
+        "http://127.0.0.1:4192/audio/full/decision-tree-02.mp3"
+      ]
+    },
+    {
+      "id": "mcp-roles",
+      "stepIndex": 12,
+      "title": "MCP Host Client Server",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4192/thumbnails/13-mcp-roles.png"
+      },
+      "actions": [
+        {
+          "id": "mcp-roles-01",
+          "type": "speech",
+          "text": "M C P Host 是 AI 应用，为每一个 Server 创建一个 Client，每个 Client 维护一条到对应 Server 的专属连接，彼此不共享连接状态。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/mcp-roles-01.mp3"
+        },
+        {
+          "id": "mcp-roles-02",
+          "type": "speech",
+          "text": "Host 接三个 Server，就有三个 Client 和三条连接。不是一个 Client 连三个 Server，也不是 Server 主动连接 Host。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/mcp-roles-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4192/audio/full/mcp-roles-01.mp3",
+        "http://127.0.0.1:4192/audio/full/mcp-roles-02.mp3"
+      ]
+    },
+    {
+      "id": "transports",
+      "stepIndex": 13,
+      "title": "MCP 两层与 Transport",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4192/thumbnails/14-transports.png"
+      },
+      "actions": [
+        {
+          "id": "transports-01",
+          "type": "speech",
+          "text": "M C P 内层用 J S O N R P C 二点零定义初始化、消息语义和 primitives。无论 transport 如何变化，这套消息结构保持一致。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/transports-01.mp3"
+        },
+        {
+          "id": "transports-02",
+          "type": "speech",
+          "text": "Server 与 Host 同机用 stdio，没有网络开销；远程服务用 Streamable HTTP，支持标准认证和可选 S S E。旧的纯 S S E transport 已弃用。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/transports-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4192/audio/full/transports-01.mp3",
+        "http://127.0.0.1:4192/audio/full/transports-02.mp3"
+      ]
+    },
+    {
+      "id": "primitives",
+      "stepIndex": 14,
+      "title": "MCP 三种 Primitive",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4192/thumbnails/15-primitives.png"
+      },
+      "actions": [
+        {
+          "id": "primitives-01",
+          "type": "speech",
+          "text": "Tools 是可执行函数，由模型决定何时调用，让 agent 能做事；Resources 是只读上下文，由应用控制，让 agent 看见文件或数据库 schema。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/primitives-01.mp3"
+        },
+        {
+          "id": "primitives-02",
+          "type": "speech",
+          "text": "Prompts 是可复用交互模板，由用户显式触发，例如 slash command。表结构要前置可见，应做 resource，不是让模型反复调用 get schema tool。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/primitives-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4192/audio/full/primitives-01.mp3",
+        "http://127.0.0.1:4192/audio/full/primitives-02.mp3"
+      ]
+    },
+    {
+      "id": "scopes",
+      "stepIndex": 15,
+      "title": "Claude Code MCP Scope",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4192/thumbnails/16-scopes.png"
+      },
+      "actions": [
+        {
+          "id": "scopes-01",
+          "type": "speech",
+          "text": "Local 只在当前项目给自己用，User 在所有项目给自己用。团队共享内部 M C P 应用 Project scope，配置位于项目根 dot M C P J S O N。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/scopes-01.mp3"
+        },
+        {
+          "id": "scopes-02",
+          "type": "speech",
+          "text": "dot M C P J S O N 应提交版本控制，认证头使用美元花括号环境变量展开。明文 token、user scope 或 git ignore 配置都不满足团队共享。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/scopes-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4192/audio/full/scopes-01.mp3",
+        "http://127.0.0.1:4192/audio/full/scopes-02.mp3"
+      ]
+    },
+    {
+      "id": "routing-debug",
+      "stepIndex": 16,
+      "title": "Tool Routing 排障顺序",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4192/thumbnails/17-routing-debug.png"
+      },
+      "actions": [
+        {
+          "id": "routing-debug-01",
+          "type": "speech",
+          "text": "两个工具选错，先扩 description 并加对称反向边界；描述清楚仍偶发，再查 system prompt 是否有全局指令抢路由。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/routing-debug-01.mp3"
+        },
+        {
+          "id": "routing-debug-02",
+          "type": "speech",
+          "text": "边界依赖复杂上下文才加 few shot，能力确实重叠才合并工具，意图很多且要跨系统预分流才上分类器。顺序按成本从低到高。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/routing-debug-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4192/audio/full/routing-debug-01.mp3",
+        "http://127.0.0.1:4192/audio/full/routing-debug-02.mp3"
+      ]
+    },
+    {
+      "id": "mcp-question",
+      "stepIndex": 17,
+      "title": "跨 Host MCP 考题",
+      "stepType": "slide",
+      "stepContent": {
+        "type": "react-deck-release",
+        "thumbnailUrl": "http://127.0.0.1:4192/thumbnails/18-mcp-question.png"
+      },
+      "actions": [
+        {
+          "id": "mcp-question-01",
+          "type": "speech",
+          "text": "客服 bot、Slack 助手和 Claude Code 工作流都要查询同一课程库，schema 变更只想改一处。共享 Python package 够不着独立的 Claude Code Host。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/mcp-question-01.mp3"
+        },
+        {
+          "id": "mcp-question-02",
+          "type": "speech",
+          "text": "正确方案是一个独立 M C P Server 暴露课程查询 Tools，三个 Host 都连接它；只读数据库表结构作为 Resource 前置提供。",
+          "audioUrl": "http://127.0.0.1:4192/audio/full/mcp-question-02.mp3"
+        }
+      ],
+      "audioUrls": [
+        "http://127.0.0.1:4192/audio/full/mcp-question-01.mp3",
+        "http://127.0.0.1:4192/audio/full/mcp-question-02.mp3"
+      ]
+    }
+  ]
+}
