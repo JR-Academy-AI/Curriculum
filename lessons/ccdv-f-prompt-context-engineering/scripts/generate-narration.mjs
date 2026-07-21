@@ -2,7 +2,7 @@
 
 import { execFileSync } from "node:child_process";
 import { createRequire } from "node:module";
-import { existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
 const backendRoot = process.env.JR_ACADEMY_BACKEND_ROOT || path.resolve("../../../..", "jr-academy");
@@ -13,6 +13,10 @@ const scriptPath = path.resolve("narration/script.json");
 const script = JSON.parse(readFileSync(scriptPath, "utf8"));
 const outputRoot = path.resolve("public");
 const force = process.argv.includes("--force");
+const onlyArgument = process.argv.find((argument) => argument.startsWith("--only="));
+const onlyIds = onlyArgument
+  ? new Set(onlyArgument.slice("--only=".length).split(",").map((value) => value.trim()).filter(Boolean))
+  : null;
 
 const pronunciationRules = [
   [/CCDV-F/g, "C C D V F"],
@@ -105,15 +109,19 @@ function probeDuration(filePath) {
   ).trim());
 }
 
-async function synthesize(apiKey, segment) {
+async function synthesize(apiKey, segment, context) {
   const outputPath = path.join(outputRoot, segment.audioPath);
-  const rawPath = `${outputPath}.raw.mp3`;
   mkdirSync(path.dirname(outputPath), { recursive: true });
 
-  if (!force && existsSync(outputPath)) {
+  const shouldGenerate = force && (!onlyIds || onlyIds.has(segment.id));
+  if (!shouldGenerate && existsSync(outputPath)) {
     const durationSeconds = probeDuration(outputPath);
     console.log(`skip ${segment.id} (${durationSeconds.toFixed(2)}s)`);
     return Math.round(durationSeconds * 1000);
+  }
+
+  if (!shouldGenerate && onlyIds) {
+    throw new Error(`Cannot review ${segment.id}: ${outputPath} does not exist`);
   }
 
   const response = await fetch(
@@ -124,9 +132,15 @@ async function synthesize(apiKey, segment) {
       body: JSON.stringify({
         text: textForSpeech(segment.text),
         model_id: script.voice.model,
+        seed: script.voice.seed,
+        previous_text: context.previousText || undefined,
+        next_text: context.nextText || undefined,
         voice_settings: {
           stability: script.voice.stability,
-          similarity_boost: script.voice.similarityBoost
+          similarity_boost: script.voice.similarityBoost,
+          style: script.voice.style,
+          use_speaker_boost: script.voice.useSpeakerBoost,
+          speed: script.voice.speed
         }
       })
     }
@@ -136,20 +150,7 @@ async function synthesize(apiKey, segment) {
     throw new Error(`ElevenLabs error for ${segment.id} (${response.status}): ${await response.text()}`);
   }
 
-  try {
-    writeFileSync(rawPath, Buffer.from(await response.arrayBuffer()));
-    execFileSync(
-      "ffmpeg",
-      [
-        "-y", "-i", rawPath,
-        "-af", `silenceremove=stop_periods=-1:stop_duration=0.12:stop_threshold=-40dB,atempo=${script.voice.tempo}`,
-        "-ar", "44100", "-b:a", "128k", outputPath
-      ],
-      { stdio: "ignore" }
-    );
-  } finally {
-    try { unlinkSync(rawPath); } catch (error) { if (error?.code !== "ENOENT") throw error; }
-  }
+  writeFileSync(outputPath, Buffer.from(await response.arrayBuffer()));
 
   const durationSeconds = probeDuration(outputPath);
   console.log(`done ${segment.id} (${durationSeconds.toFixed(2)}s)`);
@@ -168,12 +169,22 @@ try {
   const apiKey = settings?.aiSettings?.providers?.elevenlabs?.apiKey;
   if (!apiKey) throw new Error("ElevenLabs apiKey is not configured in admin AI Settings");
 
+  const orderedSegments = script.sections.flatMap((section) => section.segments);
+  const contextWindow = script.voice.contextSegments;
+  const contexts = new Map(orderedSegments.map((segment, index) => [
+    segment.id,
+    {
+      previousText: orderedSegments.slice(Math.max(0, index - contextWindow), index).map((candidate) => textForSpeech(candidate.text)).join(" "),
+      nextText: orderedSegments.slice(index + 1, index + 1 + contextWindow).map((candidate) => textForSpeech(candidate.text)).join(" ")
+    }
+  ]));
+
   let totalDurationMs = 0;
   let segmentCount = 0;
   for (const section of script.sections) {
     console.log(`\n[${section.title}]`);
     for (const segment of section.segments) {
-      segment.durationMs = await synthesize(apiKey, segment);
+      segment.durationMs = await synthesize(apiKey, segment, contexts.get(segment.id));
       totalDurationMs += segment.durationMs;
       segmentCount += 1;
     }
@@ -181,6 +192,12 @@ try {
 
   script.voiceStatus = "generated-local-review";
   script.generatedAt = new Date().toISOString();
+  script.generation = {
+    providerSpeed: script.voice.speed,
+    postProcessing: "none-preserve-natural-pauses",
+    deterministicSeed: script.voice.seed,
+    contextSegments: script.voice.contextSegments
+  };
   script.summary = {
     sectionCount: script.sections.length,
     segmentCount,
