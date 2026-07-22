@@ -2,7 +2,7 @@
   "name": "ccar-f-product-tour-remotion",
   "version": "0.1.0",
   "private": true,
-  "description": "CCAR-F 30s horizontal Remotion product tour",
+  "description": "CCAR-F horizontal Remotion product tour and YouTube guide",
   "scripts": {
     "studio": "remotion studio src/index.ts",
     "render": "remotion render src/index.ts CcarFAd out/ccar-f-30s-product-tour-16x9.mp4",
@@ -11,10 +11,13 @@
     "render:preview": "remotion render src/index.ts CcarFAd out/preview.mp4 --scale=0.5",
     "render:content-preview": "remotion render src/index.ts CcarFContentAd out/content-preview.mp4 --scale=0.5",
     "render:content-digital-human-preview": "remotion render src/index.ts CcarFContentAdDigitalHuman out/content-digital-human-preview.mp4 --scale=0.5",
+    "render:youtube-guide": "remotion render src/index.ts CcarFYouTubeGuide out/ccar-f-90s-youtube-guide-16x9-raw.mp4 --codec=h264 --video-bitrate=8M --audio-bitrate=192k",
+    "render:youtube-guide-preview": "remotion render src/index.ts CcarFYouTubeGuide out/ccar-f-90s-youtube-guide-preview.mp4 --scale=0.5",
     "capture": "node scripts/capture-product-tour.mjs",
     "voice": "node scripts/gen-elevenlabs-product-tour-voice.mjs",
     "voice:content": "node scripts/gen-elevenlabs-content-ad-voice.mjs",
     "voice:digital-human-intro": "node scripts/gen-elevenlabs-digital-human-intro.mjs",
+    "voice:youtube-guide": "node scripts/gen-elevenlabs-youtube-guide-voice.mjs",
     "voice:openai": "node scripts/gen-product-tour-voice.mjs"
   },
   "dependencies": {

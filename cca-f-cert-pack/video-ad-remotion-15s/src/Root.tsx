@@ -9,6 +9,13 @@ import {
   CONTENT_AD_HEIGHT,
   CONTENT_AD_WIDTH,
 } from './CcarFContentAd';
+import {
+  CcarFYouTubeGuide,
+  YOUTUBE_GUIDE_DURATION,
+  YOUTUBE_GUIDE_FPS,
+  YOUTUBE_GUIDE_HEIGHT,
+  YOUTUBE_GUIDE_WIDTH,
+} from './CcarFYouTubeGuide';
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -36,6 +43,14 @@ export const RemotionRoot: React.FC = () => {
         fps={CONTENT_AD_FPS}
         width={CONTENT_AD_WIDTH}
         height={CONTENT_AD_HEIGHT}
+      />
+      <Composition
+        id="CcarFYouTubeGuide"
+        component={CcarFYouTubeGuide}
+        durationInFrames={YOUTUBE_GUIDE_DURATION}
+        fps={YOUTUBE_GUIDE_FPS}
+        width={YOUTUBE_GUIDE_WIDTH}
+        height={YOUTUBE_GUIDE_HEIGHT}
       />
     </>
   );

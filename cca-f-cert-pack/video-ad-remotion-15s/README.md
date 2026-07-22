@@ -1,12 +1,13 @@
 # CCAR-F Remotion Product Tour
 
-30 秒 16:9 横屏课程宣传片工程，使用真实网页操作素材，不依赖海报轮播。横屏画幅用于完整保留英文题干、选项和模拟考试左右栏。
+16:9 横屏课程视频工程，包含 30 秒宣传片和 90 秒 YouTube 干货视频，使用真实网页操作素材，不依赖海报轮播。横屏画幅用于完整保留英文题干、选项和模拟考试左右栏。
 
 当前包含两条 Composition：
 
 - `CcarFAd`：产品操作导览，展示课程页、Demo Exam 和双模式模考。
 - `CcarFContentAd`：内容实力篇，展示架构判断、官方五域、16 节课程、479 道原创题和两套全真模考。
 - `CcarFContentAdDigitalHuman`：内容实力篇的真人半身数字人版本，讲师仅在开场出现 4.3 秒，随后完全退出画面。
+- `CcarFYouTubeGuide`：90 秒干货型 YouTube 视频，用原创退款场景讲清 prompt、PreToolUse 与重试的选择方法，再进入真实题库和双模式模考。
 
 完整制作记录见 [PRODUCTION_NOTES.md](./PRODUCTION_NOTES.md)，通用流程见 `.codex/skills/course-product-tour-video/SKILL.md`。
 
@@ -19,6 +20,7 @@
 4. `bun run render`：输出 1920×1080 H.264/AAC MP4。
    `bun run render:content` 输出内容实力篇正式版；`bun run render:content-preview` 输出半分辨率预览。
    `bun run render:content-digital-human` 输出开场带真人半身数字讲师的内容实力篇。
+   `bun run voice:youtube-guide` 生成 90 秒干货篇 Amy 旁白；`bun run render:youtube-guide` 输出 1080p 横屏母版。
 
 网页录屏保存在 `public/captures/`，配音与背景音保存在 `public/audio/`。最终可发布文件同步到课程包的 `public/assets/`。
 
