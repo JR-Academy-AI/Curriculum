@@ -46,7 +46,9 @@
     "name": "CCAO-F 考试直通包 · 第一期",
     "programPhase": 1,
     "cohortStatus": "PLANNING",
-    "currency": "USD"
+    "currency": "AUD",
+    "tuition": 42,
+    "promoTuition": 42
   },
   "curriculumPages": {
     "pages": [
