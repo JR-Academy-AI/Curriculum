@@ -136,6 +136,7 @@ product: ai-solo-founder-bootcamp
 3. **贯穿主线**:匹配单位(个人/小队)绑定「同一真实项目」,四周滚动推进。
 4. **喂后续 phase**:Demo Day 组队路演 / 校友网络 / 互为客户日,底层数据都来自这里。
 5. **跨期滚动**:匹配池随每期变大,老学员可被新期匹配 → 长成创业者网络(平台资产)。
+6. **🔑 创业营类型 = 所有专属功能的锚点**(2026-07-23 Lightman 定案 B):在 `Training` 加类别字段 `category: ECourseCategory`(`standard` | `incubator`,默认 standard,**不动现有 `ETrainingType`**)。创业营的 Training 标 `incubator`;classroom 的采集按钮 + 未来所有创业营 plugin(AI OS / Demo Day 分组 / 组队…)**一律门控在 `category === 'incubator'`,不再维护写死的 Training ID 列表**。前端从 study/program 接口读到的 `training.category` 判断,缺失/standard → 功能不显示(安全默认)。
 
 ## 9. 数据模型(ID-First,挂真实 schema)
 
