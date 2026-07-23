@@ -185,6 +185,17 @@ product: ai-solo-founder-bootcamp
 
 ## 11. 各端改造点
 
+### 11.0 入口(两个,写同一份 FounderProfile)
+
+学员填表有两个入口,**都指向同一份 `FounderProfile`(一人一份,重复进入=更新而非新建)**:
+
+- **入口 A · 独立页面**:专属 URL 的采集表单,报名学员可直接访问(报名成功后引导、或发链接)。可独立于课程 UI 使用。
+- **入口 B · 课程 classroom 内按钮**:在创业营的 classroom 学习界面放一个按钮(如「填写/更新我的创业档案」),点击打开同一份采集表单。`GET /founder-profile/me` 返回 null → 按钮显示「填写」;已填 → 显示「更新」。
+- 两入口都受同一道 enrollment 闸约束(未报名该期 → 403);表单提交带 `program`(当前课程那一期 cohort)。
+- **classroom 内按钮的具体挂载位置由前端 agent 在 web-zh 课程学习界面定位后确定**(不臆断路由)。
+
+### 11.1 各端
+
 | 端 | 改造 |
 |---|---|
 | `jr-academy`(后端) | ① **公开采集 endpoint** 仿现有 `src/modules/leads/`(`@Public() POST /leads/...` → service → 落 `FounderProfile` 集合),学员填表无需绕鉴权;② **admin 看板接口** 仿 `admin-cms/controllers/admin-lead-kanban.controller.ts` + service,在 `admin-cms.module.ts` 的 controllers/providers 数组注册。注意无全局 `/api/v1` 前缀;批量导出端点按需 `@SkipThrottle()` |
