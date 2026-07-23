@@ -1,6 +1,6 @@
 ---
 title: 创业营 · 上课前创业身份采集(含匹配预留)PRD
-status: spec
+status: build
 owner: @lightman
 priority: high
 product: ai-solo-founder-bootcamp
