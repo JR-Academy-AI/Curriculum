@@ -2,7 +2,7 @@
 
 ## 状态
 
-- 当前包含产品操作篇与内容实力篇两条 30 秒、16:9 横屏、ElevenLabs 配音版本。
+- 当前包含产品操作篇、内容实力篇两条 30 秒广告，以及一条 90 秒 YouTube 干货型横屏视频。
 - 已本地渲染和验证。
 - 尚未提交、推送或发布。
 
@@ -17,6 +17,32 @@
 | 题库数字 | 479 道，来自当前网页实值 |
 | 主口号 | 成为全球华人首批 Claude 官方认证架构师 |
 | 禁止内容 | 价格；“个人报不了名”及同类宣传表达 |
+
+## YouTube 干货篇（90 秒）
+
+这条视频不是把 30 秒广告拉长，而是先交付一个可独立使用的考试判断框架，再展示课程如何训练该能力。
+
+1. 用原创“身份未验证绝对不能退款”场景建立问题。
+2. 对比加强 system prompt、PostToolUse 日志、盲目重试和 PreToolUse 前置拒绝。
+3. 给出三步判断法：圈出约束 → 判断机制 → 选最简单的有效修复。
+4. 区分偏好类 prompt、资金/权限/隐私类代码或 hook、transient error 有限重试。
+5. 进入真实题库与两种模拟考试界面，最后用既定主口号收束。
+
+### YouTube 干货篇输出
+
+- `public/assets/ccar-f-90s-youtube-guide-16x9-v1.mp4`
+- `public/assets/ccar-f-90s-youtube-guide-16x9-v1-cover.png`
+- `public/assets/ccar-f-90s-youtube-guide-16x9-v1-contact-sheet.png`
+- `public/assets/ccar-f-90s-youtube-guide-zh-v1.srt`
+- `public/assets/ccar-f-90s-youtube-guide-transcript-v1.md`
+
+### YouTube 干货篇验收
+
+- Composition：`CcarFYouTubeGuide`，2700 帧，30fps，90.1 秒。
+- 配音：ElevenLabs Amy、`eleven_v3`、`atempo=1.18`；数字人仍只出现 4.3 秒。
+- 成片：H.264 High、1920×1080、AAC-LC 48kHz 双声道、Fast Start。
+- 混音：`-14.00 LUFS`，true peak `-2.68 dBTP`。
+- 发布方式：先以 Unlisted 上传，人工确认 YouTube altered/synthetic disclosure 后再转 Public。
 
 ## 内容实力篇
 
@@ -149,6 +175,9 @@ bun run render:content-preview
 bun run render:content
 bun run render:content-digital-human-preview
 bun run render:content-digital-human
+bun run voice:youtube-guide
+bun run render:youtube-guide-preview
+bun run render:youtube-guide
 ```
 
 通用制作规范见 `.codex/skills/course-product-tour-video/SKILL.md`。
