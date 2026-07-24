@@ -386,6 +386,35 @@
         </div>
       </div>
 
+      <!-- ========== Vibe Coding Master L5 ========== -->
+      <div class="card">
+        <div class="card-head">
+          <span class="badge badge-react">React SlideEngine</span>
+          <span class="badge badge-status-local">⚙ 本地已构建 · 待部署</span>
+        </div>
+        <h2>Vibe Coding 大师课 · 第五节课 — Skills：把套路固化成能力</h2>
+        <p class="desc">
+          动手工作坊。承接 L4——那节课里学员一遍遍对 Agent 说几乎一样的话（scaffold plan / CI / PR body），这节把这些重复套路固化成 <strong>Claude Code Skill</strong>：一段 <code>SKILL.md</code>（frontmatter <code>name</code> + <code>description</code> + 正文步骤/规则/模板），Agent 靠 <code>description</code> 自动匹配或显式 <code>/name</code> 调用，从「每次都讲一遍」升级到「一次定义、处处复用」。全程延续 <strong>Vibe Coding 口径 —— 写 Skill 本身也是指挥 Agent，你说需求、Agent 起草，你盯住「这个 Skill 该什么时候触发、边界在哪」</strong>。用 Anthropic 官方文档给出的真实 Skill 当教材（<code>summarize-changes</code> / <code>pdf-processing</code> / <code>fix-issue</code> / <code>run-skill-generator</code>，不引用本课程仓库自己的 Skill 目录），讲清 Skill vs 一次性 prompt vs rules 的区别、该不该做成 Skill 的判断线、<code>SKILL.md</code> 组成格式（必填 <code>name</code>/<code>description</code>，可选 <code>argument-hint</code> + 三类支持文件，均以官方文档真实字段/例子为准）、<strong>渐进式披露</strong>原理（常驻 description / 触发时读正文 / 按需读支持文件——为什么 Skill 库能一直攒不拖慢 Agent）与 Skill 的好处（可复用/一致性/高效/团队共享/可版本管理）、<code>description</code> 是触发命门、元例子（官方自带的 <code>/run-skill-generator</code>——专门生成别的 Skill 的 Skill），再动手挑一个重复动作、指挥 Agent 起草 <code>SKILL.md</code>、真调用一次、迭代一次（Skill 也是能力层的 SoT）。另有两页实战向内容：<strong>原理页</strong>逐句拆解投屏 prompt 为什么这样组词（上下文先行/产出形态先定/结构化字段拆开要/检查点前置），<strong>环境页</strong>讲国内用不了 Claude Code 时的三条退而求其次路线（国产模型+开源 agent 壳 / 国内一体化编程工具 / 合规渠道访问 Claude）及生态差距。23 页，含判断清单 + 好/坏 description 对比 + 常见坑排查。
+        </p>
+        <div class="meta-row">
+          <div class="meta-item"><div class="k">讲师</div><div class="v">Lightman</div></div>
+          <div class="meta-item"><div class="k">时长</div><div class="v">125 min+</div></div>
+          <div class="meta-item"><div class="k">Slide 数</div><div class="v">23</div></div>
+          <div class="meta-item"><div class="k">技术栈</div><div class="v">React 19 + framer-motion</div></div>
+        </div>
+        <div class="reuse-label">跨课复用</div>
+        <div class="reuse-chips">
+          <span class="chip locked">对应 ai-builder 课程第五节；尚未接入 outline.json（待 bootcamp-sync）</span>
+          <span class="chip locked">（可复用：任何强调「Agent 能力沉淀 / Skill 库建设」的 Bootcamp 单元）</span>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="./lessons/vibe-coding-master-l5/" target="_blank" rel="noopener">▶ 打开 Slides</a>
+          <a class="btn" href="https://github.com/JR-Academy-AI/curriculum/blob/main/lessons/vibe-coding-master-l5/PRD.md" target="_blank" rel="noopener">📝 PRD / 节奏表</a>
+          <a class="btn" href="https://github.com/JR-Academy-AI/curriculum/blob/main/lessons/vibe-coding-master-l5/RUNSHEET.md" target="_blank" rel="noopener">🎬 Runsheet / 带课手册</a>
+          <a class="btn" href="https://github.com/JR-Academy-AI/curriculum/tree/main/lessons/vibe-coding-master-l5/src/components/slides" target="_blank" rel="noopener">📁 slides 源码</a>
+        </div>
+      </div>
+
       <!-- ========== Legacy L1: Vibe Coding ========== -->
       <div class="card">
         <div class="card-head">
