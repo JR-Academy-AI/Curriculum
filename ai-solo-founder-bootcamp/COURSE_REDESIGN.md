@@ -1,87 +1,85 @@
 # AI 一人创业营 · 整门课重构大纲(W1–W15)
 
-> **单一真相文档**。整门课(4 个 phase)大纲以本文为准,改这里。取代旧的 `PHASE1_REDESIGN.md`(已并入)。下游 outline.json 同步以本文的动作/内容映射为准。
+> **单一真相文档**。整门课(4 phase / 15 周)大纲以本文为准,改这里。机器大纲 `public/outline.json` 与本文同步(v0.5)。
 
 ## 一句话
-一个在职专业人士,14 周里把 AI 部署进创业的每个环节,从一个念头 → 一门能跑、能卖、合规、有增长的一人 AI 生意 → 毕业进入 Founder Club。
+一个在职专业人士,15 周里把 AI 部署进创业的每个环节,从一个念头 → 一门能跑、能卖、合规、有增长的一人 AI 生意 → 毕业进入 Founder Club。
 
 ## 设计原则(骨头)
-1. **本质 = 让在职的人「真的开始」**。这群人(35-50、senior、时间紧)不缺能力,缺"从没真开始"。成功标志 = 他做了件回不了头的小事,从"想创业的上班族"变成"在跑项目的人"。
-2. **按真实动作排,不按知识点排**。每周被推着做一件更重、更公开的真实动作(动作梯子);知识是挂在动作上的配件,不是主角。
-3. **每节课三件套**:① 自己项目上的真进展 ② 一个"卧槽"瞬间(必须是他**自己项目上**的,不是台上 canned demo)③ 下课能**晒**的产出。
-4. **"别无聊"=" 真的开始"**:每节 = 自己项目上的、能晒的、带卧槽的进展 → 晒出去被人问 → 更放不下。
+1. **本质 = 让在职的人「真的开始」**。这群人(35-50、senior、时间紧)不缺能力,缺的是"从没真开始"。成功标志 = 他做了件回不了头的小事。
+2. **按真实动作排,不按知识点排**。每周被推着做一件更重、更公开的真实动作;知识是挂在动作上的配件。
+3. **每节课三件套**:① 自己项目上的真进展 ② 一个"卧槽"瞬间(必须是他自己项目上的)③ 下课能**晒**的产出。
+4. **"别无聊"= "真的开始"**:晒出去被人问 → 更放不下。
 
-## 交付形式 & 固定节奏
-- 每周日 2-5 点(3h)· 线下 office + 同步直播。
-- 每节:**开场 15min** 看 AI OS 这周替你跑了啥 → **中段 30min** 1-2 人上台讲进展 + networking(翻创业身份找队友/客户)→ **下课** 给 OS 派下周的活 + 定"下周你要撞的真实动作"。
+## 结构铁律
+- **每周日 3h = 一节线下现场课**(线下 office + 同步直播),周内环节放这节课的 steps,**不拆成多个 lesson**。
+- **周中自学 / Lab 各自独立成课**(Lab 独立是平台铁律)。
+- 每节固定节奏:开场 15min review AI OS 跑了啥 → 中段 30min「1-2 人上台讲进展 + networking」→ 下课给 OS 派下周的活。
 
 ## 贯穿
 - **AI OS 主线**:课上搭好/派活 → 周中 OS 自动跑 → 下节 review。在职从劣势变优势。
 - **MVP coding 全自学**(现成资料 + PBL/classroom 视频)。
-- **组队**:pre-work 创业身份采集(A/B/C)决定 W1 组队,并在全程 networking + W15 互为客户中持续消费(平台 matching 工具)。
+- **组队**:pre-work 创业身份采集(A/B/C)决定 W1 组队,全程 networking + W15 互为客户日持续消费(平台 matching 工具)。
 
 ## 开课前 · Pre-work
-装机 + LLM key + **AI 订阅**(预算有限→Codex/ChatGPT · 更省→DeepRouter · 充足→Codex+Claude 双开)+ ABN 预备 + **填创业身份采集**(A/B/C,A 带 idea 草稿)。
+装机 + LLM key + **AI 订阅**(预算有限→Codex/ChatGPT · 更省→DeepRouter · 充足→Codex+Claude 双开)+ ABN 预备 + **填创业身份采集**(A/B/C)。
 
 ---
 
-# Phase 1 · AI Enable Business(W1–W6)
-> 建成一个验证过、AI 化的产品,并刷脸卖出第一单(证明有人真会付钱)。
+# Phase 1 · AI Enable Business(W1–W7)
+> 建成一个验证过、AI 化的产品,立起品牌,并刷脸卖出第一单。
 
-- **W1 · 运营中枢** — 搭 CEO AI OS + 锁方向 + 组队。产出:AI OS + 一页生意 SoT + 组好的队。挂:OPC 心智 + 澳洲 indie 案例 · AI 第二大脑①③④。
-- **W2 · 调研/洞察** — OS 自动跑调研 + 亲自撞真实用户。产出:自动调研 + 真实用户访谈。挂:AI 用户调研 + Lab · Agent Schedule · 用户 interview。
-- **W3 · 商业判断/定价** ⭐**Stan(麦肯锡)** — 是不是好生意 + 赚钱途径 + 形态决策 + 定价。产出:一页商业验证报告。挂:选品矩阵 · 定价模型。
-- **W4 · 产品/交付** — 用 AI 做出并交付产品(会 code→SaaS 自学;不会 code→专长+AI 生产化服务/信息产品)。产出:能演示/能交付的最小版本。挂:Source of Truth 一稿出全套 · MVP(自学)。
-- **W5 · 项目管理** ⭐**Ray(微软)** — AI OS 当 PM 管住在跑的项目(任务/优先级/在职版节奏)。产出:OS 维护的 backlog + 一周执行计划。挂:AI 第二大脑⑥自动化。
-- **W6 · 刷脸首单** — 用人脉卖出第一单 = 证明有人真会付钱(不建系统)。产出:第一笔真实付费。
-- **出关物**:一个验证过、AI 化、被真人付过一次钱的产品。
+- **W1 · 搭起你的 CEO AI OS|Your CEO AI OS** — OPC 心智 + 澳洲在职创业者案例 / 锁方向写死一页生意 SoT / A·B·C 复盘 + 现场组队 / 搭 AI OS(选型 → 喂 Gmail·Calendar·Drive·Notion → 现场派 7 个秘书任务)。**产出**:能干活的 AI OS + 一页 SoT + 团队。
+- **W2 · 你的 AI 员工上岗|Agents at Work** — 部署能干活的 agent(**Hermes / 龙虾 / Codex / Claude Code** 现场选型 + 装上)→ 接权限、写工作说明书 → **一起搭 Agent Schedule 自动化**。周中:agent 跑第一批调研 + 你自己约 5 个真实用户访谈。**产出**:一支替你干活的 agent 队伍 + 第一批调研。
+- **W3 · 这是不是一门好生意|Prove the Business** ⭐Stan(麦肯锡) — 变现路径全景 + 麦肯锡四把尺子(市场规模/竞争/单位经济/护城河)+ 形态决策 + 定价。**产出**:继续/转向的书面结论 + 定价。
+- **W4 · 做出能卖的东西|Make It Real** — 不会 code 的人把专长+AI 做成生产化服务/信息产品(交付物 + SOP);会 code 的定 MVP 范围。周中:MVP coding 全自学 + 三个 Vibe Lab。**产出**:能演示、能交付的最小版本。
+- **W5 · 立起你的品牌门面|Brand & Website** — 大家一起做**官网 + design system + 品牌**(Source of Truth 一稿出全套:官网/Pitch Deck/一页纸/公众号)。**产出**:上线的官网 + 一套 design system。
+- **W6 · 别让项目烂尾|Keep Shipping** ⭐Ray(微软) — 大厂 PM 落到一人公司(任务拆解/优先级/在职版可持续节奏)+ AI OS 当 PM 维护 backlog、追进度。**产出**:OS 维护的 backlog + 一周执行计划。
+- **W7 · 收到第一笔钱|First Dollar** — 人脉盘点 + 一对一 pitch(不建系统,就是去卖)+ Stripe/Lemonsqueezy 澳洲版 + AI 生成法律文件由 AI 律师审。**产出**:第一笔真实付款到账。
 
-# Phase 2 · Go To Market(W7–W10)
-> 把刷脸首单变成一台不靠刷脸的、会自己复利的获客机器。
+# Phase 2 · Go To Market(W8–W11)
+> 把刷脸首单变成一台不靠刷脸、会自己复利的获客机器。
 
-- **W7 · 内容引擎** — AI 内容工厂持续产内容(选题→写→图→短视频),靠内容(非刷脸)被发现。挂:AI 内容工厂 · 小红书 · X build-in-public · AI 视频/漫剧/海报。
-- **W8 · 主动获客** — AI 批量个性化 outreach(LinkedIn/邮件)+ ProductHunt/社区冷启动。挂:LinkedIn outreach + ProductHunt · Reddit/IndieHackers · outreach 生成器 Lab。
-- **W9 · 被动获客** — SEO + GEO,让人和 AI 搜到你(E-E-A-T/Schema)。挂:SEO long-tail + AEO/GEO · E-E-A-T + Schema · seo-master 自学。
-- **W10 · 用户增长 / Growth Hacking** — AARRR 诊断 + 推荐/病毒循环 + 增长实验,让增长自己跑。挂:referral-campaign · paid-ads-planner · 增长实验 Lab。
-- **出关物**:三路获客 + 一个复利循环 = 不靠刷脸也能持续、复利地进客户。
-- 边界:W7-9 把人**弄进来**,W10 让人**留下来 + 带人来**。
+- **W8 · AI 内容工厂|Content Factory** — 小红书爆款+私信转化 / 视频号+公众号+私域 / AI 视频·海报·漫剧 / X build in public。**产出**:一条能持续出货的内容流水线 + 首波真实流量。
+- **W9 · 主动敲开客户的门|Outbound** — LinkedIn 个性化 outreach + ProductHunt 冷启动 + 中英文圈 6 大线下渠道。**产出**:发出的 outreach + 收回的真实线索。
+- **W10 · 让人和 AI 都搜到你|SEO & GEO** — Google long-tail SEO + AEO/GEO + E-E-A-T / Schema.org。**产出**:上线 SEO 页 + 第一次被搜到/被 AI 引用。
+- **W11 · 用户增长|Growth Hacking** — AARRR 漏斗诊断 + 推荐机制与病毒循环 + 一个 launch 跑通 10 渠道。**产出**:上线的增长循环 + 实验数据。
 
-# Phase 3 · 澳洲运营(W11–W12)
-> 全球独家护城河:AI 一人创业 × 澳洲税务/Grant。让生意合法、省税、财务自动流转。
+# Phase 3 · Australia Operations(W12–W13)
+> 全球独家护城河:AI 一人创业 × 澳洲税务/Grant。
 
-- **W11 · AI 化财务、运营 + 数据分析** — 财务自动化(Stripe→Xero、AI 记账、Notion ERP、AI 客服/邮件)+ **AI 数据分析**(财务+运营+增长数据 → AI 产出洞察:收入趋势/LTV·CAC/渠道/churn)。产出:自动流转 + AI 分析的经营看板。挂:Notion ERP · Stripe→Xero · AI 客服 Lab · OpenClaw/n8n/Zapier。
-- **W12 · 澳洲会计师专场(结构 + 税务 + RDTI)** ⭐**澳洲会计师** — sole trader vs Pty Ltd + ABN/TFN/GST/BAS + PSI/CGT + **RDTI(R&D Tax Incentive)退税(重头戏)**;深度实操(BAS 填报、grant 申请细节)下沉自学 + AI 起草 Lab。产出:公司结构决策 + 财务规划表 + RDTI 资格评估 + AI 起草的申请初稿。
-- **出关物**:一门在澳洲合法、财务自动、还能退税的一人生意。
+- **W12 · 让生意自己运转|Autopilot** — Notion 个人 ERP + AI 客服/邮件自动化 + **AI 数据分析**(LTV·CAC / 渠道 / churn 经营看板)。**产出**:自动流转 + AI 出洞察的经营看板。
+- **W13 · 把钱从税务局拿回来|Compliance & RDTI** ⭐持牌 CPA / Grant consultant — Sole trader vs Pty Ltd 决策树 + PSI/个人 vs 公司税/CGT + **RDTI 43.5% 退税(重头戏)**。**产出**:公司结构决策 + RDTI 资格评估 + 申请初稿。
 
-# Phase 4 · Founder Club(W13–W14+ · 后续扩展)
-> 从「你有个在跑的生意」到「你能把它 pitch 给任何人、能融到钱、能被看见」。毕业 = 加入持续的 AI 一人创业者社群/网络。**本 phase 后续继续加内容。**
+# Phase 4 · Founder Club(W14–W15+)
+> 从「有个在跑的生意」到「能 pitch 给任何人、能融到钱、能被看见」。毕业 = 入会。
 
-- **W13 · Pitch + BP + 融资** ⭐**Stan(麦肯锡,书挡回归)** — 用 AI 把 12 周真实产出/数据做成 **pitch deck + BP + 一页纸**(problem/solution/traction/market/ask);学 pitch 讲法(30 秒 → 5 分钟 → 投资人版);融资入门(business vs VC / term sheet / SAFE / 估值 / cap table);Stan 从战略角度打磨"故事怎么讲、放大逻辑"。产出:pitch deck + BP + 一页纸。**工具**:Canva/Gamma/Slides + AI(平台不代码生成 pptx——铁律)。
-- **W14 · Demo Day = Founder Club 入会** — 三城联合路演(每人真上台 5min pitch,用 W13 的 deck)+ **投资人对接** + 三城"互为客户日"(用创业身份工具互相成客户/合伙人)。**晒(毕业)**:一门能跑、能卖、合规、有增长的一人 AI 生意。
-- **入会之后 = Founder Club 本体(持续)**:校友网络 · mastermind · 6 个月+ Office Hour · 互为客户市场(matching 工具持续跑)· 老带新。
-- **Founder Club 的战略价值**:留存 / 老带新招生引擎 / matching 网络的家(平台资产)/ membership 持续变现 / 互为客户 = 现成客户池。
+- **W14 · 把生意讲成故事|Pitch & BP** ⭐Stan(书挡回归) — 把前 13 周真实数据做成 pitch deck + BP + 一页纸 + 三档 pitch 讲法(30 秒/5 分钟/投资人版)+ 融资入门(term sheet/SAFE/估值)+ 投资人 fireside。**产出**:基于真实 traction 的 pitch。
+- **W15 · 登台|Demo Day · 入会 Founder Club** — 三城联合路演每人 5min pitch + 投资人对接 + 互为客户日 invite-only 晚宴。**入会之后**:校友网络 · mastermind · 6 个月 Office Hour · 互为客户市场 · 老带新。
 - **待加内容(创业者角度)**:谈判/成交(把 pitch 变签约)· 媒体/PR 曝光 · 投资人关系(持续 pipeline)。
 
 ---
 
-## 嘉宾星光(防困亮点,一 phase 至少一个)
-- **Stan(麦肯锡)** — W3 商业判断 + W13 Pitch/BP/放大(一头一尾书挡)
-- **Ray(微软)** — W5 项目管理
-- **澳洲会计师** — W12 会计师专场(结构+税务+RDTI)
-- **投资人**(待定)— W13 融资 fireside
+## 嘉宾星光
+- **Stan(麦肯锡)** — W3 商业验证 + W14 Pitch/BP(一头一尾书挡)
+- **Ray(微软)** — W6 项目管理
+- **持牌 CPA / Grant consultant** — W13
+- **投资人**(待定)— W14 fireside
 
 ## 全课总览
 | Phase | 周 | 主题 | 出关物 |
 |---|---|---|---|
-| 1 · AI Enable Business | W1–W6 | 建 AI 化产品 + 刷脸首单 | 被付过一次钱的 AI 化产品 |
-| 2 · Go To Market | W7–W10 | 内容/主动/被动获客 + 用户增长 | 会复利的获客机器 |
-| 3 · 澳洲运营 | W11–W12 | 财务运营+数据分析 / 会计师专场(税务+RDTI) | 合法·财务自动·能退税 |
-| 4 · Founder Club | W13–W14+ | Pitch/BP/融资 + Demo Day + 持续社群 | 毕业入会,进入创业者网络 |
+| 1 · AI Enable Business | W1–W7 | AI OS / agent 上岗 / 商业验证 / 产品 / 品牌 / PM / 首单 | 被付过一次钱的 AI 化产品 + 品牌官网 |
+| 2 · Go To Market | W8–W11 | 内容工厂 / Outbound / SEO·GEO / 用户增长 | 会复利的获客机器 |
+| 3 · Australia Operations | W12–W13 | 自动运转 + 数据分析 / 合规 + RDTI | 合法·财务自动·能退税 |
+| 4 · Founder Club | W14–W15+ | Pitch/BP/融资 + Demo Day + 持续社群 | 毕业入会,进入创业者网络 |
 
-## 待细化(下一步)
-1. **每周"给学员的真实动作硬指标"**逐周写死(硬性交付,给学员的过关线)。
-2. **A/B/C 三类人**在同一节的差异化(尤其 C 类"还在决定要不要下场")。
-3. **Phase 4 后续扩展内容**(Founder Club 除 Demo Day 外还要加什么)。
-4. 各周挂靠的现有 lesson 精确到节(尤其 Phase 2/3)。
-5. **14 周对在职人群是否过长**——14 个周日仍是大承诺,后续考虑某些周合并/自学分流。
-6. 嘉宾落实:Stan / Ray 已定;会计师 / 投资人待约。
+## 待细化
+1. **每周"真实动作硬指标"**逐周写死(给学员的过关线)。
+2. **A/B/C 三类人**在同一节的差异化(尤其 C 类)。
+3. **Phase 4 后续扩展**(谈判成交 / PR / 投资人关系)。
+4. **W15 Demo Day 时长**:实际全天(路演+对接+晚宴 ≈ 510min),outline 按铁律统一记 180min,是否开例外。
+5. **W1 vs W2 选型分层**:W1 选"秘书"、W2 选"员工 + 排程",分界待确认。
+6. 静态页 `curriculum.html` / `phase1-4.html` 仍是旧结构,需单独一轮同步。
+7. 嘉宾落实:Stan / Ray 已定;CPA / 投资人待约。
+8. `program.commenceCourseDate` 按 15 周重算。

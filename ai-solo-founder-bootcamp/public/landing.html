@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI 一人创业营 · ONE PERSON COMPANY | 匠人学院 JR Academy</title>
-<meta name="description" content="11 周澳洲华人 OPC 创业实战营 · AI 让一个人 ≈ 一个团队 · 副业从 0 起 / 主业 1 到 10 · 三城线下 · 首期预售 A$ 2,400（限 15 席 · 可付定金锁席）→ 首期早鸟 $2,800 → 第二期 $3,800">
+<meta name="description" content="15 周澳洲华人 OPC 创业实战营 · AI 让一个人 ≈ 一个团队 · 副业从 0 起 / 主业 1 到 10 · 三城线下 · 首期预售 A$ 2,400（限 15 席 · 可付定金锁席）→ 首期早鸟 $2,800 → 第二期 $3,800">
 <meta property="og:title" content="AI 一人创业营 · ONE PERSON COMPANY">
-<meta property="og:description" content="AI 让一个人 ≈ 一个团队 · 给打工人：起一条副业现金流 · 给老板：同样人手赚更多 · 11 周澳洲华人 OPC 创业实战营">
+<meta property="og:description" content="AI 让一个人 ≈ 一个团队 · 给打工人：起一条副业现金流 · 给老板：同样人手赚更多 · 15 周澳洲华人 OPC 创业实战营">
 <meta property="og:type" content="website">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Bricolage+Grotesque:wght@700;900&display=swap" rel="stylesheet">
 <style>
@@ -98,6 +98,23 @@ body{font-family:'DM Sans','Noto Sans SC',sans-serif;background:#faf7f2;color:#1
 .outcome-card h4{font-family:'Bricolage Grotesque','Noto Sans SC',sans-serif;font-size:14.5px;font-weight:900;color:#fff;line-height:1.35;margin-bottom:8px}
 .outcome-card p{font-size:12px;color:rgba(255,255,255,0.7);line-height:1.6}
 
+/* 15-week curriculum strips */
+.week-row-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:880px){.week-row-grid{grid-template-columns:1fr}}
+.phase-strip{background:#fff;border:1px solid #e8e4dc;border-left-width:6px;padding:22px 24px;transition:all 0.2s}
+.phase-strip:hover{box-shadow:0 8px 24px rgba(16,22,47,0.08)}
+.phase-strip .ps-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.phase-strip .ps-tag{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#fff;padding:4px 10px}
+.phase-strip .ps-name{font-family:'Bricolage Grotesque','Noto Sans SC',sans-serif;font-size:19px;font-weight:900;color:#10162f}
+.phase-strip .ps-sub{font-size:13px;color:#666;line-height:1.6;margin-bottom:12px}
+.phase-strip .ps-weeks{list-style:none;padding:0;margin:0}
+.phase-strip .ps-weeks li{padding:8px 0;border-bottom:1px dashed #eee;font-size:13.5px;color:#10162f;line-height:1.6}
+.phase-strip .ps-weeks li:last-child{border-bottom:none}
+.phase-strip .ps-weeks b{font-family:'Space Mono',monospace;font-weight:700;margin-right:8px;color:#10162f}
+.phase-strip .ps-weeks em{font-style:normal;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:#fff;background:#ff5757;padding:2px 6px;margin-left:6px}
+.phase-strip .ps-weeks span{display:block;font-size:12.5px;color:#666;margin-top:3px;line-height:1.6}
+.phase-strip .ps-out{margin-top:12px;padding:8px 12px;background:#fffbe6;border-left:3px solid #FFDE59;font-size:12.5px;font-weight:700;color:#10162f}
+
 /* Why now compact */
 .window-row{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid #e8e4dc;align-items:start}
 .window-row:last-child{border-bottom:none}
@@ -170,19 +187,19 @@ body{font-family:'DM Sans','Noto Sans SC',sans-serif;background:#faf7f2;color:#1
   <div class="hero-inner">
     <div class="badge">🇦🇺 BOOTCAMP M01 · JUN-AUG 2026 · 限额 50 人</div>
     <h1>AI 让一个人 ≈ <em>一个团队</em><br/>副业从 <em>0 起</em> · 主业 <em>1 到 10</em></h1>
-    <div class="tagline">11 WEEKS · 澳洲华人 OPC 创业实战营 · 三城线下</div>
+    <div class="tagline">15 WEEKS · 澳洲华人 OPC 创业实战营 · 三城线下 · 每周日 3h 线下现场课</div>
 
     <p class="lead">
-      <strong>给在职打工的</strong>：11 周用 AI 起一条副业现金流（不雇人 / 不辞职 / 主业不影响）<br/>
-      <strong>给已有公司的</strong>：11 周让 AI 接管运营琐事 + 拿 RDTI 退税 — 同样人手赚更多<br/>
-      <strong>这是创业实战营 · 不是 AI 工具课</strong> — 11 周后真的有副业收入 / 主业增收。
+      <strong>给在职打工的</strong>：15 周用 AI 起一条副业现金流（不雇人 / 不辞职 / 主业不影响）<br/>
+      <strong>给已有公司的</strong>：15 周让 AI 接管运营琐事 + 拿 RDTI 退税 — 同样人手赚更多<br/>
+      <strong>这是创业实战营 · 不是 AI 工具课</strong> — 15 周后真的有副业收入 / 主业增收。
     </p>
 
     <div class="hero-meta">
       <div class="hero-meta-card">
         <div class="lbl">DATE · 日期</div>
         <div class="val">2026 年 6-8 月</div>
-        <div class="sub">11 周 · 4 Phase</div>
+        <div class="sub">15 周 · 4 Phase · 每周日 3h 线下</div>
       </div>
       <div class="hero-meta-card">
         <div class="lbl">FORMAT · 形式</div>
@@ -274,7 +291,7 @@ body{font-family:'DM Sans','Noto Sans SC',sans-serif;background:#faf7f2;color:#1
         <div class="num">02</div>
         <div class="icon-circle">🤝</div>
         <h3>50 同学 = $500k-4M 网络</h3>
-        <p>5 类商业角色：互为客户 / 合伙人 / 天使 / 服务采购 / 推荐源。普通课卖完课率，<strong>OPC 课卖"你 11 周后认识的这 50 个人"</strong>。</p>
+        <p>5 类商业角色：互为客户 / 合伙人 / 天使 / 服务采购 / 推荐源。普通课卖完课率，<strong>OPC 课卖"你 15 周后认识的这 50 个人"</strong>。</p>
       </div>
 
       <div class="kill-card">
@@ -288,14 +305,14 @@ body{font-family:'DM Sans','Noto Sans SC',sans-serif;background:#faf7f2;color:#1
         <div class="num">04</div>
         <div class="icon-circle">🇦🇺</div>
         <h3>RDTI 43.5% 退税 · 全球独家</h3>
-        <p>Phase 3 三周澳洲会计 + Grant 实战。持牌 CPA + Grant consultant 帮 5+ 客户拿过 RDTI。<strong>雇外面 CPA + Grant consultant 单独搞 $8-18k</strong>。</p>
+        <p>Phase 3（W12-W13）澳洲会计 + Grant 实战。持牌 CPA + Grant consultant 帮 5+ 客户拿过 RDTI。<strong>雇外面 CPA + Grant consultant 单独搞 $8-18k</strong>。</p>
       </div>
 
       <div class="kill-card">
         <div class="num">05</div>
         <div class="icon-circle">⭐</div>
         <h3>6 项硬指标真产出毕业</h3>
-        <p><strong>$1+ 真实付费</strong>（不接受朋友友情付）+ ABN + Grant 申请提交 + 产品 URL + 10+ 内容 + Demo Day 出席。<strong>11 周后手里是产品 + 真实付款截图，不是结业证</strong>。</p>
+        <p><strong>$1+ 真实付费</strong>（不接受朋友友情付）+ ABN + Grant 申请提交 + 产品 URL + 10+ 内容 + Demo Day 出席。<strong>15 周后手里是产品 + 真实付款截图，不是结业证</strong>。</p>
       </div>
 
     </div>
@@ -306,7 +323,7 @@ body{font-family:'DM Sans','Noto Sans SC',sans-serif;background:#faf7f2;color:#1
 <section class="section alt">
   <div class="section-inner">
     <div class="section-eyebrow">📦 OUTCOMES</div>
-    <h2 class="section-title">11 周后 <em>你能带走什么</em></h2>
+    <h2 class="section-title">15 周后 <em>你能带走什么</em></h2>
     <p class="section-sub">5 个具体 outcome · 不是技能点不是 toolbox · 是可以直接拿出去用的 asset</p>
 
     <div class="outcome-grid">
@@ -332,9 +349,73 @@ body{font-family:'DM Sans','Noto Sans SC',sans-serif;background:#faf7f2;color:#1
       </div>
       <div class="outcome-card">
         <div class="icon-circle">🌐</div>
-        <h4>50 同学 + 10 类 Faculty + 6 月校友 Office Hour</h4>
-        <p>校友群持续 + 未来 cohort 嘉宾位</p>
+        <h4>50 同学 + 10 类 Faculty + Founder Club 会籍</h4>
+        <p>校友群持续 + 6 月 Office Hour + 未来 cohort 嘉宾位</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 15 周结构 ============ -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-eyebrow">🗓 CURRICULUM · 15 周 4 Phase</div>
+    <h2 class="section-title">每周日 <em>3 小时线下现场课</em> × 15 周</h2>
+    <p class="section-sub">
+      墨尔本主场 office 现场讲，悉尼 / 布里斯班卫星教室同步直播（hub-and-spoke 三城，本地 Tutor 1:8，不录播）。每节固定节奏：开场 15min 看 AI OS 这周替你跑了什么 → 中段 30min 有人上台讲进展 + networking → 下课给 OS 派下周的活，并定死「下周你要撞的那个真实动作」。周中另有 5-8 小时自学 + Lab，MVP coding 全部走自学线。
+    </p>
+
+    <div class="week-row-grid">
+      <div class="phase-strip" style="border-left-color:#6366f1">
+        <div class="ps-head"><span class="ps-tag" style="background:#6366f1">PHASE 1 · W1-W7</span><span class="ps-name">AI Enable Business</span></div>
+        <div class="ps-sub">把 AI 部署进生意的每个环节，然后刷脸卖出第一单</div>
+        <ul class="ps-weeks">
+          <li><b>W1</b> 搭起你的 CEO AI OS<span>选型 + 喂 Gmail/Calendar/Drive/Notion + 现场派 7 个秘书任务</span></li>
+          <li><b>W2</b> 你的 AI 员工上岗<span>Hermes / 龙虾 / Codex / Claude Code 选型 + 一起搭 Agent Schedule</span></li>
+          <li><b>W3</b> 这是不是一门好生意 <em>⭐Stan 麦肯锡</em><span>麦肯锡四把尺子 + 赚钱算式 + 形态与定价定死</span></li>
+          <li><b>W4</b> 做出能卖的东西<span>不写代码走交付三件套，会写代码走 MVP 自学线 + 3 个 Vibe Coding Lab</span></li>
+          <li><b>W5</b> 立起你的品牌门面<span>一份 source of truth 一稿出官网 + design system + deck + 一页纸</span></li>
+          <li><b>W6</b> 别让项目烂尾 <em>⭐Ray 微软</em><span>OPC 简化 agile + 在职版节奏 + 让 AI OS 当 PM 追进度</span></li>
+          <li><b>W7</b> 收到第一笔钱<span>人脉盘点 + 现场真发 10 条 pitch + Stripe 接入 + AI 律师审 5 份法律文件</span></li>
+        </ul>
+        <div class="ps-out">出关物：一个被真人付过一次钱的 AI 化产品 + 品牌官网</div>
+      </div>
+
+      <div class="phase-strip" style="border-left-color:#FF914D">
+        <div class="ps-head"><span class="ps-tag" style="background:#FF914D">PHASE 2 · W8-W11</span><span class="ps-name">Go To Market</span></div>
+        <div class="ps-sub">把刷脸首单变成一台不靠刷脸、会自己复利的获客机器</div>
+        <ul class="ps-weeks">
+          <li><b>W8</b> AI 内容工厂<span>小红书 / 视频号 + 公众号 + 私域 / AI 视频·海报·漫剧 / X build in public</span></li>
+          <li><b>W9</b> 主动敲开客户的门<span>LinkedIn outreach + ProductHunt 冷启动 + 中英文圈 6 大线下渠道</span></li>
+          <li><b>W10</b> 让人和 AI 都搜到你<span>long-tail SEO + GEO + E-E-A-T + Schema，提交 GSC 验证</span></li>
+          <li><b>W11</b> 用户增长<span>AARRR 找漏水环 + 推荐循环上线 + 一个 launch 跑通 10 渠道</span></li>
+        </ul>
+        <div class="ps-out">出关物：三路获客（内容 / 主动 / 被动）+ 一个会复利的循环</div>
+      </div>
+
+      <div class="phase-strip" style="border-left-color:#10b981">
+        <div class="ps-head"><span class="ps-tag" style="background:#10b981">PHASE 3 · W12-W13</span><span class="ps-name">🇦🇺 Australia Operations</span></div>
+        <div class="ps-sub">全球独家：AI 一人创业 × 澳洲税务 / Grant，没有第二门课同时教这两件事</div>
+        <ul class="ps-weeks">
+          <li><b>W12</b> 让生意自己运转<span>Notion 个人 ERP + AI 客服分流 + AI 读经营数据算 LTV/CAC 与 churn 归因</span></li>
+          <li><b>W13</b> 把钱从税务局拿回来 <em>⭐持牌 CPA / Grant consultant</em><span>四种结构决策树 + PSI + CGT + RDTI 43.5% 退税重头戏</span></li>
+        </ul>
+        <div class="ps-out">出关物：一门在澳洲合法、财务自动、还能退税的一人生意</div>
+      </div>
+
+      <div class="phase-strip" style="border-left-color:#CB6CE6">
+        <div class="ps-head"><span class="ps-tag" style="background:#CB6CE6">PHASE 4 · W14-W15</span><span class="ps-name">Founder Club</span></div>
+        <div class="ps-sub">从「有个在跑的生意」到「能 pitch 给任何人、能被看见」· 毕业 = 入会</div>
+        <ul class="ps-weeks">
+          <li><b>W14</b> 把生意讲成故事 <em>⭐Stan 书挡回归 + 投资人 fireside</em><span>前 13 周真实数据 → deck + BP + 一页纸 + 三档讲法 + 融资入门</span></li>
+          <li><b>W15</b> 登台 · Demo Day · 入会 Founder Club<span>三城联合路演每人 5min + 投资人定向对接 + invite-only 互为客户日晚宴</span></li>
+        </ul>
+        <div class="ps-out">出关物：Founder Club 会籍 + 6 个月持续 Office Hour</div>
+      </div>
+    </div>
+
+    <div style="margin-top:22px;text-align:center">
+      <a href="curriculum.html" class="btn-secondary" style="color:#10162f;border-color:#10162f">查看 15 周完整课表 · 53 节课逐节展开 →</a>
     </div>
   </div>
 </section>
@@ -399,7 +480,7 @@ body{font-family:'DM Sans','Noto Sans SC',sans-serif;background:#faf7f2;color:#1
       <div class="pricing-card featured">
         <div class="tier">🔥 PRE-SALE · 限 15 席</div>
         <div class="price">A$ 2,400<em> AUD</em></div>
-        <div class="desc"><strong>可付定金 A$1,000 锁席</strong> · 11 周课程 · 三城线下 · 10 类 Faculty · Demo Day · 校友群 · 6 个月 Office Hour · 满 15 席后此价永久关闭</div>
+        <div class="desc"><strong>可付定金 A$1,000 锁席</strong> · 15 周课程 · 三城线下 · 10 类 Faculty · Demo Day · Founder Club · 6 个月 Office Hour · 满 15 席后此价永久关闭</div>
         <a href="#apply-form" class="btn-card">→ 付定金锁席（3 分钟申请）</a>
       </div>
       <div class="pricing-card">
@@ -437,7 +518,7 @@ body{font-family:'DM Sans','Noto Sans SC',sans-serif;background:#faf7f2;color:#1
         <tr><td>澳洲律师起草 5 份法律文件</td><td>$3-8k</td></tr>
         <tr><td>Reforge / On Deck / Antler 等</td><td>$6-11k AUD</td></tr>
         <tr class="total"><td>单独搞合计</td><td>$70-240k + 2-3 年 + 不可买的 VC/founder 人脉</td></tr>
-        <tr class="ours total"><td>这门课打包 11 周 · <strong>预售档</strong></td><td>A$ 2,400 起（限 15 席）</td></tr>
+        <tr class="ours total"><td>这门课打包 15 周 · <strong>预售档</strong></td><td>A$ 2,400 起（限 15 席）</td></tr>
       </table>
       <div style="margin-top:14px;font-size:12.5px;color:#FFDE59;font-style:italic">
         + $500k-4M cohort 内部网络潜在交易额 · 学费在这两个数字面前就是送的。
@@ -469,7 +550,7 @@ body{font-family:'DM Sans','Noto Sans SC',sans-serif;background:#faf7f2;color:#1
 
 <!-- ============ FINAL CTA ============ -->
 <section class="final-cta">
-  <h2>11 周后你不一定成功<br/>但你会有一个能跑能卖能合规的<br/>AI 一人公司框架 + 50 个跟你一起走过这条路的同期同学</h2>
+  <h2>15 周后你不一定成功<br/>但你会有一个能跑能卖能合规的<br/>AI 一人公司框架 + 50 个跟你一起走过这条路的同期同学</h2>
   <p>首期 50 人 · case study 价 · 仅此一期 · 申请后 24-48h 内回复</p>
   <a href="#apply-form">→ 立即申请（3 分钟）</a>
 </section>
@@ -480,17 +561,17 @@ body{font-family:'DM Sans','Noto Sans SC',sans-serif;background:#faf7f2;color:#1
     <div class="footer-grid">
       <div>
         <div class="brand">AI 一人创业营</div>
-        <div class="brand-sub">ONE PERSON COMPANY · 11 WEEKS · 三城线下</div>
+        <div class="brand-sub">ONE PERSON COMPANY · 15 WEEKS · 三城线下</div>
         <p style="margin-top:14px">匠人学院出品 · 2026 年首期 case study cohort · 限额 50 人</p>
         <p style="margin-top:8px;color:rgba(255,255,255,0.5);font-size:12px">© 2026 JR Academy Pty Ltd · jiangren.com.au</p>
       </div>
       <div>
         <h4>课程</h4>
         <a href="curriculum.html">完整课程大纲</a>
-        <a href="phase1.html">Phase 1 · Build & Sell</a>
-        <a href="phase2.html">Phase 2 · Marketing</a>
-        <a href="phase3.html">Phase 3 · Australia Ops 🇦🇺</a>
-        <a href="phase4.html">Phase 4 · Scale & Demo</a>
+        <a href="phase1.html">Phase 1 · AI Enable Business（W1-W7）</a>
+        <a href="phase2.html">Phase 2 · Go To Market（W8-W11）</a>
+        <a href="phase3.html">Phase 3 · Australia Operations 🇦🇺（W12-W13）</a>
+        <a href="phase4.html">Phase 4 · Founder Club（W14-W15）</a>
       </div>
       <div>
         <h4>资源</h4>
