@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Phase 1 — Build & Sell · AI 一人创业营</title>
+<title>Phase 1 — AI Enable Business · AI 一人创业营</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Bricolage+Grotesque:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
@@ -12,7 +12,9 @@
   .week-h { padding: 18px 24px; background: #6366f1; color: #fff; border-bottom: 3px solid #000; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
   .week-h .wnum { font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 4px 10px; background: rgba(255,255,255,0.2); }
   .week-h .wtitle { font-family: 'Bricolage Grotesque', 'Noto Sans SC', sans-serif; font-weight: 900; font-size: 20px; flex: 1; min-width: 240px; }
+  .week-h .wen { font-family: 'Space Mono', monospace; font-size: 12px; opacity: 0.8; display: block; font-weight: 400; letter-spacing: 1px; margin-top: 2px; }
   .week-h .wmeta { font-family: 'Space Mono', monospace; font-size: 11px; opacity: 0.85; }
+  .guest-tag { background: #ff5757; color: #fff; padding: 4px 10px; font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 1px; border: 2px solid #000; }
   .lesson-row { padding: 16px 24px; border-bottom: 1px solid #eee; display: grid; grid-template-columns: 80px 100px 1fr; gap: 16px; align-items: start; }
   .lesson-row:last-child { border-bottom: none; }
   .lesson-row:hover { background: #f9f9ff; }
@@ -26,10 +28,23 @@
   .ltitle { font-weight: 700; font-size: 15px; line-height: 1.5; margin-bottom: 6px; }
   .ldesc { font-size: 13px; color: #555; line-height: 1.7; }
   .ldesc h3 { font-size: 13px; font-weight: 700; margin: 8px 0 4px; color: #10162f; }
+  .ldesc h4 { font-size: 12.5px; font-weight: 700; margin: 10px 0 4px; color: #10162f; }
   .ldesc p { margin: 4px 0; }
   .ldesc ul { padding-left: 20px; margin: 4px 0; }
   .ldesc li { margin: 2px 0; }
   .ldur { font-family: 'Space Mono', monospace; font-size: 10px; color: #888; margin-top: 6px; }
+  /* 现场课 6 环节 */
+  .steps { list-style: none; padding: 0; margin: 8px 0 0; counter-reset: st; }
+  .steps li { padding: 9px 0; border-bottom: 1px dashed #e2e2e2; }
+  .steps li:last-child { border-bottom: none; }
+  .steps .sn { font-family: 'Space Mono', monospace; font-weight: 700; color: #6366f1; margin-right: 6px; }
+  .steps .st { font-weight: 700; color: #10162f; }
+  .steps .sd { font-family: 'Space Mono', monospace; font-size: 10px; color: #888; margin-left: 6px; }
+  .steps .sx { display: block; margin-top: 3px; color: #555; }
+  /* 本周产出 */
+  .week-out { padding: 14px 24px; background: #fff8d9; border-top: 3px solid #000; font-size: 13.5px; line-height: 1.75; color: #10162f; }
+  .week-out .lbl { font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 1px; background: #10162f; color: #FFDE59; padding: 3px 8px; margin-right: 8px; }
+  .week-out .wow { display: block; margin-top: 6px; font-size: 12.5px; color: #555; }
   .breadcrumb { padding: 12px 24px; background: #fafafa; border-bottom: 1px solid #ddd; font-size: 13px; }
   .breadcrumb a { color: #6366f1; }
   .phase-hero { padding: 32px 28px; background: #eef0ff; border: 3px solid #000; box-shadow: 6px 6px 0 #000; margin: 24px 0; }
@@ -42,13 +57,15 @@
   .phase-nav { display: flex; gap: 10px; padding: 16px 24px; background: #f5f5f5; border-bottom: 1px solid #ddd; }
   .phase-nav a { padding: 6px 14px; border: 2px solid #000; background: #fff; font-size: 12px; font-weight: 700; font-family: 'Space Mono', monospace; }
   .phase-nav a.active { background: #6366f1; color: #fff; }
+  .rhythm { padding: 18px 22px; background: #10162f; color: #fff; border: 3px solid #000; box-shadow: 6px 6px 0 #FFDE59; margin-bottom: 28px; font-size: 13.5px; line-height: 1.8; }
+  .rhythm strong { color: #FFDE59; }
 </style>
 </head>
 <body>
 
 <div class="header">
   <h1>AI 一人创业营</h1>
-  <div class="sub">Phase 1 — Build &amp; Sell · W0-W3</div>
+  <div class="sub">Phase 1 — AI Enable Business · W1-W7</div>
 </div>
 
 <div class="phase-nav">
@@ -63,43 +80,55 @@
 <div class="c">
 
 <div class="phase-hero">
-  <div style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:#6366f1;letter-spacing:2px">PHASE 1 · W0 - W3</div>
-  <h2>让 AI 真正进入你的业务</h2>
+  <div style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:#6366f1;letter-spacing:2px">PHASE 1 · W1 - W7</div>
+  <h2>AI Enable Business</h2>
+  <div style="font-family:'Bricolage Grotesque','Noto Sans SC',sans-serif;font-weight:700;font-size:18px;color:#6366f1;margin-top:4px">把 AI 部署进生意的每个环节，然后刷脸卖出第一单</div>
   <div class="sum">
-    定 AI 进入点 + 找用户 validate + 装好 AI 员工 + 把产品/服务/AI 化套餐搭起来 + 上线收第一笔钱。<strong>整门课最硬的 phase</strong>，4 周后你必须有：能合规收钱、第一笔真实付费、AI 员工每天自动跑、业务的某个东西真的 AI 化跑通。<strong>4 条路径任选其一</strong>：① 升级现有业务（小老板）② 把咨询服务 productize 成 AI 化标准套餐（律师/会计）③ 起一个新生意（程序员/PM）④ 验证扩展方向（YC 申请者）。Phase 1 不达标的学员通常是"想试试但不真做"，可以 W2 末走最后一次退款窗口。
+    W1 搭起你的 CEO AI OS · W2 你的 AI 员工上岗 · W3 这是不是一门好生意（⭐Stan 麦肯锡）· W4 做出能卖的东西 · W5 立起你的品牌门面 · W6 别让项目烂尾（⭐Ray 微软）· W7 收到第一笔钱。<strong>整门课最硬的 7 周</strong>，出关物是一个验证过、AI 化、有品牌门面、被真人付过一次钱的产品。MVP coding 全部走自学线（材料 + 3 个 Vibe Coding Lab），周日现场课不讲写代码。<strong>4 条路径任选其一</strong>：① 升级现有业务（小老板）② 把咨询服务 productize 成 AI 化标准套餐（律师 / 会计 / 顾问）③ 起一个新生意（程序员 / PM / Designer）④ 验证扩展方向（准备申请 YC / Antler 的 founder）。不真做的学员在 W2 末有最后一次退款窗口。
   </div>
   <div class="phase-stats">
-    <div class="phase-stat"><div class="n">25</div><div class="l">节课</div></div>
-    <div class="phase-stat"><div class="n">13</div><div class="l">直播课</div></div>
+    <div class="phase-stat"><div class="n">28</div><div class="l">节课</div></div>
+    <div class="phase-stat"><div class="n">7</div><div class="l">周日现场课</div></div>
     <div class="phase-stat"><div class="n">5</div><div class="l">互动 Lab</div></div>
     <div class="phase-stat"><div class="n">1</div><div class="l">⭐ 硬指标里程碑</div></div>
   </div>
 </div>
 
+<div class="rhythm">
+  <strong>📍 固定节奏（15 周每周都一样）</strong><br/>
+  <strong>每周日 3 小时 = 一节线下现场课</strong>：墨尔本主场 office 现场讲，悉尼 / 布里斯班卫星教室同步直播，本地 Tutor 1:8 陪跑，不录播。<br/>
+  开场 <strong>15min</strong> 看 AI OS 这周替你跑了什么 → 中段 <strong>30min</strong> 1-2 人上台讲进展 + networking（翻创业身份卡找队友 / 客户）→ 下课给 OS 派下周的活，并定死「下周你要撞的那个真实动作」。<br/>
+  周中另有 <strong>5-8 小时</strong> 自学 + Lab + 真实动作，每一项都挂在本周那个动作上，不是孤立的知识点。
+</div>
+
 <!-- W0 -->
 <div class="week-block">
-  <div class="week-h">
+  <div class="week-h" style="background:#10162f">
     <span class="wnum">W0 · PRE-WORK</span>
-    <span class="wtitle">开课前的预备 — 装机 + LLM API Key + 商业实体注册</span>
-    <span class="wmeta">自学 · 开班前 2 周完成</span>
+    <span class="wtitle">开课前的预备 — 装机 + AI 订阅 + LLM Key + ABN 预备 + 创业身份采集<span class="wen">Before Day One</span></span>
+    <span class="wmeta">自学 70min · 开班前完成</span>
   </div>
   <div class="lesson-row">
-    <div class="lcode">L00</div>
-    <div class="ltype info">INFO · 45min</div>
+    <div class="lcode">L01</div>
+    <div class="ltype info">SELF · 70min</div>
     <div>
-      <div class="ltitle">Pre-work · 装机 + LLM API Key + 本地商业实体预备</div>
+      <div class="ltitle">[W0·Pre-work] 装机 + AI 订阅（Codex / DeepRouter / 双开）+ LLM Key + ABN 预备 + 创业身份采集 A/B/C</div>
       <div class="ldesc">
-        <h3>🎯 开课前 30 分钟做完，W1 不卡装机</h3>
-        <p>跟 OpenClaw Bootcamp 不同的是，这门课不只装 AI 工具——还要在课程过程中注册<strong>本地商业实体</strong>（首期墨尔本 cohort = 澳洲 ABN（澳洲商业号码）；未来 UK / Canada / NZ / Singapore 版分别对应 Companies House / CRA / NZBN / ACRA）、开 Stripe 收款账号、连本地会计软件、办本地税务。这些行政事走流程要等几天到几周，所以预习把账号 + API Key + 实体注册这些慢节奏的事先开起来，等 W3 真要收钱时才不会卡。</p>
-        <h3>📋 4 件事 W0 完成</h3>
+        <h3>🎯 开课前做完，W1 现场不卡在装机和比价上</h3>
+        <p>跟 OpenClaw Bootcamp 不同：这门课不只装 AI 工具，还要在课程过程中注册 ABN、开 Stripe 收款账号、连 Xero、办 GST。这些行政操作走澳洲流程要等几天到几周，W0 先把 OAuth、API Key、ABN 申请这些慢节奏的事开起来，W7 真要收钱时才不会卡。</p>
+        <h4>📋 W0 要完成的 4 件事</h4>
         <ul>
-          <li><strong>① LLM API Key 注册 + 充值 $50</strong> — Claude / OpenAI / Gemini 任一</li>
-          <li><strong>② Cursor / Claude Code 装好</strong> — 已上过 AI Engineer 的跳过</li>
-          <li><strong>③ 本地商业实体注册预备</strong>（已经有公司的学员可跳过） — 想好商业实体名 + 准备本国身份税号（首期澳洲：登录 myGov / 准备 TFN / ABN 实体名）</li>
-          <li><strong>④ 写一份 5 件想做的事</strong> — 用 AI 替代/服务 5 件事，开课用</li>
+          <li><strong>① LLM API Key 注册 + 充值 $50</strong> — Claude / OpenAI / Gemini 任一，15 周课程 + 自动化任务的月预算 $30-100。</li>
+          <li><strong>② 定 AI 订阅档位</strong> — 预算有限走 Codex / ChatGPT；更省走 DeepRouter；预算充足 Codex + Claude 双开。W1 现场按档位分组做 AI OS 选型，先定档省掉现场比价时间。</li>
+          <li><strong>③ ABN 前置材料</strong>（已经有公司的可跳过）— 登录 myGov、准备 TFN、想好实体名。ABN 线上申请免费，审批 2-7 天。</li>
+          <li><strong>④ 填创业身份采集表 A/B/C</strong> — A 类：已有 idea 草稿；B 类：有能力资源但方向未定；C 类：还在决定下不下场。这张表决定 W1 现场怎么组队，也是全程 networking 与 W15 互为客户日的索引。</li>
         </ul>
       </div>
     </div>
+  </div>
+  <div class="week-out">
+    <span class="lbl">本周产出</span>装机 + AI 订阅档位 + LLM Key + ABN 前置材料 + 创业身份采集表
+    <span class="wow">卧槽点：第一次意识到这不是听课，是从今天开始有事要交。</span>
   </div>
 </div>
 
@@ -107,87 +136,61 @@
 <div class="week-block">
   <div class="week-h">
     <span class="wnum">W1 · WEEK 1</span>
-    <span class="wtitle">定 AI 进入点 + 找用户验证 + 定价模型</span>
-    <span class="wmeta">线下 4h · 自学 4h · 7 节课</span>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L01</div>
-    <div class="ltype live">LIVE · 120min</div>
-    <div>
-      <div class="ltitle">[Live] OPC（One-Person Company AI 一人公司）心智 + 澳洲华人 indie / 服务业 / 小老板 各类型真实案例</div>
-      <div class="ldesc">
-        <h3>🎯 第一节课定调：OPC 不是创业，是另一种自由</h3>
-        <p>OPC 跟传统创业最大的区别是：拒绝融资、永远不雇人、用 AI 替代员工、目标 $1k-$10k MRR 的自由而不是 $1B 估值的雄心。课上拆 5 个澳洲华人真实案例（含程序员、服务业、小老板各类型），嘉宾来 1-2 个本地 indie hacker / OPC founder 讲产品 / 业务、用户 / 客户、定价、营销、踩过的坑。课后发"OPC 适配评估表"，低分学员 W2 末有最后一次退款机会。</p>
-        <p><strong>课上 4 个 step</strong>：① OPC vs 传统创业 vs VC startup 三条路对比 ② 嘉宾分享 1（墨尔本 indie $3-10k MRR）③ 嘉宾分享 2（澳洲华人服务业 AI 化 case / 小公司 AI 接管业务 case）④ OPC 适配 5 维度自评。</p>
-      </div>
-    </div>
+    <span class="wtitle">搭起你的 CEO AI OS<span class="wen">YOUR CEO AI OS</span></span>
+    <span class="wmeta">周日 3h 现场课 · 周中 Lab 90min + 自学 90min</span>
   </div>
   <div class="lesson-row">
     <div class="lcode">L02</div>
-    <div class="ltype live">LIVE · 120min</div>
+    <div class="ltype live">现场课 · 180min</div>
     <div>
-      <div class="ltitle">[Live] AI 用户调研：从 Reddit / X / 小红书 / 牛客挖痛点</div>
+      <div class="ltitle">[现场课] 搭起你的 CEO AI OS · Your CEO AI OS</div>
       <div class="ldesc">
-        <h3>🎯 选品的核心是找到一个真实存在、有人愿意付费、AI 能解决的痛点</h3>
-        <p>不是凭空 brainstorming。课上演示用 Cursor + Claude 一小时挖完 200+ 条 Reddit 真实抱怨、用 Perplexity 验证市场规模、用小红书评论提取中文用户的具体语言。这是选品最关键的输入数据。</p>
-        <p><strong>现场操作 4 步</strong>：Reddit API + Claude 抓高赞抱怨贴 / X 搜 "I wish there was" 句式 / 小红书爬虫 + AI 聚类 / 输出"痛点 × 频次 × 付费意愿"三维矩阵。</p>
+        <p><strong>本周真实动作</strong>：锁死一个方向写成一页 SoT，当场把 CEO AI OS 装起来并接上 Gmail / Calendar / Drive / Notion。</p>
+        <h3>🎬 现场 3 小时 · 6 个环节</h3>
+        <ol class="steps">
+          <li><span class="sn">①</span><span class="st">OPC 心智 + 澳洲在职创业者案例 3-5 个</span><span class="sd">35min</span>
+            <span class="sx">OPC vs 传统创业 vs VC startup 三条路在团队、融资、营销、财务、心智每一层的差别。然后放两个真实案例：墨尔本 indie hacker（$3k-$10k MRR）和澳洲华人 micro-SaaS founder（$10k-$30k MRR），重点看他们在职期间怎么排时间、第一批用户从哪来。最后做 OPC 适配 5 维自评：财务储备 / 时间承诺 / 心智成熟度 / 行业积累 / 抗孤独能力。</span></li>
+          <li><span class="sn">②</span><span class="st">锁方向：当场写死一页生意 Source of Truth</span><span class="sd">35min</span>
+            <span class="sx">7 个字段逐个填：服务谁 / 他现在怎么解决 / 我用 AI 做掉哪一段 / 不公平优势 / 收钱形态假设 / 6 周后可验证的证据 / 明确不做什么（不做清单必须写满 3 条）。写完存进当天搭好的 AI OS 记忆库，不是存在本地随手一个文件里。同桌互念，只问三个问题：你服务的人具体到什么程度？这个优势别人为什么抄不走？不做的三件事写了吗？定规矩——这一期只做一个方向，要改必须带证据走 W3 那关。</span></li>
+          <li><span class="sn">③</span><span class="st">创业身份 A/B/C 复盘 + 现场组队（贯穿 15 周）</span><span class="sd">25min</span>
+            <span class="sx">A 类（有 idea 草稿）提供可被拆的靶子；B 类（有能力资源、方向未定）补技术 / 行业 / 渠道缺口；C 类（还在决定下不下场）是全组最诚实的用户样本和挑刺人。每人 60 秒亮牌：我是谁 / 我能给什么 / 我要什么，同步录进平台 matching 工具（写「我会做 marketing」搜不到人，写「我能两周内帮你搭起小红书内容机器」才会被搜到）。3-4 人混编组、选召集人、写不超过半页的组内契约：每周互查哪一项交付、卡住 24 小时内先找谁、谁做谁的第一个真实用户。</span></li>
+          <li><span class="sn">④</span><span class="st">AI OS 选型：5 个 AI 秘书方案深度对比</span><span class="sd">30min</span>
+            <span class="sx">Claude Cowork（桌面 App / GUI / 1 小时上手 / 数据走 Anthropic 云）、OpenClaw（开源 CLI / 本地 markdown memory / 支持非 Claude LLM）、Hermes（跨平台 / 手机 IM 对话 / 跨设备 memory）、Lindy.ai（零代码 SaaS / $50-300 月）、自建（Crew AI / LangGraph + pgvector）。按 W0 选定的 AI 订阅档位分组，逐个讲强项弱项和月成本，当场定主线方案——装机细节留给本周的 Lab。</span></li>
+          <li><span class="sn">⑤</span><span class="st">超级记忆：把 Gmail / Calendar / Drive / Notion 喂进 agent</span><span class="sd">25min</span>
+            <span class="sx">现场接通四类真实数据源，让 OS 从「聊天玩具」变成「知道你在干什么的秘书」：邮箱（历史邮件 + 联系人）、日历（会议 + 空档）、云盘（合同 / 简历 / 过往项目）、Notion / Slack（笔记与讨论）。逐条讲授权范围怎么给、敏感数据怎么隔离（律师 / 会计 / 医疗类学员走本地路径）、memory 怎么组织成它下周还找得到的结构。验收：问它「我下周三下午有空吗、上一次跟 X 聊到哪了」，它答得对。</span></li>
+          <li><span class="sn">⑥</span><span class="st">干活：现场派 7 个秘书任务</span><span class="sd">30min</span>
+            <span class="sx">当场把 7 个任务配进 OS：① 每日晨间简报（日程 + 待办 + 昨日进展）② 邮件分诊与草稿 ③ 财务月报（Stripe + Xero → MRR / churn / GST 准备金）④ 会议笔记转决策清单 ⑤ 日程协调 ⑥ 客户跟进队列（7 天没回的自动提醒 + 上次上下文）⑦ 周报生成（git commit + 邮件 + 日历）。现场至少跑通 2 个并留输出截图，剩下的本周内补。合同审查那一类留到 W7 跟 AI 律师课联动。</span></li>
+        </ol>
+        <h3>📋 现场过关</h3>
+        <p>下课前每人必须有：一页 SoT（已存进 OS 记忆库）、一个能读到你真实日历和邮件的 AI OS、一个组、至少 2 个当场跑通并有输出截图的秘书任务。</p>
       </div>
     </div>
   </div>
   <div class="lesson-row">
     <div class="lcode">L03</div>
-    <div class="ltype lab">LAB · 30min</div>
+    <div class="ltype lab">LAB · 90min</div>
     <div>
-      <div class="ltitle">Lab: AI 用户调研模板（Prompt Lab）</div>
+      <div class="ltitle">[W1·Lab] CEO AI OS 装机 — 基础配置 + 第一次对话验收</div>
       <div class="ldesc">
-        Prompt Lab 互动练习：给你一个目标行业，写出能完整跑通"找数据源 → 抓数据 → AI 分析 → 输出报告"的 4 段 Prompt 链。系统用真实数据集验证你的输出质量。
+        <p>按现场课选的方案进对应站点，TA 1:8 陪跑；上过 Claude Cowork Workshop 或 OpenClaw Bootcamp 的学员可兼任 peer mentor。<strong>站点 ①</strong> Claude Cowork（推荐 default，最快）：装 Claude Desktop App + 启用 Cowork tab → 配 Gmail / Calendar / Drive / Notion 四个 Connector → 写人设进系统提示 → 验收自动出 5 页 PPT。<strong>站点 ②</strong> OpenClaw：装 CLI + bun + LLM key → 配 <code>USER.md</code> / <code>MEMORY.md</code> → 验收用你语调写一篇笔记，盲测 70% 像本人。<strong>站点 ③</strong> Hermes：装好 + 配 <code>~/.hermes/</code> → 起 daemon + Telegram gateway → 验收手机上问它，跨设备 memory 一致。<strong>站点 ④</strong> Lindy.ai：注册 + 选模板 + 接 Gmail → 验收处理一封测试邮件出草稿。自建路径学员自学，不占 Lab 站点。</p>
+        <p><strong>关键约束</strong>：每人只装一个主线，别装多个浪费 W1 时间。想补第二个 agent 走 W6 的进阶自学。</p>
       </div>
     </div>
   </div>
   <div class="lesson-row">
     <div class="lcode">L04</div>
-    <div class="ltype info">SELF · 60min</div>
-    <div>
-      <div class="ltitle">[Self] 5 个 idea → 1 个：选品决策矩阵</div>
-      <div class="ldesc">
-        <h3>🎯 W1 末的 deliverable：从 50 个候选痛点砍到 1 个 idea</h3>
-        <p>用课上发的"选品决策矩阵"（5 维度 × 加权评分），把 L02 你挖到的 50 个痛点筛到 5 个，再用 AI 模拟用户访谈的方式砍到 1 个。这 1 个 idea 就是 W2 你要把 AI 真正接进业务里跑通的那件事。</p>
-        <p><strong>验收</strong>：5 个候选 idea 各写 100 字 PRD + 5 维度评分（市场规模 / 付费意愿 / AI 可行性 / 不公平优势 / 6 个月做出第一笔付费）+ 最后选 1 个写为什么。</p>
-      </div>
-    </div>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L05</div>
     <div class="ltype info">SELF · 90min</div>
     <div>
-      <div class="ltitle">[Self] 跟 5 个目标用户做 30 分钟访谈</div>
+      <div class="ltitle">[W1·自学] 7 个秘书任务跑满一周 + AI OS 验收</div>
       <div class="ldesc">
-        <h3>🎯 idea 选完后必须做的事：跟 5 个真实潜在用户聊一次</h3>
-        <p>不是问"你愿意付费吗？"——这是 indie hacker 最容易踩的坑（用户嘴上说愿意，掏钱时全跑）。正确问法是 Mom Test 那一套："你过去一个月遇到这个问题几次？""上次遇到时怎么解决？""为这个问题花过多少钱？"用 AI 模拟用户面试一遍后，去真实用户那聊 5 个。</p>
+        <h3>🎯 现场配通 2 个不算完，本周要让 7 个都跑起来</h3>
+        <p>现场时间只够配 2 个任务并看到输出，剩下 5 个自己按同一套套路配完，并且要真的跑满一周——秘书这个事，跑一次是 demo，跑七天才叫上岗。7 个任务：每日晨间简报（每天 7:00 push）/ 邮件分诊 + 草稿（重要 · 可批量 · 可忽略三桶）/ 财务月报 / 会议笔记转决策清单 / 日程协调 / 客户跟进队列 / 周报生成。<strong>验收</strong>：一周的 push 输出截图，7 个任务全部有过至少一次真实输出。</p>
       </div>
     </div>
   </div>
-  <div class="lesson-row">
-    <div class="lcode">L05a</div>
-    <div class="ltype live">LIVE · 90min</div>
-    <div>
-      <div class="ltitle">[Live] 定价模型选型：一次性 / 订阅 / Freemium / B2B / 服务+软件混合</div>
-      <div class="ldesc">
-        <h3>🎯 建产品前必须先定的一件事：你的 pricing model</h3>
-        <p>同一个 idea，选不同定价模型 → 产品结构、目标用户、获客渠道、技术架构全不同。不能等到 W3 接 Stripe 时才想——那时候产品已经按错的模型建好了。这节课在 user interview 之后、build 之前，把 pricing 一次定下来。</p>
-        <p><strong>5 大定价模型 + 适用场景</strong>：</p>
-        <ul>
-          <li><strong>① 一次性买断 (One-time)</strong> — 工具类 / 模板类 / 信息产品（Gumroad / Setapp 一次买）。决策门槛低、复购低。例：设计模板包、Notion 模板、AI prompt 包、ebook。</li>
-          <li><strong>② 订阅 (Subscription)</strong> — SaaS 标配。月付 $9-99 / 年付 8 折。MRR 可预测但 churn 是命门。例：Notion / Linear / Cursor / Lovable。</li>
-          <li><strong>③ Freemium</strong> — 免费拉用户 + 付费档转化（典型转化 1-5%）。用户基数大但服务器成本高。例：Notion / Figma / Loom。</li>
-          <li><strong>④ B2B / Enterprise</strong> — Per-seat / per-team / contract。客单价 $500-50k+/年。销售周期 1-6 月。例：Slack / Linear team / Vanta。</li>
-          <li><strong>⑤ 服务+软件混合 (Productized Service)</strong> — 软件做骨架 + 人工服务做交付。AI 简历 + 人工 review / AI 营销 + 人工策略。高毛利 + 高客单价 + 难替代，OPC 一个人最适合的模型之一，<strong>律师 / 会计 / consultant 通常走这条</strong>。</li>
-        </ul>
-        <p><strong>3 维决策框架</strong>：① 客户类型（C 端 vs B 端）；② 使用频次（每天 vs 一次性）；③ 创始人时间投入度（纯 SaaS vs 服务+软件）。课上每个学员用 3 维表评估自己 idea，得出推荐 pricing model + 价格 anchor。</p>
-        <p><strong>价格 anchor 设置</strong>：选定模型后，定价不是拍脑袋——竞品调研 (5+ 家) + 价值锚 (替代方案多少钱) + 早鸟折扣 + Annual vs Monthly 折扣。课上发"定价计算器 + 竞品对照表 + 5 行业 anchor 数据"。</p>
-        <p><strong>跟 W3 L13 联动</strong>：定价模型决定 Stripe / Lemonsqueezy 的接入方式（一次性 = Checkout / 订阅 = Subscriptions / B2B = Custom invoicing / 混合 = 多产品组合）。</p>
-      </div>
-    </div>
+  <div class="week-out">
+    <span class="lbl">本周产出</span>一页生意 Source of Truth + 一个跑得动 7 个秘书任务的 AI OS + 一个 A/B/C 混编小组
+    <span class="wow">卧槽点：第一次有一个东西同时知道你的日程、邮件、文档和生意方向，而且它已经开始替你干活。</span>
   </div>
 </div>
 
@@ -195,286 +198,407 @@
 <div class="week-block">
   <div class="week-h">
     <span class="wnum">W2 · WEEK 2</span>
-    <span class="wtitle">把 AI 跑进你的业务 — 装 AI 员工 + 搭产品/服务第一版 + 定时任务</span>
-    <span class="wmeta">线下 12h · 自学 10h · 14 节课 · 5 个 Lab</span>
+    <span class="wtitle">你的 AI 员工上岗<span class="wen">AGENTS AT WORK</span></span>
+    <span class="wmeta">周日 3h 现场课 · 周中自学 210min + Lab 30min</span>
+  </div>
+  <div class="lesson-row">
+    <div class="lcode">L05</div>
+    <div class="ltype live">现场课 · 180min</div>
+    <div>
+      <div class="ltitle">[现场课] 你的 AI 员工上岗 · Agents at Work</div>
+      <div class="ldesc">
+        <p><strong>本周真实动作</strong>：给 agent 接权限、写工作内容、排定时任务，然后你自己去约 5 个真实用户。</p>
+        <h3>🎬 现场 3 小时 · 6 个环节</h3>
+        <ol class="steps">
+          <li><span class="sn">①</span><span class="st">四条 agent 路线现场选型：Hermes / 龙虾（OpenClaw）/ Codex / Claude Code</span><span class="sd">30min</span>
+            <span class="sx">Hermes = 跨设备 + 手机 IM 里派活 + 常驻 daemon，适合想随时随地扔任务的人；龙虾（OpenClaw）= 开源 CLI + 本地 markdown memory + 不依赖单一模型商，适合数据敏感（律师 / 会计 / 医疗）的人；Codex = 跟 ChatGPT 订阅打通、写代码类任务顺手；Claude Code = agentic 能力最强，适合要它连续改一个真实项目。按「你要它干什么活」而不是「哪个最火」来选，现场每人定一条主线。</span></li>
+          <li><span class="sn">②</span><span class="st">装上 + 接权限：邮箱 / 日历 / 云盘 / 仓库 / 浏览器</span><span class="sd">30min</span>
+            <span class="sx">现场跟着装。装完立刻接权限，逐项讲授权边界：邮箱只给读 + 起草不给直接发；日历给读写；云盘按目录授权，敏感目录排除；代码仓库给分支写权限不给主干；浏览器自动化给独立 profile 不用你的主账号。讲清楚哪些权限一旦给了就要有审计日志。</span></li>
+          <li><span class="sn">③</span><span class="st">给 agent 写工作内容说明书（它的 JD）</span><span class="sd">30min</span>
+            <span class="sx">一份 agent 的工作说明书要写清五件事：负责哪几类任务、每类任务的输入从哪来、交付物长什么样（格式 + 字数 + 必含字段）、什么情况必须停下来找人、输出送到哪。写完存进 memory。这一步是大多数人 agent 用不起来的真正原因——不是模型不行，是没人告诉它什么叫做完。</span></li>
+          <li><span class="sn">④</span><span class="st">Agent Schedule 工作坊 案例 ①②③：竞品监控 / SEO 周报 / 财务月报</span><span class="sd">40min</span>
+            <span class="sx">① 每天 7:00 抓竞品 pricing page → AI 总结变化 → 邮件「今天 X 涨了 $5、Y 推了新 plan」。② 每周一 9:00 调 GSC API 拉上周数据 → 找流量掉的 query 和排名突变 → 出 200 字周报。③ 每月 1 号 8:00 Stripe + Xero → MRR / churn / GST 月报 push Telegram + 存 Drive。TA 1:8 陪跑，每人现场配通。</span></li>
+          <li><span class="sn">⑤</span><span class="st">案例 ④⑤ 周报 / git 日报 + 跨平台机制对照</span><span class="sd">30min</span>
+            <span class="sx">④ 每周日 18:00 git log + 邮件 + 日历 + memory → 周报存档。⑤ 每天 22:00 git log + 当天关闭的 issue → AI 总结 → 次日早上邮件「昨日做了 X/Y/Z」。同时对照各平台的定时机制：Cowork <code>/schedule</code>（UI 最简单但要 Mac 醒着 + App 开着）、Claude Code cron skill（wrapper + launchd）、Codex CLI 定时、OpenClaw cron（daemon 常驻不依赖 Mac）、n8n / Zapier scheduled trigger、系统 cron / GitHub Actions cron 兜底。讲清再选，别用了一半才发现关机就不跑。</span></li>
+          <li><span class="sn">⑥</span><span class="st">验收 + 失败模式排错</span><span class="sd">20min</span>
+            <span class="sx">每人展示 5 条 schedule 的 cron 表达式 + 第一次跑的输出截图。过一遍 5 个失败模式：Mac 睡眠没跑、API rate limit、输出爆 token、push 出来没人看、AI 答错没人发现。每人挑自己最可能踩的两个，当场加兜底。</span></li>
+        </ol>
+      </div>
+    </div>
   </div>
   <div class="lesson-row">
     <div class="lcode">L06</div>
-    <div class="ltype live">LIVE · 120min</div>
+    <div class="ltype info">SELF · 120min</div>
     <div>
-      <div class="ltitle">[Live] Cursor / Claude Code / Lovable / v0 工具地图（程序员 / PM 路径）</div>
+      <div class="ltitle">[W2·自学] 让 agent 替你跑第一批调研：竞品 / 市场 / 用户痛点</div>
       <div class="ldesc">
-        <h3>🎯 W2 第一节：选对工具，一周 ship 产品</h3>
-        <p>4 个工具不是同一个东西：<strong>Cursor</strong> = IDE（写代码）、<strong>Claude Code</strong> = agentic CLI（自主写整个项目）、<strong>Lovable</strong> = 无代码 SaaS 生成器、<strong>v0</strong> = UI 组件生成器。课上 demo 同一个 idea 用 4 个工具各做一遍，对比时间、质量、限制，让你知道哪个适合你的能力和 idea 类型。<em>律师 / 会计 / 小公司老板路径不用 Cursor / Claude Code，看 L11a 用 Notion + AI 把咨询 productize / L11b-d 用 OpenClaw / n8n 接管现有业务环节。</em></p>
+        <h3>🎯 选品的核心是找到一个真实存在、有人愿意付费、AI 能解决的痛点</h3>
+        <p>不是凭空 brainstorming。这一周你新装的 agent 就干这件事：一小时挖完 200+ 条 Reddit 真实抱怨、用 Perplexity 验证市场规模、从小红书评论里提取中文用户描述问题时的原话。四步：Reddit API + Claude 抓目标 subreddit 高赞抱怨贴 → X 搜「I wish there was」句式 → 小红书评论聚类 → 输出「痛点 × 频次 × 付费意愿」三维矩阵。这是选品最关键的输入数据，而且现在它可以定时自己跑。</p>
       </div>
     </div>
   </div>
   <div class="lesson-row">
     <div class="lcode">L07</div>
-    <div class="ltype live">LIVE · 120min</div>
+    <div class="ltype lab">LAB · 30min</div>
     <div>
-      <div class="ltitle">[Live] 一周做一个 SaaS 的 PRD → MVP playbook</div>
-      <div class="ldesc">
-        <h3>🎯 不是教你写完美 PRD，是教你写"AI 能直接 ship 出来"的 PRD</h3>
-        <p>传统 PRD 写给工程师看，AI 时代 PRD 写给 Claude / Cursor 看。结构、详细度、约束都不一样：要明确技术栈、要给 example、要标 must-have vs nice-to-have、要预留 AI 修改余地。课上拆 3 个真实 PRD 模板（SaaS / 工具 / API 服务），学员当场写自己的。</p>
-      </div>
+      <div class="ltitle">[W2·Lab] AI 用户调研模板（Prompt Lab）</div>
+      <div class="ldesc">把「挖痛点」流程变成你自己能跑的模板：给一个目标行业，写出能完整跑通「找数据源 → 抓数据 → AI 分析 → 输出报告」的 4 段 Prompt 链。系统用真实数据集验证输出质量。</div>
     </div>
   </div>
   <div class="lesson-row">
     <div class="lcode">L08</div>
-    <div class="ltype lab">LAB · 30min</div>
-    <div>
-      <div class="ltitle">Lab: Vibe Coding — Cursor 入门</div>
-      <div class="ldesc">用 Cursor 在浏览器内完成第一个 AI 协作写代码任务，理解 Cmd+K / Cmd+L / Composer 三种交互模式的差异。</div>
-    </div>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L09</div>
-    <div class="ltype lab">LAB · 45min</div>
-    <div>
-      <div class="ltitle">Lab: Vibe Coding — Claude Code agentic 工作流</div>
-      <div class="ldesc">用 Claude Code CLI 完成一个完整的功能（PRD → 代码 → 测试 → commit），体验 agentic 自主编码 vs Cursor 半人工的差异。</div>
-    </div>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L10</div>
-    <div class="ltype lab">LAB · 45min</div>
-    <div>
-      <div class="ltitle">Lab: Lovable — 无代码 ship 第一个 SaaS</div>
-      <div class="ldesc">用 Lovable 在 30 分钟内 ship 一个能跑、能 deploy、能登录的小型 SaaS，体验 no-code 路径。</div>
-    </div>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L11</div>
-    <div class="ltype info">SELF · 180min</div>
-    <div>
-      <div class="ltitle">[Self] 自学：Vibe Coding Hub Phase 2 全部章节</div>
-      <div class="ldesc">复用 jiangren.com.au /learn/vibe-coding/hub Phase 2 章节（约 12 章 AI 编码进阶）。建议在 W2 末完成至少 8 章，跟你的 MVP 实操配合。</div>
-    </div>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L11a</div>
-    <div class="ltype live">LIVE · 120min</div>
-    <div>
-      <div class="ltitle">[Live] Source of Truth + AI 一稿出全套（Website / Pitch / Brochure / 一页纸 / 公众号）</div>
-      <div class="ldesc">
-        <h3>🎯 W2 末核心动作：一份 source of truth → AI 一次喂出全套对外 asset</h3>
-        <p>OPC 学员最大的时间黑洞是反复写产品文案——网站、pitch deck、brochure、公众号、小红书、Email pitch、媒体稿，每一份都从头写。这节课教你做对的方式：先写 1 份 markdown source of truth（产品定位 / USP / pricing / target audience / FAQ / 5 个 use case / 对比同类产品），再用 AI 一次性喂出所有对外 asset。</p>
-        <p><strong>实操产出（同一份 source 跑 6 个工具）</strong>：① Lovable / v0 → landing page；② Gamma / Beautiful.ai / Pitch.com → pitch deck（投 VC + 找客户两版）；③ Canva AI / Adobe Express → A4 brochure + 一页纸 PDF；④ Notion AI → 客户 onboarding 文档；⑤ 公众号长文 + 小红书爆款笔记标题；⑥ X / LinkedIn 个人简介 + bio。</p>
-        <p><strong>核心约束</strong>：source 改一个字，所有 asset 重新生成。绝不在某一份 asset 里手改文案——改了就回去改 source。这是 AI 时代 OPC 的唯一可持续做法。</p>
-      </div>
-    </div>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L11b</div>
-    <div class="ltype live">LIVE · 120min</div>
-    <div>
-      <div class="ltitle">[Live] 选你的 AI 秘书 — 5 方案深度对比 + 选型决策</div>
-      <div class="ldesc">
-        <h3>🎯 Agent OS 第一节：从 5 个方案里选定接下来 4 节课要装的那个</h3>
-        <p>OPC 学员配置 AI 秘书有 5 个主流方案，定位重叠（都是个人 AI assistant），各有偏向。这节课不教装机——先选好走哪条路，后面 4 节课都按你选的方案配。</p>
-        <p><strong>5 方案介绍</strong>：</p>
-        <ul>
-          <li><strong>① Claude Cowork（推荐 default）</strong>—Anthropic 2026 GA 桌面 App，Claude Desktop 第三个 tab。给目标 → 它在桌面跑：开 Excel / 读本地文件 / 调 Connectors / 按 <code>/schedule</code> 自动跑 / 手机 Dispatch 远程派活。<strong>不用终端、不用 npm、全是说人话 — 1 小时上手</strong>。强项：GUI + 非技术友好；弱项：数据走 Anthropic 云。参考 JR 自家 <code>claude-cowork-workshop</code>。</li>
-          <li><strong>② OpenClaw</strong>—NousResearch 开源 CLI agent（前身 Moltbot / ClawdBot），类 Claude Code 的 CLI 形态，<code>MEMORY.md</code> + <code>USER.md</code> 本地 markdown。强项：本地优先 + 开源可改 + 支持非 Claude 的 LLM；弱项：要会一点终端。JR 4 周 OpenClaw Bootcamp 专门教这个。</li>
-          <li><strong>③ Hermes Agent</strong>—NousResearch 另一款开源跨平台 agent。<code>~/.hermes/</code> FTS5 memory + Slack/Telegram/Discord/WhatsApp/Signal/CLI gateway。强项：手机 IM 直接对话 + 跨设备同步；弱项：编码任务弱。</li>
-          <li><strong>④ Lindy.ai</strong>—第三方 SaaS workflow agent，UI 漂亮、集成 100+ 工具。$50-300/月 + 数据上他们云。</li>
-          <li><strong>⑤ 自建</strong>—Crew AI / LangGraph + 自己 memory store。要写 200-500 行 Python，OPC 阶段不推。</li>
-        </ul>
-        <p><strong>决策树（直接选）</strong>：</p>
-        <ul>
-          <li><strong>选 ① Cowork</strong>：1 小时上手 + GUI + 已订 Claude Pro + 桌面重度（PPT/Excel/浏览器）+ 不在意数据上云 + 想手机派活</li>
-          <li><strong>选 ② OpenClaw</strong>：律师/会计/医疗/合规岗（数据不能上云）+ 想用非 Claude 的 LLM + 已会终端</li>
-          <li><strong>选 ③ Hermes</strong>：团队已用 WhatsApp/飞书/Slack + 跨设备 IM 派任务</li>
-          <li><strong>选 ④ Lindy</strong>：完全零代码 + 不想 self-host + $50-300/月预算 OK</li>
-          <li><strong>选 ⑤ 自建</strong>：写代码的洁癖型（OPC 阶段不推荐）</li>
-        </ul>
-        <p><strong>🎯 推荐：大多数 OPC 学员选 ① Claude Cowork</strong>。隐私敏感行业（律师/会计/医疗）走 ② OpenClaw。其实大多数实战场景是 Cowork + OpenClaw 配合用 — Cowork 干桌面 GUI 活、OpenClaw 干合规敏感 + IM 协作活。L11f 进阶课讲什么时候补第二个。</p>
-      </div>
-    </div>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L11c</div>
-    <div class="ltype lab">LAB · 90min</div>
-    <div>
-      <div class="ltitle">Lab: 装机 + 基础配置 + 第一次对话验收（按 L11b 选的方案分组）</div>
-      <div class="ldesc">
-        <h3>🎯 把 L11b 选的 AI 秘书装好 + 跟它建立第一次有上下文的对话</h3>
-        <p>Lab 分 4 站点（自建路径学员自学），按 L11b 选的方案进对应站点，TA 1:8 陪跑。已上过 Claude Cowork Workshop 或 OpenClaw Bootcamp 的学员可以兼任 peer mentor。</p>
-        <p><strong>站点 ① Claude Cowork（推荐 default）</strong>：装 Claude Desktop App + 登录 Claude Pro → 启用 Cowork tab → 配 4 个 Connectors（Gmail/Calendar/Drive/Notion）→ 配人设到系统提示 → 让 Cowork 用你语调写小红书笔记 + 装第一个 Plugin → 验收：自动出 5 页 PPT 产品 demo。</p>
-        <p><strong>站点 ② OpenClaw</strong>：装 OpenClaw CLI + bun + LLM API key → 配 <code>USER.md</code> + <code>MEMORY.md</code> → 验收：用你语调写小红书笔记，盲测 70% 像本人。</p>
-        <p><strong>站点 ③ Hermes Agent</strong>：装 Hermes（pip/docker）→ 配人设到 <code>~/.hermes/</code> → 启 daemon + Telegram gateway → 验收：手机 Telegram 问 agent，跨设备 memory 一致。</p>
-        <p><strong>站点 ④ Lindy.ai</strong>：注册 + 选 starter 模板 → 配人设 → 接 Gmail/Calendar 第一个集成 → 验收：处理一封测试邮件 → 草拟回复。</p>
-        <p><strong>关键约束</strong>：每个学员只装一个主线，别装多个浪费 W2 时间。L11f 进阶课讲『以后想补第二个 agent 怎么办』。</p>
-      </div>
-    </div>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L11d</div>
-    <div class="ltype live">LIVE · 120min</div>
-    <div>
-      <div class="ltitle">[Live] 接通公司核心数据：Gmail / Calendar / Drive / Notion / Slack 全部喂进 agent</div>
-      <div class="ldesc">
-        <h3>🎯 让你的 agent 真正"知道你的公司在发生什么"</h3>
-        <p>L11b 装好 OpenClaw、L11c 接好 Hermes 记忆层。这节课把<strong>公司核心数据源</strong>全部接进来 — agent 才有上下文回答 OPC 的真实问题（不接数据 = agent 只能聊天，没法干活）。</p>
-        <p><strong>5 个数据源 + 接入方式（120min 全演示）</strong>：</p>
-        <ol>
-          <li><strong>Gmail / Outlook 邮件（30min）</strong> — OpenClaw skill：OAuth → 索引最近 90 天邮件 → Hermes FTS5 入库。本地索引优先，邮件正文不上云</li>
-          <li><strong>Google Calendar / Outlook Calendar（15min）</strong> — Calendar API 读未来 30 天事件 + 历史 1 年画像</li>
-          <li><strong>Google Drive / OneDrive 文档（25min）</strong> — 选择性接：Working / Customer / 财务文件夹，敏感文件夹排除</li>
-          <li><strong>Notion / Confluence（20min）</strong> — Notion API integration token 全 workspace 索引</li>
-          <li><strong>Slack / Discord / Telegram 群消息（20min）</strong> — Hermes gateway 直接接，channel 白名单管理</li>
-          <li><strong>整合验证（10min）</strong>：现场问"客户 X 最近一次邮件提到什么 + standup 决定了什么"，agent 跨数据源回答</li>
-        </ol>
-        <p><strong>隐私 4 档</strong>：① 本地 only（Gmail / WhatsApp 必须）② 自建云（Supabase pgvector）③ zero-retention 端点（Anthropic / OpenAI）④ 完全云端（仅公开内容）。课上发数据源 × 隐私级别决策表。</p>
-      </div>
-    </div>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L11e</div>
-    <div class="ltype live">LIVE · 120min</div>
-    <div>
-      <div class="ltitle">[Live] 7 个秘书任务现场 ship — 让你有"企业秘书 / 大脑"的真实感觉</div>
-      <div class="ldesc">
-        <h3>🎯 W2 Agent OS 总收官 — 让 agent 真正接管 OPC 的日常工作</h3>
-        <p>前面 L11b/c/d 把 OpenClaw + Hermes + 数据源都装好了。这节课现场把 agent 配成"真的秘书" —— 不是聊天玩具，是每天 8 点 push 总结、自动跟进客户、出月报的执行机器。</p>
-        <p><strong>7 个秘书任务（现场至少跑通 4 个，剩下作为 W2 末 deliverable）</strong>：</p>
-        <ol>
-          <li><strong>① 收件箱总结</strong> — 每天 8:00 push 到 Telegram，重要/待回/噪音三档 + 重要邮件回复 draft（OpenClaw skill + cron + Hermes Telegram gateway）</li>
-          <li><strong>② 会议笔记自动整理</strong> — Otter.ai / Granola 录音 → Hermes 入库 → AI 抽决策清单 + action items + owner</li>
-          <li><strong>③ 日程协调 + 客户预约</strong> — Cal.com / Calendly 接 OpenClaw skill，agent 看日历给客户回时段</li>
-          <li><strong>④ 客户跟进队列</strong> — 每周一 7:00 push：最近 7 天没回的客户 + 上次对话上下文 + AI 跟进文案 draft</li>
-          <li><strong>⑤ 合同审查</strong> — 联动 W3 L16 AI 律师角色 — agent 看到合同 PDF 自动 review 风险点 + 红线清单</li>
-          <li><strong>⑥ 财务月报</strong> — 每月 1 日 8:00 push — Stripe API + Xero API → MRR / churn / GST 准备金 / 现金流月报</li>
-          <li><strong>⑦ 周报生成</strong> — 每周日 18:00 — agent 看本周 git commit + 邮件 + 日历 + Hermes memory，自动出周报</li>
-        </ol>
-        <p><strong>课上 demo 顺序</strong>：先 ① 收件箱总结（最容易出效果），再 ⑥ 财务月报（OPC 学员最爽）。<strong>验收</strong>：W2 末每个学员至少跑通 4 个秘书任务（一周的 push 输出截图）。</p>
-      </div>
-    </div>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L11f</div>
-    <div class="ltype info">SELF · 60min</div>
-    <div>
-      <div class="ltitle">[Self] 进阶 — 切换 / 双 agent 配合 / 自建 / 团队 Brain</div>
-      <div class="ldesc">
-        <h3>🎯 L11b 选了主线 agent 跑通后 — 下一步怎么演化</h3>
-        <p>L11b-e 让你装好了一个主线 AI 秘书。这节自学课讲 4 种进阶场景：</p>
-        <p><strong>① 切换主线 agent（用一段时间想换）</strong> — 用了 Cowork 半年觉得隐私顶不住 → 切 OpenClaw；用了 OpenClaw 觉得 CLI 累 → 切 Cowork。每对组合的迁移路径：导出 system prompt + memory + skill 列表 → 在新 agent 重新喂入。Cowork ↔ OpenClaw 的 USER.md / system prompt 格式 80% 兼容。</p>
-        <p><strong>② 双 agent 配合（80% 学员最终走这条）</strong> — 实战中大多数 OPC 学员最后是 <strong>Cowork + OpenClaw 配合用</strong>：Cowork 干桌面 GUI 活（PPT / Excel / deck / Connectors），OpenClaw 干合规敏感 + IM 协作 + daemon 任务。两套都装、各管一边，memory 不互通但任务清单分明。课上发『双 agent 分工 SOP』。</p>
-        <p><strong>③ 自建路径</strong> — Crew AI / LangGraph + Pinecone/Weaviate/Supabase pgvector。给会写代码 + 隐私洁癖的学员，要写 200-500 行 Python。课程发完整 boilerplate，Cursor 一晚跑通。</p>
-        <p><strong>④ 团队 Brain（Hermes 共享 daemon）</strong> — 当 OPC 长大到 2-5 人小团队时，Hermes 跑在公司 VPS 上做 shared memory（参考 JR 内部 <code>docs/HERMES_TEAM_BRAIN_PRD.md</code>）。OPC 一个人阶段先不动。</p>
-        <p><strong>切换决策表</strong>：① 数据隐私升级 → 切 Cowork → OpenClaw；② 想要手机 IM 派活 → 补 Hermes；③ 团队化 → Hermes shared daemon；④ 想完全控制成本和模型 → 自建。配 5 个真实学员演化案例。</p>
-      </div>
-    </div>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L11g</div>
-    <div class="ltype live">LIVE · 120min</div>
-    <div>
-      <div class="ltitle">[Live] Agent Schedule 工作坊：5 个真实案例一起做（Claude Code / Codex / Cowork / OpenClaw 跨平台）</div>
-      <div class="ldesc">
-        <h3>🎯 把 agent 从"交互工具"变成"后台 worker" — 设定一次，每天自动跑</h3>
-        <p>L11e 现场配过 7 个秘书任务，那是『示范』；这节课是<strong>工作坊形式</strong>：现场每个学员配 5 个真实 schedule，跑完离场，每个都在你日历上明天起每天自动触发。</p>
-        <h4>📐 Agent Schedule 跨平台对照（30min 概念 + 配置）</h4>
-        <ul>
-          <li><strong>Claude Cowork <code>/schedule</code></strong>：内置 5 种 cadence（hourly / daily / weekly / monthly / custom），UI 配置最简单。<strong>限制：必须 Mac awake + Claude Desktop App 开着</strong></li>
-          <li><strong>Claude Code cron skill</strong>：自定义 skill + 系统 cron / launchd，要写 wrapper script，灵活但要会 shell</li>
-          <li><strong>Codex CLI 定时任务</strong>：通过系统 cron 或 OpenAI Scheduled Tasks，跟 Claude Code 思路类似</li>
-          <li><strong>OpenClaw cron</strong>：自由配 cron 表达式，可后台 daemon 常驻不依赖 Mac awake</li>
-          <li><strong>n8n / Zapier scheduled trigger</strong>：可视化工作流编排，免装机直接 SaaS 跑</li>
-          <li><strong>系统 cron / launchd / GitHub Actions cron</strong>：最底层兜底，跑任意脚本（包括调任意 agent CLI）</li>
-        </ul>
-        <p><strong>选型决策</strong>：① Cowork 学员用 <code>/schedule</code> 直接配；② OpenClaw 学员用 cron + daemon；③ 想完全脱离本机依赖 → n8n self-host on VPS / GitHub Actions cron + 调 Claude API 直跑。</p>
-        <h4>🛠 现场工作坊：5 个案例一起配（90min · 每个 18min · TA 1:8 陪跑）</h4>
-        <ol>
-          <li><strong>案例 ① 每天 7:00 拉竞品价格 + push 邮件</strong>（SaaS / 电商 OPC）— scrape 竞品 pricing → AI 总结变化 → 邮件『今天 X 涨了 $5、Y 推了新 plan』</li>
-          <li><strong>案例 ② 每周一 9:00 GSC + AI SEO 周报</strong>（all OPC）— GSC API 拉上周数据 → AI 找异常 → 200 字 weekly report</li>
-          <li><strong>案例 ③ 每月 1 号 8:00 财务月报</strong>（all OPC）— Stripe API + Xero API → MRR / churn / GST 准备金 / 现金流月报 → push Telegram + 存 Drive</li>
-          <li><strong>案例 ④ 每周日 18:00 周报自动生成</strong>（all OPC）— git log + 邮件 + 日历 + agent memory → AI 综合周报 → Drive + Telegram push</li>
-          <li><strong>案例 ⑤ 每天 22:00 git commit 总结 + daily review email</strong>（写代码的 OPC）— 今天 git log + 关闭的 issue → AI 总结 → 早上邮件给自己『昨日 X/Y/Z，今天该 …』</li>
-        </ol>
-        <h4>🎓 工作坊收尾（10min）</h4>
-        <p>每个学员展示自己 5 个 schedule 的 Cron 表达式 + 第一次跑的输出截图。<strong>验收</strong>：W2 末 deliverable — 至少 3 个 schedule 已设置好且跑过一次成功。</p>
-        <p><strong>失败模式 + 排错</strong>：① Mac 睡眠 → schedule 没跑（caffeinate / Power Nap 兜底）；② API rate limit → 加 retry + 错峰；③ 输出爆 token → 截断 / 摘要前置；④ 没人看 push → 改成卡片 dashboard / 摘要置顶；⑤ AI 答错 → 加 sanity check + alert</p>
-      </div>
-    </div>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L12</div>
     <div class="ltype info">SELF · 90min</div>
     <div>
-      <div class="ltitle">[Self] 部署到 Vercel / Cloudflare / Railway</div>
+      <div class="ltitle">[W2·自学] 跟 5 个目标用户做 30min interview</div>
       <div class="ldesc">
-        <h3>🎯 W2 末必须有一个公网可访问的 URL</h3>
-        <p>不是 localhost 截图。买个 .com 域名（namecheap $10/年）+ 选 Vercel / Cloudflare Pages / Railway 之一部署。课程发部署模板（Next.js / Remix / Astro 三选一），学员选一个跟着做。</p>
+        <p>不要问「你愿意付费吗？」——这是 indie hacker 最容易踩的坑（用户嘴上说愿意，掏钱时全跑）。用 Mom Test 那一套：「你过去一个月遇到这个问题几次？」「上次遇到时你怎么解决的？」「你为这个问题花过多少钱？」先用 AI 模拟面试一遍，再去真实用户那聊 5 个。<strong>这 5 场访谈的原话是 W3 商业验证和 W5 官网文案的原料</strong>，不能省。</p>
       </div>
     </div>
+  </div>
+  <div class="week-out">
+    <span class="lbl">本周产出</span>至少 1 个持证上岗的 agent + 3 条以上跑过一次的 Agent Schedule + 第一批调研报告 + 5 场访谈记录
+    <span class="wow">卧槽点：周中你没动一根手指，竞品和痛点报告自己推到了你手机上。</span>
   </div>
 </div>
 
 <!-- W3 -->
-<div class="week-block" style="border-color:#FF914D;border-width:4px">
-  <div class="week-h" style="background:#FF914D">
-    <span class="wnum">W3 · WEEK 3 ⭐ 关键</span>
-    <span class="wtitle">上线 + 收第一笔钱 + AI 法律合规（毕业硬指标 #1 里程碑）</span>
-    <span class="wmeta">线下 6h · 自学 4h · 4 节课</span>
+<div class="week-block" style="border-color:#ff5757;border-width:4px">
+  <div class="week-h" style="background:#ff5757">
+    <span class="wnum">W3 · WEEK 3</span>
+    <span class="wtitle">这是不是一门好生意<span class="wen">PROVE THE BUSINESS</span></span>
+    <span class="guest-tag">⭐ 嘉宾 Stan · 麦肯锡</span>
+    <span class="wmeta">周日 3h 现场课 · 周中自学 120min</span>
   </div>
   <div class="lesson-row">
-    <div class="lcode">L13</div>
-    <div class="ltype live">LIVE · 120min</div>
+    <div class="lcode">L09</div>
+    <div class="ltype live" style="background:#ff5757">现场课 · 180min</div>
     <div>
-      <div class="ltitle">[Live] Stripe / Lemonsqueezy 接入实战（澳洲版）</div>
+      <div class="ltitle">[现场课 · 嘉宾] 这是不是一门好生意 · Prove the Business</div>
       <div class="ldesc">
-        <h3>🎯 W3 第一节：把"产品"变成"能收钱的东西"</h3>
-        <p>Stripe 在澳洲的限制：开账号需要 ABN（W0 已预备）、需要银行账号验证、首次提现要 7 天。Lemonsqueezy 是 Merchant of Record 模式（替你处理 GST / VAT），对 W3 暂未注册公司的学员是 fallback。课上演示两套接入流程，含 webhook、退款、订阅、One-time payment。<em>已经有公司在用 Stripe 的学员（小老板）跳到『extend 现有 account 到新业务』模块。</em></p>
+        <p><strong>本周真实动作</strong>：把 idea 过一遍麦肯锡式判断——市场规模、竞争、单位经济、护城河、产品形态、定价，全部定死。</p>
+        <h3>🎬 现场 3 小时 · 6 个环节</h3>
+        <ol class="steps">
+          <li><span class="sn">①</span><span class="st">顾问怎么看一门生意：从情怀到结构</span><span class="sd">25min</span>
+            <span class="sx">Stan 讲咨询视角的三个基本动作：先把生意拆成可算的部件、再找结构性约束、最后看这个约束能不能被你解开。对照 indie hacker 常见的三种自我欺骗：把兴趣当市场、把工具当生意、把忙碌当进展。</span></li>
+          <li><span class="sn">②</span><span class="st">一人公司变现路径全景 + 赚钱算式</span><span class="sd">30min</span>
+            <span class="sx">先铺全景：订阅制软件、生产化服务、信息产品 / 课程、社群会员、佣金与联盟、企业定制、授权与模板，逐条给客单价区间、获客难度、创始人时间占用和天花板。然后把「能赚钱」压成一条算式：客单价 × 目标单量 − 可变成本 = 月毛利，再往前推单量靠什么来（内容 / outreach / 引荐 / 搜索）、每个来源的产能上限。现场用 $1k MRR 和 $10k MRR 两个量级反推需要多少客户，很多人第一次发现自己的定价撑不到目标。</span></li>
+          <li><span class="sn">③</span><span class="st">麦肯锡四把尺子：市场规模 / 竞争 / 单位经济 / 护城河</span><span class="sd">25min</span>
+            <span class="sx">市场规模自下而上算，不甩 TAM；竞争看的是「现在这些人的钱正付给谁」，包括 Excel 和实习生这种非软件替代方案；单位经济要把你自己的时间折成钱算进成本，否则服务型生意永远看起来毛利很高；护城河对一人公司只有三种现实答案——行业积累、分发渠道、数据与流程沉淀。每把尺子当场给自己打分。</span></li>
+          <li><span class="sn">④</span><span class="st">现场拆 3-4 个学员 idea（Stan 主刀）</span><span class="sd">40min</span>
+            <span class="sx">抽 3-4 个学员上台讲 3 分钟 idea，Stan 按赚钱算式 / 形态 / 结构性风险三层连续追问。台下同步在自己的表上打分，看自己会不会被同样的问题问倒。被拆到当场想改方向的，走 W3 的裁决流程改 SoT 原件，不新建文档。</span></li>
+          <li><span class="sn">⑤</span><span class="st">产品形态决策 + 5 大定价模型选型</span><span class="sd">25min</span>
+            <span class="sx">形态四选一：SaaS / 生产化服务 / 信息产品 / 混合，判断依据是客户买的到底是「工具」还是「结果」。定价五选一：一次性买断、订阅、Freemium（转化率 1-5%）、B2B per-seat、服务 + 软件混合。用三维决策框架收口——客户类型（C 端 / B 端）× 使用频次（每天 / 一次性）× 创始人时间占用，例如低频 + B 端 + 高创始人投入，大概率走混合模型而不是订阅。</span></li>
+          <li><span class="sn">⑥</span><span class="st">产出赚钱算式 + 形态结论 + 价格 anchor + Top 2 风险</span><span class="sd">35min</span>
+            <span class="sx">所有人按同一套框架自查，当场写下四样东西：一条能算的赚钱算式、一个形态结论、一个定价模型 + 价格 anchor（竞品调研 5 家 + 价值锚 + case study 早鸟 30-50% off + 年付折扣）、Top 2 结构性风险及应对。讲师和 AI Tutor 现场挑战明显对不上的组合（选订阅但产品一年用两次，churn 必死）。最后明确这个定价模型对应 W7 哪种接入方式：一次性 = Stripe Checkout / 订阅 = Subscriptions / B2B = Custom invoicing / 混合 = 多产品组合。</span></li>
+        </ol>
       </div>
     </div>
   </div>
   <div class="lesson-row">
-    <div class="lcode">L14</div>
-    <div class="ltype live">LIVE · 90min</div>
+    <div class="lcode">L10</div>
+    <div class="ltype info">SELF · 60min</div>
     <div>
-      <div class="ltitle">[Live] 域名 + 部署 + 监控基础</div>
+      <div class="ltitle">[W3·自学] 5 个 idea → 1 个：选品决策矩阵</div>
       <div class="ldesc">
-        <h3>🎯 不是教你成为 DevOps，是教 OPC 必须的最小运维栈</h3>
-        <p>域名 + Cloudflare DNS、SSL（Let's Encrypt 自动）、Sentry 错误监控（free tier 够用）、Plausible / Posthog 流量分析。这套配齐月成本 $0-15，是 OPC 标配。</p>
+        <p>用课上发的「选品决策矩阵」（5 维度 × 加权评分），把 W2 挖到的痛点筛到 5 个候选，再用 AI 模拟用户访谈砍到 1 个。<strong>验收</strong>：5 个候选各写 100 字 PRD + 五维评分（市场规模 / 付费意愿 / AI 可行性 / 你的不公平优势 / 6 个月内能否做出 $1k MRR）+ 最后选 1 个写清为什么。这个 idea 就是 W4 要交付的东西。</p>
       </div>
     </div>
   </div>
   <div class="lesson-row" style="background:#fff8d9">
-    <div class="lcode">L15</div>
-    <div class="ltype" style="background:#ff5757;color:#fff">⭐ 硬指标 #1</div>
+    <div class="lcode">L11</div>
+    <div class="ltype info">SELF · 60min</div>
     <div>
-      <div class="ltitle">[Self] $1 真实付费挑战（毕业硬指标 #1）</div>
+      <div class="ltitle">[W3·自学] 一页商业验证报告（W3 过关物）</div>
       <div class="ldesc">
-        <h3>⭐ W3 末的核心 deliverable：拿到第一笔真金白银 ⭐</h3>
-        <p>$1 也算（很多 indie hacker 第一笔就是朋友 PayPal 转的 $5）。这个挑战的目的不是钱，是验证"你做的东西有人愿意为它付一次费用"。这一步是 OPC 路上最难的——从 0 到 1 比从 1 到 100 难得多。<strong>已有客户的学员</strong>（律师 / 会计 / 小老板）：现有客户为 upgrade 后的新服务付钱也算。</p>
-        <p><strong>验收</strong>：Stripe / Lemonsqueezy / PayPal 后台截图，含交易时间、金额、买家。不接受朋友亲属"友情付费"——必须是不认识你的人，或现有客户为新服务付的钱。</p>
+        <h3>🎯 把 W1 的方向、W2 的访谈、W3 的判断压成一页</h3>
+        <p>这一页是给你自己看的裁决书，不是交给老师的作业。四段，真的只准一页：<strong>① 证据段</strong> — W2 的 5 场访谈里，有几个人「上个月真遇到过 + 真为它花过钱」。数字写实，0 就写 0，写 0 不丢人，写假的才要命。<strong>② 算式段</strong> — Stan 框架下的赚钱算式：客单价 × 目标单量 − 可变成本 = 月毛利，以及到你自己定的第一个数需要多久、靠哪个获客来源。<strong>③ 形态与定价段</strong> — 形态结论 + 定价模型 + 价格 anchor。<strong>④ 风险段</strong> — Top 2 结构性风险及应对。写完存回 SoT 原件。</p>
+      </div>
+    </div>
+  </div>
+  <div class="week-out">
+    <span class="lbl">本周产出</span>一页商业验证报告（赚钱算式 + 形态结论 + 定价模型 + 价格 anchor + Top 2 风险）
+    <span class="wow">卧槽点：麦肯锡顾问当场把你的 idea 拆到只剩骨头，你第一次看清它到底赚不赚钱。</span>
+  </div>
+</div>
+
+<!-- W4 -->
+<div class="week-block">
+  <div class="week-h">
+    <span class="wnum">W4 · WEEK 4</span>
+    <span class="wtitle">做出能卖的东西<span class="wen">MAKE IT REAL</span></span>
+    <span class="wmeta">周日 3h 现场课 · 周中自学 600min + 3 个 Vibe Coding Lab</span>
+  </div>
+  <div class="lesson-row">
+    <div class="lcode">L12</div>
+    <div class="ltype live">现场课 · 180min</div>
+    <div>
+      <div class="ltitle">[现场课] 做出能卖的东西 · Make It Real</div>
+      <div class="ldesc">
+        <p><strong>本周真实动作</strong>：做出并交付最小可用版本——不会 code 走专长 + AI 生产化服务 / 信息产品，会 code 走 MVP 自学线。<strong>现场课不讲写代码</strong>，MVP coding 全部下沉到自学 + 3 个 Vibe Coding Lab。</p>
+        <h3>🎬 现场 3 小时 · 6 个环节</h3>
+        <ol class="steps">
+          <li><span class="sn">①</span><span class="st">三种不写代码的交付形态 + 各自毛利与时间占用</span><span class="sd">30min</span>
+            <span class="sx">生产化服务 / 信息产品 / AI 工作流代建三条路，逐个讲典型客单价区间、毛利结构、创始人每单要投入多少小时、能不能靠 AI 把边际时间压下去。给一张「你的专长 → 更适合哪条路」的对照表。这一节针对律师 / 会计 / 医生 / 咨询 / PM 这类不写代码但专业积累很厚的学员，他们的最短变现路径通常不是做 SaaS。</span></li>
+          <li><span class="sn">②</span><span class="st">交付物清单法：把专长切成可标价的交付物</span><span class="sd">30min</span>
+            <span class="sx">把「我懂合同 / 我懂税 / 我懂招聘 / 我懂供应链」切成一个个具体交付物，每个写清：交付什么文件、多长时间、客户拿到后能干什么、定价多少。判断标准很硬——写不出交付物名字的，客户也不知道自己买了什么。</span></li>
+          <li><span class="sn">③</span><span class="st">现场写交付 SOP：收什么 / AI 跑什么 / 你审什么 / 交什么</span><span class="sd">35min</span>
+            <span class="sx">讲师带一个真实例子从头走一遍 SOP：客户提交材料清单 → AI 第一步做什么（贴出真实 prompt）→ 中间产物长什么样 → 人工审核检查表 → 最终交付物格式。学员同步写自己的，写不下去的地方就是产品化的断点，标出来当作本周要攻的点。</span></li>
+          <li><span class="sn">④</span><span class="st">用 SoT 生成服务说明页 + 报价单 + 交付模板</span><span class="sd">30min</span>
+            <span class="sx">把交付物清单和 SOP 合并进本周的 source of truth，一次喂出服务说明页 + 报价单 + 交付物模板三件套。价格承接 W3 定的 anchor，当场写死。验收：三份文件都能直接发给一个真实潜在客户。</span></li>
+          <li><span class="sn">⑤</span><span class="st">会 code 的：MVP 范围界定，砍到一周能 ship</span><span class="sd">30min</span>
+            <span class="sx">给写代码的学员一把刀：把功能清单分成「没有它产品不成立」和「有了更好」，后者这一周一律不做。逐条过常见的范围膨胀陷阱——先做登录注册、先搭后台管理、先做多租户、先接支付。正确顺序是先让核心那一段价值能被一个真人用一次，收款可以先手动发 invoice。现场每人产出一份最多 5 条的 must-have 清单和一份明确的 not-now 清单。</span></li>
+          <li><span class="sn">⑥</span><span class="st">两条路收口：本周交付物写死 + 排期</span><span class="sd">25min</span>
+            <span class="sx">不管走哪条路，当场写死本周末要交出来的东西是什么、什么时候做、卡住找谁。会 code 的写到「哪天部署上线」，不会 code 的写到「哪天把三件套发给第一个潜在客户」。写进组内共享 SoT，召集人本周中检查一次。</span></li>
+        </ol>
       </div>
     </div>
   </div>
   <div class="lesson-row">
-    <div class="lcode">L16</div>
-    <div class="ltype live">LIVE · 120min</div>
+    <div class="lcode">L13</div>
+    <div class="ltype info">SELF · 120min</div>
     <div>
-      <div class="ltitle">[Live] AI 生成法律文件 + AI 律师审核（Privacy / TOS / Disclaimer / Refund / Cookie · 澳洲版）</div>
+      <div class="ltitle">[W4·自学] Cursor / Claude Code / Lovable / v0 工具地图</div>
+      <div class="ldesc">4 个工具不是同一个东西：<strong>Cursor</strong> = IDE（写代码）、<strong>Claude Code</strong> = agentic CLI（自主写整个项目）、<strong>Lovable</strong> = 无代码 SaaS 生成器、<strong>v0</strong> = UI 组件生成器（设计 → 代码）。材料里用同一个 idea 各做一遍，对比时间、质量、限制，让你知道哪个适合你的能力和 idea 类型。</div>
+    </div>
+  </div>
+  <div class="lesson-row">
+    <div class="lcode">L14</div>
+    <div class="ltype info">SELF · 120min</div>
+    <div>
+      <div class="ltitle">[W4·自学] 一周做一个 SaaS 的 PRD → MVP playbook</div>
+      <div class="ldesc">传统 PRD 写给工程师看，AI 时代 PRD 写给 Claude / Cursor 看：要明确技术栈、要给 example、要标 must-have vs nice-to-have、要预留 AI 修改余地。拆 3 个真实 PRD 模板（SaaS / 工具 / API 服务），学员写自己的。</div>
+    </div>
+  </div>
+  <div class="lesson-row">
+    <div class="lcode">L15</div>
+    <div class="ltype lab">LAB · 30min</div>
+    <div>
+      <div class="ltitle">[W4·Lab] Vibe Coding — Cursor 入门</div>
+      <div class="ldesc">在浏览器内完成第一个 AI 协作写代码任务，理解 Cmd+K / Cmd+L / Composer 三种交互模式的差异。</div>
+    </div>
+  </div>
+  <div class="lesson-row">
+    <div class="lcode">L16</div>
+    <div class="ltype lab">LAB · 45min</div>
+    <div>
+      <div class="ltitle">[W4·Lab] Vibe Coding — Claude Code agentic 工作流</div>
+      <div class="ldesc">用 Claude Code CLI 完成一个完整功能（PRD → 代码 → 测试 → commit），体验 agentic 自主编码 vs Cursor 半人工的差异。</div>
+    </div>
+  </div>
+  <div class="lesson-row">
+    <div class="lcode">L17</div>
+    <div class="ltype lab">LAB · 45min</div>
+    <div>
+      <div class="ltitle">[W4·Lab] Lovable — 无代码 ship 第一个 SaaS</div>
+      <div class="ldesc">用 Lovable 在 30 分钟内 ship 一个能跑、能 deploy、能登录的小型 SaaS，体验 no-code 路径。</div>
+    </div>
+  </div>
+  <div class="lesson-row">
+    <div class="lcode">L18</div>
+    <div class="ltype info">SELF · 180min</div>
+    <div>
+      <div class="ltitle">[W4·自学] 自学：Vibe Coding Hub Phase 2 全部章节</div>
+      <div class="ldesc">复用 jiangren.com.au <code>/learn/vibe-coding/hub</code> Phase 2 章节（约 12 章 AI 编码进阶）。建议 W4 末完成至少 8 章，跟你的 MVP 实操配合。</div>
+    </div>
+  </div>
+  <div class="lesson-row">
+    <div class="lcode">L19</div>
+    <div class="ltype info">SELF · 90min</div>
+    <div>
+      <div class="ltitle">[W4·自学] 部署到 Vercel / Cloudflare / Railway</div>
+      <div class="ldesc">W4 末必须有一个公网可访问的 URL，不是 localhost 截图。买个 .com 域名（namecheap 约 $10/年）+ 选 Vercel / Cloudflare Pages / Railway 之一部署。课程发部署模板（Next.js / Remix / Astro 三选一）。</div>
+    </div>
+  </div>
+  <div class="lesson-row">
+    <div class="lcode">L20</div>
+    <div class="ltype info">SELF · 90min</div>
+    <div>
+      <div class="ltitle">[W4·自学] 域名 + 部署 + 监控基础</div>
+      <div class="ldesc">不是教你成为 DevOps，是 OPC 必须的最小运维栈：域名 + Cloudflare DNS、SSL（Let's Encrypt 自动）、Sentry 错误监控（free tier 够用）、Plausible / Posthog 流量分析（GDPR-friendly 选 Plausible）。这套配齐月成本 $0-15。</div>
+    </div>
+  </div>
+  <div class="week-out">
+    <span class="lbl">本周产出</span>能演示、能交付的最小版本：一个公网 URL，或一份能直接发给客户的交付三件套（服务说明页 + 报价单 + 交付模板）
+    <span class="wow">卧槽点：你第一次把「我懂的东西」变成了一个有名字、有价格、能交付的产品。</span>
+  </div>
+</div>
+
+<!-- W5 -->
+<div class="week-block">
+  <div class="week-h">
+    <span class="wnum">W5 · WEEK 5</span>
+    <span class="wtitle">立起你的品牌门面<span class="wen">BRAND &amp; WEBSITE</span></span>
+    <span class="wmeta">周日 3h 现场课 · 周中自学 90min</span>
+  </div>
+  <div class="lesson-row">
+    <div class="lcode">L21</div>
+    <div class="ltype live">现场课 · 180min</div>
+    <div>
+      <div class="ltitle">[现场课] 立起你的品牌门面 · Brand &amp; Website</div>
       <div class="ldesc">
-        <h3>🎯 OPC 不雇律师怎么搞定法律文件 — AI 双层流程</h3>
-        <p>第一笔付费收完之前必须挂的 5 份法律文件：Privacy Policy（澳洲 APP 隐私准则 + GDPR 双合规）、Terms of Service、Refund Policy、Cookie Policy、Disclaimer。雇澳洲律师起草这套 = $3-8k；用 AI 生成 + AI 律师审核 = $0 + 2 小时。</p>
-        <p><strong>第一层：AI 生成（30min）</strong>：Termly / iubenda 模板 + Claude / GPT 个性化填充（产品类型、收款方式、数据处理位置、用户地区）。课上发"澳洲科技产品 5 文件 prompt 包"，学员现场跑出 5 份文件初稿。</p>
-        <p><strong>第二层：AI 律师审核（45min）</strong>：把生成的文件喂回 Claude / GPT，用专门的"澳洲科技律师"角色 prompt review — 检查 ACL（澳洲消费者法）条款、ATO（澳洲税务局）表述、GDPR 跨境数据传输条款、consumer protection 漏洞、SaaS 退款政策合规性。AI 律师会列出"高风险 / 中风险 / 低风险"三档清单，学员逐条修。</p>
-        <p><strong>什么时候必须找真人律师（30min）</strong>：① 投资协议 / SAFE notes / 股权分配；② 首位员工劳动合同（澳洲 Fair Work 极复杂）；③ 重大客户合同（B2B 单笔 $20k+）；④ 跨境出海（美国 Delaware C-corp / 中国数据出境）；⑤ 被人 sue 或威胁 sue。课上发"澳洲华人科技律师推荐名单"（3 位 fixed-fee 律师，跟 Bootcamp 学员合作）。</p>
-        <p><strong>毕业 deliverable</strong>：5 份文件挂在你的产品 footer，AI 律师审核报告作为附件。</p>
+        <p><strong>本周真实动作</strong>：全班一起做官网 + design system + 品牌，一份 source of truth 一稿出全套对外资产。</p>
+        <h3>🎬 现场 3 小时 · 6 个环节</h3>
+        <ol class="steps">
+          <li><span class="sn">①</span><span class="st">Source of Truth 模式：为什么不能在 asset 里手改文案</span><span class="sd">25min</span>
+            <span class="sx">一人公司最大的时间黑洞是反复写产品文案——网站 / deck / brochure / 公众号每份都从头写，改一处要改十处，最后各处说法互相打架。正解：先写 1 份 markdown source（定位 / USP / pricing / 受众 / FAQ / 5 个 use case / 竞品对比），所有 asset 从它生成。source 改一个字，所有 asset 重新生成，绝不在某份 asset 里手改。</span></li>
+          <li><span class="sn">②</span><span class="st">现场写你产品的 markdown source of truth</span><span class="sd">35min</span>
+            <span class="sx">用模板填：产品定位 / USP / pricing（承接 W3 定的模型）/ target audience（承接 W2 的 5 场访谈原话）/ FAQ / 5 个 use case / 跟同类产品对比。要求 pricing 和受众描述直接引用真实来源——访谈里客户的原话比你自己想的形容词值钱十倍。这一份写扎实，后面所有工具全靠它。</span></li>
+          <li><span class="sn">③</span><span class="st">品牌与 design system：一次定死，写进 source</span><span class="sd">25min</span>
+            <span class="sx">一人公司的品牌不需要 VI 手册，需要一张能让 AI 每次都生成同一种感觉的清单：产品名与一句话说明、logo（AI 出图 + 人工挑，不要带假文字）、主色 + 辅色 + 中性色各一组 hex、标题 / 正文两款字体、语气三个形容词 + 三个禁用词、图片风格（真实照片 / 抽象氛围 / 插画，选一种）。全部写进 source 的 brand 段，之后每次生成 asset 都带上这一段。</span></li>
+          <li><span class="sn">④</span><span class="st">同一份 source 跑 6 个工具出全套 asset</span><span class="sd">40min</span>
+            <span class="sx">现场演示：Lovable / v0 出 landing page → Gamma / Pitch.com 出「投 VC」和「找客户」两版 deck → Canva AI 出 A4 brochure 和一页纸 PDF → Notion AI 出客户 onboarding 文档 → 公众号长文 + 小红书标题 3 套 → X / LinkedIn bio。每次都把 brand 段一起喂进去，看视觉和语气有没有被锁住。</span></li>
+          <li><span class="sn">⑤</span><span class="st">官网上线：域名 + landing + 首屏文案</span><span class="sd">30min</span>
+            <span class="sx">每人把 landing page 真的部署到公网并绑上自己的域名（承接 W4 的部署自学线；已经上线的直接改）。首屏三件套现场逐句改：一句话说明你为谁解决什么、一个证据（真实客户原话 / 数据 / demo 截图）、一个明确 CTA。禁止出现「赋能」「一站式」「全方位」这类谁都能用的词。</span></li>
+          <li><span class="sn">⑥</span><span class="st">验证一致性：改一个数字，全套重出</span><span class="sd">25min</span>
+            <span class="sx">故意改 source 里的 pricing 一个数字，重新生成全套 asset，确认所有地方同步变了——证明你真在用单一真相文档而不是各写各的。没同步的那份说明你手改过，找出来改回从 source 生成。</span></li>
+        </ol>
       </div>
     </div>
+  </div>
+  <div class="lesson-row">
+    <div class="lcode">L22</div>
+    <div class="ltype info">SELF · 90min</div>
+    <div>
+      <div class="ltitle">[W5·自学] 品牌物料补齐：从 SoT 一次生成剩下的对外资产</div>
+      <div class="ldesc">
+        <p>现场时间只够跑通「一份 source 出多份 asset」这条链路和最重要的两三个产物，剩下的本周自己按同样的方式生成，全部从 source 出，一份都不许手写。要补齐的清单：A4 brochure / 一页纸 PDF（发企业客户和线下活动用）、客户 onboarding 文档（成交之后发的第一份东西）、公众号首图文 + 小红书标题 3 套、X / LinkedIn bio + 头图、邮件签名 + 报价单。</p>
+      </div>
+    </div>
+  </div>
+  <div class="week-out">
+    <span class="lbl">本周产出</span>上线的官网 + design system + Pitch Deck + 一页纸 + 公众号首图文
+    <span class="wow">卧槽点：一份 markdown 改一个字，网站 / deck / 一页纸 / 公众号全部同步重出。</span>
+  </div>
+</div>
+
+<!-- W6 -->
+<div class="week-block" style="border-color:#ff5757;border-width:4px">
+  <div class="week-h" style="background:#ff5757">
+    <span class="wnum">W6 · WEEK 6</span>
+    <span class="wtitle">别让项目烂尾<span class="wen">KEEP SHIPPING</span></span>
+    <span class="guest-tag">⭐ 嘉宾 Ray · 微软</span>
+    <span class="wmeta">周日 3h 现场课 · 周中自学 120min</span>
+  </div>
+  <div class="lesson-row">
+    <div class="lcode">L23</div>
+    <div class="ltype live" style="background:#ff5757">现场课 · 180min</div>
+    <div>
+      <div class="ltitle">[现场课 · 嘉宾] 别让项目烂尾 · Keep Shipping</div>
+      <div class="ldesc">
+        <p><strong>本周真实动作</strong>：把大厂项目管理压缩成一人公司版，让 AI OS 当 PM 维护 backlog、追进度。</p>
+        <h3>🎬 现场 3 小时 · 6 个环节</h3>
+        <ol class="steps">
+          <li><span class="sn">①</span><span class="st">大厂项目管理落到一人公司：留什么、扔什么</span><span class="sd">25min</span>
+            <span class="sx">Ray 讲微软那套流程里对一个人还成立的部分：明确的 Definition of Done、写下来的优先级、固定的 review 节奏、风险提前登记。以及必须扔掉的部分：站会（没有团队要同步）、估点扑克、跨组对齐会、给 stakeholder 的进度汇报。讲清楚为什么一个人硬套 Scrum 全套会死在仪式上。</span></li>
+          <li><span class="sn">②</span><span class="st">OPC 简化 agile：1 周 1 sprint + DoD</span><span class="sd">25min</span>
+            <span class="sx">只保留四个动作：周日 plan 选 5 项、每项写 DoD、工作日执行、周日 review。DoD 对一个人的真实价值是——它是你唯一的「可以停手了」信号。没有 DoD 的任务会被你无限打磨，或者永远差一点点不敢说完成。现场练习把三个含糊的任务改写成带 DoD 的版本。</span></li>
+          <li><span class="sn">③</span><span class="st">把零散待办倒进 backlog，让 AI OS 排优先级</span><span class="sd">35min</span>
+            <span class="sx">现场把 W1-W5 攒在便签 / 微信收藏 / 脑子里的待办一次性倒进 backlog，让 AI OS 读完做两件事：按主题分类、按 RICE（触达 / 影响 / 信心 / 成本）和 Eisenhower 排序。人工只做一件事——砍掉排在后 50% 的那些，这一期不做。砍不下手的当场念出来，让同组的人帮你砍。</span></li>
+          <li><span class="sn">④</span><span class="st">在职版可持续节奏：碎片时间 vs 深工作块（Ray 实战）</span><span class="sd">30min</span>
+            <span class="sx">Ray 讲在微软高强度工作下怎么保住每周一个 3-4 小时深工作块：怎么排、怎么防止被占用、被打断后怎么快速回到上下文（AI OS 在这里的作用是替你保存上下文）。给一张「任务 → 碎片还是整块」的分类表，并讲一个更现实的问题：连续两周没进展时，怎么判断是节奏问题还是方向问题。</span></li>
+          <li><span class="sn">⑤</span><span class="st">让 AI OS 当 PM：维护 backlog、追进度、自动 review</span><span class="sd">30min</span>
+            <span class="sx">现场把 backlog 交给 AI OS 托管：每天读 git commit / 邮件 / 日历判断哪几项动了，每周日 18:00 拉本周实际发生的事对照计划，生成 review 草稿推给你——包含做完的、没做完的、以及它根据你的历史节奏给出的下周容量建议。再配一条周三的中期提醒：本周 5 项里有几项还没开始。</span></li>
+          <li><span class="sn">⑥</span><span class="st">产出下周 5 项执行计划 + 周日 review schedule</span><span class="sd">35min</span>
+            <span class="sx">每人从排好的 backlog 里挑 5 项作为下周 weekly priority，逐项写 DoD，标碎片 / 整块。至少 1 项必须直接推进本 phase 的出关物。最后确认那条周日 18:00 的 schedule 真的跑起来了，手动触发一次看输出。</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="lesson-row">
+    <div class="lcode">L24</div>
+    <div class="ltype info">SELF · 60min</div>
+    <div>
+      <div class="ltitle">[W6·自学] 在职版一周 sprint 模板 + 给 OS 派活清单</div>
+      <div class="ldesc">
+        <p>把 W6 学的 PM 方法固化成一张你每周照着填的表，之后 9 周每个周日照填：周日 plan（选 5 项 + 每项 DoD）→ 工作日碎片任务池（每项 ≤60min）→ 周末深工作块（1 项硬骨头）→ 周日 review（做完的 / 没做完的真实原因 / 下周调整）。「没做完的真实原因」这一栏最有用：连着三周同一个原因，说明你要改的是节奏不是意志力。</p>
+      </div>
+    </div>
+  </div>
+  <div class="lesson-row">
+    <div class="lcode">L25</div>
+    <div class="ltype info">SELF · 60min</div>
+    <div>
+      <div class="ltitle">[W6·自学] CEO AI OS 进阶 — 切换 / 双 agent 配合 / 自建 / 团队 Brain</div>
+      <div class="ldesc">
+        <p>W1 让你装好了一个主线 AI 秘书，这节讲下一步怎么演化。<strong>① 切换主线 agent</strong>：用了 Cowork 半年觉得隐私顶不住 → 切 OpenClaw；用了 OpenClaw 觉得 CLI 累 → 切 Cowork。迁移路径都是导出 system prompt + memory + skill 列表再重新喂入，Cowork ↔ OpenClaw 的 USER.md / system prompt 格式约 80% 兼容。<strong>② 双 agent 配合</strong>（多数人最终走这条）：Cowork 干桌面 GUI 活（PPT / Excel / deck / Connectors），OpenClaw 干合规敏感 + IM 协作 + daemon 任务，两套各管一边，memory 不互通但任务清单分明。<strong>③ 自建路径</strong>：Crew AI / LangGraph + pgvector，给会写代码 + 隐私洁癖的学员，课程发 boilerplate。<strong>④ 团队 Brain</strong>：长到 2-5 人小团队时，Hermes 跑在公司 VPS 上做 shared memory，一个人阶段先不动。</p>
+      </div>
+    </div>
+  </div>
+  <div class="week-out">
+    <span class="lbl">本周产出</span>OS 维护的已排序 backlog + 下周 5 项执行计划（每项带 DoD）+ 每周日自动生成的 review
+    <span class="wow">卧槽点：在职的碎片时间第一次被排明白，OS 开始替你盯 deadline。</span>
+  </div>
+</div>
+
+<!-- W7 -->
+<div class="week-block" style="border-color:#FF914D;border-width:4px">
+  <div class="week-h" style="background:#FF914D">
+    <span class="wnum">W7 · WEEK 7 ⭐ 关键</span>
+    <span class="wtitle">收到第一笔钱<span class="wen">FIRST DOLLAR</span></span>
+    <span class="wmeta">周日 3h 现场课 · 毕业硬指标 #1 里程碑</span>
+  </div>
+  <div class="lesson-row">
+    <div class="lcode">L26</div>
+    <div class="ltype live" style="background:#FF914D">现场课 · 180min</div>
+    <div>
+      <div class="ltitle">[现场课] 收到第一笔钱 · First Dollar</div>
+      <div class="ldesc">
+        <p><strong>本周真实动作</strong>：不建任何获客系统，就用已有人脉一对一把第一单卖出去，同时把收款和法律文件接上。内容、outbound、SEO 全部留到 Phase 2。</p>
+        <h3>🎬 现场 3 小时 · 6 个环节</h3>
+        <ol class="steps">
+          <li><span class="sn">①</span><span class="st">为什么第一单必须靠刷脸，不靠系统</span><span class="sd">20min</span>
+            <span class="sx">0→1 和 1→100 是两件事：0→1 验证的是「有没有人愿意付钱」，用最短路径（熟人一对一）验证最快；1→100 才是渠道问题。反面案例：花三个月做 SEO 和内容，第一笔钱还没收到就先耗光了热情和预算。这一周刻意不建任何获客系统。</span></li>
+          <li><span class="sn">②</span><span class="st">AI 盘点人脉 → 30-50 人排序名单</span><span class="sd">30min</span>
+            <span class="sx">导出微信标签 / LinkedIn 一度联系人 / 通讯录 / 行业群成员，喂给 AI 按「可能是买家 / 可能引荐买家 / 无关」三桶分类，再按关系强度 × 需求匹配度排序。人工复核前 50 名，剔掉明显不合适的，补上 AI 抓不到的（线下认识的、微信没备注的）。</span></li>
+          <li><span class="sn">③</span><span class="st">一对一 pitch 三句话结构 + 三种拒绝的应对</span><span class="sd">30min</span>
+            <span class="sx">讲三句话结构并现场改写学员写的原稿。重点挑两个病：求人味（「能不能麻烦您帮我看一下」）和群发味（第二句里没有对方的具体事）。第二句必须写一件真实发生过的事，写不出来说明这个人不该在名单前列。然后过三种拒绝的标准应对——要免费 / 让你做好再说 / 嫌贵，练到不假思索。</span></li>
+          <li><span class="sn">④</span><span class="st">现场真发 10 条一对一消息</span><span class="sd">30min</span>
+            <span class="sx">全场安静 30 分钟，每人真的发出至少 10 条一对一消息，发完在群里报数。讲师和 TA 现场帮改临门一脚的措辞。这是整门课最不舒服的 30 分钟，也是转化率最高的 30 分钟。</span></li>
+          <li><span class="sn">⑤</span><span class="st">Stripe / Lemonsqueezy 澳洲版接入 + 跑通 test mode 第一笔</span><span class="sd">35min</span>
+            <span class="sx">先讲两者在澳洲的关键差异：Lemonsqueezy 是 MoR（它当卖方，帮你处理全球税务和 GST），Stripe 是你自己承担合规但费率低、控制强；提现速度、退款流程、订阅管理各有差别。然后现场接：API Key → Checkout / Storefront → Webhook → 退款测试。每人跑通一笔 test mode 交易，AI Tutor 1:1 排错。接入方式对应 W3 定的定价模型：一次性走 Checkout、订阅走 Subscriptions、B2B 走 custom invoicing、混合走多产品组合。</span></li>
+          <li><span class="sn">⑥</span><span class="st">AI 生成 5 份法律文件 + AI 律师角色审核（澳洲版）</span><span class="sd">35min</span>
+            <span class="sx">第一笔付费前必须挂：Privacy Policy（澳洲 APP + GDPR 双合规）、Terms of Service、Refund Policy、Cookie Policy、Disclaimer。雇澳洲律师起草这套 $3-8k，两层 AI 流程 $0 + 2 小时。第一层用模板 + Claude / GPT 按产品类型、收款方式、数据处理位置、用户地区个性化填充；第二层把文件喂回去，用「澳洲科技律师」角色 review，检查 ACL 条款、ATO 税务表述、GDPR 跨境数据传输、消费者保障漏洞、SaaS 退款合规，输出高 / 中 / 低三档风险清单。现场每人跑出 5 份初稿 + 一份风险清单。</span></li>
+        </ol>
+        <p><strong>什么时候必须找真人律师</strong>：投资协议 / SAFE notes / 股权分配、首位员工劳动合同（澳洲 Fair Work 极复杂）、单笔 $20k+ 的 B2B 客户合同、跨境出海（美国 Delaware C-corp / 中国数据出境）、被人 sue 或威胁 sue。课上发澳洲华人科技律师 fixed-fee 推荐名单。</p>
+      </div>
+    </div>
+  </div>
+  <div class="lesson-row">
+    <div class="lcode">L27</div>
+    <div class="ltype info">SELF · 120min</div>
+    <div>
+      <div class="ltitle">[W7·自学] 收款与合规收尾：Stripe / Lemonsqueezy 深度配置 + 5 份法律文件挂上线</div>
+      <div class="ldesc">
+        <h3>🎯 现场跑通了 test mode，本周要真的能收到钱</h3>
+        <p>真实收款还差几步澳洲特有的东西，而且每一步都可能卡几天——这也是 W0 就让你先动 ABN 和银行验证的原因。<strong>收款侧要补完的</strong>：从 test mode 切 live mode（Stripe 澳洲账号需要 ABN + 银行账户验证，首次提现有等待期）/ GST 处理（营业额到 $75k 才强制注册，但收款前就要想清楚价格含不含 GST、发票怎么开）/ Webhook 落库（付款成功后自动记录、发确认邮件、开通权限）/ 退款与争议流程。<strong>合规侧</strong>：5 份法律文件定稿并真的挂到 footer，AI 律师审核报告存档。</p>
+      </div>
+    </div>
+  </div>
+  <div class="lesson-row" style="background:#fff8d9">
+    <div class="lcode">L28</div>
+    <div class="ltype" style="background:#ff5757;color:#fff">⭐ 硬指标 #1</div>
+    <div>
+      <div class="ltitle">[W7·自学] $1 真实付费挑战（毕业硬指标 #1）</div>
+      <div class="ldesc">
+        <h3>⭐ W7 末的核心 deliverable：拿到第一笔真金白银 ⭐</h3>
+        <p>$1 也算。这个挑战的目的不是钱，是验证「你做的东西有人愿意为它付一次费用」。从 0 到 1 比从 1 到 100 难得多。<strong>已有客户的学员</strong>（律师 / 会计 / 小老板）：现有客户为 upgrade 后的新服务付钱也算。</p>
+        <p><strong>验收</strong>：Stripe / Lemonsqueezy / PayPal 后台截图，含交易时间、金额、买家。不接受朋友亲属「友情付费」——必须是不认识你的人，或现有客户为新服务付的钱。<strong>cohort 同学算合规的「不认识你的人」</strong>（W1 之前你们也不认识），第一笔付费经常发生在同学之间。</p>
+      </div>
+    </div>
+  </div>
+  <div class="week-out">
+    <span class="lbl">本周产出</span>第一笔真实付费（后台截图）+ Stripe / Lemonsqueezy 接入 + 5 份法律文件挂 footer
+    <span class="wow">卧槽点：有人真的付钱了——你从「想创业的上班族」变成「在跑项目的人」。</span>
   </div>
 </div>
 
 <div style="text-align:center;margin:40px 0;padding:24px;background:#fff8d9;border:3px dashed #FF914D">
-  <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:900;font-size:24px;color:#10162f">→ Phase 1 末里程碑</div>
-  <div style="margin-top:8px;font-size:14px;color:#444">公网产品/服务 URL · Stripe 真实交易截图 · AI 员工每天自动跑 · 5 份法律文件挂 footer</div>
-  <a href="phase2.html" style="display:inline-block;margin-top:18px;padding:10px 22px;background:#FF914D;color:#fff;border:3px solid #000;font-weight:700;text-decoration:none">下一阶段 Phase 2 — Marketing Campaign →</a>
+  <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:900;font-size:24px;color:#10162f">→ Phase 1 出关物（W7 末）</div>
+  <div style="margin-top:8px;font-size:14px;color:#444;line-height:1.9">
+    一个验证过、AI 化、有品牌门面、<strong>被真人付过一次钱</strong>的产品<br/>
+    公网产品 / 服务 URL · Stripe 真实交易截图 · AI OS + agent 每天自动跑 · 一页商业验证报告 · 上线官网 + design system · 5 份法律文件挂 footer
+  </div>
+  <a href="phase2.html" style="display:inline-block;margin-top:18px;padding:10px 22px;background:#FF914D;color:#fff;border:3px solid #000;font-weight:700;text-decoration:none">下一阶段 Phase 2 — Go To Market →</a>
 </div>
 
 </div>

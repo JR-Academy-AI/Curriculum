@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Phase 2 — Get Customers · AI 一人创业营</title>
+<title>Phase 2 — Go To Market · AI 一人创业营</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Bricolage+Grotesque:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
@@ -12,6 +12,7 @@
   .week-h { padding: 18px 24px; background: #FF914D; color: #fff; border-bottom: 3px solid #000; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
   .week-h .wnum { font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 4px 10px; background: rgba(255,255,255,0.2); }
   .week-h .wtitle { font-family: 'Bricolage Grotesque', 'Noto Sans SC', sans-serif; font-weight: 900; font-size: 20px; flex: 1; min-width: 240px; }
+  .week-h .wen { font-family: 'Space Mono', monospace; font-size: 12px; opacity: 0.8; display: block; font-weight: 400; letter-spacing: 1px; margin-top: 2px; }
   .week-h .wmeta { font-family: 'Space Mono', monospace; font-size: 11px; opacity: 0.85; }
   .lesson-row { padding: 16px 24px; border-bottom: 1px solid #eee; display: grid; grid-template-columns: 80px 100px 1fr; gap: 16px; align-items: start; }
   .lesson-row:last-child { border-bottom: none; }
@@ -24,7 +25,21 @@
   .ltitle { font-weight: 700; font-size: 15px; line-height: 1.5; margin-bottom: 6px; }
   .ldesc { font-size: 13px; color: #555; line-height: 1.7; }
   .ldesc h3 { font-size: 13px; font-weight: 700; margin: 8px 0 4px; color: #10162f; }
+  .ldesc h4 { font-size: 12.5px; font-weight: 700; margin: 10px 0 4px; color: #10162f; }
   .ldesc p { margin: 4px 0; }
+  .ldesc ul { padding-left: 20px; margin: 4px 0; }
+  .ldesc li { margin: 2px 0; }
+  .steps { list-style: none; padding: 0; margin: 8px 0 0; }
+  .steps li { padding: 9px 0; border-bottom: 1px dashed #e2e2e2; }
+  .steps li:last-child { border-bottom: none; }
+  .steps .sn { font-family: 'Space Mono', monospace; font-weight: 700; color: #FF914D; margin-right: 6px; }
+  .steps .st { font-weight: 700; color: #10162f; }
+  .steps .sd { font-family: 'Space Mono', monospace; font-size: 10px; color: #888; margin-left: 6px; }
+  .steps .sx { display: block; margin-top: 3px; color: #555; }
+  .week-out { padding: 14px 24px; background: #fff8d9; border-top: 3px solid #000; font-size: 13.5px; line-height: 1.75; color: #10162f; }
+  .week-out .lbl { font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 1px; background: #10162f; color: #FFDE59; padding: 3px 8px; margin-right: 8px; }
+  .week-out .wow { display: block; margin-top: 6px; font-size: 12.5px; color: #555; }
+  .pipeline { padding: 14px 16px; background: #fff5ec; border-left: 4px solid #FF914D; font-family: 'Space Mono', monospace; font-size: 12.5px; line-height: 1.85; color: #10162f; margin: 10px 0; }
   .phase-hero { padding: 32px 28px; background: #fff5ec; border: 3px solid #000; box-shadow: 6px 6px 0 #000; margin: 24px 0; }
   .phase-hero h2 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 36px; font-weight: 900; line-height: 1.1; }
   .phase-hero .sum { font-size: 15px; color: #444; line-height: 1.7; margin-top: 14px; }
@@ -35,13 +50,15 @@
   .phase-nav { display: flex; gap: 10px; padding: 16px 24px; background: #f5f5f5; border-bottom: 1px solid #ddd; }
   .phase-nav a { padding: 6px 14px; border: 2px solid #000; background: #fff; font-size: 12px; font-weight: 700; font-family: 'Space Mono', monospace; }
   .phase-nav a.active { background: #FF914D; color: #fff; }
+  .rhythm { padding: 18px 22px; background: #10162f; color: #fff; border: 3px solid #000; box-shadow: 6px 6px 0 #FFDE59; margin-bottom: 28px; font-size: 13.5px; line-height: 1.8; }
+  .rhythm strong { color: #FFDE59; }
 </style>
 </head>
 <body>
 
 <div class="header">
   <h1>AI 一人创业营</h1>
-  <div class="sub">Phase 2 — Get Customers · W4-W6</div>
+  <div class="sub">Phase 2 — Go To Market · W8-W11</div>
 </div>
 
 <div class="phase-nav">
@@ -56,229 +73,287 @@
 <div class="c">
 
 <div class="phase-hero">
-  <div style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:#FF914D;letter-spacing:2px">PHASE 2 · W4 - W6</div>
-  <h2>Marketing Campaign</h2>
-  <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:18px;color:#FF914D;margin-top:4px">3 大获客阵地 · AI 串起整套战役</div>
+  <div style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:#FF914D;letter-spacing:2px">PHASE 2 · W8 - W11</div>
+  <h2>Go To Market</h2>
+  <div style="font-family:'Bricolage Grotesque','Noto Sans SC',sans-serif;font-weight:700;font-size:18px;color:#FF914D;margin-top:4px">把刷脸首单变成一台不靠刷脸、会自己复利的获客机器</div>
   <div class="sum">
-    Phase 1 做出能卖的产品，<strong>Phase 2 解决"如何让人发现 + 如何让 AI 帮你跑完整套获客战役"</strong>。按<strong>渠道类型</strong>切分（不按语言圈），未来加任何新市场都能直接套进来：W4 <strong>Social Media + Content Engine + AI 视频 / 漫剧</strong>（短内容平台 + 长内容 + 私域 + AI 真人短视频 + AI 漫剧短剧）、W5 <strong>Outreach（主动获客）+ Community + Events</strong>（主动获客 + 社区 + 线下/PR/Podcast）、W6 <strong>Search</strong>（SEO + GEO（Generative Engine Optimization / 生成式搜索优化））+ 总收官 <strong>AI 营销操作系统</strong>——一个 launch 跑通 10+ 个渠道，从选题、写稿、出图、出片、分发、outreach 到数据分析全部 AI 自动化。
+    W8 AI 内容工厂 · W9 主动敲开客户的门 · W10 让人和 AI 都搜到你（SEO + GEO）· W11 用户增长 Growth Hacking。<strong>边界很清楚：W8-W10 把人弄进来，W11 让人留下来 + 带人来。</strong>按<strong>渠道类型</strong>切分而不是按语言圈切，未来加任何新市场都能直接套进来。W7 那笔首单是靠你自己的人脉刷脸拿到的，这 4 周解决的是「陌生人怎么持续进来」。出关物：三路获客（内容 / 主动 / 被动）+ 一个复利循环。
   </div>
   <div class="phase-stats">
-    <div class="phase-stat"><div class="n">16</div><div class="l">节课</div></div>
-    <div class="phase-stat"><div class="n">11</div><div class="l">直播课</div></div>
+    <div class="phase-stat"><div class="n">13</div><div class="l">节课</div></div>
+    <div class="phase-stat"><div class="n">4</div><div class="l">周日现场课</div></div>
     <div class="phase-stat"><div class="n">2</div><div class="l">互动 Lab</div></div>
     <div class="phase-stat"><div class="n">10+</div><div class="l">渠道全打通</div></div>
   </div>
 </div>
 
-<!-- W4 -->
+<div class="rhythm">
+  <strong>📍 固定节奏不变（15 周每周都一样）</strong>：每周日 3 小时线下现场课（墨尔本主场 office + 悉尼 / 布里斯班卫星教室同步直播，本地 Tutor 1:8，不录播）。开场 15min 看 AI OS 这周替你跑了什么 → 中段 30min 1-2 人上台讲进展 + networking → 下课给 OS 派下周的活并定死下周要撞的真实动作。周中另有 5-8 小时自学 + Lab + 真实动作。
+</div>
+
+<!-- W8 -->
 <div class="week-block">
   <div class="week-h">
-    <span class="wnum">W4 · WEEK 4</span>
-    <span class="wtitle">Social Media + Content Engine + AI 视频 / 海报 / 漫剧 / 产品图</span>
-    <span class="wmeta">线下 4h · 自学 4h · 7 节课</span>
+    <span class="wnum">W8 · WEEK 8</span>
+    <span class="wtitle">AI 内容工厂<span class="wen">CONTENT FACTORY</span></span>
+    <span class="wmeta">周日 3h 现场课 · 周中自学 360min + Lab 30min</span>
   </div>
   <div class="lesson-row">
-    <div class="lcode">L17</div>
-    <div class="ltype live">LIVE · 120min</div>
+    <div class="lcode">L29</div>
+    <div class="ltype live">现场课 · 180min</div>
     <div>
-      <div class="ltitle">[Live] 小红书爆款笔记结构 + 私信转化</div>
+      <div class="ltitle">[现场课] AI 内容工厂 · Content Factory</div>
       <div class="ldesc">
-        <h3>🎯 Social Media 阵地：小红书 — OPC 最大单一中文获客渠道</h3>
-        <p>2026 年小红书月活已经 3 亿+，澳洲华人专业人士小红书渗透率 60%+。但小红书的内容逻辑跟公众号、X、LinkedIn 完全不同：必须竖图、必须 7 字以内的钩子标题、必须前 3 秒 hook、必须留私信钩子（公开评论限流）。课上拆 3-5 个澳洲华人 indie 在小红书的真实账号，逆向他们的爆款公式。</p>
+        <p><strong>本周真实动作</strong>：把一个卖点拆成小红书 / 视频号 / 公众号 / X 四平台素材，一周内真的发出去。</p>
+        <h3>🎬 现场 3 小时 · 5 个环节</h3>
+        <ol class="steps">
+          <li><span class="sn">①</span><span class="st">小红书爆款笔记结构 + 私信转化</span><span class="sd">40min</span>
+            <span class="sx">先讲小红书 vs 微信 vs 抖音 vs B 站在用户、流量逻辑、变现路径上的差别，说明为什么澳洲华人 OPC 的第一内容阵地通常是小红书。然后逆向拆 3-5 个澳洲华人 indie 真实账号：标题公式、封面、正文结构、评论区运营、私信转化话术全栈拆。最后现场演示选题 → 文案 → 封面 → 发布的完整链路，每人写 3 个标题 + 1 篇完整笔记，AI Tutor 1:1 反馈。</span></li>
+          <li><span class="sn">②</span><span class="st">视频号 + 公众号 + 私域三阵地闭环</span><span class="sd">35min</span>
+            <span class="sx">视频号吃算法推荐拉新、公众号做深度长文沉淀搜索流量、微信群做高频互动逼单，转化一定落在私域。现场用 Claude 把一个卖点一次喂出：视频号 60s 口播脚本 + 公众号 2000 字长文 + 小红书 3 条钩子标题 + 群里一句话讨论引子。再搭一条转化链：公众号文末挂群活码 → 进群欢迎语 + 落地页 → 7 天群内容节奏。讲澳洲华人私域的合规边界（不能频繁群发、企微 vs 个人号风控）。每人画出自己的 3+1 闭环图，TA 现场找断点。</span></li>
+          <li><span class="sn">③</span><span class="st">AI 视频 · 海报 · 漫剧：一条产线现场出片</span><span class="sd">45min</span>
+            <span class="sx">现场跑一条完整视觉产线：脚本 → 画面（文生视频或图生动画）→ ElevenLabs 配音 → 数字人对口型（可选）→ CapCut 自动剪 + 字幕，一条片同时导出视频号 9:16 / X 16:9 / 小红书 3:4 三个尺寸。同一素材再出静态：小红书竖封面、公众号头图、投流海报、产品 hero 图。漫剧只讲最难的那个坎——角色一致性（三视图设定锁角色，再喂给动画工具保持跨镜头一致），完整工具选型和成本产能账走自学。</span></li>
+          <li><span class="sn">④</span><span class="st">X / Twitter Build in Public + 现场发出第一条</span><span class="sd">35min</span>
+            <span class="sx">讲清 build in public 的杠杆逻辑：为什么每天晒 MRR / 用户数 / 踩坑能把 1k follower 滚到 50k，以及这套打法对澳洲华人 OPC 的适配点（英文圈 + 时差 + 数据透明）和不适配点（不爱抛头露面怎么办）。现场逆向 5 个英文 indie hacker 账号，提炼帖型模板（milestone / 教训 / 数据截图 / build log）。每人现场写并真发一条——晒 W1-W7 做的产品、第一笔付费或一个教训，TA 过 hook 第一句 + 配图 + CTA。</span></li>
+          <li><span class="sn">⑤</span><span class="st">收口：本周内容排期 + 30 分钟出全套的产线清单</span><span class="sd">25min</span>
+            <span class="sx">每人排出本周 4 平台的内容排期（发什么、哪天发、用哪个素材），并对照「一次 launch 30 分钟出全套」的清单标出自己产线缺哪一环。缺的那一环就是本周三条自学线里你要优先补的那条。</span></li>
+        </ol>
       </div>
     </div>
   </div>
   <div class="lesson-row">
-    <div class="lcode">L18</div>
-    <div class="ltype live">LIVE · 120min</div>
-    <div>
-      <div class="ltitle">[Live] 视频号 + 公众号 + 私域闭环</div>
-      <div class="ldesc">
-        <h3>🎯 中文内容矩阵的 3 + 1 模式</h3>
-        <p>视频号（短视频 + 算法推荐）+ 公众号（深度长文 + SEO）+ 私域 WeChat 群（高密度互动）。三个阵地内容互补、流量互导、最终转化在私域。课上演示 1 个内容选题如何拆成视频号 60 秒短视频 + 公众号 2000 字长文 + 小红书爆款笔记 + WeChat 群讨论 + 落地页转化全链路。</p>
-      </div>
-    </div>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L19</div>
-    <div class="ltype lab">LAB · 30min</div>
-    <div>
-      <div class="ltitle">Lab: 小红书爆款标题生成器（Prompt Lab）</div>
-      <div class="ldesc">Prompt Lab 互动练习：给你一个产品定位，你要写出能产出 10 个真实可发布的小红书标题的 Prompt 链。系统用历史 1000 个爆款标题数据集打分。</div>
-    </div>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L20</div>
+    <div class="lcode">L30</div>
     <div class="ltype info">SELF · 120min</div>
     <div>
-      <div class="ltitle">[Self] AI 内容工厂搭建：选题 → 写稿 → 改稿 → 出图</div>
+      <div class="ltitle">[W8·自学] AI 内容工厂搭建：选题 → 写稿 → 改稿 → 出图</div>
       <div class="ldesc">
-        <h3>🎯 把 W4 学到的所有内容动作自动化</h3>
-        <p>用 OpenClaw（如果上过 OpenClaw Bootcamp）/ n8n / Zapier 搭一个内容工厂：每周一 AI 选题 → 周三 AI 写初稿 → 周四 AI 出图（Midjourney 批量生成）→ 周五人工 review + 多平台一键分发。这个工厂搭好后每周内容产出从 1 篇变 5 篇。</p>
+        <p>用 OpenClaw / n8n / Zapier 搭一个内容工厂：每周一 AI 选题（看你历史数据 + 当前热点）→ 周三 AI 写初稿（Claude 写原稿、GPT 改语调）→ 周四 AI 出图（批量生成）→ 周五人工 review + 多平台一键分发。这个工厂搭好后每周内容产出从 1 篇变 5 篇。</p>
       </div>
     </div>
   </div>
   <div class="lesson-row">
-    <div class="lcode">L20a</div>
-    <div class="ltype live">LIVE · 120min</div>
-    <div>
-      <div class="ltitle">[Live] AI 视频制作：从脚本到成片，一键生成中英文短视频</div>
-      <div class="ldesc">
-        <h3>🎯 视频是 2026 年所有平台最大流量入口 — AI 让你绕过剪辑技能</h3>
-        <p>视频号 / 抖音 / 小红书短视频 / X 视频帖 / LinkedIn video / Podcast 切片，全是视频。但 OPC 学员一个人没时间学剪辑。这节课教你用 AI 把"脚本 → 画面 → 配音 → 数字人 → 字幕 → 多平台适配"全流程自动化，30 分钟出一条 60s 成片。</p>
-        <p><strong>2026 主流 AI 视频工具栈实操</strong>：①<strong>Sora 2</strong>（OpenAI 文生视频，60s 高质量）+ <strong>Veo 3</strong>（Google）+ <strong>Runway Gen-4</strong>（风格化）+ <strong>Kling 2.0</strong>（快手中文生态）+ <strong>Pika 2.0</strong>+ <strong>Luma Dream Machine</strong>（影视级运镜）；②<strong>Heygen / D-ID</strong> AI 数字人 — 一个虚拟形象多语言对口型（英文 LinkedIn / 中文视频号 / 日语小红书一次出三版）；③<strong>ElevenLabs</strong> 配音 + <strong>Suno</strong> BGM；④<strong>CapCut + AI</strong> 自动剪辑 + 智能竖屏裁剪（视频号 9:16 / X 16:9 / 小红书 3:4）。</p>
-        <p><strong>现场产出 4 类视频</strong>：①30s 产品 demo（给 Stripe checkout 演示）；②60s founder story（给 X / LinkedIn build in public）；③15s hook 视频（给小红书 / 视频号 / 抖音）；④数字人讲解（给 Podcast pitching / cold outreach）。每类配中英文双版本。</p>
-      </div>
-    </div>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L20b</div>
-    <div class="ltype live">LIVE · 90min</div>
-    <div>
-      <div class="ltitle">[Live] AI 海报 + 产品图制作（与 AI 视频配套）</div>
-      <div class="ldesc">
-        <h3>🎯 视觉素材另一半：海报 + 产品图 — AI 让你绕过设计师</h3>
-        <p>L20a 教视频，这节教<strong>静态视觉</strong>。OPC 学员投流海报 / 小红书封面 / 公众号大图 / 产品 landing 配图 / Stripe checkout 截图美化 / X 帖配图，全是吃设计时间的活，AI 全包。</p>
-        <p><strong>2026 主流 AI 海报 / 产品图工具栈实操</strong>：①<strong>Nano Banana</strong>（Google Gemini Image，多图融合 / 一致性最强 / 中英文文字渲染好）+ <strong>Sora Image</strong>（OpenAI）+ <strong>Midjourney v7</strong>（艺术风格）+ <strong>DALL-E 3</strong>（GPT 内嵌）+ <strong>Recraft</strong>（brand-consistent + 矢量导出）+ <strong>Ideogram 3</strong>（文字渲染最准）；②<strong>Canva AI / Adobe Express AI</strong>（已有模板 + AI 改图，最适合非设计学员）；③<strong>Figma AI</strong>（产品 landing UI 自动生成）；④<strong>Photoroom</strong>（产品图去背 + 换背景）；⑤<strong>Krea / Magnific</strong>（图片放大 + 修复）。</p>
-        <p><strong>现场产出 5 类静态素材</strong>：①小红书 3:4 竖版封面（标题 + 主图 + 钩子）；②公众号 16:9 头图；③投流海报（视频号 / 小红书 / 抖音 1242×1660 竖版，参考 JR 自家 <code>xhs-poster</code> skill 输出标准）；④产品 landing hero 图 + 5 张 feature 图；⑤Stripe checkout 截图美化版（用于 build in public）。每类配中英文双版本。</p>
-        <p><strong>跟 L20a 视频的配套关系</strong>：海报 + 视频 = 完整视觉资产。一次产品 launch 标配 = 1 条 60s 视频 + 5 张海报 + 3 张产品图 + 1 张 hero。AI 让这套从『一周设计师工时』变 30 分钟。<strong>L20 内容工厂 + L20a 视频 + L20b 海报</strong>三节连成『AI 视觉/内容产线』，是 W4 的硬核交付。</p>
-      </div>
-    </div>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L20c</div>
-    <div class="ltype live">LIVE · 120min</div>
-    <div>
-      <div class="ltitle">[Live] AI 漫剧 / 短剧：用 AI 做连续动画短剧获客（与真人短视频互补）</div>
-      <div class="ldesc">
-        <h3>🎯 漫剧 / AI 短剧 — 2026 涨粉最快的内容形态，一个人也能做</h3>
-        <p>真人短视频要出镜、要拍摄；<strong>漫剧（连续动画短剧）不用露脸、可批量、强留存</strong> —— 抖音 / 快手 / 番茄 / 小红书 / YouTube 的漫剧赛道 2025 起爆发，单账号靠一个 IP 连续更新就能涨粉变现。OPC 学员用它做产品科普剧、创始人故事剧、行业痛点剧，一条主线拆几十集，比单条 hook 视频留存高得多。</p>
-        <p><strong>AI 漫剧全流程工具栈（2026）</strong>：①<strong>剧本 / 分镜</strong> — Claude / GPT 写连续剧本 + 分镜脚本；②<strong>角色一致性设定图</strong> — Nano Banana / Midjourney v7 出角色三视图 + 即梦（Dreamina）锁定角色；③<strong>图生动画</strong> — <strong>Vidu</strong>（动漫 / 角色一致性最强）+ <strong>Kling 2.0</strong> + <strong>Pixverse</strong> + <strong>海螺 Hailuo</strong>，把设定图变成会动的分镜；④<strong>配音 / 配乐</strong> — ElevenLabs 多角色配音 + Suno BGM；⑤<strong>成片</strong> — CapCut 拼接 + 字幕 + 竖屏 9:16。全程无需绘画 / 剪辑基础。</p>
-        <p><strong>现场产出</strong>：①1 集 60-90s 漫剧样片（含 2-3 个一致角色 + 配音 + 字幕）；②一套可连续更新的角色设定 + 3 集剧本大纲；③平台分账 / 引流双轨规划（番茄漫剧分账 vs 导流到自己产品）。<strong>L20a 真人短视频 + L20c 漫剧短剧</strong>互补 = 露脸 / 不露脸两套获客内容线全覆盖。</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- W5 -->
-<div class="week-block">
-  <div class="week-h">
-    <span class="wnum">W5 · WEEK 5</span>
-    <span class="wtitle">Outreach + Community + Events（主动获客 + 社区 + 线下/PR/Podcast）</span>
-    <span class="wmeta">线下 4h · 自学 4h · 5 节课</span>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L21</div>
-    <div class="ltype live">LIVE · 120min</div>
-    <div>
-      <div class="ltitle">[Live] X / Twitter Build in Public 打法</div>
-      <div class="ldesc">
-        <h3>🎯 Outreach 阵地：X / Twitter Build in Public — 英文 OPC 标配</h3>
-        <p>Pieter Levels、Marc Lou、Tony Dinh 全部 Build in Public。这种打法的杠杆是：每天发你的 MRR / 用户数 / 学到的东西 → 慢慢积累 5k-50k follower → 转化成产品流量。课上拆 5 个英文 indie hacker 的 X 账号，逆向他们 1k → 50k 关注的内容公式。</p>
-      </div>
-    </div>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L22</div>
-    <div class="ltype live">LIVE · 120min</div>
-    <div>
-      <div class="ltitle">[Live] LinkedIn outreach + ProductHunt 冷启动</div>
-      <div class="ldesc">
-        <h3>🎯 LinkedIn 是 B2B SaaS 最大冷启动渠道</h3>
-        <p>但你不能直接 spam。LinkedIn outreach 的高转化公式 = 个人化第一句（提到对方最近的发帖 / 公司 / 文章）+ 你能给他什么具体价值（不是要他什么）+ 不要求会议、给一个低门槛 ask（"看 30 秒 demo 视频"）。课上演示用 Claude 批量生成 100 条个人化 outreach 的全流程。ProductHunt 冷启动是另一个杠杆：发布日的前 24 小时决定 90% 排名，要在墨尔本时间凌晨 6 点 launch（对应 PT 12:01 AM），动员 5-10 个朋友 upvote。</p>
-      </div>
-    </div>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L23</div>
+    <div class="lcode">L31</div>
     <div class="ltype lab">LAB · 30min</div>
     <div>
-      <div class="ltitle">Lab: LinkedIn 个人化 outreach 生成器（Prompt Lab）</div>
-      <div class="ldesc">Prompt Lab：输入对方 LinkedIn URL，AI 抓取后生成 5 个版本的个人化 outreach 开场白。系统用真实回复率打分。</div>
+      <div class="ltitle">[W8·Lab] 小红书爆款标题生成器（Prompt Lab）</div>
+      <div class="ldesc">给一个产品定位，写出能产出 10 个真实可发布的小红书标题的 Prompt 链。系统用历史 1000 个爆款标题数据集打分。</div>
     </div>
   </div>
   <div class="lesson-row">
-    <div class="lcode">L24</div>
-    <div class="ltype info">SELF · 60min</div>
+    <div class="lcode">L32</div>
+    <div class="ltype info">SELF · 150min</div>
     <div>
-      <div class="ltitle">[Self] Reddit / IndieHackers 社区策略</div>
+      <div class="ltitle">[W8·自学] AI 视频 · 海报 · 漫剧工具栈与产线（选型 / 角色一致性 / 成本产能）</div>
       <div class="ldesc">
-        <h3>🎯 不要发 spam，要发"价值帖"</h3>
-        <p>Reddit / IndieHackers 社区对 self-promotion 极度敏感（一发被删 + ban），但对"我用 X 工具解决了 Y 问题"这种价值帖欢迎度高。公式：90% 价值 + 10% 软提产品。课上发 20 个真实"价值帖 → 转化 100+ 用户"案例分析。</p>
+        <h3>🎯 现场看的是产线怎么跑，这里补的是工具怎么选、成本怎么算</h3>
+        <p>视觉这块工具换得比谁都快，重点不是记住某个工具，是记住「什么场景该用哪一层」。三层结构：<strong>生成层</strong>（文生视频 / 文生图）、<strong>形象层</strong>（数字人 / 角色一致性）、<strong>后期层</strong>（配音 / 剪辑 / 尺寸）。</p>
+        <h4>📹 视频层选型</h4>
+        <p>按「真实感 / 运镜 / 中文生态 / 出片速度」分场景——产品 demo、founder story、15s hook 各自适合的不一样；数字人层做「一个形象多语言对口型」（英文 LinkedIn / 中文视频号一次出两版）；配音与 BGM 走 ElevenLabs / Suno；剪辑与竖屏裁剪走 CapCut（视频号 9:16 / X 16:9 / 小红书 3:4）。</p>
+        <h4>🖼 海报 / 产品图层</h4>
+        <p>投流海报（1242×1660 竖版，参考 JR 自家 <code>xhs-poster</code> skill 的输出标准）、小红书 3:4 竖封面、公众号 16:9 头图、landing hero + feature 图、Stripe checkout 截图美化版（build in public 用）。挑工具的判断轴：文字渲染准不准、能不能锁品牌色、能不能导矢量、批量成本。</p>
+        <h4>🎞 漫剧 / 短剧线</h4>
+        <p>真人短视频要出镜要拍摄，漫剧不用露脸、可批量、强留存。全流程：剧本 / 分镜（Claude / GPT 写连续剧本）→ 角色一致性设定图（三视图锁角色）→ 图生动画（把设定图变成会动的分镜）→ 多角色配音 + BGM → 拼接 + 字幕 + 竖屏 9:16。产出一套可连续更新的角色设定 + 3 集剧本大纲，并规划平台分账 vs 导流到自己产品两条路。</p>
+        <p><strong>成本产能账</strong>：每类素材算清单条成本、单条耗时、每周可持续产能，标出哪一类值得花钱买加速、哪一类免费档就够。</p>
       </div>
     </div>
   </div>
   <div class="lesson-row">
-    <div class="lcode">L24a</div>
-    <div class="ltype live">LIVE · 120min</div>
+    <div class="lcode">L33</div>
+    <div class="ltype info">SELF · 90min</div>
     <div>
-      <div class="ltitle">[Live] 线下战役合集：中英文圈 6 大线下渠道一节通吃</div>
+      <div class="ltitle">[W8·自学] X Build in Public：30 天内容日历与帖型模板</div>
       <div class="ldesc">
-        <h3>🎯 一节课讲透中英文圈所有线下渠道 — AI 帮你从策划到执行全包</h3>
-        <p>线上内容只是入口，OPC 学员被低估的非对称优势是<strong>线下</strong>。这节课按渠道类型把 6 个一次讲完（不按语言切，不同语言的同类渠道打法是通的）：</p>
-        <p><strong>① Events / Meetup（现场演讲转化）</strong>：澳洲华人 tech meetup（墨尔本/悉尼/布里斯班，台上 5 分钟转化 30 个加微信）+ 本地英文 tech meetup（Melbourne SaaStr / Sydney Tech Pub / Brisbane Indie Founders，5 分钟 lightning talk + 台下 networking）。</p>
-        <p><strong>② Community / 私域裂变</strong>：微信群（公众号软文 + 邀请奖励 + KOL 转发，一周 0 → 200 精准用户）+ Discord/Slack 行业社群（潜伏 3 周再发，长尾流量）。</p>
-        <p><strong>③ Press / Podcast / Newsletter feature</strong>：澳洲华人媒体 PR（澳洲日报 / 微悉尼 / 今日墨尔本 / 澳洲新闻网投稿）+ Podcast pitching（IndieHackers / Lenny / Solopreneur 类）+ Founder feature（The Hustle / IndieHackers Newsletter / BetaList / Tools for Humans 投稿）。</p>
-        <p><strong>AI 在线下营销的 6 个具体动作（一套打 6 渠道）</strong>：①AI 找渠道（meetup / podcast / 媒体记者列表抓取 + 匹配度排序）；②AI 写 pitch（个人化邮件 + 演讲提案 + 投稿稿）；③AI 准备（演讲稿 + 模拟主持人采访 30min Q&A 训练）；④AI 出 asset（海报 + 朋友圈文案 + 引流落地页）；⑤AI 跟进（活动后 follow-up + 加好友 message + 长期 nurture）；⑥AI 反哺线上（一次活动拆成 5 篇小红书 + 1 篇公众号 + 5 条 X + 1 篇 LinkedIn 长帖 + 1 篇 SEO 博客）。</p>
+        <p>现场发了第一条，接下来是能不能连续发 30 天。build in public 的价值不在单条爆，在于连续——你连着 30 天晒进展，第 31 天有人来问你产品时，他看到的是一条完整时间线，不是一个空账号。<strong>四种帖型轮着发</strong>：milestone（第一笔付费 / 第 10 个用户 / 上线 / 被拒，数字要真）、教训（踩了什么坑、损失了什么、下次怎么改，这类互动最高）、数据截图（Stripe / GSC / PostHog）、build log（今天做了什么）。</p>
       </div>
     </div>
+  </div>
+  <div class="week-out">
+    <span class="lbl">本周产出</span>一条能重复跑的内容产线 + 本周至少 5 条已发布内容（含 1 条短视频 + 3 张图）
+    <span class="wow">卧槽点：一天 30 分钟，产出比你原来一周手写还多。</span>
   </div>
 </div>
 
-<!-- W6 -->
+<!-- W9 -->
 <div class="week-block">
   <div class="week-h">
-    <span class="wnum">W6 · WEEK 6</span>
-    <span class="wtitle">SEO + GEO + AI 营销操作系统 — 让算法和 AI 帮你跑战役</span>
-    <span class="wmeta">线下 4h · 自学 4h · 4 节课</span>
+    <span class="wnum">W9 · WEEK 9</span>
+    <span class="wtitle">主动敲开客户的门<span class="wen">OUTBOUND</span></span>
+    <span class="wmeta">周日 3h 现场课 · 周中 Lab 30min + 自学 60min</span>
   </div>
   <div class="lesson-row">
-    <div class="lcode">L25</div>
-    <div class="ltype live">LIVE · 120min</div>
+    <div class="lcode">L34</div>
+    <div class="ltype live">现场课 · 180min</div>
     <div>
-      <div class="ltitle">[Live] Google SEO long-tail + AEO/GEO（AI 搜索时代）</div>
+      <div class="ltitle">[现场课] 主动敲开客户的门 · Outbound</div>
       <div class="ldesc">
-        <h3>🎯 W6 SEO 周：传统 SEO + AI 搜索时代的 GEO 双线</h3>
-        <p>传统 Google SEO 还有效，但 ChatGPT search / Perplexity / Claude search 已经分走 15-20% 搜索流量。两套优化逻辑：①传统 SEO 强 long-tail keyword + technical SEO + backlink；②GEO（Generative Engine Optimization）强 cite-worthy 内容 + 结构化数据 + entity authority。课上拆 jiangren.com.au 真实 GSC 数据演示如何同时做这两件事。</p>
+        <p><strong>本周真实动作</strong>：真发出 20 条个人化 outreach，定下 ProductHunt launch 日期和一个线下渠道。</p>
+        <h3>🎬 现场 3 小时 · 6 个环节</h3>
+        <ol class="steps">
+          <li><span class="sn">①</span><span class="st">LinkedIn outreach 高转化三段式公式</span><span class="sd">25min</span>
+            <span class="sx">个人化第一句（提对方近期发帖 / 公司 / 文章）+ 你能给的具体价值（不是索取）+ 低门槛 ask（看 30 秒 demo，不约会议）。讲为什么直接 spam 必死、连接请求和私信的话术差异、一天发多少不触发风控。重点讲那个最常见的错误：把「个人化」做成了在模板里插入对方公司名。</span></li>
+          <li><span class="sn">②</span><span class="st">Claude 批量生成 100 条个人化 outreach + 人工卡点</span><span class="sd">30min</span>
+            <span class="sx">现场跑：导一批目标 LinkedIn URL → AI 抓取对方近期动态 → 按三段式各生成个人化开场白 → 人工抽审。重点讲怎么避免 AI 写出一眼假的模板腔，以及必须留哪几个人工卡点（第一句的事实核对、ask 的门槛、发送节奏）。</span></li>
+          <li><span class="sn">③</span><span class="st">ProductHunt 冷启动作战图</span><span class="sd">35min</span>
+            <span class="sx">发布日前 24h 决定 90% 排名：墨尔本时间凌晨 6 点 launch（对应 PT 12:01 AM）、提前一周预热 hunter 和朋友名单、动员 5-10 人首小时 upvote + 评论、首图 / tagline / 首条 maker comment 怎么写。给一张 launch 倒计时 checklist，现场每人填自己的日期和动员名单。</span></li>
+          <li><span class="sn">④</span><span class="st">中英文圈 6 大线下渠道地图</span><span class="sd">30min</span>
+            <span class="sx">中文圈：华人 tech meetup（墨 / 悉 / 布）、微信群裂变、华人媒体 PR。英文圈：本地 tech meetup、Podcast pitching、Founder feature 类媒体。讲澳洲华人 OPC 既能蹭中文圈又能蹭本地 tech 圈的非对称优势——绝大多数竞争者只在一个圈里。逐个渠道给：找到它的方法、进入门槛、典型转化路径。</span></li>
+          <li><span class="sn">⑤</span><span class="st">AI 跑线下营销 6 个动作 + 一次活动反哺 5 篇内容</span><span class="sd">35min</span>
+            <span class="sx">现场演示一套 AI 打 6 渠道：① 抓 meetup / podcast / 记者列表 + 匹配度排序 ② 写个人化 pitch / 演讲提案 / 投稿稿 ③ 模拟主持人做 30min Q&amp;A 训练 ④ 出海报 + 朋友圈文案 + 引流落地页 ⑤ 写活动后 follow-up 与加好友话术 ⑥ 把一次活动反哺成线上多平台内容。用一个假设的 meetup lightning talk 现场拆成 5 篇小红书 + 1 篇公众号 + 5 条 X + 1 篇 LinkedIn 长帖 + 1 篇 SEO 博客。</span></li>
+          <li><span class="sn">⑥</span><span class="st">定 outreach 名单 + PH launch 日期 + 线下渠道 30 天计划</span><span class="sd">25min</span>
+            <span class="sx">每人列 20 个真实 LinkedIn outreach 目标并写出 3 条个人化开场白；排出 ProductHunt launch 日期 + 动员名单；从 6 个线下渠道里挑 1 个最适合自己产品的，用 AI 排出找渠道 → pitch → 准备 → 执行 → 反哺的 30 天 task 清单，落到墨 / 悉 / 布的具体活动或媒体。TA 1:8 审话术是否过线、落地性够不够。</span></li>
+        </ol>
       </div>
     </div>
   </div>
   <div class="lesson-row">
-    <div class="lcode">L26</div>
-    <div class="ltype live">LIVE · 90min</div>
+    <div class="lcode">L35</div>
+    <div class="ltype lab">LAB · 30min</div>
     <div>
-      <div class="ltitle">[Live] E-E-A-T + Schema.org 结构化数据实操（重点：文章页）</div>
+      <div class="ltitle">[W9·Lab] LinkedIn 个人化 outreach 生成器（Prompt Lab）</div>
+      <div class="ldesc">输入对方 LinkedIn URL，AI 抓取后生成 5 个版本的个人化 outreach 开场白。系统用真实回复率打分。</div>
+    </div>
+  </div>
+  <div class="lesson-row">
+    <div class="lcode">L36</div>
+    <div class="ltype info">SELF · 60min</div>
+    <div>
+      <div class="ltitle">[W9·自学] Reddit / IndieHackers 社区策略</div>
+      <div class="ldesc">这两个社区对 self-promotion 极度敏感（一发被删 + ban），但对「我用 X 工具解决了 Y 问题」这种价值帖欢迎度高。公式：90% 价值 + 10% 软提产品。材料里给 20 个真实「价值帖 → 转化 100+ 用户」的案例拆解。</div>
+    </div>
+  </div>
+  <div class="week-out">
+    <span class="lbl">本周产出</span>20 条已发出的个人化 outreach + PH launch 作战表 + 1 个线下渠道 30 天计划
+    <span class="wow">卧槽点：第一次不靠熟人，从完全陌生的人那里拿到回复。</span>
+  </div>
+</div>
+
+<!-- W10 -->
+<div class="week-block">
+  <div class="week-h">
+    <span class="wnum">W10 · WEEK 10</span>
+    <span class="wtitle">让人和 AI 都搜到你<span class="wen">SEO &amp; GEO</span></span>
+    <span class="wmeta">周日 3h 现场课 · 周中自学 240min</span>
+  </div>
+  <div class="lesson-row">
+    <div class="lcode">L37</div>
+    <div class="ltype live">现场课 · 180min</div>
+    <div>
+      <div class="ltitle">[现场课] 让人和 AI 都搜到你 · SEO &amp; GEO</div>
       <div class="ldesc">
-        <h3>🎯 让 Google 和 AI 搜索都把你当 authority</h3>
-        <p>E-E-A-T = Experience / Expertise / Authoritativeness / Trustworthiness。<strong>产品页本身做 E-E-A-T 作用不大，真正发力在文章页 / 博客 / 知识库</strong>——这些是被 Google 索引、被 AI search 引用的地方。文章页必须有：① Author 框（带 LinkedIn / 个人主页 / 社交账号 + 真名 + 简介）；② Article Schema.org JSON-LD（headline / datePublished / author / image）；③ FAQPage Schema（每篇文末 5-10 个问答）；④ 内容里嵌入真实 case study + 个人经历 + 一手数据 + 截图证据。课上现场给学员的博客 / SEO 内容页加上这套，提交 Google Search Console 验证。产品 landing page 只补最基础的 SoftwareApplication + Organization Schema 就够。</p>
+        <p><strong>本周真实动作</strong>：给产品页做完 long-tail SEO + GEO + E-E-A-T + Schema，并提交 GSC 验证。</p>
+        <h3>🎬 现场 3 小时 · 6 个环节</h3>
+        <ol class="steps">
+          <li><span class="sn">①</span><span class="st">传统 SEO vs GEO：两套逻辑，两种写法</span><span class="sd">30min</span>
+            <span class="sx">ChatGPT search / Perplexity / Claude search 已分走 15-20% 的搜索流量，所以要双线：传统 SEO 强 long-tail keyword + technical SEO + backlink；GEO 强 cite-worthy 内容 + 结构化数据 + entity authority。两者的内容写法不一样——GEO 要的是能被 AI 整段引用的段落（有明确结论、有可核实的数据、有清晰的实体关系），不是关键词密度。</span></li>
+          <li><span class="sn">②</span><span class="st">拆真实 GSC 数据找 long-tail 机会</span><span class="sd">35min</span>
+            <span class="sx">用 jiangren.com.au 的真实 Search Console 数据现场演示：怎么找 long-tail 机会词、看哪些页有曝光没点击、哪些 query 已经被 AI 搜索引用。讲一个产品页同时做 SEO 和 GEO 的落地步骤，以及为什么新站前三个月只该做 long-tail。</span></li>
+          <li><span class="sn">③</span><span class="st">用 AI 产 long-tail 内容矩阵</span><span class="sd">30min</span>
+            <span class="sx">把学员产品拆成一组 long-tail 关键词 + 对应内容主题，每个对应一个真实搜索意图（不是关键词变体堆砌）。生成内容矩阵表，标出哪些优先写、哪些适合做成 GEO 引用源。重点讲怎么判断一个词是不是「你现在能排上的」——看现有结果的质量和站点权重，不看搜索量。</span></li>
+          <li><span class="sn">④</span><span class="st">E-E-A-T 四要素落到产品页</span><span class="sd">25min</span>
+            <span class="sx">把 Experience / Expertise / Authoritativeness / Trustworthiness 翻译成产品页上的可执行项：Author 框带 LinkedIn、真实 case study、外部引用与媒体提及、联系方式与公司信息（澳洲的话把 ABN 放上去很加分）。讲为什么 AI 搜索时代 E-E-A-T 权重更高——AI 只引可信源。</span></li>
+          <li><span class="sn">⑤</span><span class="st">给产品页加 Schema.org JSON-LD 现场实操</span><span class="sd">35min</span>
+            <span class="sx">现场给学员产品页加 FAQPage / SoftwareApplication / Person 三种 JSON-LD，用 Cursor 直接写进页面，逐个过必填字段。讲 GEO 视角下结构化数据怎么帮 AI 准确理解你是谁、做什么、跟谁有关。</span></li>
+          <li><span class="sn">⑥</span><span class="st">提交 GSC 验证 + 定本周清单</span><span class="sd">25min</span>
+            <span class="sx">现场把改好的页提交 Google Search Console 的 Rich Results 测试和 URL 检查，确认 schema 通过。每人对照 E-E-A-T 清单查自己产品页还缺哪几项，列出本周要补的，并定下 10 个目标词 / 3 篇优先内容 / 1 个 GEO 优化点。TA 1:8 审关键词搜索意图是否真实、够不够细到能排上。</span></li>
+        </ol>
       </div>
     </div>
   </div>
   <div class="lesson-row">
-    <div class="lcode">L27</div>
+    <div class="lcode">L38</div>
     <div class="ltype info">SELF · 240min</div>
     <div>
-      <div class="ltitle">[Self] 自学：JR /learn/seo-master 全部章节</div>
-      <div class="ldesc">复用 jiangren.com.au /learn/seo-master 学习方向（约 8-12 章）。SEO 是长期工程，跟着自学方向系统过一遍，不只是看 W6 直播。</div>
+      <div class="ltitle">[W10·自学] 自学：JR /learn/seo-master 全部章节</div>
+      <div class="ldesc">复用 jiangren.com.au <code>/learn/seo-master</code> 学习方向（约 8-12 章）。SEO 是长期工程，跟着自学方向系统过一遍，不只是看现场课那 3 小时。</div>
+    </div>
+  </div>
+  <div class="week-out">
+    <span class="lbl">本周产出</span>10 个 long-tail 目标词 + 3 篇优先内容主题 + 产品页 JSON-LD 通过 Rich Results 测试
+    <span class="wow">卧槽点：在 ChatGPT / Perplexity 里问你的领域，被引用的是你的页面。</span>
+  </div>
+</div>
+
+<!-- W11 -->
+<div class="week-block" style="border-color:#FFDE59;border-width:4px">
+  <div class="week-h">
+    <span class="wnum">W11 · WEEK 11 ⭐ Phase 2 收官</span>
+    <span class="wtitle">用户增长<span class="wen">GROWTH HACKING</span></span>
+    <span class="wmeta">周日 3h 现场课 · 周中自学 150min</span>
+  </div>
+  <div class="lesson-row">
+    <div class="lcode">L39</div>
+    <div class="ltype live">现场课 · 180min</div>
+    <div>
+      <div class="ltitle">[现场课] 用户增长 · Growth Hacking</div>
+      <div class="ldesc">
+        <p><strong>本周真实动作</strong>：填完 AARRR 五环表找出最大漏水环，上线一个推荐循环，跑一次 10 渠道 launch。</p>
+        <h3>🎬 现场 3 小时 · 6 个环节</h3>
+        <ol class="steps">
+          <li><span class="sn">①</span><span class="st">AARRR 五环 + 一人公司为什么只能修一个环</span><span class="sd">25min</span>
+            <span class="sx">逐环解释定义和常见误用（把访问量当获取成果、把注册当激活、把没退款当留存）。讲「最大漏水环」原则：修转化率最低的那一环，投入产出比通常是修其他环的 3-5 倍。一人公司同时修多个环 = 一个都修不完。</span></li>
+          <li><span class="sn">②</span><span class="st">现场拉数据填五环表 + 算转化率找漏水环</span><span class="sd">30min</span>
+            <span class="sx">打开自己的 PostHog / Plausible 和 Stripe 后台，把五环的原始数字填进表：各渠道访问、关键动作完成数、回访数、付费数、老带新数。没埋点的当场补（讲师给最小埋点清单），数据不足的先记「待测」不要瞎填。逐环算转化率并跟三类产品（B2B SaaS / C 端工具 / 生产化服务）的参考区间比，找出偏离最大的那一环，写下结论：本周只修这一环。</span></li>
+          <li><span class="sn">③</span><span class="st">AI 出 3 个改法，选 1 个成为下周实验假设</span><span class="sd">25min</span>
+            <span class="sx">把卡点环的原始数据和产品上下文喂给 AI，让它出 3 个具体改法——不要「优化文案」这种废话，要「把首屏的三段介绍换成一句用户原话 + 一个 30 秒 demo」这种。选一个写成实验假设：因为观察到 X，我认为做 Y 会让 Z 提升到 N。</span></li>
+          <li><span class="sn">④</span><span class="st">三种循环 + K 因子怎么算</span><span class="sd">25min</span>
+            <span class="sx">激励型 / 协作型 / 产出型三种循环，逐个讲适用形态、上线成本、常见翻车点：激励型翻车在给现金和防刷没做；协作型翻车在产品本来就是单人使用还硬加邀请；产出型几乎不翻车但天花板低。最实际的做法是先上产出型（零成本），再看要不要加激励型。K = 人均邀请数 × 邀请转化率，现场算一个例子，讲清为什么 K&gt;1 在小众 B2B 里基本不可能。</span></li>
+          <li><span class="sn">⑤</span><span class="st">选一种循环写完整机制 + 本周上线最小版本</span><span class="sd">25min</span>
+            <span class="sx">每人写四件事：奖励是什么（非现金）、触发点在哪（用户刚获得价值的那一刻，不是注册时）、怎么归因（邀请码 / 专属链接 / 手动记账都行，小规模别过度工程）、怎么防刷（同 IP / 同支付方式 / 需完成关键动作才计数）。最小版本要求这周就能上线：写代码的加一个带参数的分享链接；不写代码的在交付物页脚 / 邮件签名 / 报告封底加一行来源链接。</span></li>
+          <li><span class="sn">⑥</span><span class="st">一个 launch 跑通 10 渠道 + 营销 OS 闭环演示</span><span class="sd">50min</span>
+            <span class="sx">回看 W8-W11 学的所有渠道（小红书 / 视频号 / 公众号 / 私域 / 华人 meetup / 微信群 / 华人媒体 / X / LinkedIn / ProductHunt / Reddit / 本地 tech meetup / Podcast / SEO / GEO），画出「一个 launch 怎么同时点燃 10 渠道」的总图，定义什么算一次 launch。选一个学员真实 launch 现场拆出全套 asset：1 篇 SEO 长文 + 10 条多平台短文 + 5 张海报 + 3 条短视频 + 1 套邮件序列 + 100 条个人化私信。最后跑一遍全自动闭环，每人产出自己的 launch checklist + 工作流图，作为 Phase 2 出关物。</span></li>
+        </ol>
+        <h4>⚙️ 环节 ⑥ 演示的 AI 营销 OS · 5 层管道（每天 cron 自动触发）</h4>
+        <div class="pipeline">
+          <strong style="color:#FF914D">① 数据收集层</strong>（每天 8am 自动跑）<br/>
+          　▸ Reddit API 抓热帖 + X 趋势 + Google Trends + 行业 RSS + 评论情绪 7 天窗口<br/><br/>
+          <strong style="color:#FF914D">② AI 主题决策层</strong><br/>
+          　▸ 聚合去重 + 按热度 / 相关性 / 新颖度评分 → 输出 <strong>Top 3 当日选题 + hook</strong><br/><br/>
+          <strong style="color:#FF914D">③ Master / Variant 多平台生成层</strong>（单源多分发）<br/>
+          　▸ 1 份 Master 文章 → 4 个 Variant 并行（X 280 字 hook + 16:9 海报 / 小红书 400 字 + 9 宫格 / LinkedIn 长文 + 1200×627 横幅 / 公众号 1500-2500 字 + 900×500 头图）<br/>
+          　▸ 改 Master 一个字 → 4 平台 variant 自动重生成<br/><br/>
+          <strong style="color:#FF914D">④ 图像 + 视频生成层</strong><br/>
+          　▸ 出 4 种平台尺寸 + 自动加品牌色 / 字体 / 水印 / SEO alt text；60s 竖版视频复用 W8 素材<br/><br/>
+          <strong style="color:#FF914D">⑤ 自动发布 + 反馈学习层</strong><br/>
+          　▸ 排期自动发 4 平台 → 6h / 24h / 7d 拉参与度写入看板<br/>
+          　▸ <strong>反馈闭环</strong>：参与度回流到 Master 层 → AI 学习「哪个 hook / 图片在哪个平台效果好」→ 下一篇数据驱动调权重
+        </div>
+        <p><strong>匠人 dogfood 数据</strong>：JR Academy 自己在跑这套（Metatree AI Lab 公开 case study）——<strong>1 人 × 4h/天 手写 4 篇 → 1 人 × 30min/天 运行 4 平台 × 12 篇</strong>。时间投入 1/8，产出 3 倍，跨 4 平台。这不是 PPT 上的理论，是内部真在用的 system。</p>
+      </div>
     </div>
   </div>
   <div class="lesson-row">
-    <div class="lcode">L27a</div>
-    <div class="ltype live">LIVE · 120min</div>
+    <div class="lcode">L40</div>
+    <div class="ltype info">SELF · 90min</div>
     <div>
-      <div class="ltitle">[Live] AI 营销操作系统：1 个 launch 跑通 10 渠道（Phase 2 总收官）</div>
+      <div class="ltitle">[W11·自学] 付费投放最小实验：Meta / Google / 小红书三选一，$200 试出答案</div>
       <div class="ldesc">
-        <h3>🎯 把 W4-W6 全部串成一台机器</h3>
-        <p>前 5 周你学了 10 个渠道（小红书 / 视频号 / 公众号 / 私域 / 华人 meetup / 微信群 / 华人媒体 / X / LinkedIn / ProductHunt / Reddit / 本地 tech meetup / Podcast / SEO / GEO）。<strong>这节课把这 10 个渠道串成一个『AI 营销操作系统』</strong>——选定 1 个产品 launch（功能更新 / 新版本 / 阶段性 milestone），现场拆出全套 asset：1 篇 SEO 长文 + 10 条多平台短文 + 5 张海报 + 3 条短视频 + 1 套邮件序列 + 100 条个人化私信。</p>
-        <p><strong>AI 自动化全流程演示</strong>：n8n / Zapier / OpenClaw 工作流——选题（GPT 看历史数据 + 趋势）→ 写稿（Claude 一稿、GPT 改语调）→ 出图（Midjourney 批量、AI 模板）→ 排程（Buffer / Hypefury / 微信号矩阵分发）→ outreach（AI 抓取 + 个人化邮件 + 私信）→ 数据回收（GSC / 小红书 / X 数据 → AI 找模式 → 下周选题）。<strong>每个学员现场做出自己产品的 launch checklist + AI 工作流图</strong>，作为 Phase 2 毕业 deliverable。</p>
+        <h3>🎯 一人公司要不要投流？先花 $200 买一个答案</h3>
+        <p>不投的理由很多（没预算、不会、怕烧钱），但有一件事只有投流能最快告诉你：陌生人看到你的落地页，会不会付钱。内容和 SEO 要几个月才能回答，投流一周就能给你一个粗糙但真实的答案。<strong>最小实验四条规矩</strong>：① 只投一个渠道——B2B / 英文 → Google Search（买明确意图的关键词）；C 端 / 视觉驱动 → Meta；中文华人受众 → 小红书信息流。三选一，绝不同时开三个。② 预算封顶 $200，跑完就停。③ 只测一个变量。④ 结果无论好坏都写进实验卡片。</p>
       </div>
     </div>
+  </div>
+  <div class="lesson-row">
+    <div class="lcode">L41</div>
+    <div class="ltype info">SELF · 60min</div>
+    <div>
+      <div class="ltitle">[W11·自学] 增长实验系统：一周一个实验，让增长可累积</div>
+      <div class="ldesc">
+        <p>增长不是一次性冲刺，是「假设 → 实验 → 读数 → 留下有用的」这个循环。一人公司跑不了大团队那种并行实验，但一周一个、连着跑半年就是 26 个实验，足够把一门生意跑通。关键是别让结果散落在各处、跑完就忘。<strong>实验卡片五个字段</strong>：假设（因为观察到 X，我认为做 Y 会让 Z 提升到 N，必须写数字）/ 最小实施（这周能做完的最小版本，一周做不完的不叫实验叫项目）/ 看哪个数 / 结果 / 留下还是砍掉。</p>
+      </div>
+    </div>
+  </div>
+  <div class="week-out">
+    <span class="lbl">本周产出</span>五环诊断表 + 一个已上线的推荐机制 + launch checklist 与 AI 营销 OS 工作流图
+    <span class="wow">卧槽点：终于知道增长卡在哪一环，不再什么都做一点、什么都没做透。</span>
   </div>
 </div>
 
 <div style="text-align:center;margin:40px 0;padding:24px;background:#e8fff5;border:3px dashed #10b981">
-  <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:900;font-size:24px;color:#10162f">→ Phase 2 末里程碑</div>
-  <div style="margin-top:8px;font-size:14px;color:#444">中文 5 条 + 英文 5 条内容上线 · 至少 1 场线下活动出席（meetup/podcast/PR）· AI 营销工作流跑通 · SEO/GEO 配置完成 · 流量看板可见</div>
+  <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:900;font-size:24px;color:#10162f">→ Phase 2 出关物（W11 末）</div>
+  <div style="margin-top:8px;font-size:14px;color:#444;line-height:1.9">
+    三路获客（内容 / 主动 / 被动）+ 一个复利循环<br/>
+    中文 5 条 + 英文 5 条内容已发布 · 20 条 outreach 已发出 · PH launch 日期已定 · SEO / GEO 配置完成并通过 GSC 验证 · 一个已上线的推荐机制 · AI 营销 OS 工作流图
+  </div>
   <a href="phase3.html" style="display:inline-block;margin-top:18px;padding:10px 22px;background:#10b981;color:#fff;border:3px solid #000;font-weight:700;text-decoration:none">下一阶段 Phase 3 — 🇦🇺 Australia Operations →</a>
 </div>
 

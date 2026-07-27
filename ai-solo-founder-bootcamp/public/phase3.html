@@ -12,7 +12,9 @@
   .week-h { padding: 18px 24px; background: #10b981; color: #fff; border-bottom: 3px solid #000; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
   .week-h .wnum { font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 4px 10px; background: rgba(255,255,255,0.2); }
   .week-h .wtitle { font-family: 'Bricolage Grotesque', 'Noto Sans SC', sans-serif; font-weight: 900; font-size: 20px; flex: 1; min-width: 240px; }
+  .week-h .wen { font-family: 'Space Mono', monospace; font-size: 12px; opacity: 0.8; display: block; font-weight: 400; letter-spacing: 1px; margin-top: 2px; }
   .week-h .wmeta { font-family: 'Space Mono', monospace; font-size: 11px; opacity: 0.85; }
+  .guest-tag { background: #ff5757; color: #fff; padding: 4px 10px; font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 1px; border: 2px solid #000; }
   .lesson-row { padding: 16px 24px; border-bottom: 1px solid #eee; display: grid; grid-template-columns: 80px 100px 1fr; gap: 16px; align-items: start; }
   .lesson-row:last-child { border-bottom: none; }
   .lesson-row:hover { background: #f0fff8; }
@@ -25,7 +27,20 @@
   .ltitle { font-weight: 700; font-size: 15px; line-height: 1.5; margin-bottom: 6px; }
   .ldesc { font-size: 13px; color: #555; line-height: 1.7; }
   .ldesc h3 { font-size: 13px; font-weight: 700; margin: 8px 0 4px; color: #10162f; }
+  .ldesc h4 { font-size: 12.5px; font-weight: 700; margin: 10px 0 4px; color: #10162f; }
   .ldesc p { margin: 4px 0; }
+  .ldesc ul { padding-left: 20px; margin: 4px 0; }
+  .ldesc li { margin: 2px 0; }
+  .steps { list-style: none; padding: 0; margin: 8px 0 0; }
+  .steps li { padding: 9px 0; border-bottom: 1px dashed #e2e2e2; }
+  .steps li:last-child { border-bottom: none; }
+  .steps .sn { font-family: 'Space Mono', monospace; font-weight: 700; color: #10b981; margin-right: 6px; }
+  .steps .st { font-weight: 700; color: #10162f; }
+  .steps .sd { font-family: 'Space Mono', monospace; font-size: 10px; color: #888; margin-left: 6px; }
+  .steps .sx { display: block; margin-top: 3px; color: #555; }
+  .week-out { padding: 14px 24px; background: #fff8d9; border-top: 3px solid #000; font-size: 13.5px; line-height: 1.75; color: #10162f; }
+  .week-out .lbl { font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 1px; background: #10162f; color: #FFDE59; padding: 3px 8px; margin-right: 8px; }
+  .week-out .wow { display: block; margin-top: 6px; font-size: 12.5px; color: #555; }
   .phase-hero { padding: 32px 28px; background: #e8fff5; border: 3px solid #000; box-shadow: 6px 6px 0 #000; margin: 24px 0; }
   .phase-hero h2 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 36px; font-weight: 900; line-height: 1.1; }
   .phase-hero .sum { font-size: 15px; color: #444; line-height: 1.7; margin-top: 14px; }
@@ -37,13 +52,16 @@
   .phase-nav a { padding: 6px 14px; border: 2px solid #000; background: #fff; font-size: 12px; font-weight: 700; font-family: 'Space Mono', monospace; }
   .phase-nav a.active { background: #10b981; color: #fff; }
   .au-badge { display: inline-block; background: #ff5757; color: #fff; padding: 3px 10px; font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 1px; border: 2px solid #000; margin-right: 8px; }
+  .rhythm { padding: 18px 22px; background: #10162f; color: #fff; border: 3px solid #000; box-shadow: 6px 6px 0 #FFDE59; margin-bottom: 28px; font-size: 13.5px; line-height: 1.8; }
+  .rhythm strong { color: #FFDE59; }
+  .disclaimer { padding: 14px 18px; background: #fff0f0; border-left: 4px solid #ff5757; font-size: 13px; line-height: 1.8; color: #444; margin-top: 18px; }
 </style>
 </head>
 <body>
 
 <div class="header">
   <h1>AI 一人创业营</h1>
-  <div class="sub">Phase 3 — 🇦🇺 Australia Operations · W7-W9</div>
+  <div class="sub">Phase 3 — 🇦🇺 Australia Operations · W12-W13</div>
 </div>
 
 <div class="phase-nav">
@@ -60,172 +78,176 @@
 <div class="phase-hero">
   <span class="au-badge">🇦🇺 AU 专属</span>
   <span class="au-badge" style="background:#10162f">WORLD-FIRST</span>
-  <div style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:#10b981;letter-spacing:2px;margin-top:14px">PHASE 3 · W7 - W9</div>
+  <div style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:#10b981;letter-spacing:2px;margin-top:14px">PHASE 3 · W12 - W13</div>
   <h2>Australia Operations</h2>
+  <div style="font-family:'Bricolage Grotesque','Noto Sans SC',sans-serif;font-weight:700;font-size:18px;color:#10b981;margin-top:4px">让生意自己运转，再把钱从税务局拿回来</div>
   <div class="sum">
-    <strong>这是这门课在全球独家的 3 周。</strong> 财务自动化 + 澳洲会计 + Grant 实战。没有第二门课同时教这 3 件事——尤其是用中文教澳洲华人。<strong>嘉宾团队 = 澳洲华人 CPA（注册会计师） + Grant consultant 帮 5+ 客户拿过 RDTI（研发退税）</strong>。这 3 周也是这门课定价能撑住的核心理由——单一个 Grant 拿到手就 cover 学费 5-50 倍。
+    W12 让生意自己运转（Notion ERP + AI 客服 + AI 数据分析）· W13 把钱从税务局拿回来（公司结构 + 税务 + RDTI，⭐澳洲持牌 CPA / Grant consultant 现场坐镇）。<strong>全球独家护城河：AI 一人创业 × 澳洲税务 / Grant，没有第二门课同时教这两件事，更没有用中文教澳洲华人的。</strong>W13 现场只讲结构、税务、RDTI 三块重头戏；ABN / BAS 填报和 Grant 申请细节下沉到自学 + AI 起草 Lab，卡点走周中邮件问嘉宾 CPA。出关物：一门在澳洲合法、财务自动、还能退税的一人生意。
   </div>
   <div class="phase-stats">
-    <div class="phase-stat"><div class="n">11</div><div class="l">节课</div></div>
-    <div class="phase-stat"><div class="n">6</div><div class="l">直播课</div></div>
-    <div class="phase-stat"><div class="n">4</div><div class="l">嘉宾主讲</div></div>
+    <div class="phase-stat"><div class="n">8</div><div class="l">节课</div></div>
+    <div class="phase-stat"><div class="n">2</div><div class="l">周日现场课</div></div>
+    <div class="phase-stat"><div class="n">2</div><div class="l">互动 Lab</div></div>
     <div class="phase-stat"><div class="n">2</div><div class="l">⭐ 硬指标</div></div>
   </div>
 </div>
 
-<!-- W7 -->
+<div class="rhythm">
+  <strong>📍 固定节奏不变（15 周每周都一样）</strong>：每周日 3 小时线下现场课（墨尔本主场 office + 悉尼 / 布里斯班卫星教室同步直播，本地 Tutor 1:8，不录播）。<strong>W13 嘉宾飞主场</strong>——澳洲持牌 CPA / CA + 帮 5+ 客户拿过 RDTI 的 Grant consultant 现场坐镇，学员带自己的真实数字上来问，卫星教室走直播提问通道。周中另有 5-8 小时自学 + Lab + 行政动作（ABN 注册、BAS 熟悉、Grant 起草）。
+</div>
+
+<!-- W12 -->
 <div class="week-block">
   <div class="week-h">
-    <span class="wnum">W7 · WEEK 7</span>
-    <span class="wtitle">财务 + 自动化 — Notion ERP / AI 客服 / Stripe-Xero</span>
-    <span class="wmeta">线下 4h · 自学 4h · 4 节课</span>
+    <span class="wnum">W12 · WEEK 12</span>
+    <span class="wtitle">让生意自己运转<span class="wen">AUTOPILOT</span></span>
+    <span class="wmeta">周日 3h 现场课 · 周中 Lab 30min + 自学 60min</span>
   </div>
   <div class="lesson-row">
-    <div class="lcode">L28</div>
-    <div class="ltype live">LIVE · 120min</div>
+    <div class="lcode">L42</div>
+    <div class="ltype live">现场课 · 180min</div>
     <div>
-      <div class="ltitle">[Live] Notion 个人 ERP — CRM/收入/任务一体化</div>
+      <div class="ltitle">[现场课] 让生意自己运转 · Autopilot</div>
       <div class="ldesc">
-        <h3>🎯 W7 财务自动化开篇：OPC 不需要 Salesforce，需要的是 Notion</h3>
-        <p>一人公司的运营复杂度 = 5-10 个客户 + 10-20 个任务 + 1 个产品。Notion 一个 workspace 全装下：CRM 数据库（客户 + 状态 + 跟进时间）、收入数据库（同步 Stripe）、任务库（看板）、文档库（PRD / 营销素材）。课上发完整模板（已经过 5+ indie hacker 实测优化），学员当场复制 + 填自己的数据。</p>
+        <p><strong>本周真实动作</strong>：搭 Notion 个人 ERP、AI 客服分流、经营看板，把重复劳动整批交出去。</p>
+        <h3>🎬 现场 3 小时 · 6 个环节</h3>
+        <ol class="steps">
+          <li><span class="sn">①</span><span class="st">OPC 运营复杂度 ≠ 企业：四个 database 的边界</span><span class="sd">20min</span>
+            <span class="sx">一人公司日常 = 5-10 个客户 + 10-20 个任务 + 1 个产品，装一个 Notion workspace 就够，不要上 Salesforce / HubSpot。四个 database 的边界：CRM（跟人）/ Revenue（跟钱）/ Tasks（看板）/ Docs（PRD 与营销素材）。重点讲为什么 CRM 和 Revenue 必须拆两张表。</span></li>
+          <li><span class="sn">②</span><span class="st">现场搭 CRM + Revenue + Tasks 三张表</span><span class="sd">35min</span>
+            <span class="sx">CRM 字段：客户名 / 公司 / 阶段（Lead→Trial→Paid→Churned）/ 金额 AUD / 来源 / 下次跟进日，用 rollup + formula 自动算 pipeline 总额，建一个「本周要跟进」的 filter 视图。Revenue：订单 / 客户 relation / 金额 AUD / 是否含 GST / 日期，先讲半自动灌数据（全自动同步走本周的 Xero 自学线）。Tasks 看板关联到客户和产品。学员当场复制模板并把 W1-W11 攒的真实客户和第一笔付费填进去，验收：pipeline 公式跑出一个真实 AUD 数字，「本周跟进」视图至少 1 条。</span></li>
+          <li><span class="sn">③</span><span class="st">AI 客服三方案选型：OpenClaw / n8n / Zapier</span><span class="sd">20min</span>
+            <span class="sx">按隐私 × 技术能力 × 成本三轴对比：OpenClaw = 本地 + 隐私强 + 要会终端；n8n = self-host 或云都行 + 灵活 + 中等门槛；Zapier = 纯云 + 最简单 + 贵。决策表：律师 / 会计 / 医疗这类敏感数据走本地方案；不想 self-host 又预算 OK 走 Zapier；想灵活省钱走 n8n。</span></li>
+          <li><span class="sn">④</span><span class="st">现场搭客服邮件分流自动化 + 接知识库</span><span class="sd">35min</span>
+            <span class="sx">一条完整 flow：新邮件进来 → AI 分三类（技术问题 / 退款 / 销售咨询）→ 技术问题草拟回复进草稿箱、退款转人工标记、销售咨询写进 Notion CRM。光分流不够，还要让 AI 用你的产品 FAQ / 退款政策 / 定价来回答，否则它会瞎编功能或乱承诺退款——现场把这些知识源接上，并配上本周 Lab 里设计的客服 prompt。每人用一封自己真实收到的客户邮件测，验收：能看到 AI 生成的回复 draft 且分类正确。</span></li>
+          <li><span class="sn">⑤</span><span class="st">经营看板先定口径：MRR / churn / 归因 / GST 剔不剔</span><span class="sd">25min</span>
+            <span class="sx">逐项定义并当场填表：MRR（年付按 12 摊还是记当月）、退款和 chargeback 怎么处理、澳洲收入含 GST 时分析口径要不要剔除、churn 按客户数还是按金额、渠道归因用首触还是末触。填完写进 AI OS 记忆库，之后所有分析引用这一份，不允许每次重定义——口径不统一的数据看板，看了比不看更糟。</span></li>
+          <li><span class="sn">⑥</span><span class="st">LTV/CAC 分渠道算 + churn 归因 + 每月 1 号自动简报</span><span class="sd">45min</span>
+            <span class="sx">把 Stripe / Xero 数据喂给 AI 出月度 MRR / 新增 / 流失 / 净增趋势，标异常月并对照你的实验和内容记录给可能原因。分渠道算 LTV / CAC——CAC 要把你自己的时间折价算进去，不然内容渠道会显得免费。再把 PostHog 来源数据和 Stripe 付费数据 join 起来算每渠道的注册 / 付费 / 单客成本，把流失客户名单喂给 AI 做聚类找前三个模式和止血动作。最后固化成一张看板 + 一条每月 1 号 8:00 的 schedule：AI 读看板出三段简报（数字 / 异常 / 下月建议）推到手机 + 存档。验收：手动触发一次跑通，简报里每个数字能追回原始数据源。</span></li>
+        </ol>
       </div>
     </div>
   </div>
   <div class="lesson-row">
-    <div class="lcode">L29</div>
-    <div class="ltype live">LIVE · 120min</div>
-    <div>
-      <div class="ltitle">[Live] AI 客服 + 邮件自动化（OpenClaw / n8n / Zapier）</div>
-      <div class="ldesc">
-        <h3>🎯 不雇人怎么处理 100+ 客户邮件 / 客服？</h3>
-        <p>OPC 学员里 50% 上过 OpenClaw Bootcamp，已经会用 OpenClaw 接邮件。这节课把 OpenClaw / n8n / Zapier 三种方案对比清楚（OpenClaw = 本地 + 隐私 + 复杂、n8n = self-host + 灵活 + 中等、Zapier = 云 + 简单 + 贵），学员根据自己技术能力 + 隐私要求选一种 ship。</p>
-      </div>
-    </div>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L30</div>
-    <div class="ltype info">SELF · 60min</div>
-    <div>
-      <div class="ltitle">[Self] Stripe → Xero 自动同步</div>
-      <div class="ldesc">
-        <h3>🎯 澳洲会计师标配：Xero（不是 QuickBooks）</h3>
-        <p>Xero 在澳洲市占率 60%+，所有澳洲会计师都用。Stripe 自带 Xero 集成，开启后每笔交易自动进 Xero 做 bookkeeping，月底直接出 BAS 报告。这一步省下 5-10 小时/月。</p>
-      </div>
-    </div>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L31</div>
+    <div class="lcode">L43</div>
     <div class="ltype lab">LAB · 30min</div>
     <div>
-      <div class="ltitle">Lab: AI 客服 prompt 设计（Prompt Lab）</div>
-      <div class="ldesc">Prompt Lab：设计一个能处理 80% 客户问题的 AI 客服 prompt（含产品 FAQ、退款流程、技术问题分流）。系统用 50 条真实客户邮件测你的 prompt。</div>
-    </div>
-  </div>
-</div>
-
-<!-- W8 -->
-<div class="week-block" style="border-color:#ff5757;border-width:4px">
-  <div class="week-h" style="background:#ff5757">
-    <span class="wnum">W8 · WEEK 8 · 🇦🇺 嘉宾周</span>
-    <span class="wtitle">澳洲会计 + 税务 — 嘉宾：澳洲华人 CPA / CA</span>
-    <span class="wmeta">线下 4h · 嘉宾主讲 3 节直播 + ABN 实操</span>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L32</div>
-    <div class="ltype guest">🎤 嘉宾 LIVE · 120min</div>
-    <div>
-      <div class="ltitle">[Live · 嘉宾] Sole trader vs Pty Ltd 决策树（澳洲会计师）</div>
-      <div class="ldesc">
-        <h3>🇦🇺 W8 澳洲会计开篇：嘉宾 = 澳洲华人 CPA / CA</h3>
-        <p>选错实体类型可能多交 30% 税或失去关键 Grant 资格。Sole trader（个人 ABN）= 简单 + 个人税率（最高 47%） + 无限责任；Pty Ltd（私人公司）= 复杂 + 公司税率 25-30% + 有限责任 + Grant 资格更高。决策点：年收入 < $90k 且无外部投资 → Sole trader；> $90k 或要拿 Grant → Pty Ltd。课上嘉宾用真实客户案例讲 5 个临界场景。</p>
-      </div>
+      <div class="ltitle">[W12·Lab] AI 客服 prompt 设计（Prompt Lab）</div>
+      <div class="ldesc">设计一个能处理 80% 客户问题的 AI 客服 prompt（含产品 FAQ、退款流程、技术问题分流）。系统用 50 条真实客户邮件测你的 prompt。</div>
     </div>
   </div>
   <div class="lesson-row">
-    <div class="lcode">L33</div>
-    <div class="ltype guest">🎤 嘉宾 LIVE · 90min</div>
-    <div>
-      <div class="ltitle">[Live · 嘉宾] ABN / TFN / GST / BAS 实操</div>
-      <div class="ldesc">
-        <h3>🇦🇺 W8 第二节：开始注册</h3>
-        <p>ABN（澳洲商业号码）注册线上 5 分钟免费、TFN（税号）已有 / GST（消费税）注册门槛 $75k 年收入 + 自愿可早注册（注册 GST 后能 claim 进项 GST）、BAS（季度活动报告）。<strong>课上嘉宾会计师陪学员现场注册 ABN（用 ABR 网站），W8 末每个学员都有 ABN（毕业硬指标 #3）</strong>。</p>
-      </div>
-    </div>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L34</div>
-    <div class="ltype guest">🎤 嘉宾 LIVE · 90min</div>
-    <div>
-      <div class="ltitle">[Live · 嘉宾] PSI rules / 个人 vs 公司税分水岭 / CGT</div>
-      <div class="ldesc">
-        <h3>🇦🇺 W8 第三节：避税合规两条路</h3>
-        <p>PSI（Personal Services Income / 个人服务收入规则）是澳洲税法的杀招——如果你 80% 收入来自一个客户 + 你提供的是劳务而非产品，ATO（澳洲税务局）会把你的公司收入"穿透"按个人税计税，公司结构白用。怎么避免？多客户化、产品化、80/20 测试。CGT（Capital Gains Tax / 资本利得税）是当你卖掉产品 / 公司时的资本利得税，提前规划能省 50%。课上嘉宾讲 3 个真实学员案例（一个是没注意 PSI 多交 $40k 税，一个是提前 CGT 规划省 $80k）。</p>
-      </div>
-    </div>
-  </div>
-  <div class="lesson-row">
-    <div class="lcode">L35</div>
+    <div class="lcode">L44</div>
     <div class="ltype info">SELF · 60min</div>
     <div>
-      <div class="ltitle">[Self] 一年期财务规划模板（澳洲版）</div>
+      <div class="ltitle">[W12·自学] Stripe → Xero 自动同步</div>
       <div class="ldesc">
-        <h3>🇦🇺 W8 末 deliverable：你的一年财务路线图</h3>
-        <p>课程发 Excel 模板（已经过澳洲 CPA review），含：12 个月月度收入预测 / GST 预提 / 季度 BAS 准备金 / 个人 vs 公司税对比 / Super 自缴 / 应急储备。学员填完后跟嘉宾会计师邮件 review 一次（W8-W9 之间）。</p>
+        <h3>🎯 澳洲会计师标配：Xero（不是 QuickBooks）</h3>
+        <p>Xero 在澳洲市占率 60%+，所有澳洲会计师都用。Stripe 自带 Xero 集成，开启后每笔交易自动进 Xero 做 bookkeeping，月底直接出 BAS 报告。这一步省下 5-10 小时/月。课程发自动化模板。</p>
       </div>
     </div>
+  </div>
+  <div class="week-out">
+    <span class="lbl">本周产出</span>CRM / Revenue / Tasks 三库跑真实数据 + 一条客服 flow 上线 + 每月 1 号自动经营简报
+    <span class="wow">卧槽点：客户邮件进来，回复草稿已经在草稿箱里等你按发送。</span>
   </div>
 </div>
 
-<!-- W9 -->
+<!-- W13 -->
 <div class="week-block" style="border-color:#ff5757;border-width:4px">
   <div class="week-h" style="background:#ff5757">
-    <span class="wnum">W9 · WEEK 9 · 🇦🇺 嘉宾周 ⭐ 关键</span>
-    <span class="wtitle">Grant 实战（精简）— 嘉宾：帮 5+ 客户拿过 RDTI 的 Grant Consultant</span>
-    <span class="wmeta">线下 2h · 嘉宾主讲 1 节直播 + 自学其他 Grant 概览 + Lab 实操</span>
+    <span class="wnum">W13 · WEEK 13 ⭐ 最高 ROI</span>
+    <span class="wtitle">把钱从税务局拿回来<span class="wen">COMPLIANCE &amp; RDTI</span></span>
+    <span class="guest-tag">⭐ 嘉宾 持牌 CPA / Grant consultant</span>
+    <span class="wmeta">周日 3h 现场课 · 周中 Lab 45min + 自学 195min</span>
   </div>
   <div class="lesson-row">
-    <div class="lcode">L36</div>
-    <div class="ltype guest">🎤 嘉宾 LIVE · 120min</div>
+    <div class="lcode">L45</div>
+    <div class="ltype guest">🎤 嘉宾现场课 · 180min</div>
     <div>
-      <div class="ltitle">[Live · 嘉宾] R&D Tax Incentive (RDTI) 43.5% 退税</div>
+      <div class="ltitle">[现场课 · 嘉宾] 把钱从税务局拿回来 · Compliance &amp; RDTI</div>
       <div class="ldesc">
-        <h3>🇦🇺 W9 Grant 周开篇：嘉宾 = Grant consultant 帮 5+ 客户拿过 RDTI</h3>
-        <p>RDTI 是澳洲最大的创业补贴：年营收 < $20M 的小公司，符合条件的 R&D 支出可以拿 43.5% 现金退税。AI 创业的 R&D 支出范围比想象的宽（产品研发、新算法实验、新模型微调），但 ATO 审计严格——必须有完整的 R&D 记录（实验日志、技术风险声明、测试结果）。嘉宾会讲他们帮客户拿到 $30k-$200k 退税的真实案例 + 申请书结构 + 常见拒理由。</p>
-        <p><strong>课上 4 个 step</strong>：①RDTI 资格要件 4 项 ②嘉宾真实案例 $30k/$80k/$180k 三量级 ③申请书结构 + AI 辅助起草 ④学员 1:1 评估自己是否申请。</p>
+        <p><strong>本周真实动作</strong>：定实体结构、做 PSI 自测、评估 R&amp;D 支出并用 AI 起草 RDTI 申请。<strong>这很可能是整门课 ROI 最高的 3 小时</strong>——RDTI 单笔退税额度经常是学费的数倍到数十倍。</p>
+        <h3>🎬 现场 3 小时 · 6 个环节</h3>
+        <ol class="steps">
+          <li><span class="sn">①</span><span class="st">Sole trader / Partnership / Pty Ltd / Trust 四种结构决策树</span><span class="sd">30min</span>
+            <span class="sx">四种结构在税率、责任隔离、设立与维护成本、Grant 资格、未来引入投资人这五个维度上的差别。给一棵决策树：年收入区间 × 是否有外部投资计划 × 是否多人合伙 × 是否要申请 Grant → 推荐结构。重点讲一个常见误解——不是收入一到某个数就该开公司，还要看你的收入是不是个人劳务型（这直接连到下一段的 PSI）。</span></li>
+          <li><span class="sn">②</span><span class="st">嘉宾真实案例：5 个临界场景 + 学员当场写实体决策</span><span class="sd">30min</span>
+            <span class="sx">持牌 CPA 拆五个临界场景：年收入 $90k / 年收入 $180k / 准备接受外部投资 / 多人合伙 / 要申请 Grant，各自该选什么结构、为什么。然后现场 Q&amp;A，学员带自己的具体数字问。最后每人当场写下自己的实体决策和三条理由，本周内开始正式注册（注册操作走自学线）。</span></li>
+          <li><span class="sn">③</span><span class="st">PSI 规则：为什么你的公司结构可能白搭</span><span class="sd">25min</span>
+            <span class="sx">PSI（Personal Services Income）杀招：若你 80%+ 收入来自单一客户、且卖的是你个人劳务而非产品，ATO 会把公司收入穿透按个人税率计，Pty Ltd 的低税率白用。讲清 PSI 四道测试（results test / 80% rule / unrelated clients / employment / business premises）的判断逻辑，以及为什么做技术咨询、设计、法律这类学员最容易踩。</span></li>
+          <li><span class="sn">④</span><span class="st">真实案例：没注意 PSI 多交约 $40k + CGT 与退出规划</span><span class="sd">25min</span>
+            <span class="sx">嘉宾拆一个真实案例：做技术咨询、90% 收入来自一家公司、以为开了 Pty Ltd 就低税，结果触发 PSI 被穿透补税约 $40k。讲怎么提前规避：多客户化（凑够 unrelated clients）、产品化（从卖工时转向卖订阅 / SaaS）、做好 80/20 测试记录。再讲 CGT——未来卖掉产品或退出公司时的资本利得税，持有超过 12 个月个人可享 50% 折扣，符合条件时 small business CGT concessions 还能进一步减免，用一个提前规划省 $80k 的案例说明为什么现在就要把结构理顺。</span></li>
+          <li><span class="sn">⑤</span><span class="st">RDTI 43.5% 退税：资格要件 4 项 + 三个真实退税案例</span><span class="sd">30min</span>
+            <span class="sx">重头戏。资格四要件：实体类型（必须是公司，sole trader 不行——这一条直接反向影响上面的结构决策）、什么活动算 R&amp;D（核心实验活动 vs 支持性活动的界定）、记录要求（同期记录，事后补写风险很高）、申请窗口（财年结束后 10 个月内）。然后 Grant consultant 拆三个真实拿到退税的案例：$30k / $80k / $180k 三个量级，分别是什么类型的开发、怎么归集支出、审核时被问了什么。</span></li>
+          <li><span class="sn">⑥</span><span class="st">申请书结构拆解 + AI 起草 + 评估你自己的 R&amp;D 支出</span><span class="sd">40min</span>
+            <span class="sx">拆 RDTI 申请书的结构：技术不确定性怎么写、实验过程怎么描述、支出怎么归集（人力 / 合同 / 云服务）。演示用 AI 起草初稿再人工修改的流程（完整 prompt 模板走本周 Lab）。然后每个学员现场算自己这三个月的 R&amp;D 支出，嘉宾 1:1 评估要不要申请、大概能退多少、还缺哪些记录。</span></li>
+        </ol>
+        <div class="disclaimer">
+          ⚠️ <strong>边界说明</strong>：课上讲的是判断框架和申请方法，<strong>具体金额与资格判定以持牌 CPA / Grant consultant 的正式意见为准</strong>。课程不提供个人化税务建议，也不保证 Grant 申请获批。
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="lesson-row" style="background:#fff8d9">
+    <div class="lcode">L46</div>
+    <div class="ltype info">SELF · 90min</div>
+    <div>
+      <div class="ltitle">[W13·自学] ABN / TFN / GST / BAS 实操 <span style="color:#ff5757">（毕业硬指标 #3）</span></div>
+      <div class="ldesc">
+        <h3>🇦🇺 现场定完结构，本周把注册真的办掉</h3>
+        <p>ABN（澳洲商业号码）线上申请免费、5 分钟填完、2-7 天审批；TFN 已有；GST 强制注册门槛是年营业额 $75k，自愿也可以早注册（注册后能 claim 进项 GST）；BAS 是季度活动申报。这些填报动作下沉自学，不占现场 3 小时；卡住的走周中邮件问嘉宾 CPA。<strong>验收：W13 末每个学员都有 ABN（毕业硬指标 #3）。</strong></p>
       </div>
     </div>
   </div>
   <div class="lesson-row">
-    <div class="lcode">L37</div>
+    <div class="lcode">L47</div>
+    <div class="ltype info">SELF · 60min</div>
+    <div>
+      <div class="ltitle">[W13·自学] 一年期财务规划模板（澳洲版）</div>
+      <div class="ldesc">
+        <p>课程发 Excel 模板（已经过澳洲 CPA review），含：12 个月月度收入预测 / GST 预提 / 季度 BAS 准备金 / 个人 vs 公司税对比 / Super 自缴 / 应急储备。填完后跟嘉宾会计师邮件 review 一次。</p>
+      </div>
+    </div>
+  </div>
+  <div class="lesson-row">
+    <div class="lcode">L48</div>
     <div class="ltype info">SELF · 45min</div>
     <div>
-      <div class="ltitle">[Self] 其他 Grant 一图概览（EMDG / 各州 / 联邦大额 Grant）</div>
+      <div class="ltitle">[W13·自学] 其他 Grant 全景对照（EMDG / 各州 / 联邦大额）</div>
       <div class="ldesc">
-        <h3>🇦🇺 RDTI 之外的 Grant 总览（不展开讲，知道存在 + 何时申请就够）</h3>
-        <p>OPC 阶段 RDTI 占 95% 价值，其他 Grant 大多是 PMF 之后才有意义。这节自学发一份对照表 + 决策流程图，不占课时：</p>
+        <h3>🇦🇺 RDTI 之外的 Grant 全景</h3>
+        <p>OPC 阶段 RDTI 占 95% 价值，其他 Grant 大多是 PMF 之后才有意义。这节自学给一份对照表 + 决策流程图，不占现场课时：</p>
         <ul>
-          <li><strong>EMDG</strong>（Export Market Development Grant）— 海外客户营收占比高 → 最高 $80k 市场推广补贴</li>
-          <li><strong>各州 Grant</strong>—LaunchVic VIC（最高 $250k）/ Advance Queensland QLD（$150k）/ NSW MVP（$25k 最易拿）/ WA Innovation Voucher（$20k）</li>
-          <li><strong>联邦大额</strong>—Accelerating Commercialisation（最高 $1M, 通过率 &lt; 15%）/ Industry Growth Program（国家优先产业）</li>
+          <li><strong>EMDG</strong>（Export Market Development Grant）— 海外客户营收占比高时的市场推广补贴</li>
+          <li><strong>各州 Grant</strong> — LaunchVic（VIC）/ Advance Queensland（QLD）/ NSW MVP（门槛最低）/ WA Innovation Voucher</li>
+          <li><strong>联邦大额</strong> — Accelerating Commercialisation（通过率低）/ Industry Growth Program（国家优先产业）</li>
         </ul>
-        <p>L36 嘉宾会留 15min Q&amp;A 答任何 Grant 问题。需要深度操作时直接联系嘉宾的 Grant consulting 服务（Bootcamp 学员有专属价）。</p>
+        <p>金额与门槛每年都会调，以各 Grant 官网当期指南为准。需要深度操作时直接联系嘉宾的 Grant consulting 服务（Bootcamp 学员有专属价）。</p>
       </div>
     </div>
   </div>
-  <div class="lesson-row">
-    <div class="lcode">L40</div>
+  <div class="lesson-row" style="background:#fff8d9">
+    <div class="lcode">L49</div>
     <div class="ltype lab">LAB · 45min</div>
     <div>
-      <div class="ltitle">Lab: Grant 申请书 AI 起草（Prompt Lab）</div>
-      <div class="ldesc">Prompt Lab：用嘉宾提供的 Grant 申请 prompt 模板，输入你的产品信息 + R&D 支出，AI 输出符合 ATO 标准格式的初稿。系统用 5 个真实拿到 Grant 的 reference 申请打分。</div>
+      <div class="ltitle">[W13·Lab] Grant 申请书 AI 起草（Prompt Lab）<span style="color:#ff5757">（毕业硬指标 #4）</span></div>
+      <div class="ldesc">用嘉宾提供的 Grant 申请 prompt 模板，输入你的产品信息 + R&amp;D 支出，AI 输出符合 ATO 标准格式的初稿。系统用 5 个真实拿到 Grant 的 reference 申请打分。<strong>W13 末提交至少 1 份 Grant 申请 = 毕业硬指标 #4</strong>（提交不一定拿到，但提交本身是毕业要件）。</div>
     </div>
+  </div>
+  <div class="week-out">
+    <span class="lbl">本周产出</span>实体决策书 + PSI 自测结论 + R&amp;D 支出清单 + RDTI 申请书初稿
+    <span class="wow">卧槽点：算完 43.5% 退税，发现这门课的学费可能是被税务局报销的。</span>
   </div>
 </div>
 
 <div style="text-align:center;margin:40px 0;padding:24px;background:#faedff;border:3px dashed #CB6CE6">
-  <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:900;font-size:24px;color:#10162f">→ Phase 3 末里程碑</div>
-  <div style="margin-top:8px;font-size:14px;color:#444">ABN 注册 ✓ · Grant 申请提交 ✓ · 一年财务规划完成 ✓</div>
-  <a href="phase4.html" style="display:inline-block;margin-top:18px;padding:10px 22px;background:#CB6CE6;color:#fff;border:3px solid #000;font-weight:700;text-decoration:none">下一阶段 Phase 4 — Scale &amp; Demo →</a>
+  <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:900;font-size:24px;color:#10162f">→ Phase 3 出关物（W13 末）</div>
+  <div style="margin-top:8px;font-size:14px;color:#444;line-height:1.9">
+    一门在澳洲合法、财务自动、还能退税的一人生意<br/>
+    ABN 注册 ✓（硬指标 #3）· Grant 申请提交 ✓（硬指标 #4）· 实体结构决策书 ✓ · PSI 自测结论 ✓ · 一年财务规划 ✓ · CRM / Revenue / Tasks 三库 + 客服 flow + 每月自动经营简报 ✓
+  </div>
+  <a href="phase4.html" style="display:inline-block;margin-top:18px;padding:10px 22px;background:#CB6CE6;color:#fff;border:3px solid #000;font-weight:700;text-decoration:none">下一阶段 Phase 4 — Founder Club →</a>
 </div>
 
 </div>
