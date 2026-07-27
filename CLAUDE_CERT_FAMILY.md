@@ -55,6 +55,35 @@
 2. **匠人不能代发、代购考试名额。** 账号开通后，**学员本人**在 Partner Academy 上自行注册考试并**自行结账支付官方考试费**（结账价反映所属 partner tier 的折扣），再建 Pearson VUE 账号约考。
 3. **考试费不含在任何一个包的包价里。**
 
+### 3.1 🚨 报名必须用「已登记公司域名」的邮箱 — 个人邮箱注册不了
+
+**2026-07-26 核实**，官方 Partner FAQ（`anthropic-partners.skilljar.com/page/faq-certifications`）原文：
+
+> "Certification is available to people at Claude Partner Network organizations. **Registration requires a partner email address on a recognized company domain — personal email addresses will not work.**"
+>
+> "Certification is currently available only to organizations in the Claude Partner Network."（Customers / non-partners 不能考）
+
+**这条把准入墙的性质讲得比第 1 点更准**：墙不是"要有人给你开账号"，而是**"你的邮箱域名必须挂在某个 CPN 组织的 partner record 上"**。推论三条，全部影响交付与话术：
+
+- **@gmail / @qq / @163 / @outlook 一律注册不了。** 学员卡在这一步是必然事件，不是个例——P0"打通报名"环节必须把这件事讲在最前面。
+- **域名挂靠不是即时的**：官方写明域名未登记时要联系 partner support，**处理需 7–10 天**。⚠️ 这直接决定产品排期——**开售到能约考之间存在 7–10 天的硬延迟**，任何"报名即可约考"的话术都是错的。首期务必把这个前置时间写进 P0 与销售话术。
+- **学员自己公司若已是 CPN 成员**，用本公司邮箱即可，不需要经匠人。
+
+#### 决策：走匠人通道的学员发 **@jiangren.com.au** 邮箱（2026-07-26 Lightman 定案）
+
+链路固定为：报名 → 匠人开一个 `@jiangren.com.au` 邮箱给学员 → 学员用该邮箱在 Partner Academy 自助注册、自行结账、自行约考。
+
+**这条决策把 7–10 天的等待从「每个学员」变成「一次性」**：`jiangren.com.au` 只需在匠人 partner record 上登记一次，之后所有学员共用同一个已登记域名，不再逐人排队。⚠️ 但**前提是该域名确实已挂在匠人的 partner record 上**——尚未核实，**首期开售前必须先确认；若未登记，这 7–10 天要提前预留，不能压到开售后**。
+
+**🚨 由此产生的三件事，做产品和话术时必须一起考虑：**
+
+1. **🔴 邮箱不能在结课后就回收 —— 回收 = 学员一年后必须全价重考。** 证书有效期 12 个月，续证要**回到 Partner Academy 完成一次免费非监考评估**（见第二节）。登录靠的就是这个邮箱。结课即停用邮箱，等于亲手把学员的免费续证通道掐断，一年后他只能全价重考。**因此 `@jiangren.com.au` 学员邮箱至少要留到证书到期后完成续证为止（≥13 个月）**，这是一条成本承诺，须在定价时算进去。
+2. **每个学员一个邮箱 = 每个学员一份邮箱席位成本**，随招生规模线性增长。定价前先确认单价与是否有低成本的别名/转发方案（转发是否满足 Anthropic 的"partner email address"校验 **⚠️ 未验证**，不要假设可行）。
+3. **合规与身份边界**：拿着 `@jiangren.com.au` 邮箱的学员在 Anthropic 侧会呈现为"匠人的人"。**证书归属个人不归公司**（见第四节），但对外话术仍须避免让人以为学员因此成为匠人员工或匠人可代持其证书。
+
+**折扣按 tier 自动生效**：Select / Preferred / Global Premier 五折，Global Premier 在 2026-08-31 前 100% 免考试费。匠人目前是 **Registered 级**（见第四节）——**Registered 不在折扣名单里，学员大概率付全价**。销售私聊讲折扣时不要暗示匠人渠道更便宜。
+- **折扣按 tier 自动生效**：Select / Preferred / Global Premier 五折，Global Premier 在 2026-08-31 前 100% 免考试费。匠人目前是 **Registered 级**（见第四节）——**Registered 不在折扣名单里，学员大概率付全价**。销售私聊讲折扣时不要暗示匠人渠道更便宜。
+
 用词红线（四门全部适用）：
 
 | ❌ 禁止出现 | ✅ 正确说法 |

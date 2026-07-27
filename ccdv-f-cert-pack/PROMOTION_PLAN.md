@@ -3,6 +3,7 @@
 > 单一真相文档。推广的排期、责任、渠道、数据都在这里。
 > 由 `/course-promotion-architect` 生成与维护，不要手工大改结构。
 > **话术 / 卖点 / 合规口径不在本文件** —— 见 [`./DESIGN.md`](./DESIGN.md)（话术真相源）+ [`../CLAUDE_CERT_FAMILY.md`](../CLAUDE_CERT_FAMILY.md)（四门共用报名链路 / 政策 / 红线）。本文件只管**谁、什么时候、用哪个 skill、做什么**。
+> **🎯 目标用户画像见 [`./PERSONAS.md`](./PERSONAS.md)**（2026-07-26 建，ground truth 覆盖率偏弱）。⚠️ 本文件 §3 渠道矩阵是按**受众类型经验推断**得出，**不是** persona 反推——拿到首期真实数据后须跑 `/target-user-persona-mapper export-channels` 重算替换。
 
 ---
 
