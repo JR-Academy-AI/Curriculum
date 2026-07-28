@@ -1,0 +1,128 @@
+import {execFileSync} from 'node:child_process';
+import {createRequire} from 'node:module';
+import {mkdirSync, readFileSync, unlinkSync, writeFileSync} from 'node:fs';
+import path from 'node:path';
+
+const backendRoot =
+  process.env.JR_ACADEMY_BACKEND_ROOT ??
+  '/Users/lightman/Documents/sites/jr-academy-ai/jr-academy';
+const requireFromBackend = createRequire(path.join(backendRoot, 'package.json'));
+const {MongoClient} = requireFromBackend('mongodb');
+
+const VOICE_ID = 'bhJUNIXWQQ94l8eI2VUf';
+const TTS_ATEMPO = 1.18;
+const outputDir = path.resolve('public/audio/deep-dive');
+
+export const segments = [
+  {
+    id: '01-intro',
+    displayTitle: 'Claude 官方架构师认证，到底考什么？',
+    text: '[confident] Claude 现在有了面向技术人员的官方架构师认证。但这不是一张考你会不会聊天、会不会背参数的证。它真正测试的是：当 Claude 进入生产系统，你能不能在单智能体和多智能体之间做选择，能不能设计清楚工具边界，能不能把权限、可靠性和上下文成本控制住。这条视频不讲口号，直接把考试结构、五大领域、课程章节、题库和两种模拟考试完整拆给你看。',
+  },
+  {
+    id: '02-positioning',
+    displayTitle: '它是一门生产级架构判断考试',
+    text: '这门认证的完整名称是 Claude Certified Architect Foundations，考试代码是 C C A R F。官方定位是一门面向使用 Claude 构建生产应用的方案架构师技术考试。关键词有三个：技术、架构师、生产应用。所以它不适合只用过 Claude 网页版的人。更适合已经接触过 Messages API、tool use、M C P、Claude Code，或者做过 Agent 项目的开发者、AI Engineer、Solution Architect 和技术顾问。',
+  },
+  {
+    id: '03-exam',
+    displayTitle: '先记住 5 个考试数字',
+    text: '考试一共六十题，时间一百二十分钟，平均每题两分钟。题型包含单选和多选，题目会明确告诉你需要选择几项。及格线是七百二十分，但这是从一百到一千的量表分，不等于答对百分之七十二。场景题采用六个场景抽四个的机制。考试由 Pearson VUE 承办，可以选择 OnVUE 线上监考或者线下考场。成绩单会显示各个领域的表现，用来判断下一轮应该补哪里。',
+  },
+  {
+    id: '04-domains',
+    displayTitle: '五大领域决定复习优先级',
+    text: '五个领域不是平均分配。第一，Agentic Architecture and Orchestration，占百分之二十七，是最高权重。第二和第三，Claude Code Configuration 与 Prompt Engineering，各占百分之二十。Tool Design and M C P Integration 占百分之十八。Context Management and Reliability 占百分之十五。前三项合计百分之六十七，所以复习不能平均用力。先把智能体循环、编排、Claude Code 工作流和结构化输出吃透，再补工具设计和上下文可靠性。',
+  },
+  {
+    id: '05-curriculum',
+    displayTitle: '16 节课分成 4 个阶段',
+    text: '课程把备考拆成四个阶段、十六节课和五十个学习步骤。第一阶段先解决考试认知和报名流程：认证是什么、考试形式、账号注册、Pearson VUE 约考与 OnVUE 环境自检。第二阶段进入知识主体：先把 Anthropic Academy 二十门官方课映射到考纲，再逐个精析五大领域。第三阶段专门处理场景题：六抽四机制、答题框架、六类场景拆解和独立自测。第四阶段完成两套全真模拟，再用考前四十八小时清单收口。',
+  },
+  {
+    id: '06-blueprint',
+    displayTitle: '不是看完课，而是覆盖 30 项能力要求',
+    text: '课程设计不是按名词堆章节，而是反向覆盖官方三十项能力要求。Domain One 有七项，包括智能体循环、多智能体编排、任务分解和会话恢复。Domain Two 有五项，重点是工具描述、结构化错误和 M C P 集成。Domain Three、Four、Five 各有六项，分别覆盖 Claude Code 配置、Prompt 与结构化输出、上下文和可靠性。每学完一节，都应该能回答：什么情况下选它，另外几个方案为什么错。',
+  },
+  {
+    id: '07-platform',
+    displayTitle: '网页里看到的是一条完整学习路径',
+    text: '进入课程页面后，学习大纲会显示每节课的目标、预计时间和完成状态。你可以先看考试概览，确认五个领域的权重，再进入每个 Domain 的考点精析。课程不是只给结论。每个重点都配了生产场景、错误方案和判断依据。例如工具为什么选错，是描述边界不清，还是调用时机不对；多智能体结果缺失，是任务分解问题，还是上下文传递问题。复习时可以直接回到薄弱领域，而不是从头重看。',
+  },
+  {
+    id: '08-questions',
+    displayTitle: '近 480 道题，重点是逐项解析',
+    text: '题库接近四百八十道英文原创练习题。价值不只是数量，而是每个选项都有独立中文精析。正确选项要讲清机制，错误选项要说明它为什么看起来合理、又为什么没有解决题干里的真正约束。高频干扰项包括：把 system prompt 写得更强，盲目增加重试次数，把上下文窗口变大，或者一遇到问题就升级复杂架构。训练目标是看到这些诱人选项时，能迅速识别它们是在绕开根因。',
+  },
+  {
+    id: '09-mocks',
+    displayTitle: '两种模拟考试模式，各练一件事',
+    text: '模拟考试有两种界面。平台模式适合学习：做完题可以查看答案、逐项解析和领域诊断，知道自己错在概念、机制还是优先级。Pearson VUE 风格模式适合考前冲刺：界面更接近正式考试，可以标记题目、查看未完成项目、进入 Review 页面，再决定是否提交。两套模拟各六十题、一百二十分钟。第一套用来暴露弱点，补完薄弱领域以后，再用第二套验证能不能稳定完成。',
+  },
+  {
+    id: '10-case',
+    displayTitle: '场景题怎么判断：约束、机制、根因',
+    text: '看一道原创场景。客服 Agent 可以查询订单，也可以退款。公司规定，身份没有验证通过，绝对不能退款。四个方案分别是：在 system prompt 里再次强调；退款后记录日志；失败时自动重试；或者在工具执行前用 Pre Tool Use 检查身份，失败直接拒绝。正确答案是最后一个。因为绝对不能是硬约束，概率性的 prompt 不能提供确定性保障，事后日志阻止不了已经发生的退款，重试也没有解决权限问题。做题时先圈约束，再判断需要概率引导还是程序强制，最后选择在正确时点解决根因的最小方案。',
+  },
+  {
+    id: '11-plan',
+    displayTitle: '两周备考，不要平均分配时间',
+    text: '两周计划可以这样排。第一到第三天，完成考试结构、官方课导航和 Domain One。第四到第八天，按权重完成剩余四个领域，同时整理每个机制的选择条件。第九到第十天，集中练六类场景题，只记录错误原因，不抄答案。第十一天完成模拟 A，根据领域得分回补。第十二到十三天完成第二轮弱项训练和模拟 B。第十四天只看错题、陷阱表和考场清单，不再打开新资料。目标不是刷完，而是每道错题都能说出根因。',
+  },
+  {
+    id: '12-cta',
+    displayTitle: '把知识变成架构判断',
+    text: '[encouraging] 如果你已经在用 Claude Code、M C P 或 Agent 做项目，这套路线解决的是从会用到会判断之间的差距。十六节课帮你建立知识地图，近四百八十道题训练排除逻辑，两种模拟模式把解析学习和考场节奏分开。你最终带走的不是一套固定答案，而是一套遇到新场景仍然能工作的架构判断框架。成为全球华人首批 Claude 官方认证架构师，完整课程与备考资料见视频下方链接。',
+  },
+];
+
+const env = readFileSync(path.join(backendRoot, '.env'), 'utf8');
+const mongoUri = env.match(/^MONGO_URI=(.+)$/m)?.[1]?.trim();
+if (!mongoUri) throw new Error('MONGO_URI is missing from jr-academy/.env');
+
+mkdirSync(outputDir, {recursive: true});
+const client = new MongoClient(mongoUri);
+await client.connect();
+
+try {
+  const settings = await client.db().collection('systemsettings').findOne({key: 'ai_settings'});
+  const apiKey = settings?.aiSettings?.providers?.elevenlabs?.apiKey;
+  if (!apiKey) throw new Error('ElevenLabs apiKey not found in local admin settings');
+
+  for (const [index, segment] of segments.entries()) {
+    const outputPath = path.join(outputDir, `${segment.id}.mp3`);
+    const rawPath = `${outputPath}.raw.mp3`;
+    const response = await fetch(
+      `https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}?output_format=mp3_44100_128`,
+      {
+        method: 'POST',
+        headers: {'xi-api-key': apiKey, 'Content-Type': 'application/json; charset=utf-8'},
+        body: JSON.stringify({
+          text: segment.text,
+          model_id: 'eleven_v3',
+          voice_settings: {stability: 0.56, similarity_boost: 0.78},
+        }),
+      },
+    );
+
+    if (!response.ok) {
+      throw new Error(`ElevenLabs error for ${segment.id} (${response.status}): ${await response.text()}`);
+    }
+
+    writeFileSync(rawPath, Buffer.from(await response.arrayBuffer()));
+    execFileSync(
+      'ffmpeg',
+      ['-y', '-i', rawPath, '-filter:a', `atempo=${TTS_ATEMPO}`, '-ar', '48000', '-b:a', '192k', outputPath],
+      {stdio: 'ignore'},
+    );
+    unlinkSync(rawPath);
+    console.log(`[${index + 1}/${segments.length}] Generated ${outputPath}`);
+  }
+
+  writeFileSync(
+    path.join(outputDir, 'script.json'),
+    JSON.stringify({voiceId: VOICE_ID, model: 'eleven_v3', atempo: TTS_ATEMPO, segments}, null, 2),
+  );
+} finally {
+  await client.close();
+}
