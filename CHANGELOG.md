@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-07-27
+
+- 重新生成 AI 一人创业营的 `public/outline.md`：此前仍停留在 11 周 / 61 lessons / 旧 Phase 划分的版本，与已经重构成 15 周的 `outline.json` 完全对不上（机器权威和给人读的那份各说各话）。按仓库统一格式从 `outline.json` 重出，并顺手修掉 `deploy.yml` 里 `ai-solo-founder-bootcamp` 的 `11-week` 陈旧注释（`ai-solo-founder-bootcamp/public/outline.md`、`.github/workflows/deploy.yml`）
+- 重新配平 AI 一人创业营 W4 / W5：W4 现场课定位改为 **high-level 速成决策课**（只定做什么 / 砍什么 / 什么时候交，不讲写代码），自学线「工具地图 120min + PRD playbook 120min」合并为一节 90min 速成手册，Vibe Coding Hub Phase 2 由必修 180min 降为**选修** 60min（整期随时可回看），新增一节 120min 项目工时块作为 W4 唯一硬 deliverable；原 W4 的部署（90min）+ 域名监控（90min）合并瘦身为 120min 并**整体移到 W5**，W5 现场课第 5 步改为「真上线」、标题改为「立起门面并上线」，毕业硬指标「产品 URL Live」的落点从 W4 末移到 W5 末。W4 周中自学 12h → 6.5h（含 1h 选修），落回课程承诺的 5-8h 区间（`ai-solo-founder-bootcamp`）
+- 升级 AI 一人创业营 Phase 4 为 **Founder Club 独立运营**：明确分工（课程与教学归学院，Demo Day 评审席 / 投资人对接 / 毕业后社群归 Founder Club 主理人）。Demo Day 拆成 **Traction track**（默认，达标即入选，面向客户与合作方）与 **Investor track**（申请制，五条门槛写死可核查、开课前公布，面向到场投资人并直通定向引荐队列），参考 Antler 投委会 / Startmate Demo Day 的筛选做法；W14 现场课新增「澳洲早期资本地图」（天使 / 天使网络 / pre-seed VC / accelerator / 不融资五条路并列，不背具体金额）与「一次 intro 到底是怎么发生的」拆解；新增自学 lesson「投资人材料包」（一页 pitch + data room + 月度 investor update）与「Demo Day 席位申请」；W15 新增 intro desk 机制（什么算 intro-ready / 排队规则 / 两周回传反馈 / 不保证融资不收成功费 / **毕业后长期开放**）与「毕业后 90 天行动表」。53 → 54 lessons，code 重编 L01-L54，四个 phase 静态页同步（`ai-solo-founder-bootcamp`）
+
 ## 2026-07-24
 
 - 把 Vibe Coding 大师课 L5《Skills》deck 里所有"用本仓库 `.claude/skills/`（`talk-deck`/`xhs-poster`/其余 14 个 Skill）当教材"的例子，全部换成 Anthropic 官方文档（`code.claude.com/docs/en/skills`、`platform.claude.com/.../agent-skills/overview`）原文给出的真实例子：`L5P05_RealSkillTeardown`（summarize-changes/pdf-processing 的 frontmatter）、`L5P06_SkillMdStructure`（fix-issue + argument-hint、pdf-processing 的真实目录树）、`L5P09_MetaExample`（原"这套课的 deck 就是 talk-deck 做的"改为官方真实功能 `/run-skill-generator`——专门生成别的 Skill 的 Skill）、`L5P16_SkillLibraryGrows`（原本仓库 14 个 Skill 列表改为 Claude Code 9 个真实 bundled skill + 官方开源 `github.com/anthropics/skills` 仓库 + 插件市场）；同步重写 PRD.md 核心教学决策/数据纪律、RUNSHEET.md 全篇讲稿与 附一、`lessons.html` 卡片描述，课程内容与本课程仓库解耦（`lessons/vibe-coding-master-l5`、`lessons.html`）

@@ -348,7 +348,7 @@ jobs:
             cp -r openclaw-bootcamp/public/* _site/openclaw-bootcamp/
           fi
 
-          # ai-solo-founder-bootcamp: static HTML only (11-week 三城线下 AI 一人创业营，AU 专属)
+          # ai-solo-founder-bootcamp: static HTML only (15-week 三城线下 AI 一人创业营，AU 专属)
           if [ -d ai-solo-founder-bootcamp/public ]; then
             mkdir -p _site/ai-solo-founder-bootcamp
             cp -r ai-solo-founder-bootcamp/public/* _site/ai-solo-founder-bootcamp/
