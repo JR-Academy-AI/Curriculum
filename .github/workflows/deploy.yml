@@ -77,6 +77,13 @@ jobs:
           bun install
           bun run build
 
+      # Build lessons/ai-era-neededness (30 张 slide · AI 时代学生的可被需要性)
+      - name: Build lessons/ai-era-neededness
+        working-directory: lessons/ai-era-neededness
+        run: |
+          bun install
+          bun run build
+
       # Build lessons/claude-code-master (3h 现场带做 · 61 张 slide · Claude Code 大师课 — SoT/记忆系统/AI OS/ADLC/Skills/动手 Lab)
       - name: Build lessons/claude-code-master
         working-directory: lessons/claude-code-master
@@ -409,6 +416,12 @@ jobs:
           if [ -d lessons/ai-marketing-talk/dist ]; then
             mkdir -p _site/lessons/ai-marketing-talk
             cp -r lessons/ai-marketing-talk/dist/* _site/lessons/ai-marketing-talk/
+          fi
+
+          # lessons/ai-era-neededness: 30 张公开演讲 slide deck
+          if [ -d lessons/ai-era-neededness/dist ]; then
+            mkdir -p _site/lessons/ai-era-neededness
+            cp -r lessons/ai-era-neededness/dist/* _site/lessons/ai-era-neededness/
           fi
 
           # lessons/claude-code-master: 3h 现场带做 slide deck (React + Vite · 61 张 slide · Claude Code 大师课)
