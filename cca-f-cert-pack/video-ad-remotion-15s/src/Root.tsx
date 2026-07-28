@@ -16,6 +16,13 @@ import {
   YOUTUBE_GUIDE_HEIGHT,
   YOUTUBE_GUIDE_WIDTH,
 } from './CcarFYouTubeGuide';
+import {
+  CcarFDeepDive,
+  DEEP_DIVE_DURATION,
+  DEEP_DIVE_FPS,
+  DEEP_DIVE_HEIGHT,
+  DEEP_DIVE_WIDTH,
+} from './CcarFDeepDive';
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -51,6 +58,14 @@ export const RemotionRoot: React.FC = () => {
         fps={YOUTUBE_GUIDE_FPS}
         width={YOUTUBE_GUIDE_WIDTH}
         height={YOUTUBE_GUIDE_HEIGHT}
+      />
+      <Composition
+        id="CcarFDeepDive"
+        component={CcarFDeepDive}
+        durationInFrames={DEEP_DIVE_DURATION}
+        fps={DEEP_DIVE_FPS}
+        width={DEEP_DIVE_WIDTH}
+        height={DEEP_DIVE_HEIGHT}
       />
     </>
   );
