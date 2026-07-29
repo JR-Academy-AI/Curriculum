@@ -3,7 +3,9 @@
 ## Asset
 
 - Video: `../public/assets/ccar-f-youtube-deep-dive-16x9-v1.mp4`
-- Thumbnail: `../public/assets/ccar-f-youtube-deep-dive-thumbnail-v1.png`
+- Thumbnail: `../public/assets/ccar-f-youtube-deep-dive-thumbnail-v2.png`
+- Thumbnail presenter: JR Academy 固定虚拟女性讲师（品牌母图
+  `jr-academy-brand/assets/virtual-presenter/jr-academy-virtual-presenter-master-v1.png`）
 - Captions: `../public/assets/ccar-f-youtube-deep-dive-zh-v1.srt`
 - Transcript: `../public/assets/ccar-f-youtube-deep-dive-transcript-v1.md`
 - Contact sheet: `../public/assets/ccar-f-youtube-deep-dive-16x9-v1-contact-sheet.png`
@@ -56,6 +58,7 @@ Claude 官方架构师认证到底考什么？这条视频用 6 分钟讲清考�
 - Visibility: upload as Unlisted, verify video, thumbnail, captions, chapters, and links, then switch to Public
 - Altered or synthetic content disclosure: Yes
 - Thumbnail text check: largest text `Claude 证书`; secondary text `到底考什么？`
+- Thumbnail identity check: 女性讲师脸型、发型和珊瑚红西装与品牌母图一致
 
 ## Shorts Cutdowns
 
