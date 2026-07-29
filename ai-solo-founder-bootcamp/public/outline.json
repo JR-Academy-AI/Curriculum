@@ -13,7 +13,7 @@
   "liveClasses": 15,
   "estimatedHours": 94,
   "totalInteractiveLabs": 9,
-  "timeLength": "15 周（W0 Pre-work 自学 + W1-W15 三城线下 hub-and-spoke：墨尔本主场 + 悉尼 / 布里斯班卫星教室）。固定节奏：每周日 3h 线下 office + 同步直播 = 一节现场课（15 周 = 15 节现场课）—— 开场 15min 看 AI OS 这周替你跑了什么 → 中段 30min 1-2 人上台讲进展 + networking → 下课给 OS 派下周的活并定「下周你要撞的真实动作」。另每周 5-8h 自学与项目实操（MVP coding 全部自学）。不录播。",
+  "timeLength": "15 周（W0 Pre-work 自学 + W1-W15 三城线下 hub-and-spoke：墨尔本主场 + 悉尼 / 布里斯班卫星教室）。固定节奏：每周日 3h 线下 office + 同步直播 = 一节现场课（15 周 = 15 节现场课）—— 开场 15min 看 AI OS 这周替你跑了什么 → 中段 30min 1-2 人上台讲进展 + networking → 下课给 OS 派下周的活并定「下周你要撞的真实动作」。周中自学平均 3.2h与项目实操（MVP coding 全部自学）。不录播。",
   "courseObjective": "15 周里把 AI 部署进创业的每一个环节，每周日一节 3 小时线下现场课，周中自学与真实动作：W1-W7 搭 CEO AI OS、让 agent 上岗干活、锁死方向、做完商业验证、做出能卖的东西、立起品牌门面、用项目管理防烂尾，并靠人脉刷脸收到第一笔钱；W8-W11 把这一单变成不靠刷脸的获客机器（内容工厂 / 主动获客 / SEO+GEO / 增长循环）；W12-W13 财务与客服自动流转 + AI 读经营数据 + 澳洲公司结构、税务合规与 RDTI 43.5% 退税；W14-W15 把 13 周真实产出做成 pitch deck + BP + 一页纸，Demo Day 三城联合路演上台，毕业加入 Founder Club。毕业硬指标不变：$1+ 真实付费、ABN 注册、Grant 申请提交、10+ 内容产出、产品 URL Live、Demo Day 出席。",
   "courseObjective_en": "Deploy AI into every part of your business in 15 weeks, one 3-hour in-person session every Sunday plus midweek self-study and real-world actions: build a CEO AI OS, put agents to work, lock your direction, validate the business, ship something sellable, stand up your brand and website, run it like a PM so it does not stall, and land your first paying customer through your own network (W1-W7); turn that first sale into a compounding acquisition machine — content factory, outbound, SEO+GEO, growth loops (W8-W11); automate finance and customer ops, let AI read your numbers, and get Australian structure, tax and the 43.5% R&D Tax Incentive right (W12-W13); package 13 weeks of real output into a pitch deck, BP and one-pager, present at the three-city Demo Day and join the Founder Club (W14-W15).",
   "suitable": "🧑‍💻 焦虑型 senior 程序员 — 在 Atlassian/Canva/Telstra/银行 拿 150-250k 工资，看到 Cursor/Claude Code 替代趋势，想做点自己的事\n🎨 高薪 PM/Designer/咨询 — 看完 Lovable + Cursor 演示想绕过工程团队自己 ship 产品\n⚖️ 副业冲动 professional — 律师/会计/医生/咨询，不想辞职但想用 AI 做行业 niche SaaS\n🏢 小公司老板 / 1-5 人团队创始人 — 已有 ABN + 现金流，自己想懂 AI 把现有业务升级，不想全丢给员工\n🚀 YC / Antler / Startmate 申请准备者 — 用 15 周做出 traction（产品 + MRR + 流水）作为 accelerator 申请材料\n🇦🇺 必须澳洲身份或长期在澳 — Grant/会计模块绑定澳洲，海外学员能学但 W12-W13 与你无关",
@@ -1275,7 +1275,7 @@
         {
           "code": "L28",
           "title": "[W7·自学] $1 真实付费挑战（毕业硬指标 #1）",
-          "description": "<p><strong>【W7 · 收到第一笔钱】</strong>本周真实动作：不建任何获客系统，就用已有人脉一对一把第一单卖出去，同时把收款和法律文件接上 ｜ 本周产出：第一笔真实付费（后台截图）+ Stripe / Lemonsqueezy 接入 + 5 份法律文件挂 footer ｜ 卧槽点：有人真的付钱了——你从「想创业的上班族」变成「在跑项目的人」</p><h3>⭐ W7 末的核心 deliverable：拿到第一笔真金白银 ⭐</h3><p>$1 也算（很多 indie hacker 第一笔就是朋友 PayPal 转的 $5）。这个挑战的目的不是钱，是验证『你做的东西有人愿意为它付一次费用』。这一步是 OPC 路上最难的——从 0 到 1 比从 1 到 100 难得多。</p><h3>📋 验收</h3><p>Stripe / Lemonsqueezy / PayPal 后台截图，含交易时间、金额、买家。不接受朋友亲属『友情付费』——必须是不认识你的人。</p>",
+          "description": "<p><strong>【W7 · 收到第一笔钱】</strong>本周真实动作：不建任何获客系统，就用已有人脉一对一把第一单卖出去，同时把收款和法律文件接上 ｜ 本周产出：第一笔真实付费（后台截图）+ Stripe / Lemonsqueezy 接入 + 5 份法律文件挂 footer ｜ 卧槽点：有人真的付钱了——你从「想创业的上班族」变成「在跑项目的人」</p><h3>⭐ W7 末的核心 deliverable：拿到第一笔真金白银 ⭐</h3><p>$1 也算（很多 indie hacker 第一笔就是陌生人 PayPal 转的 $5）。这个挑战的目的不是钱，是验证『你做的东西有人愿意为它付一次费用』。这一步是 OPC 路上最难的——从 0 到 1 比从 1 到 100 难得多。</p><h3>📋 验收</h3><p>Stripe / Lemonsqueezy / PayPal 后台截图，含交易时间、金额、买家。不接受朋友亲属『友情付费』——必须是不认识你的人。</p>",
           "type": "Information",
           "isLive": false,
           "duration": 0,
@@ -2183,7 +2183,7 @@
         {
           "code": "L52",
           "title": "[W15] 登台 · Demo Day · 入会 Founder Club",
-          "description": "<p><strong>【W15 · 登台 · Demo Day】</strong>本周真实动作：三城联合路演真上台讲 5 分钟，并在互为客户日当晚谈成第一笔同学生意 ｜ 本周产出：Demo Day pitch 录像 + 投资人对接材料 + 当晚 3 个 follow-up + Founder Club 会籍 ｜ 卧槽点：台下坐着的人，有的当晚就成了你的客户、合伙人或第一张 angel check</p><h3>🎬 现场 3 小时怎么走</h3><ul><li><strong>① 三城联合路演</strong> — 每人 5min pitch + 2min Q&A，墨 / 悉 / 布直播切换。</li><li><strong>② 评审团总结 + 结业证书</strong> — 达标者当场发证。</li><li><strong>③ 投资人对接</strong> — 达标项目由主理人定向提交 / 引荐。</li><li><strong>④ 互为客户日 invite-only 晚宴</strong> — 三城本地圆桌，卡片撮合。</li></ul><p>⚠️ Demo Day 当天实际是全天档（路演 + 对接 + 晚宴），outline 里按每周现场课 3h 统一记；具体 run sheet 与各城时间表另发。</p><h3>📋 现场过关</h3><p>6 项毕业硬指标达标者：结业证书 + 晚宴入场资格 + Founder Club 会籍。未达标者内容与材料照拿，毕业后 90 天 Office Hour 继续补。</p>",
+          "description": "<p><strong>【W15 · 登台 · Demo Day】</strong>本周真实动作：三城联合路演真上台讲 5 分钟，并在互为客户日当晚谈成第一笔同学生意 ｜ 本周产出：Demo Day pitch 录像 + 投资人对接材料 + 当晚 3 个 follow-up + Founder Club 会籍 ｜ 卧槽点：台下坐着的人，有的当晚就成了你的客户、合伙人或第一张 angel check</p><h3>🎬 现场 3 小时怎么走</h3><ul><li><strong>① 三城联合路演</strong> — 每人 5min pitch + 2min Q&A，墨 / 悉 / 布直播切换。</li><li><strong>② 评审团总结 + 结业证书</strong> — 达标者当场发证。</li><li><strong>③ 投资人对接</strong> — 达标项目由主理人定向提交 / 引荐。</li><li><strong>④ 互为客户日 invite-only 晚宴</strong> — 三城本地圆桌，卡片撮合。</li></ul><p>⚠️ Demo Day 当天实际是全天档（路演 + 对接 + 晚宴），outline 里按每周现场课 3h 统一记；具体 run sheet 与各城时间表另发。</p><h3>📋 现场过关</h3><p>6 项毕业硬指标达标者：结业证书 + 晚宴入场资格 + Founder Club 会籍。未达标者内容与材料照拿，毕业后 6 个月 Office Hour 继续补。</p>",
           "type": "Lesson",
           "isLive": true,
           "duration": 180,
