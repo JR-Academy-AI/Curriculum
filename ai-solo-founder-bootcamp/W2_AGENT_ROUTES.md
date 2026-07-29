@@ -28,7 +28,7 @@
 | **月费（USD，2026-07-29）** | 软件 $0 + 模型钱。Nous Portal 官方档位名 = Free / Plus / Super / Ultra 🟢；价格 Plus $20（含 $22 额度）/ Super $100（$110）/ Ultra $200（$220）🟠 **官方 pricing 页 429 抓不到，讲师必须自己点** | 软件 $0 + 模型钱。**JR 自己的教学口径**：4h workshop 「月均几到十几美元」；4 周 bootcamp 「10-30 美元/月」🔵 | Free $0 / Go $8 / Plus $20 / Pro $100（5x）或 $200（20x）/ Business $20 每人每月（年付，月付 $25）/ Enterprise 定制 🟡（[learn.chatgpt.com/docs/pricing](https://learn.chatgpt.com/docs/pricing)，OpenAI 官方域名） | Pro $20 月付 / $17 年付折算；Max 5x $100；Max 20x $200；Team standard $20 年付 / $25 月付（含 Claude Code + Cowork）；Team premium $100 / $125 🟡（[claude.com/pricing](https://claude.com/pricing)） | ⛔ 未定价。BP 里写「会员月费 ¥29 / ¥99 / ¥299 三档（**待验证价格点**）」🔵 —— **不许对学员报这个数** |
 | **API 消耗区间** | 走你选的 provider，按 token；Portal 订阅自带额度 🟢 | 走你选的 provider（Anthropic/OpenAI/Gemini/xAI/OpenRouter/Copilot/MiniMax，或任何 OpenAI/Anthropic 兼容端点）🟢 | API 价（每百万 token）：gpt-5.6-sol $5 in / $30 out，terra $2.5 / $15，luna $1 / $6，gpt-5.3-codex $1.75 / $14 🟡（[developers.openai.com/api/docs/pricing](https://developers.openai.com/api/docs/pricing)）。订阅内超额靠 credits：Sol 125 credits/百万输入、750/百万输出 🟡，**credit 兑美元的价格 ⛔ 未查到（官方 rate card 403）** | 官方 docs 原话：企业部署平均 **$13/开发者/活跃日**、**$150-250/开发者/月**，90% 用户低于 $30/活跃日 🟢（[code.claude.com/docs/en/costs](https://code.claude.com/docs/en/costs)）。⚠️ 这是**企业全职写代码**的量，一人创业者远低于此。模型单价 Opus 5 $5/$25、Sonnet 5 促销 $2/$10（9 月 1 日起 $3/$15）🟠 | 商业模式 = 上游价加 5%-20% 卖 🔵 |
 | **免费额度** | Portal 有 Free 档 + 按量充值起 $10（1:1 抵扣）🟠 | 本体免费；模型侧看你选谁（JR 课程口径：Gemini 免费额度最友好，OpenAI 要充 $5 起步）🔵 | ChatGPT Free 档能用 Codex 做基础任务 🟡 | ❌ Free 计划不含 Claude Code 🟢 | ⛔ |
-| **怎么获取 / 装机** | `curl -fsSL https://hermes-agent.nousresearch.com/install.sh \| bash`（Linux/macOS/WSL2/Termux）；Windows PowerShell `iex (irm .../install.ps1)` 🟢 | `curl -fsSL https://openclaw.ai/install.sh \| bash` / Windows `iwr -useb https://openclaw.ai/install.ps1 \| iex` / `npm install -g openclaw@latest`，然后 `openclaw onboard --install-daemon` 🟢 | `npm install -g @openai/codex` 或 `brew install --cask codex`，或下 GitHub Release 二进制；登录选「Sign in with ChatGPT」🟢 | `curl -fsSL https://claude.ai/install.sh \| bash`（mac/Linux/WSL）/ PowerShell `irm https://claude.ai/install.ps1 \| iex` / `brew install --cask claude-code` / `winget install Anthropic.ClaudeCode` 🟢 | ⛔ deeprouter.ai 当前是 **"Launching Soon" 邮件收集页**，学员自助注册不到 🟢 |
+| **怎么获取 / 装机** | `curl -fsSL https://hermes-agent.nousresearch.com/install.sh \| bash`（Linux/macOS/WSL2/Termux）；Windows PowerShell `iex (irm .../install.ps1)` 🟢 | `curl -fsSL https://openclaw.ai/install.sh \| bash` / Windows `iwr -useb https://openclaw.ai/install.ps1 \| iex` / `npm install -g openclaw@latest`，然后 `openclaw onboard --install-daemon` 🟢 | `npm install -g @openai/codex` 或 `brew install --cask codex`，或下 GitHub Release 二进制；登录选「Sign in with ChatGPT」🟢 | `curl -fsSL https://claude.ai/install.sh \| bash`（mac/Linux/WSL）/ PowerShell `irm https://claude.ai/install.ps1 \| iex` / `brew install --cask claude-code` / `winget install Anthropic.ClaudeCode` 🟢 | ✅ **<https://deeprouter.co>**（`.co` 不是 `.ai`）站点是活的，**邮箱可自助注册**（需邮箱验证，无第三方登录）。API base `api.deeprouter.co`，25 个模型 🟢 |
 | **要 waitlist / 邀请码吗** | 否 🟢 | 否 🟢 | 否，有 ChatGPT 账号即可 🟢 | 否，但**必须有付费账号** 🟢 | ⚠️ 事实上是「等我们发额度」，见 §4 |
 | **平台支持** | macOS 12+ / Windows 10-11 / Linux；官方说 Windows 安装器自带 Python 3.11 + Node + ripgrep + ffmpeg + 便携 Git Bash，**不需要管理员权限** 🟢 | 官方：macOS / Linux / Windows（有 Windows Hub 伴侣 App）🟢 ⚠️ **但 JR 自己的课程口径是「原生 Windows 跑不了 OpenClaw，必须装 WSL2」，且明令禁止 PowerShell 路径、禁 Bun、Node ≥ 22** 🔵 —— **两边冲突，见 §4 必验清单** | Mac（Apple Silicon + x86_64）/ Linux（x64+arm64）/ Windows 均有官方二进制 🟢。Windows 是否需要 WSL ⛔ 官方 docs 有 "Windows sandbox" 和 "WSL" 章节但未核到结论 | macOS 13+ / Windows 10 1809+ / Ubuntu 20.04+ / Debian 10+ / Alpine 3.19+；4GB+ RAM。**Windows 原生可跑**（Git for Windows 可选，装了才有 Bash 工具）；WSL2 只在需要 sandboxing 时必须 🟢 | — |
 | **上手难度（完全不写代码的人）** | 中。要开终端，但 Windows 安装器免管理员权限这点对公司电脑友好 🟢 | 中偏高。JR 三门课的做法是 **Quest 模式 AI 小花 1v1 + 人类 Tutor 兜底**，专门防三个坑：Win 没装 WSL2 / Node < 22 / 误用 Bun 🔵 | 中。装完「Sign in with ChatGPT」浏览器点一下就登录，不用配 API key 🟢 | **四条里最低**。有官方桌面 App，官方 docs 原话是让你「不用终端也能用 Claude Code」；装机一条命令，Windows 不需要管理员权限 🟢 | — |
@@ -94,8 +94,30 @@ W2 现场第三段是「一起搭 Agent Schedule，让它在你睡觉的时候�
 > 不是死刑。W6 有一节 `L25` 专门讲切换和双 agent 配合，而且我们的既有口径是：**80% 的 OPC 学员最后是两个一起用**（一个干桌面 GUI 活，一个干合规敏感 + IM 活）🔵。今天的目标是**跑起来一个**，不是选得完美。
 
 **Q9「DeepRouter 是什么？pre-work 里说更省，我去哪注册？」**
-> 🚨 **这条现在会当场穿帮。** deeprouter.ai 目前是 **"Launching Soon" 的邮件收集页** 🟢，学员**自助注册不到**。课程侧的方案是「统一发额度」，但 `FOUNDER_MATCHING_PRD.md` §13 明确写着**这条还是开放问题、待拍板** 🔵。
-> **现场话术（在拍板前）**：「DeepRouter 是我们自己在做的模型网关，还没公开开放，预算紧的同学**别自己去注册**，开课后我们统一安排额度。」——**不要报 ¥29/¥99/¥299**，那是 BP 里标着「待验证」的假设值。
+
+> ✅ **网址是 <https://deeprouter.co>（`.co`，不是 `.ai`）。站点是活的，学员可以自助注册。**
+>
+> 🚨 **2026-07-29 更正**：本文件此前写「deeprouter.ai 是 Launching Soon 邮件收集页、学员自助注册不到」，**这是查错了域名得出的错误结论，三处都错**（域名错、站点状态错、注册可用性错）。`deeprouter.ai` 与本产品无关。**以下为对 `deeprouter.co` 的实测结果。**
+
+| 项 | 实测(2026-07-29) | 来源 |
+|---|---|---|
+| 站点 | ✅ 活站,React SPA。`/` `/pricing` `/login` `/signup` `/models` `/dashboard` 全部 **200** | curl 🟢 |
+| 定位 | 站点 meta 自述:**"multi-tenant LLM gateway for Airbotix and internal services"** | 首页 HTML 🟢 |
+| **自助注册** | ✅ **开放**。`POST /api/user/register` 返回的是**密码长度校验错误**,不是「注册已关闭」→ 端点正常受理 | 空 body 探测 🟢 |
+| 邮箱验证 | ✅ **必须**(`email_verification: true`) | `/api/status` 🟢 |
+| 第三方登录 | ❌ 全关(GitHub / 微信 / Discord / Telegram / OIDC / passkey 均 false)→ **只能邮箱注册** | `/api/status` 🟢 |
+| API base | `https://api.deeprouter.co` | `/api/status` 🟢 |
+| 可用模型 | **25 个**:Claude Opus 4.6 / 4.7 / 4.8(含 low/medium/high/xhigh/max/thinking 各档)、GPT-5 / 5.1-codex / 5.3-codex / 5.4 / 5.4-pro、ElevenLabs TTS、图像 | `/api/pricing` 🟢 |
+| 计价显示 | **USD**(`quota_display_type: USD`) | `/api/status` 🟢 |
+| 每日签到送额度 | ✅ 开着(`checkin_enabled: true`) | `/api/status` 🟢 |
+| 底层 | new-api 系网关(报错体 `new_api_error`;`docs_link` 指向 `docs.newapi.pro`) | 🟢 |
+
+> ⚠️ **仍未核实的两件事(需要登录态才能看,我没建账号)**:
+> 1. **充值档位和最低充值金额** —— `/api/status` 里有 `stripe_unit_price: 8`、`quota_per_unit: 500000`,但**这两个数怎么换算成学员实付,我没验证,不要在台上推算**。
+> 2. **新用户注册是否送初始额度**(`quota_for_new_user` 未在公开 status 里返回)。
+>
+> **现场话术(已可以正面回答)**:「DeepRouter 是我们自己做的模型网关,**deeprouter.co**,邮箱就能注册,一个 key 打通 Claude Opus 4.8 和 GPT-5 全家。**具体充多少怎么算,以站上 /pricing 页面为准**——别报我嘴上的数。」
+> 🚨 **依然不要报 ¥29/¥99/¥299** —— 那是 `DeepRouter-BP.md` 里标着「待验证」的**假设值**,和线上真实计价没有对应关系。
 
 **Q10「Hermes 这么新，靠谱吗？」**
 > 它是 Nous Research 出的开源项目，MIT 协议，官方站显示版本 v0.19.0 🟢，官方文档齐（Google Workspace skill、MCP、cron、6 种终端后端都有页）。但**我们内部没有实战积累**——TA 手上没有踩坑清单。想选它的学员要接受「卡住时助教也是第一次见」。
@@ -114,7 +136,7 @@ W2 现场第三段是「一起搭 Agent Schedule，让它在你睡觉的时候�
 | 6 | **Claude 免费档到底含不含 Claude Code** | setup 文档明确说「Free 计划不含，需要 Pro/Max/Team/Enterprise/Console」🟢，但 pricing 页抓取里 Free 行显示 "Includes Claude Code"，**读数有歧义** | 打开 claude.com/pricing 亲眼看 Free 那一列 | 🟡 以 setup 文档为准 |
 | 7 | **Claude Code Routines 的每日 run 上限 + 是否还在 preview** | Routines 是 research preview，limits「may change」🟢。这是「合上笔记本还能跑」的唯一卖点，塌了整个推荐就塌了 | claude.ai/code/routines 看当前配额 | ⛔ 未验证 |
 | 8 | **Hermes / Claude Code / Codex 各自的 Gmail + Calendar connector 现况** | W2 ② 就是「接权限」，接不上现场直接崩 | 每条路线各接一次 Gmail + Calendar，记录耗时和卡点 | ⛔ 未验证 |
-| 9 | **DeepRouter 对学员的供给方案** | 现在页面是 Launching Soon，pre-work 却推荐它 🚨 | Lightman 拍板：统一发额度 / 还是从 pre-work 里撤下来 | ⛔ 待拍板 |
+| 9 | **DeepRouter 对学员的供给方案** | ~~页面是 Launching Soon~~ → **2026-07-29 更正：站点是活的、注册开放，原结论查错域名**。阻塞降级：不再是「会穿帮」，只剩商业选择 | Lightman 拍板：让学员自己注册充值 / 还是课程统一发额度（两者都可行了） | 🟡 待拍板（**已不阻塞 pre-work**） |
 | 10 | **四条路线各自的装机耗时 + 卡点** | `W2_RUNSHEET.md` §"课前 T-7" 已经列为讲师必做，至今没做 | 讲师自己四条全装一遍，记装机耗时 / 要不要付费 / 卡在哪一步 / Win 能不能跑 | ⛔ 未做 |
 | 11 | **每个 TA 认领一条路线** | runsheet 要求「不要 6 个 TA 都只会 Claude Code」 | 排班表按路线分工 | ⛔ 未做 |
 
@@ -142,7 +164,7 @@ W2 现场第三段是「一起搭 Agent Schedule，让它在你睡觉的时候�
 ### 需要 Lightman 拍板的两件事
 
 1. **默认路线定 Claude Code，跟 W1 的默认（Claude Cowork）是一条线**——好处是学员 W1→W2 心智连续、都在 Anthropic 生态；坏处是我们自己有 OpenClaw 课程线，默认不推自家生态**是不是想要的商业口径**。这条我给不了答案。
-2. **DeepRouter 在 pre-work 里怎么处理**（撤下 / 改成「课程统一发额度」）。现在这条不动，W1 就会有学员去 deeprouter.ai 扑空。
+2. **DeepRouter 在 pre-work 里怎么处理**。~~现在这条不动，W1 就会有学员去 deeprouter.ai 扑空。~~ **2026-07-29 更正：不会扑空** —— 正确网址是 `deeprouter.co`，站点活着、注册开放。**唯一必须做的动作是把 pre-work 里的网址核对成 `.co`**；至于「学员自付 vs 课程发额度」，现在是纯商业选择，不再是上线阻塞。
 
 ---
 
@@ -159,13 +181,14 @@ W2 现场第三段是「一起搭 Agent Schedule，让它在你睡觉的时候�
 - Claude Code 排程：<https://code.claude.com/docs/en/scheduled-tasks> · <https://code.claude.com/docs/en/routines>（2026-07-29）
 - Claude 订阅价：<https://claude.com/pricing> 🟡（2026-07-29）
 - Anthropic 消费者条款/训练与留存：<https://www.anthropic.com/news/updates-to-our-consumer-terms>（公告 2025-08，2026-07-29 查阅）
-- DeepRouter 站点状态：<https://deeprouter.ai>（2026-07-29，显示 "Launching Soon"）
+- DeepRouter 站点实测：<https://deeprouter.co> 🟢（2026-07-29 curl 实测：`/` `/pricing` `/login` `/signup` `/models` `/dashboard` 均 200；`/api/status` 与 `/api/pricing` 为公开端点）
+- ⚠️ <https://deeprouter.ai> 是**无关域名**，此前误当作本产品官网并据此得出「Launching Soon / 注册不到」的错误结论，已全文更正
 
 **JR 内部 repo 🔵**
 - `curriculum/openclaw-workshop/public/outline.json`（费用透明说、WSL2 要求、API key 三选一）
 - `curriculum/openclaw-bootcamp/public/outline.json`（月成本 10-30 美元、Quest guardrail：禁 PowerShell / Node≥22 / 禁 Bun）
 - `curriculum/openclaw-fullday-workshop/PRD.md`（零代码老板的装机兜底方案）
-- `deeprouter-brand/DeepRouter-BP.md` §4.3（¥29/¥99/¥299 待验证价格点）· `DeepRouter-PRD.md`（Draft v0.1，域名待注册，JR tenant Week 12 上线）
+- `deeprouter-brand/DeepRouter-BP.md` §4.3（¥29/¥99/¥299 待验证价格点）· `DeepRouter-PRD.md`（Draft v0.1，**其中「域名待注册」已过时——`deeprouter.co` 已上线运行**，JR tenant Week 12 上线）
 - `curriculum/ai-solo-founder-bootcamp/FOUNDER_MATCHING_PRD.md` §13（DeepRouter 额度供给待拍板）
 - `curriculum/ai-solo-founder-bootcamp/W2_RUNSHEET.md` §8（本文件要填的缺口清单）
 
