@@ -50,13 +50,13 @@
 - **录取保证 / 优先**：被推荐会员享 **优先审核**（24h 内回复，不用排队 — 首期无视频面试，纯后台 review 申请单 + LinkedIn）+ 申请单带 referral code 字段（审核同事知晓推荐来源）— **但仍走申请制，不保证录取**。第二期起加视频面试 + 严筛，到时候 reserved seat 价值更高
 - **主理人体验权益**（两个 variant 二选一，**按协会画像**）：
   - **Variant A · 商会 / 行业协会**（律师 / 会计 / 医生 / 行业 senior）：协会会长 / 创始人本人享免费 [4 次 × 30min] 1:1 Office Hour（主讲老师），课程结束后 6 个月内有效
-  - **Variant B · Founder community / 创业协会 / Venture Club**：**不**给 1:1 Office Hour — 创业的人喜欢跟创业的人聊，不喜欢听讲师讲。改成 **Founder Network Access**：① Demo Day Networking 晚宴 [2-3] reserved seats（跟 cohort + 校友 + VC + 嘉宾同桌） ② 每季度 [3-5] 个 JR 校友 founder warm intro（双方都同意才约） ③ W10 VC fireside 旁听 + 提问优先 ④ 主理人本人 W10/W11 嘉宾席（画像合适时）
+  - **Variant B · Founder community / 创业协会 / Venture Club**：**不**给 1:1 Office Hour — 创业的人喜欢跟创业的人聊，不喜欢听讲师讲。改成 **Founder Network Access**：① Demo Day Networking 晚宴 [2-3] reserved seats（跟 cohort + 校友 + VC + 嘉宾同桌） ② 每季度 [3-5] 个 JR 校友 founder warm intro（双方都同意才约） ③ W14 投资人 fireside 旁听 + 提问优先 ④ 主理人本人 W14/W15 嘉宾席（画像合适时）
 - **会长免费体验**：会长本人可以选择是否参加课程作为旁听（不占 reserved seat 名额，不进 cohort 计数）
 
 #### 1.4 Demo Day 评审席 + Networking（如适用 · 方案 C）
 
-- **评审席**：协会派 [1] 名明星会员 / 资深 founder 担任 W11 Demo Day 评审
-- **VC fireside**：协会推荐的 founder 可在 W10 VC fireside 担任嘉宾（如时间档期匹配）
+- **评审席**：协会派 [1] 名明星会员 / 资深 founder 担任 W15 Demo Day 评审
+- **VC fireside**：协会推荐的 founder 可在 W14 投资人 fireside 担任嘉宾（如时间档期匹配）
 - **不付出场费**（嘉宾互利原则）
 - **Networking 晚宴**：Demo Day 当晚 [城市] 本地 Networking 晚宴，乙方派 [2-3] 名代表参加
 

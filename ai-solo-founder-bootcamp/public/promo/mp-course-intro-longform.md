@@ -1,3 +1,7 @@
+> ⚠️ **本文已作废（按旧版 11 周课程所写）**。课程已重构为 **15 周 / 4 Phase**，
+> 现行版本见 **[`mp-15week-course-intro.md`](./mp-15week-course-intro.md)**（含完整 15 周逐周安排）。
+> 本文保留仅作历史存档，**不要再用于投放**。
+
 # 公众号长文：AI 一人创业营 · 完整课程介绍
 
 > 字数：约 2800 字 · 发布前用 `xhs-review` / `wechat-article-quality` 检查

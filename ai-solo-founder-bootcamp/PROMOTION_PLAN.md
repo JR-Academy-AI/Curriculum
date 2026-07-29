@@ -1,11 +1,12 @@
 # AI 一人创业营 推广方案 PROMOTION_PLAN.md
 
-> 由 `/course-promotion-architect init` 生成 · 2026-06-16
-> 维护人：Beta（课程主理人 / BD，本课主战场亲自跑）+ Aurora / Seren（Marketing 主管协调）+ Lightman 把关
+> 由 `/course-promotion-architect init` 生成 · 2026-06-16 · **2026-07-29 按 15 周新结构整体改写**
+> 维护人：Beta（课程主理人 / BD，本课主战场亲自跑）+ Simone / Aurora / Seren（Marketing 协调）+ Ada（公开课运营）+ Lightman 把关
 > 单一真相文档 — 任何推广节奏调整必须改这里
 >
-> 🧑 目标用户画像见 [./PERSONAS.md](./PERSONAS.md)（2026-06-10，⚠️ GT ≈ 0.30，v0 启动版）
-> 💰 漏斗 / 三档定价见 [./FUNNEL_PLAN.md](./FUNNEL_PLAN.md)（2026-06-16，三档 $2,800 / $3,800 / $6,800 AUD）
+> 📚 课程结构真相源 = [`COURSE_REDESIGN.md`](./COURSE_REDESIGN.md)（W1–W15 四 phase）+ `public/outline.json` v0.5（53 lessons / 94h）。**本方案不重新定义课程内容，只定义怎么把人引进来报名。**
+> 🧑 目标用户画像见 [`PERSONAS.md`](./PERSONAS.md)（2026-06-22 v0.1，⚠️ GT ≈ 0.30，痛点原话不可直接落文案）
+> 💰 漏斗 / 三档定价见 [`FUNNEL_PLAN.md`](./FUNNEL_PLAN.md)（三档 $2,800 / $3,800 / $6,800 AUD）
 
 ---
 
@@ -13,207 +14,322 @@
 
 | Field | Value |
 |-------|-------|
-| Course Slug | ai-solo-founder-bootcamp |
+| Course Slug | ai-solo-founder-bootcamp（**URL 永久冻结**，任何改名都不动 slug）|
 | Course 中文名 | AI 一人创业营 |
-| Prod Training ID | **无**（cohortStatus=PLANNING，未在 prod 创建）|
+| Prod Training ID | **无**（outline.json `program.cohortStatus: RECRUITING`，未在 prod 创建 Training）|
 | **🎯 Course Type** | **Type 3 · Bootcamp 创业孵化** + **Type 6 · 引流课**（单引流课，见 FUNNEL_PLAN §4）|
-| 类型识别理由 | 客单价 $2,800-6,800 AUD（> ¥10k）+ 目标人群是「有积蓄想下场创业的专业人士」（早期 founder 而非求职者 / 在职提效）+ 靠学员真实案例 + Faculty 实名撑信任 → COURSE_TYPE_PLAYBOOKS Type 3 |
-| **🧑 PERSONAS.md 状态** | ⚠️ GT ≈ 0.30（< 0.5 合格线）— v0 AI 推测，渠道方向可用、痛点原话不可直接落文案（PERSONAS §6 红线）|
-| **💰 三档定价**（AUD，纯澳洲无多币种）| 自学陪练 $2,800 / 标准 $3,800 / 陪跑（含 1:1）$6,800 |
-| 引流课 | 单引流课《一个晚上判断：AI 一人公司这条路你下不下得了场》，复用 3 个现成 lead-magnet HTML，定价待定（建议免费 / $29 AUD）|
-| **推广周期** | **T-60 → D+90（约 20 周）** — Type 3 最长周期 |
-| **launch date** | ⚠️ 待定（outline.json `commenceCourseDate: TBD，嘉宾铺设需 8 周`）— 推广节奏强依赖此日期，先按 T-60 倒排占位 |
-| **目标 Target Enrollment** | **50 人**（墨 22 / 悉 16 / 布 12）— 2026-06-18 拍板统一到 50，收口原 20±5 vs 40-60 分歧 |
+| **课程规模（v0.5）** | **15 周** · 4 phase · 53 lessons · **94 小时** · 15 节周日现场课 · 29 节周中自学 · 9 个 Lab |
+| **四段路径** | Phase 1 AI Enable Business（W1–W7）→ Phase 2 Go To Market（W8–W11）→ Phase 3 Australia Operations（W12–W13）→ Phase 4 Founder Club（W14–W15）|
+| **开营日 D0** | **2026-08-02（周日）** — 2026-07-07 Lightman 拍板，见 §7 |
+| **W15 Demo Day** | **2026-11-08（周日，推算：8/2 起连续 15 个周日）** — ⚠️ outline.json `program.completeDate` 仍是 `TBD`，需按此更新，待 Lightman 确认 |
+| **📍 本方案写作时的位置** | **T-4**（2026-07-29）— §4 时间轴里 T-30~T-8 的格子对首期已过期，作二期排期模板用 |
+| **🧑 PERSONAS.md 状态** | ⚠️ GT ≈ 0.30（< 0.5 合格线）— 渠道方向可用，痛点原话不可直接落文案（PERSONAS §6 红线）|
+| **💰 定价** | 三档 $2,800 / $3,800 / $6,800 AUD（FUNNEL_PLAN §3）⚠️ 与 outline.json `features` 的三阶段价（预售 $2,400 → 早鸟 $2,800 → 二期 $3,800）是两套不同分法，见 §7 待办 |
+| 引流课 | 《一个晚上判断：AI 一人公司这条路你下不下得了场》，复用 3 个现成 lead-magnet HTML，定价待定（建议免费 / $29 AUD）|
+| **推广周期（本方案覆盖）** | **T-30 → D+30**，长尾资产段延到 D+105（W15 Demo Day）|
+| **目标 Target Enrollment** | **50 人**（墨 22 / 悉 16 / 布 12）— 2026-06-18 Lightman 拍板 |
+| **当前实际报名数** | ⚠️ **待补** — repo 里最后一次记录是 2026-06-30「全三城约 17 人」（§9），已过期一个月，Beta / Simone 必须先更新这个数字，否则 §2 漏斗和 §9 冲刺都算不了 |
 | 录取机制 | 申请制 + LinkedIn 必填（首期无视频面试，目标录取率 30-50%）|
-| Status | build（2026-06-28 起：讲座已实跑给客户、报名踊跃；开始产出公众号长文切角2，待复盘 + EOI 跟进。launch date / Faculty 实名仍 P0 待定）|
-| Created | 2026-06-16 by `/course-promotion-architect init` |
-| Related Docs | [PERSONAS.md](./PERSONAS.md) / [FUNNEL_PLAN.md](./FUNNEL_PLAN.md) / public/outline.json / program-course/ai-solo-founder-bootcamp/content.ts |
+| Status | **build** |
+| Created / Last major rewrite | 2026-06-16 init · **2026-07-29 全文按 15 周改写** |
 
 ---
 
-## 1. 课程定位摘要（从 FUNNEL_PLAN.md / outline.json 抽取，不重写）
+## 1. 课程定位摘要（从 COURSE_REDESIGN.md / outline.json 抽取，不重写）
 
-**One-liner**（outline.json `promoDescription`）：用中文教澳洲华人专业人士做 AI 一人创业 + 拿澳洲 Grant 退税，11 周三城线下（墨尔本主场 + 悉尼 / 布里斯班卫星教室），从选品 → MVP → 收第一笔钱 → 全渠道营销 → 澳洲会计 → Grant → Demo Day。
+### 1.1 15 周四段路径（推广口径统一用这套词，别再用旧版周次和旧 phase 名）
 
-**目标人群**（PERSONAS §1，⚠️ GT 0.30）：
-- **A · 焦虑型 senior 程序员（45%，最对口）** — 35-45 岁大厂 senior，会 Cursor 卡在「从 0 到第一笔收入」，决策周期 4-8 周
-- **B · 高薪 PM / 咨询 / Designer（35%）** — 想绕过工程团队自己 ship，缺技术信心，决策周期 3-6 周
-- **C · 副业冲动 professional（20%）** — 律师 / 会计 / 医生，最看重澳洲税务 + Grant 合规，决策周期 2-4 周
-- ❌ 不投不讨好（PERSONAS §4）：没积蓄的应届 / 纯打工躺平 / 想割韭菜 / 想融 VC / **不在澳洲的人**（投放必须地域定向澳洲）
+| Phase | 周次 | 对外一句话 | 出关物 |
+|---|---|---|---|
+| **1 · AI Enable Business** | W1–W7 | 把 AI 部署进创业的每个环节，做出一个验证过、有品牌的产品，并刷脸卖出第一单 | 被真实付过一次钱的产品 + 上线的品牌官网 |
+| **2 · Go To Market** | W8–W11 | 把「刷脸首单」变成一台不靠刷脸、会自己复利的获客机器 | 内容流水线 + outbound 线索 + SEO 页 + 增长循环 |
+| **3 · Australia Operations** | W12–W13 | 全球独家：AI 一人创业 × 澳洲税务 / Grant | 财务自动流转 + 公司结构决策 + RDTI 申请初稿 |
+| **4 · Founder Club** | W14–W15 | 把 15 周的真实数据讲成故事，登台，然后入会 | 基于真实 traction 的 pitch + Demo Day 出席 + Founder Club 会籍 |
 
-**🎯 主推内容角度**（Type 3 创业孵化 playbook 优先级 × PERSONAS，⚠️ persona 痛点原话待 GT 补足后才能直接落文案）：
+**15 周逐周（写文案 / 排海报时直接抄这行，别自己编周次名）**：
+
+W1 搭起你的 CEO AI OS｜W2 你的 AI 员工上岗（Hermes / 龙虾 / Codex / Claude Code 选型 + Agent Schedule）｜W3 这是不是一门好生意 ⭐Stan（麦肯锡）｜W4 做出能卖的东西｜W5 立起你的品牌门面（官网 + design system）｜W6 别让项目烂尾 ⭐Ray（微软）｜W7 收到第一笔钱｜W8 AI 内容工厂｜W9 主动敲开客户的门｜W10 让人和 AI 都搜到你（SEO & GEO）｜W11 用户增长（Growth Hacking）｜W12 让生意自己运转（财务 / 运营自动化 + AI 数据分析）｜W13 把钱从税务局拿回来（RDTI 43.5% 退税）⭐持牌 CPA｜W14 把生意讲成故事（Pitch & BP）⭐Stan｜W15 登台 Demo Day · 入会 Founder Club
+
+**比旧版多出来的三个可卖点（旧文案里没有，这次必须用上）**：
+1. **W2「你的 AI 员工上岗」+ Agent Schedule** — agent 在你上班的时候替你跑调研 / 内容 / 跟进。这是「在职」从劣势变优势的机制，也是回答「我有全职工作哪来时间」最硬的一条。
+2. **W5 品牌周（新增）** — 一稿出全套：官网 + design system + Pitch Deck + 一页纸 + 公众号视觉。对 Persona B（Designer / PM）和 E（小老板）尤其有说服力。
+3. **W11 用户增长（新增）** — AARRR 诊断 + 推荐 / 病毒循环 + 一个 launch 跑通 10 渠道。补上了旧版「做出来了但没人用」的断层。
+
+### 1.2 🎯 新的核心卖点：每周 6.2 小时（这个数字比「15 周」好使得多）
+
+目标人群是 35-50 岁、150-250k、有全职工作的人。他们最大的异议不是价格，是**「我哪来的时间」**。「15 周」这个词只会放大这个恐惧；「每周 6.2 小时」是唯一能直接把它按下去的说法。
+
+**这个数字怎么来的**（按 outline.json 53 节课的 `duration` 实算，不是估的）：
+
+| 组成 | 总时长 | 折算每周 | 学员实际感受 |
+|---|---|---|---|
+| 15 节周日现场课（每节 180min）| 45.0h | 3.0h | 周日 14:00–17:00，线下 office 或卫星教室 |
+| 29 节周中自学 | 42.4h | 2.8h | — |
+| 9 个 Lab | 6.2h | 0.4h | 浏览器内做，一个 20–45min |
+| **合计** | **93.7h ≈ 94h** | **6.2h/周** | **周日下午 3 小时 + 周中每晚约 40 分钟** |
+
+> 周中 3.2h ÷ 5 个工作日 ≈ **39 分钟/晚**。文案统一说「每晚 40 分钟」。
+
+**怎么说 / 不能怎么说**：
+- ✅ 「课程安排的学时是每周约 6.2 小时：周日下午 3 小时，周中每晚 40 分钟。不用辞职。」
+- ✅ 「W2 起你的 agent 在你上班时替你跑活，周中那 40 分钟你是在 review，不是从零干。」
+- ❌ 「每周 6.2 小时就能做出一门生意」 — 学员在自己项目上的真实动作（约用户、发 outreach、跟客户谈）**不在这 6.2 小时里**，因人而异。说了就是过度承诺。
+- ❌ 「轻松 / 躺着学完 / 碎片时间搞定」 — Persona A/B 的黑名单词。
+
+> 🚨 **P0 口径冲突，铺文案前必须先拍板**：`outline.json` 的 `prerequisiteknowledge` 写「每周 8-11h（周日 3h + 5-8h 自学）」、`timeLength` 写「另每周 5-8h 自学与项目实操」，跟 lesson duration 实算的 **6.2h 对不上**。销售页、海报、客服话术同时存在两个数字 = 学员当场抓包。
+> **建议收敛口径**（待 Lightman 拍板 + 由 outline 维护人改，本方案不改 outline）：「**课程安排 6.2h/周（现场 3h + 周中 3.2h），另建议给自己项目上的真实动作留 2-4h**」——两个数字都保住，但分清「课程要你花的」和「你的生意要你花的」。
+
+### 1.3 🎯 主推内容角度
+
+> Type 3 创业孵化 playbook 优先级 × PERSONAS。⚠️ persona 痛点原话 GT 0.30，待补足后才能直接落文案。
 
 | 内容角度 | 权重 | 锚定 persona | 来源 |
 |---------|------|------|------|
-| Faculty 履历（麦肯锡 / 微软 senior eng / 持牌 CPA / Grant consultant / VC partner）实名 + LinkedIn 可核实 | ⭐⭐⭐⭐⭐ | A 购买触发器 #2 + B/C 信任谁 | COURSE_TYPE_PLAYBOOKS Type 3 + PERSONAS §2 |
-| 学员 / 校友真实案例（澳洲华人 indie 从 0 到第一笔 $1,800，非营销 vlog）| ⭐⭐⭐⭐⭐ | A 购买触发器 #1（真实同侪）| PERSONAS §2 A |
-| 「不写代码的 PM / 律师也 ship 出产品」非技术学员案例 | ⭐⭐⭐⭐ | B 购买触发器 #1 | PERSONAS §2 B |
-| RDTI 43.5% 退税怎么算 + 持牌 CPA 全程 review（合规切角，别处学不到）| ⭐⭐⭐⭐ | C 购买触发器 #1/#2 | PERSONAS §2 C + outline.json L36 |
-| 三城 hub-and-spoke 线下 + Demo Day + 互为客户日晚宴（cohort 网络）| ⭐⭐⭐ | A/B/C 都吃熟人信任 | outline.json highlights |
+| **每周 6.2 小时 · 周日 3h + 每晚 40 分钟 · 不用辞职**（配 W2 agent 替你跑活的机制解释）| ⭐⭐⭐⭐⭐ | A/B/C/E 全员第一异议 | §1.2 本方案新增 |
+| Faculty 履历（麦肯锡 Stan / 微软 Ray / 持牌 CPA / Grant consultant / VC）实名 + LinkedIn 可核实 | ⭐⭐⭐⭐⭐ | A 购买触发器 #2 + B/C 信任谁 | PERSONAS §2 |
+| 学员 / 校友真实案例（澳洲华人 indie 收到第一笔真实付费，非营销 vlog）| ⭐⭐⭐⭐⭐ | A 购买触发器 #1 | PERSONAS §2 A ⚠️ **首期未开课，此项无素材，D+30 起才有** |
+| 「不写代码的 PM / 律师也 ship 出产品」非技术学员路径（W4 现场专门讲不会 code 的交付路径）| ⭐⭐⭐⭐ | B 购买触发器 #1 | outline.json L12 |
+| RDTI 43.5% 退税怎么算 + 持牌 CPA 全程 review（W13，别处学不到）| ⭐⭐⭐⭐ | C/E 购买触发器 #1 | COURSE_REDESIGN W13 |
+| W5 品牌周：一稿出官网 + design system 全套 | ⭐⭐⭐ | B/E | COURSE_REDESIGN W5 |
+| 三城 hub-and-spoke 线下 + W15 Demo Day + 互为客户日晚宴（cohort 网络）| ⭐⭐⭐ | A/B/C/E 都吃熟人信任 | outline.json highlights |
 
-**承诺红线**（CLAUDE.md 顶级铁律 + course-promotion-architect 红线 §1）：
+### 1.4 承诺红线（CLAUDE.md 顶级铁律 + course-promotion-architect 红线 §1）
+
 - ❌ 所有 task 文案禁用「月入 X / 包做出能赚钱的产品 / 保证拿到 Grant 退税 / 包就业 / 拿 offer」；禁用「副业」一词
 - ✅ 只承诺过程结果：MVP Live / $1+ 真实付费（毕业指标 #1）/ ABN 注册 / 提交 Grant 申请（提交 ≠ 拿到）/ Demo Day 出席
-- ⚠️ RDTI 措辞：「教你准备 + 提交 RDTI 申请」，不写「帮你退 $X 万」（PERSONAS §0 已标 RDTI $87k 是营销 hook 虚构叙事）
+- ⚠️ RDTI 措辞：「教你准备 + 提交 RDTI 申请」，不写「帮你退 $X 万」（PERSONAS §0 已标 RDTI $87k 是营销 hook、虚构叙事）
+- ⚠️ 时间承诺：只说「课程安排的学时」，见 §1.2
 
 ---
 
-## 1.5 双切角宣传策略（Dual-Angle · 2026-06-22 新增）
+## 1.5 双切角宣传策略（Dual-Angle · 2026-06-22 拍板 · 2026-07-29 按 15 周更新模块引用）
 
-> 📐 写手挑具体内容角度看 [CONTENT_ANGLES.md](./CONTENT_ANGLES.md)（9 个切角调色板，是本节 2 个商业切角的展开素材库）。本节仍是商业定位 / 人群分流的权威。
+> 📐 写手挑具体内容角度看 [CONTENT_ANGLES.md](./CONTENT_ANGLES.md)（9 个切角调色板）。本节是商业定位 / 人群分流的权威。
 
-> Lightman 2026-06-22 拍板：**同一门 OPC 课、同一套三档定价 / Faculty / Demo Day / 漏斗，两套宣传话术打两类人**。不是两门课、不另造 funnel —— 销售页 URL / 价格 / 毕业指标全共用，只在 hero 文案 / 内容切角 / 部分渠道侧重上分流。
+> Lightman 2026-06-22 拍板：**同一门课、同一套三档定价 / Faculty / Demo Day / 漏斗，两套宣传话术打两类人**。不是两门课、不另造 funnel —— 销售页 URL / 价格 / 毕业指标全共用，只在 hero 文案 / 内容切角 / 部分渠道侧重上分流。
 
 ### 为什么要两个切角
-现有 PROMOTION / PERSONAS 全围绕「还在打工、想下场创业」的 A/B（焦虑程序员 / 高薪 PM）。但同样适合 OPC 的还有一类人：**已经有生意 / 专业 / 客户 / 现金流的小老板**（PERSONAS §2.5 Persona E）—— 他们不是从 0 起，是从「已有积累」起。对这群人喊「辞职创业」是错的，要喊「用 AI 把你已有的东西变成一个能独立卖的产品」。
+现有 PERSONAS 主体围绕「还在打工、想下场创业」的 A/B。但同样适合的还有一类：**已经有生意 / 专业 / 客户 / 现金流的小老板**（PERSONAS §2.5 Persona E）。对这群人喊「辞职创业」是错的，要喊「用 AI 把你已有的东西变成一个能独立卖的产品」。
 
 ### 两个切角定义
 
 | | 切角 1 · 创业营 | 切角 2 · 小企业老板用 AI |
 |---|---|---|
 | 一句话 | 趁窗口下场，做一家 AI 一人公司，从 0 到第一笔收入 | 你已有行业 know-how + 客户 + 现金流，用 AI 把它做成一个新产品 / 新收入线 |
-| 主锚定 persona | A 焦虑型 senior 程序员 / B 高薪 PM·Designer | C 专业人士产品化 / **E 有积累的小老板**（PERSONAS §2.5）|
+| 主锚定 persona | A 焦虑型 senior 程序员 / B 高薪 PM·Designer | C 专业人士产品化 / **E 有积累的小老板** |
 | 身份词 | founder / 一人公司 / OPC / 下场 | 老板 / 生意 / 多一条收入线 / 用 AI 给生意装个产品 |
 | 核心痛点 | 打工到天花板、窗口在关、技术够但不会做生意 | 收入靠卖时间 / 靠人力堆、想要可复制的产品收入但没技术 |
-| 主 hook | 真实同侪从 0 收第一笔 / Faculty 实名可核实 / cohort 网络 | 你的行业积累 = 别人没有的护城河 / ABN·RDTI 你本来就有 / 在职可跑不用 all-in |
-| 用得上的课程模块 | 全程（选品 → MVP → 收钱 → Demo Day）| 同一套，强调「把现有 know-how 当选品土壤」+ Phase 3 澳洲合规 / Grant（他们本就有 ABN）|
+| 主 hook | 真实同侪收第一笔 / Faculty 实名可核实 / cohort 网络 | 你的行业积累 = 别人没有的护城河 / ABN·RDTI 你本来就有 / **每周 6.2h 在职可跑，不用丢下现在的生意** |
+| 15 周里最吃的模块 | 全程（W1 AI OS → W7 首单 → W15 Demo Day）| 同一套；额外强调 W2 agent 替你干活、W5 品牌、W12 财务自动化 + AI 数据分析、W13 澳洲合规（他们本就有 ABN）|
 
 ### 🚨 产品-承诺一致性护栏（最重要，别翻车）
-OPC 教的是「**从 0 做一个一人 AI 产品 / 公司**」，**不是**「优化你咖啡店日常运营 / 全面数字化你现有的店」。所以切角 2 的承诺必须收在：
-- ✅ 能说：用 AI + 你的行业理解，做出一个**新的**可复制产品 / 数字收入线，并收到第一笔真实付费（毕业指标 #1）；ABN 你已有、教你准备 RDTI 申请。
-- ❌ 不能说：「帮你省 X% 人力」「帮你把店全面数字化」「AI 接管你的日常运营」「帮你的生意降本」—— 这些课程不教，说了就是过度承诺 + 退费风险（CLAUDE.md 红线）。
-- ⚠️ 「传统中小企业数字化」（Persona E3）这类人里，**只吸引「想用 AI 做个新产品 / 新收入」的那部分**；纯内部提效需求引导去 `ai-adoption-bootcamp`，别硬塞 OPC。
+这门课教的是「**从 0 做一个一人 AI 产品 / 公司**」，**不是**「优化你咖啡店日常运营 / 全面数字化你现有的店」。切角 2 的承诺必须收在：
+- ✅ 能说：用 AI + 你的行业理解，做出一个**新的**可复制产品 / 数字收入线，并收到第一笔真实付费；ABN 你已有、教你准备 RDTI 申请。
+- ❌ 不能说：「帮你省 X% 人力」「帮你把店全面数字化」「AI 接管你的日常运营」「帮你的生意降本」—— 这些课程不教，说了就是过度承诺 + 退费风险。
+- ⚠️ 「传统中小企业数字化」（Persona E3）里只吸引「想用 AI 做个新产品」的那部分；纯内部提效需求引导去 `ai-adoption-bootcamp`。
 
 ### 渠道分流（共用 §3 矩阵，切角 2 额外侧重）
-两个切角**共用 §3 全部渠道**，差别在侧重 + 文案：
 - **切角 1 重**：校友群 1v1 / LinkedIn / 即刻·Twitter build-in-public / 公众号「一人公司」切角。
-- **切角 2 额外重**：视频号 + 朋友圈（40-50 岁老板年龄层）、**澳洲本地华人商会 / 行业群 / 同乡群**（C/E 独有渠道，PERSONAS §3 标 ROI 高）、线下商家 / 专业人士沙龙、公众号「专业人士·小老板用 AI 做产品 + 澳洲 Grant」切角、小红书「澳洲副业退税 / 不写代码做产品」切角（B/C/E）。
-- **不变**：付费投放仍需 Lightman 审批 + 地域定向澳洲 + 避开「躺赚 / 割韭菜」词（PERSONAS §4）。
+- **切角 2 额外重**：视频号 + 朋友圈（40-50 岁老板年龄层）、**澳洲本地华人商会 / 行业群 / 同乡群**、线下商家沙龙、公众号「专业人士·小老板用 AI 做产品 + 澳洲 Grant」切角。
+- **不变**：付费投放需 Lightman 审批 + 地域定向澳洲 + 避开「躺赚 / 割韭菜」词。
 
-### 落地动作（接 §4 时间轴，不另起一条线）
-- **销售页**（§4 T-56 / T-5，`/course-custom-landing` Mode B）：hero 加一个「你已经有生意 / 专业？」二级入口段，复用同一页（**URL 不变，铁律**），不新建路由。
-- **公众号 / 小红书选题**：每切角各留固定配额（建议 6:4 偏切角 1；切角 2 用 C/E 切角）。
-- **海报**（§4 T-45）：切角 2 单出一套「老板版」主视觉（主打「行业积累 → AI 产品」，**不主打「辞职创业」**）。
-- **GT 前置**：切角 2 文案落地前，Persona E 现在 GT≈0.15，痛点原话不可直接用，先按 PERSONAS §7 P0(E) 补真实样本（客服记录搜「我开店 / 我是律师 / ABN」+ 商会群反馈）。
+### 落地动作
+- **销售页**（`/course-custom-landing` Mode B）：hero 加「你已经有生意 / 专业？」二级入口段，复用同一页（**URL 不变，铁律**）。
+- **公众号 / 小红书选题**：每切角固定配额（建议 6:4 偏切角 1）。
+- **海报**：切角 2 单出「老板版」主视觉（主打「行业积累 → AI 产品」+「每周 6.2h 不耽误现在的生意」，**不主打「辞职创业」**）。
+- **GT 前置**：Persona E 现在 GT ≈ 0.15，痛点原话不可直接用，先按 PERSONAS §7 P0(E) 补真实样本。
+
+---
+
+## 1.8 🔴 转化诊断与待验证假设（2026-07-29 新增 · P0）
+
+### 1.8.1 现象（Lightman 2026-07-29 口头反馈）
+
+> 「创业营公开课讲过两次，有兴趣的很多，但转化率很低。」
+
+⚠️ **这是口头反馈，没有量化数据支撑。** repo 里能查证到的只有这些：
+
+| 能查证的 | 来源 |
+|---|---|
+| 布里斯班公开课已办（推算 2026-07-12 周日），课后上传回放到官网 + YouTube，Beta 负责「问反馈」 | `jr-omni/team-log/worklog/Beta/2026-07-10.md`、`2026-07-13.md` |
+| 该场由 Rain **私发 50 位 Brisbane 目标客户**逐个邀约 | `jr-omni/team-log/worklog/Rain/2026-07-09.md` |
+| 2026-06-28「企业如何构建高效 AI 操作系统」讲座已实跑（客户场），当时记「报名踊跃」 | 本方案 §6 周报 |
+
+**两场的确切日期 / 报名数 / 到场数 / 留资数 / 之后有几个进了申请 —— 全部「待补」。没有这四个数字，下面三个假设一个都验不了，也算不出「转化率低」到底低到什么程度。**（有可能只是高客单 4-8 周决策周期还没走完，见 §9.1 根因 #3。）
+
+### 1.8.2 三个待验证假设（⚠️ 全部标注为假设，不是结论，不许当结论写进任何对外文案）
+
+| # | 假设 | 若成立会看到什么 | 最快怎么验 | 成立后的动作 |
+|---|---|---|---|---|
+| **H1** | 来听的人多是**「还没 idea」的 C 类**，而课程要求 W1 就锁方向、写死一页生意 SoT | A/B/C 采集表回收里 C 类占比高（> 50%）；两场回放 Q&A 里高频出现「我还没想好做什么能报吗」 | §1.8.3 采集表 `founderType` 分布 + 回看两场回放逐条归类 Q&A | ① 公开课收尾**不直接推主课**，先推引流课《一个晚上判断你下不下得了场》（FUNNEL §4，3 个 lead magnet 已现成，0 新内容）② 销售页 / 海报显著位放 outline.json 已有的那条 FAQ 答案：「W1 锁方向 + W3 商业判断就是干这个，但要有职业积累当土壤」③ 主推 **W1 免费试听**（见下） |
+| **H2** | **「创业营」这个名字对在职者心理门槛太高** —— 听着像要辞职 all in，而实际是每周 6.2 小时的在职模式 | 调研里「时间不够 / 不能辞职 / 现在走不开」是首要不报名原因；已报名的人里全职创业 / 已离职比例异常高 | §1.8.3 补充题 Q1 + Q3；再盘一遍现有报名者的在职状态 | ① 把「每周 6.2 小时 · 周日下午 3h + 周中每晚 40 分钟 · 不用辞职」提到 hero 第一屏 + 所有海报底栏（§1.2）② **slug / URL 永远不动**（CLAUDE.md URL 铁律）；对外展示名要不要加副标题（例：「在职版」）是商务决策，待 Lightman 拍板 ③ 公开课标题里就带这个数字 |
+| **H3** | 名字承诺「创业」，但**内容主体被感知成 AI 工具课** | 调研里「跟我预期不一样 / 我以为是教怎么创业」出现频次高；听完的人问的多是工具问题而不是生意问题 | §1.8.3 补充题 Q2（开放题「你当时以为这门课主要教什么」）+ 回放 Q&A 归类 | ⚠️ **先别预设它成立**。15 节现场课里只有 W1/W2 是 AI OS / agent，W3 商业验证、W7 收第一笔钱、W13 税务 RDTI、W14 Pitch 都是生意侧。若 H3 成立，问题更可能出在**公开课选题**（已办两场主题偏 AI 操作系统 / AI 工具）而不是课程本身 → 动作是**改公开课选题**（下一场先走 `/webinar-topic-feasibility` 审），不是改课程 |
+
+**三个假设互不排斥**，可能同时成立，也可能都不是主因（真正主因是决策周期没走完 + 报名入口不顺，见 §9.1）。调研的目的是**排序**，不是找一个答案。
+
+### 1.8.3 具体行动：用平台已有的 A/B/C 创业身份采集表向两次公开课听众做调研
+
+**平台已有工具（已核实存在，不是待建）**：
+
+| 项 | 事实 | 位置 |
+|---|---|---|
+| 学员端表单 | `https://jiangren.com.au/founder-matching`（独立路由，`robots: noindex`）| `jr-academy-web-zh/src/app/[locale]/founder-matching/page.tsx` |
+| 提交接口 | `POST /founder-profile` upsert —— **只要是登录的注册用户就能提交，不校验是否已报名** | `jr-academy/src/modules/founder-profile/founder-profile.controller.ts` |
+| 报名限制在哪 | 只有 `GET /founder-profile/discover`（浏览队友目录）校验报名，未报名返 403 | 同上 |
+| Admin 看板 | admin.jiangren.com.au → StartupIntake，出 **A/B/C 比例 + 城市分布 + 角色供需缺口** | `jr-academy-admin/src/pages/StartupIntake/` + `/admin-cms/startup-intake/stats` |
+| PII 红线 | 看板默认不返手机 / 邮箱 / 微信，撮合走站内信 | `startup-intake.api.ts` 注释 |
+| 采得到的字段 | `founderType`(A/B/C) · `city` · 现职行业职能 · `capabilities` · **`weeklyHours`（每周可投入时长）** · `goal`（开放文本「上完这门课我最想拿到的结果」）| `FOUNDER_MATCHING_PRD.md` §5 |
+
+> 🎯 `weeklyHours` 这个字段直接测 H2 —— 听众自己填的可投入时长 vs 课程的 6.2h，一比就知道「时间」到底是不是真障碍。
+
+**⚠️ 采集表本身只能验 H1（靠 `founderType` 分布）和部分 H2（靠 `weeklyHours`）。H2 的心理门槛和 H3 的预期错位必须靠下面 3 道补充题。**
+
+**执行步骤**：
+
+| # | 动作 | 谁 | 何时 | 说明 |
+|---|------|----|------|------|
+| 1 | 从两场公开课的报名表 / 微信群名单 / 回放观看名单导出听众名单并去重 | Ada + Rain | **T-3（07-30）前** | 这是唯一样本源。没有名单，这条线直接断 |
+| 2 | Dev 确认**未报名的登录用户**打开 `/founder-matching` 能正常提交（form tab 不依赖 `programId`） | Dev | T-3 | 后端已允许，**前端未验证**。不验证就群发链接 = 打不开 = 白发一轮 |
+| 3 | 3 道补充题定稿：决定是挂在采集表 `goal` 字段前后，还是走一份独立 3 题短表 | Beta + Lightman | T-3 | 能不改前端就不改（T-4 了，别开发新功能） |
+| 4 | **逐个 1v1 私信发**（不群发）：「你上次来听了 X，我们想知道你现在卡在哪，3 分钟填个表；填完我给你留一个 8/2 W1 的试听名额」 | Rain / Amelia / Angela | T-3 ~ T-1 | ❌ 不群发（PERSONAS A 黑名单 #4「微信群刷屏 + 顾问硬加」）✅ 必须给对方一个真实好处（W1 试听是现成的，见 §3 Rank 2） |
+| 5 | 回收后在 admin StartupIntake 看板出 A/B/C 比例 + 城市分布；补充题人工归类 | Beta | D+3（08-05）| **样本 < 15 份不下结论**，只当方向参考 |
+| 6 | 结论写回本节 §1.8 + 回灌 `PERSONAS.md` §7 | Beta | D+7（08-09）| 这批人是 PERSONAS 从 GT 0.30 往 0.5 拉的真实样本，PERSONAS §7 列的 P0 之一，别浪费 |
+
+**3 道补充题（口语，别写成问卷腔）**：
+
+1. 你听完那场之后没有马上报名，最主要卡在哪一条？（时间投入不够 / 我还没想好做什么 / 价格 / 不确定学完能得到什么 / 其他 ____）→ 验 H1 + H2
+2. 你当时以为这门课主要教什么？（一句话，开放）→ 验 H3
+3. 如果课程安排是「每周日下午 3 小时 + 周中每晚 40 分钟，不用辞职」，这个投入你接得住吗？（接得住 / 勉强 / 接不住）→ 验 H2 + 同时测 §1.2 新卖点的接受度
+
+**调研红线**：
+- 这是调研，不是伪装成调研的推销。不在表里塞报名链接以外的销售话术。
+- 填表不承诺任何金钱结果、不承诺录取。
+- 名单里的手机 / 微信 / 邮箱**不进 git、不进看板**（CLAUDE.md PII 红线），只留在销售侧 CRM。
+- 回收数据写进本文档时只写**聚合结论**（比例 / 归类），不写个人原话里的可识别信息。
 
 ---
 
 ## 2. 目标与漏斗反推
 
-> ⚠️ 以下公式来自行业基线（course-promotion-architect Mode A 模板），不是本课实测。Type 3 创业课转化路径跟求职 / 在职课不同 —— 申请制 + 1v1 私聊为主，所以「加微信 → 报名」转化率比公域漏斗高、但流量绝对量小。首期跑完用真实数据替换。
+> ⚠️ 以下公式来自行业基线（course-promotion-architect Mode A 模板），**不是本课实测**。Type 3 创业课转化路径跟求职 / 在职课不同 —— 申请制 + 1v1 私聊为主，「加微信 → 报名」转化率比公域漏斗高、但流量绝对量小。首期跑完用真实数据替换。
 
 ```
-报名目标：50 人（已统一 50 · 墨 22 / 悉 16 / 布 12）
+报名目标：50 人（墨 22 / 悉 16 / 布 12）
   ↓ 申请制录取率：30-50%（outline.json）
 申请单提交目标：~125 份（50 ÷ 40%）
-  ↓ 私域 / 引流课 → 申请转化率：假设 25%（Type 3 高信任低量，⚠️ 基线推测）
-进私域群 / 引流课报名目标：~500 人
-  ↓ 引流课 / lead magnet 页面 CTR 假设 25%
-落地页 / lead-magnet UV 目标：~2000 人
-  ↓ 各渠道流量分摊（Type 3 创业孵化基线 — 不是小红书主导！）
-  - 1v1 私聊 + 创业者圈层 + LinkedIn DM：占转化大头（量小质高，主战场）
-  - LinkedIn 长文（英文创业者圈 + Faculty 背书）：~600 UV（30%）
-  - 公众号 / 知乎深度长文（一人公司 / RDTI 实战）：~500 UV（25%）
-  - 老学员 / 校友群定向私聊（AI Engineer / OpenClaw 校友，PRD 写 70% 生源）：高转化（不计 UV，直接进申请）
-  - 线下 founder 沙龙（墨 / 悉，闭门邀请）：~300 UV（15%）
-  - 小红书少量种草（B/C 切角）：~400 UV（20%，曝光为主非转化）
-  - 视频号 founder 短视频（B/C 年龄层）：~80 UV（10%）
+  ↓ 私域 / 引流课 / 公开课 → 申请转化率：假设 25%（Type 3 高信任低量，⚠️ 基线推测）
+进私域群 / 引流课 / 公开课报名：~500 人
+  ↓ 落地页 → 留资 CTR 假设 25%
+落地页 / lead-magnet UV：~2000 人
+  ↓ 渠道分摊（Type 3 创业孵化基线 — 不是小红书主导）
+  - 老学员 / 校友群定向 1v1（PRD 写 70% 生源）：高转化，直接进申请，不计 UV
+  - 1v1 私聊 + LinkedIn DM：占转化大头（量小质高，主战场）
+  - 公开课 / W1 试听：留资主入口（已办 2 场，转化待诊断 → §1.8）
+  - LinkedIn 长文（英文创业者圈 + Faculty 背书）：~600 UV
+  - 公众号 / 知乎深度长文：~500 UV
+  - 线下 founder 沙龙（墨 / 悉，闭门邀请）：~300 UV
+  - 小红书（B/C 切角，曝光为主）：~400 UV
+  - 视频号（B/C/E 年龄层）：~80 UV
 ```
 
-> 🚨 **PERSONAS §3 最关键结论**：这门高价课的买家重心**不在小红书**。Persona A（45%，最大群体）几乎打不到小红书，「往小红书加号 = 往错的地方加资源」。本课真正的「矩阵」是 **微信私域（公众号 + 校友群 + 澳洲本地华人群）+ LinkedIn 建可信 + 线下 networking 转化**，小红书只留 1-2 个切角（非技术 ship / 澳洲副业退税）当补充。
+> 🚨 **PERSONAS §3 最关键结论**：这门高价课的买家重心**不在小红书**。Persona A（45%，最大群体）几乎打不到小红书，「往小红书加号 = 往错的地方加资源」。本课真正的矩阵是 **微信私域（公众号 + 校友群 + 澳洲本地华人群）+ LinkedIn 建可信 + 线下 / 公开课转化**，小红书只留 1-2 个切角当补充。
 
-⚠️ **待补 ground truth**：launch date / 真实申请 → 录取转化率 / 引流课 → 申请转化率 / 老学员升级专属优惠金额（outline.json FAQ 写「待商务确认」）。全部需 FUNNEL_PLAN.md + 首期真实数据。
+⚠️ **待补 ground truth**：当前真实报名数（§0 已标）/ 两场公开课四项数据（§1.8.1）/ 真实申请→录取转化率 / 引流课→申请转化率 / 老学员升级优惠金额（outline.json FAQ 写「待商务确认」）。
 
 ---
 
-## 3. 渠道矩阵（按 PERSONAS §3 加权 ROI 排序 — 私域 + LinkedIn + 线下为主轴，小红书为辅）
+## 3. 渠道矩阵（按 PERSONAS §3 加权 ROI 排序 — 私域 + 1v1 + 线下为主轴，小红书为辅）
 
-> 🚨 本表以 **PERSONAS §3 跨 persona 渠道 ROI 排序为权威**（非 COURSE_TYPE_PLAYBOOKS Type 3 默认数字），因为本课 persona 渠道方向虽 GT 0.30 但方向性结论可用（PERSONAS §3 注明「方向性结论已能用」）。频次取 Type 3 playbook 兜底。
+> 🚨 本表以 **PERSONAS §3 跨 persona 渠道 ROI 排序为权威**（非 COURSE_TYPE_PLAYBOOKS Type 3 默认数字）。频次取 Type 3 playbook 兜底。
 
-| Rank | 渠道 | 主负责 | 子 skill | 频次（Type 3 创业孵化基线）| 锚定 persona | 备注 |
-|------|------|--------|---------|------------------|------|------|
-| 1 | **老学员 / 校友群定向 1v1 推荐**（AI Engineer / OpenClaw 校友里 35-50 岁高薪、动过创业念头的人）| Beta + 课程主理人 | （无 skill，✏️ 人执行）| 持续，T-60 起每周 5-10 个定向私聊 | A/B/C 全员最高 ROI | PRD 写 70% 生源来自内部升级 — **这是本课第一渠道，不是公域** |
-| 2 | **1v1 私聊 + LinkedIn DM**（创业者圈层 + Faculty 引荐）| Beta 亲自，不外包 | `/eoi-followup`（lead 进来后跑 SOP）| 每天 2-3 个 lead | A/B 高净值 | Type 3 主战场（COURSE_TYPE_PLAYBOOKS）|
-| 3 | **LinkedIn 长文 + Faculty 背书帖**（英文创业者圈 + 履历可核实）| Beta + 已退出 founder 嘉宾轮流 | `/blog-longform-writer`（写）| 3 篇/周 × 20 周 = ~60 篇 | A/B 信任建立 | Faculty 实名 + LinkedIn 可一一核实是 A 的购买触发器 |
-| 4 | **公众号 / 知乎深度长文**（一人公司 / RDTI 实战 / 非技术 ship 三独家切角）| Marketing 文案 + Beta | `/blog-longform-writer` + `/wechat-article-quality`（审）/ `/wushi-caijing-style`（深度）| 4-6 篇 总周期（单篇 3000-5000 字深度）| A/B/C 通吃 | PERSONAS §3 第 2 高 ROI「全员通吃」|
-| 5 | **销售页 Custom Landing**（Faculty 名册 + 三档对比 + P3 协作图 + 校友案例）| Beta + Dev | `/course-custom-landing`（Mode B 迭代）| 1 次搭 + 月度迭代 | A/B/C | content.ts 已有，需补 Faculty 实名 + 校友案例 |
-| 6 | **线下 founder 沙龙 / networking**（墨 / 悉闭门邀请，非公开宣传）| Aurora / Seren + Beta | `/offline-event-content-design` + `/offline-event-sop` | 1-2 场总周期 | C 最吃熟人信任 + A/B | 三城线下本就是课程卖点，前置成获客渠道 |
-| 7 | **视频号直播 / 财经商业内容**（真人演示 + 直播答疑，适配 40-50 岁）| Beta 出镜（不代笔）| `/webinar-topic-feasibility`（先审 topic 能不能爆）| 1-2 场总周期 | B/C 年龄层 | PERSONAS §3 Rank 5「偏 B/C 年龄向」|
-| 8 | **小红书少量种草**（仅「非技术也能 ship / 澳洲副业退税」两切角）| Summer / Lily / KIKI | `/xhs-topic-picker` → `/xhs-draft` → `/xhs-poster` → `/xhs-review` | 3 篇/周 × 20 周 = ~60 篇（轻量，曝光为主）| B/C（A 几乎打不到）| 🔴 PERSONAS §3 注明对本课是**次要渠道**，不当主力 |
-| 9 | **SEO 长尾**（「澳洲一人公司」「RDTI 退税 自己申请」「澳洲华人 AI 创业」）| Dev | `/seo-optimizer` + `/eeat-optimizer` | 一次性投入 + 月度迭代 | A/B/C | 长期资产，起效 30-90 天 |
-| 10 | 海报（朋友圈 + 小红书 + 视频号配套）| Designer | `/poster-user-test`（ChatGPT 侧 6 选 3 测）| 2-3 套总周期 | — | 主打 Faculty 阵容 + 三城线下，不主打「快速变现」（A 黑名单）|
-| 11 | **OPC 公开机会雷达 → 官网周报（引流层）**（一人公司能申请的全类型「搞钱机会」：全球 + 澳洲 hackathon / AI 比赛奖金 / 加速器·孵化器 / **政府补贴·创业资助·RDTI 等 grant** / startup credits，每条带 deadline + 官方链接）。**免费公开**，引人进漏斗；报名后的申请陪跑/补贴日历等会员专属服务见 [FUNNEL_PLAN.md](./FUNNEL_PLAN.md) §11| 自动（2 个 schedule cloud routine）+ Beta 周校对 | **已上线 schedule routine**：① `Hackathon & AI 比赛雷达 — 隔天 (OPC 创业营视角)`（`trig_0189qzNAfH7dKW8TJysPTPXY`，隔天写 `omni-report/hackathon-radar/{date}.md`）② `OPC 比赛雷达 · 每周官网周报`（`trig_01RDCxuVDhjGHkuJZko5yNt1`，周日重写 jr-wiki 文章 + 海报）| 隔天采集 + 每周一发布 | A/B/C（C 尤其看重 Grant/RDTI）| **常青 SEO + nurture 活资产**，已上线 `https://jiangren.com.au/blog/ai-hackathon-weekly`。是本课 Grant/RDTI + Demo Day 卖点的「活内容证明」。**双向链**：周报底部已链向课程；课程销售页 §C 加反向链回（OPC↔雷达）。**这是已存在的自动化引擎，promotion 直接消费、不另造** |
+| Rank | 渠道 | 主负责 | 子 skill | 频次 | 锚定 persona | 备注 |
+|------|------|--------|---------|------|------|------|
+| 1 | **老学员 / 校友群定向 1v1 推荐**（AI Engineer / OpenClaw 校友里 35-50 岁高薪、动过创业念头的人）| Beta + 课程主理人 | （无 skill，✏️ 人执行）| 持续，每周 5-10 个定向私聊 | A/B/C 全员最高 ROI | PRD 写 70% 生源来自内部升级 — **本课第一渠道，不是公域** |
+| 2 | **🆕 W1 现场课免费试听**（8/2 线上 + 三城教室）| Beta 讲 + Ada 线上主持 | `/eoi-followup`（课后 24h 跟进）| 首期只有这一次 | A/B/C/E 全员 | **W1_RUNSHEET §5 已按可试听设计**：W1 不做 idea 分享 → 全程开放不需断流；试听者跟着写完带走**一页自己的生意 SoT**（自己写的东西 = 最强 lead magnet）。这是 T-4 这周最高杠杆的动作，也是 §1.8 调研的交换条件 |
+| 3 | **1v1 私聊 + LinkedIn DM**（创业者圈层 + Faculty 引荐）| Beta 亲自，不外包 | `/eoi-followup` | 每天 2-3 个 lead | A/B 高净值 | Type 3 主战场 |
+| 4 | **公开课 / 线上讲座**（已办 2 场，转化待诊断）| Ada 运营 + Beta 讲 | `/webinar-topic-feasibility`（**下一场开讲前必须先过这道闸**）| 每 4-6 周 1 场 | A/B/C/E | ⚠️ §1.8 H3 若成立，问题在选题不在课程。下一场选题必须先审 |
+| 5 | **公众号 / 知乎深度长文**（一人公司 / RDTI 实战 / 非技术 ship / **每周 6.2h 在职怎么跑** 四个独家切角）| Marketing 文案 + Beta | `/blog-longform-writer` + `/wechat-article-quality`（审）/ `/wushi-caijing-style`（深度）| 4-6 篇 / 周期，单篇 3000-5000 字 | A/B/C/E 通吃 | PERSONAS §3 第 2 高 ROI「全员通吃」 |
+| 6 | **LinkedIn 长文 + Faculty 背书帖**（英文创业者圈 + 履历可核实）| Beta + 嘉宾轮流 | `/blog-longform-writer`（写）| 2-3 篇/周 | A/B 信任建立 | Faculty 实名 + LinkedIn 可一一核实是 A 的购买触发器 |
+| 7 | **销售页 Custom Landing**（Faculty 名册 + 三档对比 + 15 周路径图 + **6.2h/周 时间账**）| Beta + Dev | `/course-custom-landing`（Mode B 迭代）| 1 次改 + 月度迭代 | A/B/C/E | content.ts 已改到 15 周 / 53 节（已核实），仍缺 Faculty 实名 + 6.2h 时间账模块 |
+| 8 | **线下 founder 沙龙 / networking**（墨 / 悉闭门邀请，非公开宣传）| Aurora / Seren + Beta | `/offline-event-content-design` + `/offline-event-sop` | 1-2 场 / 周期 | C/E 最吃熟人信任 + A/B | 三城线下本就是课程卖点，前置成获客渠道 |
+| 9 | **视频号直播 / 财经商业内容**（真人演示 + 直播答疑，适配 40-50 岁）| Beta 出镜（不代笔）| `/webinar-topic-feasibility` 先审 topic | 1-2 场 / 周期 | B/C/E 年龄层 | PERSONAS §3 Rank 5「偏 B/C/E 年龄向」 |
+| 10 | **小红书少量种草**（仅「非技术也能 ship」「澳洲副业退税」「每周 6.2h 在职」三切角）| Summer / Lily / KIKI | `/xhs-topic-picker` → `/xhs-draft` → `/xhs-poster` → `/xhs-review` | 3 篇/周（轻量，曝光为主）| B/C/E（A 几乎打不到）| 🔴 PERSONAS §3 注明对本课是**次要渠道**，不当主力 |
+| 11 | **SEO 长尾**（「澳洲一人公司」「RDTI 退税 自己申请」「澳洲华人 AI 创业」「在职创业 时间」）| Dev | `/seo-optimizer` + `/eeat-optimizer` | 一次投入 + 月度迭代 | A/B/C | 长期资产，起效 30-90 天 |
+| 12 | 海报（朋友圈 + 小红书 + 视频号配套）| Designer | `/poster-user-test`（ChatGPT 侧 6 选 3 测）| 2-3 套 / 周期 | — | 主打 Faculty 阵容 + 15 周路径 + **6.2h/周**，不主打「快速变现」（A 黑名单）|
+| 13 | **OPC 公开机会雷达 → 官网周报（引流层）** —— 一人公司能申请的全类型机会（全球 + 澳洲 hackathon / AI 比赛奖金 / 加速器 / 政府补贴 · RDTI 等 grant / startup credits），每条带 deadline + 官方链接。**免费公开**，引人进漏斗；报名后的申请陪跑等会员服务见 [FUNNEL_PLAN.md](./FUNNEL_PLAN.md) §11 | 自动（2 个 schedule routine）+ Beta 周校对 | **已上线**：① `Hackathon & AI 比赛雷达 — 隔天`（`trig_0189qzNAfH7dKW8TJysPTPXY`）② `OPC 比赛雷达 · 每周官网周报`（`trig_01RDCxuVDhjGHkuJZko5yNt1`）| 隔天采集 + 每周一发布 | A/B/C（C 尤其看重 Grant/RDTI）| **常青 SEO + nurture 活资产**，已上线 `https://jiangren.com.au/blog/ai-hackathon-weekly`。是 W13 RDTI + W15 Demo Day 卖点的活内容证明。**已存在的自动化引擎，直接消费，不另造** |
 
 **不跑的渠道**（Type 3 红线 + PERSONAS §4）：
-- ❌ EOI 群发式跟进（创业者反感模板话术 — 用 `/eoi-followup` 但走高质 1v1，不群发）
-- ❌ 大型公开讲座（不是目标人群场景 — 改闭门 founder 沙龙）
-- ❌ 付费投放（创业者圈层付费投放转化率 < 0.5%；且若投必须地域定向澳洲、避开「学生 / 躺赚 / 割韭菜」关键词 — PERSONAS §4。⚠️ 任何付费 task 需 Lightman 审批预算）
-- ❌「副业 / 月入 X / 包做出产品」钩子（A/B/C 黑名单 + CLAUDE.md 红线）
+- ❌ EOI 群发式跟进（创业者反感模板话术 — 用 `/eoi-followup` 但走高质 1v1）
+- ❌ 面向泛人群的大型公开讲座（改：主题精准 + 闭门 founder 沙龙 + W1 试听）
+- ❌ 付费投放（创业者圈层转化率 < 0.5%；若投必须地域定向澳洲、避开「学生 / 躺赚 / 割韭菜」关键词。**任何付费 task 需 Lightman 审批预算**）
+- ❌「副业 / 月入 X / 包做出产品 / 轻松学完」钩子（A/B/C 黑名单 + CLAUDE.md 红线）
 
-> **决策原则**：本课至少跑 1+2+3+4+5+6 这 6 个渠道（私域 + 1v1 + LinkedIn + 公众号 + 销售页 + 线下沙龙是地基），小红书 / 视频号 / SEO / 海报视 bandwidth 加。**注意：本课地基跟求职 / 在职课不同 —— 私域 + 1v1 + 线下排在小红书之前。**
+> **决策原则**：本课至少跑 1+2+3+4+5+7 这 6 个（校友 1v1 + W1 试听 + LinkedIn DM + 公开课 + 公众号 + 销售页 = 地基），线下沙龙 / 视频号 / 小红书 / SEO / 海报视 bandwidth 加。**本课地基跟求职 / 在职课不同 —— 私域 + 1v1 + 线下 / 试听排在小红书之前。**
 
 ---
 
-## 4. 时间轴 Task 矩阵（T-60 → D+90，Type 3 最长周期）
+## 4. 时间轴 Task 矩阵（T-30 → D+30 · D0 = 2026-08-02）
 
-> ⚠️ launch date 待定，以下按 launch=D0 倒排，T-60 = 开课前 60 天。嘉宾铺设需 8 周（outline.json），故 Faculty 确认必须 T-56 前启动。
-> 🤖 = AI 执行（Claude 跑 skill）/ ✏️ = 人执行（真名发声 / 1v1 / 拍板）/ 🤖→✏️ = AI 出稿人精修发布。
+> 📍 **本方案写于 T-4（2026-07-29）**。T-30 ~ T-8 的格子对首期**已经过去**，保留为**二期排期模板** + 首期回填位（数据待补）。**这周唯一要执行的是 🔴🔴 T-7 ~ T-1 那一段。**
+> 🤖 = AI 执行（跑 skill）/ ✏️ = 人执行（真名发声 / 1v1 / 拍板）/ 🤖→✏️ = AI 出稿人精修发布。
 > **不要一次执行全部** —— 本节是派单清单，每周一晨会按 `/course-promotion-architect weekly` 取当周 task。
 
-### 🔴 T-60 ~ T-56（开课前 8-9 周）· 信任地基 + 嘉宾铺设（创业课命脉，最先做）
+### ⬛ T-30 ~ T-15（2026-07-03 ~ 07-18）· 已过 · 二期照此排 + 首期回填
 
-- **T-60 周一 10:00**：✏️ Beta 确认 Faculty 11 类讲师实名 + LinkedIn + 履历，把 outline.json / content.ts 里的占位符替换成真名（嘉宾铺设需 8 周，这是 P0 阻塞项）— 半天 — **P0**
-- **T-60 周一 14:00**：✏️ Beta 确认 launch date（嘉宾档期定下来才能定）+ 三城名额上限（墨 10-12 / 悉 6-8 / 布 3-5）+ 老学员升级优惠金额（outline.json FAQ「待商务确认」）— 2h — **P0 ⚠️ 阻塞全盘**
-- **T-58 周三 10:00**：✏️ Beta + Aurora 从 AI Engineer / OpenClaw 校友群筛出符合「35-50 岁 / 高薪 / 动过创业念头」的名单（PRD 写 70% 生源来自内部）→ 建定向私聊清单 — 半天 — **P0**（这是本课第一渠道）
-- **T-58 周三 14:00**：🤖→✏️ 跑 `/target-user-persona-mapper validate ai-solo-founder-bootcamp` 把 PERSONAS GT 从 0.30 往 0.5 拉（配合 P0 校友访谈），文案落地前必须做 — Claude 出框架 + Beta 安排 5-8 个校友访谈 — 跨周 — **P1**
-- **T-56 周五 10:00**：✏️ Dev + Beta `/course-custom-landing` Mode B 给销售页补 Faculty 实名名册 + 三档对比表（$2,800 / $3,800 / $6,800）+ 校友案例占位 — 2 天 — **P0**（销售页是落地承接点，学员落地无处去 = 崩盘）
+- **T-30**：✏️ 确认 Faculty 实名 + LinkedIn + 履历，把 outline.json / content.ts 占位符替成真名 — **P0** —— 首期状态：⚠️ **未完成，Faculty 仍是占位**（§7 待办）
+- **T-28**：✏️ 从 AI Engineer / OpenClaw 校友群筛出「35-50 岁 / 高薪 / 动过创业念头」名单，建定向私聊清单 — **P0**（本课第一渠道）
+- **T-25**：✏️🤖 公开课（已办：布里斯班 2026-07-12，Rain 私发 50 人邀约，回放已上官网 + YouTube）— **首期回填待补**：报名数 / 到场数 / 留资数 / 转申请数
+- **T-21**：🤖→✏️ `/course-custom-landing` Mode B 把销售页改到 15 周 / 53 节 — 首期状态：✅ content.ts 已是 15 周（已核实），**但 Faculty 实名 + 6.2h 时间账模块仍缺**
+- **T-18**：🤖 `/blog-longform-writer` + `/wushi-caijing-style` 公众号深度长文 #1（切角：在职者怎么用每周 6.2h 跑 15 周）→ 🤖 `/wechat-article-quality` 审 — **P1**
+- **T-15**：✏️ Designer 海报套 #1（Faculty 阵容 + 15 周路径 + 6.2h/周）→ 🤖 `/poster-user-test` 测 — **P2**
 
-### 🟠 T-49 ~ T-42（开课前 6-7 周）· 内容信任资产开始铺
+### ⬛ T-14 ~ T-8（2026-07-19 ~ 07-25）· 已过 · 二期照此排
 
-- **T-49 周一 09:00**：✏️ Beta 在校友定向清单里启动第一波 1v1 私聊（每周 5-10 个，不是群发，PERSONAS A 黑名单忌刷屏）— 每条 5-10min — **P1**
-- **T-49 周一 11:00**：🤖 `/blog-longform-writer` 出 LinkedIn 长文 #1：「为什么澳洲 senior 工程师该认真考虑 OPC 这条路」（A 切角）— ✏️ Beta 真名发布（LinkedIn 发声必须 ✏️ 人）— 60min 写 + 20min 精修 — **P1**
-- **T-49 周三 10:00**：🤖 `/blog-longform-writer` + `/wushi-caijing-style` 出公众号深度长文 #1：「一个澳洲华人 indie 怎么从 0 收到第一笔 $1,800」（真实案例，非营销 vlog 口气，A 购买触发器 #1）— 🤖→✏️ Marketing 文案精修 — 半天 — **P1**
-- **T-49 周三 14:00**：🤖 `/wechat-article-quality` 审上文（按 C 类推广文 + 反 AI 味）— 30min — **P1**
-- **T-47 周五 10:00**：🤖 `/blog-longform-writer` LinkedIn 长文 #2：已退出 founder 嘉宾视角「我当年踩的坑」— ✏️ 嘉宾 / Beta 发 — **P2**
-- **T-45 周一 10:00**：✏️ Designer 出海报套 #1（主打 Faculty 阵容 + 三城线下，**不主打快速变现**）→ 🤖 `/poster-user-test` 让 ChatGPT 扮 A/B/C 中 3 个 persona 测「看不看得懂 / 信不信」— 设计 1 天 + 测 0.5 天 — **P2**
+- **T-14**：🤖→✏️ `/intro-course-design` 把 3 个现成 lead-magnet HTML 包装成引流课 + 入私域群入口 — Claude 出结构 + Beta 定价拍板 — **P1** —— 首期状态：⚠️ 未落地
+- **T-12**：🤖→✏️ `/funnel-handoff-design` 落地 7 天过渡序列话术（FUNNEL §5）+ 私域群 SOP — **P1** —— 首期状态：⚠️ 未落地
+- **T-10**：🤖 公众号深度长文 #2（切角：不写代码的 PM / 律师，对应 W4 现场的「不会 code 的交付路径」）— **P1**
+- **T-8**：🤖 LinkedIn 长文（Faculty 背书帖：麦肯锡 Stan / 微软 Ray / 持牌 CPA / VC）— ✏️ Beta 真名发 — **P1**
 
-### 🟠 T-35 ~ T-28（开课前 4-5 周）· 公众号 + LinkedIn 持续 + 线下沙龙筹备
+### 🔴🔴 T-7 ~ T-1（2026-07-26 ~ 08-01）· **今天在这里（T-4）· 本周只干这 8 件**
 
-- **T-35 周一 09:00**：✏️ Beta 校友 1v1 第二波 + 把意向高的 lead 倒进 `/eoi-followup` 跑 24h-72h-7d 高质 SOP（不群发）— **P1**
-- **T-35 周三 10:00**：🤖 公众号深度长文 #2：「不写代码的 PM / 律师怎么 ship 出产品」（B 切角 + coaching 70% 说明）— 🤖→✏️ 精修 — 半天 — **P1**
-- **T-33 周五 10:00**：✏️ Beta + 持牌 CPA 嘉宾敲定线下 founder 沙龙（墨 / 悉，闭门邀请制）日期 + 场地 → `/offline-event-content-design` 出策划案 — **P1**
-- **T-30 周一 10:00**：🤖 公众号深度长文 #3：「RDTI 43.5% 退税自己怎么准备 + 持牌 CPA review」（C 切角，合规独家，⚠️ 措辞「教你准备提交」不写「帮你退 $X」）— 🤖→✏️ — 半天 — **P1**
-- **T-30 周三 10:00**：🤖 `/xhs-topic-picker` 出 9 个候选选题（仅「非技术也能 ship / 澳洲副业退税」两切角，B/C 用）→ ✏️ Summer 选 3 个 — 30min — **P2**
-- **T-30 周三 11:00**：🤖 `/xhs-draft` 3 选题各 3 切角 → `/xhs-poster` 配图 → `/xhs-review` 过违禁词 + 降 AI 率 → ✏️ Summer 排期（小红书是本课**次要**渠道，轻量发，别堆资源）— **P2**
+| # | 何时 | 动作 | 谁 | skill | P |
+|---|------|------|----|-------|---|
+| 1 | **T-4 今天** | ✏️ **更新「当前真实报名数」**（墨 / 悉 / 布 各多少、各在漏斗哪一步）写进 §0 Meta —— 这个数字不出来，下面所有决策都是拍脑袋 | Beta / Simone | — | **P0** |
+| 2 | **T-4 今天** | ✏️ Dev + Beta 验申请表单 + 报名 endpoint 通（**报名按钮死链 = P0 崩盘**）+ 销售页 15 周路径 / 三档价 / 6.2h 时间账到位 | Dev + Beta | `/course-custom-landing` Mode B | **P0** |
+| 3 | **T-4 ~ T-3** | ✏️ 导出两场公开课听众名单 + Dev 验未报名用户能提交 `/founder-matching` + 3 道补充题定稿（§1.8.3 步骤 1-3）| Ada + Rain + Dev + Beta | — | **P0** |
+| 4 | **T-3 ~ T-1** | ✏️ **逐个 1v1 发调研 + W1 试听邀请**（不群发），话术见 §1.8.3 步骤 4 | Rain / Amelia / Angela | `/eoi-followup` | **P0** |
+| 5 | **T-3** | ✏️ 校友定向清单最后一波 1v1 push（解决 A「凭什么花钱」/ B「会不会做 demo 玩具」/ C「Grant 出错谁担责」三类异议，PERSONAS §2）| Beta + 课程顾问 | `/eoi-followup` | **P1** |
+| 6 | **T-3** | 🤖→✏️ 出「**8/2 W1 开放试听**」单点物料：朋友圈 + 群 + 公众号（主文案 = 每周 6.2h + 试听带走一页自己的生意 SoT）→ 发前 `/poster-user-test` 自检 | Simone + Designer | `/poster-selling-points` → `/xhs-poster` → `/poster-user-test` | **P1** |
+| 7 | **T-2** | ✏️ 群内 + 销售页同步「三城名额现状 + 申请截止」（真实剩余，**不造假紧迫感**）| Beta | — | **P1** |
+| 8 | **T-1（08-01）** | ✏️ D-1 清单：拉三城班级群 / 发开课通知 / Pre-work 提醒已发（装机 + AI 订阅档位 + LLM Key + ABN 预备 + **创业身份采集 A/B/C**）/ 试听者拿到入会链接 / 直播链路彩排（W1_RUNSHEET §1.2）| Aurora + Ada | — | **P0** |
 
-### 🟠 T-21 ~ T-14（开课前 2-3 周）· 引流课上线 + 私域培育 + 视频号
+### 🟢 D0 ~ D+7（2026-08-02 ~ 08-09）· W1 试听转化 + 现场素材
 
-- **T-21 周一 10:00**：🤖→✏️ `/intro-course-design` 把 3 个现成 lead-magnet HTML（opc-assessment / 30min-ship / rdti-prompt-template）包装成单引流课《一个晚上判断：OPC 你下不下得了场》+ 入私域群入口 — Claude 出结构 + Beta 定价拍板（免费 / $29 AUD）— **P1**
-- **T-21 周三 14:00**：🤖→✏️ `/funnel-handoff-design` 落地 7 天过渡序列话术（D0-D7，见 FUNNEL_PLAN §5）+ 私域群 SOP — **P1**
-- **T-18 周五 10:00**：✏️ Beta 视频号直播 #1：真人演示「30 分钟 ship 一个最小产品」+ 直播答疑（B/C 年龄层，适配）— `/webinar-topic-feasibility` 先审 topic — 1.5h — **P2**
-- **T-16 周一 09:00**：✏️ Beta 校友 1v1 第三波 + 引流课报名者进 7 天过渡序列 — **P1**
-- **T-14 周三 10:00**：🤖 LinkedIn 长文 #3（Faculty 背书帖：麦肯锡 / 微软 senior eng / VC partner 阵容）— ✏️ Beta 发 — **P1**
+- **D0（8/2 W1）**：✏️ Ada 线上主持试听区答问（讲师专注现场，两边不指望同一个人 — W1_RUNSHEET §5）— **P0**
+- **D0**：✏️ Beta 现场拍三城线下氛围（卫星教室 + 1:8 Tutor + 学员写 SoT 的手）→ 🤖→✏️ 整理成朋友圈 / 小红书素材（为二期攒料）— **P1**
+- **D+1**：✏️ **试听者 24h 跟进**：发回放片段（开场实锤 + 写 SoT 那段）+ 报名链接（W1_RUNSHEET §7）— **P0**
+- **D+1**：✏️ 「卡住登记表」上的学员逐个 1v1，48h 内 100% 跑通 AI OS（这是首期口碑的第一道闸）— **P0**
+- **D+3**：✏️ **§1.8 调研回收**：admin StartupIntake 出 A/B/C 比例 + 城市分布，补充题人工归类 — **P0**
+- **D+5**：✏️ 未转化的公开课 / 试听 lead 转「下期意向」长期私域池（不放弃，配合长决策周期）— **P2**
+- **D+7**：✏️ **§1.8 结论写回本文档 + 回灌 PERSONAS §7** — **P0**（这批是 PERSONAS 从 GT 0.30 往上拉的真实样本）
+- **D+7**：🤖 公众号长文「首期开课了，他们在做什么」（W1 搭 AI OS 现场 + 学员写下的第一页 SoT）— 🤖→✏️ 精修 — **P2**
 
-### 🔴 T-7 ~ T-1（开课前 1 周）· 申请收口 + 名额倒计时 + 阻塞项清零
+### 🟢 D+8 ~ D+30（2026-08-10 ~ 09-01）· 内容资产 + 二期蓄水
 
-- **T-7 周一 09:00**：✏️ Beta + Amelia / Rain / Angela 对所有引流课 / 私域意向 lead 做 1v1 push（解决 A「凭什么花钱」/ B「会不会做 demo 玩具」/ C「Grant 出错谁担责」三类异议，PERSONAS §2 异议 Top3）— 每条 5-10min — **P1**
-- **T-7 周三 10:00**：✏️ Beta 群内 + 销售页同步「三城名额现状 + 申请截止」（墨 X / 悉 X / 布 X，真实剩余，不造假紧迫感）— **P1**
-- **T-5 周五**：✏️ Dev + Beta 检查申请表单 + 报名 endpoint 通（报名按钮死链 = P0 崩盘）+ 销售页 Faculty 实名 / 三档价 / 校友案例全部到位 — **P0**
-- **T-3 周一**：🤖 `/poster-user-test` 过的海报套 #2（开课倒计时 + 三城）→ ✏️ 全员 + 校友真名发朋友圈（学员真名 > 销售号广告）— **P1**
-- **T-1 周五**：✏️ Aurora 检查 D-1 清单：拉三城班级群 / 发开课通知 / Pre-work（L00 装机 + LLM Key + ABN 预备）提醒已发 — **P0**
+- **D+10（W2 后）**：🤖→✏️ 「你的 AI 员工上岗」内容切角上线 —— 这是回答「在职哪来时间」最硬的素材，用 W2 现场真实的 agent 跑活截图（学员授权后）— **P1**
+- **D+14**：🤖→✏️ `/course-promotion-architect weekly` 复盘首两周推广，更新 §6 周报 — **P1**
+- **D+14**：✏️ 按 §1.8 调研结论决定下一场公开课的选题 → 先过 `/webinar-topic-feasibility` — **P1**
+- **D+21（W4 后）**：✏️ 收集第一批学员产出（能演示的最小版本）→ 攒二期 social proof — **P2**
+- **D+30（W5 后）**：✏️ W5 品牌周产出（学员上线的官网）是最好晒的东西 —— 拿授权后做「15 周第 5 周，他们的官网长这样」内容 — **P1**
+- **D+30**：🤖 `/curriculum-positioning-audit` + `/course-promotion-architect audit` 首轮审计 — **P2**
 
-### 🟢 D0 ~ D+14（开课后）· 现场内容资产 + EOI 收尾
+### 🟢 D+31 ~ D+105（2026-09-02 ~ 11-08，到 W15 Demo Day）· 二期招生资产
 
-- **D0**：✏️ Beta 现场拍三城线下开课氛围（卫星教室 + 1:8 Tutor）→ 🤖→✏️ 整理成朋友圈 / 小红书素材（为二期招生攒料）— **P1**
-- **D+3**：✏️ Aurora EOI 收尾：T-7 没转化的 lead 转「下期意向」长期私域池（不放弃，配合 D+90 长周期）— **P2**
-- **D+7**：🤖 公众号长文「首期开课了，他们在做什么」（W1 选品周 + OPC 心智课现场）— 🤖→✏️ — **P2**
-- **D+14**：🤖→✏️ `/course-promotion-architect weekly` 复盘首两周推广，更新 §6 周报 — **P2**
-
-### 🟢 D+30 ~ D+90（开课后 1-3 月）· 二期招生资产 + 长尾
-
-- **D+30**：✏️ Beta 收集 W1 vs W4 学员数据看板（MRR / 流量 / 内容产出）→ 攒「真实毕业 case」（二期招生命脉，Reforge / On Deck 玩法）— **P2**
-- **D+60**：🤖 `/seo-optimizer` + `/eeat-optimizer` 上线长尾词矩阵（「澳洲一人公司」「RDTI 自己申请」「澳洲华人 AI 创业」）— Dev — **P2**
-- **D+90**（接近 W11 Demo Day）：✏️ Beta 三城联合 Demo Day + 互为客户日晚宴现场 → 拍学员真实 MVP / Demo → 成为二期招生第一批 social proof + 回灌 PERSONAS（首期真实数据）+ FUNNEL（二期升价决策）— **P1**
+- **D+45**：🤖 `/seo-optimizer` + `/eeat-optimizer` 上线长尾词矩阵 — Dev — **P2**
+- **D+50（W7 后）**：✏️ **首批「$1 真实付费」案例**（毕业硬指标 #1）—— 这是 Type 3 转化的核心信任资产，首期之前一个都没有。拿到授权后做成公众号 + LinkedIn 双语内容 — **P0**（二期招生命脉）
+- **D+75（W11 后）**：✏️ 学员增长数据看板（流量 / 内容产出 / 付费用户）→ 二期招生用真实数字，不再用推测 — **P1**
+- **D+90（W13 后）**：✏️ RDTI 申请提交案例（措辞：**提交 ≠ 拿到**）— **P1**
+- **D+105（2026-11-08 · W15 Demo Day）**：✏️ 三城联合 Demo Day + 互为客户日晚宴现场 → 拍学员真实产品 / pitch → 二期招生第一批 social proof + 回灌 PERSONAS（首期真实数据）+ FUNNEL（二期升价决策）— **P0**
 
 ---
 
@@ -221,15 +337,17 @@ OPC 教的是「**从 0 做一个一人 AI 产品 / 公司**」，**不是**「�
 
 | 角色 | 负责的 task 类型 | 本课特别说明 |
 |------|---------------|------|
-| **Beta**（BD / 课程主理人）| **本课主战场** — Faculty 邀请 / 校友 1v1 / LinkedIn 发声 / 公众号深度文 / 视频号出镜 / 线下沙龙 / launch date 拍板 | Type 3 创业课靠 Beta 亲自跑信任，**不能外包**（COURSE_TYPE_PLAYBOOKS）|
-| **Lightman** | 预算审批 / 二期升价决策 / 红线把关 / 三城招生数拍板（已统一 50：墨 22 / 悉 16 / 布 12）| 付费投放 / 升价必须他拍板 |
-| **Aurora / Seren**（Marketing 主管）| 渠道排期 / 线下沙龙总指挥 / EOI 协调 / KPI 监控 | 协调，非主战场执行 |
-| **Marketing 文案** | 公众号 / 知乎深度长文 / 海报文案（走 `/blog-longform-writer` + `/wechat-article-quality`）| 4 类切角轮流（A/B/C + Faculty）|
-| **Summer / Lily / KIKI**（新媒体）| 小红书选题 / 写稿 / 配图 / 排期（**轻量，本课次要渠道**）| 只跑「非技术 ship / 澳洲副业退税」两切角，别堆资源在小红书 |
-| **Amelia / Rain / Angela**（课程顾问）| 引流课 / 私域 lead 1v1 跟进（24-72h-7d SOP）/ 三类异议话术 | 走高质 1v1，不群发 |
+| **Beta**（BD / 课程主理人）| **本课主战场** — Faculty 邀请 / 校友 1v1 / W1 讲课 / LinkedIn 发声 / 公众号深度文 / 视频号出镜 / 线下沙龙 / §1.8 调研结论 | Type 3 创业课靠 Beta 亲自跑信任，**不能外包** |
+| **Lightman** | 预算审批 / 二期升价 / 红线把关 / **6.2h 口径拍板（§1.2）** / 展示名副标题拍板（§1.8 H2）/ completeDate 确认 | 付费投放 / 升价 / 改对外命名必须他拍板 |
+| **Simone** | 报名数盘点 / 冲刺 campaign 统筹 / 海报与文案分工对齐 / 公众号发布 | §9 RESCUE 主执行 |
+| **Ada** | 公开课运营（拉群 / 海报 / 官网上线 / 回放）+ **W1 线上试听主持** | 试听区答问由她扛，讲师专注现场（W1_RUNSHEET §5）|
+| **Aurora / Seren**（Marketing 主管）| 渠道排期 / 线下沙龙总指挥 / EOI 协调 / D-1 清单 / KPI 监控 | 协调，非主战场执行 |
+| **Marketing 文案** | 公众号 / 知乎深度长文 / 海报文案（走 `/blog-longform-writer` + `/wechat-article-quality`）| 5 类切角轮流（6.2h 在职 / A / B / C·E / Faculty）|
+| **Summer / Lily / KIKI**（新媒体）| 小红书选题 / 写稿 / 配图 / 排期（**轻量，本课次要渠道**）| 只跑「非技术 ship」「澳洲副业退税」「每周 6.2h 在职」三切角 |
+| **Rain / Amelia / Angela**（课程顾问）| 公开课听众 1v1 调研 + 试听邀请 / 引流课 lead 跟进（24-72h-7d SOP）/ 三类异议话术 | 高质 1v1，不群发 |
 | **Neomi**（销售助理）| EOI 派单 / SLA 监控 / lead 状态维护 | — |
-| **Designer** | 海报（Faculty 阵容 + 三城线下，不主打变现）/ 销售页视觉 | 海报必走 `/poster-user-test` 测 |
-| **Dev** | 销售页 Custom Landing 迭代 / 申请表单 + 报名 endpoint / SEO 上线 | 报名 endpoint 死链 = P0 |
+| **Designer** | 海报（Faculty 阵容 + 15 周路径 + 6.2h/周）/ 销售页视觉 | 海报必走 `/poster-user-test` |
+| **Dev** | 销售页 Custom Landing 迭代 / 申请表单 + 报名 endpoint / **`/founder-matching` 未报名用户可提交验证** / SEO 上线 | 报名 endpoint 死链 = P0 |
 
 ---
 
@@ -238,129 +356,130 @@ OPC 教的是「**从 0 做一个一人 AI 产品 / 公司**」，**不是**「�
 | Week of | 上周完成 | 上周阻塞 | 本周目标 | 风险 flag |
 |---------|---------|---------|---------|----------|
 | 2026-06-16（init）| 本方案创建 | launch date 未定 / Faculty 占位符未替实名 / PERSONAS GT 0.30 | 待 Beta 确认 launch + Faculty + 校友名单 | ⚠️ launch date 不定则整条时间轴无法落地 |
-| 2026-06-28 | 「企业如何构建高效AI操作系统」讲座已实跑（客户场，报名踊跃）+ 公众号长文（切角2 小老板）大纲定稿待写正文 | 复盘缺真实数据（日期/到场/EOI 数）+ EOI 名单未导入 | 写完切角2长文过 2 道 gate + 收复盘数据（顺带采 Persona E 真实 GT）+ EOI 名单进 `/eoi-followup` | 🟢 讲座 attendees = Persona E 真实样本，是把 GT 0.15→0.5 的金矿，别浪费 |
+| 2026-06-28 | 「企业如何构建高效 AI 操作系统」讲座已实跑（客户场）+ 公众号长文（切角 2 小老板）大纲定稿 | 复盘缺真实数据（日期 / 到场 / EOI 数）+ EOI 名单未导入 | 写完切角 2 长文过 2 道 gate + 收复盘数据 + EOI 名单进 `/eoi-followup` | 🟢 讲座 attendees = Persona E 真实样本 |
+| 2026-07-13 | 布里斯班公开课已办（2026-07-12），回放上传官网 + YouTube；Rain 私发 50 人邀约 | 反馈 / 留资 / 转申请数据未汇总 | 收集反馈 + EOI 跟进 | ⚠️ 该场四项数据至今「待补」（§1.8.1）|
+| **2026-07-29（T-4）** | 课程重构定稿 15 周（COURSE_REDESIGN + outline.json v0.5 + content.ts）；本推广方案按 15 周整体改写；新增 §1.8 转化诊断 | ① 当前真实报名数未知 ② Faculty 仍占位 ③ 6.2h vs 8-11h 口径冲突 ④ 两场公开课数据全缺 | 跑 §4「T-7~T-1」8 件事，重点：报名数盘点 / 报名入口验通 / 公开课听众 1v1 调研 + W1 试听邀请 / D-1 清单 | 🔴 **距开营 4 天**，T-30~T-8 大量 P0/P1 未完成，本周只能保「入口通 + 试听转化 + 调研取样」三件，其余降级到二期 |
 
 ---
 
 ## 7. 风险与决策日志
 
+### 2026-07-29 · 按 15 周新结构整体改写本方案（本次）
+
+**做了什么**：
+- 全文从旧版周数 / 旧 phase 名（已全部作废，见 git 历史）切到 **15 周四段**：AI Enable Business（W1–W7）/ Go To Market（W8–W11）/ Australia Operations（W12–W13）/ Founder Club（W14–W15）。§1.1 给了逐周清单，写文案直接抄，不要自编周次名。
+- **新增 §1.2「每周 6.2 小时」为核心卖点**（按 outline.json 53 节 duration 实算：现场 45h + 自学 42.4h + Lab 6.2h = 93.7h ÷ 15 周）。这是直接对着 35-50 在职人群第一异议「我哪来时间」下的手。
+- **新增 §1.8 转化诊断与待验证假设**（Lightman 反馈「公开课讲过两次，有兴趣的多但转化低」）+ 用平台已有的 `/founder-matching` A/B/C 采集表向两场听众做调研的 6 步行动。
+- **渠道矩阵新增 Rank 2「W1 现场课免费试听」** —— W1_RUNSHEET §5 本来就是按可试听设计的（W1 不做 idea 分享 → 全程不用断流），这是 T-4 手上最现成、最高杠杆的转化机制。
+- 时间轴从 T-60→D+90 重排为 **T-30 → D+30（+ D+105 长尾）**，并按真实位置 T-4 把已过的段落标成二期模板 + 首期回填位。
+- §1.5 双切角策略保留，模块引用改到新周次。
+
+**🚨 本次发现、需要 Lightman 拍板的 3 件事**：
+1. **时间口径冲突（P0，阻塞所有文案）** — outline.json `prerequisiteknowledge` 写「每周 8-11h」、`timeLength` 写「另每周 5-8h 自学」，与 lesson duration 实算的 **6.2h/周** 对不上。建议收敛为「课程安排 6.2h/周 + 建议另留 2-4h 给自己项目上的真实动作」，但**要 Lightman 定，并由 outline 维护人改 outline.json**（本方案不改其他文件）。
+2. **定价口径两套并存（P1）** — outline.json `features` 是**阶段价**（预售 $2,400 → 首期早鸟 $2,800 → 二期 $3,800），FUNNEL_PLAN §3 是**档位价**（$2,800 / $3,800 / $6,800）。$3,800 在两套里含义不同，客服和销售页同时讲会露馅。以哪套为准需商务确认。
+3. **对外展示名（P2）** — §1.8 H2 若成立（「创业营」听着像要辞职 all in），处理方式是**加副标题 / 改 hero 文案**，**slug 与 URL 永久冻结不动**（CLAUDE.md URL 铁律）。改不改是商务决策。
+
+**其他仍未清的阻塞（承接旧版）**：
+- 🚨 **Faculty 占位符未替实名**（outline.json / content.ts）— Type 3 信任命脉
+- 🚨 **PERSONAS GT 0.30 < 0.5** — 渠道方向可用，痛点原话**不能**直接落文案。§1.8 调研正好是补 GT 的机会
+- ⚠️ `program.completeDate` 仍 `TBD`（按 15 周推算 W15 = 2026-11-08）；老学员升级优惠金额 outline.json FAQ 写「待商务确认」
+- ⚠️ 静态页 `curriculum.html` / `phase1-4.html` 已是 15 周结构（已核实），但 lead-magnet 页与旧海报物料未逐一核
+
+---
+
 ### 2026-06-16 v0 init
 
-**已对齐**：
-- 课程类型 = Type 3 创业孵化（客单价 $2,800-6,800 AUD > ¥10k + 早期 founder 人群 + 靠学员案例 + Faculty 实名撑信任）
-- 三档定价 $2,800 / $3,800 / $6,800 AUD（FUNNEL_PLAN §3，对齐 content.ts + outline.json）
-- 渠道矩阵以 PERSONAS §3 为权威：私域 + 1v1 + LinkedIn + 公众号 + 线下为主轴，**小红书是次要渠道**（A 45% 打不到）
-- 推广周期 T-60 → D+90（Type 3 最长，决策周期 4-8 周需要长慢推）
-
-**⚠️ 待补 ground truth（防幻觉，不要瞎填）**：
-- ✅ **launch date 已定 2026-08-02**（2026-07-07 Lightman 拍板，见 §7 当日条目；outline.json 已更新）— 时间轴按 8/2 倒排，实际准备期仅 T-26
-- 🚨 **Faculty 占位符未替换实名**（outline.json / content.ts 仍是占位）— Type 3 命脉，T-60 P0
-- 🚨 **PERSONAS GT 0.30 < 0.5** — 渠道方向可用，但**痛点原话不能直接落文案**（PERSONAS §6 红线）；必须先补邻近 cohort（AI Engineer / OpenClaw 校友）访谈 + 销售顾问口播（PERSONAS §7 P0）
-- ✅ **招生目标已统一 50 人**（墨 22 / 悉 16 / 布 12）— 2026-06-18 Lightman 拍板，收口原 20 vs 40-60 分歧
-- ⚠️ **老学员升级优惠金额未定**（outline.json FAQ「待商务确认」）
+**已对齐**：课程类型 = Type 3 创业孵化；三档定价 $2,800 / $3,800 / $6,800 AUD；渠道矩阵以 PERSONAS §3 为权威（私域 + 1v1 + LinkedIn + 公众号 + 线下为主轴，**小红书是次要渠道**）；推广周期长（决策周期 4-8 周需要慢推）。
 
 **🚨 红线**（CLAUDE.md 顶级铁律）：
 - 禁止承诺金钱 / 副业 / 入职 / offer / 保证 Grant 退税；RDTI 只写「教你准备提交」
-- 投放 / 内容必须地域定向澳洲，避开「学生 / 躺赚 / 割韭菜」关键词（会引来 Persona D 错的人）
+- 投放 / 内容必须地域定向澳洲，避开「学生 / 躺赚 / 割韭菜」关键词（会引来 Persona D）
 - LinkedIn / 朋友圈 / 群发声 task 必须 ✏️ 人执行（真名），不能 🤖 AI 替发
 
 ---
 
 ### 2026-06-22 双切角宣传
 
-**决策**：Lightman 拍板 OPC 用**两个切角**宣传 —— 切角 1「创业营」（A/B）+ 切角 2「小企业老板用 AI」（C/E）。**同一门课、同一漏斗、同一销售页 URL**，只分流文案 / 内容切角 / 部分渠道侧重。详见 §1.5。
+**决策**：Lightman 拍板用**两个切角**宣传 —— 切角 1「创业营」（A/B）+ 切角 2「小企业老板用 AI」（C/E）。**同一门课、同一漏斗、同一销售页 URL**，只分流文案 / 内容切角 / 渠道侧重。详见 §1.5。
 
-**新增**：PERSONAS §2.5 Persona E「有积累的小老板」（4 子类：实体生意 / 专业人士产品化 / 传统 SME / 想新开），全字段 GT≈0.15 纯推测。
+**新增**：PERSONAS §2.5 Persona E「有积累的小老板」（4 子类），全字段 GT ≈ 0.15 纯推测。
 
-**🚨 护栏**：切角 2 承诺收在「用行业积累 + AI 做出新产品 / 新收入线」，**禁说「降本 / 省人力 / 全面数字化你的店」**（OPC 不教这个，过度承诺 = 退费风险）。纯内部提效需求引导去 ai-adoption-bootcamp。
-
-**待办**：① 切角 2 文案落地前补 Persona E GT（PERSONAS §7 P0(E)）② 销售页加「老板」二级入口段（不新建路由）③ 海报出「老板版」一套。
+**🚨 护栏**：切角 2 承诺收在「用行业积累 + AI 做出新产品 / 新收入线」，**禁说「降本 / 省人力 / 全面数字化你的店」**。纯内部提效需求引导去 ai-adoption-bootcamp。
 
 ---
 
-### 2026-07-07 开营定档 2026-08-02 + 官宣海报 campaign
+### 2026-07-07 开营定档 2026-08-02
 
-**决策**：Lightman 拍板开营日 = **2026-08-02（周日，农历六月二十）**。理由：学员久等有退款风险不能再拖 + 课程内容需赶工到月末 + 学员只有周末有空 + 该日为 7-8 月周末黄历唯一「宜入学」（择吉老黄历/汉程双源核实，忌出行对本次无影响）。被否：8/8-8/9（月破凶日）、7/12（内容来不及）、8/22（拖太久）、8/1（备选保留）。完整决策档案 → `jr-omni/decisions/2026-07-07-opc-bootcamp-launch-date-aug2.md`。outline.json `commenceCourseDate` 已更新为 2026-08-02。
+**决策**：Lightman 拍板开营日 = **2026-08-02（周日，农历六月二十）**。理由：学员久等有退款风险不能再拖 + 内容需赶工到月末 + 学员只有周末有空 + 该日为 7-8 月周末黄历唯一「宜入学」（择吉老黄历 / 汉程双源核实）。被否：8/8-8/9（月破凶日）、7/12（内容来不及）、8/22（拖太久）、8/1（备选保留）。完整决策档案 → `jr-omni/decisions/2026-07-07-opc-bootcamp-launch-date-aug2.md`。
 
-**官宣海报 campaign（引流期 · 模式 B 一点多角，`/poster-selling-points` 产出）**：
+**官宣海报 campaign（模式 B 一点多角）**：
+- **推广点（唯一）**：「8 月 2 日正式开营」
+- **信任底栏**（🔁 **本次按 15 周改口径**）：`15 周 · 三城线下 · 每周 6.2 小时（周日 3h + 周中每晚 40 分钟）· 1:8 Tutor 陪跑｜毕业 6 项硬指标：$1+ 真实付费 · ABN · Grant 提交 · 10+ 内容 · 产品 URL · Demo Day｜申请制 · 50 人 cohort`
+- **4 角度**（共用 Neo-Brutalism 底版，朱砂红 `#D7263D`）：① **吉日官宣**「8 月 2 日，宜入学。」② **倒计时行动**「8 月 2 日开营，这期错过等下一期」③ **成果锚定**「开营 15 周后，你手里是：产品 URL + Stripe 真实到账 + ABN」④ **人群认领**「拿着 150-250k 的工资，却在琢磨『要不要做点自己的事』」——本次建议 ④ 补一句「每周 6.2 小时，不用辞职」
+- **朋友圈转发语**：痛点「开营日定了：8 月 2 号。想做自己产品的，这次别再『下次一定』了。」／好奇「8 月 2 日开营。第一节课之前建议先想一个问题：你的第一个付费用户，会是谁？」／我的视角「8 月 2 日开营，黄历这天写着『宜入学』。课程内容终于打磨到我自己满意，这期我全程在场。」
 
-- **推广点（唯一）**：「8 月 2 日正式开营——11 周做出能收钱的一人公司」
-- **信任底栏（每张共用）**：`11 周 · 三城线下 · 1:8 Tutor 陪跑｜毕业 6 项硬指标：$1+ 真实付费 · ABN · Grant 提交 · 10+ 内容 · 产品 URL · Demo Day｜申请制 · 50 人 cohort`
-- **4 角度**（共用 Neo-Brutalism 底版，朱砂红 `#D7263D`，按 DESIGN.md 出图）：
-  1. **吉日官宣**（朋友圈/小红书/公众号头图）— 主标题「8 月 2 日，宜入学。」副文案「AI 一人创业营正式定档开营——11 周，做出一个能收钱的一人公司。」「宜入学」做成日历撕页/红章视觉元素，**零解释**
-  2. **倒计时行动**（朋友圈/LinkedIn/行业社群）— 「8 月 2 日开营，这期错过等下一期」+ 真截止日倒计时 + 首期门槛较低二期严筛
-  3. **成果锚定**（LinkedIn/小红书/一亩三分地）— 「开营 11 周后，你手里是：产品 URL + Stripe 真实到账 + ABN」
-  4. **人群认领**（LinkedIn/脉脉/朋友圈）— 「拿着 150-250k 的工资，却在琢磨『要不要做点自己的事』——8 月 2 日，来」
-- **朋友圈转发语（角度①配套 3 切角）**：痛点「开营日定了：8 月 2 号。想做自己产品的，这次别再『下次一定』了。」／好奇「8 月 2 日开营。第一节课之前建议先想一个问题：你的第一个付费用户，会是谁？」／我的视角「8 月 2 日开营，黄历这天写着『宜入学』。课程内容终于打磨到我自己满意，这期我全程在场。」
-- **发布节奏**：本周角度①官宣 → 3-4 天后角度④ → 开营前 2 周角度③ → 最后 1 周角度②倒计时。下游 `/xhs-poster` 配图、发前 `/poster-user-test` 自检。
+> 📌 **历史记录（刻意保留，不要当现行口径）**：2026-07-07 这批海报的信任底栏与成果锚定文案是按**旧版 11 周**课程长度出的稿，课程重构后已作废。所有在外物料需按上面 15 周 / 6.2h 口径重出。
 
-**🚨 文案纪律（本次打回教训）**：黄历「宜入学」只做印章式视觉点缀，**禁止在文案里解释选日过程**（「翻遍七八月黄历只有这一天」式过程叙事会招"为什么不九月"反问 + 自嗨，已被打回）。彩头归视觉，论证归课程硬价值。
+**🚨 文案纪律**：黄历「宜入学」只做印章式视觉点缀，**禁止在文案里解释选日过程**（「翻遍七八月黄历只有这一天」式过程叙事会招"为什么不九月"反问 + 自嗨，已被打回）。彩头归视觉，论证归课程硬价值。
 
-**⚠️ 时间轴影响**：实际准备期 T-26，远短于 §4 规划的 T-60——嘉宾铺设 / Faculty 实名 / 引流课等 T-60~T-28 的 task 需压缩或降级，按 §9 RESCUE 的「公开课当转化引擎 + 1v1 收口」主线打。
+---
+
+## 8. Skill 调度索引
 
 | Task / 场景 | 调用 skill | 在本方案的位置 |
 |------------|----------|--------------|
-| 落地引流课（3 个 lead-magnet → 单引流课）| `/intro-course-design` | T-21 |
-| 落地 7 天过渡序列话术 | `/funnel-handoff-design` | T-21 |
-| 销售页补 Faculty 实名 + 三档对比 + 校友案例 | `/course-custom-landing`（Mode B）| T-56 / T-5 |
-| LinkedIn / 公众号 / 知乎深度长文 | `/blog-longform-writer` + `/wushi-caijing-style` | T-49 起持续 |
+| 落地引流课（3 个 lead-magnet → 单引流课）| `/intro-course-design` | §4 T-14（首期未落地，二期必做）|
+| 落地 7 天过渡序列话术 | `/funnel-handoff-design` | §4 T-12 |
+| 销售页补 Faculty 实名 + 15 周路径 + **6.2h 时间账** | `/course-custom-landing`（Mode B）| §4 T-21 / T-4 #2 |
+| LinkedIn / 公众号 / 知乎深度长文 | `/blog-longform-writer` + `/wushi-caijing-style` | §3 Rank 5/6，§4 T-18 起持续 |
 | 公众号文质检 | `/wechat-article-quality` | 每篇长文后 |
-| 小红书（次要渠道，轻量）| `/xhs-topic-picker` → `/xhs-draft` → `/xhs-poster` → `/xhs-review` | T-30 起 |
-| 海报用户测试 | `/poster-user-test`（ChatGPT 侧 6 选 3）| T-45 / T-3 |
-| 线下 founder 沙龙策划 | `/offline-event-content-design` + `/offline-event-sop` | T-33 |
-| 视频号 / 讲座 topic 可行性 | `/webinar-topic-feasibility` | T-18 |
-| EOI / 私域 lead 跟进 SOP | `/eoi-followup`（高质 1v1，不群发）| T-35 起 |
-| SEO 长尾 | `/seo-optimizer` + `/eeat-optimizer` | D+60 |
-| PERSONAS GT 升级 | `/target-user-persona-mapper validate` | T-58 |
-| 首期开课后漏斗 / 推广审计 | `/curriculum-positioning-audit` + `/course-promotion-architect audit` | D+30 起 |
-| 报名不达预期补救 | `/course-promotion-architect rescue` | 按需 |
+| 下一场公开课 / 视频号 topic 事前可行性 | `/webinar-topic-feasibility` | §3 Rank 4（**H3 未证伪前，每场必过**）|
+| 海报卖点拆解 → 出图 → 用户测试 | `/poster-selling-points` → `/xhs-poster` → `/poster-user-test` | §4 T-3 #6 |
+| 小红书（次要渠道，轻量）| `/xhs-topic-picker` → `/xhs-draft` → `/xhs-poster` → `/xhs-review` | §3 Rank 10 |
+| 线下 founder 沙龙策划 / 执行 | `/offline-event-content-design` + `/offline-event-sop` | §3 Rank 8 |
+| 公开课听众 / 试听者 / EOI 跟进 SOP | `/eoi-followup`（高质 1v1，不群发）| §4 T-3、D+1 |
+| PERSONAS GT 升级（用 §1.8 调研数据）| `/target-user-persona-mapper validate` | §4 D+7 |
+| 开课后漏斗 / 推广审计 | `/curriculum-positioning-audit` + `/course-promotion-architect audit` | §4 D+30 起 |
+| 报名不达预期补救 | `/course-promotion-architect rescue` | §9 |
+| 开课后 cohort 运营（D0 起）| `/cohort-ops-conductor` | 本方案外，招生结束交接 |
 
 ---
 
-## 9. 🚑 RESCUE · 报名补救冲刺（2026-06-30 · `audit`+`rescue` by Simone）
+## 9. 🚑 RESCUE · 报名补救（2026-06-30 立 · 2026-07-29 按 T-4 更新）
 
-> 触发：报名偏少 —— 当前**全三城约 17 人** vs 目标 **50（墨22/悉16/布12）**，gap ≈ 33。老板要大力宣传、三城各至少 2 人保底。本节是**未来 2 周冲刺**，不改上面 T-60 主线，只补救。
+> 触发：报名偏少。**⚠️ 2026-06-30 记录的「全三城约 17 人」已过期一个月**，§4 T-4 第 1 件事就是更新这个数字。本节是冲刺补丁，不替代 §4 主线。
 
-### 9.1 诊断：为什么报名少（root cause）
+### 9.1 诊断：为什么报名少（root cause · 2026-07-29 复核）
 
-| # | 根因 | 证据 | 影响 |
+| # | 根因 | 2026-07-29 状态 | 影响 |
 |---|------|------|------|
-| 1 | **没有硬开班日期 = 没有倒计时锚点** | Meta `launch date 待定`（嘉宾铺设需 8 周）| 用户没有"现在不报就错过"的理由 —— 高客单创业课最依赖紧迫感，这是头号失血点 |
-| 2 | **报名/申请入口不顺** | `cohortStatus=PLANNING`、prod 未创建 Training ID | 种草来的人**落地无处可去**或申请流程不清，漏斗顶端再大也漏 |
-| 3 | **17 人未必是失败，是漏斗没走完** | 申请制 + $3,800、A/B 决策周期 4–8 周 | 很多人正在决策中 → 缺的是**1v1 临门一脚**，不是更多曝光 |
-| 4 | **主战场没火力全开** | Type 3 靠 1v1 私聊 / 校友群（70% 生源）/ 线下沙龙，不是公域种草 | 若只发了图文、没逐个私聊校友 + 没办闭门沙龙 → 等于没打主战场 |
-| 5 | **缺真实校友案例**（Type 3 信任核心）| 首期未开课、无 $1,800 真实案例可晒 | 信任背书只能靠 Faculty 实名先顶，转化天花板被压低 |
-| 6 | **PERSONAS GT 0.30、痛点原话不能直接落文案** | PERSONAS §6 红线 | 种草文案不够戳、像"喊口号" |
+| 1 | 没有硬开班日期 = 没有倒计时锚点 | ✅ **已解决** — 8/2 已定（§7 2026-07-07）| — |
+| 2 | 报名 / 申请入口不顺（`cohortStatus` 曾是 PLANNING、prod 未建 Training）| 🔴 **仍未确认** — outline.json 已改 `RECRUITING`，但 prod Training 仍无 ID。**T-4 必须验通**（§4 T-4 #2）| 种草来的人落地无处可去 = 漏斗顶端再大也漏 |
+| 3 | 报名数未必是失败，是漏斗没走完 | 🟡 仍成立 — 申请制 + $3,800、A/B 决策周期 4-8 周 | 缺的是 **1v1 临门一脚**，不是更多曝光 |
+| 4 | 主战场没火力全开（1v1 / 校友群 70% 生源 / 线下沙龙）| 🟡 部分 — 公开课办了、Rain 私发 50 人；校友群定向私聊完成度待确认 | 只发图文没逐个私聊 = 没打主战场 |
+| 5 | 缺真实校友案例（Type 3 信任核心）| 🔴 **仍成立** — 首期未开课，无案例可晒 | 信任只能靠 Faculty 实名先顶，而 Faculty 还是占位符（§7）→ 双重削弱 |
+| 6 | PERSONAS GT 0.30，痛点原话不能直接落文案 | 🔴 仍成立 | 文案不够戳、像喊口号 |
+| **7 🆕** | **公开课→报名转化路径本身没诊断过** | 🔴 新增 — 两场办完，四项数据全缺（§1.8.1）| 不知道漏在哪一步，只能盲目多办 |
+| **8 🆕** | **课程重构后，在外物料仍是旧课程长度口径** | 🔴 新增 — 海报 / 转发语 / 部分 lead-magnet 未按 15 周 + 6.2h 重出 | 学员看到的周数和销售页对不上 = 直接掉信任 |
 
-### 9.2 补救策略：把「公开课」当转化引擎，主战场 1v1 收口
+### 9.2 补救主线（不变）
 
-核心思路 = **免费公开课蓄水（体验关）→ 私域/蓄水群养信任 → 1v1 临门一脚转申请**。曝光为辅、私聊为主。
+**免费公开课 / W1 试听蓄水（体验关）→ 私域养信任 → 1v1 临门一脚转申请。** 曝光为辅、私聊为主。
+2026-07-29 唯一变化：**W1 试听（8/2）替代「再办一场公开课」** —— T-4 已来不及新办一场，而 W1 本来就按可试听设计（W1_RUNSHEET §5），成本为 0。
 
-### 9.3 两周冲刺 Task 矩阵
+### 9.3 T-4 冲刺 Task（本周）
 
-| 时间 | 动作 | 负责人 | skill | P |
-|------|------|--------|-------|---|
-| **D0（今天）** | 确认 prod 报名/申请入口是否通；不通先开"先报公开课/留资"临时入口 | Simone + Dev | — | **P0** |
-| D0 | 蓄水群复活第一条（破冰+公众号长文），文案已就绪 | Simone | 蓄水群SOP | P0 |
-| D0 | 跟 Summer 对齐 OPC 广告分工：谁出图谁出文/渠道/节奏 | Simone+Summer | — | P0 |
-| **D+1** | 布里斯班 7/17 公开课**预热开跑**（小红书+朋友圈+群），扣1报名 | Summer/Simone | xhs-draft | P1 |
-| D+1 | **校友群定向私聊**（AI Engineer/OpenClaw 校友，70%生源）——逐个 1v1，不群发 | Beta/销售 | eoi-followup | **P0** |
-| D+1 | 新卖点上线：「让公司自动化运行/老板级 AI 个人 OS」海报 + 报名送 OS 模板 | Simone+设计 | poster-user-test | P1 |
-| **D+2~3** | LinkedIn 发 OPC 长文（英文创业者圈，最对口最被忽略）+ 个人号 DM 高意向 | Simone/Beta | blog-longform-writer | P1 |
-| D+2~3 | 公众号长文《赚到钱了吗》正式发（配封面+阅读原文+二维码） | Simone | wechat-article-quality | P1 |
-| D+3 | **墨尔本/悉尼补一场公开课或线上直播**（三城都要有蓄水入口，别只布村） | Beta+Aurora | webinar-topic-feasibility | P1 |
-| **D+5~7** | 公开课现场/花絮回流社群（FOMO）+ 当晚 EOI 24h 跟进 | Simone+销售 | eoi-followup | P0 |
-| D+7 | 紧迫锚点：哪怕开班日未定，用「首期 case study 价 $3,800，第二期起涨+严筛」+「公开课名额限定」造稀缺 | Simone | — | P1 |
-| D+10 | 投放（信息流/朋友圈广告，地域定向澳洲、避躺赚词）| Summer | ⚠️ 需 Lightman 审批预算 | P1 |
-| D+14 | 冲刺复盘：报名/申请/加群数对照，决定要不要 Lightman 拍开班日期 | Simone | — | P1 |
+见 §4「🔴🔴 T-7 ~ T-1」8 件事表，不在此重复。
 
 ### 9.4 ⚠️ 待补 ground truth（别拍脑袋）
-- **开班日期**（最关键）—— 没有它，所有紧迫感都是空的，建议尽快让 Lightman/ Beta 拍一个"目标开班月"。
-- **当前 17 人的构成**（哪城/哪档/处在漏斗哪一步）—— 决定是该拉新还是该催决策。
-- **prod 报名入口是否真的通** —— D0 必须先验证。
-- PERSONAS GT 仍 0.30，文案痛点原话落地前先补真实样本（PERSONAS §7）。
 
-### 9.5 本周必做 3 条（口播给 Simone）
-1. 🔴 **验证报名入口 + 校友群逐个 1v1**（最高 ROI：17 人里在犹豫的，一通私聊可能就转了）
-2. 🔴 **布里斯班公开课预热开跑 + 跟 Summer 敲定分工**（公开课是你现在最强的转化引擎）
-3. 🔴 **催一个"目标开班日期"**（没有倒计时，高客单课永远慢热）
+- **当前真实报名数与构成**（哪城 / 哪档 / 处在漏斗哪一步）—— 决定该拉新还是该催决策。**T-4 第一件事**
+- **两场公开课的报名 / 到场 / 留资 / 转申请四项数据** —— §1.8.1
+- **prod 报名入口是否真的通** —— T-4 必须验证
+- PERSONAS GT 仍 0.30，文案痛点原话落地前先补真实样本（§1.8.3 的调研正好补）
+
+### 9.5 本周必做 3 条（口播版）
+
+1. 🔴 **把「现在到底报了多少人、卡在哪一步」查出来，并把报名入口点一遍确认能报**（没有这两样，其他都是空转）
+2. 🔴 **两场公开课的听众逐个 1v1：调研 3 题 + 送 8/2 W1 试听名额**（一次动作同时拿到 GT 和转化机会）
+3. 🔴 **所有在外物料换成 15 周 / 每周 6.2 小时口径**（周数对不上是直接掉信任的低级失分）

@@ -22,7 +22,7 @@ purpose: 规范一份可复用的 B2B 合作方招募 deck —— 用于拉机�
 
 | 现有物料 | 给谁看 | 它回答的问题 | 为什么不能拿来招募合作方 |
 |---|---|---|---|
-| `COURSE_INTRO_DECK_PRD.md`（`partnerships/course-intro/`） | **潜在学员**（35-45 澳洲华人专业人士，自己掏 $2.8k-6.8k） | "这门课是给我的吗 / 我能赚什么钱 / 为什么花 11 周" | 它整页讲"副业现金流 / 主业增收 / RDTI 退税"，是 **to-C 销售逻辑**。合作方 BD 不关心自己能不能赚副业，关心**他机构能拿什么、他会员会不会买账、合作怎么不翻车** |
+| `COURSE_INTRO_DECK_PRD.md`（`partnerships/course-intro/`） | **潜在学员**（35-45 澳洲华人专业人士，自己掏 $2.8k-6.8k） | "这门课是给我的吗 / 我能赚什么钱 / 为什么花 15 周" | 它整页讲"副业现金流 / 主业增收 / RDTI 退税"，是 **to-C 销售逻辑**。合作方 BD 不关心自己能不能赚副业，关心**他机构能拿什么、他会员会不会买账、合作怎么不翻车** |
 | `mvc-proposal/`（10 page deck） | **一个具体合作方**（Melbourne Venture Club） | 针对 MVC 一家的定制提案 | 它写死了 MVC 的会员画像 / 场景，**不是模板**。每来一个新机构都重写一遍不可持续 |
 
 **本 deck 的定位** = 介于两者之间的**可复用 B2B 招募模板**：
@@ -50,7 +50,7 @@ purpose: 规范一份可复用的 B2B 合作方招募 deck —— 用于拉机�
 | **T1 · 媒体 / 内容平台** | 极客公园、36氪、AI 自媒体矩阵 | 内容素材（能不能产出他平台要的稿子/选题）、曝光对等、不掉调性 | 给他**独家内容切角**（澳洲 RDTI 实战 / 一人公司真实 case），可联名出稿；不是硬广，是他平台缺的优质内容 |
 | **T2 · 创新教育社区** | 混沌学园、On Deck / Reforge 类社群、创业孵化营 | 给会员的差异化内容福利、跟自己课程不打架、师资可信 | 课程**填他的空白**（他没有澳洲本地化 + 一人公司落地 + Grant 实战），联名 workshop / fireside 嘉宾互换 |
 | **T3 · 行业协会 / 商会** | 华人专业协会、CPA/律师/地产商会、同乡商会 | 会员实际福利、NFP 合规（返佣怎么入账）、专业背书可靠 | 会员**专属折扣 + 协会运营经费**（NFP 走赞助路径）、持牌 Faculty（CPA/Grant consultant）背书、会长体验权益 |
-| **T4 · KOL / Founder community** | AI / 创业 KOL、Venture Club、founder 社群 | 给社群成员的真实价值、自己的圈子调性、networking 资源 | **Founder Network Access**（Demo Day 晚宴席位 + 校友 warm intro + VC fireside 旁听），不给 1:1 Office Hour —— 创业的人喜欢跟创业的人聊（MOU §1.3 Variant B 原话） |
+| **T4 · KOL / Founder community** | AI / 创业 KOL、Venture Club、founder 社群 | 给社群成员的真实价值、自己的圈子调性、networking 资源 | **Founder Network Access**（W15 Demo Day 晚宴席位 + 校友 warm intro + W14 投资人 fireside 旁听），不给 1:1 Office Hour —— 创业的人喜欢跟创业的人聊（MOU §1.3 Variant B 原话） |
 
 > 🚩 写 deck 时务必区分 T3 vs T4 的权益话术：**商会/协会 → 1:1 Office Hour + 折扣 + 经费**；**founder community → Network Access 不给讲师 1:1**。这是 MOU 已锁的红线，deck 的「合作能给你什么」页要让两类读者都各自看到自己那一栏。
 
@@ -66,7 +66,7 @@ purpose: 规范一份可复用的 B2B 合作方招募 deck —— 用于拉机�
 5. 所有合作数字（返佣 / 折扣 / 席位 / 嘉宾）跟 MOU 草稿一字对齐，未定的标 `[商务确认]`。
 
 ### ❌ Non-goals
-1. ❌ 不卖课给读者本人（读者是 BD，不是学员）—— 课程 only 占 1 页 30 秒版，不展开 11 周 syllabus。
+1. ❌ 不卖课给读者本人（读者是 BD，不是学员）—— 课程 only 占 1 页 30 秒版，不展开 15 周 syllabus。
 2. ❌ 不做单一机构定制（那是 `mvc-proposal/` 的活）—— 本 deck 是可复用模板。
 3. ❌ 不承诺金钱 / 收入 / 录取 / 退税金额（CLAUDE.md + MOU §3 红线）。
 4. ❌ 不签独家、不接 sponsor fee、workshop 不变硬广（≤15% 课程介绍）。
@@ -102,7 +102,7 @@ purpose: 规范一份可复用的 B2B 合作方招募 deck —— 用于拉机�
 - **核心信息**：合作邀约 + 课程一句话定位 + 给谁推。
 - **必含要素**：
   - 大标题：`和 [合作方名] 一起，把"AI 一人公司"推给对的人` （主语是合作方）
-  - 副标：`AI 一人创业营 · 11 周澳洲华人 OPC 实战 · 三城线下 cohort`（来源 PRD §2.1 / FUNNEL §0）
+  - 副标：`AI 一人创业营 · 15 周澳洲华人 OPC 实战 · 三城线下 cohort`（来源 PRD §2.1 / FUNNEL §0）
   - 角标：`机构合作提案 · [商务确认 日期] · 匠人学院 Jiangren Academy`
   - 匠人 logo（取 `jr-academy-brand/assets/logo/logo-zh-full.svg`，深色封面用 `logo-zh-white.png`）+ `[合作方 logo 占位]`
 - **数据来源**：课程定位 = PRD §2.1；不放价格/syllabus 抢焦点。
@@ -120,10 +120,10 @@ purpose: 规范一份可复用的 B2B 合作方招募 deck —— 用于拉机�
 
 ### Page 03 · 这是什么课（30 秒版）
 - **目的**：让 BD 30 秒看懂课程，判断跟自己会员对不对得上 —— 不展开 syllabus。
-- **核心信息**：一句话定位 + 11 周做什么 + 毕业拿什么。
+- **核心信息**：一句话定位 + 15 周做什么 + 毕业拿什么。
 - **必含要素**：
-  - 一句话：`用中文教澳洲华人专业人士用 AI 做一人公司：选品 → MVP → 收第一笔钱 → 全渠道营销 → 澳洲会计/Grant → Demo Day`（FUNNEL §1 核心承诺）
-  - 4 phase 极简卡（W0-W3 Build & Sell / W4-W6 Marketing / W7-W9 Australia Ops / W10-W11 Scale & Demo），每卡一行字，不列 49 节课。
+  - 一句话：`用中文教澳洲华人专业人士用 AI 做一人公司：搭 CEO AI OS → AI 员工上岗 → 商业验证 → 做出能卖的东西 → 品牌门面 → 收第一笔钱 → 全渠道获客 → 澳洲税务/Grant → Pitch & Demo Day`（FUNNEL §1 核心承诺）
+  - 4 phase 极简卡（W1-W7 AI Enable Business / W8-W11 Go To Market / W12-W13 Australia Operations / W14-W15 Founder Club），每卡一行字，不列 53 节课。
   - 毕业 6 项硬指标 compact 呈现：$1+ 真实付费 / 内容产出 / ABN 注册 / Grant 提交 / 产品 URL Live / Demo Day 出席（PRD §4.2，FUNNEL §1）。
   - 关键属性条：`三城线下（墨/悉/布）· 申请制 · 首期 50 人 · 不录播`（PRD §7.5 / §3.3）
 - **数据来源**：PRD §4.2/§5/§7.5、FUNNEL §0/§1。
@@ -150,8 +150,8 @@ purpose: 规范一份可复用的 B2B 合作方招募 deck —— 用于拉机�
   4. **会员专属价**：折扣码 `[ORG-CODE]-300`，会员省 `[$300 · 商务确认]`（MOU §1.2）。折扣 ≤ $500 红线（MOU checklist）。
   5. **联名 workshop**：1 场 60-90min 线下/线上，匠人出讲师 + 全套物料 + 录像 recap（MOU §1.1）。
   6. **嘉宾席 / Network Access**：
-     - **T3 商会/协会**：会长 4×30min 1:1 Office Hour + Demo Day 评审席（MOU §1.3 Variant A / §1.4）。
-     - **T4 founder community**：Demo Day 晚宴 `[2-3]` 席 + 每季 `[3-5]` 个校友 warm intro + VC fireside 旁听 + 主理人嘉宾席（MOU §1.3 Variant B）—— **不给 1:1 Office Hour**。
+     - **T3 商会/协会**：会长 4×30min 1:1 Office Hour + W15 Demo Day 评审席（MOU §1.3 Variant A / §1.4）。
+     - **T4 founder community**：W15 Demo Day 晚宴 `[2-3]` 席 + 每季 `[3-5]` 个校友 warm intro + W14 投资人 fireside 旁听 + 主理人嘉宾席（MOU §1.3 Variant B）—— **不给 1:1 Office Hour**。
 - **数据来源**：MOU §1.1-§1.4 / §2.3、outreach 模板 3 方案 A/B/C。
 - **⚠️ 红线**：返佣 / 折扣 / 席位**全部数字标 `[商务确认]`**，不写死；NFP 一定提"赞助路径"避免合规问题。
 
@@ -161,7 +161,7 @@ purpose: 规范一份可复用的 B2B 合作方招募 deck —— 用于拉机�
 - **必含要素**（直接对齐 outreach 方案 A/B/C）：
   - **方案 A · 轻量**：单次联名 workshop（匠人出讲师不收费 + 协会出场地/邀会员 + 现场 lead magnet 二维码 + 品牌共现）。适合"先看效果"。
   - **方案 B · 深度**（主推 · 信息密度最大）：A 全部 + 会员专属折扣码 + 返佣 `[商务确认]` + attribution report。适合"持续给会员福利 + 拿运营经费"。
-  - **方案 C · 长期绑定**：B 全部 + Demo Day 评审席 + 嘉宾席 + （T3）会长 Office Hour / （T4）Founder Network Access。适合"把这门课当长期会员福利推"。
+  - **方案 C · 长期绑定**：B 全部 + W15 Demo Day 评审席 + 嘉宾席 + （T3）会长 Office Hour / （T4）Founder Network Access。适合"把这门课当长期会员福利推"。
   - 一张三列对照表，方案 B 视觉高亮（中间档 + 黑边硬阴影更重）。
 - **数据来源**：outreach 模板 3、MOU §1。
 - **⚠️ 红线**：每档不留 "TBD" 给读者看；数字未定的在 deck 里用 `[商务确认]`，BD 临场或 MOU 阶段填实数（outreach 注意事项："留给协会的应该是选哪套，不是数字是啥"）。

@@ -1,6 +1,6 @@
 # PRD: AI 一人创业营（首期）
 
-**状态**: Draft v0.5
+**状态**: Draft v0.6
 **作者**: Claude + lightman
 **目标期数**: 2026 Q3 首期（具体开课日期待商务确认嘉宾供应链后定）
 **Production 状态**: 全新课程，未在 prod 创建
@@ -14,6 +14,16 @@
 - 最终选定："AI 一人创业营"——保留"创业营"骨架（受众预期匹配）+ "一人"前缀差异化于"创业课"通用品类污染
 - 跟 JR 现有 Bootcamp 的命名差异：用"营"取代"Bootcamp"后缀，更适合中产专业人士受众
 - 海外复制：加拿大 / 英国 / 新加坡版主品牌不变（中文统一，slug 仍用 ai-solo-founder-bootcamp）
+
+**v0.6 整门课重构：11 周 → 15 周（2026-07-27）**:
+- 📐 **课程结构 SoT 换成 [`COURSE_REDESIGN.md`](./COURSE_REDESIGN.md)**，机器大纲 `public/outline.json` v0.5 与之同步。本 PRD §5 是它的产品侧展开，两者冲突以 COURSE_REDESIGN.md 为准。
+- ⏱ W0 Pre-work + **W1–W15**（原 W0 + W1–W11）。节奏改成**每周日 3h 一节线下现场课**（原每周 4h），周内环节收进这节课的 steps，不再拆多个 live lesson。
+- 🏷 4 个 Phase 全部重命名：Build & Sell → **AI Enable Business（W1–W7）**｜Marketing Campaign → **Go To Market（W8–W11）**｜Australia Ops → **Australia Operations（W12–W13）**｜Scale & Demo → **Founder Club（W14–W15）**。
+- 🔢 totalLessons 49 → **53**｜liveClasses 26 → **15**（15 节现场课）｜estimatedHours 92 → **94**（现场 45h + 自学 42.4h + Lab 6.2h，平均每周 6.2h）｜InteractiveLab **9**。
+- 🧠 新增贯穿主线 **CEO AI OS**（W1 搭 → 周中自动跑 → 下节 review）与 **AI 员工上岗**（W2 部署 Hermes / 龙虾 / Codex / Claude Code + Agent Schedule）——「在职」从劣势变优势。
+- 🎤 嘉宾锚点重排：Stan（麦肯锡）W3 商业验证 + W14 Pitch/BP 一头一尾书挡｜Ray（微软）W6 项目管理｜持牌 CPA / Grant consultant W13｜投资人 W14 fireside。
+- 🇦🇺 澳洲本地化模块从 W8-W9 移到 **W12-W13**（自动运转 + 合规 / RDTI）。海外学员「跟你无关」的段落同步改成 W12-W13。
+- 📄 静态页 `curriculum.html` / `phase1-4.html` / `landing.html` / `outline.md` 已同步 15 周；本轮补齐其余规划文档 + 招生物料 + 合作方 deck。
 
 **v0.5 新增（2026-06-30）**: §3.4 企业席位政策——重点人群 Persona 1（小公司老板）常太忙，允许「以公司名义」报名、由公司指派老板本人或核心员工全程代上；**同公司第二位员工加席享 8 折**（基价 = 第一席同期实付价 × 0.8，例早鸟 $2,800 → 第二位 $2,240），第二席为独立 1 人 1 席计入 cohort 总人数；每席 1 人、可换指派人（替换流程）；各出席者各自走 §3.3 申请制面试、毕业指标分别计分别发证；3 人及以上团报本期未开。落地待同步进 landing.html / 报名表单 / 报名条款 / `course-custom-landing` 销售页。
 
@@ -71,7 +81,7 @@
 
 不能两条都教，会精神分裂。OPC 拒绝融资（dilution = 失去自由），VC 路线必须融资（不融跟不上）。两条路在团队、营销、财务、心智每一层都冲突。
 
-决策：**主轴选 OPC / Indie**，"投资人对接 / 创业投资"降级成 W10 选修课 fireside chat（请 1-2 个本地 VC 来分享），不做系统训练。理由：
+决策：**主轴选 OPC / Indie**，"投资人对接 / 创业投资"降级成 W14「把生意讲成故事」节内的 fireside chat（请 1-2 个本地 VC 来分享）+ W15 Demo Day 投资人对接，不做系统训练。理由：
 - 痛点描述（焦虑、被替代）= OPC 受众心智
 - VC 学员人数极少（澳洲华人能拿 angel round 一年个位数）收不回三城运营成本
 - VC 内容半衰期短（term sheet 行情每年变），OPC 内容半衰期长
@@ -194,7 +204,7 @@
 
 ### 3.4 企业席位：以公司名义报名 + 第二位员工 8 折 + 1:1 替换
 
-Persona 1（小公司老板，已有 ABN + 1–5 人）是重点人群，但他们最常见的卡点不是不想学，是**真的太忙、抽不出 11 周本人全程**。给企业一个合规口子：**可以「以公司名义」报名，由公司指派出席者全程上课——老板本人，或老板派核心员工代上。**
+Persona 1（小公司老板，已有 ABN + 1–5 人）是重点人群，但他们最常见的卡点不是不想学，是**真的太忙、抽不出 15 周本人全程**。给企业一个合规口子：**可以「以公司名义」报名，由公司指派出席者全程上课——老板本人，或老板派核心员工代上。**
 
 **第一席谁来上由公司定**：席位归公司，出席者可以是老板本人，也可以是老板指派的 1 名员工。
 
@@ -214,7 +224,7 @@ Persona 1（小公司老板，已有 ABN + 1–5 人）是重点人群，但他�
 **和申请制（§3.3）的衔接（重要）**：申请制审的是**每一个真正来上课的人**，不是付钱的老板。
 
 - 报名时即声明每席的实际出席者是谁（老板 / 指派员工 / 第二位员工），**由各出席者本人**填申请表 + 走 30 分钟 1:1 面试。
-- 审核口径不变：看实际出席者的心智、投入时间、能不能扛完 11 周——派一个「老板硬塞、自己根本不想来」的员工，会在面试被筛掉（保护 cohort 文化）。第二位 8 折不降审核标准。
+- 审核口径不变：看实际出席者的心智、投入时间、能不能扛完 15 周——派一个「老板硬塞、自己根本不想来」的员工，会在面试被筛掉（保护 cohort 文化）。第二位 8 折不降审核标准。
 - 毕业 6 项硬指标（§4.2）按**各实际出席者**分别计、分别发证。
 
 > 边界：目前只开「同公司第一席 + 第二位员工 8 折」。**3 人及以上的企业团报折扣本期未开**，折扣率 / 资金口径待商务拍板后再加。定价基线仍走 §8 / FUNNEL_PLAN.md，第二位 8 折是唯一的企业折扣口子。
@@ -225,21 +235,27 @@ Persona 1（小公司老板，已有 ABN + 1–5 人）是重点人群，但他�
 
 ## 4. 学员旅程 + 毕业标准
 
-### 4.1 11 周学员里程碑
+### 4.1 15 周学员里程碑
+
+每周被推着做一件更重、更公开的真实动作，下课能晒的产出就是这周的过关物。
 
 ```
-W0 报到前       → 完成 Pre-work（选品模板 + 真实工作素材集 + LLM Key + ABN 注册预备）
-W1 选品 + 验证  → 砍到 1 个 idea，跟 5 个目标用户聊过
-W2 MVP 周       → 上线一个能跑的 demo（域名 + Stripe 测试模式）
-W3 上线 + 收钱  → ⭐ 收到 $1+ 真实付费 ⭐
-W4 中文内容机器 → 发出 5+ 篇小红书 / 视频号 / 公众号
-W5 英文内容机器 → 发出 5+ 篇 X / LinkedIn / ProductHunt
-W6 SEO + GEO    → 网站 SEO 完成 + AI 搜索可见性配置
-W7 财务 + 自动化 → Stripe → Xero 打通、AI 客服上线
-W8 澳洲会计     → ABN 注册完成 / Sole trader vs Pty Ltd 决策
-W9 Grant 实战   → ⭐ 提交至少 1 个 Grant 申请 ⭐
-W10 选修：拿钱 → 听 VC fireside chat、决定要不要走 VC 路径
-W11 Demo Day    → 三城联合 Demo Day + Networking Tour
+W0 报到前          → Pre-work：装机 + LLM Key + AI 订阅 + ABN 预备 + 创业身份采集 A/B/C
+W1 搭起 CEO AI OS  → 能干活的 AI OS + 一页生意 SoT + 现场组队
+W2 AI 员工上岗     → 部署 agent（Hermes / 龙虾 / Codex / Claude Code）+ Agent Schedule 自动跑
+W3 这是不是好生意   → ⭐Stan（麦肯锡）：继续 / 转向的书面结论 + 定价
+W4 做出能卖的东西   → 能演示、能交付的最小版本（不会 code 走服务 / 信息产品线）
+W5 立起品牌门面     → 上线的官网 + 一套 design system（一稿出全套对外资产）
+W6 别让项目烂尾     → ⭐Ray（微软）：AI OS 维护的 backlog + 一周执行计划
+W7 收到第一笔钱     → ⭐ 收到 $1+ 真实付费 ⭐
+W8 AI 内容工厂      → 一条能持续出货的内容流水线 + 首波真实流量
+W9 主动敲开客户的门  → 发出去的 outreach + 收回来的真实线索
+W10 让人和 AI 搜到你 → 上线 SEO 页 + 第一次被搜到 / 被 AI 引用
+W11 用户增长        → 上线的增长循环 + 实验数据
+W12 让生意自己运转   → 财务 / 客服自动流转 + AI 出洞察的经营看板
+W13 把钱从税务局拿回 → ⭐ 持牌 CPA：公司结构决策 + RDTI 资格评估 + 申请初稿 ⭐
+W14 把生意讲成故事   → ⭐Stan 回归：基于真实 traction 的 pitch deck + BP + 一页纸
+W15 登台           → 三城联合 Demo Day + 互为客户日晚宴 + 入会 Founder Club
 ```
 
 ### 4.2 毕业硬指标（不是 demo）
@@ -253,11 +269,20 @@ W11 Demo Day    → 三城联合 Demo Day + Networking Tour
 | 3 | 法律实体 | ABN 已注册（或已有 Pty Ltd） |
 | 4 | Grant 申请 | 提交至少 1 个 Grant（拿到算 bonus） |
 | 5 | 产品 URL | 在线可访问的产品/服务页 |
-| 6 | Demo Day 出席 | W11 现场或卫星教室到场 |
+| 6 | Demo Day 出席 | W15 现场或卫星教室到场 |
 
 ---
 
-## 5. 课程结构（11 周）
+## 5. 课程结构（15 周）
+
+> 🚨 **本节的结构 SoT 是 [`COURSE_REDESIGN.md`](./COURSE_REDESIGN.md)**（机器版 = `public/outline.json` v0.5）。本节是它的产品侧展开；两者冲突以 COURSE_REDESIGN.md 为准，不要在这里另起一套周次。
+
+### 5.0 结构铁律与规模
+
+- **每周日 3h = 一节线下现场课**（线下 office + 同步直播），周内环节放进这节课的 steps，**不拆成多个 lesson**。
+- **周中自学 / Lab 各自独立成 lesson**（Lab 独立是平台铁律）。
+- 每节固定节奏：开场 15min review AI OS 这周跑了啥 → 中段 30min「1-2 人上台讲进展 + networking」→ 下课给 OS 派下周的活。
+- **规模**：53 个 lesson · 15 节现场课 · 9 个 InteractiveLab · 约 **94 小时**（现场 45h = 15 节 × 3h，自学 42.4h，Lab 6.2h）。折算**平均每周 6.2 小时**。
 
 ### 5.1 全局架构：80% 通用核心 + 20% 澳洲本地化
 
@@ -265,104 +290,178 @@ W11 Demo Day    → 三城联合 Demo Day + Networking Tour
 
 | 模块 | 性质 | 复制到其他国家时 |
 |------|------|------------------|
-| W0 / W1-W7 / W10-W11 | 全球通用核心（80%） | 直接复用 |
-| W8 澳洲会计 | 当地化（20%） | 换成加拿大/英国/新加坡会计 |
-| W9 澳洲 Grant | 当地化（20%） | 换成当地 Grant 体系 |
+| W0 / W1-W11 / W14-W15 | 全球通用核心（80%） | 直接复用 |
+| W12 自动运转 + 经营看板 | 半通用 | 财务工具链换当地（Stripe → 当地会计软件） |
+| W13 澳洲公司结构 / 税务 / RDTI | 当地化（20%） | 换成加拿大 / 英国 / 新加坡的结构 + Grant 体系 |
 
-### 5.2 详细课表（11 周）
+### 5.2 详细课表（15 周）
+
+> 每节现场课的**产出物**就是该周过关物；周中自学 / Lab 为独立 lesson。lesson code 以 `public/outline.json` 为准（L01–L53）。
 
 #### W0 — Pre-work（自学，开班前 2 周完成）
 
-**目标**：第一节课不卡装机和素材准备。
+**目标**：第一节课不卡装机、不卡订阅、不卡「你到底想做什么」。
 
-- L00 Pre-work · 装机 + LLM Key（继承自 OpenClaw Bootcamp Pre-work）
-- L01 Pre-work · 真实工作素材集（10+ 邮件 / 5+ 文档 / 1 个客户清单）
-- L02 Pre-work · ABN 注册预备（澳洲税务局账号 / myGov）
-- L03 Pre-work · 5 件最想让 AI 替你干的事（开课用）
+- 装机 + LLM Key
+- **AI 订阅选型**：预算有限 → Codex / ChatGPT；更省 → DeepRouter；充足 → Codex + Claude 双开
+- ABN 注册预备（ATO 账号 / myGov）
+- **创业身份采集 A/B/C**（决定 W1 现场怎么组队）
 
-#### W1 — 选品 + 验证（线下 4h + 自学 2h）
+---
 
-- L1.1 [Live] OPC 心智 + 选品方法论（澳洲华人 indie 案例 3-5 个）
-- L1.2 [Live] AI 用户调研：Reddit / X / 小红书 / 牛客 挖痛点
-- L1.3 [Self] Lab：5 个 idea → 1 个（模板）
-- L1.4 [Self] 跟 5 个目标用户做 30min interview
+### Phase 1 · AI Enable Business（W1–W7）
 
-#### W2 — MVP 周（线下 4h + 自学 8h）⭐ 继承 ai-builder
+> 建成一个验证过、AI 化的产品，立起品牌，并刷脸卖出第一单。
 
-- L2.1 [Live] Cursor / Claude Code / Lovable / v0 工具地图
-- L2.2 [Live] 一周做一个 SaaS 的 PRD → MVP playbook
-- L2.3 [Self] InteractiveLab × 5（复用 Vibe Coding Lab）
-- L2.4 [Self] 部署到 Vercel / Cloudflare / Railway
+#### W1 — 搭起你的 CEO AI OS｜Your CEO AI OS
 
-#### W3 — 上线 + 收第一笔钱（线下 4h + 自学 4h）
+- OPC 心智 + 澳洲在职创业者案例
+- 锁方向，写死**一页生意 SoT**
+- A·B·C 三类身份复盘 + 现场组队
+- 搭 AI OS：选型 → 喂 Gmail / Calendar / Drive / Notion → 现场派 7 个秘书任务
 
-- L3.1 [Live] Stripe / Lemonsqueezy 接入实战
-- L3.2 [Live] 域名 + 部署 + 监控
-- L3.3 [Self] $1 真实付费挑战（毕业硬指标 #1）
-- L3.4 [Self] 法律免责 / 隐私政策 / TOS 模板（澳洲版）
+**产出**：能干活的 AI OS + 一页 SoT + 团队。
 
-#### W4 — 中文内容机器（线下 4h + 自学 4h）⭐ 重点差异化
+#### W2 — 你的 AI 员工上岗｜Agents at Work
 
-- L4.1 [Live] 小红书爆款笔记结构 + 私信转化
-- L4.2 [Live] 视频号 / 公众号 矩阵 + 跨平台分发
-- L4.3 [Self] AI 内容工厂：选题 → 写稿 → 改稿 → 出图（继承 OpenClaw）
-- L4.4 [Self] 私域闭环：小红书 → WeChat → 转化
+- 现场选型并装上能干活的 agent：**Hermes / 龙虾（OpenClaw）/ Codex / Claude Code**
+- 接权限、写工作说明书
+- 一起搭 **Agent Schedule** 自动化
+- 周中：agent 跑第一批调研 + 你自己约 5 个真实用户访谈
 
-#### W5 — 英文内容机器（线下 4h + 自学 4h）
+**产出**：一支替你干活的 agent 队伍 + 第一批调研。
 
-- L5.1 [Live] X/Twitter Build in Public 打法
-- L5.2 [Live] LinkedIn outreach + ProductHunt 冷启动
-- L5.3 [Self] Reddit / IndieHackers 社区策略
-- L5.4 [Self] YouTube Shorts / TikTok 杠杆
+#### W3 — 这是不是一门好生意｜Prove the Business ⭐嘉宾 Stan（麦肯锡）
 
-#### W6 — SEO + GEO（线下 4h + 自学 4h）⭐ 继承 seo-optimizer / eeat-optimizer
+- 变现路径全景
+- 麦肯锡四把尺子：市场规模 / 竞争 / 单位经济 / 护城河
+- 形态决策 + 定价
 
-- L6.1 [Live] Google SEO long-tail 关键词
-- L6.2 [Live] AEO / GEO（AI 搜索时代的 cite-worthy 内容）
-- L6.3 [Self] E-E-A-T + Schema.org 结构化数据
-- L6.4 [Self] 自媒体作者档案（GSC 警告修复）
+**产出**：继续 / 转向的书面结论 + 定价。
 
-#### W7 — 财务 + 自动化（线下 4h + 自学 4h）⭐ 继承 OpenClaw
+**嘉宾需求**：Stan（麦肯锡背景），能把咨询侧的商业验证框架落到一人公司尺度。
 
-- L7.1 [Live] Notion 个人 ERP（CRM / 收入 / 任务一体化）
-- L7.2 [Live] AI 客服 + 邮件自动化（OpenClaw / n8n / Zapier）
-- L7.3 [Self] Stripe → Xero 自动同步
-- L7.4 [Self] 数据看板（每日 MRR / 流量 / 客户）
+#### W4 — 做出能卖的东西｜Make It Real
 
-#### W8 — 澳洲会计 + 税务（线下 4h，会计师嘉宾主讲）🇦🇺 当地化
+- 不会 code 的人：把专长 + AI 做成生产化服务 / 信息产品（交付物 + SOP）
+- 会 code 的人：定 MVP 范围
+- 周中：MVP coding **全自学**（现成资料 + PBL / classroom 视频）+ 三个 Vibe Lab
 
-- L8.1 [Live] Sole trader vs Pty Ltd 决策树
-- L8.2 [Live] ABN / TFN / GST / BAS 实操
-- L8.3 [Live] PSI rules / 个人 vs 公司税分水岭 / CGT
-- L8.4 [Self] 一年期财务规划模板（澳洲版）
+**产出**：能演示、能交付的最小版本。
 
-**嘉宾需求**：澳洲华人会计师（CPA / CA），熟悉 small business / sole trader / Pty Ltd 三种实体差异，能用中文讲。
+#### W5 — 立起你的品牌门面｜Brand & Website
 
-#### W9 — 澳洲 Grant 实战（线下 4h，Grant consultant 嘉宾主讲）🇦🇺 当地化
+- 大家一起做**官网 + design system + 品牌**
+- Source of Truth 一稿出全套：官网 / Pitch Deck / 一页纸 / 公众号
 
-- L9.1 [Live] R&D Tax Incentive (RDTI) 43.5% / 38.5% 退税
-- L9.2 [Live] Export Market Development Grant (EMDG)
-- L9.3 [Live] 各州 Grant：LaunchVic (VIC) / Advance Queensland (QLD) / NSW MVP Grant / WA Innovation Voucher
-- L9.4 [Live] Accelerating Commercialisation / Industry Growth Program
-- L9.5 [Self] Grant 申请书结构 + AI 辅助起草
+**产出**：上线的官网 + 一套 design system。
 
-**嘉宾需求**：澳洲 Grant consultant，至少帮 5+ 客户拿过 RDTI / EMDG，能讲实操陷阱。
+#### W6 — 别让项目烂尾｜Keep Shipping ⭐嘉宾 Ray（微软）
 
-#### W10 — 选修：拿钱加速？（线下 4h 选修，2 个 VC fireside chat）
+- 大厂 PM 方法落到一人公司：任务拆解 / 优先级 / 在职版可持续节奏
+- 让 AI OS 当 PM：维护 backlog、追进度
 
-- L10.1 [Live] VC 入门：什么时候该融钱、什么时候不该
-- L10.2 [Live] Term sheet 入门 / SAFE notes / 估值
-- L10.3 [Live] **Fireside chat × 2**：本地 VC（Blackbird / Square Peg / Antler 墨尔本 / Startmate 悉尼 / AfterWork Ventures）
-- L10.4 [Self] OPC vs VC 路线决策表
+**产出**：OS 维护的 backlog + 一周执行计划。
 
-**嘉宾需求**：2 个本地 VC 投资人 / 投资经理（华人 background 优先）。
+**嘉宾需求**：Ray（微软资深工程 / PM），讲得了「大厂那套怎么删到一个人还能用」。
 
-#### W11 — Demo Day + Networking Tour（三城联合，全天）
+#### W7 — 收到第一笔钱｜First Dollar
 
-- L11.1 [Live] 每人 5 分钟 Demo（产品 + MRR + 用户数）
-- L11.2 [Live] 三城卫星教室直播联合
-- L11.3 [Live] 现场嘉宾评审（会计师 / Grant consultant / VC / 老师）
-- L11.4 [Live] 校友 networking 晚宴（每城本地举办）
+- 人脉盘点 + 一对一 pitch（不建系统，就是去卖）
+- Stripe / Lemonsqueezy 澳洲版接入
+- AI 生成法律文件 → 由 AI 律师审
+
+**产出**：第一笔真实付款到账（毕业硬指标 #1）。
+
+---
+
+### Phase 2 · Go To Market（W8–W11）
+
+> 把刷脸首单变成一台不靠刷脸、会自己复利的获客机器。
+
+#### W8 — AI 内容工厂｜Content Factory
+
+- 小红书爆款 + 私信转化
+- 视频号 + 公众号 + 私域
+- AI 视频 / 海报 / 漫剧
+- X build in public
+
+**产出**：一条能持续出货的内容流水线 + 首波真实流量。
+
+#### W9 — 主动敲开客户的门｜Outbound
+
+- LinkedIn 个性化 outreach
+- ProductHunt 冷启动
+- 中英文圈 6 大线下渠道
+
+**产出**：发出的 outreach + 收回的真实线索。
+
+#### W10 — 让人和 AI 都搜到你｜SEO & GEO
+
+- Google long-tail SEO
+- AEO / GEO（AI 搜索时代的 cite-worthy 内容）
+- E-E-A-T / Schema.org
+
+**产出**：上线 SEO 页 + 第一次被搜到 / 被 AI 引用。
+
+#### W11 — 用户增长｜Growth Hacking
+
+- AARRR 漏斗诊断
+- 推荐机制与病毒循环
+- 一个 launch 跑通 10 个渠道
+
+**产出**：上线的增长循环 + 实验数据。
+
+---
+
+### Phase 3 · Australia Operations（W12–W13）🇦🇺
+
+> 全球独家护城河：AI 一人创业 × 澳洲税务 / Grant。
+
+#### W12 — 让生意自己运转｜Autopilot
+
+- Notion 个人 ERP
+- AI 客服 / 邮件自动化
+- **AI 数据分析**：LTV·CAC / 渠道 / churn 经营看板
+
+**产出**：自动流转 + AI 出洞察的经营看板。
+
+#### W13 — 把钱从税务局拿回来｜Compliance & RDTI ⭐嘉宾 持牌 CPA / Grant consultant
+
+- Sole trader vs Pty Ltd 决策树
+- PSI rules / 个人 vs 公司税分水岭 / CGT
+- **RDTI 43.5% 退税（重头戏）**
+
+**产出**：公司结构决策 + RDTI 资格评估 + 申请初稿（毕业硬指标 #4）。
+
+**嘉宾需求**：澳洲持牌 CPA / CA + Grant consultant（可同一人或两人），至少帮 5+ 客户拿过 RDTI，能用中文讲实操陷阱。
+
+---
+
+### Phase 4 · Founder Club（W14–W15+）
+
+> 从「有个在跑的生意」到「能 pitch 给任何人、能融到钱、能被看见」。毕业 = 入会。
+
+#### W14 — 把生意讲成故事｜Pitch & BP ⭐嘉宾 Stan（书挡回归）+ 投资人 fireside
+
+- 把前 13 周的真实数据做成 pitch deck + BP + 一页纸
+- 三档 pitch 讲法：30 秒 / 5 分钟 / 投资人版
+- 融资入门：term sheet / SAFE / 估值
+- 投资人 fireside
+
+**产出**：基于真实 traction 的 pitch。
+
+**嘉宾需求**：Stan（W3 回归）+ 1-2 位本地 VC / 投资经理（华人 background 优先）。
+
+#### W15 — 登台｜Demo Day · 入会 Founder Club
+
+- 三城联合路演，每人 5min pitch
+- 投资人对接
+- 互为客户日 + invite-only 晚宴
+
+**入会之后**：校友网络 · mastermind · 6 个月 Office Hour · 互为客户市场 · 老带新。
+
+> **待加内容（创业者角度，Phase 4 后续扩展）**：谈判 / 成交（把 pitch 变签约）· 媒体 / PR 曝光 · 投资人关系（持续 pipeline）。
 
 ---
 
@@ -387,10 +486,10 @@ W11 Demo Day    → 三城联合 Demo Day + Networking Tour
 ```
 
 **关键设计**：
-- 主场轮换：W1-W4 墨尔本主场 / W5-W8 悉尼主场 / W9-W12 布里斯班主场（也可以一城固定，看商务安排）
+- 主场轮换：W1-W5 墨尔本主场 / W6-W10 悉尼主场 / W11-W15 布里斯班主场（也可以一城固定，看商务安排）
 - Tutor 不需要懂 AI 工程（OpenClaw 装机简单）— 主要负责现场氛围 / 网络问题 / 个人化提问
 - 学员选一个 home city，全期固定
-- W11 Demo Day 三城联合直播 + 各城本地 networking 晚宴
+- W15 Demo Day 三城联合直播 + 各城本地 networking 晚宴（互为客户日 invite-only）
 - 嘉宾飞主场城市，其他两城听直播（嘉宾不用飞三趟，成本可控）
 
 ### 6.2 三城运营资源现状
@@ -479,7 +578,7 @@ W11 Demo Day    → 三城联合 Demo Day + Networking Tour
 
 | 档位 | 价格 | 触发条件 | 包含 |
 |------|------|---------|------|
-| 🔥 **PRE-SALE** · 限 15 席 | **AUD $2,400** | 先到先得 · 可付定金 **A$1,000** 锁席 · 满 15 即关闭 | 11 周课程 + 三城线下 + 10 类 Faculty + Demo Day + 校友群 + 6 个月 Office Hour |
+| 🔥 **PRE-SALE** · 限 15 席 | **AUD $2,400** | 先到先得 · 可付定金 **A$1,000** 锁席 · 满 15 即关闭 | 15 周课程 + 三城线下 + 10 类 Faculty + Demo Day + 校友群 + 6 个月 Office Hour |
 | **EARLY BIRD** · 首期早鸟 | **AUD $2,800** | 预售关闭后开放 · 首期剩余 3-10 席 | 同上（内容与预售档完全一致） |
 
 明说"首期为建立 case study，价格只此一期。预售为首期最低价，可付定金锁席"。
@@ -514,41 +613,41 @@ W11 Demo Day    → 三城联合 Demo Day + Networking Tour
 
 设计课程时必须查看并整合已有资源生态：
 
-### 9.1 InteractiveLab 复用清单（W2-W3 MVP 周）
+### 9.1 InteractiveLab 复用清单（W4 做出能卖的东西 / 全课 9 个 Lab）
 
 | 资源 | 路径 | 复用到 |
 |------|------|--------|
-| Vibe Coding Lab 全部 | `/learn/vibe-coding/hub` | W2 MVP 周 |
-| Prompt Lab 22+ 个 | `/study-center?tab=learn&mode=prompt-lab` | W1 选品（用 prompt 做用户调研） |
-| Frontend Lab | InteractiveLab type=frontend | W2 |
-| AWS Lab | InteractiveLab type=aws | W2-W3 部署 |
+| Vibe Coding Lab 全部 | `/learn/vibe-coding/hub` | W4 做出能卖的东西（Cursor / Claude Code / Lovable 三个 Vibe Lab） |
+| Prompt Lab 22+ 个 | `/study-center?tab=learn&mode=prompt-lab` | W2 用户调研 / W8 小红书标题 / W9 LinkedIn outreach / W12 AI 客服 / W13 Grant 起草 |
+| Frontend Lab | InteractiveLab type=frontend | W4-W5（MVP + 官网） |
+| AWS Lab | InteractiveLab type=aws | W4 部署（Vercel / Cloudflare / Railway 自学章节的备选） |
 
 ### 9.2 Wiki / Cheat Sheet 复用清单
 
 | 资源 | 路径 | 复用到 |
 |------|------|--------|
-| Cursor / Claude Code / v0 cheat sheet | `/cheat-sheets/*` | W2 |
-| ChatGPT / Claude / Gemini cheat sheet | `/cheat-sheets/*` | W1, W4 |
-| Vibe Coding Hub | `/learn/vibe-coding/hub` | W2 |
+| Cursor / Claude Code / v0 cheat sheet | `/cheat-sheets/*` | W4 |
+| ChatGPT / Claude / Gemini cheat sheet | `/cheat-sheets/*` | W1, W2 |
+| Vibe Coding Hub | `/learn/vibe-coding/hub` | W4（Phase 2 全部章节自学） |
 
 ### 9.3 Roadmap 复用清单
 
 | 资源 | 状态 | 行动 |
 |------|------|------|
-| AI Solo Founder Roadmap | ❌ 不存在 | **新建**（W12 给学员发） |
+| AI Solo Founder Roadmap | ❌ 不存在 | **新建**（W15 毕业时给学员发） |
 | Indie Hacker Roadmap | ❌ 不存在 | **新建**（首期前完成） |
 
 ### 9.4 Skill 复用清单（marketing 教学内容）
 
 | Skill | 用到哪节 |
 |-------|---------|
-| `seo-optimizer` | W6 SEO |
-| `eeat-optimizer` | W6 GEO |
-| `xhs-poster` | W4 中文内容机器（教学员怎么做小红书海报） |
-| `mp-article` | W4（公众号文章生成） |
-| `bootcamp-video` | W4（视频号短视频） |
-| `blog-longform-writer` | W5 英文内容（Build in Public 长文） |
-| `saiwen-qiaoyi-style` / `wushi-caijing-style` | W4-W5（写作风格参考） |
+| `seo-optimizer` | W10 SEO |
+| `eeat-optimizer` | W10 GEO |
+| `xhs-poster` | W8 AI 内容工厂（教学员怎么做小红书海报） |
+| `mp-article` | W8（公众号文章生成） |
+| `bootcamp-video` | W8（视频号短视频 / AI 视频·漫剧） |
+| `blog-longform-writer` | W8（X Build in Public 长文） |
+| `saiwen-qiaoyi-style` / `wushi-caijing-style` | W8（写作风格参考） |
 
 ---
 
@@ -558,11 +657,11 @@ W11 Demo Day    → 三城联合 Demo Day + Networking Tour
 
 | 嘉宾类型 | 用到哪节 | 数量 | 候选画像 | 预算/人 |
 |---------|---------|------|---------|---------|
-| 澳洲华人会计师 (CPA/CA) | W8 | 1 | 熟悉 small business + Pty Ltd，中文流利 | $500-1500 |
-| Grant consultant | W9 | 1 | 帮 5+ 客户拿过 RDTI / EMDG | $1000-2500 |
-| 本地 VC 投资人 | W11 | 2 | Blackbird / Square Peg / Antler / Startmate / AfterWork | 免费（他们想看 deal flow） |
-| Indie hacker 中文案例 | W1 / W12 | 2-3 | $3k-30k MRR 的中文 indie，可远程连线 | $300-1000 |
-| 澳洲华人创业 case study | W3-W12 穿插 | 3-5 | 已经做出 OPC 的澳洲华人 | $500-1000 |
+| 澳洲华人会计师 (CPA/CA) | W13 | 1 | 熟悉 small business + Pty Ltd，中文流利 | $500-1500 |
+| Grant consultant | W13 | 1 | 帮 5+ 客户拿过 RDTI / EMDG | $1000-2500 |
+| 本地 VC 投资人 | W14 fireside + W15 Demo Day | 2 | Blackbird / Square Peg / Antler / Startmate / AfterWork | 免费（他们想看 deal flow） |
+| Indie hacker 中文案例 | W1 / W15 | 2-3 | $3k-30k MRR 的中文 indie，可远程连线 | $300-1000 |
+| 澳洲华人创业 case study | W1-W15 穿插 | 3-5 | 已经做出 OPC 的澳洲华人 | $500-1000 |
 
 ### 10.2 嘉宾互利逻辑（为什么他们愿意来）
 
@@ -596,7 +695,7 @@ W11 Demo Day    → 三城联合 Demo Day + Networking Tour
 | 风险 | 影响 | 缓解 |
 |------|------|------|
 | 学员中途辍学 > 30% | cohort 文化崩 | 申请制严筛 + 退款保障到 W2 末 |
-| 毕业指标达成率低 | 无 case study 喂第二期 | W3 收钱挑战做强 + Tutor 1:8 紧盯 |
+| 毕业指标达成率低 | 无 case study 喂第二期 | W7 收钱挑战做强 + Tutor 1:8 紧盯 |
 | OPC vs VC 路线模糊 | 学员搞错预期 | 招生页 + 申请表多次明示主轴 |
 
 
@@ -615,11 +714,11 @@ W11 Demo Day    → 三城联合 Demo Day + Networking Tour
 
 ### 12.1 内容交付物
 
-- [ ] `outline.json` 完整 12 周大纲（≥ 60 个 lesson，含 Lab/Live/Self/Quest 各 type）
+- [ ] `outline.json` 完整 15 周大纲（53 个 lesson：15 现场课 + 9 InteractiveLab + 29 自学，含 Lab/Live/Self/Quest 各 type）
 - [ ] 每个 lesson 有非空 description（≥ 100 字，按 §3 写法 — 不要 AI 味）
 - [ ] 每个 Lab 是独立 lesson（铁律：不能塞在 step 里）
 - [ ] 至少 30 个 lesson 绑定平台已有资源（Lab + Learn + Wiki ≥ 30）
-- [ ] 嘉宾主讲的 4 节（W8/W9/W10/W11）有详细嘉宾 brief
+- [ ] 嘉宾主讲的 4 节（W3 Stan / W6 Ray / W13 CPA+Grant / W14 Stan+VC）有详细嘉宾 brief
 - [ ] 毕业硬指标的 6 项验收清单
 - [ ] 课程 cardDescription / promoDescription / highlights / suitable 完整
 - [ ] FAQ ≥ 15 条（OPC vs VC / 澳洲身份要求 / 退款 / 三城选择 / 学完能干什么 等）
@@ -628,7 +727,7 @@ W11 Demo Day    → 三城联合 Demo Day + Networking Tour
 ### 12.2 营销交付物
 
 - [ ] 首期 landing page (`curriculum/ai-solo-founder-bootcamp/public/curriculum.html`)
-- [ ] phase1-12.html 各阶段详情页
+- [ ] phase1.html - phase4.html 各阶段详情页（4 个 Phase）
 - [ ] internal.html 内部资料（嘉宾名单 / 价格策略 / 招生话术）
 - [ ] 申请表（Typeform / Google Form）+ 1:1 面试问题清单
 - [ ] 给 AI Engineer / OpenClaw 老学员的精准邀请邮件文案
@@ -658,8 +757,8 @@ T-6 周：三城免费诊断会启动（每城 1 场）+ 申请表上线
 T-4 周：第一批申请面试 + 录取
 T-2 周：补位招生 + 嘉宾彩排
 T-0 ：W1 第一节课开始
-T+12：Demo Day + 第一期校友群闭环
-T+14：第一期 case study 提炼 + 第二期招生启动
+T+15：W15 Demo Day + 互为客户日晚宴 + Founder Club 入会
+T+17：第一期 case study 提炼 + 第二期招生启动
 ```
 
 ---
@@ -672,11 +771,11 @@ T+14：第一期 case study 提炼 + 第二期招生启动
 | 2 | 首期开课日期 | 2026 Q3（嘉宾铺设需 2 个月） | lightman + 运营 |
 | 3 | 三城主场轮换 vs 墨尔本固定 | 墨尔本固定主场（首期降低复杂度） | lightman |
 | 4 | 首期定价档位 | v0.4: $2.4k 预售（15 席）/ $2.8k 早鸟 / $3.8k 二期（v0.3 的三档已废弃） | lightman |
-| 5 | VC fireside chat 是否做 | 做（W10 选修，2 个 VC） | lightman |
+| 5 | VC fireside chat 是否做 | 做（W14 Pitch & BP 节内，2 个 VC） | lightman |
 | 6 | 申请录取目标 | 50 人 / 录取率 30-50% | lightman |
 | 7 | 退款窗口 | 到 W2 末（前 2 周满意承诺） | lightman + 法务 |
 | 8 | 嘉宾费用预算上限 | $8k-12k 全期（4 嘉宾 × 平均 $2-3k） | lightman + 财务 |
-| 9 | 海外华人能不能报？ | 可以但明说 W7-W9 跟你无关，价格不变 | lightman |
+| 9 | 海外华人能不能报？ | 可以但明说 W12-W13 澳洲运营模块跟你无关，价格不变 | lightman |
 | 10 | 复制到加拿大/英国/新加坡的优先级 | 加拿大 > 新加坡 > 英国（华人密度） | lightman（这个可以晚点定） |
 
 ---
@@ -685,7 +784,7 @@ T+14：第一期 case study 提炼 + 第二期招生启动
 
 1. **lightman 决策 §13 的 10 个 Open Questions**
 2. Claude 起 `outline.json` v1（基于 §5 课表 + §9 资源整合）
-3. Claude 写 `curriculum.html` + `phase1.html`-`phase12.html`
+3. Claude 写 `curriculum.html` + `phase1.html`-`phase4.html`
 4. Claude 加 `posters.html` 注册 + `deploy.yml` 配置
 5. lightman + 运营启动嘉宾铺设（4 个嘉宾类型并行）
 6. lightman + 运营从 AI Engineer / OpenClaw 老学员里手工挑 30 人发精准邀请测水温

@@ -1,6 +1,6 @@
 # AI 一人创业营 付费漏斗规划 FUNNEL_PLAN.md
 
-> 课程：AI 一人创业营（OPC / 一人公司 · 11 周三城线下 cohort · 澳洲华人专业人士专属）
+> 课程：AI 一人创业营（OPC / 一人公司 · 15 周三城线下 cohort · 澳洲华人专业人士专属）
 > 由 `/course-funnel-architect init` 生成 · 2026-06-16
 > 单一真相文档 — 任何漏斗调整必须改这里
 > 上游依赖：[./PERSONAS.md](./PERSONAS.md)（GT ≈ 0.30 ⚠️ v0 启动版）+ public/outline.json + program-course/ai-solo-founder-bootcamp/content.ts
@@ -16,8 +16,9 @@
 | 课程类型 | **Type 3 · Bootcamp 创业孵化**（决策周期最长、客单价最高）| course-promotion-architect COURSE_TYPE_PLAYBOOKS |
 | 业务模式 | **B · 引流课 + 主课三档**（不是四档全做 — 见 §1 决策）| 本次 init |
 | 语言 / 币种 | **纯中文站，只收 AUD**（澳洲本地华人，无多币种）| content.ts |
-| 主课时长 | 11 周（W0 Pre-work + W1-W11 三城线下 hub-and-spoke）| outline.json `timeLength` |
-| 主课规模 | 59 lessons / 92h / 35 直播 / 8 Lab · 4 phase × 2-3 周 | outline.json |
+| 主课时长 | 15 周（W0 Pre-work + W1-W15 三城线下 hub-and-spoke）| outline.json `timeLength` / COURSE_REDESIGN.md |
+| 主课规模 | 53 lessons / 94h / 15 节现场课 / 9 Lab · 4 phase（W1-W7 / W8-W11 / W12-W13 / W14-W15）| outline.json v0.5 |
+| 每周投入 | 周日 3h 线下现场课 + 周中自学与项目实操 · **平均每周 6.2h**（现场 45h + 自学 42.4h + Lab 6.2h）| outline.json |
 | 录取机制 | 申请制 + LinkedIn 必填（首期无视频面试，二期起加面试）| outline.json highlights |
 | 首期招生目标 | **50 人**（墨 22 / 悉 16 / 布 12）— 2026-06-18 拍板统一到 50，收口原「PRD 保守 20±5 vs 销售页 40-60」分歧 | Lightman |
 | 上次更新 | 2026-06-16 | — |
@@ -27,15 +28,15 @@
 
 ## 1. 漏斗定位
 
-- **主课方向**：用中文教澳洲华人专业人士用 AI 做一人公司（OPC）—— 选品 → MVP → 收第一笔钱 → 全渠道营销 → 澳洲会计 / Grant → Demo Day
-- **主课时长**：11 周三城线下，不录播
+- **主课方向**：用中文教澳洲华人专业人士用 AI 做一人公司（OPC）—— 搭 CEO AI OS → AI 员工上岗 → 商业验证 → 做出能卖的东西 → 品牌官网 → 收第一笔钱 → 全渠道 Go To Market → 澳洲运营 + RDTI → Demo Day 入会 Founder Club
+- **主课时长**：15 周三城线下，不录播（每周日 3h 一节现场课 = 15 节）
 - **目标用户**（来自 PERSONAS §1，⚠️ GT 0.30）：
   - **Persona A · 焦虑型 senior 程序员（45%）** — 35-45 岁大厂 senior，会 Cursor 但卡在「从 0 到第一笔收入」，有 6-12 个月储蓄、决策周期 **4-8 周**
   - **Persona B · 高薪 PM / 咨询 / Designer（35%）** — 40-50 岁，想绕过工程团队自己 ship，缺技术信心，决策周期 **3-6 周**
   - **Persona C · 副业冲动 professional（20%）** — 律师 / 会计 / 医生，不辞职、最看重澳洲税务 + Grant 合规，决策周期 **2-4 周**
   - ❌ 排除（PERSONAS §4）：没积蓄的应届 / 纯打工躺平 / 想割韭菜 / 想融 VC / 不在澳洲的人
 - **业务模式**：**B · 引流课 + 主课三档**
-- **核心承诺**：11 周内做出一个能跑、能卖、能合规的 AI 一人公司 —— 第一笔真实付费 + ABN 注册 + 至少 1 个澳洲 Grant 提交 + 产品 URL Live + Demo Day 出席（毕业 6 项硬指标）
+- **核心承诺**：15 周内做出一个能跑、能卖、能合规的 AI 一人公司 —— 第一笔真实付费 + ABN 注册 + 至少 1 个澳洲 Grant 提交 + 产品 URL Live + Demo Day 出席（毕业 6 项硬指标）
 
 ### 🚩 业务模式为什么选 B 不选 A（完整四档）
 
@@ -58,7 +59,7 @@ Type 3 创业孵化课的买家盯着「真有人跟着做出来了吗」，决�
 
 ## 3. 主课三档（已锁 · 对齐 content.ts PRICING + outline.json + FAQ）
 
-> 🚨 **创业营三档不按「内容多少」分级，按「陪你把 MVP / 业务原型推到什么程度 + 谁陪你推」分级**。三档学的是同一套 59 节课、同一批 Faculty、同一个三城 cohort，差的是**结果保障的深度**和**1v1 资源密度**。
+> 🚨 **创业营三档不按「内容多少」分级，按「陪你把 MVP / 业务原型推到什么程度 + 谁陪你推」分级**。三档学的是同一套 53 节课、同一批 Faculty、同一个三城 cohort，差的是**结果保障的深度**和**1v1 资源密度**。
 
 > 💰 **币种**：本课纯 AUD（澳洲本地华人，PERSONAS §0「无多币种，只收 AUD」）。故三档**只写 AUD**，不套 funnel-architect 默认的 CNY/AUD 双币模板 —— 那个模板是给中澳双轨课用的，本课是纯澳洲课。
 
@@ -75,9 +76,9 @@ Type 3 创业孵化课的买家盯着「真有人跟着做出来了吗」，决�
 
 | 档位 | 定价 (AUD) | 一句话承诺（按「做出什么」分级）| 关键差异点 |
 |---|---|---|---|
-| **自学陪练版**（早鸟 / Self-paced+Cohort）| **$2,800** | 「11 周跟着三城 cohort 走完一遍，自己 ship 出一个 Live 的 MVP + 跑通收第一笔钱的全流程」| 全部 59 节课 + 三城线下 + 1:8 本地 Tutor 陪跑 + 校友群。**靠 cohort 同侪 + Tutor 托底**，不含主讲老师 1v1。早鸟限量，接住预售 $2,400 意向用户 |
-| **标准版**（Standard）| **$3,800** | 「11 周做出一个**能对外展示的业务原型**：MVP Live + ABN 注册 + 至少 1 个 Grant 提交 + Demo Day 现场展示」| 自学陪练版全部 + 嘉宾（CPA / Grant consultant / VC）作业级 review + W11 Demo Day 主舞台名额 + 互为客户日晚宴自动获邀（完成 6 项硬指标）。**主推档** —— 对齐毕业 6 项硬指标 |
-| **陪跑版**（Premium · 含 1:1）| **$6,800** | 「11 周做出业务原型 + 主讲老师 / 嘉宾团队 1v1 把你卡点逐个清掉，加速到能对外拿单 / 拿 Grant 的状态」| 标准版全部 + 每周 1 次 30min 1:1 教练（共 12 次，技术 / 产品 / 营销 / Grant 任意主题）+ Grant 申请书 1v1 过稿 + Demo Day pitch 1v1 打磨。**对「时间紧 + 决策密度高 + 想加速」的人**（FAQ 原话）；主要靠自学的人价值不大 |
+| **自学陪练版**（早鸟 / Self-paced+Cohort）| **$2,800** | 「15 周跟着三城 cohort 走完一遍，自己 ship 出一个 Live 的 MVP + 跑通收第一笔钱的全流程」| 全部 53 节课 + 三城线下 + 1:8 本地 Tutor 陪跑 + 校友群。**靠 cohort 同侪 + Tutor 托底**，不含主讲老师 1v1。早鸟限量，接住预售 $2,400 意向用户 |
+| **标准版**（Standard）| **$3,800** | 「15 周做出一个**能对外展示的业务原型**：MVP Live + ABN 注册 + 至少 1 个 Grant 提交 + Demo Day 现场展示」| 自学陪练版全部 + 嘉宾（CPA / Grant consultant / VC）作业级 review + W15 Demo Day 主舞台名额 + 互为客户日晚宴自动获邀（完成 6 项硬指标）。**主推档** —— 对齐毕业 6 项硬指标 |
+| **陪跑版**（Premium · 含 1:1）| **$6,800** | 「15 周做出业务原型 + 主讲老师 / 嘉宾团队 1v1 把你卡点逐个清掉，加速到能对外拿单 / 拿 Grant 的状态」| 标准版全部 + 每周 1 次 30min 1:1 教练（**共 15 次**，与 outline.json FAQ「Premium 每周可预约一次 30 分钟 1:1、共 15 次」对齐；原按 11 周写的「共 12 次」已作废。⚠️ 交付成本随周次上升，需 Lightman / 财务复核；技术 / 产品 / 营销 / Grant 任意主题）+ Grant 申请书 1v1 过稿 + Demo Day pitch 1v1 打磨。**对「时间紧 + 决策密度高 + 想加速」的人**（FAQ 原话）；主要靠自学的人价值不大 |
 
 > **二期升价**（FAQ 已公开，写进合同前需 Beta / Lightman 确认）：Standard $5,800 / Premium $9,800。首期低开是 case study 价（要 50 人 cohort 的真实毕业 case 喂二期招生，Reforge / On Deck 标准玩法）。
 
@@ -89,9 +90,9 @@ Type 3 创业孵化课的买家盯着「真有人跟着做出来了吗」，决�
 
 ### 完课率 / 结果保障机制（按档差异）
 
-- **自学陪练版 $2,800**：靠三城线下 1:8 Tutor + cohort 同侪压力 + W1 vs W11 公开数据看板（MRR / 流量 / 内容产出公开追踪）防掉队。退款：W1-W2 末满意承诺全额退（outline.json FAQ）
+- **自学陪练版 $2,800**：靠三城线下 1:8 Tutor + cohort 同侪压力 + W1 vs W15 公开数据看板（MRR / 流量 / 内容产出公开追踪）防掉队。退款：W1-W2 末满意承诺全额退（outline.json FAQ）
 - **标准版 $3,800**：嘉宾作业级 review + 6 项毕业硬指标做强制 checkpoint（不达标不发证 + 不获邀晚宴）—— 把「上完课」和「做出东西」严格区分（outline.json FAQ）
-- **陪跑版 $6,800**：12 次 1v1 是个性化卡点清除机制 —— 直接对「我做不出来 / 卡在合规 / 不会 pitch」三类 Persona 障碍下手
+- **陪跑版 $6,800**：15 次 1v1 是个性化卡点清除机制 —— 直接对「我做不出来 / 卡在合规 / 不会 pitch」三类 Persona 障碍下手
 
 ---
 
@@ -102,12 +103,12 @@ Type 3 创业孵化课的买家盯着「真有人跟着做出来了吗」，决�
 - **主题**：**《一个晚上判断：AI 一人公司这条路，你下不下得了场》** — OPC 适配自评 + 30 分钟 ship 一个最小产品的真实体验
 - **定价**：⚠️ **本课引流课不走 ¥99 / $29 默认价**。理由：纯 AUD、目标人群是有 6-12 个月储蓄的高薪专业人士，¥99 对他们不是决策门槛、反而拉低课程调性。建议 **$0 免费 lead magnet**（已有现成素材，见下）或象征性 **$29 AUD**。最终价待 `/intro-course-design` + Beta 拍板
 - **复用现成 lead magnet**（outline.json `curriculumPages` 已列 3 个，0 新内容生产）：
-  - `lead-magnets/opc-assessment.html` — OPC 适配评估表（对应主课 L01 的「OPC 适配评估表 5 维度自评」）
-  - `lead-magnets/30min-ship.html` — 30 分钟 ship 第一个产品（对应主课 L06-L10 工具地图 + Lab）
-  - `lead-magnets/rdti-prompt-template.html` — RDTI 退税 prompt 模板（对应主课 L36，专打 Persona C）
+  - `lead-magnets/opc-assessment.html` — OPC 适配评估表（对应主课 W1 现场课 L02 的「OPC 心智 + 适配自评」段）
+  - `lead-magnets/30min-ship.html` — 30 分钟 ship 第一个产品（对应主课 W4 的 L13 工具地图 + L15-L17 三个 Vibe Coding Lab）
+  - `lead-magnets/rdti-prompt-template.html` — RDTI 退税 prompt 模板（对应主课 W13 的 L49「Grant 申请书 AI 起草」Lab，专打 Persona C）
 - **Quick win deliverable**（学完当晚拿到）：① 一张自己填完的 OPC 适配评分表（5 维度 × 5 分，低于 18 分诚实劝退）② 一个 30 分钟内 ship 出来的最小 demo（不要求能卖）③ 一份「我这个职业积累 + AI 能做什么」的 idea 草稿
-- **学完承诺**：不是「学会做产品」，是「判断清楚 OPC 这条路适不适合我现在下场」—— 跟主课 L01 心智课同源，引流课做的是**资格自筛**
-- **在主课大纲中的对应位置**：Phase 1 L01（OPC 心智 + 适配自评）+ L06-L10（工具地图 + Vibe Coding Lab）的浓缩体验版
+- **学完承诺**：不是「学会做产品」，是「判断清楚 OPC 这条路适不适合我现在下场」—— 跟主课 W1「搭起你的 CEO AI OS」里的 OPC 心智段同源，引流课做的是**资格自筛**
+- **在主课大纲中的对应位置**：Phase 1 · AI Enable Business 的 W1（OPC 心智 + 适配自评）+ W4（L13 工具地图 + L15-L17 Vibe Coding Lab）的浓缩体验版
 - **为什么不冲动转化**：Type 3 创业课买家不会因为上完免费课当晚掏 $3,800。引流课交付后进 7 天过渡（§5），靠真实校友案例 + Faculty 实名 + RDTI 算账，让人自己走完 4-8 周决策周期主动来申请
 
 ---
@@ -211,7 +212,7 @@ Type 3 创业孵化课的买家盯着「真有人跟着做出来了吗」，决�
 ### 10.4 评选与发放
 
 - **多人达标怎么办**：6 项是"门槛"不是"排名"。达标者进入候选池，由 **Faculty 评审团**按**事前公示**的标准选 1 名：① 产品完成度 / 真实牵引力 ② 对 cohort 的贡献（互助 / 分享）③ 故事可传播性（case study 价值）。
-- **公布时点**：W11 **Demo Day 现场**揭晓 → 高光时刻 + 自然产出宣传素材。
+- **公布时点**：W15 **Demo Day 现场**揭晓 → 高光时刻 + 自然产出宣传素材。
 - **发放形式**：学费 rebate（封顶档位 [商务确认：是否封顶到标准版 $3,800、陪跑版 $6,800 差额是否纳入]）。
 
 ### 10.5 金额与名额（待 Lightman 拍板）

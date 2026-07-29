@@ -71,7 +71,7 @@ Above the map: floating UI elements suggesting Stripe payment screens, Notion
 docs, AI chat bubbles — all minimalist and abstract.
 
 Text overlay (Chinese, modern sans-serif):
-- "三城线下 · 11 周 · 50 人 cohort"
+- "三城线下 · 15 周 · 50 人 cohort"
 - Bottom right corner: "ONE PERSON COMPANY · M01 · JUN 2026"
 
 Style references: The Economist illustration, Stripe brand assets, Antler
@@ -277,7 +277,7 @@ Avoid: stock photo clichés, fake laughs, obvious AI artifacts on faces or hands
 
 **平台**: ChatGPT gpt-image-2（中文文字)
 **尺寸**: 1200×800
-**用途**: PHASE 4 W11 section / 小红书干货图
+**用途**: PHASE 4 W15 section / 小红书干货图
 
 ```
 Editorial close-up flatlay photograph of two printed cards on a wood dinner
@@ -454,7 +454,7 @@ NO stock-photo handshakes.
 ```
 Page 1 / Cover:
 - Headline (60px, black bold): "OPC 一人公司"
-- Sub (32px, orange): "11 周 · 三城线下 · 拿澳洲 Grant"
+- Sub (32px, orange): "15 周 · 三城线下 · 拿澳洲 Grant"
 - Bottom badge (28px, white on navy): "首期招生 · 限额 25 人"
 - Background: cream #fffbe6 + subtle orange #FF914D corner accent
 - Visual: minimal hand-drawn arrow ↗ icon
@@ -501,7 +501,7 @@ Editorial photograph + text overlay. Background: dim Melbourne CBD evening
 skyline (Eureka tower / Federation Square area). Overlay text:
 
 - Large title (Chinese, white bold): "AI 一人创业营 · 首期招生"
-- Subtitle (orange): "11 周 · 三城线下 · 限额 25 人"
+- Subtitle (orange): "15 周 · 三城线下 · 限额 25 人"
 - Bottom-left small text: "ONE PERSON COMPANY · M01 · JUN 2026"
 
 Style: Bloomberg / The Atlantic banner aesthetic.

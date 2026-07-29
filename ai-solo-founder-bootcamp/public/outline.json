@@ -6,6 +6,7 @@
   "title_en": "AI Solo Founder Bootcamp",
   "level": "高级",
   "type": "training",
+  "category": "incubator",
   "targetAudience": "澳洲华人专业人士（35-50 岁、150-250k+ 工资、有 5-15 年职业积累）—— senior 程序员、PM、设计师、咨询、律师、会计、医生、小公司老板/1-5 人团队创始人、准备申请 YC/Antler/Startmate 的 founder。想用 AI 做一人公司收第一笔钱、拿澳洲 Grant 退税、建立第二条收入腿、把现有业务 AI 化、或为 accelerator 申请攒 traction。",
   "totalLessons": 53,
   "totalSteps": 188,
@@ -270,7 +271,8 @@
               "description": "A 类附 200 字 idea 草稿；B 类写清你能给什么（技能 / 资源 / 客户引荐 / 行业入口）和你缺什么；C 类写清你在犹豫什么（时间 / 收入 / 方向 / 家庭）。三项都要写具体到能被搜索的程度。这张表 W1 现场直接用来分组，也进 matching 工具跑 15 周。",
               "duration": 15
             }
-          ]
+          ],
+          "_id": "6a671b1b850325ba16ef7375"
         },
         {
           "code": "L02",
@@ -324,7 +326,8 @@
             }
           ],
           "labs": [],
-          "learns": []
+          "learns": [],
+          "_id": "6a671b1b850325ba16ef7380"
         },
         {
           "code": "L03",
@@ -342,7 +345,8 @@
               "source": "prompt-lab",
               "slug": "ai-secretary-setup"
             }
-          ]
+          ],
+          "_id": "6a671b1b850325ba16ef738e"
         },
         {
           "code": "L04",
@@ -375,7 +379,8 @@
             }
           ],
           "labs": [],
-          "learns": []
+          "learns": [],
+          "_id": "6a671b1b850325ba16ef7396"
         },
         {
           "code": "L05",
@@ -429,7 +434,8 @@
             }
           ],
           "labs": [],
-          "learns": []
+          "learns": [],
+          "_id": "6a671b1c850325ba16ef739b"
         },
         {
           "code": "L06",
@@ -469,7 +475,8 @@
             }
           ],
           "labs": [],
-          "learns": []
+          "learns": [],
+          "_id": "6a671b1c850325ba16ef73a0"
         },
         {
           "code": "L07",
@@ -487,7 +494,8 @@
               "source": "prompt-lab",
               "slug": "ai-user-research"
             }
-          ]
+          ],
+          "_id": "6a671b1c850325ba16ef73a9"
         },
         {
           "code": "L08",
@@ -525,7 +533,8 @@
               "description": "把 5 段访谈转录喂 Claude,聚类出真实痛点 + 用户已经在花的钱 + 现有替代方案。如果 5 个人里没人「上个月真遇到 + 真花过钱」,这个 idea 要回 L10 换。把结论写进 idea PRD。",
               "duration": 15
             }
-          ]
+          ],
+          "_id": "6a671b1c850325ba16ef73ae"
         },
         {
           "code": "L09",
@@ -579,7 +588,8 @@
             }
           ],
           "labs": [],
-          "learns": []
+          "learns": [],
+          "_id": "6a671b1c850325ba16ef73b3"
         },
         {
           "code": "L10",
@@ -617,7 +627,8 @@
               "description": "W3 末 deliverable:5 个 idea 各一份 5 维度评分表,最后锁 1 个写清楚「为什么是它」。这个 idea 就是 W4 产品周要交付的东西,选错了后面十几周白做,这一步慢一点没关系。",
               "duration": 10
             }
-          ]
+          ],
+          "_id": "6a671b1d850325ba16ef73b8"
         },
         {
           "code": "L11",
@@ -655,7 +666,8 @@
               "description": "三选一并写清理由。选『调整』的回去改 W1 那份 SoT（改原件，不新建文件）；选『换』的当周内重跑一遍 W1 锁方向 + W2 简版访谈，组内召集人跟进。裁决写完发进组内群，让同组的人有机会拍醒你。",
               "duration": 10
             }
-          ]
+          ],
+          "_id": "6a671b1d850325ba16ef73bd"
         },
         {
           "code": "L12",
@@ -709,7 +721,8 @@
             }
           ],
           "labs": [],
-          "learns": []
+          "learns": [],
+          "_id": "6a671b1d850325ba16ef73c2"
         },
         {
           "code": "L13",
@@ -747,7 +760,8 @@
               "description": "1 主工具 + 1-2 辅助工具",
               "duration": 45
             }
-          ]
+          ],
+          "_id": "6a671b1d850325ba16ef73c7"
         },
         {
           "code": "L14",
@@ -778,7 +792,8 @@
               "description": "AI Tutor 1:1 反馈",
               "duration": 60
             }
-          ]
+          ],
+          "_id": "6a671b1d850325ba16ef73cc"
         },
         {
           "code": "L15",
@@ -796,7 +811,8 @@
               "source": "frontend-lab",
               "slug": "cursor-basics"
             }
-          ]
+          ],
+          "_id": "6a671b1e850325ba16ef73d1"
         },
         {
           "code": "L16",
@@ -814,7 +830,8 @@
               "source": "frontend-lab",
               "slug": "claude-code-agentic"
             }
-          ]
+          ],
+          "_id": "6a671b1e850325ba16ef73d6"
         },
         {
           "code": "L17",
@@ -832,7 +849,8 @@
               "source": "frontend-lab",
               "slug": "lovable-saas-30min"
             }
-          ]
+          ],
+          "_id": "6a671b1e850325ba16ef73db"
         },
         {
           "code": "L18",
@@ -869,7 +887,8 @@
               "direction": "vibe-coding",
               "slug": "phase-2-overview"
             }
-          ]
+          ],
+          "_id": "6a671b1e850325ba16ef73e0"
         },
         {
           "code": "L19",
@@ -907,7 +926,8 @@
               "description": "deliverable 是一个真实可点开的 .com,不接受 localhost 截图。把 URL 贴进班级看板,同学和讲师能直接访问你的 MVP——这也是 L28 收第一笔钱的落点。",
               "duration": 10
             }
-          ]
+          ],
+          "_id": "6a671b1f850325ba16ef73e5"
         },
         {
           "code": "L20",
@@ -945,7 +965,8 @@
               "description": "每个学员现场触发一个错误确认 Sentry 收到告警,再开几个浏览器访问确认 Plausible/PostHog 看到流量。监控装了不验证等于没装,OPC 阶段宁可花 20 分钟当场跑通。",
               "duration": 10
             }
-          ]
+          ],
+          "_id": "6a671b1f850325ba16ef73ea"
         },
         {
           "code": "L21",
@@ -999,7 +1020,8 @@
             }
           ],
           "labs": [],
-          "learns": []
+          "learns": [],
+          "_id": "6a671b1f850325ba16ef73fa"
         },
         {
           "code": "L22",
@@ -1032,7 +1054,8 @@
             }
           ],
           "labs": [],
-          "learns": []
+          "learns": [],
+          "_id": "6a671b1f850325ba16ef73ff"
         },
         {
           "code": "L23",
@@ -1086,7 +1109,8 @@
             }
           ],
           "labs": [],
-          "learns": []
+          "learns": [],
+          "_id": "6a671b20850325ba16ef7445"
         },
         {
           "code": "L24",
@@ -1117,7 +1141,8 @@
               "description": "在 OS 记忆库里建一个卡点日志文件（每行：日期 / 卡在哪 / 卡了多久 / 谁能解 / 是否已解），并填完下一周的 sprint 表。验收：分工表里至少 3 项已经在 OS 里跑起来，卡点日志已有第一条。",
               "duration": 20
             }
-          ]
+          ],
+          "_id": "6a671b20850325ba16ef744a"
         },
         {
           "code": "L25",
@@ -1155,7 +1180,8 @@
               "description": "长到 2-5 人时把 Hermes 跑公司 VPS 做 shared memory(参考 docs/HERMES_TEAM_BRAIN_PRD.md),OPC 一个人阶段先不动。读「何时切/补」决策矩阵:数据隐私升级 → 切 OpenClaw;想手机 IM 派活 → 补 Hermes;团队化 → Hermes shared daemon;想完全控制成本模型 → 自建。配 5 个真实学员演化案例。",
               "duration": 10
             }
-          ]
+          ],
+          "_id": "6a671b20850325ba16ef7454"
         },
         {
           "code": "L26",
@@ -1209,7 +1235,8 @@
             }
           ],
           "labs": [],
-          "learns": []
+          "learns": [],
+          "_id": "6a671b20850325ba16ef7495"
         },
         {
           "code": "L27",
@@ -1242,7 +1269,8 @@
             }
           ],
           "labs": [],
-          "learns": []
+          "learns": [],
+          "_id": "6a671b21850325ba16ef749a"
         },
         {
           "code": "L28",
@@ -1259,7 +1287,8 @@
               "description": "W7 末核心 deliverable。$1 也算(很多 indie hacker 第一笔就是陌生人 PayPal 转的 $5),目的不是钱,是验证「你做的东西有人愿意为它付一次费」。从 0 到 1 比从 1 到 100 难。验收:Stripe/Lemonsqueezy/PayPal 后台截图,含交易时间、金额、买家——必须是不认识你的人,不接受亲友友情付费。",
               "duration": 0
             }
-          ]
+          ],
+          "_id": "6a671b21850325ba16ef749f"
         }
       ]
     },
@@ -1313,7 +1342,8 @@
             }
           ],
           "labs": [],
-          "learns": []
+          "learns": [],
+          "_id": "6a671b21850325ba16ef74a4"
         },
         {
           "code": "L30",
@@ -1351,7 +1381,8 @@
               "description": "对照清单查自己的工厂会不会塌：API key 月预算、风控限流应对、人工 review 卡点有没有漏、选题数据源会不会断。列出本周要补的 3 个洞。",
               "duration": 20
             }
-          ]
+          ],
+          "_id": "6a671b21850325ba16ef74a9"
         },
         {
           "code": "L31",
@@ -1369,7 +1400,8 @@
               "source": "prompt-lab",
               "slug": "xhs-title-generator"
             }
-          ]
+          ],
+          "_id": "6a671b21850325ba16ef74ae"
         },
         {
           "code": "L32",
@@ -1416,7 +1448,8 @@
             }
           ],
           "labs": [],
-          "learns": []
+          "learns": [],
+          "_id": "6a671b22850325ba16ef74b3"
         },
         {
           "code": "L33",
@@ -1449,7 +1482,8 @@
             }
           ],
           "labs": [],
-          "learns": []
+          "learns": [],
+          "_id": "6a671b22850325ba16ef74b8"
         },
         {
           "code": "L34",
@@ -1503,7 +1537,8 @@
             }
           ],
           "labs": [],
-          "learns": []
+          "learns": [],
+          "_id": "6a671b22850325ba16ef74bd"
         },
         {
           "code": "L35",
@@ -1521,7 +1556,8 @@
               "source": "prompt-lab",
               "slug": "linkedin-outreach"
             }
-          ]
+          ],
+          "_id": "6a671b22850325ba16ef74c2"
         },
         {
           "code": "L36",
@@ -1552,7 +1588,8 @@
               "description": "用 Claude 把自己产品的一个真实使用场景写成 Reddit / IndieHackers 价值帖（90% 干货 + 10% 软提），对照 community 规则自检会不会被删，定好要发的 2 个目标 subreddit。",
               "duration": 20
             }
-          ]
+          ],
+          "_id": "6a671b23850325ba16ef74c7"
         },
         {
           "code": "L37",
@@ -1606,7 +1643,8 @@
             }
           ],
           "labs": [],
-          "learns": []
+          "learns": [],
+          "_id": "6a671b23850325ba16ef74cc"
         },
         {
           "code": "L38",
@@ -1643,7 +1681,8 @@
               "direction": "seo-master",
               "slug": "overview"
             }
-          ]
+          ],
+          "_id": "6a671b23850325ba16ef74d1"
         },
         {
           "code": "L39",
@@ -1697,7 +1736,8 @@
             }
           ],
           "labs": [],
-          "learns": []
+          "learns": [],
+          "_id": "6a671b23850325ba16ef74d6"
         },
         {
           "code": "L40",
@@ -1735,7 +1775,8 @@
               "description": "七天后看点击率 / 落地页转化率 / 单线索成本三个数，逐个跟基准比，定位问题在素材、页面还是生意本身。写结论并说明依据，把这一页存进增长实验看板。写『关掉』的把 $200 买到的信息写清楚，别只写一句『效果不好』。",
               "duration": 20
             }
-          ]
+          ],
+          "_id": "6a671b23850325ba16ef74ee"
         },
         {
           "code": "L41",
@@ -1766,7 +1807,8 @@
               "description": "在 AI OS 里建实验看板文件并配一条周日 schedule：自动拉本周主指标和护栏指标 → 对照卡片里的假设给判断（达标 / 未达标 / 数据不足）→ 推送提醒你写结论。跑通一次并截图，确认它真的会在周日动。",
               "duration": 20
             }
-          ]
+          ],
+          "_id": "6a671b24850325ba16ef74f3"
         }
       ]
     },
@@ -1827,7 +1869,8 @@
             }
           ],
           "labs": [],
-          "learns": []
+          "learns": [],
+          "_id": "6a671b24850325ba16ef74fa"
         },
         {
           "code": "L43",
@@ -1845,7 +1888,8 @@
               "source": "prompt-lab",
               "slug": "ai-customer-support"
             }
-          ]
+          ],
+          "_id": "6a671b24850325ba16ef74ff"
         },
         {
           "code": "L44",
@@ -1876,7 +1920,8 @@
               "description": "用模板里的清单走一遍月底动作：核对 Stripe payout 与 Xero 银行流水一致、检查 GST 科目分类、导出当月 P&L 和 BAS 草稿。强调这一步只是『准备和整理』，正式 BAS 申报与 GST 金额仍按你的情况由 CPA 复核，不要自己拍板提交。",
               "duration": 15
             }
-          ]
+          ],
+          "_id": "6a671b24850325ba16ef7504"
         },
         {
           "code": "L45",
@@ -1930,7 +1975,8 @@
             }
           ],
           "labs": [],
-          "learns": []
+          "learns": [],
+          "_id": "6a671b24850325ba16ef7509"
         },
         {
           "code": "L46",
@@ -1968,7 +2014,8 @@
               "description": "学员当场写下：ABN 已拿/待补什么资料、要不要自愿注册 GST、第一个 BAS 季度是哪个、TFN 状态。形成一张可执行的『本月行政待办』，缺的信息标注『待 CPA 确认』，不自行假设税务细节。",
               "duration": 15
             }
-          ]
+          ],
+          "_id": "6a671b25850325ba16ef750e"
         },
         {
           "code": "L47",
@@ -1999,7 +2046,8 @@
               "description": "学员对照模板列出自己拿不准的项(个人 vs 公司税哪个更省、Super 自缴比例、应急储备月数)，整理成一封结构化的问题邮件，在 W13 周中发给嘉宾 CPA 做一次 review。强调税务比例与具体数额最终以 CPA 回复为准。",
               "duration": 15
             }
-          ]
+          ],
+          "_id": "6a671b25850325ba16ef7514"
         },
         {
           "code": "L48",
@@ -2023,7 +2071,8 @@
               "description": "学员按 wiki 对照表(条件/金额/窗口/偏好领域/申请难度 5 维)和决策流程图,判断自己当前阶段适合哪个 Grant。OPC 早期通常先锁 NSW MVP 这类易拿的,海外营收起来再考虑 EMDG。读 5 个真实成功/失败案例(含申请书结构 + 审委反馈),把『要不要申请、何时申请』写进自己的 Grant 路线。措辞用『如何准备和提交申请』,不假设一定拿到或拿多少。",
               "duration": 20
             }
-          ]
+          ],
+          "_id": "6a671b25850325ba16ef751a"
         },
         {
           "code": "L49",
@@ -2041,7 +2090,8 @@
               "source": "prompt-lab",
               "slug": "grant-application-drafter"
             }
-          ]
+          ],
+          "_id": "6a671b25850325ba16ef751f"
         }
       ]
     },
@@ -2102,7 +2152,8 @@
             }
           ],
           "labs": [],
-          "learns": []
+          "learns": [],
+          "_id": "6a671b25850325ba16ef7524"
         },
         {
           "code": "L51",
@@ -2126,7 +2177,8 @@
               "description": "学员独立完成 10 维度打分，算出倾向值，再写 200 字决策说明（不是哪条更高级，是哪条更适合你此刻的产品和生活）。大多数人最终落在 OPC——这正是他们当初来上课的理由；少数选 VC 的学员，课程帮做 intro 到 L50/L50 嘉宾。",
               "duration": 30
             }
-          ]
+          ],
+          "_id": "6a671b26850325ba16ef7529"
         },
         {
           "code": "L52",
@@ -2180,7 +2232,8 @@
             }
           ],
           "labs": [],
-          "learns": []
+          "learns": [],
+          "_id": "6a671b26850325ba16ef752e"
         },
         {
           "code": "L53",
@@ -2204,7 +2257,8 @@
               "description": "拿出开课时填的起点（0 收入 / 无 ABN / 0 内容）对照毕业六项硬指标（$1+ 真实付费 / ABN / Grant 提交 / 10+ 内容 / 产品 URL / Demo Day），写一句话给 15 周后的自己。把这份复盘留在校友群，下次晚宴你作为校友被邀请回来当嘉宾。",
               "duration": 15
             }
-          ]
+          ],
+          "_id": "6a671b26850325ba16ef7533"
         }
       ]
     }
@@ -2231,7 +2285,6 @@
       "每周「给学员的真实动作硬指标」（过关线）已写进各周 description 三件套，但逐周的量化过关线（例如 W9 必须发够多少条 outreach）尚未全部写死",
       "A / B / C 三类学员在同一节现场课的差异化路径尚未写死（尤其 C 类「还在决定要不要下场」）",
       "Phase 4 后续扩展内容（谈判成交 / 媒体 PR / 投资人关系）待补",
-      "静态页 curriculum.html / phase1-4.html 仍是旧结构（旧 11 周 / 14 周），本次未改（不在范围内），需要单独一轮同步",
       "首期开课日期 / 结课日期 / 三城场地 / 定价档位与早鸟截止日仍待确认（program.commenceCourseDate 现为 2026-08-02，15 周需重算 completeDate）"
     ],
     "changes": [

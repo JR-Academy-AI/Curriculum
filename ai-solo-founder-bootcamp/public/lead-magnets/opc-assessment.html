@@ -144,7 +144,7 @@ button.submit-btn:disabled{opacity:0.4;cursor:not-allowed}
   </div>
   <div class="dim-body">
     <div class="q">
-      <div class="q-text">Q3.1. 接下来 11 周，你能否稳定每周投入 8 小时（4h 现场 + 4h 自学）？</div>
+      <div class="q-text">Q3.1. 接下来 15 周，你能否稳定每周投入 6-8 小时（周日 3h 线下现场课 + 周中自学与项目实操）？</div>
       <div class="options">
         <label class="option"><input type="radio" name="q31" value="0"> <span>不能保证 / 工作太忙</span></label>
         <label class="option"><input type="radio" name="q31" value="6"> <span>大部分周可以，少数周可能缺席</span></label>
@@ -152,7 +152,7 @@ button.submit-btn:disabled{opacity:0.4;cursor:not-allowed}
       </div>
     </div>
     <div class="q">
-      <div class="q-text">Q3.2. 11 周课程中，至少 80% 出席度（含 W11 三城联合 Demo Day 必到）你能保证？</div>
+      <div class="q-text">Q3.2. 15 周课程中，至少 80% 出席度（15 节周日现场课，含 W15 三城联合 Demo Day 必到）你能保证？</div>
       <div class="options">
         <label class="option"><input type="radio" name="q32" value="0"> <span>不能保证</span></label>
         <label class="option"><input type="radio" name="q32" value="6"> <span>能保证 80%+ 出席率</span></label>
@@ -196,7 +196,7 @@ button.submit-btn:disabled{opacity:0.4;cursor:not-allowed}
     <div class="q">
       <div class="q-text">Q5.1. 你在澳洲身份合法（PR / Citizen / 长期签证如 482/494/186）？</div>
       <div class="options">
-        <label class="option"><input type="radio" name="q51" value="0"> <span>不在澳洲且不计划来（W7-W9 三周 27% 课时跟你无关）</span></label>
+        <label class="option"><input type="radio" name="q51" value="0"> <span>不在澳洲且不计划来（W12-W13 两周约 13% 课时跟你无关）</span></label>
         <label class="option"><input type="radio" name="q51" value="8"> <span>暂时学生签 / 旅游签，未来 12 个月内拿 PR / 长期签证概率高</span></label>
         <label class="option"><input type="radio" name="q51" value="14"> <span>是 — 已经 PR / Citizen / 长期签证</span></label>
       </div>
@@ -230,7 +230,7 @@ button.submit-btn:disabled{opacity:0.4;cursor:not-allowed}
   <div class="action" id="actionBox"></div>
   <div class="next-cta">
     <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:18px;font-weight:900">下一步</div>
-    <div style="margin-top:6px;font-size:13px;opacity:0.85" id="nextCtaText">看完得分？回到 AI 一人创业营课程总览了解 11 周完整大纲</div>
+    <div style="margin-top:6px;font-size:13px;opacity:0.85" id="nextCtaText">看完得分？回到 AI 一人创业营课程总览了解 15 周完整大纲</div>
     <a href="../curriculum.html">查看完整课程大纲 →</a>
     <div class="email-form">
       <input type="email" id="emailInput" placeholder="留邮箱拿完整 PDF 报告 + 申请通道（不会群发）">
@@ -285,7 +285,7 @@ submitBtn.addEventListener('click', () => {
     body='你已经过申请门槛，但下方某个 dimension 拉低了总分。建议申请的同时把那一项补上，开课前完成最关键的部分。';
   } else if(total >= 40){
     cls='red'; head='🔶 申请前先解决最低分维度';
-    body='你的某个 dimension 严重不足（看下方分项）。建议先补这一块（通常 1-3 个月），再来申请下期 cohort，否则 11 周里很可能掉队。';
+    body='你的某个 dimension 严重不足（看下方分项）。建议先补这一块（通常 1-3 个月），再来申请下期 cohort，否则 15 周里很可能掉队。';
   } else {
     cls='gray'; head='⚪ 现在不适合 OPC 路径';
     body='短期内不建议报 AI 一人创业营。先解决最基础的 1-2 块（通常是现金跑道 + AI 熟练度），半年到一年后再来。这门课每年 4-6 期，不急。';
@@ -315,7 +315,7 @@ submitBtn.addEventListener('click', () => {
   if(dims.aiSkill < 14) actions.push('<strong>AI 工具熟练度</strong>不够 — 推荐先看 JR 的 OpenClaw Workshop（4h 免费） + AI Engineer Bootcamp 入门部分。3 个月每天用 ChatGPT / Cursor 解决真实问题。');
   if(dims.time < 14) actions.push('<strong>时间投入</strong>不够 — cohort 课程不能旁听不能拖。如果工作太忙，建议等下期或选 self-paced 模式（未来开放）。');
   if(dims.insight < 14) actions.push('<strong>行业洞察</strong>不够具体 — 在你最熟的 1 个行业做 5 个用户访谈（30min/人），用 Mom Test 提问法找真实付费意愿。');
-  if(dims.auMindset < 14) actions.push('<strong>澳洲身份 / 心智</strong>不到位 — 如果 W7-W9 澳洲 Grant + 会计模块对你无用（27% 课时浪费），建议等加拿大 / 英国 / 新加坡版（首期跑通后启动）。');
+  if(dims.auMindset < 14) actions.push('<strong>澳洲身份 / 心智</strong>不到位 — 如果 W12-W13 澳洲运营 + RDTI / 会计模块对你无用（约 13% 课时浪费），建议等加拿大 / 英国 / 新加坡版（首期跑通后启动）。');
   if(actions.length === 0){
     action.innerHTML = '<h3>✨ 你 5 个维度都达标</h3>你属于 OPC 高度适配人选。建议 24 小时内提交申请，赶首期 case study 价 + 50 人 cohort 名额。';
   } else {

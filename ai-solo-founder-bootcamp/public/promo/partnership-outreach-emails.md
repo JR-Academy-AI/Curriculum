@@ -20,7 +20,7 @@
 ```
 你好 [联系人名]，
 
-我是 [BD 姓名]，来自匠人学院（jiangren.com.au）。我们 11 月开一门叫 "AI 一人创业营" 的课，11 周三城线下（墨尔本主场 + 悉尼 / 布里斯班卫星），教澳洲华人专业人士用 AI 做一人公司、拿 RDTI 退税。
+我是 [BD 姓名]，来自匠人学院（jiangren.com.au）。我们 11 月开一门叫 "AI 一人创业营" 的课，15 周三城线下（墨尔本主场 + 悉尼 / 布里斯班卫星），教澳洲华人专业人士用 AI 做一人公司、拿 RDTI 退税。
 
 我看了 [协会名] 的 [某个具体活动 / Newsletter / LinkedIn post]，[非常具体的细节 — 比如：你们上次办的 founder dinner 主题正好是 AI in business]，我觉得你们会员的画像跟课程目标人群高度重合 — 已有 ABN / 想用 AI 升级业务 / 关心 R&D 退税。
 
@@ -105,9 +105,9 @@
 
 【方案 C · 长期绑定】方案 B + 主理人体验权益（两个 variant 任选）
 - 包含方案 B 全部
-- 协会派 1 名明星会员 Demo Day 评审 + W10 VC fireside 嘉宾席
+- 协会派 1 名明星会员 Demo Day 评审 + W14 投资人 fireside 嘉宾席
 - 【Variant A · 商会 / 行业协会】协会会长免费 4 次 1:1 Office Hour（主讲老师）
-- 【Variant B · Founder community / 创业协会】Founder Network Access — Demo Day Networking 晚宴 2-3 reserved seats + 每季度 3-5 个 JR 校友 founder warm intro + W10 VC fireside 旁听 + 主理人本人 W10/W11 嘉宾席（画像合适时）
+- 【Variant B · Founder community / 创业协会】Founder Network Access — Demo Day Networking 晚宴 2-3 reserved seats + 每季度 3-5 个 JR 校友 founder warm intro + W14 投资人 fireside 旁听 + 主理人本人 W14/W15 嘉宾席（画像合适时）
 - 适合：协会愿意把这门课当长期会员福利推
 - ⚠️ BD 注意：先判断对方主理人画像 — founder community 不要 push 1:1 Office Hour，创业的人喜欢跟创业的人聊，不是听讲师讲
 

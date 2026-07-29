@@ -1,6 +1,6 @@
 # 课程介绍 Deck · PRD
 
-> **目的**：给"对课程感兴趣的潜在学员"看的一份课程介绍 deck — 让他们 30 秒能回答 3 个问题：① 这门课是给我的吗 ② 我能拿到什么 ③ 我为什么要花 11 周 + $3,800-6,800？
+> **目的**：给"对课程感兴趣的潜在学员"看的一份课程介绍 deck — 让他们 30 秒能回答 3 个问题：① 这门课是给我的吗 ② 我能拿到什么 ③ 我为什么要花 15 周 + $3,800-6,800？
 >
 > **状态**：PRD draft v1 · Mason 拍板后再 ship 实现
 >
@@ -47,7 +47,7 @@
 ```
 AI 让一个人 ≈ 一个团队
 副业从 0 起 · 主业 1 到 10
-11 周澳洲华人 OPC 创业实战营
+15 周澳洲华人 OPC 创业实战营
 ```
 
 ---
@@ -70,10 +70,10 @@ AI 让一个人 ≈ 一个团队
 | 谁 | 当前痛点 | 报名 driver |
 |---|---|---|
 | **A · Senior 程序员 / PM / Designer**（拿 150-250k 打工） | 听了 1-2 年 AI 时代要 founder · 但不知怎么开始 · 怕踩坑 | 想用 AI 起一条副业现金流 · 不辞职 不雇人 不影响主业 |
-| **B · 高薪 PM / Designer 想做产品** | 看 Lovable / Cursor 觉得能绕过工程团队 · 但缺完整 path | 11 周 ship 出能跑能卖的产品 (服务 / SaaS / 工具皆可) |
+| **B · 高薪 PM / Designer 想做产品** | 看 Lovable / Cursor 觉得能绕过工程团队 · 但缺完整 path | 15 周 ship 出能跑能卖的产品 (服务 / SaaS / 工具皆可) |
 | **C · 律师 / 会计 / Doctor / 资深 consultant** | 1:1 卖时间到顶 · 想 scale 但雇人成本高 | 用 AI 把服务 productize 成可复用资产 · 不雇人也能 scale 3-5x |
 | **D · 小公司老板** (已有 ABN + 1-5 人) | 被琐事拖 · 想用 AI 真正提效 · 想拿 Grant 回血 | 用 AI 接管运营琐事 + 拿 RDTI 43.5% 退税 · 同样人手赚更多 |
-| **E · YC / Antler 申请准备者** | 想拿 accelerator 但缺 traction | 11 周做出 traction + 拿 cohort 同学 + VC fireside 网络 |
+| **E · YC / Antler 申请准备者** | 想拿 accelerator 但缺 traction | 15 周做出 traction + 拿 cohort 同学 + 投资人 fireside 网络 |
 
 **注意**：A/B/E 是"副业型"路径，C/D 是"主业型"路径。Deck 必须**两条路径都明确呈现** · 不只讲一种。
 
@@ -86,7 +86,7 @@ AI 让一个人 ≈ 一个团队
 1. **30 秒内让任意 5 类用户回答 3 个问题**：
    - ① 这门课是给我的吗？（A-E 任一画像 self-identify）
    - ② 我能拿到什么？（副业现金流 / 主业增收 二选一）
-   - ③ 为什么花 $3,800-6,800 + 11 周值得？（cohort 网络 + 真实产出 + RDTI 退税）
+   - ③ 为什么花 $3,800-6,800 + 15 周值得？（cohort 网络 + 真实产出 + RDTI 退税）
 2. **直接讲钱**：副业 / 主业现金流 / 退税 / RDTI / 成本节省 — 不绕弯
 3. **两条路径明确**：副业型 vs 主业型 不能混在一起讲
 4. **真实产出 ≠ "真产品"**：副业型出 "第一笔付费"（产品 / 服务皆可）· 主业型出 "退税 + 自动化"
@@ -116,7 +116,7 @@ AI 让一个人 ≈ 一个团队
 **内容**：
 - Hero：`AI 让一个人 ≈ 一个团队`
 - Sub-hero：`副业从 0 起 · 主业 1 到 10`
-- Footer：`11 周澳洲华人 OPC 创业实战营 · 三城线下 · 限额 25 人`
+- Footer：`15 周澳洲华人 OPC 创业实战营 · 三城线下 · 限额 25 人`
 
 **避免**：don't put metadata (date / location / price) 抢占视觉焦点 · 这些放 next page
 
@@ -144,13 +144,13 @@ AI 让一个人 ≈ 一个团队
 **目的**：副业型用户深读 · 解决 "我不辞职怎么起副业 + 不踩坑"
 
 **内容**：
-- 痛点 1: 想起副业但 0 时间 → 课程解：AI 自动化让副业不吃你晚上时间
-- 痛点 2: 不知道做什么 → 课程解：W1 选品 + 用户验证 framework
-- 痛点 3: 不会找客户 → 课程解：W4-W6 AI Marketing OS + Cohort 同学互相 ship 第一笔付费
-- 痛点 4: 不会合规收钱 → 课程解：W3 Stripe + W8 ABN + 5 份法律文件
+- 痛点 1: 想起副业但 0 时间 → 课程解：W1-W2 CEO AI OS + agent 上岗，周中它自己跑
+- 痛点 2: 不知道做什么 → 课程解：W1 锁方向写一页生意 SoT + W2 用户访谈 + W3 麦肯锡四把尺子验证
+- 痛点 3: 不会找客户 → 课程解：W8-W11 Go To Market 四周 + Cohort 同学互相 ship 第一笔付费
+- 痛点 4: 不会合规收钱 → 课程解：W7 Stripe + 法律文件 + W13 ABN / 公司结构 / 税务
 - 痛点 5: 怕踩坑 → 课程解：50 个同期同学 + 11 类 Faculty (含麦肯锡 / 微软 / VC)
 
-**结果承诺**：11 周后 → 第一笔副业真实付费 + 合规 ABN 公司 + 持续运转的 AI system
+**结果承诺**：15 周后 → 第一笔副业真实付费 + 合规 ABN 公司 + 持续运转的 AI system
 
 ---
 
@@ -159,17 +159,17 @@ AI 让一个人 ≈ 一个团队
 **目的**：主业型用户深读 · 解决 "怎么用 AI 让我现有公司赚更多"
 
 **内容**：
-- 痛点 1: 被琐事吃 5-10h/周 → 课程解：W2 装 Claude Cowork AI 员工接管客服 / 报价 / 跟进
-- 痛点 2: 想 productize 服务但没 system → 课程解：W2 + W3 把咨询变 AI 出初稿 + 你审 30min 套餐
-- 痛点 3: 不会用 AI 营销 → 课程解：W4-W6 Marketing OS · 1 人 × 30min/天 = 4 平台 × 12 篇
-- 痛点 4: 想拿 Grant 退税 → 课程解：W7-W9 持牌 CPA + Grant consultant 现场陪写 RDTI
+- 痛点 1: 被琐事吃 5-10h/周 → 课程解：W1-W2 装 AI OS + agent 接管客服 / 报价 / 跟进，W12 让生意自己运转
+- 痛点 2: 想 productize 服务但没 system → 课程解：W4 把咨询变 AI 出初稿 + 你审 30min 套餐（交付物 + SOP）
+- 痛点 3: 不会用 AI 营销 → 课程解：W8-W11 Go To Market · Marketing OS · 1 人 × 30min/天 = 4 平台 × 12 篇
+- 痛点 4: 想拿 Grant 退税 → 课程解：W13 持牌 CPA + Grant consultant 同周现场陪写 RDTI
 - 痛点 5: 没同行可商业互通 → 课程解：cohort 50 同学之间互为客户 / 服务采购 / 合伙人
 
-**结果承诺**：11 周后 → AI 替代 1-2 员工工作 + RDTI 申请提交（43.5% 退税）+ 毛利 / 现金流双升
+**结果承诺**：15 周后 → AI 替代 1-2 员工工作 + RDTI 申请提交（43.5% 退税）+ 毛利 / 现金流双升
 
 ---
 
-### Page 5 · 4 Phase 11 周课程结构（共同部分）
+### Page 5 · 4 Phase 15 周课程结构（共同部分）
 
 **目的**：让两类用户都看到完整课程节奏
 
@@ -177,18 +177,18 @@ AI 让一个人 ≈ 一个团队
 
 | Phase | 周 | 副业型重点 | 主业型重点 |
 |---|---|---|---|
-| Phase 1 · Build & Sell | W0-W3 | ⭐ W1 选品 + W3 收第一笔付费 | ⭐ W2 装 AI 员工接管现有业务 |
-| Phase 2 · Marketing | W4-W6 | ⭐ W6 AI Marketing OS (从 0 找客户) | ⭐ W4-W5 用 AI 优化现有营销 |
-| Phase 3 · Australia Ops | W7-W9 | W8 ABN 注册 + W3 法律文件 | ⭐ W7 财务自动化 + W9 RDTI 43.5% 退税 |
-| Phase 4 · Scale & Demo | W10-W11 | ⭐ W11 Demo Day + 互为客户日 | ⭐ W10 VC fireside + W11 networking |
+| Phase 1 · AI Enable Business | W1-W7 | ⭐ W3 商业验证 + W7 收第一笔付费 | ⭐ W1-W2 装 AI OS + agent 接管现有业务 |
+| Phase 2 · Go To Market | W8-W11 | ⭐ W8-W11 四路获客（从 0 找客户） | ⭐ W8 内容工厂 + W11 Marketing OS 优化现有营销 |
+| Phase 3 · Australia Operations | W12-W13 | W13 ABN 注册 + W7 法律文件 | ⭐ W12 财务自动化 + 经营看板 · W13 RDTI 43.5% 退税 |
+| Phase 4 · Founder Club | W14-W15 | ⭐ W15 Demo Day + 互为客户日 | ⭐ W14 投资人 fireside + W15 networking |
 
-**避免**：don't 给一个长 W0-W11 table 让用户自己读 — 用 phase 卡 + 路径高亮
+**避免**：don't 给一个长 W0-W15 table 让用户自己读 — 用 phase 卡 + 路径高亮
 
 ---
 
 ### Page 6 · 学员真实产出（两类各晒什么）
 
-**目的**：让用户**画面感感受 "11 周后我能晒什么"** — 避免抽象 outcome list
+**目的**：让用户**画面感感受 "15 周后我能晒什么"** — 避免抽象 outcome list
 
 **内容**：
 - **副业型 5 张能晒朋友圈的截图**：
@@ -203,7 +203,7 @@ AI 让一个人 ≈ 一个团队
   - 📨 Claude Cowork AI 员工 24/7 处理客服 / 报价的日志
   - 💼 已 productize 服务标准套餐 SKU 截图
   - 💰 RDTI 申请提交回执 (43.5% 退税 · 真金白银)
-  - 📈 W11 复盘：每周省下 5-10h · 同样客户多收 30-50%
+  - 📈 W12 经营看板复盘：每周省下 5-10h · 同样客户多收 30-50%
 
 **避免**：don't 列抽象 "outcomes" · 用具体 "你能晒什么" 画面
 
@@ -216,7 +216,7 @@ AI 让一个人 ≈ 一个团队
 **内容** 3 张独家卡：
 - 🇦🇺 **Phase 3 RDTI 退税实战**：全球独家 · Reforge / On Deck / 生财有术 / Antler 都没
 - 🏗 **Enterprise-grade AI System**：Claude Cowork（Anthropic 桌面 App · GUI 配置）+ Memory + Marketing OS · 不是教 ChatGPT
-- 🤝 **W11 互为客户日**：cohort 50 同学之间 ship 第一笔付费 · 5 年澳洲华人 AI 圈核心节点
+- 🤝 **W15 互为客户日**：cohort 50 同学之间 ship 第一笔付费 · 5 年澳洲华人 AI 圈核心节点
 
 **避免**：don't 放 Faculty 11 类 / 校友 2000+ 这些 trust anchor — 留到 page 8
 
@@ -246,7 +246,7 @@ AI 让一个人 ≈ 一个团队
 - (⚠️ 不放任何"学费返还 / gamification" — Mason 明确 reject · 不做慈善)
 - **5 FAQ**（按用户最常问）：
   - 我没创业想法可以来吗？
-  - 8-12h/week 我做不到怎么办？
+  - 每周日 3h 现场课 + 周中自学（平均 6.2h/week）我做不到怎么办？
   - 服务行业（律师 / 会计）也适合吗？
   - 这是 lecture-only 还是 coaching 双轨？
   - 怎么申请？
@@ -276,7 +276,7 @@ AI 让一个人 ≈ 一个团队
 ```
 重要 → 不重要：
 1. 钱 (副业现金流 / 主业增收 / RDTI 退税具体金额)
-2. 时间 (11 周 / W0-W11 路径 / 多久能 ship)
+2. 时间 (15 周 / W0-W15 路径 / 多久能 ship)
 3. 同伴 (50 同学 / Faculty / 校友)
 4. 结果 (能晒什么截图)
 5. Process (Phase / 工具 / 议程)
@@ -288,7 +288,7 @@ AI 让一个人 ≈ 一个团队
 
 | ❌ 不要 | ✅ 要 |
 |---|---|
-| "11 周 4 Phase 49 节课" | "11 周后你有副业第一笔真付费截图" |
+| "15 周 4 Phase 53 节课" | "15 周后你有副业第一笔真付费截图" |
 | "vs OpenClaw / AI Engineer" | "副业型 看这里 / 主业型 看这里" |
 | "Enterprise-grade leverage triple" | "AI 让一个人做一个团队的事" |
 | "走出打工天花板" | "起一条副业现金流 / 主业同样人手赚更多" |
@@ -338,7 +338,7 @@ Deck ship 后 Mason / BD 测试 — **找 3 个目标用户(各类型 1 个)读 
 
 1. **副业型 / 主业型**两条路径 · deck 内**是否真要左右分栏并列展示**？还是单一 narrative 但 highlight 两条路径 example？
 2. ~~**Demo Day 100% 学费返还**~~ ❌ Mason 明确 reject · 不做学费返还 gamification（"做慈善啊"）
-3. **服务业 vs 产品业** — 课程教学内容是否**真的能 cover 两类**？(我假设 Yes · 但需要 Mason 确认 W2/W3 是否给服务业学员充分 path)
+3. **服务业 vs 产品业** — 课程教学内容是否**真的能 cover 两类**？(我假设 Yes · 但需要 Mason 确认 W4「做出能卖的东西」是否给服务业学员充分 path)
 4. ~~**Cowork 是匠人自有产品**~~ ❌ 错 · Cowork = **Claude Cowork**（Anthropic 桌面 App 内置功能 · 不是匠人自有产品）· deck 里精准说 "Claude Cowork" · 不再说"匠人 Cowork / 不需第三方"
 5. **价格策略** — 副业型用户 vs 主业型用户 · **是否同价**？还是主业型给企业版 ($X 公司报销)？(我假设同价 · Mason 确认)
 6. **录取 / 申请门槛** — 当前是 LinkedIn 必填 + 后台审核 · **副业型 (在职打工的) 和 主业型 (老板) 应该有相同门槛吗**？还是主业型更严？

@@ -3,7 +3,7 @@ title: 投资人邀约 Deck PRD（AI 一人创业营 / OPC cohort · 资源对�
 status: build
 owner: @lightman
 priority: high
-purpose: 规范一份给投资人 / VC / 天使 / exited founder / 加速器的「资源对接邀约」deck —— 邀请他们来给 OPC cohort 做 fireside / 分享 / mentor / W11 Demo Day 评审 / scout founder，把澳洲华人 AI solo-founder 当成他们的早期 deal flow 来源。**ASK = 来分享 + scout，不是给公司投钱。** 这是一份对外、可公开部署的邀约 deck，跟 partner-recruitment deck 平行（机构来联合推广 / 投资人来分享 + 看人）。
+purpose: 规范一份给投资人 / VC / 天使 / exited founder / 加速器的「资源对接邀约」deck —— 邀请他们来给 OPC cohort 做 fireside / 分享 / mentor / W15 Demo Day 评审 / scout founder，把澳洲华人 AI solo-founder 当成他们的早期 deal flow 来源。**ASK = 来分享 + scout，不是给公司投钱。** 这是一份对外、可公开部署的邀约 deck，跟 partner-recruitment deck 平行（机构来联合推广 / 投资人来分享 + 看人）。
 ---
 
 # 投资人邀约 Deck · PRD（资源对接版）
@@ -25,8 +25,8 @@ purpose: 规范一份给投资人 / VC / 天使 / exited founder / 加速器的�
 > **"我（投资人）为什么要花一个晚上来给这个 cohort 做一场 fireside / 坐 Demo Day 评审席 / 认识这批 founder？"**
 
 **ASK = 来给 cohort 当资源**，不是给公司投钱：
-- 来做一场 **fireside chat / 分享 / guest lecture**（W10 VC fireside 是现成卡位）；
-- 坐 **W11 Demo Day 的评审席**；
+- 来做一场 **fireside chat / 分享 / guest lecture**（W14 投资人 fireside 是现成卡位）；
+- 坐 **W15 Demo Day 的评审席**；
 - （选修）开 **office hour / 当 mentor**；
 - **认识 / scout** 这批澳洲华人 AI solo-founder，建立自己的早期 deal flow。
 
@@ -87,9 +87,9 @@ purpose: 规范一份给投资人 / VC / 天使 / exited founder / 加速器的�
 ```
 ① cover（co-brand）  这是一封邀约：来给澳洲华人 AI solo-founder cohort 当资源
 ② 为什么是现在        AI 拐点 + OPC 窗口同时成立（PRD §1.2）—— 这批 founder 正在涌现
-③ 这门课是什么（30 秒）11 周三城线下 OPC cohort，把人筛出来、带到能 ship、产真实 case
+③ 这门课是什么（30 秒）15 周三城线下 OPC cohort，把人筛出来、带到能 ship、产真实 case
 ④ cohort 画像 = 你为什么想认识他们  50 人澳洲华人 AI founder，画像 A/B/C 占比（deal flow）
-⑤ 我们请你做什么      fireside / W10 VC fireside / W11 Demo Day 评审 / 选修 office hour / scout
+⑤ 我们请你做什么      fireside / W14 投资人 fireside / W15 Demo Day 评审 / 选修 office hour / scout
 ⑥ 你能得到什么        早期 deal flow access + 曝光 + giving back + 连接本地华人创投圈
 ⑦ 合作形式菜单        一次 fireside / 持续 mentor / Demo Day 评审 / 长期资源对接
 ⑧ 我们包什么          行程轻 · 内容我们包装 · 曝光位我们给
@@ -128,10 +128,10 @@ purpose: 规范一份给投资人 / VC / 天使 / exited founder / 加速器的�
 
 ### Page 03 · 这门课是什么（30 秒）
 - **目的**：用 30 秒让投资人知道 cohort 怎么来的、含金量为什么够。
-- **核心信息**：11 周三城线下 OPC cohort —— 申请制筛人 + 带到能 ship + 产真实毕业 case。
+- **核心信息**：15 周三城线下 OPC cohort —— 申请制筛人 + 带到能 ship + 产真实毕业 case。
 - **必含要素**：
-  - 一句话定位（FUNNEL §1）：`用中文教澳洲华人专业人士用 AI 做一人公司：选品 → MVP → 收第一笔钱 → 全渠道营销 → 澳洲会计/Grant → Demo Day`。
-  - 属性条：`11 周三城线下（墨/悉/布）· 申请制（目标录取率 30-50%）· 首期 50 人 · 不录播`（PRD §3.3 / §5 / FUNNEL Meta）。
+  - 一句话定位（FUNNEL §1）：`用中文教澳洲华人专业人士用 AI 做一人公司：搭 CEO AI OS → AI 员工上岗 → 商业验证 → 做出能卖的东西 → 品牌门面 → 收第一笔钱 → 全渠道获客 → 澳洲税务/Grant → Pitch & Demo Day`。
+  - 属性条：`15 周三城线下（墨/悉/布）· 申请制（目标录取率 30-50%）· 首期 50 人 · 不录播`（PRD §3.3 / §5 / FUNNEL Meta）。
   - 为什么含金量够（给投资人）：申请制 + 30min 面试筛掉心智不对的人；毕业 6 项硬指标（$1+ 真实付费 / 产品 URL Live / ABN / Grant 提交 / Demo Day 出席）= 这批人不是来听课的，是真在 ship 的（PRD §4.2）。
 - **数据来源**：FUNNEL §1、PRD §3.3 / §4 / §5。
 - **⚠️ 红线**：Grant 写"提交申请"不写"拿到退税"；不写"包做出赚钱产品"。
@@ -154,12 +154,12 @@ purpose: 规范一份给投资人 / VC / 天使 / exited founder / 加速器的�
 - **核心信息**：5 个动作菜单，从最轻（一次 fireside）到选修（office hour / scout）。
 - **必含要素**（每项标来源）：
   1. **Fireside / 分享 / guest lecture** —— 一场线上或线下分享（你的创业 / 投资视角）。
-  2. **W10 VC fireside chat** —— 课程现成卡位（PRD §5 W10「拿钱加速？」选修，请本地 VC 来聊"什么时候该融、什么时候不该"）。
-  3. **W11 Demo Day 评审席** —— 三城联合 Demo Day，现场嘉宾评审，看每人 5 分钟 demo（PRD §5 W11 / §4.1）。
+  2. **W14 投资人 fireside** —— 课程现成卡位（PRD §5 W14「把生意讲成故事 · Pitch & BP」里带一段投资人 fireside，讲完融资入门 term sheet / SAFE / 估值之后，请本地投资人来聊"什么时候该融、什么时候不该"）。
+  3. **W15 Demo Day 评审席** —— 三城联合 Demo Day，现场嘉宾评审，看每人 5 分钟 demo（PRD §5 W15 / §4.1）。
   4. **（选修）Office Hour / mentor** —— 给感兴趣的 founder 1:1 或小组答疑。
   5. **Scout / 认识 founder** —— Demo Day + networking 晚宴上自然认识，建你自己的 deal flow（PRD §10.2）。
   - 一句话：`最轻只需要一场 fireside；最深可以长期当 mentor + 看人。你挑`。
-- **数据来源**：PRD §5（W10/W11）、§4.1、§10.2。
+- **数据来源**：PRD §5（W14/W15）、§4.1、§10.2。
 - **⚠️ 红线**：scout 标"机会不是义务"；不承诺"来了就有项目可投"。
 
 ### Page 06 · 你能得到什么
@@ -179,7 +179,7 @@ purpose: 规范一份给投资人 / VC / 天使 / exited founder / 加速器的�
 - **核心信息**：从一次性到长期，4 档可选。
 - **必含要素**（菜单卡，中间档 featured）：
   - **一次 fireside / 分享** —— 单场，最轻，1-1.5h。
-  - **Demo Day 评审**（featured）—— W11 来当评审 + 现场看人，半天。
+  - **Demo Day 评审**（featured）—— W15 来当评审 + 现场看人，半天。
   - **持续 mentor / office hour** —— 跨多周给 founder 答疑。
   - **长期资源对接** —— 跨期来分享 + 优先接触每期 cohort 的 deal flow。
   - 每档标"行程 / 投入"概览，所有具体日期 / 频次 `[商务确认]`。

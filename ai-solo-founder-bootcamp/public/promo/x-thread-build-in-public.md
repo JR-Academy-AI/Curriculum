@@ -7,7 +7,7 @@
 
 **Tweet 1/12** (Hook · pin this)
 
-We're launching an 11-week cohort program for Chinese-Australian founders who want to build AI one-person companies.
+We're launching a 15-week cohort program for Chinese-Australian founders who want to build AI one-person companies.
 
 Instead of "click here to apply", we made our internal application scoring rubric public.
 
@@ -69,7 +69,7 @@ Dimension 2 · AI tool fluency
 
 We've had founders show up never having used Cursor / Claude Code / Lovable.
 
-11 weeks isn't enough to teach AI tools AND build a business at the same time.
+15 weeks isn't enough to teach AI tools from scratch AND build a business at the same time.
 
 Prereq filter: 3+ months of LLM use + at least 1 hands-on AI tool.
 
@@ -79,7 +79,7 @@ Prereq filter: 3+ months of LLM use + at least 1 hands-on AI tool.
 
 Dimension 3 · Time commitment
 
-We're not hiding this: 11 weeks × 8h/week = 88h minimum.
+We're not hiding this: 15 weeks, ~94h total — a 3h in-person session every Sunday plus self-study during the week.
 
 If you can't commit, the rubric drops you to 40-60 range — meaning "apply next cohort, not this one".
 
@@ -104,9 +104,9 @@ The latter scores 14. The former: 5.
 
 Dimension 5 · Australia compliance + cohort mindset
 
-This bootcamp's W7-W9 is RDTI / GST / Pty Ltd — Australia-specific.
+This bootcamp's W12-W13 is RDTI / GST / Pty Ltd — Australia-specific.
 
-If you're not in Australia and not planning to be, that's 27% of the program with low ROI for you.
+If you're not in Australia and not planning to be, that's about 13% of the program with low ROI for you.
 
 We tell you that upfront. Future UK / Canada / NZ versions coming.
 
@@ -129,7 +129,7 @@ We accept from top ~30-50%.
 
 Building in public means showing the rubric, the application stats, the rejection reasons.
 
-If you're curious about what an 11-week AI cohort program looks like from the inside, follow along.
+If you're curious about what a 15-week AI cohort program looks like from the inside, follow along.
 
 I'll be posting application stats, interview themes, and acceptance rates each week.
 

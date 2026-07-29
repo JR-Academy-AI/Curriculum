@@ -155,16 +155,20 @@ K 跟着教程做完了 demo，但她的产品 idea 不是"AI 写小红书标题
 
 ## 如果你想再走深一步
 
-这个 mini course 是 **AI 一人创业营 W2 第一节课的压缩公开版**。
+这个 mini course 是 **AI 一人创业营 W4「做出能卖的东西」的压缩公开版**。
 
-完整课程是 11 周三城线下 cohort（墨尔本主场 + 悉尼 / 布里斯班卫星教室），覆盖：
+完整课程是 15 周三城线下 cohort（墨尔本主场 + 悉尼 / 布里斯班卫星教室），每周日 3h 一节线下现场课，覆盖：
 
-- W1 选品 + 验证 + 定价模型选型
-- W2 MVP build + Source of Truth + 装 AI 秘书 + Agent Schedule 工作坊
-- W3 上线 + Stripe + AI 法律文件 + 收第一笔钱
-- W4-W6 多渠道营销（线上 + 线下 + AI 视频海报 + SEO）
-- W7-W9 澳洲合规 + RDTI Grant 实战
-- W10-W11 VC 选修 + 三城联合 Demo Day
+- W1 搭起你的 CEO AI OS（喂 Gmail / Calendar / Drive / Notion + 现场派 7 个秘书任务）
+- W2 你的 AI 员工上岗（部署 Hermes / 龙虾 / Codex / Claude Code + 搭 Agent Schedule）
+- W3 这是不是一门好生意（麦肯锡四把尺子 + 定价，⭐嘉宾 Stan）
+- W4 做出能卖的东西（服务 / 信息产品生产化，或定 MVP 范围 + 三个 Vibe Lab）
+- W5 立起你的品牌门面（官网 + design system，一稿出全套）
+- W6 别让项目烂尾（大厂 PM 落到一人公司，⭐嘉宾 Ray）
+- W7 收到第一笔钱（人脉盘点 + 一对一 pitch + Stripe / Lemonsqueezy 澳洲版）
+- W8-W11 Go To Market（AI 内容工厂 / 主动获客 / SEO+GEO / 用户增长）
+- W12-W13 澳洲运营（自动流转 + 经营看板 / 公司结构 + RDTI 43.5% 退税，⭐持牌 CPA）
+- W14-W15 Founder Club（Pitch & BP + 投资人 fireside / 三城联合 Demo Day 入会）
 
 申请制 30-50% 录取率（不是所有人都该报）。**首期 case study 价 $3,800**（标准价 $5,800，前 10 名享受）。
 
