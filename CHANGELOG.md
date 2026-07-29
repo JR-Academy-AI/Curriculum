@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-07-29
+
+- 新增 W8 线上 workshop「小红书图文诊断室」(L33a, 90min, Lightman 主讲)：诊断图文笔记发不出去(审核/限流/降权)与没推荐量(曝光→点击→读完→互动四层定位)，复用匠人新媒体内部的违禁词+AI味检测与九维度打分表；同步更新 `outline.json` 与 `public/phase2.html`（`ai-solo-founder-bootcamp`）
+- W1 新增「②′ 讲师现场 review」环节(15min)：挑 3 份学员当场写的 SoT 逐字改，补上原来只有同桌互念、没有讲师判断的缺口；时间由「AI OS 选型」30→15min 腾出，全天仍 17:00 结束（`ai-solo-founder-bootcamp`）
+- 更正 W2 资料包 DeepRouter 结论：正确域名为 `deeprouter.co`，站点在线且自助注册开放，原基于 `deeprouter.ai` 的「Launching Soon / 注册不到」结论作废（`ai-solo-founder-bootcamp`）
+- 补齐 W1 澳洲本地案例至 10 个 + 中文侧搜寻结论，排除 1 个匿名卖课来源（`ai-solo-founder-bootcamp`）
+
 ## 2026-07-22
 
 - 新增 CCAR-F 90 秒 YouTube 干货型横屏视频：用原创退款场景讲解 prompt、PreToolUse 与重试的架构判断，复用真实题库和双模式模考录屏，补齐 Amy 配音、字幕、逐字稿、封面、联系表及发布规格验收（`cca-f-cert-pack/video-ad-remotion-15s`）
