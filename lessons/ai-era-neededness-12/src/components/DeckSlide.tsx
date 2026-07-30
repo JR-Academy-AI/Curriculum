@@ -698,34 +698,81 @@ function Origin({ s }: { s: DeckSlideContent }) {
 
 function Product({ s }: { s: DeckSlideContent }) {
 	return (
-		<Page s={s} dark titleSize={68}>
-			<div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 34 }}>
-				<div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-					{(s.steps ?? []).map((step, i) => (
-						<motion.div key={step} {...fadeUp(.18 + i * .08)} style={{
-							flex: 1,
-							background: i === 3 ? colors.yellow : colors.white,
-							color: colors.black,
-							border: '3px solid #fff',
-							boxShadow: `6px 6px 0 ${i === 3 ? colors.red : colors.purple}`,
-							padding: '24px 18px',
-							fontSize: 25,
-							fontWeight: 900,
-							textAlign: 'center',
-							position: 'relative',
-						}}>
-							{step}
-							{i < (s.steps?.length ?? 0) - 1 && <span style={{ position: 'absolute', right: -28, color: colors.yellow }}>→</span>}
-						</motion.div>
-					))}
-				</div>
-				<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 18 }}>
-					<span style={{ fontFamily: fonts.mono, color: 'rgba(255,255,255,.65)' }}>OUTPUT</span>
-					{(s.items ?? []).map((item, i) => (
-						<motion.div key={item} {...fadeUp(.48 + i * .07)} style={{ padding: '15px 24px', border: '2px solid #fff', background: 'rgba(255,255,255,.08)', fontSize: 22, fontWeight: 850 }}>
-							{item}
-						</motion.div>
-					))}
+		<Page s={s} dark titleSize={58}>
+			<div style={{
+				flex: 1,
+				display: 'grid',
+				gridTemplateColumns: 'minmax(0, 1.48fr) minmax(340px, .72fr)',
+				gap: 32,
+				alignItems: 'center',
+				padding: '20px 0 18px',
+			}}>
+				<motion.div {...fadeUp(.18)} style={{
+					position: 'relative',
+					width: '100%',
+					aspectRatio: '1138 / 640',
+					background: colors.white,
+					border: '4px solid #fff',
+					boxShadow: `9px 9px 0 ${colors.purple}`,
+					overflow: 'hidden',
+				}}>
+					<img
+						src={assetPath('vdar-linkedin-workflow.gif')}
+						alt="Vdar.ai 从 LinkedIn 岗位分析到申请材料生成的工作流演示"
+						style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
+					/>
+					<div style={{
+						position: 'absolute',
+						left: 14,
+						top: 14,
+						background: colors.dark,
+						color: colors.white,
+						border: '2px solid #fff',
+						padding: '7px 11px',
+						fontFamily: fonts.mono,
+						fontSize: 12,
+						fontWeight: 800,
+						letterSpacing: 1.2,
+					}}>
+						LIVE WORKFLOW · LINKEDIN → VDAR.AI
+					</div>
+				</motion.div>
+				<div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+					<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+						{(s.steps ?? []).map((step, i) => (
+							<motion.div key={step} {...fadeUp(.24 + i * .07)} style={{
+								minHeight: 72,
+								background: i === 3 ? colors.yellow : colors.white,
+								color: colors.black,
+								border: '3px solid #fff',
+								boxShadow: `5px 5px 0 ${i === 3 ? colors.red : colors.purple}`,
+								padding: '15px 12px',
+								fontSize: 23,
+								fontWeight: 900,
+								display: 'grid',
+								placeItems: 'center',
+								textAlign: 'center',
+							}}>
+								{step}
+							</motion.div>
+						))}
+					</div>
+					<div style={{ fontFamily: fonts.mono, color: 'rgba(255,255,255,.58)', fontSize: 13, fontWeight: 700, letterSpacing: 1.6 }}>
+						FROM UNDERSTANDING TO OUTPUT
+					</div>
+					<div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+						{(s.items ?? []).map((item, i) => (
+							<motion.div key={item} {...fadeUp(.48 + i * .07)} style={{
+								padding: '11px 14px',
+								border: '2px solid #fff',
+								background: 'rgba(255,255,255,.08)',
+								fontSize: 17,
+								fontWeight: 850,
+							}}>
+								{item}
+							</motion.div>
+						))}
+					</div>
 				</div>
 			</div>
 			<Note dark>{s.note}</Note>
@@ -804,23 +851,22 @@ function System({ s }: { s: DeckSlideContent }) {
 
 function Wheel({ s }: { s: DeckSlideContent }) {
 	const positions = [
-		{ left: 70, top: 10 },
-		{ right: 70, top: 10 },
-		{ right: 5, bottom: 10 },
-		{ left: '50%', bottom: -8, transform: 'translateX(-50%)' },
-		{ left: 5, bottom: 10 },
+		{ left: '7%', top: '18%' },
+		{ right: '7%', top: '18%' },
+		{ right: '13%', bottom: '2%' },
+		{ left: 'calc(50% - 133px)', bottom: '-2%' },
+		{ left: '13%', bottom: '2%' },
 	];
 	const palette = [colors.red, colors.yellow, colors.green, colors.blue, colors.purple];
 	return (
 		<Page s={s} titleSize={63}>
-			<div style={{ flex: 1, position: 'relative', minHeight: 420 }}>
+			<div style={{ flex: 1, position: 'relative', minHeight: 430 }}>
 				<motion.div initial={{ opacity: 0, scale: .7 }} animate={{ opacity: 1, scale: 1 }} transition={{ type: 'spring', delay: .34 }} style={{
 					position: 'absolute',
-					left: '50%',
-					top: '39%',
-					transform: 'translate(-50%,-50%)',
-					width: 230,
-					height: 230,
+					left: 'calc(50% - 107px)',
+					top: '35%',
+					width: 214,
+					height: 214,
 					borderRadius: '50%',
 					background: colors.dark,
 					color: colors.yellow,
@@ -830,7 +876,7 @@ function Wheel({ s }: { s: DeckSlideContent }) {
 					placeItems: 'center',
 					textAlign: 'center',
 					fontFamily: fonts.heading,
-					fontSize: 35,
+					fontSize: 32,
 					fontWeight: 900,
 				}}>
 					{s.big}
@@ -841,15 +887,20 @@ function Wheel({ s }: { s: DeckSlideContent }) {
 						<motion.div key={item} {...fadeUp(.16 + i * .08)} style={{
 							position: 'absolute',
 							...positions[i],
-							width: 300,
+							width: 266,
+							minHeight: 90,
 							background: palette[i],
 							color: textOn(palette[i]),
 							border,
 							boxShadow: shadowSm,
-							padding: '17px 19px',
+							padding: '14px 18px',
+							display: 'flex',
+							flexDirection: 'column',
+							justifyContent: 'center',
+							textAlign: 'center',
 						}}>
-							<div style={{ fontFamily: fonts.heading, fontSize: 25, fontWeight: 900 }}>{head}</div>
-							<div style={{ fontSize: 18, fontWeight: 700, marginTop: 5 }}>{body}</div>
+							<div style={{ fontFamily: fonts.heading, fontSize: 23, fontWeight: 900 }}>{head}</div>
+							<div style={{ fontSize: 16, fontWeight: 700, marginTop: 4 }}>{body}</div>
 						</motion.div>
 					);
 				})}
