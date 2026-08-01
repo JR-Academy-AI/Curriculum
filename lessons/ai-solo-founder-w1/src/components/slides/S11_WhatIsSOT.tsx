@@ -7,11 +7,11 @@ export default function S11_WhatIsSOT() {
 		<Slide bg={colors.white}>
 			<Body style={{ padding: '36px 60px 30px' }}>
 				<SlideHead
-					tag="SoT · 第 2 步 / 6 · 定义"
+					tag="SINGLE SOURCE OF TRUTH · 定义"
 					tagBg={colors.red}
-					title="Opportunity Card，就是这周的 SoT v0.1"
+					title="SoT：这个项目目前唯一算数的说明书"
 					titleSize="clamp(30px, 2.7vw, 42px)"
-					sub="Single Source of Truth：客户、问题、现有做法、方案缺口、初步方案和验证动作，只保留一个当前版本。"
+					sub="机会卡是业务核心；加上版本、证据状态、边界和下一步，它就成为 SoT v0.1。"
 				/>
 
 				<div style={{ display: 'grid', gridTemplateColumns: '1.05fr 1.55fr', gap: 24, alignItems: 'stretch' }}>

@@ -12,21 +12,21 @@ interface WeeklySkill {
 }
 
 const SKILLS: WeeklySkill[] = [
-	{ week: 'W1', name: 'opc-business-sot', result: '把模糊想法整理成一页可验证的 Business SoT', accent: colors.orange },
-	{ week: 'W2', name: 'opc-w2-agent-team', result: '设计最多 3 个 AI 角色，并跑通一项安全任务', accent: colors.orange },
-	{ week: 'W3', name: 'opc-w3-idea-validator', result: '整理真实访谈证据，决定继续、修改还是停止', accent: colors.orange },
-	{ week: 'W4', name: 'opc-w4-offer-mvp', result: '做出产品或服务的 Offer 与最小可售版本', accent: colors.orange },
-	{ week: 'W5', name: 'opc-w5-brand-launch', result: '写好 Brand SoT，上线可访问的产品或服务页面', accent: colors.orange },
-	{ week: 'W6', name: 'opc-w6-shipping-review', result: '砍掉远离客户的任务，排出一周交付计划', accent: colors.orange },
-	{ week: 'W7', name: 'opc-w7-first-dollar', result: '建立销售管道、报价与真实收款路径', accent: colors.orange },
-	{ week: 'W8', name: 'opc-w8-content-engine', result: '建立中英文内容系统，并记录真实发布链接', accent: '#4B8DFF' },
-	{ week: 'W9', name: 'opc-w9-customer-acquisition', result: '执行一轮精准触达，记录回复与会面数据', accent: '#4B8DFF' },
-	{ week: 'W10', name: 'opc-w10-seo-geo', result: '发布一篇客户会搜索、AI 可引用的内容', accent: '#4B8DFF' },
-	{ week: 'W11', name: 'opc-w11-growth-experiment', result: '只改一个变量，跑完一次可复盘的增长实验', accent: '#4B8DFF' },
-	{ week: 'W12', name: 'opc-w12-delivery-cfo', result: '固定交付流程，并检查收入、成本和老板时间', accent: '#42A875' },
-	{ week: 'W13', name: 'opc-w13-australia-setup', result: '用澳洲官方来源整理注册、税务与 Grant 决策包', accent: '#42A875' },
-	{ week: 'W14', name: 'opc-w14-pitch-builder', result: '用事实图谱写客户、伙伴或投资人版本的 Pitch', accent: colors.purple },
-	{ week: 'W15', name: 'opc-w15-graduation-auditor', result: '核对六项毕业证据，生成 Founder Passport', accent: colors.purple },
+	{ week: 'W1', name: 'Business SoT', result: '把模糊想法整理成一页可验证的当前版本', accent: colors.orange },
+	{ week: 'W2', name: 'AI 团队设计', result: '设计最多 3 个 AI 角色，并跑通一项安全任务', accent: colors.orange },
+	{ week: 'W3', name: '客户验证', result: '整理真实访谈证据，决定继续、修改还是停止', accent: colors.orange },
+	{ week: 'W4', name: 'Offer 与最小交付', result: '做出产品或服务的 Offer 与最小可售版本', accent: colors.orange },
+	{ week: 'W5', name: '品牌上线', result: '写好 Brand SoT，上线可访问的产品或服务页面', accent: colors.orange },
+	{ week: 'W6', name: '交付复盘', result: '砍掉远离客户的任务，排出一周交付计划', accent: colors.orange },
+	{ week: 'W7', name: '销售与收款', result: '建立销售管道、报价与真实收款路径', accent: colors.orange },
+	{ week: 'W8', name: '内容系统', result: '建立中英文内容系统，并记录真实发布链接', accent: '#4B8DFF' },
+	{ week: 'W9', name: '精准获客', result: '执行一轮精准触达，记录回复与会面数据', accent: '#4B8DFF' },
+	{ week: 'W10', name: '搜索与 AI 可见度', result: '发布一篇客户会搜索、AI 可引用的内容', accent: '#4B8DFF' },
+	{ week: 'W11', name: '增长实验', result: '只改一个变量，跑完一次可复盘的增长实验', accent: '#4B8DFF' },
+	{ week: 'W12', name: '交付与财务', result: '固定交付流程，并检查收入、成本和老板时间', accent: '#42A875' },
+	{ week: 'W13', name: '澳洲经营准备', result: '用官方来源整理注册、税务与 Grant 决策包', accent: '#42A875' },
+	{ week: 'W14', name: 'Pitch Builder', result: '用事实图谱写客户、伙伴或投资人版本的 Pitch', accent: colors.purple },
+	{ week: 'W15', name: '毕业审计', result: '核对毕业证据，生成 Founder Passport', accent: colors.purple },
 ];
 
 function SkillRow({ item, index }: { item: WeeklySkill; index: number }) {
@@ -58,7 +58,7 @@ export default function S04c_WeeklyFounderSkills() {
 		<Slide bg="#FFF9F4">
 			<Body style={{ padding: '34px 56px 28px' }}>
 				<SlideHead
-					tag="15 周 · 15 个可直接使用的 Skills"
+					tag="附录 · 15 周 Skills"
 					tagBg={colors.purple}
 					title="每周给你一个 Skill，帮你完成一个具体结果"
 					titleSize="clamp(29px, 2.55vw, 40px)"
@@ -72,7 +72,7 @@ export default function S04c_WeeklyFounderSkills() {
 				</div>
 
 				<div style={{ marginTop: 13, fontSize: 14, lineHeight: 1.4, color: '#3e3e3e' }}>
-					每周还会使用 <b style={{ fontFamily: fonts.mono }}>opc-founder-os</b> 读取上一周留下的证据，再把任务推进到下一步。AI 可以准备材料，涉及发布、联系客户、付款、法律与税务的决定仍由你本人确认。
+					每周的新 Skill 都读取同一个 Founder Workspace 和当前 SoT。AI 可以准备材料；发布、联系客户、付款、法律与税务决定仍由你本人确认。
 				</div>
 			</Body>
 		</Slide>

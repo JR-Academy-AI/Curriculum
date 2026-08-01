@@ -104,7 +104,7 @@ export default function S04_Roadmap15Weeks() {
 		<Slide bg={colors.white}>
 			<Body style={{ padding: '36px 60px 30px' }}>
 				<SlideHead
-					tag="§1 · 这 15 周你要去哪"
+					tag="附录 · 15 周路线"
 					tagBg={colors.orange}
 					title="15 周，把一门生意从想法推进到真实经营"
 					titleSize="clamp(28px, 2.5vw, 40px)"

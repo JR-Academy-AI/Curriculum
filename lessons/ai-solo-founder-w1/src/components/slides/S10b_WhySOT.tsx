@@ -14,9 +14,9 @@ export default function S10b_WhySOT() {
 		<Slide bg={colors.warmBg}>
 			<Body>
 				<SlideHead
-					tag="SoT · 第 1 步 / 6"
+					tag="从 Opportunity Card 到 SoT"
 					tagBg={colors.red}
-					title="为什么 Opportunity Card 还要成为项目的 SoT？"
+					title="为什么这张机会卡必须成为项目唯一的当前版本？"
 					titleSize="clamp(29px, 2.6vw, 40px)"
 					sub="因为机会卡不只是课堂作业。它要成为你、同学和 AI 接下来共同使用的当前版本。"
 				/>

@@ -1,6 +1,6 @@
-# W1 · Find a Problem Worth Solving —— 网页版讲课 deck
+# W1 · 搭起你的创业 AI OS —— 网页版讲课 deck
 
-AI 一人创业营 W1 正课投屏用（周日 14:00–17:00，3h）。从 `curriculum/lessons/_template` 拷出来，引擎文件（`SlideEngine.tsx` / `ui.tsx` / `CameraBubble.tsx` / `theme.ts`）逐字保留。
+AI 一人创业营 W1 正课投屏用（周日 14:00–17:00，3h）。
 
 ```bash
 bun install
@@ -10,53 +10,42 @@ bun run build    # tsc -b && vite build → dist/
 
 ← → 翻页 · F 全屏 · V 开摄像头 · `?page=N` 直达某页。
 
-**共 42 张。** 第一节课主线是“从我想做点什么，到有人愿意付钱”，英文为 *Find a Problem Worth Solving*。第 4 页拆七个常见创业误区，第 5 页用 Canva / Fusion Books 与 DoorDash / PaloAltoDelivery 的一手来源说明 Problem First；第 6–9 页用熟悉行业、反复痛点、人工流程和已有付费四个入口得到三个候选机会；第 10–13 页完成 7 维评分、三项一票否决与现场筛选；第 14–15 页同时保留通用生意验证路径和产品验证路径。第 20–25 页解释 Opportunity Card 为什么要成为 SoT，并完成现场判断题；第 26–28 页写六字段创业机会卡和 5 / 3 / 3 / 付费意愿验证承诺。AI OS 留在后段，只帮助准备验证任务，不替代真人证据。第一周不冒充已经完成市场验证，两个练习案例均为课堂模拟。实际页序以 `src/App.tsx` 为准。
+**共 40 张：36 张核心课堂页 + 4 张附录。** W1 的目标不是在三小时内证明市场成立，而是让学生建立以后 15 周共同使用的工作方式：理解创业的价值交换循环，选择一个值得验证的业务方向，把 Opportunity Card 升级为 Business SoT v0.1，并在个人 Founder Workspace 中用 SoT、Weekly Skill 与 Human Review 跑通第一项真实任务。
 
-## 内容来源与教学顺序
+## 教学主线
 
-| Slide | 内容 | 来源 |
+| 页 | 内容 | 学生要完成什么 |
 |---|---|---|
-| 01 封面 / 02 过关线 | 课程定位与本节产出 | `../../ai-solo-founder-bootcamp/W1_RUNSHEET.md` §0 |
-| **03 三种经营方式** | 融资型创业 / 传统生意 / 小团队或一人公司；产品、服务与现有业务都可使用课程方法 | `W1_RUNSHEET.md` §4 + `../../ai-solo-founder-bootcamp/public/session-deck.html#6` 叙事参考 |
-| **04 创业误区** | 先产品后用户、AI 即创新、先做平台、用户太宽、兴趣冒充需求、未访谈先写代码、上线自然有人用 | `W1_RUNSHEET.md` §1 |
-| **05 两个真实起点** | Canva 前身 Fusion Books；DoorDash 前身 PaloAltoDelivery.com | Canva Newsroom 创始人回顾；DoorDash 2024 Q4 股东信 |
-| **06–09 创业机会四入口** | 熟悉行业、反复痛点、人工流程、已有付费；现场 Opportunity Scan 留下三个候选问题 | `W1_RUNSHEET.md` §2 |
-| **10–13 机会筛选模型** | 7 个维度每项 1–5 分；三个一票否决；现场从三个候选中圈定一个本周验证方向 | `W1_RUNSHEET.md` §3 |
-| **14 生意验证路径** | 客户与场景 → 真实问题 → 最小交付 → 付费证据 → 复购与推荐 → Scale | `COURSE_REDESIGN.md` + *The Founder's Playbook*, pp. 9, 16 |
-| **15 产品验证路径** | Idea → PoC → MVP → Paid Evidence → PMF → Scale | 用户指定产品验证图；W7 付费为目标，不是保证 |
-| **16–18 课程路线** | 15 周路线、四个 Phase 出关物、每周 Founder Skills | `COURSE_REDESIGN.md` + skills 目录 |
-| **19 Founder Exchange** | 学生中段互相分享真实生意、卡点和下一步 | `COURSE_REDESIGN.md` 固定节奏 |
-| **20–25 Opportunity Card → SoT** | 解释机会卡为什么是 SoT v0.1、如何管理任务与版本，并用四题验收理解 | `W1_RUNSHEET.md` §4–5 |
-| **26–28 Opportunity Card 写作** | 六个字段、问题/方案句式、5 人/3 案例/3 竞品/付费意愿承诺 | `W1_RUNSHEET.md` §4 |
-| **29–31 两个模拟案例** | 会计服务经营改造 + 物业维修机会卡练习与答案 | `W1_RUNSHEET.md` §8；课堂合成场景 |
-| **32–34 迁移与互评** | 把机会卡用于自己的方向；每次只改一个最影响验证的问题 | `W1_RUNSHEET.md` §9、§11 |
-| **35–39 AI 辅助验证** | 载入机会卡、领取 Skill、准备访谈/竞品/触达任务并区分状态 | `W1_RUNSHEET.md` §10 |
-| **40–42 收尾** | 下周动作、94h 时间投入、机会卡过关线 | `outline.json` + `W1_RUNSHEET.md` §11 |
+| 01–04 | W1 目标、产品/服务/现有生意、创业的最短定义 | 理解创业不是“做 AI 产品”，而是持续完成价值交换 |
+| 05–12 | 常见误区、值得解决的问题、机会入口、证据梯度、筛选 | 从模糊想法中留下一个本周值得验证的方向 |
+| 13–14 | 通用生意验证路径 + 产品型项目分支 | 知道 W1 只建立可验证起点；产品型项目按需要使用 PoC/MVP 路径 |
+| 15–21 | Opportunity Card 字段、写法、会计与装修案例、独立写卡 | 完成 Opportunity Card v0.1 |
+| 22 | Founder Exchange | 同伴复述并指出最薄的一条假设 |
+| 23–29 | 为什么需要 SoT、SoT 定义、管理层、每周闭环、现场测试 | 把机会卡升级成唯一当前版本的 Business SoT v0.1 |
+| 30–35 | 个人 AI OS、Founder Workspace、Weekly Skill、真实任务、责任边界 | 搭好后续课程共用的个人 AI OS，并完成一次人工检查 |
+| 36 | 统一验证 Sprint 与收尾 | 明确 5 位用户 / 3 个案例 / 3 种替代 / 一条付费证据 |
+| 37–40 | 附录：15 周路线、阶段成果、每周 Skills、时间投入 | 课后参考，不打断 W1 主线 |
 
-### P41 的 94 小时怎么算出来的（可复核）
+## W1 的三个过关结果
 
-按 `ai-solo-founder-bootcamp/public/outline.json` 逐节 `duration` 求和：
+1. **业务方向**：能说清具体客户、问题场景、现有做法和为什么值得继续调查。
+2. **Business SoT v0.1**：业务核心、版本、证据状态、边界和下一步集中在一个当前版本。
+3. **个人 AI OS**：一个固定工作空间读取 SoT，调用本周 Skill，完成并人工检查一项任务。
 
-| 项 | 明细 | 合计 |
-|---|---|---|
-| 现场 | `type: Lesson` 且 `duration: 180` 共 **15 节** × 3h | **45.0 h** |
-| 周中自学 | `type: Information` 合计 2545 min | **42.4 h** |
-| 互动 Lab | `type: InteractiveLab` 合计 375 min（9 个 Lab） | **6.2 h** |
-| **总计** | 93.7 h ÷ 15 周 = **6.2 h / 周** | **≈ 94 h** |
+以后每周都使用同一个闭环：
 
-⚠️ W8 另有两场周中线上 workshop（`L32a` AI 视频实操陪跑 / `L33a` 小红书图文诊断室，各 90min = 3h）**不含在这 94h 里**，算上是 96.7h —— slide 页脚已标注，台上不要说成"全部就 94 小时"。
+> SoT → Skill → 执行 → 人工检查 → 新证据 → 更新 SoT
 
-## 上台前的红线
+## 内容边界
 
-- 案例 A / B 必须始终称为“课堂模拟 / 合成场景”；里面的访谈数、试点数和收费方式是待验证目标，不是成绩。
-- 不提任何人的族裔，不把合成场景包装成真实澳洲公司。
-- 不要求现场接 Gmail / Calendar / Drive / Notion；不上传客户、邮箱、合同、财务或身份资料。
-- AI 只能帮助准备访谈、竞品研究和触达草稿，不能替学员生成“用户证据”。
-- JTBD / Mom Test 只作为方法来源；客户没说过的话不能由 AI 补写，W1 的 `verified` 不得讲成“idea validated”。
+- 产品验证路径图必须保留，但明确为产品型项目分支；产品项目也从 Problem / Opportunity 起步，只有存在技术风险时才需要 PoC。
+- 会计与装修案例都是课堂合成场景，不是真实公司成绩。
+- 不要求接入 Gmail、Calendar、Drive、Notion；不上传客户原始资料、邮箱、合同、财务、密码或账号权限。
+- AI 可以研究、整理、起草；联系客户、报价、合同、付款、法律、税务及持牌判断由本人确认。
+- W1 过关只代表 SoT 可用、AI OS 跑通，不代表市场需求已经成立。
 
 ## 版式
 
-- 1600×900 固定画布，`FitBox`（`src/components/DeckTable.tsx`）在内容超高时自动等比缩，投屏不裁切。**新增页面同样走 `Body`（内含 FitBox）。**
-- 表格是本 deck 的主角，统一走 `DeckTable`；案例页统一走 `CaseSlide` 的五段版式。
-- Phase 配色贯穿 P04 / P05：Phase 1 `#FFE9E4` · Phase 2 `#DCEBFF` · Phase 3 `#D9F2E4` · Phase 4 `#EDE9FE`。
-- 收尾页用暖底不用深底 —— SlideEngine 固定挂深色版 `logo-zh-full.svg`，深底会把 logo 糊掉。
+- 1600×900 固定画布，Register B 讲课视觉。
+- `Body` 内置 `FitBox`，新增页必须通过它避免投屏裁切。
+- 统一使用真实品牌 Logo；不在学生可见页面展示内部 Skill slug、文件名、课号或讲师备注。

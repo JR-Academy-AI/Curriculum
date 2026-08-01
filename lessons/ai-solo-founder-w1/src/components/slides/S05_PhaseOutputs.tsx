@@ -32,9 +32,9 @@ export default function S05_PhaseOutputs() {
 		<Slide bg={colors.warmBg}>
 			<Body style={{ padding: '40px 56px 34px' }}>
 				<SlideHead
-					tag="§1 · 出关物"
+					tag="附录 · 阶段成果"
 					tagBg={colors.orange}
-					title="每个 Phase 结束，你手上必须多出一样东西"
+					title="每个 Phase 结束，你手上必须多出一项成果"
 					titleSize="clamp(30px, 2.7vw, 42px)"
 					sub="不是「学完了」，是「多出一个别人能看到、能用、能查的东西」。"
 				/>
@@ -46,7 +46,7 @@ export default function S05_PhaseOutputs() {
 						{ label: 'Phase', w: '1.15fr' },
 						{ label: '周', w: '150px' },
 						{ label: '这一段在干什么', w: '1.7fr' },
-						{ label: '出关物 · 走出这一段你手上有什么', w: '1.55fr', accent: '#FFE9E4' },
+						{ label: '阶段成果 · 走出这一段你手上有什么', w: '1.55fr', accent: '#FFE9E4' },
 					]}
 					rows={[
 						[

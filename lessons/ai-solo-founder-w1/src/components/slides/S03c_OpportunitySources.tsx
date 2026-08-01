@@ -14,7 +14,7 @@ export default function S03c_OpportunitySources() {
 		<Slide bg={colors.warmBg}>
 			<Body>
 				<SlideHead
-					tag="第三部分 · 创业机会从哪里来"
+					tag="创业机会从哪里来"
 					tagBg={colors.yellow}
 					title="不知道做什么？从这四个地方找"
 					sub="不是凭空想 Idea，而是观察时间、钱和抱怨已经流向哪里。"

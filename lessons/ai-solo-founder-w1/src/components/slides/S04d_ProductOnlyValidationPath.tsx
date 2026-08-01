@@ -48,7 +48,7 @@ export default function S04d_ProductOnlyValidationPath() {
 					padding: '2px 6px',
 				}}
 			>
-				产品型项目参考路径；PoC 用于验证技术可行性，W7 付费是目标而非保证。
+				产品型项目也从 Problem / Opportunity 起步；只有存在技术风险时才需要 PoC。W7 付费是目标，不是保证。
 			</div>
 		</Slide>
 	);

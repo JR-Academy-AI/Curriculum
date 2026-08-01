@@ -24,8 +24,8 @@ export default function S03b_ProblemFirstCases() {
 				<SlideHead
 					tag="两个真实起点"
 					tagBg={colors.red}
-					title="好生意一开始通常很小，但问题非常具体"
-					sub="他们没有先宣布要做一个大平台，而是先找到一个正在发生、有人愿意采取行动的问题。"
+					title="值得验证的起点通常很小，但问题非常具体"
+					sub="他们没有先宣布要做一个大平台，而是先观察一个正在发生、有人愿意采取行动的问题。"
 				/>
 
 				<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 22 }}>

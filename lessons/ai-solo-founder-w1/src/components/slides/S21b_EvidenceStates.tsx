@@ -1,44 +1,21 @@
-import { motion } from 'framer-motion';
-import { Slide, colors, fonts, border, shadow, shadowSm } from '../ui';
-import { Body, SlideHead } from '../DeckTable';
+import { Slide, colors, fonts, border, shadow } from '../ui';
+import { Body, SlideHead, Punchline } from '../DeckTable';
 
 const STATES = [
-	{ state: 'DRAFTED', title: '结构写清了', body: '客户问题、现在的处理方法和证据计划齐全；未经访谈的仍标“假设”。', bg: '#F3F0EA' },
-	{ state: 'EXECUTED', title: '理解跑通了', body: '同伴能复述；AI 能守边界；一个真实任务被你检查并纠错。', bg: '#DCEBFF' },
-	{ state: 'VERIFIED', title: '本节可以过关', body: 'Tutor 确认 SoT 可执行、可推翻；不是确认市场需求成立。', bg: '#D9F2E4' },
+	['写出来', 'SoT 有一个清楚的当前版本；不确定的内容仍标“假设”或“待验证”。', '#F3F0EA'],
+	['跑一次', 'AI 基于 SoT 完成一项任务，你能发现并修正至少一处错误。', '#DCEBFF'],
+	['拿证据', '真人行为、成本、承诺或付款改变了判断，才更新下一版 SoT。', '#D9F2E4'],
 ];
 
 export default function S21b_EvidenceStates() {
 	return (
-		<Slide bg={colors.white}>
+		<Slide bg={colors.warmBg}>
 			<Body>
-				<SlideHead
-					tag="Founder OS 的铁律"
-					tagBg={colors.red}
-					title="生成 ≠ 执行 ≠ 过关"
-					titleSize="clamp(37px, 3.2vw, 50px)"
-					sub="文档完整、课堂过关、市场验证是三件不同的事。AI 不能替客户作证。"
-				/>
-
-				<div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
-					{STATES.map((item, index) => (
-						<motion.div
-							key={item.state}
-							initial={{ opacity: 0, y: 20 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.35, delay: 0.1 + index * 0.13 }}
-							style={{ border, boxShadow: index === 2 ? shadow : shadowSm, background: item.bg, padding: '24px 22px', minHeight: 255 }}
-						>
-							<div style={{ fontFamily: fonts.mono, fontSize: 15, fontWeight: 700 }}>{item.state}</div>
-							<div style={{ marginTop: 20, fontFamily: fonts.heading, fontSize: 31, fontWeight: 900 }}>{item.title}</div>
-							<div style={{ marginTop: 14, fontSize: 20, lineHeight: 1.5 }}>{item.body}</div>
-						</motion.div>
-					))}
+				<SlideHead tag="不要把三个阶段混在一起" tagBg={colors.red} title="写完，不等于做过；做过，也不等于市场验证" sub="AI 可以帮助前两个阶段，第三个阶段必须回到真实客户。" />
+				<div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 22 }}>
+					{STATES.map(([title, body, bg], index) => <div key={title} style={{ border, boxShadow: shadow, background: bg, padding: '27px 24px', minHeight: 270 }}><div style={{ fontFamily: fonts.mono, color: colors.red, fontSize: 18, fontWeight: 900 }}>0{index + 1}</div><div style={{ marginTop: 20, fontFamily: fonts.heading, fontSize: 34, fontWeight: 950 }}>{title}</div><div style={{ marginTop: 16, fontSize: 20, lineHeight: 1.5 }}>{body}</div></div>)}
 				</div>
-
-				<div style={{ marginTop: 20, border, boxShadow: shadow, background: colors.yellow, padding: '15px 22px', fontSize: 22, fontWeight: 900 }}>
-					本节过关：SoT 可测试。到客户验证阶段，再用 5 次真人访谈决定继续、修改还是停止。
-				</div>
+				<Punchline bg={colors.dark}>W1 的过关线：<span style={{ color: colors.yellow }}>SoT 可用、AI OS 跑通、下一步证据明确。</span>不是“市场已经验证”。</Punchline>
 			</Body>
 		</Slide>
 	);

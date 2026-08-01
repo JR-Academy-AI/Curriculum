@@ -1,114 +1,94 @@
 import SlideEngine from './components/SlideEngine';
 
-// W1 · Find a Problem Worth Solving —— 内容全部来自：
-//   curriculum/ai-solo-founder-bootcamp/W1_RUNSHEET.md（流程 / 表格 / 台词）
-//   curriculum/ai-solo-founder-bootcamp/W1_CASE_STUDIES.md（案例 + 出处）
-//   curriculum/ai-solo-founder-bootcamp/COURSE_REDESIGN.md（15 周路线 / Phase 出关物）
-//   curriculum/ai-solo-founder-bootcamp/public/outline.json（时间投入汇总）
-//   curriculum/ai-solo-founder-bootcamp/W2_RUNSHEET.md（W2 组队集市）
-// 🚨 案例数字必须带来源；标「查不到」的一律照实写；不提任何人的族裔。
+// W1 · 搭起你的创业 AI OS
+// 目标：理解创业的基本循环，建立 Business SoT v0.1，并搭好后续 15 周共用的个人 AI OS。
 
-// CH 0 · 开场
 import S01 from './components/slides/S01_Cover';
 import S02 from './components/slides/S02_Takeaways';
+import S02a from './components/slides/S02a_BusinessForms';
+import S02b from './components/slides/S02b_Entrepreneurship';
 import S03 from './components/slides/S03_StartupMistakes';
+import S03a from './components/slides/S03a_WorthSolving';
 import S03b from './components/slides/S03b_ProblemFirstCases';
 import S03c from './components/slides/S03c_OpportunitySources';
-import S03d from './components/slides/S03d_IndustryAndPersonal';
-import S03e from './components/slides/S03e_ManualAndPaid';
 import S03f from './components/slides/S03f_OpportunityScan';
-import S03g from './components/slides/S03g_FilterIntro';
-import S03h from './components/slides/S03h_FilterScorecard';
 import S03i from './components/slides/S03i_FilterKillSwitches';
 import S03j from './components/slides/S03j_FilterWorkshop';
-
-// CH 0.5 · 这 15 周你要去哪
-import S04 from './components/slides/S04_Roadmap15Weeks';
+import S03k from './components/slides/S03k_EvidenceLadder';
 import S04b from './components/slides/S04b_ProductValidationPath';
 import S04d from './components/slides/S04d_ProductOnlyValidationPath';
-import S04c from './components/slides/S04c_WeeklyFounderSkills';
-import S05 from './components/slides/S05_PhaseOutputs';
-import S06 from './components/slides/S06_TimeInvestment';
-
-// CH 0.6 · 每周课堂节奏
+import S16 from './components/slides/S16_SoTFields';
+import S16b from './components/slides/S16b_OpportunityWriting';
+import S16d from './components/slides/S16d_WriteCard';
+import S12 from './components/slides/S12_CaseAccountingOps';
+import S12b from './components/slides/S12b_CaseRenovationService';
 import S09 from './components/slides/S09_WeeklySessionRhythm';
-
-// CH 1 · 验证路径 + Opportunity Card / SoT（15:20–15:40）
-import S10 from './components/slides/S10_ThreePaths';
 import S10b from './components/slides/S10b_WhySOT';
 import S11 from './components/slides/S11_WhatIsSOT';
 import S11b from './components/slides/S11b_SoTProjectControl';
 import S11c from './components/slides/S11c_SoTWeeklyLoop';
 import S11d from './components/slides/S11d_SoTQuiz';
 import S11e from './components/slides/S11e_SoTQuizAnswers';
-import S16 from './components/slides/S16_SoTFields';
-import S16b from './components/slides/S16b_OpportunityWriting';
-import S16c from './components/slides/S16c_ValidationCommitment';
-import S12 from './components/slides/S12_CaseAccountingOps';
-import S13a from './components/slides/S13a_CasePropertyPrompt';
-import S13 from './components/slides/S13_CasePropertyMaintenance';
-import S14 from './components/slides/S14_CaseDebrief';
-
-// CH 2 · 交流、写卡与讲师现场 review（15:40–16:50）
-import S17 from './components/slides/S17_PeerReview';
-import S18 from './components/slides/S18_InstructorReview';
-
-// CH 3 · AI 辅助准备验证任务（16:40–16:50）
+import S11f from './components/slides/S11f_SoTAnatomy';
 import S19 from './components/slides/S19_MinimumAIOS';
+import S19b from './components/slides/S19b_AIOSSchematic';
 import S20 from './components/slides/S20_LoadSOT';
 import S20b from './components/slides/S20b_ActivateW1Skill';
 import S21 from './components/slides/S21_FirstRealTask';
 import S21b from './components/slides/S21b_EvidenceStates';
-
-// CH 4 · 验收与收尾（16:50–17:00）
+import S21c from './components/slides/S21c_HumanBoundary';
 import S22 from './components/slides/S22_NextWeek';
 import S23 from './components/slides/S23_Closing';
+import S04 from './components/slides/S04_Roadmap15Weeks';
+import S05 from './components/slides/S05_PhaseOutputs';
+import S04c from './components/slides/S04c_WeeklyFounderSkills';
+import S06 from './components/slides/S06_TimeInvestment';
 
 export default function App() {
 	return (
 		<SlideEngine>
 			<S01 />
 			<S02 />
-			<S10 />
+			<S02a />
+			<S02b />
 			<S03 />
+			<S03a />
 			<S03b />
 			<S03c />
-			<S03d />
-			<S03e />
 			<S03f />
-			<S03g />
-			<S03h />
+			<S03k />
 			<S03i />
 			<S03j />
 			<S04b />
 			<S04d />
-			<S04 />
-			<S05 />
-			<S04c />
+			<S16 />
+			<S16b />
+			<S12 />
+			<S12b />
+			<S16d />
 			<S09 />
 			<S10b />
 			<S11 />
 			<S11b />
+			<S11f />
 			<S11c />
 			<S11d />
 			<S11e />
-			<S16 />
-			<S16b />
-			<S16c />
-			<S12 />
-			<S13a />
-			<S13 />
-			<S14 />
-			<S17 />
-			<S18 />
 			<S19 />
+			<S19b />
 			<S20 />
 			<S20b />
 			<S21 />
+			<S21c />
 			<S21b />
 			<S22 />
-			<S06 />
 			<S23 />
+
+			{/* Appendix · 课程全景与参考页 */}
+			<S04 />
+			<S05 />
+			<S04c />
+			<S06 />
 		</SlideEngine>
 	);
 }

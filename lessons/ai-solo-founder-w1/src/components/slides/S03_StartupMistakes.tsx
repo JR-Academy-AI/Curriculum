@@ -17,7 +17,7 @@ export default function S03_StartupMistakes() {
 		<Slide bg={colors.warmBg}>
 			<Body>
 				<SlideHead
-					tag="第一部分 · 先把起点纠正"
+					tag="先把起点纠正"
 					tagBg={colors.red}
 					title="创业最常见的错误：先做东西，再找问题"
 					sub="执行得越快，不代表方向越对。第一周先停下产品冲动，确认问题是否值得解决。"

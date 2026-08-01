@@ -14,7 +14,7 @@ export default function S03f_OpportunityScan() {
 		<Slide bg={colors.white}>
 			<Body style={{ padding: '30px 54px 22px' }}>
 				<SlideHead
-					tag="30 分钟现场练习"
+					tag="15 分钟现场练习"
 					tagBg={colors.red}
 					title="Opportunity Scan：四个入口，各写一个"
 					sub="先写候选问题，不写产品功能。写完后留下三个，带进下一页筛选模型。"
@@ -42,7 +42,7 @@ export default function S03f_OpportunityScan() {
 				</div>
 
 				<div style={{ marginTop: 18, border, background: '#FFF4EE', display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', boxShadow: shadowSm }}>
-					{[['4 分钟', '听懂四个入口'], ['8 分钟', '独立写四个'], ['8 分钟', '两人互相追问'], ['6 分钟', '改写问题句'], ['4 分钟', '抽 2–3 人念']].map(([time, action], index) => (
+					{[['3 分钟', '听懂四个入口'], ['4 分钟', '独立写四个'], ['4 分钟', '两人互相追问'], ['3 分钟', '改写问题句'], ['1 分钟', '留下三个']].map(([time, action], index) => (
 						<div key={`${time}-${action}`} style={{ padding: '10px 12px', borderRight: index === 4 ? 'none' : '2px solid #111', textAlign: 'center' }}><div style={{ fontFamily: fonts.mono, fontSize: 15, fontWeight: 900, color: colors.red }}>{time}</div><div style={{ marginTop: 4, fontSize: 16, fontWeight: 800 }}>{action}</div></div>
 					))}
 				</div>

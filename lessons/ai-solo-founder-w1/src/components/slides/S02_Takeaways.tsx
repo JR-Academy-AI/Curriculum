@@ -1,52 +1,17 @@
 import { Slide, colors, fonts } from '../ui';
 import { Body, SlideHead, DeckTable, Punchline } from '../DeckTable';
 
-// 今天你会带走什么 —— 来源：W1_RUNSHEET.md §0「三个必须带走的东西（过关线，缺一不可）」
 export default function S02_Takeaways() {
 	return (
 		<Slide bg={colors.warmBg}>
 			<Body>
-				<SlideHead
-					tag="§0 · 过关线"
-					title="今天你会带走什么"
-					sub="三个可检查的结果。不是“听懂了”，是下课前真的做出来。"
-				/>
-
-				<DeckTable
-					fontSize={22}
-					cols={[
-						{ label: '#', w: '64px', align: 'center' },
-						{ label: '产出', w: '1fr' },
-						{ label: '验收标准', w: '2fr' },
-					]}
-					rows={[
-						[
-							<span style={{ fontFamily: fonts.mono, fontWeight: 700, fontSize: 26 }}>1</span>,
-							<b>一张创业机会卡</b>,
-							<span>
-								写清具体用户、真实问题、现有做法、方案缺口、初步方案和本周验证动作
-							</span>,
-						],
-						[
-							<span style={{ fontFamily: fonts.mono, fontWeight: 700, fontSize: 26 }}>2</span>,
-							<b>一句能被复述的问题</b>,
-							<span>
-								同桌听完后，能说出“谁在什么场景遇到什么麻烦”，而不是只记得你的产品名
-							</span>,
-						],
-						[
-							<span style={{ fontFamily: fonts.mono, fontWeight: 700, fontSize: 26 }}>3</span>,
-							<b>一份本周验证承诺</b>,
-							<span>
-								访谈 5 人、收集 3 个真实案例、找到 3 个竞品，并直接问付费意愿
-							</span>,
-						],
-					]}
-				/>
-
-				<Punchline bg={colors.red}>
-					今天的关键变化：不再从“我想做一个什么产品”出发。<u>先说清谁真的有问题，再决定做什么。</u>
-				</Punchline>
+				<SlideHead tag="今天的过关线" tagBg={colors.red} title="三小时后，你要有三样可以继续使用的东西" sub="不是听完三个概念，而是建立后续 15 周共同使用的工作方式。" />
+				<DeckTable fontSize={21} cols={[{ label: '#', w: '64px', align: 'center' }, { label: '带走什么', w: '1fr' }, { label: '下课前怎样验收', w: '2fr' }]} rows={[
+					[<span style={{ fontFamily: fonts.mono, fontWeight: 900, fontSize: 26 }}>1</span>, <b>一个值得验证的业务方向</b>, '能说清具体客户、问题场景、现有做法和为什么值得继续调查'],
+					[<span style={{ fontFamily: fonts.mono, fontWeight: 900, fontSize: 26 }}>2</span>, <b>Business SoT v0.1</b>, '只有一个当前版本；事实、假设、边界和下一步都写在同一页'],
+					[<span style={{ fontFamily: fonts.mono, fontWeight: 900, fontSize: 26 }}>3</span>, <b>个人 AI OS</b>, '一个固定工作空间读取 SoT，调用本周 Skill，完成并人工检查一项真实任务'],
+				]} />
+				<Punchline bg={colors.dark}>以后每周都重复同一个动作：<span style={{ color: colors.yellow }}>从 SoT 取任务，用 Skill 执行，把新证据写回 SoT。</span></Punchline>
 			</Body>
 		</Slide>
 	);
