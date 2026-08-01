@@ -77,6 +77,13 @@ jobs:
           bun install
           bun run build
 
+      # Build lessons/ai-solo-founder-w1 (AI 一人创业营 · W1 · 26 张 SoT / Founder OS 讲课 deck)
+      - name: Build lessons/ai-solo-founder-w1
+        working-directory: lessons/ai-solo-founder-w1
+        run: |
+          bun install
+          bun run build
+
       # Build lessons/ai-era-neededness (30 张 slide · AI 时代学生的可被需要性)
       - name: Build lessons/ai-era-neededness
         working-directory: lessons/ai-era-neededness
@@ -437,6 +444,12 @@ jobs:
           if [ -d lessons/ai-marketing-talk/dist ]; then
             mkdir -p _site/lessons/ai-marketing-talk
             cp -r lessons/ai-marketing-talk/dist/* _site/lessons/ai-marketing-talk/
+          fi
+
+          # AI 一人创业营 W1 · 搭起你的 CEO AI OS
+          if [ -d lessons/ai-solo-founder-w1/dist ]; then
+            mkdir -p _site/lessons/ai-solo-founder-w1
+            cp -r lessons/ai-solo-founder-w1/dist/* _site/lessons/ai-solo-founder-w1/
           fi
 
           # lessons/ai-era-neededness: 30 张公开演讲 slide deck
