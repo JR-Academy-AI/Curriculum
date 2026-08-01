@@ -4,9 +4,9 @@ import { Body, SlideHead, Punchline } from '../DeckTable';
 
 // ② 同桌互念 —— 来源：W1_RUNSHEET.md §3「15:10–15:20 同桌两人互念」三个问题 + 定规矩
 const QUESTIONS = [
-	'我能不能复述：你帮谁解决什么问题？',
-	'你先交付的结果够不够具体、能不能检查？',
-	'下周验证什么，以及这阶段明确不做什么？',
+	'我能不能复述：谁在什么场景遇到什么问题？',
+	'他们现在怎么处理，为什么不够好？',
+	'本周的 5 / 3 / 3 / 付费验证动作是否具体？',
 ];
 
 export default function S17_PeerReview() {
@@ -55,9 +55,9 @@ export default function S17_PeerReview() {
 				</div>
 
 				<Punchline bg={colors.dark}>
-					定规矩：这一期<u>只做一个方向</u>。想改可以，但必须<b>带着证据</b>走 W3 那一关（商业验证）。
+					定规矩：不要因为同学喜欢就把假设当事实。想改可以，但必须<b>带着证据</b>更新 Opportunity Card。
 					<span style={{ display: 'block', marginTop: 6, fontSize: 18, color: colors.yellow }}>
-						不允许每周换一个想法 —— 那是这门课最常见的失败方式。
+						换方向不是失败；没有证据却每天换方向，才是。
 					</span>
 				</Punchline>
 			</Body>

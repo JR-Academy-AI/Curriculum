@@ -5,8 +5,8 @@ import { Body, SlideHead } from '../DeckTable';
 const TESTS = [
 	['客户够不够具体？', '不是“中小企业”，而是能列出 5 个访谈对象的人群。'],
 	['问题里有没有偷塞答案？', '先写客户在什么情况下遇到什么麻烦，不要一上来就写你的产品功能。'],
-	['AI 只做哪一段？', '不说“全自动”；明确输入、输出，以及必须由人批准的边界。'],
-	['6 周后怎么决定？', '不看点赞或客套话，要看过去行为、真实试跑与付费意愿。'],
+	['现有做法为什么不够好？', '写太贵、太慢、太复杂、数据分散或依赖人工，不要只说“不智能”。'],
+	['本周怎么验证？', '访谈 5 人、收集 3 个案例、比较 3 个竞品，并直接问付费意愿。'],
 ];
 
 export default function S14_CaseDebrief() {
@@ -14,11 +14,11 @@ export default function S14_CaseDebrief() {
 		<Slide bg={colors.warmBg}>
 			<Body>
 				<SlideHead
-					tag="SoT · 第 6 步 / 6 · 迁移到你自己"
+					tag="Opportunity Card · 迁移到你自己"
 					tagBg={colors.green}
 					title="现在不用抄案例，只拿四把尺子检查自己的方向"
 					titleSize="clamp(29px, 2.55vw, 40px)"
-					sub="案例 A 卖少返工；案例 B 卖少追问、少漏单。两个行业不同，但可检验的 SoT 结构相同。"
+					sub="案例 A 卖少返工；案例 B 卖少追问、少漏单。行业不同，但可验证的机会卡结构相同。"
 				/>
 
 				<div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>

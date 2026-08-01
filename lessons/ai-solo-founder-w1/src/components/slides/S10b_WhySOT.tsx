@@ -16,9 +16,9 @@ export default function S10b_WhySOT() {
 				<SlideHead
 					tag="SoT · 第 1 步 / 6"
 					tagBg={colors.red}
-					title="为什么第一周不先做网站，而要先写一页共同真相？"
+					title="为什么 Opportunity Card 还要成为项目的 SoT？"
 					titleSize="clamp(29px, 2.6vw, 40px)"
-					sub="因为同一句模糊想法，经过四个人和四个工具，会迅速变成四门不同的生意。"
+					sub="因为机会卡不只是课堂作业。它要成为你、同学和 AI 接下来共同使用的当前版本。"
 				/>
 
 				<div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
