@@ -52,7 +52,7 @@ export default function S06_TimeInvestment() {
 					tagBg={colors.orange}
 					title="15 周一共约 94 小时 —— 平均每周约 6 小时"
 					titleSize="clamp(28px, 2.6vw, 42px)"
-					sub="你们全是在职的，所以这一页比大纲更该看清楚：这门课到底占你多少时间。"
+					sub="先看清每周需要留出多少时间，再决定怎样把现场课、自学和动手任务排进生活。"
 				/>
 
 				<div style={{ display: 'grid', gridTemplateColumns: '1.35fr 1fr 1fr 1fr', gap: 14 }}>
@@ -110,25 +110,25 @@ export default function S06_TimeInvestment() {
 							—— 自学 + Lab 摊到 5 个晚上
 						</div>
 						<div style={{ marginTop: 8, fontSize: 16, color: '#cfd3e6', lineHeight: 1.5 }}>
-							周中那部分<b style={{ color: colors.yellow }}>没有固定日子</b>，你自己排；有的周重（W4 做产品 12h、W8 内容工厂 6.5h），有的周轻（W14 只有 1h）。
+							周中部分<b style={{ color: colors.yellow }}>没有固定日子</b>，你自己排；做最小交付、内容与获客实验的周会更重，整理与复盘的周会更轻。
 						</div>
 					</div>
 
 					<div style={{ border, boxShadow: shadowSm, background: '#FFF6D6', padding: '16px 20px' }}>
 						<div style={{ fontFamily: fonts.mono, fontSize: 15, fontWeight: 700, marginBottom: 8 }}>
-							为什么在职反而扛得住
+							周中怎么推进
 						</div>
 						<div style={{ fontSize: 20, lineHeight: 1.55 }}>
-							因为周中很大一块不是<u>你</u>在跑，是 <b>AI OS 在跑</b>。今天课上派活 → 它周中自动干 → 下周开场 15min 直接 review 它的产出。
+							现场定下一个动作，周中由你执行；AI 可以协助调研、整理和起草，但客户联系、承诺、付款与专业判断必须由你确认。
 							<span style={{ display: 'block', marginTop: 8, fontSize: 17, fontWeight: 600 }}>
-								这也是为什么第一节课就先搭 OS，而不是先讲生意。
+								下周带回结果和证据，再决定 SoT 要不要更新。
 							</span>
 						</div>
 					</div>
 				</motion.div>
 
 				<Punchline bg={colors.red}>
-					挤不出每周 6 小时 → 现在说，比第 8 周掉队再说好得多。今天下午的「5 维自评」里，<b>时间承诺</b>就是其中一维。
+					现在就给自己留出每周约 6 小时：<b>3 小时现场课 + 约 3 小时周中推进。</b>
 					<span style={{ display: 'block', marginTop: 6, fontSize: 15, fontWeight: 500, fontFamily: fonts.mono, color: colors.yellow }}>
 						* 94h 按 outline.json 逐节 duration 汇总。W8 另有 2 场周中线上 workshop（AI 视频实操陪跑 / 小红书图文诊断室，各 90min）不含在内，算上是 96.7h。
 					</span>

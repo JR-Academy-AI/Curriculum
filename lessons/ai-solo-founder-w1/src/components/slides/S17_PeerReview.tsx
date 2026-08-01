@@ -4,9 +4,9 @@ import { Body, SlideHead, Punchline } from '../DeckTable';
 
 // ② 同桌互念 —— 来源：W1_RUNSHEET.md §3「15:10–15:20 同桌两人互念」三个问题 + 定规矩
 const QUESTIONS = [
-	'你服务的人，具体到什么程度？能说出一个真名吗？',
-	'这个优势，别人为什么抄不走？',
-	'不做的三件事写了吗？',
+	'我能不能复述：你帮谁解决什么问题？',
+	'你先交付的结果够不够具体、能不能检查？',
+	'下周验证什么，以及这阶段明确不做什么？',
 ];
 
 export default function S17_PeerReview() {
@@ -14,10 +14,10 @@ export default function S17_PeerReview() {
 		<Slide bg={colors.white}>
 			<Body>
 				<SlideHead
-					tag="③ Founder Exchange · 15:10–15:20"
+					tag="同桌互相检查"
 					tagBg={colors.green}
 					title="一对一互念，对方只问三个问题"
-					sub="先说清：我是谁 / 我能给什么 / 我需要什么。项目细节分享多少由本人决定；每人念 2 分钟。"
+					sub="一人用自己的话讲，另一人只负责复述和追问。项目细节分享多少由本人决定。"
 				/>
 
 				<div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 22, marginTop: 8 }}>

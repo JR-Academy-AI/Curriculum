@@ -36,6 +36,21 @@ export default function S04b_ProductValidationPath() {
 					zIndex: 2,
 				}}
 			/>
+
+			<div
+				style={{
+					position: 'absolute',
+					left: 86,
+					bottom: 15,
+					zIndex: 3,
+					fontSize: 12,
+					color: '#666',
+					background: 'rgba(251,248,243,.9)',
+					padding: '2px 6px',
+				}}
+			>
+				方法参考：Claude / Anthropic, The Founder&apos;s Playbook, pp. 9, 16；中文整理：JR Academy
+			</div>
 		</Slide>
 	);
 }

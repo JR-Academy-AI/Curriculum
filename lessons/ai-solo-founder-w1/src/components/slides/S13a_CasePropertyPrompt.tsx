@@ -8,10 +8,10 @@ const KNOWN = [
 ];
 
 const QUESTIONS = [
-	'什么情境下，客户想完成什么进步？',
-	'他们现在“雇用”什么替代方案？',
+	'客户最想解决的具体麻烦是什么？',
+	'他们现在用什么办法处理？',
 	'最小结果是什么，AI 在哪里停？',
-	'6 周内什么证据会让你继续？',
+	'6 周后凭什么决定继续或停止？',
 ];
 
 export default function S13a_CasePropertyPrompt() {
@@ -23,7 +23,7 @@ export default function S13a_CasePropertyPrompt() {
 					tagBg={colors.blue}
 					title="现在换你：把物业维修的模糊想法压成可验证 SoT"
 					titleSize="clamp(28px, 2.55vw, 39px)"
-					sub="给你客户和现状，90 秒小组讨论。先写 solution-free Job、现有替代、最小结果和证据，再看下一页。"
+					sub="给你客户和现状。先写清他们的麻烦、现在的处理方法、你先交付什么，以及凭什么决定继续，再看下一页。"
 				/>
 
 				<div style={{ display: 'grid', gridTemplateColumns: '1fr 1.45fr', gap: 22 }}>

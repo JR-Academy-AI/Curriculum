@@ -2,7 +2,7 @@
 
 ## 2026-08-02
 
-- 重做 AI 一人创业营 W1 为 25 页学生讲课版：覆盖产品、公司、专业服务与传统生意，补齐 15 周逐周 Skills，改写 SoT 为七个普通问题，新增学生主导 Founder Exchange，并将产品验证图改为通用生意验证路径（`lessons/ai-solo-founder-w1` / `ai-solo-founder-bootcamp`）
+- 重做 AI 一人创业营 W1 为 29 页学生讲课版：覆盖产品、公司、专业服务与传统生意，补齐 15 周逐周 Skills、生意验证路径、SoT 项目管理闭环与 4 道现场理解题；删除内部讲师话术，时间投入移到课尾，并把案例 A 改为现有会计服务的经营改造（`lessons/ai-solo-founder-w1` / `ai-solo-founder-bootcamp`）
 
 ## 2026-07-30
 
