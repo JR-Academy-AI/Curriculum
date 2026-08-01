@@ -15,7 +15,7 @@ interface Week {
 const PHASES: { no: string; title: string; range: string; desc: string; bg: string; weeks: Week[] }[] = [
 	{
 		no: '1',
-		title: 'AI Enable Business',
+		title: '把生意跑起来',
 		range: 'W1–W7',
 		desc: '把产品、公司或服务说清楚，做出最小版本，走到真实客户面前',
 		bg: '#FFE9E4',
@@ -26,12 +26,12 @@ const PHASES: { no: string; title: string; range: string; desc: string; bg: stri
 			{ w: 'W4', name: '先做最小版本', desc: '做出客户能看懂、能购买、能交付的版本' },
 			{ w: 'W5', name: '让客户找到你', desc: '上线品牌与产品或服务介绍页面' },
 			{ w: 'W6', name: '一周只推一件事', desc: '砍掉无关任务，把时间留给客户和收入' },
-			{ w: 'W7', name: '完成第一次真实销售', desc: '联系客户、报价，并争取第一笔收入' },
+			{ w: 'W7', name: '完成第一轮销售尝试', desc: '联系客户、报价，记录成交或未成交的真实原因' },
 		],
 	},
 	{
 		no: '2',
-		title: 'Go To Market',
+		title: '找到更多客户',
 		range: 'W8–W11',
 		desc: '让目标客户看见你、理解你，并留下可复盘的获客数据',
 		bg: '#DCEBFF',
@@ -44,7 +44,7 @@ const PHASES: { no: string; title: string; range: string; desc: string; bg: stri
 	},
 	{
 		no: '3',
-		title: 'Business Operations',
+		title: '把经营理顺',
 		range: 'W12–W13',
 		desc: '理顺交付、财务和澳洲经营事项，让生意不再全靠你救火',
 		bg: '#D9F2E4',
@@ -55,7 +55,7 @@ const PHASES: { no: string; title: string; range: string; desc: string; bg: stri
 	},
 	{
 		no: '4',
-		title: 'Founder Club',
+		title: '讲清成果',
 		range: 'W14–W15',
 		desc: '用真实结果讲清这门生意，并决定毕业后的下一步',
 		bg: '#EDE9FE',

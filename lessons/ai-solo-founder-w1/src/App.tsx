@@ -26,6 +26,10 @@ import S09 from './components/slides/S09_WeeklySessionRhythm';
 import S10 from './components/slides/S10_ThreePaths';
 import S10b from './components/slides/S10b_WhySOT';
 import S11 from './components/slides/S11_WhatIsSOT';
+import S11b from './components/slides/S11b_SoTProjectControl';
+import S11c from './components/slides/S11c_SoTWeeklyLoop';
+import S11d from './components/slides/S11d_SoTQuiz';
+import S11e from './components/slides/S11e_SoTQuizAnswers';
 import S16 from './components/slides/S16_SoTFields';
 import S12 from './components/slides/S12_CaseAccountingOps';
 import S13a from './components/slides/S13a_CasePropertyPrompt';
@@ -52,15 +56,18 @@ export default function App() {
 		<SlideEngine>
 			<S01 />
 			<S02 />
+			<S10 />
+			<S04b />
 			<S04 />
 			<S05 />
-			<S06 />
-			<S04b />
 			<S04c />
 			<S09 />
-			<S10 />
 			<S10b />
 			<S11 />
+			<S11b />
+			<S11c />
+			<S11d />
+			<S11e />
 			<S16 />
 			<S12 />
 			<S13a />
@@ -74,6 +81,7 @@ export default function App() {
 			<S21 />
 			<S21b />
 			<S22 />
+			<S06 />
 			<S23 />
 		</SlideEngine>
 	);

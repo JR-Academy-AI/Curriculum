@@ -3,7 +3,7 @@ import { Slide, colors, fonts, border, shadow, shadowSm } from '../ui';
 import { Body, SlideHead } from '../DeckTable';
 
 const STATES = [
-	{ state: 'DRAFTED', title: '结构写清了', body: '客户 Job、替代方案和证据计划齐全；未经访谈的仍标“假设”。', bg: '#F3F0EA' },
+	{ state: 'DRAFTED', title: '结构写清了', body: '客户问题、现在的处理方法和证据计划齐全；未经访谈的仍标“假设”。', bg: '#F3F0EA' },
 	{ state: 'EXECUTED', title: '理解跑通了', body: '同伴能复述；AI 能守边界；一个真实任务被你检查并纠错。', bg: '#DCEBFF' },
 	{ state: 'VERIFIED', title: '本节可以过关', body: 'Tutor 确认 SoT 可执行、可推翻；不是确认市场需求成立。', bg: '#D9F2E4' },
 ];
