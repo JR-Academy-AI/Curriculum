@@ -15,6 +15,7 @@ import S02 from './components/slides/S02_Takeaways';
 // CH 0.5 · 这 15 周你要去哪
 import S04 from './components/slides/S04_Roadmap15Weeks';
 import S04b from './components/slides/S04b_ProductValidationPath';
+import S04d from './components/slides/S04d_ProductOnlyValidationPath';
 import S04c from './components/slides/S04c_WeeklyFounderSkills';
 import S05 from './components/slides/S05_PhaseOutputs';
 import S06 from './components/slides/S06_TimeInvestment';
@@ -58,6 +59,7 @@ export default function App() {
 			<S02 />
 			<S10 />
 			<S04b />
+			<S04d />
 			<S04 />
 			<S05 />
 			<S04c />
