@@ -8,7 +8,7 @@
 ## 0. 一句话背景
 
 AI 一人创业营 = 15 周课程,**每周日 14:00–17:00 三小时线下课**(墨尔本主场 + 悉尼/布里斯班卫星教室 + 同步直播)。
-W1 当前已有 38 张 slide 的 React+Vite deck，主题是《Find a Problem Worth Solving》。教学链为“纠正 Idea 误区 → 真实 Problem First 案例 → 四入口 Opportunity Scan → 两条验证路径 → Opportunity Card → SoT 项目管理 → 写作与测试 → 真人验证承诺 → AI 辅助准备”。**W2–W15 可复用它的引擎和“先解释为什么、再示范、再练习、再验收”的结构，不照抄 W1 内容。**
+W1 当前已有 42 张 slide 的 React+Vite deck，主题是《Find a Problem Worth Solving》。教学链为“纠正 Idea 误区 → 真实 Problem First 案例 → 四入口 Opportunity Scan → 7 维评分与一票否决 → 两条验证路径 → Opportunity Card → SoT 项目管理 → 写作与测试 → 真人验证承诺 → AI 辅助准备”。**W2–W15 可复用它的引擎和“先解释为什么、再示范、再练习、再验收”的结构，不照抄 W1 内容。**
 
 ---
 
@@ -45,7 +45,7 @@ bun run dev      # → http://localhost:5173/
 bun run build    # 上线前必须过
 ```
 
-### 1.3 W1 当前 38 张 slide 顺序（引擎与章节结构可复用）
+### 1.3 W1 当前 42 张 slide 顺序（引擎与章节结构可复用）
 
 | # | Slide | 作用 |
 |---|---|---|
@@ -53,11 +53,12 @@ bun run build    # 上线前必须过
 | S02 | Takeaways | **今天你会带走什么**(产出 + 验收标准) |
 | S10 | ThreePaths | 产品 / 服务 / 传统生意 / 小团队都可使用课程方法（实际第 3 页） |
 | **S03–S03b** | **StartupMistakes / ProblemFirstCases** | **七个创业误区 + Canva/Fusion Books 与 DoorDash/PaloAltoDelivery 真实起点**（实际第 4–5 页） |
-| **S03c–S03f** | **Opportunity Sources / Scan** | **熟悉行业、反复痛点、人工流程、已有付费四个入口；现场圈出一个候选问题**（实际第 6–9 页） |
-| **S04b** | **ProductValidationPath** | **客户与场景 → 真实问题 → 最小交付 → 付费证据 → 复购与推荐 → Scale**（实际第 10 页） |
-| **S04d** | **ProductOnlyValidationPath** | **Idea → PoC → MVP → 付费证据 → PMF → Scale；产品型项目专用**（实际第 11 页） |
-| **S04** | **Roadmap15Weeks** | **15 周全景路线**（实际第 12 页） |
-| **S05** | **PhaseOutputs** | **4 个 Phase 的出关物**（实际第 13 页） |
+| **S03c–S03f** | **Opportunity Sources / Scan** | **熟悉行业、反复痛点、人工流程、已有付费四个入口；现场留下三个候选问题**（实际第 6–9 页） |
+| **S03g–S03j** | **Opportunity Filter** | **7 维 1–5 分评分、三个一票否决、从三个候选中圈定一个本周验证方向**（实际第 10–13 页） |
+| **S04b** | **ProductValidationPath** | **客户与场景 → 真实问题 → 最小交付 → 付费证据 → 复购与推荐 → Scale**（实际第 14 页） |
+| **S04d** | **ProductOnlyValidationPath** | **Idea → PoC → MVP → 付费证据 → PMF → Scale；产品型项目专用**（实际第 15 页） |
+| **S04** | **Roadmap15Weeks** | **15 周全景路线**（实际第 16 页） |
+| **S05** | **PhaseOutputs** | **4 个 Phase 的出关物**（实际第 17 页） |
 | **S04c** | **WeeklyFounderSkills** | **15 周每周发一个 Founder Skill** |
 | S09 | WeeklySessionRhythm | 学生主导的 Founder Exchange；中段 30min 分享真实生意、卡点与下一步 |
 | S10b–S11 | Why SoT / What is SoT | 先解释没有共同真相为什么会乱，再给定义 |
@@ -186,7 +187,7 @@ curriculum 是静态站,**push 到 main 自动部署**(GitHub Actions)。
 
 ## 8. 附:W1 deck 当前状态
 
-- 🟡 当前 38 张 slide；W1 主题为 Find a Problem Worth Solving，先用四入口 Opportunity Scan 圈出候选问题，再完成六字段 Opportunity Card 和 5/3/3/付费意愿验证承诺；通用生意验证路径与产品型项目路径同时保留；Opportunity Card 作为 SoT v0.1 管理后续任务，AI 只辅助准备验证
+- 🟡 当前 42 张 slide；W1 主题为 Find a Problem Worth Solving，先用四入口 Opportunity Scan 得到三个候选问题，再用 7 维评分与三个一票否决圈定本周验证方向，随后完成六字段 Opportunity Card 和 5/3/3/付费意愿验证承诺；通用生意验证路径与产品型项目路径同时保留；Opportunity Card 作为 SoT v0.1 管理后续任务，AI 只辅助准备验证
 - ✅ 本地 `http://localhost:5173/` 可访问
 - ✅ 已登记进 `curriculum/lessons.html`（状态：Production Published）
 - ✅ 所有案例带来源条,无编造内容

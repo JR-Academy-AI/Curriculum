@@ -17,6 +17,10 @@ import S03c from './components/slides/S03c_OpportunitySources';
 import S03d from './components/slides/S03d_IndustryAndPersonal';
 import S03e from './components/slides/S03e_ManualAndPaid';
 import S03f from './components/slides/S03f_OpportunityScan';
+import S03g from './components/slides/S03g_FilterIntro';
+import S03h from './components/slides/S03h_FilterScorecard';
+import S03i from './components/slides/S03i_FilterKillSwitches';
+import S03j from './components/slides/S03j_FilterWorkshop';
 
 // CH 0.5 · 这 15 周你要去哪
 import S04 from './components/slides/S04_Roadmap15Weeks';
@@ -29,7 +33,7 @@ import S06 from './components/slides/S06_TimeInvestment';
 // CH 0.6 · 每周课堂节奏
 import S09 from './components/slides/S09_WeeklySessionRhythm';
 
-// CH 1 · 验证路径 + Opportunity Card / SoT（14:50–15:10）
+// CH 1 · 验证路径 + Opportunity Card / SoT（15:20–15:40）
 import S10 from './components/slides/S10_ThreePaths';
 import S10b from './components/slides/S10b_WhySOT';
 import S11 from './components/slides/S11_WhatIsSOT';
@@ -45,11 +49,11 @@ import S13a from './components/slides/S13a_CasePropertyPrompt';
 import S13 from './components/slides/S13_CasePropertyMaintenance';
 import S14 from './components/slides/S14_CaseDebrief';
 
-// CH 2 · 写卡、交流与讲师现场 review（15:10–16:30）
+// CH 2 · 交流、写卡与讲师现场 review（15:40–16:50）
 import S17 from './components/slides/S17_PeerReview';
 import S18 from './components/slides/S18_InstructorReview';
 
-// CH 3 · AI 辅助准备验证任务（16:30–16:50）
+// CH 3 · AI 辅助准备验证任务（16:40–16:50）
 import S19 from './components/slides/S19_MinimumAIOS';
 import S20 from './components/slides/S20_LoadSOT';
 import S20b from './components/slides/S20b_ActivateW1Skill';
@@ -72,6 +76,10 @@ export default function App() {
 			<S03d />
 			<S03e />
 			<S03f />
+			<S03g />
+			<S03h />
+			<S03i />
+			<S03j />
 			<S04b />
 			<S04d />
 			<S04 />
