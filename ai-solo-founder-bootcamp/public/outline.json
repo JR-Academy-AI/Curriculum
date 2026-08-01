@@ -277,7 +277,7 @@
         {
           "code": "L02",
           "title": "[W1] 搭起你的 CEO AI OS · Your CEO AI OS",
-          "description": "<p><strong>【W1 · 搭起你的 CEO AI OS】</strong>本周真实动作：锁死一个方向写成一页 SoT，当场把 CEO AI OS 装起来并接上 Gmail / Calendar / Drive / Notion ｜ 本周产出：一页生意 Source of Truth + 一个跑得动 7 个秘书任务的 AI OS + 一个 A/B/C 混编小组 ｜ 卧槽点：第一次有一个东西同时知道你的日程、邮件、文档和生意方向，而且它已经开始替你干活</p><h3>🎬 现场 3 小时怎么走</h3><ul><li><strong>① OPC 心智 + 澳洲在职创业者案例</strong> — 三条路（OPC / 传统创业 / VC startup）的差别，以及两个真在澳洲一边上班一边跑到 $3k-$30k MRR 的人怎么排时间。</li><li><strong>② 锁方向，写死一页生意 SoT</strong> — 7 个字段当场填完，存进 AI OS 记忆库，之后每节课它都读这一份。</li><li><strong>③ A/B/C 复盘 + 现场组队</strong> — W0 采集表亮牌，3-4 人混编组，写组内契约。</li><li><strong>④ 搭 AI OS</strong> — 选型 → 把 Gmail / Calendar / Drive / Notion 喂进去 → 现场派 7 个秘书任务。</li></ul><h3>📋 现场过关</h3><p>下课前每人必须有：一页 SoT（已存进 OS 记忆库）、一个能读到你真实日历和邮件的 AI OS、一个组、至少 2 个当场跑通并有输出截图的秘书任务。剩下 5 个任务本周内补齐（见 W1 自学）。</p>",
+          "description": "<p><strong>【W1 · 搭起你的 CEO AI OS】</strong>本周真实动作：用两个课堂模拟商业案例理解 SoT，把自己的方向写成一页 SoT v0.1，并让最小 AI OS 基于它完成第一个真实任务 ｜ 本周产出：一页同学能复述的 SoT + 一条会改变下一步动作的反馈 + 一个已载入 SoT、跑通 1 个真实任务的最小 AI OS ｜ 关键变化：方向不再只存在脑子里，同学能复述、AI 能执行、下周能带着新证据回来继续改</p><h3>🎬 现场 3 小时怎么走</h3><ul><li><strong>① 先分清创业路径，再理解 SoT</strong> — OPC / 传统创业 / VC startup 的差别；SoT 不是商业计划书，而是所有人和 AI 共同执行的一页。</li><li><strong>② 两个课堂模拟商业案例</strong> — 专业经验产品化：AI 月末资料准备服务；本地流程产品化：物业维修工单助手。两个案例都明确客户、现有代价、AI 边界、收费假设、六周证据和不做清单。</li><li><strong>③ 写 SoT + Founder Exchange</strong> — 当场填完 7 字段；课程中段 30 分钟交流方向、卡点和“我能给什么 / 我需要什么”，再由讲师 review 具体 SoT。</li><li><strong>④ 搭最小 AI OS</strong> — 选一个已经能使用的工作空间，载入 SoT，先让 AI 正确复述，再从竞品证据 / 访谈提纲 / 真实邀约中三选一跑通。</li></ul><h3>📋 现场过关</h3><p>下课前每人必须有：一页 SoT v0.1（7 字段填满、同桌能复述、不做清单 3 条）、一条已记录的有效反馈、一个已载入 SoT 并跑通 1 个真实任务的 AI 工作空间。Gmail / Calendar / Drive / Notion 接入和更多自动任务放到课后 Lab / 自学，不作为现场过关条件。</p>",
           "type": "Lesson",
           "isLive": true,
           "duration": 180,
@@ -285,51 +285,58 @@
             {
               "order": 1,
               "type": "CONCEPT",
-              "title": "OPC 心智 + 澳洲在职创业者案例 3-5 个",
-              "description": "OPC vs 传统创业 vs VC startup 三条路在团队、融资、营销、财务、心智每一层的差别。然后放两个真实案例：墨尔本 indie hacker（$3k-$10k MRR）和澳洲华人 micro-SaaS founder（$10k-$30k MRR），重点看他们在职期间怎么排时间、第一批用户从哪来。最后做 OPC 适配 5 维自评：财务储备 / 时间承诺 / 心智成熟度 / 行业积累 / 抗孤独能力。",
+              "title": "创业路径 + SoT 是什么 + 两个商业案例",
+              "description": "先分清 OPC / 传统创业 / VC startup：W1 先走低成本验证路径，用真实付费证明需求，再决定是否融资。随后讲清 SoT = Single Source of Truth，不是商业计划书、口号或永远不改的承诺。用两个明确标注为课堂模拟的商业案例教学：A 把月末关账经验产品化为 AI 月末资料准备服务；B 把物业维修请求产品化为工单工作流。两个案例只提供待验证假设，不冒充真实公司成绩。",
               "duration": 35
             },
             {
               "order": 2,
               "type": "SCENARIO",
               "title": "锁方向：当场写死一页生意 Source of Truth",
-              "description": "7 个字段逐个填：服务谁 / 他现在怎么解决 / 我用 AI 做掉哪一段 / 不公平优势 / 收钱形态假设 / 6 周后可验证的证据 / 明确不做什么（不做清单必须写满 3 条）。写完存进当天搭好的 AI OS 记忆库，不是存在本地随手一个文件里。同桌互念，只问三个问题：你服务的人具体到什么程度？这个优势别人为什么抄不走？不做的三件事写了吗？定规矩——这一期只做一个方向，要改必须带证据走 W3 那关。",
-              "duration": 35
+              "description": "7 个字段逐个填：服务谁 / 他现在怎么解决 / 我用 AI 做掉哪一段 / 不公平优势 / 收钱形态假设 / 6 周后可验证的证据 / 明确不做什么（不做清单必须写满 3 条）。验收不是写满字数，而是同桌能用一句话复述、AI 不需要猜、6 周后能判断继续还是停。",
+              "duration": 30
             },
             {
               "order": 3,
               "type": "SCENARIO",
-              "title": "讲师现场 review：3 份 SoT 当场逐字改",
-              "description": "同桌互念只能发现「听不懂」，发现不了「方向本身就不成立」。这一段由讲师从当场写的 SoT 里挑 3 份上台，逐字段过：客户是谁写没写成一类具体的人（不是「中小企业」这种）、他现在花钱解决这个问题没有、你凭什么是他会选的那个、这一句话别人转述得出来吗。每份 5 分钟，只指出必须改的那一处，当场改完再念一遍。没被挑到的同学对照同样四问自查，助教巡场收没过关的名单，课后一对一补。",
-              "duration": 15
+              "title": "Founder Exchange：方向互问 + 记录有效反馈",
+              "description": "课程中段固定 30 分钟。W1 每人先说清“我是谁 / 我能给什么 / 我需要什么”，再用自己的 SoT 与同桌互问：客户是否具体、对方现在是否付出代价、AI 边界是否清楚、六周证据能否判断生死。每人离开时写下一位要继续联系的人和一条会改变下一步动作的反馈。",
+              "duration": 30
             },
             {
               "order": 4,
-              "type": "SCENARIO",
-              "title": "创业身份 A/B/C 复盘 + 现场组队（贯穿 15 周）",
-              "description": "A 类（有 idea 草稿）提供可被拆的靶子；B 类（有能力资源、方向未定）补技术 / 行业 / 渠道缺口；C 类（还在决定下不下场）是全组最诚实的用户样本和挑刺人。每人 60 秒亮牌：我是谁 / 我能给什么 / 我要什么，同步录进平台 matching 工具（写「我会做 marketing」搜不到人，写「我能两周内帮你搭起小红书内容机器」才会被搜到）。3-4 人混编组、选召集人、写不超过半页的组内契约：每周互查哪一项交付、卡住 24 小时内先找谁、谁做谁的第一个真实用户。",
-              "duration": 25
+              "type": "CONCEPT",
+              "title": "休息",
+              "description": "10 分钟休息。助教只处理个别保存或登录问题，不在休息时要求学员继续完成任务。",
+              "duration": 10
             },
             {
               "order": 5,
-              "type": "CONCEPT",
-              "title": "AI OS 选型：5 个 AI 秘书方案深度对比",
-              "description": "Claude Cowork（桌面 App / GUI / 1 小时上手 / 数据走 Anthropic 云）、OpenClaw（开源 CLI / 本地 markdown memory / 支持非 Claude LLM）、Hermes（跨平台 / 手机 IM 对话 / 跨设备 memory）、Lindy.ai（零代码 SaaS / $50-300 月）、自建（Crew AI / LangGraph + pgvector）。按 W0 选定的 AI 订阅档位分组，逐个讲强项弱项和月成本，当场定主线方案——装机细节留给 W1 的 Lab。（⚠️ 2026-07-29 调整：本段由 30min 压到 15min，腾出时间给「讲师现场 review」。现场只做「五选一当场拍板」，5 个方案的逐条对比改为课前发 W2_AGENT_ROUTES.md 讲义自读，W2 还有一整节课专讲 agent 路线选型。）",
-              "duration": 15
+              "type": "SCENARIO",
+              "title": "讲师现场 review：3–4 份 SoT 当场改一处",
+              "description": "从现场 SoT 中挑客户过宽、问题不值钱、边界不清或表达清楚的代表。每份只改最影响下一步验证的一处：本人先念，讲师追问，学员当场改完再念。没被挑到的人用同样问题自查，不把这段变成被动观看。",
+              "duration": 20
             },
             {
               "order": 6,
-              "type": "LIVE",
-              "title": "超级记忆：把 Gmail / Calendar / Drive / Notion 喂进 agent",
-              "description": "现场接通四类真实数据源，让 OS 从「聊天玩具」变成「知道你在干什么的秘书」：邮箱（历史邮件 + 联系人）、日历（会议 + 空档）、云盘（合同 / 简历 / 过往项目）、Notion / Slack（笔记与讨论）。逐条讲授权范围怎么给、敏感数据怎么隔离（律师 / 会计 / 医疗类学员走本地路径）、memory 怎么组织成它下周还找得到的结构。验收：问它「我下周三下午有空吗、上一次跟 X 聊到哪了」，它答得对。",
-              "duration": 25
+              "type": "CONCEPT",
+              "title": "搭最小 AI OS：一个工作空间 + 一页 SoT",
+              "description": "学员使用今天已经能登录、能保存上下文的 AI 工具，不做五方案深度选型。把 SoT 放进固定 workspace / project，要求 AI 先复述客户、问题、边界和最不确定的假设；纠正理解错误并保存。现场不要求接私人邮箱、客户原始文件或四个平台。",
+              "duration": 35
             },
             {
               "order": 7,
               "type": "LIVE",
-              "title": "干活：现场派 7 个秘书任务",
-              "description": "当场把 7 个任务配进 OS：① 每日晨间简报（日程 + 待办 + 昨日进展）② 邮件分诊与草稿 ③ 财务月报（Stripe + Xero → MRR / churn / GST 准备金）④ 会议笔记转决策清单 ⑤ 日程协调 ⑥ 客户跟进队列（7 天没回的自动提醒 + 上次上下文）⑦ 周报生成（git commit + 邮件 + 日历）。现场至少跑通 2 个并留输出截图，剩下的本周内补。合同审查那一类留到 W7 跟 AI 律师课联动。",
-              "duration": 30
+              "title": "第一个真实任务：三选一现场跑通",
+              "description": "从三个任务中选一个：A 找 5 个客户正在使用的替代方案并带原始链接；B 围绕 SoT 最不确定的 3 个假设写 10 个不诱导的访谈问题；C 针对一个真实对象起草访谈邀约，由本人检查后再决定是否发送。验收：看到输出、指出至少一处错误并让 AI 重做、留下一个下周动作。",
+              "duration": 15
+            },
+            {
+              "order": 8,
+              "type": "LIVE",
+              "title": "验收 + 锁定下周动作",
+              "description": "逐人检查三件：SoT v0.1 是否能被同桌复述；是否记录了一条会改变下一步的反馈；AI workspace 是否已载入 SoT 并跑通一个真实任务。未完成者登记课后补，不在现场用账号接入问题拖住全班。",
+              "duration": 5
             }
           ],
           "labs": [],
@@ -339,7 +346,7 @@
         {
           "code": "L03",
           "title": "[W1·Lab] CEO AI OS 装机 — 基础配置 + 第一次对话验收",
-          "description": "<p><strong>【W1 · 搭起你的 CEO AI OS】</strong>本周真实动作：锁死一个方向写成一页 SoT，当场把 CEO AI OS 装起来并接上 Gmail / Calendar / Drive / Notion ｜ 本周产出：一页生意 Source of Truth + 一个跑得动 7 个秘书任务的 AI OS + 一个 A/B/C 混编小组 ｜ 卧槽点：第一次有一个东西同时知道你的日程、邮件、文档和生意方向，而且它已经开始替你干活</p><h3>🎯 把 L02 选的 AI 秘书装好 + 跟它建立第一次有上下文的对话</h3><p>Lab 分 4 站点（自建路径学员自学，不在 lab），按 L02 选的方案进对应站点，TA 1:8 陪跑。已上过 Claude Cowork Workshop 或 OpenClaw Bootcamp 的学员可以兼任 peer mentor。</p><h4>站点 ① Claude Cowork 路径（推荐 default，最快）</h4><ol><li>装 Claude Desktop App（macOS / Win）+ 登录已订的 Claude Pro</li><li>启用 Cowork tab + 配 4 个 Connectors（Gmail / Calendar / Drive / Notion 任选）</li><li>配人设：在 Cowork 系统提示里写『你是谁、写作语调、决策风格、行业术语』</li><li>第一次对话：让 Cowork 把你的产品 idea 用你语调写一篇小红书笔记 + 直接保存到 Drive 里</li><li>装第一个 Plugin（PowerPoint Plugin / Skill Marketplace 选一个）</li><li>验收：Cowork 自动出一份 5 页 PPT 的产品 demo，直接打开 PPT 文件验证</li></ol><h4>站点 ② OpenClaw 路径（OpenClaw Bootcamp 同款流程）</h4><ol><li>装 OpenClaw CLI（macOS 直装 / Win 走 WSL2）+ bun + LLM API key</li><li>配 <code>USER.md</code>（你的人设、行业、写作语调、决策风格）</li><li>配 <code>MEMORY.md</code>（W1 刚锁的一页生意 SoT + 你的方向和不做清单）</li><li>验收：让 OpenClaw 用你的语调写一篇小红书笔记，盲测达 70% 像</li></ol><h4>站点 ③ Hermes Agent 路径</h4><ol><li>装 Hermes（pip / docker 任一）+ LLM API key</li><li>配人设到 <code>~/.hermes/</code>（同样写『你是谁』、写作语调）</li><li>启 Hermes daemon + 第一次对话（CLI 模式）</li><li>启用 Telegram gateway，手机 Telegram 跟 agent 对话，验证跨设备 memory</li><li>验收：在手机问 agent『我刚才在 CLI 里跟你说的产品 idea 是什么』，agent 答出来</li></ol><h4>站点 ④ Lindy.ai 路径</h4><ol><li>注册 Lindy.ai 账号 + 选 starter 模板</li><li>配人设到 Lindy 的 system prompt</li><li>接 Gmail / Calendar 第一个集成跑通</li><li>验收：Lindy 帮你处理一封测试邮件 → 草拟回复 draft</li></ol><h4>自建路径（自学，不在 lab）</h4><p>装 Crew AI / LangGraph + Supabase pgvector + 写 200 行最小 agent，跨进程 memory 持久化。L25 自学课会发完整 boilerplate。</p><p><strong>关键约束</strong>：每个学员只装一个主线，别装多个浪费 W1 时间。L25 进阶课会讲『以后想补第二个 agent 怎么办』。</p>",
+          "description": "<p><strong>【W1·Lab · 扩展最小 AI OS】</strong>正课已经以“一页 SoT + 一个真实任务”过关；Lab 只为确实需要连接器或跨设备工作的学员继续扩展，不反过来改变正课门槛。</p><h3>🎯 只接一个与下周证据直接相关的能力</h3><ol><li>确认工作空间能正确复述 SoT、区分事实与假设、遵守不做清单</li><li>从文件、日历、邮箱或消息入口中只选一个；先用测试数据验证权限范围</li><li>跑一个与本周任务相关的输入—处理—输出闭环</li><li>撤掉不必要的权限，记录失败点和人工复核位置</li></ol><p><strong>验收：</strong>不是“接了几个工具”，而是一个真实工作流能重复运行，输出可检查，且没有上传不该上传的数据。</p>",
           "type": "InteractiveLab",
           "isLive": false,
           "isInteractiveLab": true,
@@ -357,8 +364,8 @@
         },
         {
           "code": "L04",
-          "title": "[W1·自学] 7 个秘书任务跑满一周 + AI OS 验收",
-          "description": "<p><strong>【W1 · 搭起你的 CEO AI OS】</strong>本周真实动作：锁死一个方向写成一页 SoT，当场把 CEO AI OS 装起来并接上 Gmail / Calendar / Drive / Notion ｜ 本周产出：一页生意 Source of Truth + 一个跑得动 7 个秘书任务的 AI OS + 一个 A/B/C 混编小组 ｜ 卧槽点：第一次有一个东西同时知道你的日程、邮件、文档和生意方向，而且它已经开始替你干活</p><h3>🎯 现场配通 2 个不算完，本周要让 7 个都跑起来</h3><p>现场时间只够配 2 个任务并看到输出。剩下 5 个自己按同一套套路配完，并且要真的跑满一周——秘书这个事，跑一次是 demo，跑七天才叫上岗。</p><h4>7 个任务清单</h4><ol><li>每日晨间简报（日程 + 待办 + 昨日进展，每天 7:00 push）</li><li>邮件分诊 + 草稿（重要 / 可批量 / 可忽略三桶，重要的直接写好草稿进草稿箱）</li><li>财务月报（Stripe + Xero → MRR / churn / GST 准备金 / 现金流，每月 1 日）</li><li>会议笔记 → 决策清单 + action items（Otter / Granola 转录喂进来）</li><li>日程协调（Cal.com 自动回可约时段）</li><li>客户跟进队列（每周一 push 7 天没回的客户 + 上次聊到哪）</li><li>周报生成（git commit + 邮件 + 日历 → 本周 / 下周 / 风险）</li></ol><h3>📋 验收</h3><p>至少 4 个任务连续跑满一周，每个交一张真实 push 输出截图（不是配置界面截图）。跑不通的记进卡点日志，带到 W2 现场问。</p>",
+          "title": "[W1·自学] 用一条新证据更新 SoT + 重跑任务",
+          "description": "<p><strong>【W1·自学 · 从输出回到证据】</strong>本周只追一个闭环：找一位目标用户或一份可信资料，拿到一条能支持或推翻假设的新事实；更新 SoT；重跑正课选中的任务；比较前后输出。</p><h3>📋 验收</h3><ol><li>保存新证据的来源和原话 / 原始链接</li><li>在 SoT 中标出哪一字段因此改变，或为什么暂时不改</li><li>用更新后的 SoT 重跑同一任务，修正至少一处错误</li><li>准备 90 秒 W2 分享：证据是什么、它改变了什么、下一步需要谁帮助</li></ol><p>可选扩展：只有当前工作流确实需要时，才增加连接器或第二个任务。数量不计入过关。</p>",
           "type": "Information",
           "isLive": false,
           "duration": 90,
@@ -366,22 +373,22 @@
             {
               "order": 1,
               "type": "SCENARIO",
-              "title": "把剩下 5 个秘书任务配完",
-              "description": "按现场演示的同一套路配完剩余任务：定输入源、定触发时间、定输出格式、定推送到哪（Telegram / 邮件 / Notion）。每配完一个就手动触发一次确认输出正常，不要等到明天才发现没跑。",
+              "title": "找到一条能支持或推翻假设的新证据",
+              "description": "优先来自一位目标用户的过去行为或一份可核验的原始资料。记录来源、日期和原话；不要把 AI 总结当作原始证据。",
               "duration": 45
             },
             {
               "order": 2,
               "type": "SCENARIO",
-              "title": "连续跑满一周 + 收集输出截图",
-              "description": "让任务真的按 schedule 跑一周。每天花 2 分钟看输出对不对：数字有没有错、有没有漏掉重要邮件、简报里有没有幻觉内容。发现 AI 答错就补 sanity check 规则，不要放着不管。",
+              "title": "更新 SoT，再重跑同一任务",
+              "description": "标出新证据改变了哪个字段；如果不改变，也写清理由。让 AI 基于新版本重跑课堂任务，比较前后差异并人工修正至少一处。",
               "duration": 30
             },
             {
               "order": 3,
               "type": "CONCEPT",
-              "title": "5 个常见失败模式与兜底",
-              "description": "Mac 睡眠导致没跑（caffeinate / Power Nap，或改用常驻 daemon 路径）；API rate limit（加 retry + 错峰）；输出爆 token（先摘要再送）；push 出来没人看（改成卡片式 dashboard）；AI 答错（加 sanity check + 异常告警）。逐条对照自己的 7 个任务，标出哪几个有风险。",
+              "title": "准备 W2 的 90 秒证据分享",
+              "description": "只讲三件：新证据是什么；它让 SoT 或下一步发生了什么变化；现在需要哪一种帮助、访谈对象或行业信息。",
               "duration": 15
             }
           ],

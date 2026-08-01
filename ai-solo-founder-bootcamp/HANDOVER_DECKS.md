@@ -8,7 +8,7 @@
 ## 0. 一句话背景
 
 AI 一人创业营 = 15 周课程,**每周日 14:00–17:00 三小时线下课**(墨尔本主场 + 悉尼/布里斯班卫星教室 + 同步直播)。
-W1 的讲课 deck 已完成(23 张 slide,React+Vite,本地可跑)。**你要做的是 W2–W15 的同款 deck。**
+W1 当前已有 26 张 slide 的 React+Vite deck，并采用 SoT 六步教学链。**W2–W15 可复用它的引擎和“先解释为什么、再示范、再练习、再验收”的结构，不照抄 W1 内容。**
 
 ---
 
@@ -22,6 +22,7 @@ curriculum/lessons/ai-solo-founder-w1/
 ├── index.html
 ├── README.md             # 来源对照表 + 上台前红线清单
 ├── public/logo-zh-full.svg
+├── public/product-validation-path.png
 └── src/
     ├── App.tsx           # 把 slides 按顺序组装进 SlideEngine
     ├── main.tsx
@@ -44,24 +45,27 @@ bun run dev      # → http://localhost:5173/
 bun run build    # 上线前必须过
 ```
 
-### 1.3 W1 的 23 张 slide 顺序(照这个结构做其它周)
+### 1.3 W1 当前 26 张 slide 顺序（引擎与章节结构可复用）
 
 | # | Slide | 作用 |
 |---|---|---|
 | S01 | Cover | 封面 |
 | S02 | Takeaways | **今天你会带走什么**(产出 + 验收标准) |
-| S03 | Timetable | 今天怎么走(时间表) |
 | **S04** | **Roadmap15Weeks** | **15 周全景路线**(每周一个短名) |
 | **S05** | **PhaseOutputs** | **4 个 Phase 的出关物** |
 | **S06** | **TimeInvestment** | **时间投入:约 94h,平均每周 6h** |
+| **S04b** | **ProductValidationPath** | **Idea → PoC → MVP → 付费证据 → PMF → Scale**（实际第 6 页） |
+| **S04c** | **WeeklyFounderSkills** | **15 周每周发一个 Founder Skill** |
 | S07 | ComplianceTimeline | 合规时间线(现在→W7 收钱→W13 税务) |
-| S08 | EmployedSelfCheck | ⚠️ 在职创业三个自查(雇佣合同 IP/副业申报/竞业) |
-| S09 | TeamingThreeThings | 组队前想清楚三件 |
+| S09 | WeeklySessionRhythm | 每节课固定节奏；中段 30min 分享与交流，W1 也执行 |
 | S10 | ThreePaths | ① 三条路决策对照(7 行表) |
-| S11–S14 | 案例 ×3 + BuyTimeBack | 真实案例 |
-| S15 | SelfCheck | 5 维自评 |
-| S16–S18 | SoT 七字段 / 同桌三问 / 讲师 review | ② 锁方向 |
-| S19–S21 | AI OS 选型 / 喂数据 / 7 个秘书任务 | 动手环节 |
+| S10b–S11 | Why SoT / What is SoT | 先解释没有共同真相为什么会乱，再给定义 |
+| S16 | SoTFields | 七字段因果链 + 好坏写法 |
+| S12–S13a–S13 | 模拟案例 A / 案例 B 练习 / 案例 B 对答案 | 一个跟做、一个先练再核对 |
+| S14 | CaseDebrief | 四把尺子迁移到学员自己的方向 |
+| S17–S18 | 同伴复述 / 讲师 review | Founder Exchange + 改一处关键假设 |
+| S19–S21 | 最小 AI OS / 载入 SoT / 第一件真实任务 | 动手环节；不以连接器和任务数为门槛 |
+| S20b / S21b | W1 Skill 启动 / 证据状态 | 把 SoT Skill 放进 Workspace，并区分生成、执行、验收 |
 | S22 | NextWeek | 派下周的活 + 预告 |
 | S23 | Closing | 过关线 |
 
@@ -120,7 +124,7 @@ bun run build    # 上线前必须过
 - **位置:课程中段**(不是开场)。⚠️ 注意:现有的 `W2_RUNSHEET.md` ~ `W7_RUNSHEET.md` 里把它排在**开场**,**以本条为准,需要改**
 - **时长 30min**
 - **内容**:1-2 人上台讲这周进展 + 围绕 ta 的 networking;**组队也在这个环节发生**(W2 首次)
-- **W1 例外**:W1 不做 idea 分享(第一周还没进展可讲),从 **W2 起每次课都有**
+- **W1 也执行**：第一周交流方向、卡点和可提供的帮助；W2 起带真实进展与产出交流
 - 做 deck 时:这 30min 要在时间表 slide 上体现出来
 
 ### 4.2 每周三件套(每套 deck 的 S02 都要有)
@@ -173,15 +177,15 @@ S04 15 周路线 / S05 Phase 出关物 / S06 时间投入 —— 见 §1.3 说�
 ## 7. 部署(做完之后)
 
 curriculum 是静态站,**push 到 main 自动部署**(GitHub Actions)。
-⚠️ 但新 deck 目录**必须接进 `.github/workflows/deploy.yml` 的 Assemble 步骤**,否则线上 404(这是 `curriculum/CLAUDE.md` 的强制规则 1)。W1 的 deck 目前**还没接**,需要一并处理。
+新 deck 目录必须接进 `.github/workflows/deploy.yml` 的 Build 与 Assemble 步骤，否则线上 404。W1 已接入，后续 W2–W15 仍须逐套登记。
 
 ---
 
 ## 8. 附:W1 deck 当前状态
 
-- ✅ 23 张 slide 完成,`bun run build` 通过(396KB / gzip 127KB)
+- 🟡 当前 26 张 slide；SoT 已重排为“为什么需要 → 定义 → 七字段 → 案例 A 跟做 → 案例 B 练习与核对 → 迁移”六步链，并补入 Founder Skills、W1 Skill 启动与证据状态；现场门槛为 SoT v0.1 + 有效反馈 + 一个真实 AI 任务
 - ✅ 本地 `http://localhost:5173/` 可访问
 - ✅ 已登记进 `curriculum/lessons.html`(状态:本地已构建 · 待部署)
 - ✅ 所有案例带来源条,无编造内容
-- ❌ **未接 deploy.yml**(线上访问不到)
-- ❌ **未 commit**
+- ✅ 已接入 `deploy.yml` 的独立构建与 Assemble 路径
+- 🟡 当前部署状态以 GitHub Actions 与公开 URL 回读为准

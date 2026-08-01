@@ -1,7 +1,8 @@
 import { Slide, colors } from '../ui';
 import { Body, SlideHead, DeckTable, Punchline } from '../DeckTable';
 
-// ① 三条路的决策对照 —— 来源：W1_RUNSHEET.md §3「14:05–14:20 三条路的决策对照」7 行表 + 收尾那句话
+// ① 三条路的决策对照 —— 来源：W1_RUNSHEET.md §3「14:05–14:20 三条路的决策对照」7 行表；
+// 叙事参考 public/session-deck.html #6「创业先分清哪一种」，并与产品验证路径的 Paid Evidence 口径对齐。
 const opc = (t: string) => <b style={{ fontWeight: 800 }}>{t}</b>;
 
 export default function S10_ThreePaths() {
@@ -9,9 +10,10 @@ export default function S10_ThreePaths() {
 		<Slide bg={colors.warmBg}>
 			<Body style={{ padding: '40px 56px 36px' }}>
 				<SlideHead
-					tag="① 你要走哪条路 · 14:00–14:35"
-					title="不讲「心智」，讲：遇到同一件事，三种人怎么选"
+					tag="① 创业先分清你做的是哪一种"
+					title="这门课先让你做一门有人付钱的 Business"
 					titleSize="clamp(32px, 2.9vw, 44px)"
+					sub="不是否定融资。先证明有人愿意付钱，再决定要不要用资本把它放大。"
 				/>
 
 				<DeckTable
@@ -36,10 +38,10 @@ export default function S10_ThreePaths() {
 				/>
 
 				<Punchline bg={colors.dark}>
-					这门课教的是<span style={{ background: colors.red, padding: '0 8px' }}>第三列</span>
-					。不雇人、不融资，目标 $1k → $10k MRR 的自由。想做独角兽的话这门课不适合你 —— 现在说比第 10 周说好。
+					这门课先走<span style={{ background: colors.red, padding: '0 8px' }}>第三列</span>
+					：低成本做出来，用真实付费判断是不是需求。W7 的第一笔钱是 <u>Paid Evidence</u>，不是 PMF。
 					<span style={{ display: 'block', marginTop: 8, fontSize: 18, fontWeight: 600, color: colors.yellow }}>
-						「我做这个是不是没出息？」—— 小是<u>选的</u>，不是<u>输的</u>。
+						站稳之后，你仍然可以选择融资；但不要拿一个还没人付过钱的想法去烧钱。
 					</span>
 				</Punchline>
 			</Body>

@@ -29,7 +29,7 @@ export default function S18_InstructorReview() {
 		<Slide bg={colors.warmBg}>
 			<Body style={{ padding: '34px 52px 28px' }}>
 				<SlideHead
-					tag="②′ 讲师现场 review · 15:20–15:35 · 2026-07-29 新增"
+					tag="③ Founder Exchange · 讲师现场 review · 15:20–15:35"
 					tagBg={colors.red}
 					titleSize="clamp(28px, 2.5vw, 38px)"
 					title="挑 3 份 SoT 当场逐字改"

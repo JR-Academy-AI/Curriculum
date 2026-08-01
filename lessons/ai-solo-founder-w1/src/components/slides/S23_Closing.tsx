@@ -3,9 +3,9 @@ import { Slide, Inner, colors, fonts, border, shadow } from '../ui';
 
 // 收尾 —— 来源：W1_RUNSHEET.md §0「三个必须带走的东西（过关线）」+ §3 ⑦
 const ITEMS = [
-	{ t: '一页生意 SoT', d: '7 个字段填满，不做清单 3 条，已存进 OS 记忆库', bg: '#FFE9E4' },
-	{ t: '能干活的 AI OS', d: '接上 Gmail + Calendar，跑通至少 5 个秘书任务', bg: '#D9F2E4' },
-	{ t: '下周的自动任务', d: '设好 1 个本周自动跑的任务，W2 第一件事就是看它', bg: '#EDE9FE' },
+	{ t: 'SoT v0.1', d: '7 个字段写清；同学能复述，AI 不用猜，还写明不做什么', bg: '#FFE9E4' },
+	{ t: '一条有效反馈', d: '记录别人指出的关键假设，并据此改掉一个下一步动作', bg: '#D9F2E4' },
+	{ t: '最小 AI OS', d: '载入 SoT，完成 1 个真实任务，修正 1 处错误并留下下一步', bg: '#EDE9FE' },
 ];
 
 // 注意：SlideEngine 固定用深色版 logo-zh-full.svg，所以收尾页用暖底而不是深底（深底会让 logo 糊掉）。
@@ -86,9 +86,9 @@ export default function S23_Closing() {
 						maxWidth: 1150,
 					}}
 				>
-					三件齐了，你今天就带走了「一个想清楚的方向 + 一个已经在替你干活的 AI OS」。
+					三件齐了，W1 的目的就达成：方向能被别人理解，假设开始接受证据，AI 已完成第一件真任务。
 					<span style={{ display: 'block', marginTop: 6, fontSize: 18, fontWeight: 600, color: '#444' }}>
-						缺哪一件，课后找助教补 —— 48 小时内必须跑通，别拖到 W2。
+						没接邮箱、日历或云盘不影响今天过关；这些属于课后扩展，不是 W1 现场门槛。
 					</span>
 				</motion.div>
 			</Inner>

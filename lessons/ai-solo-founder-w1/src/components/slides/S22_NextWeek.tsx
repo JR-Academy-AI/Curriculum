@@ -10,9 +10,9 @@ export default function S22_NextWeek() {
 				<SlideHead
 					tag="⑦ 派下周的活 + 预告 · 16:55–17:00"
 					tagBg={colors.green}
-					title="课上派活 → 周中 OS 自动跑 → 下周第一件事就是 review 它跑出了什么"
+					title="下周带一条新证据回来"
 					titleSize="clamp(26px, 2.3vw, 36px)"
-					sub="这是全课的节奏发动机。"
+					sub="不是多做七个任务，而是让今天这条任务因为一条新事实变得更准。"
 				/>
 
 				<motion.div
@@ -28,10 +28,10 @@ export default function S22_NextWeek() {
 					}}
 				>
 					<div style={{ fontFamily: fonts.mono, fontSize: 15, fontWeight: 700, letterSpacing: 1, marginBottom: 6 }}>
-						每人给 AI OS 设一个本周自动任务 · 建议默认任务
+						本周唯一必做动作
 					</div>
 					<div style={{ fontSize: 27, fontWeight: 800, lineHeight: 1.35 }}>
-						每天早上 8 点，把跟我这门生意相关的行业新闻 + 竞品动态整理给我。
+						找一位目标用户或一份可信资料，拿到一条新事实；更新 SoT，再重跑今天的任务。
 					</div>
 				</motion.div>
 
@@ -46,9 +46,9 @@ export default function S22_NextWeek() {
 							本周作业（课后，平台上有）
 						</div>
 						<div style={{ fontSize: 19, lineHeight: 1.6 }}>
-							<b>L03 Lab</b>：CEO AI OS 装机验收（90min）—— 把现场没接完的接上，跑通验收清单
+							<b>L03 Lab</b>：把最小 AI OS 扩成自己的工作空间；需要时再接工具
 							<br />
-							<b>L04 自学</b>：7 个秘书任务跑满一周（90min）—— 七个任务每天都用，不是跑一次就完
+							<b>L04 自学</b>：从更多任务中挑真正有用的，不把“任务数量”当成果
 						</div>
 					</motion.div>
 
@@ -62,9 +62,9 @@ export default function S22_NextWeek() {
 							预告 W2 · 你的 AI 员工上岗
 						</div>
 						<div style={{ fontSize: 19, lineHeight: 1.6 }}>
-							今天搭的是<b>秘书</b>，下周部署真正能干活的 <b>agent</b>（Hermes / 龙虾 / Codex / Claude Code），并且一起搭 <b>Agent Schedule</b>，让它周中自动替你跑调研。
+							下周再比较 agent 路线和自动化。先带来：<b>一条新证据、更新后的 SoT、重跑后的输出</b>。
 							<span style={{ display: 'block', marginTop: 8, color: colors.yellow }}>
-								另外下周开场有 <b>30 分钟分享 + networking</b> —— 组队也在那时候发生。这周把 SoT 想清楚。
+								课程中段仍有 <b>30 分钟 Founder Exchange</b>：讲证据改变了什么，也说清楚你需要谁的帮助。
 							</span>
 						</div>
 					</motion.div>

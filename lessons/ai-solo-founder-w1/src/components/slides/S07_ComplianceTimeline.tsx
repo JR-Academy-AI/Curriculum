@@ -58,7 +58,7 @@ export default function S07_ComplianceTimeline() {
 		<Slide bg={colors.white}>
 			<Body style={{ padding: '36px 60px 30px' }}>
 				<SlideHead
-					tag="§1.5 · 创业公司早知道（1/3）"
+					tag="§1.5 · 创业公司早知道"
 					tagBg={colors.blue}
 					title="什么时候需要什么 —— 收钱在 W7，结构和税务在 W13"
 					titleSize="clamp(26px, 2.4vw, 38px)"

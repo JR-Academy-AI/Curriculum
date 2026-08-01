@@ -14,10 +14,10 @@ export default function S17_PeerReview() {
 		<Slide bg={colors.white}>
 			<Body>
 				<SlideHead
-					tag="② 同桌互念 · 15:10–15:20"
+					tag="③ Founder Exchange · 15:10–15:20"
 					tagBg={colors.green}
 					title="一对一互念，对方只问三个问题"
-					sub="不上台、不外放、不进直播画面。本周不做公开 idea 分享。每人念 2 分钟。"
+					sub="先说清：我是谁 / 我能给什么 / 我需要什么。项目细节分享多少由本人决定；每人念 2 分钟。"
 				/>
 
 				<div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 22, marginTop: 8 }}>

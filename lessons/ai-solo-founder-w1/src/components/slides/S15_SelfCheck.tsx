@@ -53,7 +53,7 @@ export default function S15_SelfCheck() {
 				<Punchline bg={colors.dark}>
 					「抗孤独」这条最多人低估。一人公司最难的不是技术，是<u>没人跟你讨论、没人给你反馈、没人替你扛</u>。
 					<span style={{ display: 'block', marginTop: 6, fontSize: 18, color: colors.yellow }}>
-						这也是为什么从 W2 开始每周都有 30 分钟分享和 networking —— 这 15 周你不是一个人在做。
+						这也是为什么每节课中段都留 30 分钟分享和交流，W1 就开始 —— 这 15 周你不是一个人在做。
 					</span>
 				</Punchline>
 			</Body>
