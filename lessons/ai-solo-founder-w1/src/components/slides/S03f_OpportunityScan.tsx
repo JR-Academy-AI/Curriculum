@@ -14,10 +14,10 @@ export default function S03f_OpportunityScan() {
 		<Slide bg={colors.white}>
 			<Body style={{ padding: '30px 54px 22px' }}>
 				<SlideHead
-					tag="10 分钟现场练习"
+					tag="30 分钟现场练习"
 					tagBg={colors.red}
 					title="Opportunity Scan：四个入口，各写一个"
-					sub="先写候选问题，不写产品功能。写完后圈出一个，带进 Opportunity Card。"
+					sub="先写候选问题，不写产品功能。写完后留下三个，带进下一页筛选模型。"
 				/>
 
 				<div style={{ display: 'grid', gridTemplateColumns: '1.18fr 0.82fr', gap: 22 }}>
@@ -47,7 +47,7 @@ export default function S03f_OpportunityScan() {
 					))}
 				</div>
 
-				<div style={{ marginTop: 12, padding: '10px 16px', background: colors.yellow, border, fontSize: 19, fontWeight: 900, textAlign: 'center' }}>输出：1 个候选问题句进入 Opportunity Card；另外 3 个留在候选池。</div>
+				<div style={{ marginTop: 12, padding: '10px 16px', background: colors.yellow, border, fontSize: 19, fontWeight: 900, textAlign: 'center' }}>输出：从 4 个候选问题中留下 3 个，带进机会筛选评分表。</div>
 			</Body>
 		</Slide>
 	);
