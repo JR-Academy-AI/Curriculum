@@ -4,9 +4,9 @@ import { Body, SlideHead } from '../DeckTable';
 
 const TESTS = [
 	['客户够不够具体？', '不是“中小企业”，而是能列出 5 个访谈对象的人群。'],
-	['现在有没有代价？', '对方已经在花时间、人工或现成软件解决，不是等你教育的新问题。'],
+	['Job 有没有偷塞产品？', '写情境、进步和结果；句子里不出现你的 AI 工具。'],
 	['AI 只做哪一段？', '不说“全自动”；明确输入、输出，以及必须由人批准的边界。'],
-	['6 周怎么判生死？', '不是点赞或问卷，而是有人把真实资料交给你试跑，最好愿意付费。'],
+	['6 周怎么判生死？', '不是点赞或问卷，而是过去行为、真实试跑与付费承诺。'],
 ];
 
 export default function S14_CaseDebrief() {
@@ -42,7 +42,7 @@ export default function S14_CaseDebrief() {
 				<div style={{ marginTop: 18, border, boxShadow: shadow, background: colors.dark, color: colors.white, padding: '18px 22px' }}>
 					<div style={{ fontFamily: fonts.mono, fontSize: 15, color: colors.yellow, fontWeight: 700 }}>轮到你 · 先别打开模板</div>
 					<div style={{ marginTop: 7, fontSize: 23, fontWeight: 800, lineHeight: 1.45 }}>
-						用一句话回答：<u>谁</u>正在为<u>哪个问题</u>付出代价，而你凭什么比通用 AI 更懂这段流程？
+						用一句话回答：<u>谁</u>在什么情境下想完成<u>什么进步</u>，目前又在“雇用”什么替代方案？
 					</div>
 				</div>
 			</Body>

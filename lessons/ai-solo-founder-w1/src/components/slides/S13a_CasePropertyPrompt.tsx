@@ -4,14 +4,14 @@ import { Body, SlideHead } from '../DeckTable';
 
 const KNOWN = [
 	['客户', '管理 100–500 套住宅、没有专职维修协调团队的独立物业经理'],
-	['现状', '租客从邮件和短信报修；经理追问、建表、找技工、催报价'],
+	['现状', '租客从邮件和短信报修；经理追问、建表、找技工、催报价（代价尚未核实）'],
 ];
 
 const QUESTIONS = [
-	'AI 应该做到哪一步停下来？',
-	'客户到底为什么付钱？',
+	'什么情境下，客户想完成什么进步？',
+	'他们现在“雇用”什么替代方案？',
+	'最小结果是什么，AI 在哪里停？',
 	'6 周内什么证据会让你继续？',
-	'哪三件事绝对不能自动做？',
 ];
 
 export default function S13a_CasePropertyPrompt() {
@@ -23,7 +23,7 @@ export default function S13a_CasePropertyPrompt() {
 					tagBg={colors.blue}
 					title="现在换你：把物业维修的模糊想法压成可验证 SoT"
 					titleSize="clamp(28px, 2.55vw, 39px)"
-					sub="给你客户和现状，90 秒小组讨论。先说边界、价值、证据和不做，再看下一页答案。"
+					sub="给你客户和现状，90 秒小组讨论。先写 solution-free Job、现有替代、最小结果和证据，再看下一页。"
 				/>
 
 				<div style={{ display: 'grid', gridTemplateColumns: '1fr 1.45fr', gap: 22 }}>

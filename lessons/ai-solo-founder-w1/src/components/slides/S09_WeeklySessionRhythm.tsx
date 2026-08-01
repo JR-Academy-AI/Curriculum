@@ -2,42 +2,28 @@ import { motion } from 'framer-motion';
 import { Slide, colors, fonts, border, shadow, shadowSm } from '../ui';
 import { Body, SlideHead } from '../DeckTable';
 
-// 每周课堂固定节奏。
-// 事实依据：Lightman 最新确认「每节课中间半小时交流活动，W1 也有」；
-// COURSE_REDESIGN.md §课程结构：每周日 3h，中段 30min 学员进展分享 + networking。
-
-const STEPS = [
+// 每周课堂中段的 30 分钟由学生主导：讲自己的项目，听同学的反馈，带走下一步。
+const SHARE_PROMPTS = [
 	{
-		no: '01',
-		label: '前半段',
-		title: '输入 + 示范',
-		body: '讲清本周要解决的问题，看一个真实例子，然后马上落到自己的项目。',
+		no: '1',
+		icon: '🙋‍♀️',
+		title: '我在做什么？',
+		body: '用一句话说清客户、问题和你现在的做法。',
 		bg: '#FFE9E4',
-		flex: 1,
 	},
 	{
-		no: '02',
-		label: '课程中段 · 30 MIN',
-		title: '进展分享 + 互相交流',
-		body: '1–2 人讲真实进展；其他人带着问题交流、给反馈、认识能互补的人。W1 也有。',
+		no: '2',
+		icon: '💬',
+		title: '我现在卡在哪？',
+		body: '说一个真实卡点，不讲漂亮话，也不用假装已经想清楚。',
 		bg: colors.yellow,
-		flex: 1.35,
 	},
 	{
-		no: '03',
-		label: '后半段',
-		title: '动手 + Review',
-		body: '继续完成本周真实动作；讲师和助教巡场，现场把卡点拆掉。',
+		no: '3',
+		icon: '🎯',
+		title: '我下一步准备试什么？',
+		body: '给出一个下周前能完成、能看到结果的具体动作。',
 		bg: '#DCEBFF',
-		flex: 1,
-	},
-	{
-		no: '04',
-		label: '收尾',
-		title: '验收 + 下一步',
-		body: '确认今天带走的产出，再把下周要做的动作交给自己和 AI OS。',
-		bg: '#D9F2E4',
-		flex: 1,
 	},
 ];
 
@@ -46,75 +32,99 @@ export default function S09_WeeklySessionRhythm() {
 		<Slide bg={colors.white}>
 			<Body style={{ padding: '36px 60px 30px' }}>
 				<SlideHead
-					tag="§1.5 · 每节课怎么上"
-					tagBg={colors.blue}
-					title="每周 3 小时，固定留 30 分钟给彼此"
-					titleSize="clamp(30px, 2.65vw, 42px)"
-					sub="不是连续听讲，也不是把 networking 塞在开场。交流活动放在课程中段 —— 第一周就开始。"
+					tag="FOUNDER EXCHANGE · 30 MIN"
+					tagBg={colors.yellow}
+					title="这 30 分钟，老师不讲——你们讲"
+					titleSize="clamp(34px, 3vw, 48px)"
+					sub="每个人都带着自己的生意来：说进展、讲卡点，听听别人怎么理解。"
 				/>
 
-				<div style={{ display: 'flex', alignItems: 'stretch', gap: 12 }}>
-					{STEPS.map((step, index) => (
-						<motion.div
-							key={step.no}
-							initial={{ opacity: 0, y: 18 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.35, delay: 0.1 + index * 0.1 }}
-							style={{
-								flex: step.flex,
-								border,
-								boxShadow: step.no === '02' ? shadow : shadowSm,
-								background: step.bg,
-								padding: '18px 18px 20px',
-								minHeight: 205,
-							}}
-						>
-							<div style={{ display: 'flex', justifyContent: 'space-between', gap: 8, alignItems: 'center' }}>
-								<span style={{ fontFamily: fonts.mono, fontSize: 16, fontWeight: 700 }}>{step.no}</span>
-								<span
-									style={{
-										fontFamily: fonts.mono,
-										fontSize: 13,
-										fontWeight: 700,
-										background: step.no === '02' ? colors.black : colors.white,
-										color: step.no === '02' ? colors.yellow : colors.black,
-										padding: '3px 8px',
-										border: '2px solid #000',
-									}}
-								>
-									{step.label}
-								</span>
+				<div style={{ display: 'grid', gridTemplateColumns: '0.76fr 1.65fr', gap: 20, alignItems: 'stretch' }}>
+					<motion.div
+						initial={{ opacity: 0, x: -18 }}
+						animate={{ opacity: 1, x: 0 }}
+						transition={{ duration: 0.4, delay: 0.08 }}
+						style={{
+							border,
+							boxShadow: shadow,
+							background: colors.dark,
+							color: colors.white,
+							padding: '24px 24px 22px',
+							display: 'flex',
+							flexDirection: 'column',
+							justifyContent: 'space-between',
+						}}
+					>
+						<div>
+							<div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 22 }}>
+								{['🙋‍♀️', '🧑‍💼', '👩‍🍳', '🧑‍🔧'].map((icon, i) => (
+									<motion.span
+										key={icon}
+										initial={{ opacity: 0, scale: 0.7 }}
+										animate={{ opacity: 1, scale: 1 }}
+										transition={{ delay: 0.18 + i * 0.08 }}
+										style={{
+											width: 62,
+											height: 62,
+											border: '3px solid #fff',
+											background: i === 0 ? colors.yellow : colors.white,
+											display: 'grid',
+											placeItems: 'center',
+											fontSize: 34,
+										}}
+									>
+										{icon}
+									</motion.span>
+								))}
 							</div>
-							<div style={{ marginTop: 16, fontFamily: fonts.heading, fontSize: 25, fontWeight: 900, lineHeight: 1.15 }}>
-								{step.title}
+							<div style={{ fontFamily: fonts.heading, fontSize: 31, fontWeight: 900, lineHeight: 1.2 }}>
+								分享的是你的真实生意
 							</div>
-							<div style={{ marginTop: 10, fontSize: 17, lineHeight: 1.5, fontWeight: 500 }}>{step.body}</div>
-						</motion.div>
-					))}
-				</div>
+							<div style={{ marginTop: 12, fontSize: 19, lineHeight: 1.55, fontWeight: 600, color: '#E8E8E8' }}>
+								产品、公司、服务或传统行业都可以。<br />不要求你做一个“AI 产品”。
+							</div>
+						</div>
+						<div style={{ fontFamily: fonts.mono, fontSize: 14, lineHeight: 1.45, color: colors.yellow, fontWeight: 700 }}>
+							STUDENT-LED · 学生自己讲
+						</div>
+					</motion.div>
 
-				<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginTop: 18 }}>
-					<div style={{ border, boxShadow: shadowSm, background: colors.dark, color: colors.white, padding: '16px 20px' }}>
-						<div style={{ fontFamily: fonts.mono, fontSize: 15, fontWeight: 700, color: colors.yellow }}>W1 · 今天怎么交流</div>
-						<div style={{ marginTop: 8, fontSize: 20, lineHeight: 1.5, fontWeight: 700 }}>
-							说清你的方向、当前卡点，以及你能帮别人什么。
-						</div>
-					</div>
-					<div style={{ border, boxShadow: shadowSm, background: '#EDE9FE', padding: '16px 20px' }}>
-						<div style={{ fontFamily: fonts.mono, fontSize: 15, fontWeight: 700 }}>W2–W15 · 以后怎么交流</div>
-						<div style={{ marginTop: 8, fontSize: 20, lineHeight: 1.5, fontWeight: 700 }}>
-							带上周真实产出，说本周最具体的卡点，再找到一个能推动下一步的人。
-						</div>
+					<div style={{ display: 'grid', gap: 12 }}>
+						{SHARE_PROMPTS.map((step, index) => (
+							<motion.div
+								key={step.no}
+								initial={{ opacity: 0, x: 18 }}
+								animate={{ opacity: 1, x: 0 }}
+								transition={{ duration: 0.35, delay: 0.1 + index * 0.1 }}
+								style={{
+									display: 'grid',
+									gridTemplateColumns: '64px 1fr',
+									alignItems: 'center',
+									gap: 18,
+									border,
+									boxShadow: shadowSm,
+									background: step.bg,
+									padding: '14px 20px',
+								}}
+							>
+								<div style={{ fontSize: 41, lineHeight: 1, textAlign: 'center' }}>{step.icon}</div>
+								<div>
+									<div style={{ fontFamily: fonts.mono, fontSize: 13, fontWeight: 800, marginBottom: 3 }}>0{step.no}</div>
+									<div style={{ fontFamily: fonts.heading, fontSize: 25, fontWeight: 900, lineHeight: 1.15 }}>{step.title}</div>
+									<div style={{ marginTop: 5, fontSize: 17, lineHeight: 1.4, fontWeight: 550 }}>{step.body}</div>
+								</div>
+							</motion.div>
+						))}
 					</div>
 				</div>
 
 				<motion.div
 					initial={{ opacity: 0, y: 14 }}
 					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.35, delay: 0.62 }}
-					style={{ marginTop: 16, border, boxShadow: shadow, background: colors.red, color: colors.white, padding: '14px 22px', fontSize: 22, fontWeight: 800 }}
+					transition={{ duration: 0.35, delay: 0.55 }}
+					style={{ marginTop: 16, border, boxShadow: shadowSm, background: '#D9F2E4', padding: '13px 20px', fontSize: 20, fontWeight: 800 }}
 				>
-					这 30 分钟不是自由聊天：离开时，至少带走 <u>一个新连接</u> + <u>一个下一步动作</u>。
+					🤝 你不需要替别人“解决问题”——问清楚、分享一个经验，或介绍一个可能帮得上的人，就有价值。
 				</motion.div>
 			</Body>
 		</Slide>

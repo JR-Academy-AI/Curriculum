@@ -3,9 +3,9 @@ import { Slide, colors, fonts, border, shadow, shadowSm } from '../ui';
 import { Body, SlideHead } from '../DeckTable';
 
 const STATES = [
-	{ state: 'DRAFTED', title: 'AI 生成了', body: '有 SoT、提纲或计划，但还没离开你的电脑。', bg: '#F3F0EA' },
-	{ state: 'EXECUTED', title: '你真的做了', body: '同伴复述过；任务跑过；访谈邀约由你检查后发出。', bg: '#DCEBFF' },
-	{ state: 'VERIFIED', title: '证据能验收', body: '有可检查结果，Tutor 或规定的 reviewer 已确认。', bg: '#D9F2E4' },
+	{ state: 'DRAFTED', title: '结构写清了', body: '客户 Job、替代方案和证据计划齐全；未经访谈的仍标“假设”。', bg: '#F3F0EA' },
+	{ state: 'EXECUTED', title: '理解跑通了', body: '同伴能复述；AI 能守边界；一个真实任务被你检查并纠错。', bg: '#DCEBFF' },
+	{ state: 'VERIFIED', title: '本节可以过关', body: 'Tutor 确认 SoT 可执行、可推翻；不是确认市场需求成立。', bg: '#D9F2E4' },
 ];
 
 export default function S21b_EvidenceStates() {
@@ -17,7 +17,7 @@ export default function S21b_EvidenceStates() {
 					tagBg={colors.red}
 					title="生成 ≠ 执行 ≠ 过关"
 					titleSize="clamp(37px, 3.2vw, 50px)"
-					sub="以后每周都只认这三个状态。没有外部证据，就不能让 AI 把你送到下一关。"
+					sub="文档完整、课堂过关、市场验证是三件不同的事。AI 不能替客户作证。"
 				/>
 
 				<div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
@@ -37,7 +37,7 @@ export default function S21b_EvidenceStates() {
 				</div>
 
 				<div style={{ marginTop: 20, border, boxShadow: shadow, background: colors.yellow, padding: '15px 22px', fontSize: 22, fontWeight: 900 }}>
-					W1 过关：同学能复述你的 SoT，AI 输出被你检查并至少修正一次。
+					本节过关：SoT 可测试。到客户验证阶段，再用 5 次真人访谈决定继续、修改还是停止。
 				</div>
 			</Body>
 		</Slide>
