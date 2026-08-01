@@ -8,10 +8,10 @@ const KNOWN = [
 ];
 
 const QUESTIONS = [
-	'客户最想解决的具体麻烦是什么？',
-	'他们现在用什么办法处理？',
-	'最小结果是什么，AI 在哪里停？',
-	'6 周后凭什么决定继续或停止？',
+	'把问题写成“当…时，很难…，导致…”',
+	'现有做法具体哪里不好？',
+	'初步方案怎样用一句话说清？',
+	'本周怎样完成 5 / 3 / 3 / 付费验证？',
 ];
 
 export default function S13a_CasePropertyPrompt() {
@@ -19,11 +19,11 @@ export default function S13a_CasePropertyPrompt() {
 		<Slide bg={colors.white}>
 			<Body>
 				<SlideHead
-					tag="SoT · 第 5 步 / 6 · 案例 B 先别看答案"
+					tag="Opportunity Card · 案例 B 先别看答案"
 					tagBg={colors.blue}
-					title="现在换你：把物业维修的模糊想法压成可验证 SoT"
+					title="现在换你：把物业维修的模糊想法写成机会卡"
 					titleSize="clamp(28px, 2.55vw, 39px)"
-					sub="给你客户和现状。先写清他们的麻烦、现在的处理方法、你先交付什么，以及凭什么决定继续，再看下一页。"
+					sub="给你客户和现状。先补问题、方案缺口、初步方案和本周验证动作，再看下一页。"
 				/>
 
 				<div style={{ display: 'grid', gridTemplateColumns: '1fr 1.45fr', gap: 22 }}>

@@ -3,9 +3,9 @@ import { Slide, Inner, colors, fonts, border, shadow } from '../ui';
 
 // 收尾 —— 来源：W1_RUNSHEET.md §0「三个必须带走的东西（过关线）」+ §3 ⑦
 const ITEMS = [
-	{ t: 'SoT v0.1', d: '7 个字段写清；同学能复述，AI 不用猜，还写明不做什么', bg: '#FFE9E4' },
-	{ t: '一条有效反馈', d: '记录别人指出的关键假设，并据此改掉一个下一步动作', bg: '#D9F2E4' },
-	{ t: '最小 AI OS', d: '载入 SoT，完成 1 个真实任务，修正 1 处错误并留下下一步', bg: '#EDE9FE' },
+	{ t: '创业机会卡', d: '六个字段写清；具体到能找到 5 位目标用户', bg: '#FFE9E4' },
+	{ t: '问题能被复述', d: '同学能说出谁在什么场景遇到什么麻烦，而不是只记得产品名', bg: '#D9F2E4' },
+	{ t: '验证承诺', d: '5 位用户、3 个案例、3 个竞品，并询问付费意愿', bg: '#EDE9FE' },
 ];
 
 // 注意：SlideEngine 固定用深色版 logo-zh-full.svg，所以收尾页用暖底而不是深底（深底会让 logo 糊掉）。
@@ -86,9 +86,9 @@ export default function S23_Closing() {
 						maxWidth: 1150,
 					}}
 				>
-					三件齐了，W1 的目的就达成：方向能被别人理解，假设开始接受证据，AI 已完成第一件真任务。
+					三件齐了，W1 的目的就达成：你没有急着做产品，而是带着一个具体问题去找真人证据。
 					<span style={{ display: 'block', marginTop: 6, fontSize: 18, fontWeight: 600, color: '#444' }}>
-						没接邮箱、日历或云盘不影响今天过关；这些属于课后扩展，不是 W1 现场门槛。
+						下周允许带回“不值得做”的结论；尽早停掉错误方向，也是验证成功。
 					</span>
 				</motion.div>
 			</Inner>

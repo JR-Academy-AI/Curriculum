@@ -9,9 +9,9 @@ export default function S11_WhatIsSOT() {
 				<SlideHead
 					tag="SoT · 第 2 步 / 6 · 定义"
 					tagBg={colors.red}
-					title="SoT = 你、同学和 AI 都看同一页"
+					title="Opportunity Card，就是这周的 SoT v0.1"
 					titleSize="clamp(30px, 2.7vw, 42px)"
-					sub="Single Source of Truth：客户是谁、问题是什么、先交付什么、哪些不做，都只保留一个当前版本。"
+					sub="Single Source of Truth：客户、问题、现有做法、方案缺口、初步方案和验证动作，只保留一个当前版本。"
 				/>
 
 				<div style={{ display: 'grid', gridTemplateColumns: '1.05fr 1.55fr', gap: 24, alignItems: 'stretch' }}>
@@ -39,7 +39,7 @@ export default function S11_WhatIsSOT() {
 							ONE PAGE · ONE CURRENT VERSION
 						</div>
 						<div style={{ marginTop: 10, fontFamily: fonts.heading, fontSize: 30, fontWeight: 900, lineHeight: 1.2 }}>
-							谁需要帮助 → 他遇到什么问题 → 现在怎么处理 → 你先交付什么 → AI 和人各做什么 → 下周验证什么 → 暂时不做什么
+							目标用户 → 问题场景 → 现有做法 → 方案缺口 → 初步方案 → 本周验证动作
 						</div>
 						<div style={{ display: 'flex', gap: 10, marginTop: 20 }}>
 							{[
@@ -63,7 +63,7 @@ export default function S11_WhatIsSOT() {
 				</div>
 
 				<div style={{ marginTop: 18, border, boxShadow: shadow, background: colors.red, color: colors.white, padding: '14px 22px', fontSize: 22, fontWeight: 800 }}>
-					最短定义：<u>这就是你这门生意目前唯一算数的说明书。</u>
+					最短定义：<u>机会卡是起点；每拿到一批新证据，就更新它，而不是重新开一个版本。</u>
 				</div>
 			</Body>
 		</Slide>

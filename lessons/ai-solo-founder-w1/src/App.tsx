@@ -1,6 +1,6 @@
 import SlideEngine from './components/SlideEngine';
 
-// W1 · 搭起你的 CEO AI OS —— 内容全部来自：
+// W1 · Find a Problem Worth Solving —— 内容全部来自：
 //   curriculum/ai-solo-founder-bootcamp/W1_RUNSHEET.md（流程 / 表格 / 台词）
 //   curriculum/ai-solo-founder-bootcamp/W1_CASE_STUDIES.md（案例 + 出处）
 //   curriculum/ai-solo-founder-bootcamp/COURSE_REDESIGN.md（15 周路线 / Phase 出关物）
@@ -11,6 +11,8 @@ import SlideEngine from './components/SlideEngine';
 // CH 0 · 开场
 import S01 from './components/slides/S01_Cover';
 import S02 from './components/slides/S02_Takeaways';
+import S03 from './components/slides/S03_StartupMistakes';
+import S03b from './components/slides/S03b_ProblemFirstCases';
 
 // CH 0.5 · 这 15 周你要去哪
 import S04 from './components/slides/S04_Roadmap15Weeks';
@@ -32,6 +34,8 @@ import S11c from './components/slides/S11c_SoTWeeklyLoop';
 import S11d from './components/slides/S11d_SoTQuiz';
 import S11e from './components/slides/S11e_SoTQuizAnswers';
 import S16 from './components/slides/S16_SoTFields';
+import S16b from './components/slides/S16b_OpportunityWriting';
+import S16c from './components/slides/S16c_ValidationCommitment';
 import S12 from './components/slides/S12_CaseAccountingOps';
 import S13a from './components/slides/S13a_CasePropertyPrompt';
 import S13 from './components/slides/S13_CasePropertyMaintenance';
@@ -58,6 +62,8 @@ export default function App() {
 			<S01 />
 			<S02 />
 			<S10 />
+			<S03 />
+			<S03b />
 			<S04b />
 			<S04d />
 			<S04 />
@@ -71,6 +77,8 @@ export default function App() {
 			<S11d />
 			<S11e />
 			<S16 />
+			<S16b />
+			<S16c />
 			<S12 />
 			<S13a />
 			<S13 />

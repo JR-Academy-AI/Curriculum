@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Slide, Inner, colors, fonts, border, shadow } from '../ui';
 
-// 封面 —— 来源：W1_RUNSHEET.md 标题行 + §0「一句话」
+// 封面 —— W1 的任务是找到一个值得验证的问题，而不是先做产品。
 export default function S01_Cover() {
 	return (
 		<Slide bg={colors.warmBg}>
@@ -39,14 +39,14 @@ export default function S01_Cover() {
 							marginBottom: 18,
 						}}
 					>
-						搭起你的{' '}
+						找到一个{' '}
 						<motion.span
 							initial={{ opacity: 0, scale: 0.9 }}
 							animate={{ opacity: 1, scale: 1 }}
 							transition={{ duration: 0.4, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
 							style={{ display: 'inline-block', background: colors.red, color: colors.white, padding: '0 22px' }}
 						>
-							CEO AI OS
+							值得解决的问题
 						</motion.span>
 					</motion.h1>
 
@@ -56,7 +56,7 @@ export default function S01_Cover() {
 						transition={{ duration: 0.5, delay: 0.65 }}
 						style={{ fontFamily: fonts.mono, fontSize: 24, letterSpacing: 2, color: '#555' }}
 					>
-						Your CEO AI OS
+						WEEK 1 · FIND A PROBLEM WORTH SOLVING
 					</motion.p>
 
 					<motion.div
@@ -75,7 +75,7 @@ export default function S01_Cover() {
 						}}
 					>
 						<span style={{ fontSize: 22, fontWeight: 700 }}>
-							今天带走：一个想清楚的方向 + 一个已经在替你干活的 AI OS
+							从“我想做点什么”到“有人愿意付钱”
 						</span>
 						<span style={{ fontFamily: fonts.mono, fontSize: 15, color: '#666', letterSpacing: 1 }}>
 							周日 14:00–17:00 · 线下 office 主场 + 悉尼 / 布里斯班卫星教室 + 同步直播

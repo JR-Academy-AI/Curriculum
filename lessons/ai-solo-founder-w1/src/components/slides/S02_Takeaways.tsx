@@ -22,30 +22,30 @@ export default function S02_Takeaways() {
 					rows={[
 						[
 							<span style={{ fontFamily: fonts.mono, fontWeight: 700, fontSize: 26 }}>1</span>,
-							<b>一页生意共同说明（SoT v0.1）</b>,
+							<b>一张创业机会卡</b>,
 							<span>
-								7 个字段填满，同桌能用一句话复述；<b style={{ background: colors.yellow, padding: '0 6px' }}>「不做清单」写满 3 条</b>
+								写清具体用户、真实问题、现有做法、方案缺口、初步方案和本周验证动作
 							</span>,
 						],
 						[
 							<span style={{ fontFamily: fonts.mono, fontWeight: 700, fontSize: 26 }}>2</span>,
-							<b>一条有效反馈</b>,
+							<b>一句能被复述的问题</b>,
 							<span>
-								写下谁给了什么反馈，以及它会改变你的哪一个下一步动作
+								同桌听完后，能说出“谁在什么场景遇到什么麻烦”，而不是只记得你的产品名
 							</span>,
 						],
 						[
 							<span style={{ fontFamily: fonts.mono, fontWeight: 700, fontSize: 26 }}>3</span>,
-							<b>最小 AI OS</b>,
+							<b>一份本周验证承诺</b>,
 							<span>
-								SoT 已载入；现场跑通 <b>1 个基于自己业务的真实任务</b>，并留下 1 个下周动作
+								访谈 5 人、收集 3 个真实案例、找到 3 个竞品，并直接问付费意愿
 							</span>,
 						],
 					]}
 				/>
 
 				<Punchline bg={colors.red}>
-					今天的关键变化：你的方向不再只存在脑子里。<u>同学能复述，AI 能按它做事，下周能拿结果回来继续改。</u>
+					今天的关键变化：不再从“我想做一个什么产品”出发。<u>先说清谁真的有问题，再决定做什么。</u>
 				</Punchline>
 			</Body>
 		</Slide>
