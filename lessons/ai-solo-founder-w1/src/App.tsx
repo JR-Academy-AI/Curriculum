@@ -13,6 +13,10 @@ import S01 from './components/slides/S01_Cover';
 import S02 from './components/slides/S02_Takeaways';
 import S03 from './components/slides/S03_StartupMistakes';
 import S03b from './components/slides/S03b_ProblemFirstCases';
+import S03c from './components/slides/S03c_OpportunitySources';
+import S03d from './components/slides/S03d_IndustryAndPersonal';
+import S03e from './components/slides/S03e_ManualAndPaid';
+import S03f from './components/slides/S03f_OpportunityScan';
 
 // CH 0.5 · 这 15 周你要去哪
 import S04 from './components/slides/S04_Roadmap15Weeks';
@@ -25,7 +29,7 @@ import S06 from './components/slides/S06_TimeInvestment';
 // CH 0.6 · 每周课堂节奏
 import S09 from './components/slides/S09_WeeklySessionRhythm';
 
-// CH 1 · ① 你要走哪条路（14:00–14:35）
+// CH 1 · 验证路径 + Opportunity Card / SoT（14:50–15:10）
 import S10 from './components/slides/S10_ThreePaths';
 import S10b from './components/slides/S10b_WhySOT';
 import S11 from './components/slides/S11_WhatIsSOT';
@@ -41,18 +45,18 @@ import S13a from './components/slides/S13a_CasePropertyPrompt';
 import S13 from './components/slides/S13_CasePropertyMaintenance';
 import S14 from './components/slides/S14_CaseDebrief';
 
-// CH 2 · ② 锁方向 + ②′ 讲师现场 review（14:35–15:35）
+// CH 2 · 写卡、交流与讲师现场 review（15:10–16:30）
 import S17 from './components/slides/S17_PeerReview';
 import S18 from './components/slides/S18_InstructorReview';
 
-// CH 3 · ④⑤⑥ 动手（15:45–16:55）
+// CH 3 · AI 辅助准备验证任务（16:30–16:50）
 import S19 from './components/slides/S19_MinimumAIOS';
 import S20 from './components/slides/S20_LoadSOT';
 import S20b from './components/slides/S20b_ActivateW1Skill';
 import S21 from './components/slides/S21_FirstRealTask';
 import S21b from './components/slides/S21b_EvidenceStates';
 
-// CH 4 · ⑦ 收尾（16:55–17:00）
+// CH 4 · 验收与收尾（16:50–17:00）
 import S22 from './components/slides/S22_NextWeek';
 import S23 from './components/slides/S23_Closing';
 
@@ -64,6 +68,10 @@ export default function App() {
 			<S10 />
 			<S03 />
 			<S03b />
+			<S03c />
+			<S03d />
+			<S03e />
+			<S03f />
 			<S04b />
 			<S04d />
 			<S04 />

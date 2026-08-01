@@ -10,7 +10,7 @@ bun run build    # tsc -b && vite build → dist/
 
 ← → 翻页 · F 全屏 · V 开摄像头 · `?page=N` 直达某页。
 
-**共 34 张。** 第一节课主线是“从我想做点什么，到有人愿意付钱”，英文为 *Find a Problem Worth Solving*。第 4 页拆七个常见创业误区，第 5 页用 Canva / Fusion Books 与 DoorDash / PaloAltoDelivery 的一手来源说明 Problem First；第 6–7 页同时保留通用生意验证路径和产品验证路径。第 12–17 页解释 Opportunity Card 为什么要成为 SoT，并完成现场判断题；第 18–20 页写六字段创业机会卡和 5 / 3 / 3 / 付费意愿验证承诺。AI OS 留在后段，只帮助准备验证任务，不替代真人证据。第一周不冒充已经完成市场验证，两个练习案例均为课堂模拟。实际页序以 `src/App.tsx` 为准。
+**共 38 张。** 第一节课主线是“从我想做点什么，到有人愿意付钱”，英文为 *Find a Problem Worth Solving*。第 4 页拆七个常见创业误区，第 5 页用 Canva / Fusion Books 与 DoorDash / PaloAltoDelivery 的一手来源说明 Problem First；第 6–9 页用熟悉行业、反复痛点、人工流程和已有付费四个入口完成 Opportunity Scan；第 10–11 页同时保留通用生意验证路径和产品验证路径。第 16–21 页解释 Opportunity Card 为什么要成为 SoT，并完成现场判断题；第 22–24 页写六字段创业机会卡和 5 / 3 / 3 / 付费意愿验证承诺。AI OS 留在后段，只帮助准备验证任务，不替代真人证据。第一周不冒充已经完成市场验证，两个练习案例均为课堂模拟。实际页序以 `src/App.tsx` 为准。
 
 ## 内容来源与教学顺序
 
@@ -20,18 +20,19 @@ bun run build    # tsc -b && vite build → dist/
 | **03 三种经营方式** | 融资型创业 / 传统生意 / 小团队或一人公司；产品、服务与现有业务都可使用课程方法 | `W1_RUNSHEET.md` §3 + `../../ai-solo-founder-bootcamp/public/session-deck.html#6` 叙事参考 |
 | **04 创业误区** | 先产品后用户、AI 即创新、先做平台、用户太宽、兴趣冒充需求、未访谈先写代码、上线自然有人用 | `W1_RUNSHEET.md` §1 |
 | **05 两个真实起点** | Canva 前身 Fusion Books；DoorDash 前身 PaloAltoDelivery.com | Canva Newsroom 创始人回顾；DoorDash 2024 Q4 股东信 |
-| **06 生意验证路径** | 客户与场景 → 真实问题 → 最小交付 → 付费证据 → 复购与推荐 → Scale | `COURSE_REDESIGN.md` + *The Founder's Playbook*, pp. 9, 16 |
-| **07 产品验证路径** | Idea → PoC → MVP → Paid Evidence → PMF → Scale | 用户指定产品验证图；W7 付费为目标，不是保证 |
-| **08–10 课程路线** | 15 周路线、四个 Phase 出关物、每周 Founder Skills | `COURSE_REDESIGN.md` + skills 目录 |
-| **11 Founder Exchange** | 学生中段互相分享真实生意、卡点和下一步 | `COURSE_REDESIGN.md` 固定节奏 |
-| **12–17 Opportunity Card → SoT** | 解释机会卡为什么是 SoT v0.1、如何管理任务与版本，并用四题验收理解 | `W1_RUNSHEET.md` §2–3 |
-| **18–20 Opportunity Card 写作** | 六个字段、问题/方案句式、5 人/3 案例/3 竞品/付费意愿承诺 | `W1_RUNSHEET.md` §2 |
-| **21–23 两个模拟案例** | 会计服务经营改造 + 物业维修机会卡练习与答案 | `W1_RUNSHEET.md` §6；课堂合成场景 |
-| **24–26 迁移与互评** | 把机会卡用于自己的方向；每次只改一个最影响验证的问题 | `W1_RUNSHEET.md` §7、§9 |
-| **27–31 AI 辅助验证** | 载入机会卡、领取 Skill、准备访谈/竞品/触达任务并区分状态 | `W1_RUNSHEET.md` §8 |
-| **32–34 收尾** | 下周动作、94h 时间投入、机会卡过关线 | `outline.json` + `W1_RUNSHEET.md` §9 |
+| **06–09 创业机会四入口** | 熟悉行业、反复痛点、人工流程、已有付费；现场 Opportunity Scan 圈出一个候选问题 | `W1_RUNSHEET.md` §2 |
+| **10 生意验证路径** | 客户与场景 → 真实问题 → 最小交付 → 付费证据 → 复购与推荐 → Scale | `COURSE_REDESIGN.md` + *The Founder's Playbook*, pp. 9, 16 |
+| **11 产品验证路径** | Idea → PoC → MVP → Paid Evidence → PMF → Scale | 用户指定产品验证图；W7 付费为目标，不是保证 |
+| **12–14 课程路线** | 15 周路线、四个 Phase 出关物、每周 Founder Skills | `COURSE_REDESIGN.md` + skills 目录 |
+| **15 Founder Exchange** | 学生中段互相分享真实生意、卡点和下一步 | `COURSE_REDESIGN.md` 固定节奏 |
+| **16–21 Opportunity Card → SoT** | 解释机会卡为什么是 SoT v0.1、如何管理任务与版本，并用四题验收理解 | `W1_RUNSHEET.md` §3–4 |
+| **22–24 Opportunity Card 写作** | 六个字段、问题/方案句式、5 人/3 案例/3 竞品/付费意愿承诺 | `W1_RUNSHEET.md` §3 |
+| **25–27 两个模拟案例** | 会计服务经营改造 + 物业维修机会卡练习与答案 | `W1_RUNSHEET.md` §7；课堂合成场景 |
+| **28–30 迁移与互评** | 把机会卡用于自己的方向；每次只改一个最影响验证的问题 | `W1_RUNSHEET.md` §8、§10 |
+| **31–35 AI 辅助验证** | 载入机会卡、领取 Skill、准备访谈/竞品/触达任务并区分状态 | `W1_RUNSHEET.md` §9 |
+| **36–38 收尾** | 下周动作、94h 时间投入、机会卡过关线 | `outline.json` + `W1_RUNSHEET.md` §10 |
 
-### P33 的 94 小时怎么算出来的（可复核）
+### P37 的 94 小时怎么算出来的（可复核）
 
 按 `ai-solo-founder-bootcamp/public/outline.json` 逐节 `duration` 求和：
 
