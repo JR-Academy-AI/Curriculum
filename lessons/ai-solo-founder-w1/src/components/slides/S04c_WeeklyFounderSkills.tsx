@@ -19,14 +19,14 @@ const SKILLS: WeeklySkill[] = [
 	{ week: 'W5', name: '品牌上线', result: '写好 Brand SoT，上线可访问的产品或服务页面', accent: colors.orange },
 	{ week: 'W6', name: '交付复盘', result: '砍掉远离客户的任务，排出一周交付计划', accent: colors.orange },
 	{ week: 'W7', name: '销售与收款', result: '建立销售管道、报价与真实收款路径', accent: colors.orange },
-	{ week: 'W8', name: '内容系统', result: '建立中英文内容系统，并记录真实发布链接', accent: '#4B8DFF' },
-	{ week: 'W9', name: '精准获客', result: '执行一轮精准触达，记录回复与会面数据', accent: '#4B8DFF' },
-	{ week: 'W10', name: '搜索与 AI 可见度', result: '发布一篇客户会搜索、AI 可引用的内容', accent: '#4B8DFF' },
-	{ week: 'W11', name: '增长实验', result: '只改一个变量，跑完一次可复盘的增长实验', accent: '#4B8DFF' },
+	{ week: 'W8', name: 'AI 内容工厂', result: '做中英文内容与 AI 视频，参加视频陪跑和小红书诊断', accent: '#4B8DFF' },
+	{ week: 'W9', name: '主动获客', result: '完成 LinkedIn / Product Hunt / 英文媒体与线下触达', accent: '#4B8DFF' },
+	{ week: 'W10', name: 'SEO + GEO', result: '发布客户会搜索、AI 能引用的可信内容', accent: '#4B8DFF' },
+	{ week: 'W11', name: '用户增长', result: '诊断漏水环节，跑推荐循环与一次 launch', accent: '#4B8DFF' },
 	{ week: 'W12', name: '交付与财务', result: '固定交付流程，并检查收入、成本和老板时间', accent: '#42A875' },
 	{ week: 'W13', name: '澳洲经营准备', result: '用官方来源整理注册、税务与 Grant 决策包', accent: '#42A875' },
-	{ week: 'W14', name: 'Pitch Builder', result: '用事实图谱写客户、伙伴或投资人版本的 Pitch', accent: colors.purple },
-	{ week: 'W15', name: '毕业审计', result: '核对毕业证据，生成 Founder Passport', accent: colors.purple },
+	{ week: 'W14', name: 'Founder Story', result: '用前 13 周证据写 Pitch、BP 与一页纸', accent: colors.purple },
+	{ week: 'W15', name: 'Founder Club', result: '选择展示路径，完成 Demo Day、入会与 90 天行动表', accent: colors.purple },
 ];
 
 function SkillRow({ item, index }: { item: WeeklySkill; index: number }) {
@@ -58,7 +58,7 @@ export default function S04c_WeeklyFounderSkills() {
 		<Slide bg="#FFF9F4">
 			<Body style={{ padding: '34px 56px 28px' }}>
 				<SlideHead
-					tag="附录 · 15 周 Skills"
+					tag="课程全景 · 15 周 Skills"
 					tagBg={colors.purple}
 					title="每周给你一个 Skill，帮你完成一个具体结果"
 					titleSize="clamp(29px, 2.55vw, 40px)"

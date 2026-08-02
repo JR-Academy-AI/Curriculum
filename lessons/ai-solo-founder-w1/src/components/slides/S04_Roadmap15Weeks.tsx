@@ -31,15 +31,15 @@ const PHASES: { no: string; title: string; range: string; desc: string; bg: stri
 	},
 	{
 		no: '2',
-		title: '找到更多客户',
+		title: 'Go To Market',
 		range: 'W8–W11',
-		desc: '让目标客户看见你、理解你，并留下可复盘的获客数据',
+		desc: '用内容、主动触达、搜索和增长实验，把产品、公司或服务带到市场',
 		bg: '#DCEBFF',
 		weeks: [
-			{ w: 'W8', name: '持续讲有用的内容', desc: '围绕客户问题，建立中英文内容流程' },
-			{ w: 'W9', name: '主动找到客户', desc: '做精准触达，记录回复、会面与下一步' },
-			{ w: 'W10', name: '让搜索带来客户', desc: '发布一篇客户会搜索、AI 能引用的内容' },
-			{ w: 'W11', name: '做一次增长实验', desc: '只改一个变量，用真实数据决定去留' },
+			{ w: 'W8', name: 'AI 内容工厂', desc: '中英文内容、AI 视频；视频陪跑与小红书诊断' },
+			{ w: 'W9', name: '主动敲开客户的门', desc: 'LinkedIn、Product Hunt、英文媒体与线下活动' },
+			{ w: 'W10', name: '让人和 AI 都搜到你', desc: '用 SEO、GEO 与可信内容建立长期入口' },
+			{ w: 'W11', name: '用户增长', desc: '找出漏水环节，跑推荐循环与一次完整 launch' },
 		],
 	},
 	{
@@ -55,13 +55,13 @@ const PHASES: { no: string; title: string; range: string; desc: string; bg: stri
 	},
 	{
 		no: '4',
-		title: '讲清成果',
+		title: 'Founder Club',
 		range: 'W14–W15',
-		desc: '用真实结果讲清这门生意，并决定毕业后的下一步',
+		desc: '讲清真实成果，完成 Demo Day，并进入持续同行的 Founder Club',
 		bg: '#EDE9FE',
 		weeks: [
-			{ w: 'W14', name: '把生意讲明白', desc: '用已有证据向客户、伙伴或投资人介绍' },
-			{ w: 'W15', name: '展示你做成了什么', desc: '完成 Demo Day、毕业审计和下一步计划' },
+			{ w: 'W14', name: 'Pitch 与路线判断', desc: '用真实证据做材料包，并判断该不该融资' },
+			{ w: 'W15', name: 'Demo Day + 入会', desc: '选择展示路径，路演并进入 Founder Club' },
 		],
 	},
 ];
@@ -104,7 +104,7 @@ export default function S04_Roadmap15Weeks() {
 		<Slide bg={colors.white}>
 			<Body style={{ padding: '36px 60px 30px' }}>
 				<SlideHead
-					tag="附录 · 15 周路线"
+					tag="课程全景 · 15 周路线"
 					tagBg={colors.orange}
 					title="15 周，把一门生意从想法推进到真实经营"
 					titleSize="clamp(28px, 2.5vw, 40px)"

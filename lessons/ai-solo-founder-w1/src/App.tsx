@@ -5,6 +5,7 @@ import SlideEngine from './components/SlideEngine';
 
 import S01 from './components/slides/S01_Cover';
 import S02 from './components/slides/S02_Takeaways';
+import S02c from './components/slides/S02c_BootcampPurpose';
 import S02a from './components/slides/S02a_BusinessForms';
 import S02b from './components/slides/S02b_Entrepreneurship';
 import S03 from './components/slides/S03_StartupMistakes';
@@ -40,6 +41,7 @@ import S21c from './components/slides/S21c_HumanBoundary';
 import S22 from './components/slides/S22_NextWeek';
 import S23 from './components/slides/S23_Closing';
 import S04 from './components/slides/S04_Roadmap15Weeks';
+import S04e from './components/slides/S04e_GTMFounderClub';
 import S05 from './components/slides/S05_PhaseOutputs';
 import S04c from './components/slides/S04c_WeeklyFounderSkills';
 import S06 from './components/slides/S06_TimeInvestment';
@@ -49,6 +51,13 @@ export default function App() {
 		<SlideEngine>
 			<S01 />
 			<S02 />
+			<S02c />
+			{/* 课程全景先讲：学生先知道 15 周怎么走，再进入 W1 */}
+			<S04 />
+			<S04e />
+			<S05 />
+			<S04c />
+			<S06 />
 			<S02a />
 			<S02b />
 			<S03 />
@@ -83,12 +92,6 @@ export default function App() {
 			<S21b />
 			<S22 />
 			<S23 />
-
-			{/* Appendix · 课程全景与参考页 */}
-			<S04 />
-			<S05 />
-			<S04c />
-			<S06 />
 		</SlideEngine>
 	);
 }

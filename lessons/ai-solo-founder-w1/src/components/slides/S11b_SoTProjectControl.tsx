@@ -1,65 +1,75 @@
 import { motion } from 'framer-motion';
-import { Slide, colors, fonts, border, shadowSm } from '../ui';
-import { Body, Punchline, SlideHead } from '../DeckTable';
+import { Slide, colors, fonts, border, shadow, shadowSm } from '../ui';
+import { Body, SlideHead } from '../DeckTable';
 
-const CONTROLS = [
-	{
-		no: '01',
-		title: '决定先做什么',
-		body: '每个任务都要能回答：它在验证哪一个客户、问题或交付假设？答不出来，就先别做。',
-		bg: '#FFE9E4',
-	},
-	{
-		no: '02',
-		title: '让所有产出说同一件事',
-		body: '报价、网站、访谈问题、AI 提示词和交付流程，都从同一页读取客户、承诺与边界。',
-		bg: '#FFF6D6',
-	},
-	{
-		no: '03',
-		title: '判断什么时候要改方向',
-		body: '不是每天凭感觉换点子；只有新证据改变了客户、问题、交付或边界，才更新 SoT。',
-		bg: '#DCEBFF',
-	},
-	{
-		no: '04',
-		title: '知道这一版为什么成立',
-		body: '把事实、假设和待验证问题分开。下周回来看，知道哪些已证实，哪些仍只是猜测。',
-		bg: '#D9F2E4',
-	},
+const FILES = [
+	['Sponsorship_Deck_FINAL.docx', 'Gold · $5,000'],
+	['Sponsorship_Deck_FINAL_FINAL.docx', 'Gold · $6,500'],
+	['Sponsor_Price_NEW.xlsx', 'Gold · $7,500'],
+	['Deck_USE_THIS_v8.pptx', '权益仍是旧版'],
 ];
 
 export default function S11b_SoTProjectControl() {
 	return (
-		<Slide bg={colors.white}>
-			<Body style={{ padding: '36px 60px 30px' }}>
+		<Slide bg={colors.warmBg}>
+			<Body style={{ padding: '30px 55px 22px' }}>
 				<SlideHead
-					tag="SoT · 项目管理"
+					tag="CASE · 大型活动 Sponsorship Deck"
 					tagBg={colors.red}
-					title="SoT 不是存档文件，它决定这个项目每天怎么做"
-					titleSize="clamp(30px, 2.7vw, 42px)"
-					sub="创业项目最容易乱在四件事：任务越做越多、每个页面说法不同、AI 自己补空白、方向天天变。SoT 就是控制这四件事。"
+					title="价格改一次，就多一份 final-final：维护很快变成灾难"
+					titleSize="clamp(29px, 2.6vw, 41px)"
+					sub="赞助价格、权益、剩余名额、Logo 和联系人不断变化；文件名不能告诉人或 LLM 哪一版算数。"
 				/>
 
-				<div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
-					{CONTROLS.map((item, index) => (
-						<motion.div
-							key={item.no}
-							initial={{ opacity: 0, y: 16 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.32, delay: 0.1 + index * 0.09 }}
-							style={{ border, boxShadow: shadowSm, background: item.bg, padding: '18px 20px', minHeight: 156 }}
-						>
-							<div style={{ fontFamily: fonts.mono, fontWeight: 800, fontSize: 14 }}>{item.no}</div>
-							<div style={{ marginTop: 7, fontFamily: fonts.heading, fontSize: 25, fontWeight: 900 }}>{item.title}</div>
-							<div style={{ marginTop: 8, fontSize: 17, lineHeight: 1.5, fontWeight: 550 }}>{item.body}</div>
-						</motion.div>
-					))}
+				<div style={{ display: 'grid', gridTemplateColumns: '0.92fr 0.25fr 1.12fr', gap: 17, alignItems: 'stretch' }}>
+					<div style={{ border, boxShadow: shadow, background: colors.white, padding: '16px 17px' }}>
+						<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
+							<div style={{ fontFamily: fonts.mono, fontSize: 14, fontWeight: 900, color: colors.red }}>GOOGLE DRIVE · 版本灾难</div>
+							<div style={{ fontFamily: fonts.mono, fontSize: 11, fontWeight: 800, color: '#666' }}>4 个“当前版”</div>
+						</div>
+						<div style={{ marginTop: 11, display: 'grid', gap: 8 }}>
+							{FILES.map(([name, value], index) => (
+								<motion.div key={name} initial={{ opacity: 0, x: -18 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.34, delay: 0.07 * index }} style={{ border: '2px solid #111', background: ['#FFE6DF', '#FFF2B8', '#E7E0FF', '#DCEBFF'][index], padding: '9px 11px' }}>
+									<div style={{ fontFamily: fonts.mono, fontSize: 12.5, fontWeight: 900 }}>{name}</div>
+									<div style={{ marginTop: 3, fontSize: 15.5, fontWeight: 850, color: index < 3 ? colors.red : '#333' }}>{value}</div>
+								</motion.div>
+							))}
+						</div>
+						<div style={{ marginTop: 9, padding: '8px 11px', background: colors.dark, color: colors.white, fontSize: 14, lineHeight: 1.35, fontWeight: 750 }}>群聊又补了一句：“Gold 现在只剩 2 个。”—— 但没有写回任何文件。</div>
+					</div>
+
+					<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
+						<motion.div initial={{ scale: 0.72, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.42, delay: 0.36 }} style={{ width: 74, height: 74, display: 'grid', placeItems: 'center', border, boxShadow: shadowSm, background: colors.red, color: colors.white, fontFamily: fonts.heading, fontSize: 31, fontWeight: 950 }}>AI</motion.div>
+						<div style={{ marginTop: 10, fontFamily: fonts.mono, fontSize: 27, fontWeight: 900 }}>→</div>
+						<div style={{ marginTop: 3, fontSize: 13.5, lineHeight: 1.35, fontWeight: 850 }}>它该相信<br />哪一个价格？</div>
+					</div>
+
+					<motion.div initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.45, delay: 0.42 }} style={{ border, boxShadow: shadow, background: colors.dark, color: colors.white, padding: '17px 19px' }}>
+						<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
+							<div style={{ fontFamily: fonts.mono, fontSize: 14, fontWeight: 900, color: colors.yellow }}>SPONSORSHIP SoT · v1.8</div>
+							<div style={{ border: '2px solid #fff', padding: '3px 8px', fontFamily: fonts.mono, fontSize: 11, fontWeight: 900 }}>CURRENT</div>
+						</div>
+						<div style={{ marginTop: 13, display: 'grid', gap: 8 }}>
+							{[
+								['Gold 价格', '$7,500（课堂示例）'],
+								['包含权益', '展位 · 舞台鸣谢 · 4 张通行证'],
+								['剩余名额', '2 个'],
+								['负责人', '商务负责人审核后才可对外发送'],
+								['素材状态', 'Logo / 场地图 / 联系人均为当前版'],
+							].map(([label, value]) => (
+								<div key={label} style={{ display: 'grid', gridTemplateColumns: '88px 1fr', gap: 10, paddingBottom: 7, borderBottom: '1px solid rgba(255,255,255,0.25)' }}>
+									<div style={{ fontFamily: fonts.mono, fontSize: 11.5, color: colors.yellow, fontWeight: 900 }}>{label}</div>
+									<div style={{ fontSize: 14.5, lineHeight: 1.3, fontWeight: 750 }}>{value}</div>
+								</div>
+							))}
+						</div>
+					</motion.div>
 				</div>
 
-				<Punchline bg={colors.dark}>
-					项目管理不是把任务排满。<span style={{ background: colors.red, padding: '0 8px' }}>是让每个任务都服务于当前假设，并留下能改变下一步的证据。</span>
-				</Punchline>
+				<div style={{ marginTop: 13, border, boxShadow: shadowSm, background: colors.red, color: colors.white, padding: '10px 16px', display: 'grid', gridTemplateColumns: '1fr auto', gap: 22, alignItems: 'center' }}>
+					<div style={{ fontSize: 18, lineHeight: 1.35, fontWeight: 900 }}>正确做法：价格和权益只改 SoT；Word、PPT、邮件和 AI 文案都从当前 SoT 重新生成。</div>
+					<div style={{ fontFamily: fonts.mono, fontSize: 11.5, fontWeight: 850 }}>课堂合成案例<br />金额仅用于演示版本冲突</div>
+				</div>
 			</Body>
 		</Slide>
 	);

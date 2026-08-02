@@ -32,7 +32,7 @@ export default function S05_PhaseOutputs() {
 		<Slide bg={colors.warmBg}>
 			<Body style={{ padding: '40px 56px 34px' }}>
 				<SlideHead
-					tag="附录 · 阶段成果"
+					tag="课程全景 · 阶段成果"
 					tagBg={colors.orange}
 					title="每个 Phase 结束，你手上必须多出一项成果"
 					titleSize="clamp(30px, 2.7vw, 42px)"
@@ -56,10 +56,10 @@ export default function S05_PhaseOutputs() {
 							out('有人愿意试、愿意付费的第一版交付'),
 						],
 						[
-							ph('2', '找到更多客户', '#DCEBFF'),
+							ph('2', 'Go To Market', '#DCEBFF'),
 							wk('W8–W11'),
-							'找到适合自己的获客方式，让下一位客户不只来自熟人介绍',
-							out('一套可以重复执行的获客方法'),
+							'用中英文内容、线上分享、AI 视频、主动触达、搜索与增长实验把业务带到市场',
+							out('一套有发布、有触达、有数据的 Go To Market 系统'),
 						],
 						[
 							ph('3', '把经营理顺', '#D9F2E4'),
@@ -68,10 +68,10 @@ export default function S05_PhaseOutputs() {
 							out('基本合规、财务清楚的运营系统'),
 						],
 						[
-							ph('4', '讲清成果', '#EDE9FE'),
+							ph('4', 'Founder Club', '#EDE9FE'),
 							wk('W14–W15+'),
-							'把已经验证过的生意讲清楚，向客户、合作伙伴或投资人展示',
-							out('一份讲得清、拿得出证据的商业展示'),
+							'把已验证的生意讲清楚，完成 Demo Day，并进入持续互助的 Founder Club',
+							out('Founder Club 会籍 + 持续 Office Hour 与同伴网络'),
 						],
 					]}
 				/>

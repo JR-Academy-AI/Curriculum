@@ -8,7 +8,7 @@
 ## 0. 一句话背景
 
 AI 一人创业营 = 15 周课程,**每周日 14:00–17:00 三小时线下课**(墨尔本主场 + 悉尼/布里斯班卫星教室 + 同步直播)。
-W1 当前为 40 张 slide 的 React+Vite deck（36 张核心课堂页 + 4 张附录），主题是《搭起你的创业 AI OS》。教学链为“理解创业的价值交换 → 找到可验证的问题 → 写 Opportunity Card → 升级为 Business SoT v0.1 → 搭 Founder Workspace → 调用 Weekly Skill → 人工检查 → 把新证据写回 SoT”。**W2–W15 必须沿用这条 Founder OS 闭环，不重新建立另一份业务真相。**
+W1 当前为 42 张 slide 的 React+Vite deck，主题是《搭起你的创业 AI OS》。封面和本节目标之后先讲创业营为什么存在与共同纪律，再展示课程全景、Go To Market / Founder Club 详解、阶段成果、每周 Skills 与时间投入。Phase 2 统一叫 **Go To Market**（含英文媒体 AI、线上分享、AI 视频、小红书 Workshop、主动触达、SEO/GEO 与增长），Phase 4 统一只叫 **Founder Club**。教学链为“知道为什么现在就行动 → 看清 15 周路线 → 理解创业的价值交换 → 缩到 Beachhead Market → 找到可验证的问题 → 写 Opportunity Card → 理解 SoT / 为什么需要 SoT / LLM 为什么依赖 SoT → 看到每类 SoT 对应的 AI Skill → 升级为 Business SoT v0.1 → 搭 Founder Workspace → 调用 Weekly Skill → 人工检查 → 把新证据写回 SoT”。**W2–W15 必须沿用这条 Founder OS 闭环，不重新建立另一份业务真相。**
 
 ---
 
@@ -45,12 +45,15 @@ bun run dev      # → http://localhost:5173/
 bun run build    # 上线前必须过
 ```
 
-### 1.3 W1 当前 40 张 slide 顺序（36 张核心页 + 4 张附录）
+### 1.3 W1 当前 42 张 slide 顺序
 
 | # | Slide | 作用 |
 |---|---|---|
 | S01 | Cover | 封面 |
 | S02 | Takeaways | **今天你会带走什么**(产出 + 验收标准) |
+| S02c | BootcampPurpose | 有无 Idea 都立即行动；公开内容窗口、每周互评、收入覆盖学费的经营目标（不作收益保证） |
+| S04 / S05 / S04c / S06 | Course Overview | 15 周路线、阶段成果、每周 Skills、时间投入；Phase 2 = Go To Market，Phase 4 = Founder Club |
+| S04e | GTMFounderClub | 单独讲清 W8–W11 内容与两场线上 Workshop，以及 W14–W15 Demo Day、双展示路径和毕业后 Founder Club |
 | S02a–S02b | BusinessForms / Entrepreneurship | 产品、服务与现有生意均适用；创业是反复完成价值交换 |
 | **S03–S03c** | **Startup / WorthSolving / Cases / Sources** | **创业误区、值得解决的问题、两个真实起点与四个机会入口** |
 | **S03f / S03k / S03i / S03j** | **Scan / Evidence / Filter** | **用证据梯度、评分表和三道硬门槛留下一个本周验证方向** |
@@ -66,9 +69,8 @@ bun run build    # 上线前必须过
 | S21c / S21b | Human Boundary / Evidence States | 人机责任与数据边界；写完、跑过、市场证据不能混为一谈 |
 | S22 | NextWeek | 统一 5 位用户 / 3 个案例 / 3 种替代 / 一条付费证据 |
 | S23 | Closing | 过关线 |
-| S04 / S05 / S04c / S06 | Appendix | 15 周路线、阶段成果、每周 Skills、时间投入 |
 
-> **S04/S05 与每周 Skill 路线保留在附录。** W1 主课堂先完成创业、SoT 与个人 AI OS，课程全景不再横插在动作链中间。
+> 课程全景固定放在前部：先让学生知道 15 周会走到哪里，再进入 W1 的创业、SoT 与个人 AI OS 动作链。
 
 ---
 
@@ -128,8 +130,8 @@ bun run build    # 上线前必须过
 ### 4.2 每周三件套(每套 deck 的 S02 都要有)
 每周的「**本周真实动作 / 本周产出 / 卧槽点**」——这三样在 `outline.json` 每节现场课的 `description` 里有原文,**逐字取用,别改写**。
 
-### 4.3 课程全景放附录
-15 周路线、阶段成果、每周 Skills 与时间投入保留为公共参考页，但不强制放在每套 deck 开头。核心课堂先完成当前周动作。
+### 4.3 W1 课程全景放在最前面
+W1 在本节目标之后先讲创业营目的，再展示 15 周路线、Go To Market / Founder Club 详解、阶段成果、每周 Skills 与时间投入。W2–W15 可按当周教学需要保留缩略版，但 Phase 名称与周安排必须一致。
 
 ---
 
@@ -181,7 +183,7 @@ curriculum 是静态站,**push 到 main 自动部署**(GitHub Actions)。
 
 ## 8. 附:W1 deck 当前状态
 
-- 🟡 当前 40 张 slide（36 张核心页 + 4 张附录）；W1 主题为“搭起你的创业 AI OS”，先理解创业与选择业务方向，再完成 Business SoT v0.1，最后搭 Founder Workspace 并跑通 SoT → Skill → 人工检查 → 新证据闭环
+- 🟡 当前 42 张 slide；创业营目的与课程全景五页已置于开场，随后理解创业与选择业务方向，再完成 Business SoT v0.1，最后搭 Founder Workspace 并跑通 SoT → Skill → 人工检查 → 新证据闭环
 - ✅ 本地 `http://localhost:5173/` 可访问
 - ✅ 已登记进 `curriculum/lessons.html`（状态：Production Published）
 - ✅ 所有案例带来源条,无编造内容

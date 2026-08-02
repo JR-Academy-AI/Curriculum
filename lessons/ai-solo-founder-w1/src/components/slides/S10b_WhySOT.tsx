@@ -1,47 +1,28 @@
 import { motion } from 'framer-motion';
-import { Slide, colors, fonts, border, shadow, shadowSm } from '../ui';
-import { Body, SlideHead } from '../DeckTable';
-
-const CHAOS = [
-	['你说的', '“帮会计事务所提效”'],
-	['同学听到的', '做一个会计 SaaS'],
-	['AI 猜出来的', '写内容、做 chatbot、自动报税'],
-	['下周你又想的', '也许改做物业管理'],
-];
+import { Slide, colors, fonts, border, shadow } from '../ui';
 
 export default function S10b_WhySOT() {
 	return (
-		<Slide bg={colors.warmBg}>
-			<Body>
-				<SlideHead
-					tag="从 Opportunity Card 到 SoT"
-					tagBg={colors.red}
-					title="为什么这张机会卡必须成为项目唯一的当前版本？"
-					titleSize="clamp(29px, 2.6vw, 40px)"
-					sub="因为机会卡不只是课堂作业。它要成为你、同学和 AI 接下来共同使用的当前版本。"
-				/>
+		<Slide bg={colors.dark}>
+			<div style={{ width: '90%', maxWidth: 1320, height: '82%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', color: colors.white }}>
+				<motion.div initial={{ opacity: 0, y: -18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} style={{ border, background: colors.red, padding: '8px 18px', fontFamily: fonts.mono, fontSize: 15, fontWeight: 900, letterSpacing: 1.5 }}>
+					OPPORTUNITY CARD → BUSINESS SoT
+				</motion.div>
 
-				<div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
-					{CHAOS.map(([who, line], index) => (
-						<motion.div
-							key={who}
-							initial={{ opacity: 0, y: 20 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.35, delay: 0.1 + index * 0.12 }}
-							style={{ border, boxShadow: shadowSm, background: [colors.white, '#FFF6D6', '#EDE9FE', '#FFE9E4'][index], padding: '20px 18px', minHeight: 190 }}
-						>
-							<div style={{ fontFamily: fonts.mono, fontSize: 14, fontWeight: 700, color: colors.red }}>0{index + 1} · {who}</div>
-							<div style={{ marginTop: 18, fontFamily: fonts.heading, fontSize: 24, fontWeight: 900, lineHeight: 1.35 }}>{line}</div>
-						</motion.div>
-					))}
-				</div>
+				<motion.h2 initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.12 }} style={{ marginTop: 26, maxWidth: 1100, fontFamily: fonts.heading, fontSize: 'clamp(38px, 4vw, 61px)', lineHeight: 1.16, fontWeight: 950, letterSpacing: -1.5 }}>
+					聊天越来越多、文档越来越多、<br />AI 也越来越多——<span style={{ color: colors.yellow }}>到底哪一份算数？</span>
+				</motion.h2>
 
-				<div style={{ marginTop: 22, border, boxShadow: shadow, background: colors.dark, color: colors.white, padding: '20px 24px', display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center', gap: 20 }}>
-					<div style={{ fontSize: 22, fontWeight: 800 }}>没有 SoT：每次提问都重新解释，AI 每次都重新猜。</div>
-					<div style={{ fontFamily: fonts.mono, fontSize: 32, color: colors.yellow }}>→</div>
-					<div style={{ fontSize: 22, fontWeight: 800 }}>有 SoT：人和 AI 从同一页出发，新证据只改这一页。</div>
-				</div>
-			</Body>
+				<motion.div initial={{ opacity: 0, scale: 0.88 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.46, delay: 0.38 }} style={{ marginTop: 30, border, boxShadow: '9px 9px 0 #FFE162', background: colors.red, minWidth: 410, padding: '16px 34px 18px' }}>
+					<div style={{ fontSize: 16, fontWeight: 800 }}>答案只有一个</div>
+					<div style={{ marginTop: 2, fontFamily: fonts.heading, fontSize: 58, lineHeight: 1, fontWeight: 950 }}>当前 SoT</div>
+					<div style={{ marginTop: 7, fontFamily: fonts.mono, fontSize: 15, fontWeight: 800 }}>SINGLE SOURCE OF TRUTH</div>
+				</motion.div>
+
+				<motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.45, delay: 0.68 }} style={{ marginTop: 30, maxWidth: 980, fontSize: 22, lineHeight: 1.55, fontWeight: 700 }}>
+					你、同学和 AI 都从这一版开始。<br />新证据出现时，只更新这一版；<span style={{ color: colors.yellow }}>旧聊天和旧文档不再驱动下一步。</span>
+				</motion.p>
+			</div>
 		</Slide>
 	);
 }
