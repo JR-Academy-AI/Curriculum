@@ -154,6 +154,13 @@ jobs:
           bun install
           bun run build
 
+      # Build lessons/vibe-coding-master-l7 (Vibe Coding 大师课 · 第七节课 · 多 Agent 协作 — Subagent 与 Agent Team)
+      - name: Build lessons/vibe-coding-master-l7
+        working-directory: lessons/vibe-coding-master-l7
+        run: |
+          bun install
+          bun run build
+
       # Build lessons/vibe-coding — Slidev deck (跨课复用 Lesson · Lightman 120 min)
       # Slidev/Vue 在 bun 下偶有 install 问题，沿用 npm 保守
       # base 已写进 package.json: --base /curriculum/lessons/vibe-coding/
@@ -510,6 +517,12 @@ jobs:
           if [ -d lessons/vibe-coding-master-l6/dist ]; then
             mkdir -p _site/lessons/vibe-coding-master-l6
             cp -r lessons/vibe-coding-master-l6/dist/* _site/lessons/vibe-coding-master-l6/
+          fi
+
+          # lessons/vibe-coding-master-l7: Vibe Coding 大师课 · 第七节课 · 多 Agent 协作（React + Vite）
+          if [ -d lessons/vibe-coding-master-l7/dist ]; then
+            mkdir -p _site/lessons/vibe-coding-master-l7
+            cp -r lessons/vibe-coding-master-l7/dist/* _site/lessons/vibe-coding-master-l7/
           fi
 
           # ai-engineer-resume-interview · 3h 内部学员讲座（slide deck + public/ zip 下载）
