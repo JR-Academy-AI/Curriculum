@@ -70,8 +70,8 @@ export default function S05_PhaseOutputs() {
 						[
 							ph('4', 'Founder Club', '#EDE9FE'),
 							wk('W14–W15+'),
-							'把已验证的生意讲清楚，完成 Demo Day，并进入持续互助的 Founder Club',
-							out('Founder Club 会籍 + 持续 Office Hour 与同伴网络'),
+							'比较资金形式，准备投资材料与企业架构，完成 Demo Day，并进入持续互助的 Founder Club',
+							out('资金路线决定 + 材料包 + Founder Club 会籍'),
 						],
 					]}
 				/>

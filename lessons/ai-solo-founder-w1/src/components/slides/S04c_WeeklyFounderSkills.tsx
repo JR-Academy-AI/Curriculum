@@ -22,10 +22,10 @@ const SKILLS: WeeklySkill[] = [
 	{ week: 'W8', name: 'AI 内容工厂', result: '做中英文内容与 AI 视频，参加视频陪跑和小红书诊断', accent: '#4B8DFF' },
 	{ week: 'W9', name: '主动获客', result: '完成 LinkedIn / Product Hunt / 英文媒体与线下触达', accent: '#4B8DFF' },
 	{ week: 'W10', name: 'SEO + GEO', result: '发布客户会搜索、AI 能引用的可信内容', accent: '#4B8DFF' },
-	{ week: 'W11', name: '用户增长', result: '诊断漏水环节，跑推荐循环与一次 launch', accent: '#4B8DFF' },
+	{ week: 'W11', name: 'Growth Hacking', result: '用 AARRR 找最大漏水环，上线推荐循环并跑 10 渠道 launch', accent: '#4B8DFF' },
 	{ week: 'W12', name: '交付与财务', result: '固定交付流程，并检查收入、成本和老板时间', accent: '#42A875' },
 	{ week: 'W13', name: '澳洲经营准备', result: '用官方来源整理注册、税务与 Grant 决策包', accent: '#42A875' },
-	{ week: 'W14', name: 'Founder Story', result: '用前 13 周证据写 Pitch、BP 与一页纸', accent: colors.purple },
+	{ week: 'W14', name: 'Funding Readiness', result: '比较资金形式，准备 Pitch / Data Room，并列出企业架构缺口', accent: colors.purple },
 	{ week: 'W15', name: 'Founder Club', result: '选择展示路径，完成 Demo Day、入会与 90 天行动表', accent: colors.purple },
 ];
 

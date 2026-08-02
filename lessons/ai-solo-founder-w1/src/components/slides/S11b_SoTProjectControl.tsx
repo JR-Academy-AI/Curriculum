@@ -3,11 +3,45 @@ import { Slide, colors, fonts, border, shadow, shadowSm } from '../ui';
 import { Body, SlideHead } from '../DeckTable';
 
 const FILES = [
-	['Sponsorship_Deck_FINAL.docx', 'Gold · $5,000'],
-	['Sponsorship_Deck_FINAL_FINAL.docx', 'Gold · $6,500'],
-	['Sponsor_Price_NEW.xlsx', 'Gold · $7,500'],
-	['Deck_USE_THIS_v8.pptx', '权益仍是旧版'],
+	{ name: 'Event_Brief_FINAL.docx', kind: 'W', color: '#2B6FD3', note: '活动信息 · 旧日期', preview: 'text' },
+	{ name: 'Sponsorship_Deck_FINAL.docx', kind: 'W', color: '#2B6FD3', note: 'Gold · $5,000', preview: 'text' },
+	{ name: 'Sponsorship_FINAL_FINAL.docx', kind: 'W', color: '#2B6FD3', note: 'Gold · $6,500', preview: 'text' },
+	{ name: 'Sponsor_Price_NEW.xlsx', kind: 'X', color: '#23835B', note: 'Gold · $7,500', preview: 'bars' },
+	{ name: 'Sponsor_Leads_v3.xlsx', kind: 'X', color: '#23835B', note: '名额：3？', preview: 'table' },
+	{ name: 'Deck_USE_THIS_v8.pptx', kind: 'P', color: '#D45A32', note: '权益仍是旧版', preview: 'chart' },
 ];
+
+function FilePreview({ file }: { file: (typeof FILES)[number] }) {
+	return (
+		<div style={{ height: 66, border: '1.5px solid #D4D8E0', background: '#fff', position: 'relative', overflow: 'hidden', padding: '8px 7px 6px' }}>
+			<div style={{ position: 'absolute', top: 0, left: 0, width: 23, height: 23, display: 'grid', placeItems: 'center', background: file.color, color: '#fff', fontFamily: fonts.heading, fontSize: 12, fontWeight: 950 }}>{file.kind}</div>
+			{file.preview === 'text' ? (
+				<div style={{ marginLeft: 26, display: 'grid', gap: 5 }}>
+					<div style={{ width: '80%', height: 5, background: '#C7CBD4' }} />
+					<div style={{ width: '95%', height: 4, background: '#E0E2E8' }} />
+					<div style={{ width: '70%', height: 4, background: '#E0E2E8' }} />
+					<div style={{ width: '88%', height: 4, background: '#E0E2E8' }} />
+				</div>
+			) : null}
+			{file.preview === 'bars' ? (
+				<div style={{ marginLeft: 27, height: 45, display: 'flex', alignItems: 'flex-end', gap: 6, borderLeft: '1px solid #CBD0D8', borderBottom: '1px solid #CBD0D8', padding: '0 6px' }}>
+					{[18, 31, 24, 39].map((height, index) => <div key={height} style={{ width: 11, height, background: index === 3 ? '#23835B' : '#9BD0B8' }} />)}
+				</div>
+			) : null}
+			{file.preview === 'table' ? (
+				<div style={{ marginLeft: 25, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', borderTop: '1px solid #BFC5CE', borderLeft: '1px solid #BFC5CE' }}>
+					{Array.from({ length: 12 }).map((_, index) => <div key={index} style={{ height: 11, borderRight: '1px solid #BFC5CE', borderBottom: '1px solid #BFC5CE', background: index < 3 ? '#B9E0CD' : index === 7 ? '#FFF0A8' : '#fff' }} />)}
+				</div>
+			) : null}
+			{file.preview === 'chart' ? (
+				<div style={{ marginLeft: 27, display: 'grid', gridTemplateColumns: '42px 1fr', gap: 7, alignItems: 'center' }}>
+					<div style={{ width: 39, height: 39, borderRadius: '50%', background: 'conic-gradient(#D45A32 0 43%, #FFB59C 43% 72%, #FFE0D6 72% 100%)', border: '1px solid #B74928' }} />
+					<div style={{ display: 'grid', gap: 5 }}><div style={{ height: 5, background: '#D45A32' }} /><div style={{ width: '78%', height: 5, background: '#FFB59C' }} /><div style={{ width: '54%', height: 5, background: '#FFE0D6' }} /></div>
+				</div>
+			) : null}
+		</div>
+	);
+}
 
 export default function S11b_SoTProjectControl() {
 	return (
@@ -22,20 +56,25 @@ export default function S11b_SoTProjectControl() {
 				/>
 
 				<div style={{ display: 'grid', gridTemplateColumns: '0.92fr 0.25fr 1.12fr', gap: 17, alignItems: 'stretch' }}>
-					<div style={{ border, boxShadow: shadow, background: colors.white, padding: '16px 17px' }}>
-						<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
-							<div style={{ fontFamily: fonts.mono, fontSize: 14, fontWeight: 900, color: colors.red }}>GOOGLE DRIVE · 版本灾难</div>
-							<div style={{ fontFamily: fonts.mono, fontSize: 11, fontWeight: 800, color: '#666' }}>4 个“当前版”</div>
+					<div style={{ border, boxShadow: shadow, background: '#F8F9FA', padding: '12px 13px' }}>
+						<div style={{ border: '1.5px solid #D4D8E0', borderRadius: 8, background: colors.white, padding: '8px 10px', display: 'grid', gridTemplateColumns: '1fr 150px', gap: 10, alignItems: 'center' }}>
+							<div style={{ fontSize: 13, fontWeight: 850, color: '#3C4043' }}><span style={{ color: '#2B6FD3' }}>My Drive</span> › Events › Sponsorship</div>
+							<div style={{ borderRadius: 12, background: '#EEF1F5', color: '#7A7F88', padding: '5px 9px', fontSize: 11.5 }}>⌕ Search in Drive</div>
 						</div>
-						<div style={{ marginTop: 11, display: 'grid', gap: 8 }}>
-							{FILES.map(([name, value], index) => (
-								<motion.div key={name} initial={{ opacity: 0, x: -18 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.34, delay: 0.07 * index }} style={{ border: '2px solid #111', background: ['#FFE6DF', '#FFF2B8', '#E7E0FF', '#DCEBFF'][index], padding: '9px 11px' }}>
-									<div style={{ fontFamily: fonts.mono, fontSize: 12.5, fontWeight: 900 }}>{name}</div>
-									<div style={{ marginTop: 3, fontSize: 15.5, fontWeight: 850, color: index < 3 ? colors.red : '#333' }}>{value}</div>
+						<div style={{ marginTop: 8, display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
+							<div style={{ fontFamily: fonts.mono, fontSize: 13, fontWeight: 900, color: colors.red }}>GOOGLE DRIVE · 版本灾难</div>
+							<div style={{ fontFamily: fonts.mono, fontSize: 10.5, fontWeight: 800, color: '#666' }}>6 份文件 · 4 个“当前版”</div>
+						</div>
+						<div style={{ marginTop: 8, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 7 }}>
+							{FILES.map((file, index) => (
+								<motion.div key={file.name} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.05 * index }} style={{ minWidth: 0 }}>
+									<FilePreview file={file} />
+									<div style={{ marginTop: 4, fontFamily: fonts.mono, fontSize: 8.8, lineHeight: 1.2, fontWeight: 850, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{file.name}</div>
+									<div style={{ marginTop: 2, fontSize: 11.2, lineHeight: 1.2, fontWeight: 850, color: file.note.includes('$') || file.note.includes('?') ? colors.red : '#555' }}>{file.note}</div>
 								</motion.div>
 							))}
 						</div>
-						<div style={{ marginTop: 9, padding: '8px 11px', background: colors.dark, color: colors.white, fontSize: 14, lineHeight: 1.35, fontWeight: 750 }}>群聊又补了一句：“Gold 现在只剩 2 个。”—— 但没有写回任何文件。</div>
+						<div style={{ marginTop: 8, padding: '7px 9px', background: colors.dark, color: colors.white, fontSize: 12.5, lineHeight: 1.3, fontWeight: 750 }}>群聊又补了一句：“Gold 现在只剩 2 个。”—— 但没有写回任何文件。</div>
 					</div>
 
 					<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>

@@ -10,7 +10,7 @@ bun run build    # tsc -b && vite build → dist/
 
 ← → 翻页 · F 全屏 · V 开摄像头 · `?page=N` 直达某页。
 
-**共 42 张课堂页。** 封面与本节目标之后，先讲创业营为什么存在：有 Idea 就验证，没有 Idea 就从行动里找机会；第一周建立公开内容窗口，每周中段互评并改一版。随后展示 15 周路线，并用独立一页讲清 Go To Market 与 Founder Club，再展示阶段成果、每周 Skills 和时间投入。W1 的目标不是在三小时内证明市场成立，而是让学生建立以后 15 周共同使用的工作方式：理解创业的价值交换循环，选择一个值得验证的业务方向，把 Opportunity Card 升级为 Business SoT v0.1，并在个人 Founder Workspace 中用 SoT、Weekly Skill 与 Human Review 跑通第一项真实任务。
+**共 45 张课堂页。** 封面与本节目标之后，先讲创业营为什么存在：有 Idea 就验证，没有 Idea 就从行动里找机会；第一周建立公开内容窗口，每周中段互评并改一版。随后展示 15 周路线，用独立页面讲清 Go To Market 的独立线上课，以及 Founder Club 的资金形式、投资准备、企业架构、两条 Demo Day Track、Intro Desk 和毕业后 90 天运营，再展示阶段成果、每周 Skills 和时间投入。W1 的目标不是在三小时内证明市场成立，而是让学生建立以后 15 周共同使用的工作方式：理解创业的价值交换循环，选择一个值得验证的业务方向，把 Opportunity Card 升级为 Business SoT v0.1，并在个人 Founder Workspace 中用 SoT、Weekly Skill 与 Human Review 跑通第一项真实任务。
 
 ## 教学主线
 
@@ -18,15 +18,15 @@ bun run build    # tsc -b && vite build → dist/
 |---|---|---|
 | 01–02 | 封面与 W1 三个过关结果 | 知道今天要带走业务方向、Business SoT 与个人 AI OS |
 | 03 | 创业营为什么存在 | 有无 Idea 都立即开始；建立公开内容窗口，并把“收入覆盖并争取超过学费”设为经营目标而非收益保证 |
-| 04–08 | 15 周路线、GTM / Founder Club 详解、阶段成果、每周 Skills、时间投入 | 看清四个 Phase；Phase 2 是 Go To Market，Phase 4 是 Founder Club |
-| 09–10 | 产品/服务/现有生意、创业的最短定义 | 理解创业不是“做 AI 产品”，而是持续完成价值交换 |
-| 11–18 | 常见误区、Beachhead Market、机会入口、证据梯度、筛选 | 从模糊想法中缩到一群相似的第一批客户，留下一个本周值得验证的方向 |
-| 19–20 | 通用生意验证路径 + 产品型项目分支 | 知道 W1 只建立可验证起点；产品型项目按需要使用 PoC/MVP 路径 |
-| 21–25 | Opportunity Card 字段、写法、会计与装修案例、独立写卡 | 完成 Opportunity Card v0.1 |
-| 26 | Founder Exchange | 同伴复述并指出最薄的一条假设 |
-| 27–33 | 为什么需要 SoT、SoT 定义、LLM 为什么依赖 SoT、对应 AI Skills、每周闭环、现场测试 | 把机会卡升级成唯一当前版本的 Business SoT v0.1 |
-| 34–40 | 个人 AI OS、Founder Workspace、Weekly Skill、真实任务、责任边界 | 搭好后续课程共用的个人 AI OS，并完成一次人工检查 |
-| 41–42 | 统一验证 Sprint 与收尾 | 明确 5 位用户 / 3 个案例 / 3 种替代 / 一条付费证据 |
+| 04–11 | 15 周路线、GTM 独立课、Founder Club 融资 / Tracks / 毕业后运营、阶段成果、每周 Skills、时间投入 | 看清四个 Phase；Phase 2 是 Go To Market，Phase 4 是 Founder Club |
+| 12–13 | 产品/服务/现有生意、创业的最短定义 | 理解创业不是“做 AI 产品”，而是持续完成价值交换 |
+| 14–21 | 常见误区、Beachhead Market、机会入口、证据梯度、筛选 | 从模糊想法中缩到一群相似的第一批客户，留下一个本周值得验证的方向 |
+| 22–23 | 通用生意验证路径 + 产品型项目分支 | 知道 W1 只建立可验证起点；产品型项目按需要使用 PoC/MVP 路径 |
+| 24–28 | Opportunity Card 字段、写法、会计与装修案例、独立写卡 | 完成 Opportunity Card v0.1 |
+| 29 | Founder Exchange | 同伴复述并指出最薄的一条假设 |
+| 30–36 | 为什么需要 SoT、SoT 定义、LLM 为什么依赖 SoT、对应 AI Skills、每周闭环、现场测试 | 把机会卡升级成唯一当前版本的 Business SoT v0.1 |
+| 37–43 | 个人 AI OS、Founder Workspace、Weekly Skill、真实任务、责任边界 | 搭好后续课程共用的个人 AI OS，并完成一次人工检查 |
+| 44–45 | 统一验证 Sprint 与收尾 | 明确 5 位用户 / 3 个案例 / 3 种替代 / 一条付费证据 |
 
 ## W1 的三个过关结果
 

@@ -3,14 +3,16 @@ import { Slide, colors, fonts, border, shadowSm } from '../ui';
 import { Body, SlideHead } from '../DeckTable';
 
 const GTM = [
-	{ week: 'W8', title: 'AI 内容工厂', body: '小红书 / 视频号 / 公众号 / X；AI 视频、海报与中英文内容。周中另有 AI 视频实操陪跑 + 小红书图文诊断室。' },
-	{ week: 'W9', title: '主动敲开客户的门', body: 'LinkedIn、Product Hunt、中英文线下渠道；用 AI 准备英文媒体、Podcast 与 Founder feature 的外联材料。' },
+	{ week: 'W8 · 周日主课', title: 'AI 内容工厂', body: '小红书 / 视频号 / 公众号 / X，一套素材改成四个平台内容，并开始 Build in Public。' },
+	{ week: 'W8 · 独立线上课 · 90min', title: 'AI 视频实操陪跑', body: '不用讲师样例；带自己的素材，当场导出一条带配音、字幕、可直接发布的成片。' },
+	{ week: 'W8 · 独立线上课 · 90min', title: '小红书图文诊断室', body: '带已发布但没量、或发不出去的笔记；现场诊断、修改并重新发布一篇。' },
+	{ week: 'W9 · 周日主课', title: '英文媒体 + 主动获客', body: '用 AI 准备 LinkedIn、Product Hunt、Podcast、Founder feature 与线下活动的外联材料。' },
 	{ week: 'W10', title: '让人和 AI 都搜到你', body: 'SEO + GEO + E-E-A-T + Schema，把客户会搜索、AI 能引用的可信内容放上网。' },
-	{ week: 'W11', title: '用户增长', body: '用 AARRR 找漏水环节，跑推荐循环，并完成一次多渠道 launch。' },
+	{ week: 'W11 · Phase 2 收官', title: 'Growth Hacking · 增长黑客', body: '用 AARRR 找出最大漏水环，上线一个推荐循环，并完成一次 10 渠道 launch。' },
 ];
 
 const CLUB = [
-	{ week: 'W14', title: '讲清生意，也判断路线', body: '用前 13 周真实证据完成 Pitch、one-pager 与材料包；判断这门生意该不该融资。' },
+	{ week: 'W14', title: '融资准备与路线判断', body: '比较客户资金、Grant、Angel、Accelerator 与 VC；准备 Pitch、Data Room，并检查实体、股权和 IP 归属。' },
 	{ week: 'W15', title: 'Demo Day + 入会', body: 'Traction / Investor 两条展示路径；完成路演、intro 与毕业后 90 天行动表。' },
 	{ week: '毕业后', title: 'Founder Club 继续运转', body: 'Founder salon、mastermind、Office Hour、互为客户市场与长期 intro 网络。' },
 ];
@@ -31,14 +33,14 @@ export default function S04e_GTMFounderClub() {
 					<section style={{ border, boxShadow: shadowSm, background: '#DCEBFF', padding: '17px 18px' }}>
 						<div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 10 }}>
 							<h3 style={{ fontFamily: fonts.heading, fontSize: 28, fontWeight: 900 }}>PHASE 2 · Go To Market</h3>
-							<span style={{ fontFamily: fonts.mono, fontSize: 14, fontWeight: 900 }}>W8–W11</span>
+							<span style={{ fontFamily: fonts.mono, fontSize: 13, fontWeight: 900 }}>4 周主线 + 2 节独立线上课</span>
 						</div>
-						<div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 11, marginTop: 12 }}>
+						<div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 9, marginTop: 12 }}>
 							{GTM.map((item, index) => (
-								<motion.div key={item.week} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08 + index * 0.07 }} style={{ border: '2px solid #000', background: colors.white, padding: '12px 13px', minHeight: 132 }}>
-									<div style={{ fontFamily: fonts.mono, fontSize: 13, fontWeight: 900, color: '#2868C7' }}>{item.week}</div>
-									<div style={{ marginTop: 5, fontFamily: fonts.heading, fontSize: 19, fontWeight: 900 }}>{item.title}</div>
-									<div style={{ marginTop: 7, fontSize: 14.5, lineHeight: 1.4, color: '#333', fontWeight: 600 }}>{item.body}</div>
+								<motion.div key={`${item.week}-${item.title}`} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08 + index * 0.07 }} style={{ border: '2px solid #000', background: index === 1 || index === 2 ? '#FFF3BC' : colors.white, padding: '10px 11px', minHeight: 128 }}>
+									<div style={{ fontFamily: fonts.mono, fontSize: 11, fontWeight: 900, color: index === 1 || index === 2 ? '#B66A00' : '#2868C7' }}>{item.week}</div>
+									<div style={{ marginTop: 4, fontFamily: fonts.heading, fontSize: 17.5, fontWeight: 900, lineHeight: 1.15 }}>{item.title}</div>
+									<div style={{ marginTop: 6, fontSize: 12.8, lineHeight: 1.35, color: '#333', fontWeight: 600 }}>{item.body}</div>
 								</motion.div>
 							))}
 						</div>

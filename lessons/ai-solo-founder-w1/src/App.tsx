@@ -42,6 +42,9 @@ import S22 from './components/slides/S22_NextWeek';
 import S23 from './components/slides/S23_Closing';
 import S04 from './components/slides/S04_Roadmap15Weeks';
 import S04e from './components/slides/S04e_GTMFounderClub';
+import S04f from './components/slides/S04f_FounderClubFunding';
+import S04g from './components/slides/S04g_FounderClubTracks';
+import S04h from './components/slides/S04h_FounderClubAftercare';
 import S05 from './components/slides/S05_PhaseOutputs';
 import S04c from './components/slides/S04c_WeeklyFounderSkills';
 import S06 from './components/slides/S06_TimeInvestment';
@@ -55,6 +58,9 @@ export default function App() {
 			{/* 课程全景先讲：学生先知道 15 周怎么走，再进入 W1 */}
 			<S04 />
 			<S04e />
+			<S04f />
+			<S04g />
+			<S04h />
 			<S05 />
 			<S04c />
 			<S06 />

@@ -8,7 +8,7 @@
 ## 0. 一句话背景
 
 AI 一人创业营 = 15 周课程,**每周日 14:00–17:00 三小时线下课**(墨尔本主场 + 悉尼/布里斯班卫星教室 + 同步直播)。
-W1 当前为 42 张 slide 的 React+Vite deck，主题是《搭起你的创业 AI OS》。封面和本节目标之后先讲创业营为什么存在与共同纪律，再展示课程全景、Go To Market / Founder Club 详解、阶段成果、每周 Skills 与时间投入。Phase 2 统一叫 **Go To Market**（含英文媒体 AI、线上分享、AI 视频、小红书 Workshop、主动触达、SEO/GEO 与增长），Phase 4 统一只叫 **Founder Club**。教学链为“知道为什么现在就行动 → 看清 15 周路线 → 理解创业的价值交换 → 缩到 Beachhead Market → 找到可验证的问题 → 写 Opportunity Card → 理解 SoT / 为什么需要 SoT / LLM 为什么依赖 SoT → 看到每类 SoT 对应的 AI Skill → 升级为 Business SoT v0.1 → 搭 Founder Workspace → 调用 Weekly Skill → 人工检查 → 把新证据写回 SoT”。**W2–W15 必须沿用这条 Founder OS 闭环，不重新建立另一份业务真相。**
+W1 当前为 45 张 slide 的 React+Vite deck，主题是《搭起你的创业 AI OS》。封面和本节目标之后先讲创业营为什么存在与共同纪律，再展示课程全景、Go To Market / Founder Club 详解、阶段成果、每周 Skills 与时间投入。Phase 2 统一叫 **Go To Market**；除 W8–W11 四周主课外，**AI 视频实操陪跑**与**小红书图文诊断室**是两节独立的 90 分钟线上课，不得缩写成 W8 的两个功能点。W9 还包含用 AI 准备英文媒体、Podcast 与 Founder feature 外联。Phase 4 统一只叫 **Founder Club**，并单独讲资金来源与投资形式、Pitch / Data Room / Investor Update、实体与股权结构、IP / 合同和治理税务准备、Traction / Investor 两条 Track、Intro Desk 规则，以及毕业后的 Salon、Mastermind、Office Hour、互为客户市场和 30 / 60 / 90 天行动计划；这些是决策教育，不替代律师、会计师或持牌专业人士，也不保证融资、订单或引荐结果。教学链为“知道为什么现在就行动 → 看清 15 周路线 → 理解创业的价值交换 → 缩到 Beachhead Market → 找到可验证的问题 → 写 Opportunity Card → 理解 SoT / 为什么需要 SoT / LLM 为什么依赖 SoT → 看到每类 SoT 对应的 AI Skill → 升级为 Business SoT v0.1 → 搭 Founder Workspace → 调用 Weekly Skill → 人工检查 → 把新证据写回 SoT”。**W2–W15 必须沿用这条 Founder OS 闭环，不重新建立另一份业务真相。**
 
 ---
 
@@ -45,7 +45,7 @@ bun run dev      # → http://localhost:5173/
 bun run build    # 上线前必须过
 ```
 
-### 1.3 W1 当前 42 张 slide 顺序
+### 1.3 W1 当前 45 张 slide 顺序
 
 | # | Slide | 作用 |
 |---|---|---|
@@ -53,7 +53,10 @@ bun run build    # 上线前必须过
 | S02 | Takeaways | **今天你会带走什么**(产出 + 验收标准) |
 | S02c | BootcampPurpose | 有无 Idea 都立即行动；公开内容窗口、每周互评、收入覆盖学费的经营目标（不作收益保证） |
 | S04 / S05 / S04c / S06 | Course Overview | 15 周路线、阶段成果、每周 Skills、时间投入；Phase 2 = Go To Market，Phase 4 = Founder Club |
-| S04e | GTMFounderClub | 单独讲清 W8–W11 内容与两场线上 Workshop，以及 W14–W15 Demo Day、双展示路径和毕业后 Founder Club |
+| S04e | GTMFounderClub | 单独讲清 W8–W11 四周主课、两节独立 90 分钟线上课，以及 W14–W15 Demo Day、双展示路径和毕业后 Founder Club |
+| S04f | FounderClubFunding | 资金形式、投资材料、Data Room、企业实体、股权、IP、合同与治理准备；明确专业建议边界 |
+| S04g | FounderClubTracks | 学院与 Founder Club 分工、Traction / Investor 两条 Track、Intro Desk 流程与不保证融资边界 |
+| S04h | FounderClubAftercare | Salon、Mastermind、Office Hour、互为客户市场与毕业后 30 / 60 / 90 天行动计划 |
 | S02a–S02b | BusinessForms / Entrepreneurship | 产品、服务与现有生意均适用；创业是反复完成价值交换 |
 | **S03–S03c** | **Startup / WorthSolving / Cases / Sources** | **创业误区、值得解决的问题、两个真实起点与四个机会入口** |
 | **S03f / S03k / S03i / S03j** | **Scan / Evidence / Filter** | **用证据梯度、评分表和三道硬门槛留下一个本周验证方向** |
@@ -183,7 +186,7 @@ curriculum 是静态站,**push 到 main 自动部署**(GitHub Actions)。
 
 ## 8. 附:W1 deck 当前状态
 
-- 🟡 当前 42 张 slide；创业营目的与课程全景五页已置于开场，随后理解创业与选择业务方向，再完成 Business SoT v0.1，最后搭 Founder Workspace 并跑通 SoT → Skill → 人工检查 → 新证据闭环
+- 🟡 当前 45 张 slide；创业营目的与课程全景八页已置于开场，随后理解创业与选择业务方向，再完成 Business SoT v0.1，最后搭 Founder Workspace 并跑通 SoT → Skill → 人工检查 → 新证据闭环
 - ✅ 本地 `http://localhost:5173/` 可访问
 - ✅ 已登记进 `curriculum/lessons.html`（状态：Production Published）
 - ✅ 所有案例带来源条,无编造内容

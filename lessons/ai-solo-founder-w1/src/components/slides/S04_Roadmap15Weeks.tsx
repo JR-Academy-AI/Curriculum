@@ -33,13 +33,15 @@ const PHASES: { no: string; title: string; range: string; desc: string; bg: stri
 		no: '2',
 		title: 'Go To Market',
 		range: 'W8–W11',
-		desc: '用内容、主动触达、搜索和增长实验，把产品、公司或服务带到市场',
+		desc: '4 周主线 + 2 节独立线上 Workshop，把产品、公司或服务真正带到市场',
 		bg: '#DCEBFF',
 		weeks: [
-			{ w: 'W8', name: 'AI 内容工厂', desc: '中英文内容、AI 视频；视频陪跑与小红书诊断' },
-			{ w: 'W9', name: '主动敲开客户的门', desc: 'LinkedIn、Product Hunt、英文媒体与线下活动' },
+			{ w: 'W8', name: 'AI 内容工厂', desc: '四平台内容产线 + Build in Public' },
+			{ w: 'W8·线上课', name: 'AI 视频实操陪跑', desc: '90 分钟，用自己的素材当场做出第一条成片' },
+			{ w: 'W8·线上课', name: '小红书图文诊断室', desc: '90 分钟，改完一篇并重新发布' },
+			{ w: 'W9', name: '英文媒体与主动获客', desc: 'LinkedIn、Product Hunt、Podcast、Founder feature' },
 			{ w: 'W10', name: '让人和 AI 都搜到你', desc: '用 SEO、GEO 与可信内容建立长期入口' },
-			{ w: 'W11', name: '用户增长', desc: '找出漏水环节，跑推荐循环与一次完整 launch' },
+			{ w: 'W11', name: 'Growth Hacking · 增长黑客', desc: '用 AARRR 找漏水环节，上线推荐循环，完成一次 10 渠道 launch' },
 		],
 	},
 	{
@@ -56,12 +58,14 @@ const PHASES: { no: string; title: string; range: string; desc: string; bg: stri
 	{
 		no: '4',
 		title: 'Founder Club',
-		range: 'W14–W15',
-		desc: '讲清真实成果，完成 Demo Day，并进入持续同行的 Founder Club',
+		range: 'W14–W15+',
+		desc: '融资判断、两条 Demo Day 路径、长期 Intro Desk 与毕业后持续同行',
 		bg: '#EDE9FE',
 		weeks: [
-			{ w: 'W14', name: 'Pitch 与路线判断', desc: '用真实证据做材料包，并判断该不该融资' },
-			{ w: 'W15', name: 'Demo Day + 入会', desc: '选择展示路径，路演并进入 Founder Club' },
+			{ w: 'W14', name: '融资准备与路线判断', desc: '比较资金形式，准备材料包、Data Room 与企业架构' },
+			{ w: 'W15', name: 'Demo Day · 双 Track', desc: 'Traction 面向客户合作；Investor 申请制' },
+			{ w: '毕业后', name: 'Intro Desk 长期开放', desc: '准备度检查、匹配、双方同意、引荐与反馈' },
+			{ w: '30/60/90 天', name: 'Founder Club 继续运转', desc: 'Salon、Mastermind、Office Hour 与互为客户市场' },
 		],
 	},
 ];
