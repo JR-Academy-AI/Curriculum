@@ -10,10 +10,10 @@ export default function S10_ThreePaths() {
 		<Slide bg={colors.warmBg}>
 			<Body style={{ padding: '40px 56px 36px' }}>
 				<SlideHead
-					tag="① 创业先分清你做的是哪一种"
-					title="这门课先让你做一门有人付钱的 Business"
+					tag="① 先选适合你的做法"
+					title="你可以做产品、服务，也可以改造现有生意"
 					titleSize="clamp(32px, 2.9vw, 44px)"
-					sub="不是否定融资。先证明有人愿意付钱，再决定要不要用资本把它放大。"
+					sub="这门课不要求你融资，也不要求你做 AI 产品。先从你熟悉的行业、客户和问题开始。"
 				/>
 
 				<DeckTable
@@ -21,27 +21,26 @@ export default function S10_ThreePaths() {
 					headFontSize={17}
 					cellPad="10px 16px"
 					cols={[
-						{ label: '遇到这件事', w: '1.05fr' },
-						{ label: 'VC Startup', w: '1fr' },
-						{ label: '传统创业', w: '0.9fr' },
-						{ label: 'OPC 一人公司 ← 这门课教的', w: '1.75fr', accent: '#FFE9E4' },
+						{ label: '想清楚这件事', w: '1.05fr' },
+						{ label: '融资型创业', w: '1fr' },
+						{ label: '传统生意', w: '0.9fr' },
+						{ label: '小团队 / 一人公司', w: '1.75fr', accent: '#FFE9E4' },
 					]}
 					rows={[
-						['活干不完', '招人、扩团队', '招人', opc('上 AI / 自动化，不招人')],
-						['缺钱', '融资', '贷款、自己垫', opc('靠第一笔收入养活自己')],
-						['怎么算成功', '估值、下一轮', '营业额、规模', opc('每月进你口袋多少钱 + 你有多自由')],
-						['做小了算什么', '失败', '失败', opc('是主动选的')],
-						['营销怎么做', '烧钱买增长', '销售团队', opc('内容 + 人脉 + AI 放大')],
-						['财务长什么样', '烧钱换增长', '现金流管理', opc('低成本、高毛利、当月见现金')],
-						['你是谁', 'CEO，管团队', '老板，管员工', opc('你既是瓶颈，也是护城河')],
+						['钱从哪里来', '投资人', '贷款或自有资金', opc('先靠收入支持下一步')],
+						['怎么扩大', '融资、快速招人', '门店、设备、员工', opc('先用工具、流程和合作伙伴')],
+						['先看什么结果', '增长和下一轮融资', '营业额与现金流', opc('客户是否付费、复购或推荐')],
+						['可以卖什么', '通常是可规模化产品', '商品或线下服务', opc('软件、实体产品、专业服务都可以')],
+						['AI 放在哪里', '可能就是产品本身', '改善部分经营流程', opc('用于调研、交付、营销和运营')],
+						['你主要做什么', '组团队、找资金、定方向', '管理日常经营', opc('把专业能力做成可重复的交付')],
 					]}
 				/>
 
 				<Punchline bg={colors.dark}>
-					这门课先走<span style={{ background: colors.red, padding: '0 8px' }}>第三列</span>
-					：低成本做出来，用真实付费判断是不是需求。W7 的第一笔钱是 <u>Paid Evidence</u>，不是 PMF。
+					这门课主要训练<span style={{ background: colors.red, padding: '0 8px' }}>小团队也能使用的方法</span>
+					：把问题说清楚，做出最小交付，再用真实客户反应判断下一步。
 					<span style={{ display: 'block', marginTop: 8, fontSize: 18, fontWeight: 600, color: colors.yellow }}>
-						站稳之后，你仍然可以选择融资；但不要拿一个还没人付过钱的想法去烧钱。
+						以后要招人、开店或融资都可以；第一周先把生意本身讲明白。
 					</span>
 				</Punchline>
 			</Body>

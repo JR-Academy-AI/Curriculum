@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "slug": "ai-builder",
   "trainingId": "68a6e2d98a670b0071c9d975",
-  "syncedAt": "2026-07-15T02:13:48.452Z",
+  "syncedAt": "2026-08-04T04:55:32.264Z",
   "modules": [
     {
       "_id": "68a6f3596c178e09a077f052",
@@ -156,7 +156,7 @@
       "programPhase": 2,
       "name": "Vibe Coding 大师课02期（for Tech）",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "lessonCount": 112
+      "lessonCount": 111
     },
     {
       "_id": "68d2326d7b290a005a0cb689",
@@ -253,7 +253,7 @@
       "syllabusOrder": 7,
       "matchedLocalCode": null,
       "isOrphan": true,
-      "isDuplicate": true
+      "isDuplicate": false
     },
     "6943a2ca8aaafb410007a4e0": {
       "_id": "6943a2ca8aaafb410007a4e0",
@@ -517,7 +517,7 @@
       "syllabusOrder": 31,
       "matchedLocalCode": null,
       "isOrphan": true,
-      "isDuplicate": true
+      "isDuplicate": false
     },
     "68ecb5003113a7be7628223b": {
       "_id": "68ecb5003113a7be7628223b",
@@ -673,47 +673,25 @@
       "isOrphan": false,
       "isDuplicate": false
     },
-    "6a4310732f662a5f6d5c9ba1": {
-      "_id": "6a4310732f662a5f6d5c9ba1",
-      "name": "Vibe Coding 大师课02期（for Tech）_用 AI 生成 Design System：UI 布局与统一样式语言",
-      "title": "用 AI 生成 Design System：UI 布局与统一样式语言",
-      "moduleId": "68a6f3596c178e09a077f052",
-      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 4,
-      "matchedLocalCode": "L110",
-      "isOrphan": false,
-      "isDuplicate": false
-    },
-    "69dc419a76e3e0c1b3c53e26": {
-      "_id": "69dc419a76e3e0c1b3c53e26",
-      "name": "自学：Cursor 入门 — Vibe Coding 的代名词",
-      "title": "自学：Cursor 入门 — Vibe Coding 的代名词",
-      "moduleId": null,
-      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 5,
-      "matchedLocalCode": "L05",
-      "isOrphan": false,
-      "isDuplicate": false
-    },
-    "69dc419a76e3e0c1b3c53e2f": {
-      "_id": "69dc419a76e3e0c1b3c53e2f",
-      "name": "自学：安装 Cursor 与环境准备",
-      "title": "自学：安装 Cursor 与环境准备",
-      "moduleId": null,
-      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 6,
-      "matchedLocalCode": "L06",
-      "isOrphan": false,
-      "isDuplicate": false
-    },
     "69e19a944267524e904ae4cb": {
       "_id": "69e19a944267524e904ae4cb",
       "name": "Quest 实战：装好 Claude Code + Codex 完整工具链",
       "title": "Quest 实战：装好 Claude Code + Codex 完整工具链",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 7,
+      "syllabusOrder": 4,
       "matchedLocalCode": "Q01",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "69dc419f76e3e0c1b3c53ea9": {
+      "_id": "69dc419f76e3e0c1b3c53ea9",
+      "name": "Lab: Claude Code 入门 — 终端里的 AI 程序员",
+      "title": "Lab: Claude Code 入门 — 终端里的 AI 程序员",
+      "moduleId": null,
+      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
+      "syllabusOrder": 5,
+      "matchedLocalCode": "L33",
       "isOrphan": false,
       "isDuplicate": false
     },
@@ -723,7 +701,7 @@
       "title": "Claude、Codex、Gemini 对比指南",
       "moduleId": "68a6f3596c178e09a077f052",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 8,
+      "syllabusOrder": 6,
       "matchedLocalCode": "L07",
       "isOrphan": false,
       "isDuplicate": false
@@ -734,8 +712,30 @@
       "title": "Lab: 模型与参数 — Temperature、Top-P 和模型选择",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 9,
+      "syllabusOrder": 7,
       "matchedLocalCode": "L08",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "69db3dc776e3e0c1b3b66dfe": {
+      "_id": "69db3dc776e3e0c1b3b66dfe",
+      "name": "Lab: 工具选型实战 — 没有绝对的最好，只有最适合",
+      "title": "Lab: 工具选型实战 — 没有绝对的最好，只有最适合",
+      "moduleId": "68a6f3596c178e09a077f052",
+      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
+      "syllabusOrder": 8,
+      "matchedLocalCode": "L70",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "69db3dc876e3e0c1b3b66e2d": {
+      "_id": "69db3dc876e3e0c1b3b66e2d",
+      "name": "Codex CLI 安装指南与 config.toml 配置样例",
+      "title": "Codex CLI 安装指南与 config.toml 配置样例",
+      "moduleId": "68a6f3596c178e09a077f052",
+      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
+      "syllabusOrder": 9,
+      "matchedLocalCode": "L81",
       "isOrphan": false,
       "isDuplicate": false
     },
@@ -761,13 +761,35 @@
       "isOrphan": false,
       "isDuplicate": false
     },
+    "69dc419a76e3e0c1b3c53e26": {
+      "_id": "69dc419a76e3e0c1b3c53e26",
+      "name": "自学：Cursor 入门 — Vibe Coding 的代名词",
+      "title": "自学：Cursor 入门 — Vibe Coding 的代名词",
+      "moduleId": null,
+      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
+      "syllabusOrder": 12,
+      "matchedLocalCode": "L05",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "69dc419a76e3e0c1b3c53e2f": {
+      "_id": "69dc419a76e3e0c1b3c53e2f",
+      "name": "自学：安装 Cursor 与环境准备",
+      "title": "自学：安装 Cursor 与环境准备",
+      "moduleId": null,
+      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
+      "syllabusOrder": 13,
+      "matchedLocalCode": "L06",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
     "69db3dc376e3e0c1b3b66d24": {
       "_id": "69db3dc376e3e0c1b3b66d24",
       "name": "从需求到 PRD：AI 产品设计流程与 Claude 模块拆解",
       "title": "从需求到 PRD：AI 产品设计流程与 Claude 模块拆解",
       "moduleId": "68a6f3596c178e09a077f052",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 12,
+      "syllabusOrder": 14,
       "matchedLocalCode": "L11",
       "isOrphan": false,
       "isDuplicate": false
@@ -778,7 +800,7 @@
       "title": "Lab: 明确任务 — 让 AI 准确理解你的需求",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 13,
+      "syllabusOrder": 15,
       "matchedLocalCode": "L12",
       "isOrphan": false,
       "isDuplicate": false
@@ -789,19 +811,8 @@
       "title": "自学：从想法到 PRD（用 AI 写 PRD）",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 14,
+      "syllabusOrder": 16,
       "matchedLocalCode": "L13",
-      "isOrphan": false,
-      "isDuplicate": false
-    },
-    "69dc419b76e3e0c1b3c53e59": {
-      "_id": "69dc419b76e3e0c1b3c53e59",
-      "name": "Lab: Prompt Chaining — 多步骤编排",
-      "title": "Lab: Prompt Chaining — 多步骤编排",
-      "moduleId": null,
-      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 15,
-      "matchedLocalCode": "L15",
       "isOrphan": false,
       "isDuplicate": false
     },
@@ -811,10 +822,21 @@
       "title": "PRD 模板与 Claude Prompt（提示词）参考",
       "moduleId": "68a6f3596c178e09a077f052",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 16,
+      "syllabusOrder": 17,
       "matchedLocalCode": "L16",
       "isOrphan": false,
       "isDuplicate": true
+    },
+    "69dc41a576e3e0c1b3c53f65": {
+      "_id": "69dc41a576e3e0c1b3c53f65",
+      "name": "Lab: Zero-shot — 零示例直接提问",
+      "title": "Lab: Zero-shot — 零示例直接提问",
+      "moduleId": null,
+      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
+      "syllabusOrder": 18,
+      "matchedLocalCode": "L69",
+      "isOrphan": false,
+      "isDuplicate": false
     },
     "69dc419c76e3e0c1b3c53e5f": {
       "_id": "69dc419c76e3e0c1b3c53e5f",
@@ -822,7 +844,7 @@
       "title": "Lab: 输出格式 — 让 AI 按你要的格式回答",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 17,
+      "syllabusOrder": 19,
       "matchedLocalCode": "L17",
       "isOrphan": false,
       "isDuplicate": false
@@ -833,8 +855,63 @@
       "title": "Lab: Few-shot Learning — 用示例教会 AI",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 18,
+      "syllabusOrder": 20,
       "matchedLocalCode": "L18",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "69dc41a676e3e0c1b3c53f6e": {
+      "_id": "69dc41a676e3e0c1b3c53f6e",
+      "name": "Lab: Chain of Thought — 让 AI 展示思考过程",
+      "title": "Lab: Chain of Thought — 让 AI 展示思考过程",
+      "moduleId": null,
+      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
+      "syllabusOrder": 21,
+      "matchedLocalCode": "L73",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "69dc41a676e3e0c1b3c53f84": {
+      "_id": "69dc41a676e3e0c1b3c53f84",
+      "name": "自学：Chain-of-Thought (CoT)",
+      "title": "自学：Chain-of-Thought (CoT)",
+      "moduleId": null,
+      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
+      "syllabusOrder": 22,
+      "matchedLocalCode": "L75",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "69dc41a676e3e0c1b3c53f78": {
+      "_id": "69dc41a676e3e0c1b3c53f78",
+      "name": "Lab: Self-Consistency — 多路推理投票",
+      "title": "Lab: Self-Consistency — 多路推理投票",
+      "moduleId": null,
+      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
+      "syllabusOrder": 23,
+      "matchedLocalCode": "L74",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "69dc419b76e3e0c1b3c53e59": {
+      "_id": "69dc419b76e3e0c1b3c53e59",
+      "name": "Lab: Prompt Chaining — 多步骤编排",
+      "title": "Lab: Prompt Chaining — 多步骤编排",
+      "moduleId": null,
+      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
+      "syllabusOrder": 24,
+      "matchedLocalCode": "L15",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "69dc41a676e3e0c1b3c53f89": {
+      "_id": "69dc41a676e3e0c1b3c53f89",
+      "name": "自学：Prompt Chaining",
+      "title": "自学：Prompt Chaining",
+      "moduleId": null,
+      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
+      "syllabusOrder": 25,
+      "matchedLocalCode": "L76",
       "isOrphan": false,
       "isDuplicate": false
     },
@@ -844,19 +921,52 @@
       "title": "自学：高质量 Prompt 模板",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 19,
+      "syllabusOrder": 26,
       "matchedLocalCode": "L19",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a4310732f662a5f6d5c9ba1": {
+      "_id": "6a4310732f662a5f6d5c9ba1",
+      "name": "Vibe Coding 大师课02期（for Tech）_用 AI 生成 Design System：UI 布局与统一样式语言",
+      "title": "用 AI 生成 Design System：UI 布局与统一样式语言",
+      "moduleId": "68a6f3596c178e09a077f052",
+      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
+      "syllabusOrder": 27,
+      "matchedLocalCode": "L110",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "6a55dda12b2c173c34b25118": {
+      "_id": "6a55dda12b2c173c34b25118",
+      "name": "Vibe Coding 大师课02期（for Tech）_从 PRD 到 Production：GitHub + Actions + Pages / Vercel 交付链路",
+      "title": "从 PRD 到 Production：GitHub + Actions + Pages / Vercel 交付链路",
+      "moduleId": "68a6f3596c178e09a077f052",
+      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
+      "syllabusOrder": 28,
+      "matchedLocalCode": "L111",
       "isOrphan": false,
       "isDuplicate": false
     },
     "69db3dc376e3e0c1b3b66d3c": {
       "_id": "69db3dc376e3e0c1b3b66d3c",
-      "name": "Claude Prompt Engineering 与 Context Engineering（上下文工程）实践",
-      "title": "Claude Prompt Engineering 与 Context Engineering（上下文工程）实践",
+      "name": "自学：Claude Prompt Engineering 与 Context Engineering（上下文工程）实践",
+      "title": "自学：Claude Prompt Engineering 与 Context Engineering（上下文工程）实践",
       "moduleId": "68a6f3596c178e09a077f052",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 20,
+      "syllabusOrder": 29,
       "matchedLocalCode": "L20",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "69db3dc776e3e0c1b3b66ddb": {
+      "_id": "69db3dc776e3e0c1b3b66ddb",
+      "name": "Lab: Context Engineering 入门 — 让 AI 不再丢上下文",
+      "title": "Lab: Context Engineering 入门 — 让 AI 不再丢上下文",
+      "moduleId": "68a6f3596c178e09a077f052",
+      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
+      "syllabusOrder": 30,
+      "matchedLocalCode": "L64",
       "isOrphan": false,
       "isDuplicate": false
     },
@@ -866,7 +976,7 @@
       "title": "Lab: Context Engineering — AI Agent 的核心能力",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 21,
+      "syllabusOrder": 31,
       "matchedLocalCode": "L21",
       "isOrphan": false,
       "isDuplicate": false
@@ -877,7 +987,7 @@
       "title": "Lab: .cursorrules 设计实战 — 让 Cursor 按你的规矩写代码",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 22,
+      "syllabusOrder": 32,
       "matchedLocalCode": "L22",
       "isOrphan": false,
       "isDuplicate": false
@@ -888,7 +998,7 @@
       "title": "自学：Cursor Rules 编写指南",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 23,
+      "syllabusOrder": 33,
       "matchedLocalCode": "L23",
       "isOrphan": false,
       "isDuplicate": false
@@ -899,7 +1009,7 @@
       "title": "自学：Context Fundamentals",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 24,
+      "syllabusOrder": 34,
       "matchedLocalCode": "L24",
       "isOrphan": false,
       "isDuplicate": false
@@ -910,21 +1020,10 @@
       "title": "Quest 实战：给你的真实项目写一套 CLAUDE.md + 工具规则文件",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 25,
+      "syllabusOrder": 35,
       "matchedLocalCode": "Q02",
       "isOrphan": false,
       "isDuplicate": false
-    },
-    "69db3dc476e3e0c1b3b66d44": {
-      "_id": "69db3dc476e3e0c1b3b66d44",
-      "name": "Claude 协助 Debug：从报错到修复的完整流程",
-      "title": "Claude 协助 Debug：从报错到修复的完整流程",
-      "moduleId": "68a6f3596c178e09a077f052",
-      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 26,
-      "matchedLocalCode": "L25",
-      "isOrphan": false,
-      "isDuplicate": true
     },
     "6a4310742f662a5f6d5c9bb4": {
       "_id": "6a4310742f662a5f6d5c9bb4",
@@ -932,7 +1031,7 @@
       "title": "老项目改造（Brownfield）：让 AI 读懂 + 安全改一个真实 existing 项目",
       "moduleId": "68a6f3596c178e09a077f052",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 27,
+      "syllabusOrder": 36,
       "matchedLocalCode": "L109",
       "isOrphan": false,
       "isDuplicate": false
@@ -943,7 +1042,7 @@
       "title": "Lab: 调试 AI 代码 — 读错误日志和修复 Bug",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 28,
+      "syllabusOrder": 37,
       "matchedLocalCode": "L26",
       "isOrphan": false,
       "isDuplicate": false
@@ -954,7 +1053,7 @@
       "title": "Lab: 代码生成 — AI 辅助编程的正确姿势",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 29,
+      "syllabusOrder": 38,
       "matchedLocalCode": "L27",
       "isOrphan": false,
       "isDuplicate": false
@@ -965,7 +1064,7 @@
       "title": "自学：用 AI 做 Debug",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 30,
+      "syllabusOrder": 39,
       "matchedLocalCode": "L28",
       "isOrphan": false,
       "isDuplicate": false
@@ -976,7 +1075,7 @@
       "title": "Claude Prompt 模板与上下文优化技巧",
       "moduleId": "68a6f3596c178e09a077f052",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 31,
+      "syllabusOrder": 40,
       "matchedLocalCode": "L29",
       "isOrphan": false,
       "isDuplicate": true
@@ -987,7 +1086,7 @@
       "title": "Lab: 约束与负面 Prompt — 告诉 AI 不该做什么",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 32,
+      "syllabusOrder": 41,
       "matchedLocalCode": "L30",
       "isOrphan": false,
       "isDuplicate": false
@@ -998,30 +1097,8 @@
       "title": "自学：Skills 架构速览 — Claude/Codex 插件机制",
       "moduleId": "68a6f3676c178e09a077f158",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 33,
+      "syllabusOrder": 42,
       "matchedLocalCode": "L31",
-      "isOrphan": false,
-      "isDuplicate": false
-    },
-    "69dc419e76e3e0c1b3c53e99": {
-      "_id": "69dc419e76e3e0c1b3c53e99",
-      "name": "Lab: Tool Use — Function Calling 实战",
-      "title": "Lab: Tool Use — Function Calling 实战",
-      "moduleId": null,
-      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 34,
-      "matchedLocalCode": "L32",
-      "isOrphan": false,
-      "isDuplicate": false
-    },
-    "69dc419f76e3e0c1b3c53ea9": {
-      "_id": "69dc419f76e3e0c1b3c53ea9",
-      "name": "Lab: Claude Code 入门 — 终端里的 AI 程序员",
-      "title": "Lab: Claude Code 入门 — 终端里的 AI 程序员",
-      "moduleId": null,
-      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 35,
-      "matchedLocalCode": "L33",
       "isOrphan": false,
       "isDuplicate": false
     },
@@ -1031,7 +1108,7 @@
       "title": "自学：Claude Code Skills 进阶",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 36,
+      "syllabusOrder": 43,
       "matchedLocalCode": "L34",
       "isOrphan": false,
       "isDuplicate": false
@@ -1042,7 +1119,7 @@
       "title": "Skills 架构与 agent.md 模板标准化实战",
       "moduleId": "68a6f3676c178e09a077f158",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 37,
+      "syllabusOrder": 44,
       "matchedLocalCode": "L35",
       "isOrphan": false,
       "isDuplicate": false
@@ -1053,7 +1130,7 @@
       "title": "Lab: Claude Code Skills 和 Agent Teams — AI 能力复用",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 38,
+      "syllabusOrder": 45,
       "matchedLocalCode": "L36",
       "isOrphan": false,
       "isDuplicate": false
@@ -1064,7 +1141,7 @@
       "title": "Lab: System Prompt 设计 — 产品级 AI 人格构建",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 39,
+      "syllabusOrder": 46,
       "matchedLocalCode": "L37",
       "isOrphan": false,
       "isDuplicate": false
@@ -1075,18 +1152,18 @@
       "title": "自学：Claude Skill Codebook 简明教程",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 40,
+      "syllabusOrder": 47,
       "matchedLocalCode": "L38",
       "isOrphan": false,
       "isDuplicate": false
     },
-    "69db3dc476e3e0c1b3b66d68": {
-      "_id": "69db3dc476e3e0c1b3b66d68",
-      "name": "Claude Code Skills、Workflow 与 Schedule 实践",
+    "6a71648bf10a1a02f2f054f7": {
+      "_id": "6a71648bf10a1a02f2f054f7",
+      "name": "Vibe Coding 大师课02期（for Tech）_Claude Code Skills、Workflow 与 Schedule 实践",
       "title": "Claude Code Skills、Workflow 与 Schedule 实践",
       "moduleId": "68a6f3676c178e09a077f158",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 41,
+      "syllabusOrder": 48,
       "matchedLocalCode": "L39",
       "isOrphan": false,
       "isDuplicate": false
@@ -1097,7 +1174,7 @@
       "title": "自学：Claude Code 自定义命令",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 42,
+      "syllabusOrder": 49,
       "matchedLocalCode": "L40",
       "isOrphan": false,
       "isDuplicate": false
@@ -1108,7 +1185,7 @@
       "title": "Claude Skills 目录结构与 Anthropic 参考资料",
       "moduleId": "68a6f3676c178e09a077f158",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 43,
+      "syllabusOrder": 50,
       "matchedLocalCode": "L41",
       "isOrphan": false,
       "isDuplicate": true
@@ -1119,7 +1196,7 @@
       "title": "自学：Claude Code 全面拆解",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 44,
+      "syllabusOrder": 51,
       "matchedLocalCode": "L42",
       "isOrphan": false,
       "isDuplicate": false
@@ -1130,7 +1207,7 @@
       "title": "自学：Claude Workflow 模板与执行清单",
       "moduleId": "68a6f3676c178e09a077f158",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 45,
+      "syllabusOrder": 52,
       "matchedLocalCode": "L43",
       "isOrphan": false,
       "isDuplicate": false
@@ -1141,7 +1218,7 @@
       "title": "自学：Claude Schedule 任务设计与安全边界",
       "moduleId": "68a6f3676c178e09a077f158",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 46,
+      "syllabusOrder": 53,
       "matchedLocalCode": "L53",
       "isOrphan": false,
       "isDuplicate": false
@@ -1152,7 +1229,7 @@
       "title": "自学：MCP 概念速览 — Model Context Protocol",
       "moduleId": "68a6f3676c178e09a077f158",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 47,
+      "syllabusOrder": 54,
       "matchedLocalCode": "L44",
       "isOrphan": false,
       "isDuplicate": false
@@ -1163,7 +1240,7 @@
       "title": "Lab: MCP 入门 — 让 AI 连接整个世界",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 48,
+      "syllabusOrder": 55,
       "matchedLocalCode": "L45",
       "isOrphan": false,
       "isDuplicate": false
@@ -1174,8 +1251,19 @@
       "title": "自学：MCP 服务器配置",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 49,
+      "syllabusOrder": 56,
       "matchedLocalCode": "L46",
+      "isOrphan": false,
+      "isDuplicate": false
+    },
+    "69dc419e76e3e0c1b3c53e99": {
+      "_id": "69dc419e76e3e0c1b3c53e99",
+      "name": "Lab: Tool Use — Function Calling 实战",
+      "title": "Lab: Tool Use — Function Calling 实战",
+      "moduleId": null,
+      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
+      "syllabusOrder": 57,
+      "matchedLocalCode": "L32",
       "isOrphan": false,
       "isDuplicate": false
     },
@@ -1185,7 +1273,7 @@
       "title": "ToolUse 与 MCP 接入机制详解",
       "moduleId": "68a6f3676c178e09a077f158",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 50,
+      "syllabusOrder": 58,
       "matchedLocalCode": "L47",
       "isOrphan": false,
       "isDuplicate": false
@@ -1196,7 +1284,7 @@
       "title": "Lab: ReAct Agent — 推理与行动循环",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 51,
+      "syllabusOrder": 59,
       "matchedLocalCode": "L48",
       "isOrphan": false,
       "isDuplicate": false
@@ -1207,7 +1295,7 @@
       "title": "自学：Mcp Tool Integration",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 52,
+      "syllabusOrder": 60,
       "matchedLocalCode": "L49",
       "isOrphan": false,
       "isDuplicate": false
@@ -1218,7 +1306,7 @@
       "title": "用 AI 搭建 MCP Server",
       "moduleId": "68a6f3676c178e09a077f158",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 53,
+      "syllabusOrder": 61,
       "matchedLocalCode": "L50",
       "isOrphan": false,
       "isDuplicate": true
@@ -1229,7 +1317,7 @@
       "title": "自学：MCP 配置同步",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 54,
+      "syllabusOrder": 62,
       "matchedLocalCode": "L51",
       "isOrphan": false,
       "isDuplicate": false
@@ -1240,7 +1328,7 @@
       "title": "MCP 协议与 Claude 工具调用机制参考",
       "moduleId": "68a6f3676c178e09a077f158",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 55,
+      "syllabusOrder": 63,
       "matchedLocalCode": "L52",
       "isOrphan": false,
       "isDuplicate": true
@@ -1251,7 +1339,7 @@
       "title": "Quest 实战：从零搭建你自己的 MCP Server",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 56,
+      "syllabusOrder": 64,
       "matchedLocalCode": "Q03",
       "isOrphan": false,
       "isDuplicate": false
@@ -1262,7 +1350,7 @@
       "title": "自学：Agentic Workflow 执行图",
       "moduleId": "68a6f3676c178e09a077f158",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 57,
+      "syllabusOrder": 65,
       "matchedLocalCode": "L54",
       "isOrphan": false,
       "isDuplicate": false
@@ -1273,7 +1361,7 @@
       "title": "自学：AI Agents 与工具调用",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 58,
+      "syllabusOrder": 66,
       "matchedLocalCode": "L55",
       "isOrphan": false,
       "isDuplicate": false
@@ -1284,7 +1372,7 @@
       "title": "自学：Agent Fundamentals",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 59,
+      "syllabusOrder": 67,
       "matchedLocalCode": "L56",
       "isOrphan": false,
       "isDuplicate": false
@@ -1295,7 +1383,7 @@
       "title": "Agentic Workflow 与 Claude 多步骤工具编排实战",
       "moduleId": "68a6f3676c178e09a077f158",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 60,
+      "syllabusOrder": 68,
       "matchedLocalCode": "L57",
       "isOrphan": false,
       "isDuplicate": false
@@ -1306,7 +1394,7 @@
       "title": "Lab: 多 Agent 协作 — 让 AI 团队分工合作",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 61,
+      "syllabusOrder": 69,
       "matchedLocalCode": "L58",
       "isOrphan": false,
       "isDuplicate": false
@@ -1317,7 +1405,7 @@
       "title": "自学：Claude Code 子代理配置",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 62,
+      "syllabusOrder": 70,
       "matchedLocalCode": "L59",
       "isOrphan": false,
       "isDuplicate": false
@@ -1328,7 +1416,7 @@
       "title": "搭建 AI Agent：Claude Agent 架构实战",
       "moduleId": "68a6f3676c178e09a077f158",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 63,
+      "syllabusOrder": 71,
       "matchedLocalCode": "L60",
       "isOrphan": false,
       "isDuplicate": false
@@ -1339,7 +1427,7 @@
       "title": "自学：Agent Tool Use",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 64,
+      "syllabusOrder": 72,
       "matchedLocalCode": "L61",
       "isOrphan": false,
       "isDuplicate": false
@@ -1350,7 +1438,7 @@
       "title": "Claude Agent 多工具执行结构解析",
       "moduleId": "68a6f3676c178e09a077f158",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 65,
+      "syllabusOrder": 73,
       "matchedLocalCode": "L62",
       "isOrphan": false,
       "isDuplicate": true
@@ -1361,19 +1449,8 @@
       "title": "自学：Multi Agent Orchestration",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 66,
+      "syllabusOrder": 74,
       "matchedLocalCode": "L63",
-      "isOrphan": false,
-      "isDuplicate": false
-    },
-    "69db3dc776e3e0c1b3b66ddb": {
-      "_id": "69db3dc776e3e0c1b3b66ddb",
-      "name": "Lab: Context Engineering 入门 — 让 AI 不再丢上下文",
-      "title": "Lab: Context Engineering 入门 — 让 AI 不再丢上下文",
-      "moduleId": "68a6f3676c178e09a077f158",
-      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 67,
-      "matchedLocalCode": "L64",
       "isOrphan": false,
       "isDuplicate": false
     },
@@ -1383,7 +1460,7 @@
       "title": "Quest 实战：搭建一个能跑的 Claude Code Sub-agents 工作流",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 68,
+      "syllabusOrder": 75,
       "matchedLocalCode": "Q04",
       "isOrphan": false,
       "isDuplicate": false
@@ -1394,7 +1471,7 @@
       "title": "自学：最新 AI Coding 模型选型参考（Claude / Codex / GPT-5.6）",
       "moduleId": "68a6f38e6c178e09a077f1d1",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 69,
+      "syllabusOrder": 76,
       "matchedLocalCode": "L67",
       "isOrphan": false,
       "isDuplicate": false
@@ -1405,32 +1482,10 @@
       "title": "多模型 Prompt Engineering 模板参考",
       "moduleId": "68a6f38e6c178e09a077f1d1",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 70,
+      "syllabusOrder": 77,
       "matchedLocalCode": "L68",
       "isOrphan": false,
       "isDuplicate": true
-    },
-    "69dc41a576e3e0c1b3c53f65": {
-      "_id": "69dc41a576e3e0c1b3c53f65",
-      "name": "Lab: Zero-shot — 零示例直接提问",
-      "title": "Lab: Zero-shot — 零示例直接提问",
-      "moduleId": null,
-      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 71,
-      "matchedLocalCode": "L69",
-      "isOrphan": false,
-      "isDuplicate": false
-    },
-    "69db3dc776e3e0c1b3b66dfe": {
-      "_id": "69db3dc776e3e0c1b3b66dfe",
-      "name": "Lab: 工具选型实战 — 没有绝对的最好，只有最适合",
-      "title": "Lab: 工具选型实战 — 没有绝对的最好，只有最适合",
-      "moduleId": "68a6f38e6c178e09a077f1d1",
-      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 72,
-      "matchedLocalCode": "L70",
-      "isOrphan": false,
-      "isDuplicate": false
     },
     "69db3dc876e3e0c1b3b66e10": {
       "_id": "69db3dc876e3e0c1b3b66e10",
@@ -1438,52 +1493,8 @@
       "title": "自学：Prompt 精调结构与四种模板技巧",
       "moduleId": "68a6f38e6c178e09a077f1d1",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 73,
+      "syllabusOrder": 78,
       "matchedLocalCode": "L72",
-      "isOrphan": false,
-      "isDuplicate": false
-    },
-    "69dc41a676e3e0c1b3c53f6e": {
-      "_id": "69dc41a676e3e0c1b3c53f6e",
-      "name": "Lab: Chain of Thought — 让 AI 展示思考过程",
-      "title": "Lab: Chain of Thought — 让 AI 展示思考过程",
-      "moduleId": null,
-      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 74,
-      "matchedLocalCode": "L73",
-      "isOrphan": false,
-      "isDuplicate": false
-    },
-    "69dc41a676e3e0c1b3c53f78": {
-      "_id": "69dc41a676e3e0c1b3c53f78",
-      "name": "Lab: Self-Consistency — 多路推理投票",
-      "title": "Lab: Self-Consistency — 多路推理投票",
-      "moduleId": null,
-      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 75,
-      "matchedLocalCode": "L74",
-      "isOrphan": false,
-      "isDuplicate": false
-    },
-    "69dc41a676e3e0c1b3c53f84": {
-      "_id": "69dc41a676e3e0c1b3c53f84",
-      "name": "自学：Chain-of-Thought (CoT)",
-      "title": "自学：Chain-of-Thought (CoT)",
-      "moduleId": null,
-      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 76,
-      "matchedLocalCode": "L75",
-      "isOrphan": false,
-      "isDuplicate": false
-    },
-    "69dc41a676e3e0c1b3c53f89": {
-      "_id": "69dc41a676e3e0c1b3c53f89",
-      "name": "自学：Prompt Chaining",
-      "title": "自学：Prompt Chaining",
-      "moduleId": null,
-      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 77,
-      "matchedLocalCode": "L76",
       "isOrphan": false,
       "isDuplicate": false
     },
@@ -1493,7 +1504,7 @@
       "title": "AI 自动化工作流：让 Agent 定时 / 自动替你干活（Schedule / Workflow / Cron）",
       "moduleId": "68a6f38e6c178e09a077f1d1",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 78,
+      "syllabusOrder": 79,
       "matchedLocalCode": "L77",
       "isOrphan": false,
       "isDuplicate": false
@@ -1504,7 +1515,7 @@
       "title": "企业自动化落地：把重复业务流程交给 Agent 跑通闭环",
       "moduleId": "68a6f38e6c178e09a077f1d1",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 79,
+      "syllabusOrder": 80,
       "matchedLocalCode": "L78",
       "isOrphan": false,
       "isDuplicate": false
@@ -1515,7 +1526,7 @@
       "title": "Lab: Prompt 评估 — 量化你的 Prompt 质量",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 80,
+      "syllabusOrder": 81,
       "matchedLocalCode": "L79",
       "isOrphan": false,
       "isDuplicate": false
@@ -1526,21 +1537,10 @@
       "title": "自学：性能与成本优化",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 81,
+      "syllabusOrder": 82,
       "matchedLocalCode": "L80",
       "isOrphan": false,
       "isDuplicate": false
-    },
-    "69db3dc876e3e0c1b3b66e2d": {
-      "_id": "69db3dc876e3e0c1b3b66e2d",
-      "name": "Codex CLI 安装指南与 config.toml 配置样例",
-      "title": "Codex CLI 安装指南与 config.toml 配置样例",
-      "moduleId": "68a6f38e6c178e09a077f1d1",
-      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 82,
-      "matchedLocalCode": "L81",
-      "isOrphan": false,
-      "isDuplicate": true
     },
     "69db3dc876e3e0c1b3b66e7f": {
       "_id": "69db3dc876e3e0c1b3b66e7f",
@@ -1564,9 +1564,9 @@
       "isOrphan": false,
       "isDuplicate": false
     },
-    "69db3dc976e3e0c1b3b66e8b": {
-      "_id": "69db3dc976e3e0c1b3b66e8b",
-      "name": "Claude 自动生成 UI 布局与样式系统",
+    "6a71648bf10a1a02f2f055b1": {
+      "_id": "6a71648bf10a1a02f2f055b1",
+      "name": "Vibe Coding 大师课02期（for Tech）_Claude 自动生成 UI 布局与样式系统",
       "title": "Claude 自动生成 UI 布局与样式系统",
       "moduleId": "68a6f3c66c178e09a077ff1b",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
@@ -1597,9 +1597,9 @@
       "isOrphan": false,
       "isDuplicate": false
     },
-    "69db3dc976e3e0c1b3b66ea1": {
-      "_id": "69db3dc976e3e0c1b3b66ea1",
-      "name": "Claude 实现后端 API 与前端联调",
+    "6a71648cf10a1a02f2f05660": {
+      "_id": "6a71648cf10a1a02f2f05660",
+      "name": "Vibe Coding 大师课02期（for Tech）_Claude 实现后端 API 与前端联调",
       "title": "Claude 实现后端 API 与前端联调",
       "moduleId": "68a6f3c66c178e09a077ff1b",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
@@ -1674,24 +1674,13 @@
       "isOrphan": false,
       "isDuplicate": false
     },
-    "6a55dda12b2c173c34b25118": {
-      "_id": "6a55dda12b2c173c34b25118",
-      "name": "Vibe Coding 大师课02期（for Tech）_从 PRD 到 Production：GitHub + Actions + Pages / Vercel 交付链路",
-      "title": "从 PRD 到 Production：GitHub + Actions + Pages / Vercel 交付链路",
-      "moduleId": "68a6f3596c178e09a077f052",
-      "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 95,
-      "matchedLocalCode": "L111",
-      "isOrphan": false,
-      "isDuplicate": false
-    },
     "69db3dc976e3e0c1b3b66eb7": {
       "_id": "69db3dc976e3e0c1b3b66eb7",
       "name": "云端 Agent 部署：让 Agent 上云持续替企业跑（Workers / Serverless）",
       "title": "云端 Agent 部署：让 Agent 上云持续替企业跑（Workers / Serverless）",
       "moduleId": "68a6f3c66c178e09a077ff1b",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 96,
+      "syllabusOrder": 95,
       "matchedLocalCode": "L94",
       "isOrphan": false,
       "isDuplicate": false
@@ -1702,7 +1691,7 @@
       "title": "Lab: 部署到上线 — AI 加速从开发到生产",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 97,
+      "syllabusOrder": 96,
       "matchedLocalCode": "L95",
       "isOrphan": false,
       "isDuplicate": false
@@ -1713,7 +1702,7 @@
       "title": "自学：脚手架与自动化交付",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 98,
+      "syllabusOrder": 97,
       "matchedLocalCode": "L96",
       "isOrphan": false,
       "isDuplicate": false
@@ -1724,7 +1713,7 @@
       "title": "AI-native 企业记忆系统：从个人 SoT 到团队共享第二大脑",
       "moduleId": "68a6f3c66c178e09a077ff1b",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 99,
+      "syllabusOrder": 98,
       "matchedLocalCode": "L97",
       "isOrphan": false,
       "isDuplicate": false
@@ -1735,7 +1724,7 @@
       "title": "Lab: 邮件与商务写作 — AI 秒变你的写作助手",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 100,
+      "syllabusOrder": 99,
       "matchedLocalCode": "L98",
       "isOrphan": false,
       "isDuplicate": false
@@ -1746,18 +1735,18 @@
       "title": "Serverless 部署与 Workers 模板参考",
       "moduleId": "68a6f3c66c178e09a077ff1b",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 101,
+      "syllabusOrder": 100,
       "matchedLocalCode": "L99",
       "isOrphan": false,
       "isDuplicate": true
     },
-    "69db3dca76e3e0c1b3b66ed5": {
-      "_id": "69db3dca76e3e0c1b3b66ed5",
-      "name": "项目最终展示与 AI 代码 Review 技巧",
+    "6a71648cf10a1a02f2f05746": {
+      "_id": "6a71648cf10a1a02f2f05746",
+      "name": "Vibe Coding 大师课02期（for Tech）_项目最终展示与 AI 代码 Review 技巧",
       "title": "项目最终展示与 AI 代码 Review 技巧",
       "moduleId": "68a6f3c66c178e09a077ff1b",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 102,
+      "syllabusOrder": 101,
       "matchedLocalCode": "L100",
       "isOrphan": false,
       "isDuplicate": true
@@ -1768,7 +1757,7 @@
       "title": "Lab: Code Review 和质量保证 — AI 写的代码咋审",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 103,
+      "syllabusOrder": 102,
       "matchedLocalCode": "L101",
       "isOrphan": false,
       "isDuplicate": false
@@ -1779,7 +1768,7 @@
       "title": "自学：团队协作与 PR 流程",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 104,
+      "syllabusOrder": 103,
       "matchedLocalCode": "L102",
       "isOrphan": false,
       "isDuplicate": false
@@ -1790,7 +1779,7 @@
       "title": "自学：用 AI 做测试与质量保障",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 105,
+      "syllabusOrder": 104,
       "matchedLocalCode": "L103",
       "isOrphan": false,
       "isDuplicate": false
@@ -1801,7 +1790,7 @@
       "title": "Claude Review + 项目演示上传实战",
       "moduleId": "68a6f3c66c178e09a077ff1b",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 106,
+      "syllabusOrder": 105,
       "matchedLocalCode": "L104",
       "isOrphan": false,
       "isDuplicate": false
@@ -1812,7 +1801,7 @@
       "title": "Lab: Git 工作流 — AI 怎么写 Commit 和 PR",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 107,
+      "syllabusOrder": 106,
       "matchedLocalCode": "L105",
       "isOrphan": false,
       "isDuplicate": false
@@ -1823,7 +1812,7 @@
       "title": "自学：持续改进与自动化",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 108,
+      "syllabusOrder": 107,
       "matchedLocalCode": "L106",
       "isOrphan": false,
       "isDuplicate": false
@@ -1834,7 +1823,7 @@
       "title": "Claude 生成 Readme、Demo 视频脚本技巧",
       "moduleId": "68a6f3c66c178e09a077ff1b",
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 109,
+      "syllabusOrder": 108,
       "matchedLocalCode": "L107",
       "isOrphan": false,
       "isDuplicate": false
@@ -1845,7 +1834,7 @@
       "title": "自学：AI 辅助 UX 文案与交互",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 110,
+      "syllabusOrder": 109,
       "matchedLocalCode": "L108",
       "isOrphan": false,
       "isDuplicate": false
@@ -1856,7 +1845,7 @@
       "title": "Quest 实战：用 Claude Code 完成你的全栈毕业项目并部署上线",
       "moduleId": null,
       "syllabusId": "69db3dca76e3e0c1b3b66ef2",
-      "syllabusOrder": 111,
+      "syllabusOrder": 110,
       "matchedLocalCode": "Q05",
       "isOrphan": false,
       "isDuplicate": false

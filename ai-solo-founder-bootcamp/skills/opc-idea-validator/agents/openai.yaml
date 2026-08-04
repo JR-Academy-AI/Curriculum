@@ -1,0 +1,4 @@
+interface:
+  display_name: "OPC Idea Validator · 验证生意"
+  short_description: "用真人访谈、过去行为和承诺形成继续、转向或停止结论"
+  default_prompt: "Use $opc-idea-validator to prepare customer interviews and assess only the real evidence I bring back."

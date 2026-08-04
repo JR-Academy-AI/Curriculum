@@ -8,7 +8,7 @@
 ## 0. 一句话背景
 
 AI 一人创业营 = 15 周课程,**每周日 14:00–17:00 三小时线下课**(墨尔本主场 + 悉尼/布里斯班卫星教室 + 同步直播)。
-W1 当前已有 26 张 slide 的 React+Vite deck，并采用 SoT 六步教学链。**W2–W15 可复用它的引擎和“先解释为什么、再示范、再练习、再验收”的结构，不照抄 W1 内容。**
+W1 当前已有 29 张 slide 的 React+Vite deck，并采用“SoT 为什么重要 → 定义 → 项目管理 → 每周闭环 → 测试 → 写作 → 案例 → 实做”的教学链。**W2–W15 可复用它的引擎和“先解释为什么、再示范、再练习、再验收”的结构，不照抄 W1 内容。**
 
 ---
 
@@ -45,32 +45,32 @@ bun run dev      # → http://localhost:5173/
 bun run build    # 上线前必须过
 ```
 
-### 1.3 W1 当前 26 张 slide 顺序（引擎与章节结构可复用）
+### 1.3 W1 当前 29 张 slide 顺序（引擎与章节结构可复用）
 
 | # | Slide | 作用 |
 |---|---|---|
 | S01 | Cover | 封面 |
 | S02 | Takeaways | **今天你会带走什么**(产出 + 验收标准) |
-| **S04** | **Roadmap15Weeks** | **15 周全景路线**(每周一个短名) |
-| **S05** | **PhaseOutputs** | **4 个 Phase 的出关物** |
-| **S06** | **TimeInvestment** | **时间投入:约 94h,平均每周 6h** |
-| **S04b** | **ProductValidationPath** | **Idea → PoC → MVP → 付费证据 → PMF → Scale**（实际第 6 页） |
+| S10 | ThreePaths | 产品 / 服务 / 传统生意 / 小团队都可使用课程方法（实际第 3 页） |
+| **S04b** | **ProductValidationPath** | **客户与场景 → 真实问题 → 最小交付 → 付费证据 → 复购与推荐 → Scale**（实际第 4 页） |
+| **S04** | **Roadmap15Weeks** | **15 周全景路线**（实际第 5 页） |
+| **S05** | **PhaseOutputs** | **4 个 Phase 的出关物**（实际第 6 页） |
 | **S04c** | **WeeklyFounderSkills** | **15 周每周发一个 Founder Skill** |
-| S07 | ComplianceTimeline | 合规时间线(现在→W7 收钱→W13 税务) |
-| S09 | WeeklySessionRhythm | 每节课固定节奏；中段 30min 分享与交流，W1 也执行 |
-| S10 | ThreePaths | ① 三条路决策对照(7 行表) |
+| S09 | WeeklySessionRhythm | 学生主导的 Founder Exchange；中段 30min 分享真实生意、卡点与下一步 |
 | S10b–S11 | Why SoT / What is SoT | 先解释没有共同真相为什么会乱，再给定义 |
-| S16 | SoTFields | 七字段因果链 + 好坏写法 |
+| **S11b–S11c** | **SoTProjectControl / SoTWeeklyLoop** | **SoT 如何控制优先级、任务、AI 输出、证据和版本** |
+| **S11d–S11e** | **SoTQuiz / Answers** | **4 道现场情境题与答案解析** |
+| S16 | SoTFields | 七个普通问题 + 好坏写法 |
 | S12–S13a–S13 | 模拟案例 A / 案例 B 练习 / 案例 B 对答案 | 一个跟做、一个先练再核对 |
 | S14 | CaseDebrief | 四把尺子迁移到学员自己的方向 |
 | S17–S18 | 同伴复述 / 讲师 review | Founder Exchange + 改一处关键假设 |
 | S19–S21 | 最小 AI OS / 载入 SoT / 第一件真实任务 | 动手环节；不以连接器和任务数为门槛 |
-| S20b / S21b | W1 Skill 启动 / 证据状态 | 把 SoT Skill 放进 Workspace，并区分生成、执行、验收 |
+| S20b / S21b | Business SoT Skill 启动 / 证据状态 | 把 SoT Skill 放进 Workspace，并区分生成、执行、验收 |
 | S22 | NextWeek | 派下周的活 + 预告 |
+| S06 | TimeInvestment | 时间投入约 94h，移到课尾避免打断主线 |
 | S23 | Closing | 过关线 |
 
-> **S04/S05/S06 这三张(15 周路线 + Phase 出关物 + 时间投入)是每节课都要有的**——Lightman 明确要求「第一节要讲下大纲、未来计划、每节课怎么安排」。
-> **建议**:把这三张做成**共享组件**,W2–W15 每套 deck 都放在开头,只把「当前周」高亮出来。
+> **S04/S05（15 周路线 + Phase 出关物）与每周 Skill 路线是课程安排的共同组件**——每套 deck 只高亮当前周。时间投入只需在 W1 说明，并放在课尾，避免打断第一节的生意与 SoT 主线。
 
 ---
 
@@ -183,7 +183,7 @@ curriculum 是静态站,**push 到 main 自动部署**(GitHub Actions)。
 
 ## 8. 附:W1 deck 当前状态
 
-- 🟡 当前 26 张 slide；SoT 已重排为“为什么需要 → 定义 → 七字段 → 案例 A 跟做 → 案例 B 练习与核对 → 迁移”六步链，并补入 Founder Skills、W1 Skill 启动与证据状态；现场门槛为 SoT v0.1 + 有效反馈 + 一个真实 AI 任务
+- 🟡 当前 29 张 slide；课程覆盖传统生意、专业服务、实体产品、现有公司与软件；SoT 已补齐项目管理作用、每周更新闭环和 4 道现场理解题；时间投入移到课尾，案例 A 改为现有会计服务的经营改造
 - ✅ 本地 `http://localhost:5173/` 可访问
 - ✅ 已登记进 `curriculum/lessons.html`(状态:本地已构建 · 待部署)
 - ✅ 所有案例带来源条,无编造内容

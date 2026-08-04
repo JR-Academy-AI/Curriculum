@@ -4,10 +4,9 @@ import SlideEngine from './components/SlideEngine';
 //   curriculum/ai-solo-founder-bootcamp/W1_RUNSHEET.md（流程 / 表格 / 台词）
 //   curriculum/ai-solo-founder-bootcamp/W1_CASE_STUDIES.md（案例 + 出处）
 //   curriculum/ai-solo-founder-bootcamp/COURSE_REDESIGN.md（15 周路线 / Phase 出关物）
-//   curriculum/ai-solo-founder-bootcamp/public/outline.json（时间投入汇总 / L01·L26·L27·L45·L46）
+//   curriculum/ai-solo-founder-bootcamp/public/outline.json（时间投入汇总）
 //   curriculum/ai-solo-founder-bootcamp/W2_RUNSHEET.md（W2 组队集市）
 // 🚨 案例数字必须带来源；标「查不到」的一律照实写；不提任何人的族裔。
-// 🚨 S07 涉及公司结构与税务，只做时间提醒，不是法律或税务意见；免责声明不许删。
 
 // CH 0 · 开场
 import S01 from './components/slides/S01_Cover';
@@ -20,14 +19,17 @@ import S04c from './components/slides/S04c_WeeklyFounderSkills';
 import S05 from './components/slides/S05_PhaseOutputs';
 import S06 from './components/slides/S06_TimeInvestment';
 
-// CH 0.6 · 创业公司早知道 + 每周课堂节奏
-import S07 from './components/slides/S07_ComplianceTimeline';
+// CH 0.6 · 每周课堂节奏
 import S09 from './components/slides/S09_WeeklySessionRhythm';
 
 // CH 1 · ① 你要走哪条路（14:00–14:35）
 import S10 from './components/slides/S10_ThreePaths';
 import S10b from './components/slides/S10b_WhySOT';
 import S11 from './components/slides/S11_WhatIsSOT';
+import S11b from './components/slides/S11b_SoTProjectControl';
+import S11c from './components/slides/S11c_SoTWeeklyLoop';
+import S11d from './components/slides/S11d_SoTQuiz';
+import S11e from './components/slides/S11e_SoTQuizAnswers';
 import S16 from './components/slides/S16_SoTFields';
 import S12 from './components/slides/S12_CaseAccountingOps';
 import S13a from './components/slides/S13a_CasePropertyPrompt';
@@ -54,16 +56,18 @@ export default function App() {
 		<SlideEngine>
 			<S01 />
 			<S02 />
+			<S10 />
+			<S04b />
 			<S04 />
 			<S05 />
-			<S06 />
-			<S04b />
 			<S04c />
-			<S07 />
 			<S09 />
-			<S10 />
 			<S10b />
 			<S11 />
+			<S11b />
+			<S11c />
+			<S11d />
+			<S11e />
 			<S16 />
 			<S12 />
 			<S13a />
@@ -77,6 +81,7 @@ export default function App() {
 			<S21 />
 			<S21b />
 			<S22 />
+			<S06 />
 			<S23 />
 		</SlideEngine>
 	);

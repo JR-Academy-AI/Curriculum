@@ -329,7 +329,7 @@ jobs:
             cp -r techscrum-devops/public/* _site/techscrum-devops/
           fi
 
-          # ai-engineer-cn: static HTML only (AI Engineer 训练营 国内版 · 12 周 · 边学边做 Dispatch AI · RAG/Agent/MCP/私有化部署 · 对齐国内大模型应用开发岗 JD)
+          # ai-engineer-cn: static HTML only (AI 应用开发工程师训练营 国内版 · 12 周 · 边学边做「匠答 AI」电商智能客服工单系统 · RAG/Agent/MCP/私有化部署 · 对齐国内 AI 应用开发岗 JD)
           if [ -d ai-engineer-cn/public ]; then
             mkdir -p _site/ai-engineer-cn
             cp -r ai-engineer-cn/public/* _site/ai-engineer-cn/
@@ -733,12 +733,12 @@ jobs:
               </div>
 
               <div class="section">
-                <div class="section-title">AI Engineer 训练营 · 国内版 · 12 周 · 第一期</div>
+                <div class="section-title">AI 应用开发工程师训练营 · 国内版 · 12 周 · 第一期</div>
                 <div class="cards">
                   <a href="./ai-engineer-cn/curriculum.html">
                     <span class="tag" style="background:#2F6BFF">CURRICULUM</span>
-                    <div class="title">AI Engineer 训练营（国内版）</div>
-                    <div class="desc">边学边做 Dispatch AI — 61 节课、24 直播、RAG/Agent/MCP/私有化部署</div>
+                    <div class="title">AI 应用开发工程师训练营（国内版）</div>
+                    <div class="desc">做一套「匠答 AI」电商智能客服系统 — 61 节课、24 直播、RAG/Agent/MCP/私有化部署</div>
                   </a>
                 </div>
               </div>

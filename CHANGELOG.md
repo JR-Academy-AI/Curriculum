@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-08-02
+
+- 完成 AI 一人创业营 L05–L07 正式学生学习资料并发布生产：L05 覆盖 Agent 选型、最小权限、JD、排程、时区、失败测试、审计与撤权；L06 覆盖公开小样本、来源日志、调研矩阵、市场假设和人工纠错；L07 用合成数据实现四段 Prompt 链并明确互动 Lab 尚未上线；将学生 Skill 更名、扩充并发布为 `opc-agent-team`（`ai-solo-founder-bootcamp` / `lessons/ai-solo-founder-w1`）
+
+- 完成 AI 一人创业营 L02–L04 正式学生学习资料：L02 覆盖 Business SoT 七字段、三组明确标注的合成案例、Founder Exchange、真实任务与纠错；L03 覆盖单连接器最小权限实验、故障测试与撤权；L04 覆盖证据分级、Mom Test、SoT 版本化及同任务 before/after；三节均已发布并完成生产精确回读（`ai-solo-founder-bootcamp`）
+
+- 完成 AI 一人创业营 L01「开课前准备」正式学生学习资料：以 4,415 字覆盖 Founder Fit、订阅与 API 区分、密钥安全、ABN 资格和材料准备、五条问题机会、A/B/C 身份、案例、排错与验收；将学生 Skill 重命名为 `opc-founder-fit`，发布 ZIP 并绑定生产课时（`ai-solo-founder-bootcamp`）
+
+- 将 `OPC Founder OS + Business SoT` ZIP 作为生产课时材料绑定到「搭起你的 CEO AI OS」学生学习页，包内新增中文安装说明，并在正式学习内容补齐下载、启动与验收步骤（`ai-solo-founder-bootcamp`）
+
+- 重命名学生可见的 `opc-w1-business-sot` 为能力导向的 `opc-business-sot`，同步 Founder OS 路由、发包工具、教案和课件启动词；周次仅保留在讲师排期（`ai-solo-founder-bootcamp` / `lessons/ai-solo-founder-w1`）
+
+- 更新 OPC W1 Business SoT：下载并锁定三套 MIT 创业 Skill 仓库作本地参考，将 JTBD、Mom Test、现有替代与证据暂停机制课程化，并明确 W1 只验证 SoT 可用、W3 才验证真实需求（`ai-solo-founder-bootcamp` / `lessons/ai-solo-founder-w1`）
+
+- 重做 AI Engineer 国内版为独立中国产品线：课程更名「AI 应用开发工程师训练营」（对齐国内 JD 高频岗位名），主线项目由未验证的 `Dispatch AI` 换成自建「匠答 AI」电商智能客服工单系统（81 处场景改写：调度/派单 → 客服工单分诊），薪资改双轨口径（主流 25-40K/月 + 大厂年包 40-90 万·标注校招口径），排期从已过期的 2026-07-13 修正为 2026-10-12 开课（`ai-engineer-cn`）
+- 新增 `ai-engineer-cn/SALARY_GROUND_TRUTH.md`：薪资数字唯一出处，区分可信来源（V2EX 真实招聘帖 / 代码随想录 2026 校招真实 offer）与不采信的培训机构宣传口径（「1-3 年 45-65K」等与真实 JD 矛盾的数字），并清除原静态页中查无实据的「投中网」出处（`ai-engineer-cn`）
+- 新增 `ai-engineer-cn/PERSONAS.md` 初稿：3 个 persona，逐字段标注 GT 强度（当前覆盖率约 25%，未达销售页 50% 门槛），附 GT 采集清单（`ai-engineer-cn`）
+- 将 `ai-engineer-cn/generate.ps1` 移植为 `generate.py` 并删除原 PowerShell 版：原脚本在 macOS 上无法运行（团队主力 mac），等于两个静态页无人能重新生成；逻辑 1:1 翻译、CSS 逐字保留（`ai-engineer-cn`）
+- 新增 OPC Founder OS 与 W0–W15 共 16 个每周学员 Skills，统一 founder workspace、drafted/executed/verified 证据状态、逐周 ZIP + SHA-256 发放工具；W1 deck 增加每周 Skill 路线、本周启用和证据闸门 3 页（`ai-solo-founder-bootcamp/skills` / `lessons/ai-solo-founder-w1`）
+
 ## 2026-07-29
 
 - 新增 W8 周中线上 workshop「AI 视频实操陪跑」(L32a, 90min)：先定用途(观众/平台/时长/尺寸)再动手，全程跑学员自己的素材导出至少一条可直接发布的成片，含六个必踩卡点现场诊断(跨镜头角色不一致/口型/字幕被 UI 挡/时长超限/导出尺寸被裁/音乐授权)与成本产能账；同步 `outline.json` 与 `public/phase2.html`（`ai-solo-founder-bootcamp`）

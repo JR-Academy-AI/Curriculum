@@ -109,6 +109,7 @@
 | `description` | string | ✅ | 课程简介 |
 | `level` | string | ✅ | `零基础` / `初级` / `中级` / `中级进阶` / `高级` |
 | `type` | string | ✅ | **必须是 `training`**。后端 API 只接受: `training`, `video`, `internship`, `mock`, `career`。⚠️ 不要写 `bootcamp`，会导致同步失败 |
+| `category` | string | | 产品线类别，与 `type` 正交。只有 `standard`（默认，不写即此值）和 `incubator` 两个值。**`incubator` = 创业孵化营的唯一开关**，同步后 classroom 才会出现「创业身份采集」入口（`/founder-matching`）。普通课不要写这个字段 |
 | `targetAudience` | string | | 目标受众 |
 | `totalLessons` | number | ✅ | Lesson 总数（和 phases 里的 lessons 数要一致） |
 | `totalSteps` | number | | Step 总数 |

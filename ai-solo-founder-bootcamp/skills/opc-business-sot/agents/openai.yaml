@@ -1,0 +1,4 @@
+interface:
+  display_name: "OPC · Business SoT"
+  short_description: "把产品想法改写成可验证的客户 Job 与一页业务真相"
+  default_prompt: "Use $opc-business-sot to define a solution-free customer job hypothesis and an evidence-labelled Business SoT v0.1."

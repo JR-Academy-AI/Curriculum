@@ -1,30 +1,50 @@
-﻿# 从 public/outline.json 生成静态课程页
-#   curriculum.html = 课程介绍 + 12 周概览 + 底部按钮（【查看完整课程大纲】跳 outline.html）
-#   outline.html    = 一整页可直接上课的完整大纲（图例 + 每 Phase/每周/每节课/每步）
-# 用法: powershell -NoProfile -File generate.ps1   （改了 outline.json 后重跑即可）
-$ErrorActionPreference = 'Stop'
-[Console]::OutputEncoding = [Text.Encoding]::UTF8
-$base = Split-Path -Parent $MyInvocation.MyCommand.Path
-$pub  = Join-Path $base 'public'
-$d = [IO.File]::ReadAllText((Join-Path $pub 'outline.json'), [Text.Encoding]::UTF8) | ConvertFrom-Json
-$utf8 = [Text.UTF8Encoding]::new($false)
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""从 public/outline.json 生成静态课程页。
 
-function Esc($s) {
-  if ($null -eq $s) { return '' }
-  return ([string]$s).Replace('&','&amp;').Replace('<','&lt;').Replace('>','&gt;')
+  curriculum.html = 课程介绍 + 12 周概览 + 底部按钮（【查看完整课程大纲】跳 outline.html）
+  outline.html    = 一整页可直接照此上课的完整大纲（图例 + 每 Phase/每周/每节课/每步）
+  styles.css      = 两页共用样式
+
+用法：python3 generate.py   （改了 outline.json 后重跑即可）
+
+2026-08-02 从 generate.ps1 移植而来 —— 原 PowerShell 版在 macOS 上跑不了（团队主力是 mac，
+等于没人能重新生成这两个页面）。逻辑 1:1 翻译，CSS 逐字保留。原 .ps1 已删。
+
+🚨 薪资数字的唯一出处是 ../SALARY_GROUND_TRUTH.md，改这里的数字前先改那个文件。
+"""
+import json
+import os
+import re
+
+BASE = os.path.dirname(os.path.abspath(__file__))
+PUB = os.path.join(BASE, 'public')
+
+with open(os.path.join(PUB, 'outline.json'), encoding='utf-8') as f:
+    d = json.load(f)
+
+
+def esc(s):
+    if s is None:
+        return ''
+    return str(s).replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+
+
+BADGE = {
+    'Lesson': ('b-live', '直播课'),
+    'Quest': ('b-quest', 'Quest'),
+    'InteractiveLab': ('b-lab', '互动 Lab'),
+    'Video': ('b-video', '录播'),
+    'Information': ('b-info', '自学'),
+    'Workshop': ('b-work', '工作坊'),
 }
-$badge = @{
-  Lesson=@('b-live','直播课'); Quest=@('b-quest','Quest'); InteractiveLab=@('b-lab','互动 Lab')
-  Video=@('b-video','录播'); Information=@('b-info','自学'); Workshop=@('b-work','工作坊')
-}
-$stepName = @{
-  CONCEPT='概念'; LAB='Lab'; MCQ='测验'; SCENARIO='场景'; VIDEO='录播'
-  LIVE='直播'; PROJECT='产出'; LEARN='Learn'; AI_TUTOR='AI 辅导'
+STEP_NAME = {
+    'CONCEPT': '概念', 'LAB': 'Lab', 'MCQ': '测验', 'SCENARIO': '场景', 'VIDEO': '录播',
+    'LIVE': '直播', 'PROJECT': '产出', 'LEARN': 'Learn', 'AI_TUTOR': 'AI 辅导',
 }
 
-# ---------- shared CSS ----------
-$css = @'
-:root{--blue:#2F6BFF;--ink:#0b1220;--paper:#F6F7FB;--line:#0b1220;--shadow:6px 6px 0 #0b1220}
+# ---------- shared CSS （逐字保留自 generate.ps1）----------
+CSS = """:root{--blue:#2F6BFF;--ink:#0b1220;--paper:#F6F7FB;--line:#0b1220;--shadow:6px 6px 0 #0b1220}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'DM Sans','Noto Sans SC',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;padding:0 16px 80px}
 .wrap{max-width:1080px;margin:0 auto}
@@ -100,7 +120,7 @@ footer{margin-top:60px;text-align:center;font-family:'Space Mono',monospace;font
 /* 课程亮点 */
 .hl-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .hl-list li{position:relative;padding:16px 18px 16px 48px;border:3px solid var(--line);background:#fff;box-shadow:5px 5px 0 var(--line);font-weight:600;font-size:15px}
-.hl-list li::before{content:'★';position:absolute;left:18px;top:16px;color:var(--blue);font-weight:900}
+.hl-list li::before{content:'\\2605';position:absolute;left:18px;top:16px;color:var(--blue);font-weight:900}
 /* JD 技能覆盖 */
 .cov{width:100%;border-collapse:collapse;border:3px solid var(--line);background:#fff;box-shadow:var(--shadow);font-size:14px}
 .cov th,.cov td{border:1.5px solid var(--line);padding:9px 12px;text-align:left}
@@ -121,41 +141,57 @@ footer{margin-top:60px;text-align:center;font-family:'Space Mono',monospace;font
 .sal-row{display:flex;justify-content:space-between;align-items:center;gap:14px;border:3px solid var(--line);background:#fff;box-shadow:5px 5px 0 var(--line);padding:18px 22px;margin-bottom:12px}
 .sal-row .role{font-weight:700;font-size:16px}
 .sal-row .amt{font-family:'Bricolage Grotesque';font-weight:900;font-size:28px;color:var(--blue);white-space:nowrap}
+.sal-row .role small{display:block;font-weight:500;font-size:12.5px;color:#64748b;margin-top:4px}
 .cos{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
 .cos span{font-size:15px;font-weight:700;border:2px solid var(--line);border-radius:8px;padding:7px 15px;background:#fff}
 .src-note{font-size:12px;color:#94a3b8;margin-top:14px;font-family:'Space Mono',monospace;line-height:1.6}
 @media(max-width:640px){.tbl,.cov{font-size:12.5px}.cta{font-size:14px;padding:13px 18px}.who2,.hl-list{grid-template-columns:1fr}}
-'@
-[IO.File]::WriteAllText((Join-Path $pub 'styles.css'), $css, $utf8)
+"""
 
-$fontLink = '<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">'
-function Head($title) {
-  return "<!DOCTYPE html><html lang=""zh-CN""><head><meta charset=""UTF-8""><meta name=""viewport"" content=""width=device-width,initial-scale=1""><title>$title</title>$fontLink<link rel=""stylesheet"" href=""./styles.css""></head><body><div class=""wrap"">"
-}
-$foot = "<footer>JR Academy · AI Engineer 训练营 · 数据源 outline.json（改大纲请改 JSON 后重跑 generate.ps1）· 内容以最终上线为准</footer></div></body></html>"
-$questCount = (@($d.phases | % { $_.lessons } | ? { $_.type -eq 'Quest' })).Count
+with open(os.path.join(PUB, 'styles.css'), 'w', encoding='utf-8') as f:
+    f.write(CSS)
 
-# ========== curriculum.html (intro + overview + CTA) ==========
-$ov = Head("AI Engineer 训练营 · 课程介绍")
-$ov += "<nav class=""topnav""><a href=""./curriculum.html"" class=""active"">课程介绍</a><a href=""./outline.html"">完整课程大纲</a></nav>"
-$pos = (Esc $d.description).Replace('25-40K','<b>25-40K</b>').Replace('Dispatch AI','<b>Dispatch AI</b>')
-$hlHtml = (($d.highlights | ForEach-Object { "<li>$(Esc $_)</li>" }) -join '')
-$ov += @"
+FONT_LINK = ('<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800;900'
+             '&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700'
+             '&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">')
+
+
+def head(title):
+    return ('<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8">'
+            '<meta name="viewport" content="width=device-width,initial-scale=1">'
+            f'<title>{title}</title>{FONT_LINK}'
+            '<link rel="stylesheet" href="./styles.css"></head><body><div class="wrap">')
+
+
+FOOT = ('<footer>JR Academy · AI 应用开发工程师训练营 · 数据源 outline.json'
+        '（改大纲请改 JSON 后重跑 generate.py）· 内容以最终上线为准</footer></div></body></html>')
+
+quest_count = sum(1 for p in d['phases'] for l in p['lessons'] if l.get('type') == 'Quest')
+
+# ========== curriculum.html ==========
+ov = head('AI 应用开发工程师训练营 · 课程介绍')
+ov += ('<nav class="topnav"><a href="./curriculum.html" class="active">课程介绍</a>'
+       '<a href="./outline.html">完整课程大纲</a></nav>')
+
+pos = esc(d['description']).replace('25-40K', '<b>25-40K</b>').replace('匠答 AI', '<b>匠答 AI</b>')
+hl_html = ''.join(f'<li>{esc(h)}</li>' for h in d['highlights'])
+
+ov += f"""
 <div class="hero">
-<div class="pretitle">JR ACADEMY · 国内大模型应用开发岗 · 第一期招生中</div>
-<h1>$(Esc $d.name)</h1>
-<div class="pos">$pos</div>
+<div class="pretitle">JR ACADEMY · 国内 AI 应用开发岗 · 第一期招生中</div>
+<h1>{esc(d['name'])}</h1>
+<div class="pos">{pos}</div>
 <div class="stats">
 <div class="stat"><span class="n">12 周</span><span class="l">技术 + 职业孵化</span></div>
-<div class="stat alt"><span class="n">$($d.liveClasses)</span><span class="l">节直播 (每节 ≤3h)</span></div>
-<div class="stat alt2"><span class="n">$($d.totalInteractiveLabs)</span><span class="l">个互动 Lab</span></div>
-<div class="stat alt2"><span class="n">$questCount</span><span class="l">个项目里程碑</span></div>
-<div class="stat"><span class="n">$($d.totalLessons)</span><span class="l">节课</span></div>
+<div class="stat alt"><span class="n">{d['liveClasses']}</span><span class="l">节直播 (每节 ≤3h)</span></div>
+<div class="stat alt2"><span class="n">{d['totalInteractiveLabs']}</span><span class="l">个互动 Lab</span></div>
+<div class="stat alt2"><span class="n">{quest_count}</span><span class="l">个项目里程碑</span></div>
+<div class="stat"><span class="n">{d['totalLessons']}</span><span class="l">节课</span></div>
 </div></div>
 <section><div class="sec-h">适合谁学 / 不适合谁</div>
 <div class="who2">
 <div class="who-col fit"><h4>✅ 适合</h4>
-<div class="wrow"><span class="ic">›</span><span>后端 / 全栈工程师（2-5 年），想转大模型应用开发</span></div>
+<div class="wrow"><span class="ic">›</span><span>后端 / 全栈工程师（2-5 年），想转 AI 应用开发</span></div>
 <div class="wrow"><span class="ic">›</span><span>应届 CS / 计算机相关，想拼 AI 校招、要能聊的真项目</span></div>
 <div class="wrow"><span class="ic">›</span><span>传统算法 / 数据岗，想补 LLM 工程化能力</span></div>
 <div class="wrow"><span class="ic">›</span><span>创业者 / 独立开发，想做能上线的 AI 产品</span></div>
@@ -169,12 +205,12 @@ $ov += @"
 <div class="note"><b>先修要求：</b>会 Python、用过命令行、懂 Git 基本操作。这不是从零教 Python 的课。</div>
 </section>
 <section><div class="sec-h">为什么和别的训练营不一样</div><div class="grid">
-<div class="card"><span class="tag">真项目</span><h3>边学边做 Dispatch AI</h3><p>全程在匠人真实在跑的 AI 调度系统上做，不是教程级 demo。每周学完新技能当周就接进项目——毕业作品能上线、能讲清楚、扛得住面试追问。</p></div>
+<div class="card"><span class="tag">真项目</span><h3>做一套「匠答 AI」</h3><p>12 周做出一整套电商智能客服工单系统——用户问「我的订单到哪了」「这件能不能七天无理由退」，它自己查订单、翻退换货政策、判断该不该转人工。不是教程级 demo，每周学完新技能当周就接进项目。</p></div>
 <div class="card"><span class="tag">押新技能</span><h3>RAG 评测 · MCP · 私有化部署</h3><p>押注 2025-26 国内 JD 新高频词：Function Calling + MCP、RAG 工程化与评测、vLLM 私有化部署——老课程更新慢、覆盖薄的地方。</p></div>
 <div class="card"><span class="tag">全国产栈</span><h3>Qwen / DeepSeek / GLM + 国内云</h3><p>国产大模型 + 阿里云百炼/华为云 + Coze/Dify。私有化部署是国内合规刚需，连国际课程都缺这一块。</p></div>
-<div class="card"><span class="tag">诚实定位</span><h3>对齐真实 JD，瞄准 25-40K</h3><p>逐节对齐 BOSS 直聘真实 JD，瞄准招得最多、转型能拿到的大模型应用开发岗，不卖 50K 算法岗幻觉。</p></div>
+<div class="card"><span class="tag">诚实定位</span><h3>对齐真实 JD，不卖幻觉</h3><p>逐节对齐 BOSS 直聘真实 JD，瞄准招得最多、转型能拿到的 AI 应用开发岗。不卖需要硕博背景的算法岗幻觉，也不抄培训机构那套「1-3 年就 45-65K」的虚高数字。</p></div>
 </div></section>
-<section><div class="sec-h">课程亮点</div><ul class="hl-list">$hlHtml</ul></section>
+<section><div class="sec-h">课程亮点</div><ul class="hl-list">{hl_html}</ul></section>
 <section><div class="sec-h">JD 技能覆盖图：招聘要什么，我们就练什么</div>
 <table class="cov"><thead><tr><th>国内 JD 高频技能</th><th>重要度</th><th>覆盖周次</th><th>覆盖</th></tr></thead><tbody>
 <tr><td class="skill">Python 工程化 / FastAPI / Docker</td><td><span class="hot">高频</span></td><td class="wk">W1</td><td class="ck">✓</td></tr>
@@ -192,7 +228,7 @@ $ov += @"
 <tr><td class="skill">AI 评测 / 防注入 / 护栏 / 可观测</td><td><span class="hot">进阶</span></td><td class="wk">W11</td><td class="ck">✓</td></tr>
 <tr><td class="skill">Dify / Coze 低代码编排</td><td><span class="hot">加分</span></td><td class="wk">W2</td><td class="ck">✓</td></tr>
 </tbody></table>
-<div class="note">技能项来自国内大模型应用开发岗 JD 高频提取；<span class="hot new" style="border:2px solid #10162f">新高频</span> = 2025-26 才进入 JD 的技能，正是多数老课程覆盖薄、却最能拉开差距的地方。<b>14 项核心技能全覆盖。</b></div>
+<div class="note">技能项来自国内 AI 应用开发岗 JD 高频提取；<span class="hot new" style="border:2px solid #10162f">新高频</span> = 2025-26 才进入 JD 的技能，正是多数老课程覆盖薄、却最能拉开差距的地方。<b>14 项核心技能全覆盖。</b></div>
 </section>
 <section><div class="sec-h">技术工具栈（全国产、可落地）</div><div class="stack">
 <div class="stk"><h4>大模型</h4><div class="pills"><span class="pill">Qwen</span><span class="pill">DeepSeek</span><span class="pill">GLM</span><span class="pill">Kimi</span><span class="pill">豆包</span></div></div>
@@ -204,47 +240,55 @@ $ov += @"
 <div class="stk"><h4>评测 / 可观测</h4><div class="pills"><span class="pill">RAGAS</span><span class="pill">Langfuse</span><span class="pill">LLM-as-judge</span></div></div>
 <div class="stk"><h4>低代码 / 云</h4><div class="pills"><span class="pill">Dify</span><span class="pill">Coze</span><span class="pill">阿里云百炼</span><span class="pill">华为云 ModelArts</span></div></div>
 </div></section>
-<section id="spine"><div class="sec-h">12 周主线：学一节，就在 Dispatch AI 上做一节</div>
-<table class="tbl"><thead><tr><th>周</th><th>学什么</th><th>当周在 Dispatch AI 上做什么</th></tr></thead><tbody>
-<tr><td class="wk">W1</td><td>Python 工程化 / Docker / Git</td><td class="ms">本地 Docker Compose 一键跑通 Dispatch AI，读懂架构</td></tr>
-<tr><td class="wk">W2</td><td>国产大模型 API / Prompt / Function Calling</td><td class="ms">把 AI 服务接上 Qwen/DeepSeek，写第一个派单 Function Call</td></tr>
-<tr><td class="wk">W3</td><td>Embedding / 向量库选型</td><td class="ms">把调度知识灌进向量库，建检索</td></tr>
-<tr><td class="wk">W4</td><td>RAG Pipeline / 混合检索 / 重写压缩</td><td class="ms">给调度决策接 RAG：这一单该派给谁、怎么处理</td></tr>
+<section id="spine"><div class="sec-h">12 周主线：学一节，就在匠答 AI 上做一节</div>
+<table class="tbl"><thead><tr><th>周</th><th>学什么</th><th>当周在匠答 AI 上做什么</th></tr></thead><tbody>
+<tr><td class="wk">W1</td><td>Python 工程化 / Docker / Git</td><td class="ms">本地 Docker Compose 一键跑通匠答 AI，读懂架构</td></tr>
+<tr><td class="wk">W2</td><td>国产大模型 API / Prompt / Function Calling</td><td class="ms">把 AI 服务接上 Qwen/DeepSeek，写第一个「按订单号查物流」Function Call</td></tr>
+<tr><td class="wk">W3</td><td>Embedding / 向量库选型</td><td class="ms">把退换货政策、商品资料、历史工单灌进向量库，建检索</td></tr>
+<tr><td class="wk">W4</td><td>RAG Pipeline / 混合检索 / 重写压缩</td><td class="ms">给应答接 RAG：这个问题该怎么答、按哪条政策、要不要转人工</td></tr>
 <tr><td class="wk">W5</td><td>RAG 评测（RAGAS/Langfuse）</td><td class="ms">给 RAG 加评测面板，跑出召回/忠实度指标 ★里程碑</td></tr>
 <tr><td class="wk">W6</td><td>Agent 原理 / ReAct / 设计模式</td><td class="ms">把 AI 大脑重写成 ReAct 分诊 Agent</td></tr>
-<tr><td class="wk">W7</td><td>MCP 协议 / MCP Server</td><td class="ms">用 MCP 接 Dispatch 后端（查资源/派单/通知）</td></tr>
-<tr><td class="wk">W8</td><td>Multi-Agent / 工作流编排</td><td class="ms">升级成多智能体协作调度 ★里程碑</td></tr>
-<tr><td class="wk">W9</td><td>微调 LoRA/QLoRA / Llama Factory</td><td class="ms">微调一个调度路由/分类小模型</td></tr>
-<tr><td class="wk">W10</td><td>vLLM/SGLang 私有化部署 / 量化 / 合规</td><td class="ms">把微调模型私有化部署进 AI 服务 + 压测 ★里程碑</td></tr>
-<tr><td class="wk">W11</td><td>AI Eval / 防注入 / 护栏 / 可观测</td><td class="ms">评测调度决策质量 + 加安全护栏与监控</td></tr>
-<tr><td class="wk">W12</td><td>个性化 + Demo + 面试叙事</td><td class="ms">每人加自选领域调度场景 + 独创功能，端到端 Demo ★毕业作品</td></tr>
+<tr><td class="wk">W7</td><td>MCP 协议 / MCP Server</td><td class="ms">用 MCP 接匠答后端（查订单 / 查物流 / 发起退款 / 转人工）</td></tr>
+<tr><td class="wk">W8</td><td>Multi-Agent / 工作流编排</td><td class="ms">升级成分诊 + 订单查询 + 售后处理多智能体协作 ★里程碑</td></tr>
+<tr><td class="wk">W9</td><td>微调 LoRA/QLoRA / Llama Factory</td><td class="ms">微调一个工单意图分诊小模型（退货/物流/商品咨询/投诉）</td></tr>
+<tr><td class="wk">W10</td><td>vLLM/SGLang 私有化部署 / 量化 / 合规</td><td class="ms">把微调模型私有化部署进 AI 服务 + 压测（客户数据不出内网）★里程碑</td></tr>
+<tr><td class="wk">W11</td><td>AI Eval / 防注入 / 护栏 / 可观测</td><td class="ms">评测客服应答质量 + 防 AI 编造退款政策 + 加监控</td></tr>
+<tr><td class="wk">W12</td><td>个性化 + Demo + 面试叙事</td><td class="ms">每人换一个垂直行业客服场景 + 独创功能，端到端 Demo ★毕业作品</td></tr>
 </tbody></table>
-<div class="note"><b>防简历同质化：</b>W1–W11 全班在同一个 Dispatch AI 上做同样架构（好教好批），W12 强制每人加专属扩展，简历各不相同、抗追问。每周 <b>2 节直播（每节 ≤3 小时）</b>，其余录播 / Lab / Quest 自主节奏。</div>
+<div class="note"><b>防简历同质化：</b>W1–W11 全班在同一套匠答 AI 上做同样架构（好教好批），W12 强制每人换一个垂直行业（美妆 / 3C / 母婴 / 医美 / 教育）+ 加专属扩展，简历各不相同、抗追问。每周 <b>2 节直播（每节 ≤3 小时）</b>，其余录播 / Lab / Quest 自主节奏。</div>
 </section>
 <section><div class="sec-h">毕业能冲什么岗 · 谁在招</div>
-<div class="sal-row"><span class="role">大模型应用开发工程师（2-5 年）</span><span class="amt">25–40K / 月</span></div>
-<div class="sal-row"><span class="role">资深 / 带队 / 架构</span><span class="amt">40K+ / 月</span></div>
+<div class="sal-row"><span class="role">AI 应用开发工程师（2-5 年）<small>本课主线定位 · 社招主流区间</small></span><span class="amt">25–40K / 月</span></div>
+<div class="sal-row"><span class="role">大厂 AI 应用岗<small>天花板参考 · 2026 校招真实 offer 口径，普遍要求硕士 + 头部院校</small></span><span class="amt">40–90 万 / 年</span></div>
 <div class="cos">
 <span>阿里</span><span>字节</span><span>腾讯</span><span>百度</span><span>美团</span><span>京东</span>
 <span>智谱</span><span>月之暗面</span><span>MiniMax</span><span>小红书</span><span>商汤</span>
 </div>
-<div class="src-note">薪资为公开招聘市场参考区间（来源 BOSS 直聘 / 投中网等公开报告），实际以面试谈定为准。本课定位<b>应用开发岗</b>，不含需硕博背景的算法岗薪资。</div>
+<div class="src-note">
+主流区间参考真实招聘帖（如 V2EX 3-5 年 AI 应用 / 后端研发岗，上海 25-30K）。<br>
+大厂年包来自代码随想录 2026 校招薪资报告（社区自采真实 offer）：小红书「AI Agent 应用开发」约 90 万、高德 AI Infra 约 70 万、京东 AI 岗 3w×18、百度凤巢模型工程 30k×16、华为 AI 算法 23k×16。<br>
+<b>该组数字为校招口径，社招同级样本不足；大厂 AI 岗普遍卡学历与算法背景，本课不承诺可达。</b>实际薪资以面试谈定为准。
+</div>
 </section>
 <div class="cta-row">
 <a class="cta b1" href="#spine">课程架构全景图</a>
 <a class="cta b2" href="./outline.html">查看完整课程大纲 →</a>
 </div>
-"@
-$ov += $foot
-[IO.File]::WriteAllText((Join-Path $pub 'curriculum.html'), $ov, $utf8)
+"""
+ov += FOOT
+with open(os.path.join(PUB, 'curriculum.html'), 'w', encoding='utf-8') as f:
+    f.write(ov)
 
-# ========== outline.html (full teaching-ready outline, single page) ==========
-$ol = Head("AI Engineer 训练营 · 完整课程大纲")
-$ol += "<nav class=""topnav""><a href=""./curriculum.html"">课程介绍</a><a href=""./outline.html"" class=""active"">完整课程大纲</a></nav>"
-$ol += "<div class=""hero"" style=""padding:24px 28px""><div class=""pretitle"">完整课程大纲 · 可直接照此上课</div><h1 style=""font-size:clamp(26px,4.5vw,40px)"">$(Esc $d.name)</h1><div class=""pos"" style=""font-size:15px"">$($d.totalLessons) 节课 · $($d.liveClasses) 节直播（每节 ≤3h）· $($d.totalInteractiveLabs) 个互动 Lab · $questCount 个 Dispatch AI 项目里程碑</div></div>"
-# legend
-$ol += @'
-<div class="legend">
+# ========== outline.html ==========
+ol = head('AI 应用开发工程师训练营 · 完整课程大纲')
+ol += ('<nav class="topnav"><a href="./curriculum.html">课程介绍</a>'
+       '<a href="./outline.html" class="active">完整课程大纲</a></nav>')
+ol += (f'<div class="hero" style="padding:24px 28px"><div class="pretitle">完整课程大纲 · 可直接照此上课</div>'
+       f'<h1 style="font-size:clamp(26px,4.5vw,40px)">{esc(d["name"])}</h1>'
+       f'<div class="pos" style="font-size:15px">{d["totalLessons"]} 节课 · {d["liveClasses"]} 节直播（每节 ≤3h）'
+       f'· {d["totalInteractiveLabs"]} 个互动 Lab · {quest_count} 个匠答 AI 项目里程碑</div></div>')
+
+ol += """<div class="legend">
 <div class="lg-h">STEP TYPES（每节课内的步骤类型）</div>
 <div class="lg-row">
 <span class="chip s-CONCEPT">概念</span><span class="chip s-LIVE">直播</span><span class="chip s-LAB">Lab</span>
@@ -257,45 +301,52 @@ $ol += @'
 <span class="badge b-video">录播</span><span class="badge b-info">自学</span><span class="badge b-work">工作坊</span>
 </div>
 </div>
-'@
-foreach ($p in $d.phases) {
-  $ol += "<div class=""phase-banner"" style=""background:$($p.color)""><h2>$(Esc $p.name)</h2><div class=""sum"">$(Esc $p.summary)</div></div>"
-  $curWeek = -1
-  foreach ($l in $p.lessons) {
-    # week divider from 【...Wn-...】 in title
-    $m = [regex]::Match([string]$l.title, 'W(\d+)-')
-    if ($m.Success) {
-      $wk = [int]$m.Groups[1].Value
-      if ($wk -ne $curWeek) { $curWeek = $wk; $ol += "<div class=""weekbar"">WEEK $wk</div>" }
-    }
-    $b = $badge[$l.type]; if (-not $b) { $b = @('b-info', $l.type) }
-    $ol += "<div class=""les""><div class=""lh""><span class=""lcode"">$($l.code)</span><span class=""lt"">$(Esc $l.title)</span><span class=""badge $($b[0])"">$($b[1])</span><span class=""dur"">$($l.duration) min</span></div>"
-    $ol += "<div class=""ld"">$(Esc $l.description)</div>"
-    if ($l.type -eq 'Quest' -and $l.quest) {
-      $ol += "<div class=""qbox""><div class=""qr""><b>学习目标</b>：$(Esc $l.quest.learningGoal)</div><div class=""qr""><b>完成标准</b>：$(Esc $l.quest.successCriteria)</div>"
-      if ($l.quest.stepSkeleton) {
-        $ol += "<div class=""slist"">"
-        $n = 1
-        foreach ($st in $l.quest.stepSkeleton) {
-          $ol += "<div class=""srow""><span class=""chip s-QUEST"">步骤 $n</span><span><b>$(Esc $st.title)</b> — $(Esc $st.description)</span></div>"; $n++
-        }
-        $ol += "</div>"
-      }
-      $ol += "</div>"
-    }
-    elseif ($l.steps) {
-      $ol += "<div class=""slist"">"
-      foreach ($st in $l.steps) {
-        $sn = $stepName[$st.type]; if (-not $sn) { $sn = $st.type }
-        $ol += "<div class=""srow""><span class=""chip s-$($st.type)"">$sn · $($st.duration)m</span><span><b>$(Esc $st.title)</b> — $(Esc $st.description)</span></div>"
-      }
-      $ol += "</div>"
-    }
-    if ($l.labs) { foreach ($lr in $l.labs) { $ol += "<span class=""lab-ref"">🧪 $($lr.source) / $($lr.slug)</span> " } }
-    $ol += "</div>"
-  }
-}
-$ol += $foot
-[IO.File]::WriteAllText((Join-Path $pub 'outline.html'), $ol, $utf8)
+"""
 
-Write-Output "Generated: styles.css, curriculum.html, outline.html"
+for p in d['phases']:
+    ol += (f'<div class="phase-banner" style="background:{p.get("color", "#2F6BFF")}">'
+           f'<h2>{esc(p["name"])}</h2><div class="sum">{esc(p.get("summary"))}</div></div>')
+    cur_week = -1
+    for l in p['lessons']:
+        m = re.search(r'W(\d+)-', str(l.get('title', '')))
+        if m:
+            wk = int(m.group(1))
+            if wk != cur_week:
+                cur_week = wk
+                ol += f'<div class="weekbar">WEEK {wk}</div>'
+        b = BADGE.get(l.get('type'), ('b-info', l.get('type', '')))
+        ol += (f'<div class="les"><div class="lh"><span class="lcode">{l.get("code", "")}</span>'
+               f'<span class="lt">{esc(l.get("title"))}</span>'
+               f'<span class="badge {b[0]}">{b[1]}</span>'
+               f'<span class="dur">{l.get("duration", "")} min</span></div>')
+        ol += f'<div class="ld">{esc(l.get("description"))}</div>'
+
+        q = l.get('quest')
+        if l.get('type') == 'Quest' and q:
+            ol += (f'<div class="qbox"><div class="qr"><b>学习目标</b>：{esc(q.get("learningGoal"))}</div>'
+                   f'<div class="qr"><b>完成标准</b>：{esc(q.get("successCriteria"))}</div>')
+            if q.get('stepSkeleton'):
+                ol += '<div class="slist">'
+                for n, st in enumerate(q['stepSkeleton'], 1):
+                    ol += (f'<div class="srow"><span class="chip s-QUEST">步骤 {n}</span>'
+                           f'<span><b>{esc(st.get("title"))}</b> — {esc(st.get("description"))}</span></div>')
+                ol += '</div>'
+            ol += '</div>'
+        elif l.get('steps'):
+            ol += '<div class="slist">'
+            for st in l['steps']:
+                sn = STEP_NAME.get(st.get('type'), st.get('type', ''))
+                ol += (f'<div class="srow"><span class="chip s-{st.get("type", "")}">{sn} · {st.get("duration", "")}m</span>'
+                       f'<span><b>{esc(st.get("title"))}</b> — {esc(st.get("description"))}</span></div>')
+            ol += '</div>'
+
+        for lr in (l.get('labs') or []):
+            ol += f'<span class="lab-ref">🧪 {lr.get("source")} / {lr.get("slug")}</span> '
+        ol += '</div>'
+
+ol += FOOT
+with open(os.path.join(PUB, 'outline.html'), 'w', encoding='utf-8') as f:
+    f.write(ol)
+
+print(f'Generated: styles.css, curriculum.html, outline.html '
+      f'({d["totalLessons"]} lessons / {quest_count} quests)')

@@ -1,0 +1,4 @@
+interface:
+  display_name: "OPC Founder OS"
+  short_description: "读取学员创业工作区并路由十五周行动、证据状态与课程过关线"
+  default_prompt: "Use $opc-founder-os to read my workspace and choose the next evidence-producing action."

@@ -9,9 +9,9 @@ export default function S20b_ActivateW1Skill() {
 				<SlideHead
 					tag="本周领取"
 					tagBg={colors.yellow}
-					title="W1 Skill：把 SoT 变成 AI 能执行、同学能验收的共同真相"
+					title="本周 SoT Skill：把你的想法整理成一页说明"
 					titleSize="clamp(29px, 2.55vw, 40px)"
-					sub="解压本周包后，在你的 Founder Workspace 里运行。不会改掉你已有内容。"
+					sub="它会追问客户、问题、现在的处理方法、最小交付和边界；不知道的内容标成“待验证”，不替你编答案。"
 				/>
 
 				<div style={{ display: 'grid', gridTemplateColumns: '0.92fr 1.45fr', gap: 22 }}>
@@ -24,9 +24,9 @@ export default function S20b_ActivateW1Skill() {
 						<div style={{ fontFamily: fonts.mono, fontSize: 16, fontWeight: 700, color: colors.red }}>本周包里有</div>
 						<div style={{ marginTop: 16, fontFamily: fonts.mono, fontSize: 18, lineHeight: 1.75, fontWeight: 700 }}>
 							opc-founder-os/<br />
-							opc-w1-business-sot/<br />
-							founder-state.json<br />
-							BUSINESS-SOT.md
+							opc-business-sot/<br />
+							BUSINESS-SOT.md<br />
+							method-adaptation.md
 						</div>
 					</motion.div>
 
@@ -37,11 +37,11 @@ export default function S20b_ActivateW1Skill() {
 						style={{ border, boxShadow: shadow, background: colors.dark, color: colors.white, padding: '24px 26px' }}
 					>
 						<div style={{ fontFamily: fonts.mono, fontSize: 15, color: colors.yellow, fontWeight: 700 }}>复制这句话启动</div>
-						<div style={{ marginTop: 16, fontSize: 25, lineHeight: 1.5, fontWeight: 800 }}>
-							Use <span style={{ color: colors.yellow }}>$opc-w1-business-sot</span> to turn my idea into an evidence-labelled Business SoT v0.1.
+						<div style={{ marginTop: 16, fontSize: 23, lineHeight: 1.55, fontWeight: 800 }}>
+							请使用 <span style={{ color: colors.yellow }}>$opc-business-sot</span>，帮我把这门生意整理成一页 SoT。逐项问我，不要替我编客户证据；不确定的内容写“待验证”。
 						</div>
 						<div style={{ marginTop: 18, borderTop: '2px solid rgba(255,255,255,.35)', paddingTop: 14, fontSize: 17, lineHeight: 1.45 }}>
-							接着把同伴复述、AI 的错误和你的修正写回 Workspace。生成只是第一步。
+							客户没有说过的话一律不能由 AI 补写。本节过关只代表 SoT 可验证，不代表生意已经验证。
 						</div>
 					</motion.div>
 				</div>
@@ -49,4 +49,3 @@ export default function S20b_ActivateW1Skill() {
 		</Slide>
 	);
 }
-

@@ -1,0 +1,4 @@
+interface:
+  display_name: "OPC · Founder Fit"
+  short_description: "评估创始人的时间、资源、风险、客户触达与最适合验证的商业模式"
+  default_prompt: "Use $opc-founder-fit to complete my founder-fit and capacity assessment."
