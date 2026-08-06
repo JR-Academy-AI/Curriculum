@@ -1,5 +1,13 @@
 # Changelog — AI Engineer Bootcamp
 
+## 2026-08-06
+
+- 新增 `feedback/2026-08-06-alumni-testimonials.md` —— 5 段校友微信反馈原话归档，作为销售页 Testimonials section 的唯一真相源
+  - §1 逐字原文（不改写不润色）：2 条 Data → AI Engineer 转型、1 条 Georgie 署名（软件开发 2 年 → 大厂）、1 条 SWE → AI Engineer 讲面试 case study、1 条在职快速补技能
+  - §2 上线摘录表：从原文截取的句子（只截断不改写），与 `messages/{zh,en}/customAiEngineer.json` 的 `testimonials.items.*` 一一对应；改文案顺序固定「先改本文件 → 再改 i18n」
+  - §3 与 `PERSONAS.md` 的 ground-truth 对照：4 类 persona 各被哪条印证 —— 转型者痛点确认是「学完不知道怎么转成 offer」而非「学不会」，在职 SWE 最在意的是能放进面试的 case study
+  - 署名策略：仅 Georgie 本人署名，其余匿名只标背景；T1/T5 提到的「老师推荐工作机会」属学员自述事实，销售页不得写成课程交付项
+
 ## 2026-06-16
 
 - 新增整套推广三件套（PERSONAS / FUNNEL_PLAN / PROMOTION_PLAN）
