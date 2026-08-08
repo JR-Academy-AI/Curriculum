@@ -84,6 +84,13 @@ jobs:
           bun install
           bun run build
 
+      # Build lessons/ai-solo-founder-w2 (AI 一人创业营 · W2 · 35 张 agent 选型 / 权限 / JD / Schedule 讲课 deck)
+      - name: Build lessons/ai-solo-founder-w2
+        working-directory: lessons/ai-solo-founder-w2
+        run: |
+          bun install
+          bun run build
+
       # Build lessons/ai-era-neededness (30 张 slide · AI 时代学生的可被需要性)
       - name: Build lessons/ai-era-neededness
         working-directory: lessons/ai-era-neededness
@@ -450,6 +457,12 @@ jobs:
           if [ -d lessons/ai-solo-founder-w1/dist ]; then
             mkdir -p _site/lessons/ai-solo-founder-w1
             cp -r lessons/ai-solo-founder-w1/dist/* _site/lessons/ai-solo-founder-w1/
+          fi
+
+          # AI 一人创业营 W2 · 你的 AI 员工上岗 Agents at Work
+          if [ -d lessons/ai-solo-founder-w2/dist ]; then
+            mkdir -p _site/lessons/ai-solo-founder-w2
+            cp -r lessons/ai-solo-founder-w2/dist/* _site/lessons/ai-solo-founder-w2/
           fi
 
           # lessons/ai-era-neededness: 30 张公开演讲 slide deck
