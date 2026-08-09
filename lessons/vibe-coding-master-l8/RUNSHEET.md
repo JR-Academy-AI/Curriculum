@@ -846,13 +846,41 @@ codex-test-agent 做双验（见 H.12.1）。它同样不得创建 teammate。
 
 ## H.9 步骤 4 · Team charter（五项，开工前写死）
 
+### ❓ 有 PRD 了，charter 还要写吗？
+
+**要，但会短很多 —— 而且短掉的恰好不是重要的那几项。**
+
+两者是**正交**的，不是重复：
+
+```text
+PRD     = 做什么（产品真相源）
+charter = 这几个 agent 怎么协作（编队协议）
+```
+
+| charter 项 | PRD 覆盖吗 | 说明 |
+|---|---|---|
+| **1. Outcome** | ✅ **完全覆盖** | 这一格改成**指向 PRD 路径**，不要复制内容 |
+| **2. Members and ownership** | ❌ 完全不覆盖 | PRD 不管谁写哪个文件 —— 这是编队的事 |
+| **3. Shared evidence contract** | ❌ 不覆盖 | PRD 不管 agent 之间怎么交证据 |
+| **4. Communication triggers** | ❌ **完全不覆盖** | ⭐ **charter 存在的全部理由**。不写死就退化成分工 |
+| **5. Done** | 🔶 覆盖一半 | PRD 的验收标准 = **产品对不对**；<br>charter 的 Done 还要问：**冲突裁决了吗 / 外部验收执行了吗 / 未检查范围标了吗** |
+
+⚠️ **绝对不要把 PRD 抄进 charter。** 项目 `CLAUDE.md` 写死「**产品的 SoT = `PRD.md`**」——
+复制一份进 charter 就制造了第二份产品真相源，两边必然漂移。
+项目 `§9.3-2` 的做法才是对的：**派活带的是需求 SoT 的路径，不是内容。**
+
+> 💡 一句话记：**PRD 说清「要做成什么样」，charter 说清「这三个人之间怎么传话、谁碰哪些文件、什么才算完」。**
+> 没有 PRD 时 charter 第 1 项要自己写；有 PRD 时它只是一个链接。
+
+### 本例的 charter（PRD 已存在的版本）
+
 ```markdown
 # Team charter · 塔罗牌占卜
 
 ## 1. Outcome
-在 star-mansions 交付可演示的塔罗占卜功能：
-78 张牌打乱 → 用户输入三个 1–78 的数字 → 抽三张牌 → 列出分析。
-交付物 = 一个可 review 的 PR（不自合并）。
+需求 SoT：docs/prd/tarot-prd.md（不在本文件复述，以 PRD 为准）
+本次交付物 = 一个可 review 的 PR（不自合并）。
+PRD 有歧义时：停下来问 Lead，不要自行决定产品行为。
 
 ## 2. Members and ownership
 见 H.4 文件所有权表。两份 contract.ts 以后端为准。
@@ -871,11 +899,12 @@ subagent 的产出只回给它的父成员，跨边界证据仍由该成员点�
 - 任务被阻塞，更新任务状态并说明需要谁提供什么
 
 ## 5. Done
-- typecheck / build / test 全绿，且由 tarot-verify 独立跑过
-- 结果带免责声明
-- 冒烟覆盖：正常输入、重复数字、越界数字、非整数
+产品对不对 → 以 PRD 验收标准为准，由 tarot-verify 逐条核对。
+这里只写 PRD 管不到的「协作完成没完成」：
+- typecheck / build / test 全绿，且由 tarot-verify **独立**跑过（不是实现者自述）
+- 契约冲突已有 [DECISION]，且带 deciding_evidence
 - 未检查范围已写明
-- PR 已开，等 Rick review
+- PR 已开、未自合并
 ```
 
 ---
