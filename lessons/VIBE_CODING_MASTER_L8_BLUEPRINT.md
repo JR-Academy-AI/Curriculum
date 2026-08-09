@@ -3,7 +3,7 @@
 > 状态：DRAFT 0.2（2026-08-06 · 做一步讲一步 · 手动 Team 主线版）
 > 主题：**Agent Team —— 从分派到协作**
 > 课型：**120 分钟「做一步讲一步」工作坊**（12 拍，做 / 讲交替；**主教具是手动 Team**，自动 Team 只在第 9 拍投屏对照）
-> 本文只定义课程，不包含 deck 实现。带课讲稿见 `vibe-coding-master-l8/RUNSHEET.md`（待写）。
+> 本文只定义课程，不包含 deck 实现。**带课讲稿见 `vibe-coding-master-l8/RUNSHEET.md`**（纯手稿：从头念到尾的逐字讲稿，不含表格材料）；**学员讲义见 `HANDOUT.md`**（全部 prompt 及逐句理由 + 发给学员的所有材料）。
 > 承接第七节：L7 教学员给 context 分家——把脏活派出去，只收结论。但那些分出去的 context **互相不说话**。L8 回答下一层问题：**什么时候它们必须说话，以及说话之后谁来收敛。**
 > **L7 已于本轮开课完成**，所以本节的第 0 拍直接从学员手上那张 L7 汇总矩阵开始——不用讲故事，用他们自己交的东西。
 
@@ -1106,8 +1106,8 @@ ______
 
 **🟡 需要（影响体验，不影响开课）**
 
-- 一页**线上现象报告** fixture（深题唯一外部素材，规格见 §12.3）。
-- 每一拍的**兜底产物**：拍 1 角色文件成品、拍 2 三份报告、拍 6 任务板中期快照。掉队的人直接领。
+- 一页**线上现象报告** fixture（深题唯一外部素材）——正文已写好在 `HANDOUT.md` §6.4，规格见 §12.3，**为什么这么埋见 §12.6**。
+- 每一拍的**兜底产物**：拍 1 角色文件成品、拍 2 三份报告、拍 6 任务板中期快照。掉队的人直接领。**三份内容都在 §12.5。**
 - 一份「任务板全绿但不可验收」的反例。
 - 巡场记录用的空白纸：拍 6 要记 2–3 个典型（只发结论的 / 板没更新的 / 已经在找反例的）。
 - 打印或电子版讲义 6 份（见 §12.4）。
@@ -1173,6 +1173,107 @@ ______
 | 6 | 结构选择卡（完整两问版） | §10 | 收尾发，作业要用 |
 
 > 第 3 份必须纸质——手动传递证据的时候，学员的两只手都在敲键盘，纸比另开一个文件快。
+
+### 12.5 兜底产物（掉队的人直接领，老师课前备好）
+
+> **一处卡住不许拖垮整节课**（§8.1-2）。下面三份必须在开课前就存在，且能一键发到群里。
+
+| # | 兜底什么 | 内容 |
+|---|---|---|
+| 1 | 拍 1 的角色文件 | `HANDOUT.md` §1.1 那份，直接发文件 |
+| 2 | 拍 2 的三份报告 | 见下方标准版 |
+| 3 | 拍 6 的任务板中期快照 | 见下方 |
+
+#### 12.5.1 拍 2 · 三份报告标准版
+
+
+```markdown
+### sm-investigator-frontend
+status: complete
+
+## findings
+- 结论：登录只对邮箱做 trim()，未做大小写归一，随后原样发给后端。
+  evidence: `frontend/src/lib/authAdapter.ts:31` — `const trimmed = email.trim()`
+- 结论：session（含 token）整体存在 localStorage 的 `sm.session` 键下。
+  evidence: `frontend/src/lib/authAdapter.ts:36`
+
+## checked
+- authAdapter 的 login / logout / currentUser / token
+- AuthForm、Login 页面的输入处理
+
+## not_checked
+- 后端如何使用这个 email（不在我的范围）
+
+### sm-investigator-backend
+status: complete
+
+## findings
+- 结论：user.id 由邮箱原文派生（`u_` + encodeURIComponent），upsert onConflict: "id"。
+  evidence: `backend/src/handlers/auth.ts:12`
+- 结论：返回的 token 就是 user.id；history 全部端点按该值作用域过滤。
+  evidence: `backend/src/handlers/history.ts` 各 handler 的 `auth` 参数
+
+## checked
+- auth / history 两个 handler 的完整读写路径
+
+## not_checked
+- 前端提交上来的 email 经过了什么处理（不在我的范围）
+
+### sm-investigator-config
+status: complete
+
+## findings
+- 结论：CORS 允许来源含本地 dev 与生产 Pages 域名，可用环境变量覆盖。
+  evidence: `backend/src/cors.ts:8`
+
+## checked
+- .env.example / vercel.json / CI 工作流 / schema.sql
+
+## not_checked
+- 运行时这些变量是否真的生效（我只能看到声明）
+```
+
+> 👀 **注意 config 那路的 `not_checked` 最后一条**——它是深题的伏笔。拍 2 不要点破。
+
+
+> 👀 **注意 config 那路的 `not_checked` 最后一条**——它是深题的伏笔。拍 2 讲评时不要点破。
+
+#### 12.5.2 拍 6 · 任务板中期快照
+
+
+```markdown
+| # | 谁 | 在查什么 | 状态 | 结论 |
+|---|---|---|---|---|
+| 1 | A · frontend | save 调用链是否正确 | 已完成 | 调用正确，返回 200 |
+| 2 | B · backend  | reading 从写入到读出的存储路径 | 进行中 | 有两条：Supabase 与内存回落 |
+| 3 | C · config   | 生产环境变量是否齐全 | 进行中 | 声明齐全，运行时未知 |
+
+## 传递记录
+| 时刻 | 从 → 到 | 贴了哪一句原文 | 对方的反应 |
+|---|---|---|---|
+| +6min | B → C | 「无 Supabase env 时走进程内存回落」 | C：我只能看到声明，看不到运行时 |
+```
+
+---
+
+
+### 12.6 《线上现象报告》fixture 的设计说明（老师看，不发学员）
+
+> fixture 正文在 `HANDOUT.md` §6.4（学员材料）。这里只记**它为什么这么埋**。
+
+
+| 块 | 在哪 | 作用 |
+|---|---|---|
+| 诱饵 | `09:41` / `10:07` / `10:31` / `10:58` 四组 deploy → readings: 0 | 时间吻合度高到让人一眼下结论 |
+| **反例** | **`10:14:02` readings: 3 → `10:14:31` readings: 0，中间没有任何 deploy** | 唯一能打断因果链的东西。29 秒内两次请求结果不同 = 打到了不同实例 |
+| 噪音 | `10:03:55` CORS preflight、`10:15:09` favicon 404 | 太干净学员会觉得是题 |
+| 留白 | 全文不出现 `memStore` / `SUPABASE` / `env` | 那是学员要从代码里自己拼的另一半 |
+
+**彩排判据**：不给唱反调 prompt，三路应该**一致**交上「部署导致丢失」。有一路自己找到反例了 → 反例埋得太浅，往中段挪、去掉一切提示性措辞。
+
+---
+
+
 
 ## 13. 高频风险与课堂降级
 
@@ -1918,7 +2019,7 @@ sm-investigator-frontend、sm-investigator-backend、sm-investigator-config
 ## 20. 附录 C：让 Agent 当 Agent 架构师（课后进阶）
 
 > **完整方法、五阶段逐句拆解、可直接复制的提示词，在 `vibe-coding-master-l8/HANDOUT.md` §12。**
-> 老师的 3 分钟口播稿、学员会问的两个问题、砍掉时的补救动作，在 `RUNSHEET.md` 附录 D。
+> 老师的 3 分钟口播稿、学员会问的两个问题、砍掉时的补救动作，在 `RUNSHEET.md` 拍 11。
 > **本节只记录教学决策**——为什么它在课程结构里是这个位置。
 
 ### 20.1 它解决什么问题

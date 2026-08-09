@@ -1,7 +1,7 @@
 # 第八节《Agent Team》· 学员讲义
 
 > 课堂仓库：**https://github.com/Ruixiaoke/star-mansions** ｜ commit：`____________`（上课当天填）
-> 配套：`RUNSHEET.md`（老师用）· `VIBE_CODING_MASTER_L8_BLUEPRINT.md`（课程定义）
+> 配套：`RUNSHEET.md`（老师讲稿）· `VIBE_CODING_MASTER_L8_BLUEPRINT.md`（课程定义与备课材料）
 
 ---
 
@@ -359,6 +359,42 @@ backend 那一路的原文：
 > **「传递记录」那张表是今天最重要的数据。** 讲评、Exit、作业全靠它。
 
 ---
+
+### 6.4 附页《线上现象报告》
+
+> 拍 6 发。**深题唯一的外部素材** —— 根因不在这一页里，它只给你现象。
+
+```text
+【线上现象报告】star-mansions · 生产环境
+
+用户反馈：保存了星宿记录，过一阵子回来看，历史是空的。
+          但有时候又能看到。不报错，就是列表空的。
+
+--- 观测日志（节选，UTC+10）---
+
+2026-08-05 09:41:07  [deploy]  production build 8f3a1c 上线
+2026-08-05 09:41:33  [user]    u_a***@qq.com  GET /api/history  → 200  readings: 0
+2026-08-05 09:52:18  [user]    u_a***@qq.com  POST /api/history → 200  saved r_1
+2026-08-05 09:52:24  [user]    u_a***@qq.com  GET /api/history  → 200  readings: 1
+2026-08-05 10:03:55  [cors]    OPTIONS /api/history  origin=https://ruixiaoke.github.io  → 204
+2026-08-05 10:07:12  [deploy]  production build 8f3a1c 实例回收 / 冷启动
+2026-08-05 10:07:41  [user]    u_a***@qq.com  GET /api/history  → 200  readings: 0
+2026-08-05 10:14:02  [user]    u_b***@gmail.com  GET /api/history → 200  readings: 3
+2026-08-05 10:14:31  [user]    u_b***@gmail.com  GET /api/history → 200  readings: 0
+2026-08-05 10:15:09  [static]  GET /favicon.ico → 404
+2026-08-05 10:31:44  [deploy]  production build 9c2e07 上线
+2026-08-05 10:32:02  [user]    u_b***@gmail.com  GET /api/history → 200  readings: 0
+2026-08-05 10:44:20  [user]    u_c***@163.com    POST /api/history → 200  saved r_1
+2026-08-05 10:58:16  [deploy]  production build 9c2e07 实例回收 / 冷启动
+2026-08-05 10:58:50  [user]    u_c***@163.com    GET /api/history → 200  readings: 0
+
+--- 以上为全部可获取日志 ---
+```
+
+> ⚠️ 这一页里**没有** `memStore`、`SUPABASE`、`env` 任何字样 —— 那是你要自己从代码里拼出来的另一半。
+>
+> 也**没有**任何结论。「疑似与部署有关」这种话一句都没写 —— 因为**诱饵要由你自己得出，你才会为它辩护**。
+
 
 ## §7 🔥 拍 7 · 唱反调 prompt
 
