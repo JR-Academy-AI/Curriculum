@@ -8,11 +8,11 @@
 > | 找什么 | 去哪 |
 > |---|---|
 > | **逐分钟口播**（照念） | 正文，从「第一幕」往下 |
-> | **创建 Team 的完整流程 + 全部 prompt** | **附录 H** ← 彩排和救人都看这里 |
-> | **实际跑起来长什么样**（含做砸了的对照） | **附录 I** |
+> | **用 Team 开发一个真实功能**（塔罗牌 · 演示与交付） | **附录 H** ← 写入任务，含全部 prompt |
+> | **课堂 Lab 实际跑起来长什么样**（只读，含做砸了的对照） | **附录 I** |
 > | 环境路由 / 巡场顺序 / 故障恢复 / 提示阶梯 / 评分 | 附录 B–G |
 > | 课程为什么这样设计 | 蓝图 §0–§8 |
-> | 发给学员的那份 prompt 与模板 | `HANDOUT.md`（与附录 H **同源**，改一处两处都要改） |
+> | 发给学员的那份 prompt 与模板 | `HANDOUT.md`（课堂只读 Lab 用；附录 H 是老师的写入任务实例，两者不同源） |
 >
 > **课型：先讲后做。0–55 分钟不让学员创建 Team。**
 > 课堂仓库 `star-mansions`，**必须锁 commit**：`____________`（开课前填，写进投屏与群通知）
@@ -629,69 +629,96 @@ Exit 五题（deck 上），**第 1、4、5 题必须正确**。
 
 ---
 
-# 附录 H · 创建 Agent Team 的完整流程与全部 Prompt
+# 附录 H · 用 Agent Team 开发一个新功能（完整流程 + 全部 Prompt）
 
-> **这是老师彩排用的连跑清单，也是现场救人用的速查。**
-> 与 `HANDOUT.md` 同源 —— **改一处，两处都要改**（学员手上那份是发出去的，不能对不上）。
+> **这是老师演示与交付用的实例，也是「创建 Agent Team」的完整 prompt 速查。**
 >
-> ⚠️ 蓝图 §8.7：Prompt 模板**只放在五个容易因表达不完整而失败的动作**上。
-> 三问判断、组合选择和失败模式**不给模板** —— 那些地方要学的是判断，不是复制指令。
-
-## H.0 全流程一张图
-
-```text
-[课前] 0. 启用能力（feature flag）        ← 不开就什么都没有，且不报错
-          ↓
-[50–55] 1. 老师演示：一次性 smoke team    ← alpha / beta，演完即清理
-          ↓
-[60–70] 2. 创建最小 Team（Lead + A + B）  ← 建完就停，先不调查
-          ↓
-[70–76] 3. Smoke test 四步验证            ← 🚨 卡关点：不过不进 Lab
-          ↓
-[76–84] 4. 新增 verifier（Lead + 3）      ← 新增，不是改名
-          ↓
-[76–84] 5. 写 Team charter 五项           ← 开工合同
-          ↓
-[84–99] 6. 拆共享任务 T1–T4 + 依赖        ← 每个任务一个 owner
-          ↓
-[84–99] 7. 成员间直传 [DISCOVERY]         ← ⭐ 本节唯一的过关硬证据
-          ↓
-[99–107] 8. [CONFLICT] + 具体输入验证
-          ↓
-[107–113] 9. Lead 收敛 [DECISION] + 外部验收
-```
-
-**在哪个会话敲 —— 这是最容易搞错的一件事：**
-
-| 步骤 | 在哪敲 | 敲错了会怎样 |
-|---|---|---|
-| 1 / 2 / 4 / 6 / 9 | **Lead 会话** | — |
-| 3 的 PING | **A 的会话** | 在 Lead 里敲 = Lead 转述 = 不算 Team |
-| 7 的 DISCOVERY | **A 的会话** | 同上，**这一条是过关证据，敲错就白跑** |
-| 8 的 CONFLICT | 发起冲突那个成员的会话 | — |
-
-## H.1 所有模板的统一骨架（§8.7）
-
-课上不背这个，但**每条 prompt 都是它的实例**。学员问「我自己写怎么写」，给他这个：
-
-```text
-目标：最终回答或交付什么
-角色：谁拥有什么，明确不碰什么
-任务：可认领的工作与依赖
-通信：何时必须直接发给谁
-证据：文件:行号 / 命令输出 / 具体输入
-停止：做到哪一步先停，等待谁验收
-```
-
-**六格里最常被漏掉的是「停止」。** 不写停止，Agent 会一路跑到底，你就失去了所有中间检查点。
+> | 附录 | 场景 | 谁用 |
+> |---|---|---|
+> | **H（本节）** | **写入任务**：用 Team 开发一个真实新功能，最终演示并交付给同学 | 老师，课前做好 |
+> | I | **只读任务**：课堂 Lab 那道调查题的实录 | 老师，现场对照 |
+>
+> ⚠️ **本节是写入任务，和课堂 Lab 的只读纪律不同。** 蓝图 §6.3：一旦允许写代码，
+> 必须额外增加**文件所有权、写入不重叠规则、集成顺序、回滚方式、独立测试与最终验收人**。
+> H.4 那张所有权表是本节和附录 I 最大的区别，**不要跳过**。
+>
+> 项目：`/Users/rickzhouomegaai/Desktop/star-mansions`
+> 该项目 `CLAUDE.md §9` 已有自己的 Agent Team 纪律与四个角色定义（`.claude/agents/`），本例与之对齐。
 
 ---
 
-## H.2 步骤 0 · 启用能力（课前，不占课堂时间）
+## H.1 要交付的功能
 
-在用户或项目设置里：
+> **塔罗牌占卜**：78 张塔罗牌顺序打乱；用户输入三个 1–78 的数字，抽出三张牌，并列出分析。
+
+这是一个**端到端新功能**：后端要有牌库、洗牌、抽牌、接口；前端要有输入页、结果展示；两侧共用一份契约类型。
+
+---
+
+## H.2 先过三问：这件事值得开 Team 吗
+
+不要因为「功能大」就开 Team。按蓝图 §5 走一遍：
+
+| 问 | 这件事 | 判断 |
+|---|---|---|
+| **一、值得开多个 context 吗？** | 后端算法/接口、前端页面、验收，是三条可独立推进的工作流 | ✅ 过 |
+| **二、中途信息会改变别人的下一步吗？** | ⭐ **会，而且是硬依赖**：`types/contract.ts` 前后端各一份且必须一致。后端定的字段形状直接决定前端能不能渲染牌面；洗牌放在哪一侧、seed 怎么回传，直接改变前端「再抽一次」要怎么做 | ✅ 过 |
+| **三、协调收益 > 协调成本吗？** | 删掉成员间消息会怎样：前端只能等后端全部写完再开工，或者各写各的契约版本、最后返工 | ✅ 过 |
+
+> 💡 **这正是蓝图 §11.3 第 3 张任务卡**：「前后端持续协商接口并分别实现 → Team」。
+> **契约就是那条把两个人绑在一起的中途依赖。** 没有它，这题就该用 Subagent。
+
+---
+
+## H.3 编队：Lead + 3
+
+对齐蓝图 §7.2 的标准课堂单位（两个边界实现者 + 一个 verifier）：
+
+```text
+Lead              编排者：拆任务、裁决契约冲突、定集成顺序、最终验收
+                  ⚠️ 按项目 CLAUDE.md §9：Lead 不亲自写产品代码
+
+A · tarot-backend  后端全链：牌库数据 → 洗牌抽牌算法 → 校验 → handler → 路由 → 单测
+B · tarot-web      前端全链：契约镜像 → client → 页面 → 路由与导航
+C · tarot-verify   验收：typecheck / build / test / 红线体检 / 冒烟；只读不改产品代码
+```
+
+**为什么不是 Lead + 2**：只有 A、B 的话，没人做独立验收 —— 实现者自己说「我跑过了」不是外部验收（蓝图 §8.6）。
+**为什么不是 5 个人**（比如再拆出数据、算法、样式）：蓝图 §7.3，5 名以上默认不用，协调成本和信息噪音上升太快。
+
+---
+
+## H.4 ⚠️ 文件所有权表（写入任务的第一件事）
+
+**开工前先划，不是写冲突了再划。**
+
+| 成员 | 独占写入 | 明确不碰 |
+|---|---|---|
+| **A · tarot-backend** | `backend/src/lib/tarotDeck.ts`（新）<br>`backend/src/lib/tarot.ts`（新）<br>`backend/src/handlers/tarot.ts`（新）<br>`backend/api/tarot.ts`（新）<br>`backend/test/tarot.spec.ts`（新）<br>`backend/src/lib/validate.ts`（追加）<br>`backend/src/server.ts`（追加一条路由）<br>`backend/src/types/contract.ts`（追加） | 整个 `frontend/` |
+| **B · tarot-web** | `frontend/src/lib/tarotClient.ts`（新）<br>`frontend/src/pages/Tarot.tsx`（新）<br>`frontend/src/App.tsx`（追加路由与导航）<br>`frontend/src/types/contract.ts`（追加） | 整个 `backend/` |
+| **C · tarot-verify** | 无（只读）；报告写在消息里 | 一切产品代码 |
+| **Lead** | 无 | 产品代码 |
+
+**两份 `contract.ts` 是本例唯一的高危点：**
+
+```text
+backend/src/types/contract.ts   ← A 写
+frontend/src/types/contract.ts  ← B 写
+两份必须字段完全一致。
+```
+
+⚠️ **它们不是同一个文件，所以不会触发写冲突 —— 但会静默不一致。**
+处理方式写进 charter：**以 A 的后端契约为准，A 冻结后点名发给 B，B 照抄，不自行改字段名。**
+
+**集成顺序**：A 的契约冻结 → A、B 并行实现 → C 验收 → Lead 集成成 PR。
+**回滚方式**：本功能全部是**新增文件** + 三处**追加**（validate / server / App）；出问题删新文件 + 撤三处追加即可，不影响既有测算主线。
+
+---
+
+## H.5 步骤 0 · 环境（课前做好）
 
 ```json
+// .claude/settings.json 的 env 段
 {
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
@@ -699,46 +726,35 @@ Exit 五题（deck 上），**第 1、4、5 题必须正确**。
 }
 ```
 
-**验证方式**：新开一个会话，让它建两个 teammate。
+跑起来备用：
 
-⚠️ 不开的表现是 **静默无效** —— 不报错、不提示、Claude 直接用 subagent 代替，而面板上看不出来。
-学员说「我建了但只有我自己」，第一个要问的就是这个。
-
----
-
-## H.3 步骤 1 · 老师演示用的一次性 Team（50–55 分钟）
-
-**在 Lead 会话敲**：
-
-```text
-创建两个 teammates：alpha 和 beta。
-创建共享任务「确认团队通信可用」。
-让 alpha 认领任务并给 beta 发消息：PING alpha-to-beta
-让 beta 收到后回复：PONG beta-to-alpha，并把任务标为 completed。
-先不要做其他工作。
+```bash
+cd /Users/rickzhouomegaai/Desktop/star-mansions
+npm run dev        # backend :3000 + frontend vite 一起起
 ```
 
-**演示时只指四个地方**（对照附录 A）：成员名单 · 共享任务 · PING · Lead 视角。
-
-演示完**立即清理**，不要让它污染正式 Lab。
+⚠️ 不开 feature flag 的表现是**静默无效** —— 不报错，Claude 直接用 subagent 代替，面板上看不出来。
 
 ---
 
-## H.4 步骤 2 · 创建最小 Team（60–70 分钟）
+## H.6 步骤 1 · 创建最小 Team（先只建 A 和 B）
 
 **在 Lead 会话敲**：
 
 ```text
-为「邮箱身份与 history scope 的只读调查」创建一个 Agent Team。
+为「塔罗牌占卜功能」创建一个 Agent Team。
+
+功能目标：78 张塔罗牌打乱顺序，用户输入三个 1–78 的数字，抽出三张牌并给出分析。
 
 成员：
-- frontend-trace：只读追踪 frontend 中邮箱从输入、登录到请求发出的字符串变化。
-- backend-identity：只读追踪 backend 中邮箱如何派生 user.id、token，
-  以及 history 如何按身份过滤。
+- tarot-backend：负责 backend/ 侧全链 —— 牌库数据、洗牌与抽牌算法、入参校验、
+  handler、Vercel 入口、本地 Express 路由、vitest 单测。不碰 frontend/。
+- tarot-web：负责 frontend/ 侧全链 —— 契约镜像、API client、占卜页面、路由与导航。
+  不碰 backend/。
 
 创建一条共享任务：确认 Team 通信可用。
-让 frontend-trace 认领任务，但先不要开始正式调查。
-成员必须使用以上固定名字，不得修改业务代码。
+让 tarot-backend 认领任务，但先不要开始写任何代码。
+成员必须使用以上固定名字。
 
 创建完成后停止，只报告：
 1. 成员名单；
@@ -746,262 +762,402 @@ Exit 五题（deck 上），**第 1、4、5 题必须正确**。
 3. 当前权限模式。
 ```
 
-**逐句为什么这么写**（学员问才讲，别主动展开）：
-
-| 这一句 | 治什么 |
-|---|---|
-| `创建一个 Agent Team` | 不明说，工具可能直接用 subagent 代替，而面板上看不出来 |
-| 两个成员各自的**只读范围** | 边界必须写在字面上 —— 它读不到你脑子里的分工 |
-| `先不要开始正式调查` | 这一步只证明 Team 建起来了。不写这句，它会直接冲进案例 |
-| `必须使用以上固定名字` | 名字被改写 → 后面点名发消息会失败 |
-| `不得修改业务代码` | 课堂只读铁律 |
-| `创建完成后停止，只报告三样` | **骨架里的「停止」**。不写，你拿不到可核对的中间状态 |
-
-**敲完应该看到**：成员名单里 Lead 之外有 2 个人，名字一致；一条共享任务，owner 是 frontend-trace。
-
----
-
-## H.5 步骤 3 · Smoke test 四步验证（70–76 分钟）🚨 卡关
-
-前两步在 Lead 会话，**第三步必须在 A 的会话**：
-
-```text
-① 看成员名单     → Lead 之外至少两名 teammate，名字与指令一致
-② 看共享任务     → 创建一条任务，由某名 teammate 认领并改变状态
-③ 发直接消息     → 在 A 的会话里发给 B，B 的会话明确收到并回复
-④ 看 Lead 视角   → Lead 能看到任务状态，并收到抄送结论
-```
-
-**在 `frontend-trace` 会话敲**：
-
-```text
-给 backend-identity 发一条消息：PING frontend-to-backend
-不要经过 Lead。
-```
-
-**在 `backend-identity` 会话确认收到后敲**：
-
-```text
-回复 frontend-trace：PONG backend-to-frontend
-并把共享任务标为 completed。
-```
-
-**①②③ 全过才进正式 Lab。** ④ 是加分项，不卡关。
-
-不过 → 附录 F.2 恢复步骤 → 仍不过 → 判定「不能互发消息」，按 Subagent 处理，当堂不算过关。
-
----
-
-## H.6 步骤 4 · 新增 verifier（76–84 分钟）
-
-**在 Lead 会话敲**：
-
-```text
-最小 Team 的成员、共享任务和 A→B 消息已经通过 smoke test。
-
-现在新增 teammate：verifier。
-它只负责接收 frontend-trace 与 backend-identity 的候选证据，
-用具体输入寻找反例，检查候选结论能否解释用户症状。
-它不得重复两人的完整搜索，也不得修改代码。
-
-创建后先不要调查。把 verifier 写入 Team charter，并报告新的成员名单。
-```
-
-⚠️ **是「新增」不是「改名」。** 角色从创建到结束不更名、不换身份 —— 这是本节第三高频失败。
-
-**三个角色的固定所有权**（贴在投屏旁边，学员会反复问）：
-
-| 成员 | 固定所有权 | 必须发出的消息 |
-|---|---|---|
-| A · frontend-trace | 前端字符串变化 | 任何「被改变 / 未被改变」的观测 → 发 B，抄送 Lead |
-| B · backend-identity | 身份派生与 history scope | 任何会产生不同 user_id 的条件 → 发 A、C，抄送 Lead |
-| C · verifier | 反例、复现与证据链 | 证据缺口或无法解释的现象 → 发 `[CONFLICT]` 给相关成员与 Lead |
-| Lead | 任务、冲突、决定、验收 | **不替成员先给根因** |
-
----
-
-## H.7 步骤 5 · Team charter 五项（76–84 分钟）
-
-学员自己写，模板在 HANDOUT。**五项骨架**：
-
-```markdown
-# Team charter
-
-## 1. Outcome
-最终要回答或交付什么？
-
-## 2. Members and ownership
-- Lead：拆任务、处理冲突、最终验收
-- A：范围 / 所有权 / 明确不碰什么
-- B：范围 / 所有权 / 明确不碰什么
-- C：反证或验收责任
-
-## 3. Shared evidence contract
-- 每条关键结论必须带：文件:行号 / 命令输出 / 可复现输入
-- 证据不足时返回：无法判断 + 缺什么
-
-## 4. Communication triggers
-- 发现会改变别人方向的证据，立即点名发送
-- 与别人结论冲突，发 [CONFLICT]
-- 任务被阻塞，更新任务状态并说明需要谁提供什么
-
-## 5. Done
-- 哪些任务完成 / 哪些冲突已决定 / 哪个外部验收已执行 / 哪些范围未检查
-```
-
-**巡场时只看第 4 项。** 第 4 项空着 = 这个组等一下一定退化成分工。
-
----
-
-## H.8 步骤 6 · 拆共享任务（84–99 分钟）
-
-**在 Lead 会话敲**：
-
-```text
-按 T1–T4 创建共享任务，并设置 T3 依赖 T1、T2，T4 依赖 T3。
-每个任务只能有一个 owner。
-每项完成时必须附文件:行号、命令输出或具体输入；没有证据不得标 completed。
-分配完成后停止，先展示任务、owner、依赖和当前状态。
-```
-
-四个任务：
-
-```text
-T1 · A · 追踪邮箱从输入到请求发出，列出每一步字符串处理和证据。
-T2 · B · 追踪邮箱到 user.id / token / history scope，列出每一步和证据。
-T3 · C · 等待 A、B 的候选证据；设计具体输入验证
-         「同一个人是否可能得到不同作用域」。
-T4 · Lead · 收集 conflict，做最终决定与外部验收。
-
-依赖：
-T1 ─┐
-    ├→ T3 → T4
-T2 ─┘
-```
-
-⚠️ `没有证据不得标 completed` 这一句不能省 —— 不写，你会拿到一排绿色但无法验收的任务。
-
----
-
-## H.9 步骤 7 · 成员间直传 `[DISCOVERY]`（84–99 分钟）⭐ 过关硬证据
-
-**必须在 `frontend-trace` 会话敲，不是 Lead 会话**：
-
-```text
-把你最关键的一条前端观测直接发给 backend-identity，不经 Lead 转述。
-使用 [DISCOVERY] 模板，必须包含 observed、evidence、why_you_need_it，
-并明确请对方说明这条证据是否改变、缩短或加强了下一步。
-同时抄送 Lead，但不要替 backend-identity 得出结论。
-```
-
-**消息格式**：
-
-```text
-[DISCOVERY] frontend → backend
-observed: ______
-evidence: ______（文件:行号）
-why_you_need_it: ______
-```
-
 **逐句为什么**：
 
 | 这一句 | 治什么 |
 |---|---|
-| `直接发给 backend-identity，不经 Lead 转述` | **本节唯一的硬区分**。经 Lead 转 = Subagent |
-| `必须包含 observed / evidence / why_you_need_it` | 只发结论 → 对方无法独立核对 → 那是说服不是证伪 |
-| `明确请对方说明是否改变、缩短或加强了下一步` | 过关证据要的不是「发过消息」，是**消息产生了作用** |
-| `不要替 backend-identity 得出结论` | 替它推理完，这次协作就不算数 |
+| `创建一个 Agent Team` | 不明说，工具可能用 subagent 代替，而面板上看不出来 |
+| 两人各自的**目录边界** + `不碰 ...` | 写入任务里，边界不写死就会互相覆盖 |
+| `先不要开始写任何代码` | 这一步只证明 Team 建起来了。不写这句，它会直接开写 |
+| `创建完成后停止，只报告三样` | 骨架里的「停止」。不写，你拿不到可核对的中间状态 |
 
-⚠️ **对方回答「没有改变」是允许的**（蓝图 §9.5）。真实协作记录比强行制造翻转更重要。
-学员提前找到答案时的追问方式见附录 E.2。
-
----
-
-## H.10 步骤 8 · `[CONFLICT]`（99–107 分钟）
-
-**在发起冲突那名成员的会话敲**：
-
-```text
-你的结论和 ______ 的结论对不上。
-用 [CONFLICT] 格式发给对方并抄送 Lead：
-双方 claim 各写一句，各自附原始证据，
-最后写清需要什么判据才能裁决。
-不要直接下结论，也不要靠投票。
-```
-
-**消息格式**：
-
-```text
-[CONFLICT]
-claim_A: ______
-claim_B: ______
-evidence_A: ______
-evidence_B: ______
-decider_needed: ______
-```
-
-**没有冲突的组也要交一句话**：为什么这次没有冲突 —— 是证据本来就不重叠，还是根本没人去挑战？
+**敲完应该看到**：名单里 Lead 之外有 2 个人，名字一致；一条共享任务，owner 是 tarot-backend；权限模式明确。
 
 ---
 
-## H.11 步骤 9 · Lead 收敛与外部验收（107–113 分钟）
+## H.7 步骤 2 · Smoke test（⚠️ 第三步必须在成员会话里敲）
+
+```text
+① 看成员名单   → Lead 之外两名 teammate，名字与指令一致
+② 看共享任务   → 有 owner，状态可变
+③ 发直接消息   → 在 A 的会话里发给 B，B 明确收到并回复
+④ 看 Lead 视角 → Lead 看得到状态变化
+```
+
+**在 `tarot-backend` 会话敲**：
+
+```text
+给 tarot-web 发一条消息：PING backend-to-web
+不要经过 Lead。
+```
+
+**在 `tarot-web` 会话确认收到后敲**：
+
+```text
+回复 tarot-backend：PONG web-to-backend
+并把共享任务标为 completed。
+```
+
+⭐ **①②③ 全过才继续。** 只有 Lead ↔ 成员往返 = Subagent，不是 Team。
+
+---
+
+## H.8 步骤 3 · 新增 verifier
 
 **在 Lead 会话敲**：
 
 ```text
-不要采用多数意见，也不要把 completed 当作验收。
+最小 Team 的成员、共享任务和 A→B 消息已通过 smoke test。
 
-先列出 A、B、C 的关键 claim 与原始证据；
-再指出冲突或证据缺口；
-用具体输入做独立核对；
-最后输出：
+现在新增 teammate：tarot-verify。
+它只做验收，不写产品代码：
+- 跑 npm run typecheck、npm run build、npm run test；
+- 核对项目红线：结果必须附免责声明（复用 backend/src/lib/disclaimer.ts 的 DISCLAIMER）；
+- 用具体输入做冒烟：包括边界值和非法输入；
+- 报告未检查范围。
 
-[DECISION]
-decision: ...
-deciding_evidence: ...
-owner_next: ...
-verification: ...
-unchecked_scope: ...
-
-如果现有证据不足，决定必须是「无法判断」，并写明缺什么。
+创建后先不要动手。把 tarot-verify 写入 Team charter，并报告新的成员名单。
 ```
 
-**Lead 验收要真的执行的四件事**：
-
-1. 核对 A、B 给出的文件与行号；
-2. 用具体输入独立核对身份派生结果；
-3. 检查候选结论能否解释「无报错但列表为空」；
-4. 记录无法解释的现象。
-
-⚠️ 课堂**不修代码**。修复建议可以记录，但不进入完成判据。
+⚠️ **是「新增」不是把 A 或 B 改成 verifier。** 角色从创建到结束不更名、不换身份。
 
 ---
 
-## H.12 老师彩排清单（开课前自己连跑一遍）
+## H.9 步骤 4 · Team charter（五项，开工前写死）
 
-按顺序跑，**每步都要真的看到产物**，不要跳：
+```markdown
+# Team charter · 塔罗牌占卜
+
+## 1. Outcome
+在 star-mansions 交付可演示的塔罗占卜功能：
+78 张牌打乱 → 用户输入三个 1–78 的数字 → 抽三张牌 → 列出分析。
+交付物 = 一个可 review 的 PR（不自合并）。
+
+## 2. Members and ownership
+见 H.4 文件所有权表。两份 contract.ts 以后端为准。
+
+## 3. Shared evidence contract
+- 每条关键结论必须带：文件:行号 / 命令输出 / 具体输入输出
+- 「我改好了」不算证据，`npm run typecheck` 的输出才算
+- 证据不足时返回：无法判断 + 缺什么
+
+## 4. Communication triggers
+- A 冻结契约后，**立即点名发给 B**，附完整类型定义（不是描述，是可直接粘贴的代码）
+- B 发现契约缺字段 / 无法渲染，发 [CONFLICT] 给 A 并抄送 Lead，**不自行改字段名**
+- 任一侧发现会改变对方实现方式的决定（洗牌放哪侧、seed 怎么传），立即点名发送
+- 任务被阻塞，更新任务状态并说明需要谁提供什么
+
+## 5. Done
+- typecheck / build / test 全绿，且由 tarot-verify 独立跑过
+- 结果带免责声明
+- 冒烟覆盖：正常输入、重复数字、越界数字、非整数
+- 未检查范围已写明
+- PR 已开，等 Rick review
+```
+
+---
+
+## H.10 步骤 5 · 拆共享任务
+
+**在 Lead 会话敲**：
 
 ```text
-□ H.2  新开会话验证 feature flag 生效
-□ H.3  演示 team 建起来，PING/PONG 通，清理干净
-□ H.4  最小 Team 建起来，三样报告都拿到
-□ H.5  ①②③ 全过（③ 必须在 A 会话发）
-□ H.6  verifier 新增成功，A、B 名字没被改动
-□ H.8  T1–T4 建好，T3 依赖生效（依赖未满足时认领不了）
-□ H.9  A→B 的 DISCOVERY 真的到达，B 明确回答了是否改变下一步
-□ H.10 能触发一次 CONFLICT
-□ H.11 Lead 输出完整 DECISION 五字段
-□ 全程只读，仓库无改动（git status 干净）
-□ 掐表：H.4→H.11 一个人能在 45 分钟内跑完
+按 T1–T6 创建共享任务，并设置依赖：
+T2 依赖 T1；T3、T4 依赖 T2；T5 依赖 T3 和 T4；T6 依赖 T5。
+每个任务只能有一个 owner。
+每项完成时必须附文件:行号或命令输出；没有证据不得标 completed。
+分配完成后停止，先展示任务、owner、依赖和当前状态。
 ```
 
-**最后一条掐表最重要。** 你自己跑要 45 分钟以上，学员在课堂 53 分钟里一定跑不完 —— 那就得砍 §10.1-5 允许砍的部分（组合重构、部分讲评），或者把 Lab 的调查范围再缩一层。
+```text
+T1 · A · 出契约草案：塔罗相关类型 + 端点形状，发给 B review
+T2 · B · review 契约，回协商意见（前端渲染实际需要哪些字段）→ 契约冻结
+T3 · A · 实现后端：牌库、洗牌抽牌、校验、handler、api 入口、server 路由、vitest
+T4 · B · 实现前端：契约镜像、tarotClient、Tarot 页面、路由与导航
+T5 · C · 独立验收：typecheck / build / test / 红线 / 冒烟
+T6 · Lead · 集成、裁决遗留冲突、最终验收、开 PR
+
+依赖：
+T1 → T2 ─┬→ T3 ─┐
+         └→ T4 ─┴→ T5 → T6
+```
+
+> ⭐ **T1 → T2 是本例的关键设计**。把「契约协商」显式拆成两个任务，
+> 就是在**结构上**逼出一次真实的 teammate ↔ teammate 往返 —— 而不是靠嘱咐。
 
 ---
 
-# 附录 I · 完整使用实例（一个组从头跑到尾）
+## H.11 步骤 6 · 契约协商 ⭐ 本例的核心
+
+### A 发出草案（在 `tarot-backend` 会话敲）
+
+```text
+把你的契约草案直接发给 tarot-web，不经 Lead 转述。
+
+使用 [DISCOVERY] 模板，必须包含：
+- observed：你打算加到 backend/src/types/contract.ts 的完整类型定义（可直接粘贴的代码）
+- evidence：你参照了哪个既有端点的形状（文件:行号）
+- why_you_need_it：他要照这份镜像到 frontend/src/types/contract.ts，并据此渲染页面
+
+明确请对方回答：这份契约够不够他渲染三张牌和分析？缺什么字段？
+同时抄送 Lead，但不要替 tarot-web 决定前端怎么展示。
+```
+
+**A 发出的消息**（示例）：
+
+```text
+[DISCOVERY] tarot-backend → tarot-web
+
+observed: 契约草案
+  export interface TarotDrawInput { picks: [number, number, number]; seed?: string }
+  export interface TarotCard { id: number; name: string }
+  export interface TarotDrawn { pick: number; card: TarotCard; orientation: "正位" | "逆位" }
+  export interface TarotDrawResponse {
+    seed: string; draws: TarotDrawn[]; summary: string; disclaimer: string
+  }
+  端点：POST /api/tarot
+
+evidence: 形状参照既有 ComputeResponse —— backend/src/types/contract.ts
+          （同样是「输入 + 结果 + disclaimer」三段式）
+
+why_you_need_it: 你要把它镜像到 frontend/src/types/contract.ts 并据此渲染页面。
+
+请回答：这份契约够不够你渲染三张牌和分析？缺什么字段？
+cc: Lead
+```
+
+### B 回协商意见（在 `tarot-web` 会话敲）
+
+**B 的回复**（示例，这是一条**合格的 CONFLICT**）：
+
+```text
+[CONFLICT]
+
+claim_A（tarot-backend）: 现有草案足够前端渲染。
+claim_B（tarot-web）: 不够，缺三类字段，我照这份写会渲染不出来。
+
+evidence_B:
+1. TarotCard 只有 id/name。页面要分「大阿卡纳 / 小阿卡纳」分组显示、
+   要按花色配色，需要 arcana 和 suit；配图文件名按英文走，需要 nameEn。
+2. TarotDrawn 没有牌位。三张牌要标「过去 / 现在 / 未来」，
+   而且我不能靠数组下标猜 —— 顺序一变就错位。
+3. 只有 summary 一段总述，逐张的解读放哪？需要每张自己的关键词与一句话解读。
+
+decider_needed:
+需要 A 确认这三类字段由后端给，还是前端自己维护一份牌面字典。
+建议后端给 —— 前端再维护一份 78 张牌的数据，两边会漂移。
+
+cc: Lead
+```
+
+### Lead 裁决（在 Lead 会话敲）
+
+```text
+不要采用多数意见，也不要让两边各让一步。
+
+先列出双方 claim 与证据；
+再判断：牌面静态数据应该由哪一侧持有？判据是「哪一侧持有能避免两份数据漂移」。
+最后输出 [DECISION]，并指定谁在什么时候把冻结版契约发给谁。
+```
+
+**Lead 的裁决**（示例）：
+
+```text
+[DECISION]
+
+decision: 采纳 B 的意见，牌面静态数据由后端持有并随响应返回。
+  冻结版契约：
+  export type TarotArcana = "大阿卡纳" | "小阿卡纳";
+  export type TarotSuit = "权杖" | "圣杯" | "宝剑" | "星币";
+  export interface TarotCard {
+    id: number; name: string; nameEn: string;
+    arcana: TarotArcana; suit: TarotSuit | null;
+  }
+  export interface TarotDrawn {
+    position: { index: 0 | 1 | 2; label: string };
+    pick: number; card: TarotCard;
+    orientation: "正位" | "逆位";
+    keywords: string[]; reading: string;
+  }
+  export interface TarotDrawResponse {
+    seed: string; picks: [number, number, number];
+    draws: TarotDrawn[]; summary: string; disclaimer: string;
+  }
+
+deciding_evidence: 前端若自维护 78 张牌字典，与后端牌库形成两份真值，
+  必然漂移；项目既有做法也是后端持有真值（backend/src/lib/xiuTable.ts），
+  前端只做展示（frontend/src/lib/computeClient.ts 顶部注释：不在前端跑测算）。
+
+owner_next: tarot-backend —— 把上面这份冻结版原样发给 tarot-web，
+  然后 T1/T2 标 completed，T3/T4 并行开工。
+
+verification: 冻结后 B 只做镜像，不得改字段名；typecheck 会在两份不一致时报错。
+
+unchecked_scope: 正逆位是否影响 summary 的措辞，本次未定，留到 T3 由 A 决定后同步 B。
+```
+
+> 💡 **这一段是整个实例最值钱的地方**。注意三点：
+> 1. B 的 CONFLICT **不是「我觉得不好」**，是「我照这份写会渲染不出来」+ 三条具体证据；
+> 2. Lead 的裁决判据是**「哪一侧持有能避免漂移」**，不是「谁说得多」；
+> 3. `unchecked_scope` 里留了一条**没定的事**，并指定了后续谁定 —— 没有假装全都想清楚了。
+
+---
+
+## H.12 步骤 7 · 并行实现（T3 / T4）
+
+契约冻结后两人**才能**并行。这也是为什么 T3、T4 都依赖 T2。
+
+**A（`tarot-backend`）要交的**：
+
+```text
+新增 backend/src/lib/tarotDeck.ts   —— 78 张牌静态数据
+新增 backend/src/lib/tarot.ts       —— 洗牌 + 抽牌（无状态：seed 可复现）
+追加 backend/src/lib/validate.ts    —— 三个数字：整数 / 1–78 / 互不相同
+新增 backend/src/handlers/tarot.ts  —— 与框架无关，返回 HandlerResult
+新增 backend/api/tarot.ts           —— Vercel 薄壳（照 api/compute.ts 抄）
+追加 backend/src/server.ts          —— POST /api/tarot 路由
+新增 backend/test/tarot.spec.ts     —— vitest
+
+必须满足：
+- 结果带 disclaimer（复用 lib/disclaimer.ts 的 DISCLAIMER）
+- serverless 无状态：不在服务端保存洗好的牌，seed 随响应返回
+- 完成时附 npm -w backend run test 的输出
+```
+
+**B（`tarot-web`）要交的**：
+
+```text
+追加 frontend/src/types/contract.ts  —— 照冻结版镜像，不改字段名
+新增 frontend/src/lib/tarotClient.ts —— 照 lib/computeClient.ts 的写法
+新增 frontend/src/pages/Tarot.tsx    —— 三个输入框 + 结果展示（照 pages/Calculator.tsx 的表单与校验体例）
+追加 frontend/src/App.tsx            —— 加 /tarot 路由与导航项
+
+必须满足：
+- 页面必须显示 disclaimer
+- 提交时才校验，错误提示与输入框绑定（照既有页面的无障碍写法）
+- 完成时附 npm -w frontend run typecheck 的输出
+```
+
+**并行期间的通信触发器**（charter 第 4 项在这里生效）：
+
+A 若在实现中发现任何**会改变 B 下一步**的决定，必须立即点名发送。本例最典型的一条：
+
+```text
+[DISCOVERY] tarot-backend → tarot-web
+
+observed: 后端是 serverless，无法在服务端保存「已洗好的牌」。
+  实现方式改为：seed 随响应返回，同一个 seed + 同样的三个数字 = 同一副牌同样的结果。
+
+evidence: backend/src/handlers/history.ts 里已有同类注释 ——
+  serverless 不跨请求持久化。
+
+why_you_need_it: 这直接改变你「再抽一次」按钮的行为 ——
+  是换一副新牌（不传 seed），还是同一副牌换三个数字（回传上次的 seed）。
+  这个选择归你，但你需要知道它存在。
+
+cc: Lead
+```
+
+> ⭐ **这条消息就是本节立论的实例**：一名成员的新证据，在任务结束前改变了另一名成员的下一步。
+> 如果 A 不发这条，B 会做出一个「再抽一次」按钮，然后在联调时才发现行为不是他以为的那样。
+
+---
+
+## H.13 步骤 8 · 独立验收（T5）
+
+**在 `tarot-verify` 会话敲**：
+
+```text
+不要重做实现，也不要为了让检查通过去改产品代码。
+
+按顺序执行并附原始输出：
+1. npm run typecheck
+2. npm run build
+3. npm run test
+4. 起 npm run dev，用具体输入冒烟：
+   - 正常：三个不同的 1–78 数字
+   - 边界：1 和 78
+   - 重复：三个数字里有两个相同
+   - 越界：0 或 79
+   - 非整数：小数、空、字母
+5. 红线核对：结果里有没有 disclaimer（前端页面上也要有）
+6. 契约一致性：backend 与 frontend 两份 contract.ts 的塔罗类型是否逐字段一致
+
+输出：
+- 每项的判定与原始输出
+- 未检查范围
+- 如果有失败项，只报告现象和证据，不要自己修
+```
+
+⚠️ **verifier 报红就照实报红。** 项目 `CLAUDE.md §9.3`：主 agent 不替 agent 背书，不代它改结论。
+
+---
+
+## H.14 步骤 9 · 交付（T6）
+
+**在 Lead 会话敲**：
+
+```text
+汇总交付：
+1. 列出本次新增与修改的全部文件，对照 charter 的所有权表核一遍有没有越界；
+2. 列出 tarot-verify 的验收结论，区分「它报告的」和「我复核过的」；
+3. 按项目 PR 模板开 PR，标题写清功能与影响面；
+4. 不要自合并，等 Rick review。
+
+如果验收有未解决项，写进 PR 描述的「已知问题」，不要隐藏。
+```
+
+> 项目 `CLAUDE.md §5 / §9.3`：改动走 PR、套模板、**不自合并**。
+
+---
+
+## H.15 给同学演示什么（这是交付的目的）
+
+演示 8 分钟，按这个顺序 —— **重点不是塔罗牌，是 Team 怎么协作的**：
+
+| 顺序 | 展示什么 | 说什么 |
+|---|---|---|
+| 1 | 跑 `npm run dev`，打开 `/#/tarot`，输入三个数字抽一次 | 「这是最终交付的功能。**它是四个 agent 协作做出来的，我一行产品代码没写。**」 |
+| 2 | 成员名单（Lead + 3） | 「三个成员，各自独占一块文件。」 |
+| 3 | H.4 的**文件所有权表** | 「写入任务和课堂那道只读题最大的区别就在这里 —— **先划所有权，不是写冲突了再划**。」 |
+| 4 | ⭐ H.11 的 **CONFLICT → DECISION** | 「这是全场最关键的一次协作。后端定的契约，前端说渲染不出来，给了三条具体证据。**注意它不是说『我觉得不好』。**」 |
+| 5 | ⭐ H.12 的 **seed DISCOVERY** | 「后端发现 serverless 存不住洗好的牌，这条消息**改变了前端「再抽一次」按钮的做法**。这就是今天那句立论的实物。」 |
+| 6 | verifier 的验收输出（含未检查范围） | 「实现者说『我跑过了』不算。**这是第三个人独立跑的，而且它写了自己没查什么。**」 |
+| 7 | PR（未合并） | 「Team 不转移最终验收责任 —— 这个 PR 还在等人 review。」 |
+
+**收口一句**：
+
+> 「今天你们要建的 Team 比这个小，任务也只是只读调查。
+> 但**结构完全一样**：划边界 → 建 Team → 验证通信 → 拆任务 → 让证据在成员之间流动 → 独立验收。」
+
+---
+
+## H.16 老师彩排清单（演示前自己连跑一遍）
+
+```text
+□ H.5  新开会话验证 feature flag 生效
+□ H.6  最小 Team 建起来，三样报告都拿到
+□ H.7  ①②③ 全过（③ 必须在 A 会话发）
+□ H.8  tarot-verify 新增成功，A、B 名字没被改动
+□ H.10 T1–T6 建好，依赖生效（T3/T4 在 T2 完成前应显示 blocked）
+□ H.11 A→B 的契约 DISCOVERY 真的到达；B 回了带证据的 CONFLICT；Lead 出了 DECISION
+□ H.12 seed 那条 DISCOVERY 真的发生了（没发生就现场补一条，但要如实说明是补的）
+□ H.13 typecheck / build / test 全绿，冒烟五类输入都跑过
+□ H.14 PR 已开、未合并
+□ 演示环境：npm run dev 能起，/#/tarot 能抽牌
+□ 掐表：H.6 → H.14 全程实际花了 ____ 分钟（演示只讲 8 分钟，别现场跑）
+```
+
+⚠️ **不要在课堂现场跑这整套。** 它是课前做好的**成品**，课堂只演示结果和关键消息。
+现场跑一定超时，而且失败了没有退路。
+
+# 附录 I · 课堂 Lab 完整实例（一个组从头跑到尾）
 
 > 🔒 **老师用，不发学员。** 蓝图 §12.2：答案只在 RUNSHEET 的老师兜底材料中。
+>
+> 与附录 H 的分工：**H 是写入任务**（老师课前做好的塔罗功能，用于演示与交付）；
+> **本节是课堂 Lab 的只读调查题**，学员现场跑的就是它。两者结构一样，纪律不同 ——
+> 只读题不需要文件所有权表，写入任务必须先划（H.4）。
 >
 > 三个用途：
 > 1. **彩排对照** —— 你自己跑的时候，每一步该看到什么；
