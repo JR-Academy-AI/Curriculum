@@ -757,6 +757,9 @@ npm run dev        # backend :3000 + frontend vite 一起起
 - tarot-web：负责 frontend/ 侧全链 —— 契约镜像、API client、占卜页面、路由与导航。
   不碰 backend/。
 
+两名成员都可以在自己会话里按需调用 subagent（例如用 research-agent 取证），
+但不得再创建 teammate —— 增减成员只由我来做。
+
 创建一条共享任务：确认 Team 通信可用。
 让 tarot-backend 认领任务，但先不要开始写任何代码。
 成员必须使用以上固定名字。
@@ -764,7 +767,8 @@ npm run dev        # backend :3000 + frontend vite 一起起
 创建完成后停止，只报告：
 1. 成员名单；
 2. 共享任务及 owner；
-3. 当前权限模式。
+3. 当前权限模式；
+4. 每名成员手上有没有委派（调用 subagent）的能力。
 ```
 
 **逐句为什么**：
@@ -774,9 +778,13 @@ npm run dev        # backend :3000 + frontend vite 一起起
 | `创建一个 Agent Team` | 不明说，工具可能用 subagent 代替，而面板上看不出来 |
 | 两人各自的**目录边界** + `不碰 ...` | 写入任务里，边界不写死就会互相覆盖 |
 | `先不要开始写任何代码` | 这一步只证明 Team 建起来了。不写这句，它会直接开写 |
-| `创建完成后停止，只报告三样` | 骨架里的「停止」。不写，你拿不到可核对的中间状态 |
+| ⭐ `可以调用 subagent，但不得再创建 teammate` | **两个方向都要写死**：不写前半句，成员遇到大活会硬扛在自己 context 里；不写后半句，它可能自己扩编，Lead 就失去了对编制的控制（见 H.12.1） |
+| ⭐ `报告有没有委派能力` | **不假设，先确认**。这个能力不是默认送的 —— 用角色文件建成员时，它的 `tools` 会生效，窄 `tools` 会把委派一起切掉 |
+| `创建完成后停止，只报告四样` | 骨架里的「停止」。不写，你拿不到可核对的中间状态 |
 
-**敲完应该看到**：名单里 Lead 之外有 2 个人，名字一致；一条共享任务，owner 是 tarot-backend；权限模式明确。
+**敲完应该看到**：名单里 Lead 之外有 2 个人，名字一致；一条共享任务，owner 是 tarot-backend；权限模式明确；**两名成员都报告具备委派能力**。
+
+⚠️ 第 4 项报告「没有 / 不确定」→ 别往下走，先按 **H.12.1 的能力自检**验一次。
 
 ---
 
@@ -821,10 +829,18 @@ npm run dev        # backend :3000 + frontend vite 一起起
 - 用具体输入做冒烟：包括边界值和非法输入；
 - 报告未检查范围。
 
-创建后先不要动手。把 tarot-verify 写入 Team charter，并报告新的成员名单。
+tarot-verify 必须具备调用 subagent 的能力 —— 它会并行开 test-agent 与
+codex-test-agent 做双验（见 H.12.1）。它同样不得创建 teammate。
+
+创建后先不要动手。把 tarot-verify 写入 Team charter，并报告：
+1. 新的成员名单；
+2. tarot-verify 有没有委派能力。
 ```
 
 ⚠️ **是「新增」不是把 A 或 B 改成 verifier。** 角色从创建到结束不更名、不换身份。
+
+⚠️ **verifier 的委派能力是硬需求**，不是可选项 —— 项目 `CLAUDE.md §9.2` 要求高风险区双验，
+而双验是靠它开两个 subagent 实现的。这一项没有，H.13 的验收就降级成单验。
 
 ---
 
@@ -840,6 +856,8 @@ npm run dev        # backend :3000 + frontend vite 一起起
 
 ## 2. Members and ownership
 见 H.4 文件所有权表。两份 contract.ts 以后端为准。
+成员可自行调用 subagent 完成取证 / 验收；**不得创建 teammate** —— 增减成员由 Lead 决定。
+subagent 的产出只回给它的父成员，跨边界证据仍由该成员点名转发。
 
 ## 3. Shared evidence contract
 - 每条关键结论必须带：文件:行号 / 命令输出 / 具体输入输出
@@ -1084,6 +1102,36 @@ cc: Lead
              ↓ 每个成员内部各自 hub-and-spoke（L7）
 ```
 
+#### ⚠️ 先确认成员真的有这个能力 —— 不要假设
+
+**委派能力不是默认送的，取决于成员手上有没有那个工具：**
+
+| 你怎么建的成员 | 结果 |
+|---|---|
+| **自然语言直接建**（本例 H.6 的写法） | 通常继承默认工具集，**能**委派 |
+| **用 `.claude/agents/` 里的角色定义建** | ⚠️ 该定义的 `tools` **会生效**（蓝图 §6.4）——<br>如果它只写了 `Read, Grep, Glob`，**委派能力被一起切掉了** |
+
+所以本例做了两件事，**缺一不可**：
+
+1. **H.6 / H.8 的 spawn prompt 里显式写死**：可以调用 subagent，不得创建 teammate；
+2. **建完当场验一次** —— 这和 smoke test 是同一条纪律：**不假设能力，先确认。**
+
+**能力自检**（在 `tarot-backend` 会话敲，20 秒）：
+
+```text
+开一个 subagent，让它只做一件事：
+报告 backend/package.json 里 test 脚本的完整命令。
+完成后把结果告诉我，并说明你是通过 subagent 拿到的还是自己读的。
+```
+
+| 回什么 | 判定 |
+|---|---|
+| 「通过 subagent 拿到：`vitest run`」 | ✅ 有委派能力 |
+| 「我自己读的」/「无法创建 subagent」 | ❌ 没有 —— 回去查它的 `tools`，或改用自然语言重建这名成员 |
+
+> 💡 这一步顺带也是给学员看的：**L7 那句「不假设继承，先做 capability check」在 L8 里要再做一次**，
+> 只是这次检查的对象从「你的子 Agent」变成了「你的队友」。
+
 #### 能做什么，不能做什么
 
 | | |
@@ -1241,7 +1289,8 @@ Team 本身消耗就显著高于单会话，成员再嵌一层会再放大一次
 □ H.10 T1–T6 建好，依赖生效（T3/T4 在 T2 完成前应显示 blocked）
 □ H.11 A→B 的契约 DISCOVERY 真的到达；B 回了带证据的 CONFLICT；Lead 出了 DECISION
 □ H.12 seed 那条 DISCOVERY 真的发生了（没发生就现场补一条，但要如实说明是补的）
-□ H.12.1 成员内部的 subagent 真的能开（research-agent / test-agent 各跑一次）
+□ H.12.1 能力自检：tarot-backend 与 tarot-verify 都能真的开出 subagent
+□ H.12.1 成员内部的 subagent 真的跑得动（research-agent / test-agent 各跑一次）
 □ H.13 typecheck / build / test 全绿，冒烟五类输入都跑过
 □ H.14 PR 已开、未合并
 □ 演示环境：npm run dev 能起，/#/tarot 能抽牌
