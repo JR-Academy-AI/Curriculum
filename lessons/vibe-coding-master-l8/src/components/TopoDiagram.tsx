@@ -1,55 +1,42 @@
 import { motion } from 'framer-motion';
 import { colors, fonts } from './ui';
 
-// 两张通信拓扑图 —— 本节全课的视觉主角。
-// P03 两张同屏对比，P04 / P05 各自放大讲。
-// 内容 SoT：蓝图 §2 对照表 + §9.1 的两张 ASCII 图。
+// 两张通信拓扑 —— SoT：蓝图 v1.0 §11.2
+//
+//   Subagent                      Agent Team
+//            ┌→ A → 回报 ┐            A ↔ B
+//   Lead ────├→ B → 回报 ├→ 汇总       ↘ ↙
+//            └→ C → 回报 ┘             C
+//   成员之间不需要直接连线              ↕
+//                                     Lead
+//                             + shared task list
+//
+// ⚠️ 讲法纪律（§11.2）：不要说「Team 更高级」。
+//    只强调 Team 多了成员间通信和共享协调，因此门槛更高。
 
 const NAVY = '#10162f';
 
 function Node({
-	x, y, w, h, fill, label, sub, textColor = '#fff', delay = 0,
+	x, y, w, h, fill, label, textColor = '#fff', delay = 0,
 }: {
 	x: number; y: number; w: number; h: number; fill: string;
-	label: string; sub?: string; textColor?: string; delay?: number;
+	label: string; textColor?: string; delay?: number;
 }) {
 	return (
 		<motion.g
-			initial={{ opacity: 0, scale: 0.8 }}
+			initial={{ opacity: 0, scale: 0.85 }}
 			animate={{ opacity: 1, scale: 1 }}
-			transition={{ duration: 0.35, delay, ease: [0.16, 1, 0.3, 1] }}
+			transition={{ duration: 0.3, delay, ease: [0.16, 1, 0.3, 1] }}
 			style={{ transformOrigin: `${x + w / 2}px ${y + h / 2}px` }}
 		>
 			<rect x={x + 4} y={y + 4} width={w} height={h} fill="#000" />
 			<rect x={x} y={y} width={w} height={h} fill={fill} stroke="#000" strokeWidth={3} />
 			<text
-				x={x + w / 2} y={sub ? y + h / 2 - 4 : y + h / 2 + 1}
+				x={x + w / 2} y={y + h / 2 + 1}
 				textAnchor="middle" dominantBaseline="middle"
-				fill={textColor} fontFamily={fonts.body} fontSize={15} fontWeight={800}
+				fill={textColor} fontFamily={fonts.body} fontSize={19} fontWeight={800}
 			>{label}</text>
-			{sub && (
-				<text
-					x={x + w / 2} y={y + h / 2 + 15}
-					textAnchor="middle" dominantBaseline="middle"
-					fill={textColor} fontFamily={fonts.mono} fontSize={10.5} opacity={0.85}
-				>{sub}</text>
-			)}
 		</motion.g>
-	);
-}
-
-function Link({
-	d, color: c, dashed, delay = 0, width = 2.5, arrow = true,
-}: { d: string; color: string; dashed?: boolean; delay?: number; width?: number; arrow?: boolean }) {
-	return (
-		<motion.path
-			initial={{ pathLength: 0, opacity: 0 }}
-			animate={{ pathLength: 1, opacity: 1 }}
-			transition={{ duration: 0.5, delay, ease: 'easeOut' }}
-			d={d} fill="none" stroke={c} strokeWidth={width}
-			strokeDasharray={dashed ? '7 5' : undefined}
-			markerEnd={arrow ? `url(#arrow-${c.replace('#', '')})` : undefined}
-		/>
 	);
 }
 
@@ -58,7 +45,7 @@ function Defs({ palette }: { palette: string[] }) {
 		<defs>
 			{palette.map((c) => (
 				<marker
-					key={c} id={`arrow-${c.replace('#', '')}`}
+					key={c} id={`t-arrow-${c.replace('#', '')}`}
 					viewBox="0 0 10 10" refX={9} refY={5}
 					markerWidth={5} markerHeight={5} orient="auto-start-reverse"
 				>
@@ -69,78 +56,91 @@ function Defs({ palette }: { palette: string[] }) {
 	);
 }
 
-/** 结构 A：Hub-and-spoke —— 子 Agent 之间没有任何连线，这是它和 Team 的唯一硬区别 */
-export function TopoSubagent({ height = 300, showCaption = true }: { height?: number; showCaption?: boolean }) {
+function Link({
+	d, color: c, dashed, delay = 0, width = 3, arrow = true, both = false,
+}: { d: string; color: string; dashed?: boolean; delay?: number; width?: number; arrow?: boolean; both?: boolean }) {
+	const id = `url(#t-arrow-${c.replace('#', '')})`;
+	return (
+		<motion.path
+			initial={{ pathLength: 0, opacity: 0 }}
+			animate={{ pathLength: 1, opacity: 1 }}
+			transition={{ duration: 0.4, delay, ease: 'easeOut' }}
+			d={d} fill="none" stroke={c} strokeWidth={width}
+			strokeDasharray={dashed ? '8 6' : undefined}
+			markerEnd={arrow ? id : undefined}
+			markerStart={both ? id : undefined}
+		/>
+	);
+}
+
+/** 左图 · Subagent：成员之间不需要直接连线 */
+export function TopoSubagent({ height = 300 }: { height?: number }) {
 	const spoke = colors.blue;
 	return (
-		<svg viewBox="0 0 580 300" style={{ width: '100%', height, display: 'block' }}>
+		<svg viewBox="0 0 560 300" style={{ width: '100%', height, display: 'block' }}>
 			<Defs palette={[spoke, NAVY]} />
 
-			{/* 你 → 主 Agent */}
-			<Link d="M 74 150 L 118 150" color={NAVY} delay={0.15} />
-			{/* Hub → 三路（出） */}
-			<Link d="M 250 128 C 300 128, 300 46, 366 46" color={spoke} delay={0.35} />
-			<Link d="M 250 150 L 366 150" color={spoke} delay={0.45} />
-			<Link d="M 250 172 C 300 172, 300 254, 366 254" color={spoke} delay={0.55} />
-			{/* 三路 → Hub（回，虚线表示只回结论） */}
-			<Link d="M 508 74 C 545 100, 545 200, 254 190" color={NAVY} dashed delay={0.75} width={2} />
-			<Link d="M 508 178 C 530 200, 400 205, 254 196" color={NAVY} dashed delay={0.85} width={2} />
-			<Link d="M 508 282 C 545 292, 300 240, 254 202" color={NAVY} dashed delay={0.95} width={2} />
+			{/* Hub → 三路 */}
+			<Link d="M 196 128 C 240 128, 240 52, 288 52" color={spoke} delay={0.2} />
+			<Link d="M 196 150 L 288 150" color={spoke} delay={0.28} />
+			<Link d="M 196 172 C 240 172, 240 248, 288 248" color={spoke} delay={0.36} />
 
-			<Node x={20} y={132} w={54} h={36} fill={colors.white} textColor="#000" label="你" delay={0} />
-			<Node x={118} y={118} w={132} h={64} fill={NAVY} label="主 Agent" sub="HUB" delay={0.2} />
-			<Node x={366} y={24} w={142} h={44} fill={colors.white} textColor="#000" label="子 Agent A" delay={0.4} />
-			<Node x={366} y={128} w={142} h={44} fill={colors.white} textColor="#000" label="子 Agent B" delay={0.5} />
-			<Node x={366} y={232} w={142} h={44} fill={colors.white} textColor="#000" label="子 Agent C" delay={0.6} />
+			{/* 三路 → 回报（虚线，只回结论） */}
+			<Link d="M 400 52 C 470 52, 480 150, 490 150" color={NAVY} dashed delay={0.5} width={2.5} />
+			<Link d="M 400 150 L 490 150" color={NAVY} dashed delay={0.56} width={2.5} />
+			<Link d="M 400 248 C 470 248, 480 150, 490 150" color={NAVY} dashed delay={0.62} width={2.5} />
 
-			{showCaption && (
-				<motion.text
-					initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.05 }}
-					x={290} y={296} textAnchor="middle"
-					fill="#555" fontFamily={fonts.body} fontSize={13} fontWeight={600}
-				>子 Agent 之间没有连线 —— 分工、补 context、冲突处理都经过 Hub</motion.text>
-			)}
+			<Node x={60} y={122} w={136} h={56} fill={NAVY} label="Lead / Hub" />
+			<Node x={288} y={30} w={112} h={44} fill={colors.white} textColor="#000" label="A" delay={0.24} />
+			<Node x={288} y={128} w={112} h={44} fill={colors.white} textColor="#000" label="B" delay={0.32} />
+			<Node x={288} y={226} w={112} h={44} fill={colors.white} textColor="#000" label="C" delay={0.4} />
+
+			<motion.text
+				initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.75 }}
+				x={280} y={294} textAnchor="middle"
+				fill="#666" fontFamily={fonts.body} fontSize={18} fontWeight={700}
+			>成员之间不需要直接连线</motion.text>
 		</svg>
 	);
 }
 
-/** 结构 B：Team —— 成员之间互相连线 + 一块共享任务板 */
-export function TopoTeam({ height = 300, showCaption = true }: { height?: number; showCaption?: boolean }) {
+/** 右图 · Agent Team：成员互通 + 共享任务列表 */
+export function TopoTeam({ height = 300 }: { height?: number }) {
 	const mesh = colors.purple;
 	return (
-		<svg viewBox="0 0 580 300" style={{ width: '100%', height, display: 'block' }}>
+		<svg viewBox="0 0 560 300" style={{ width: '100%', height, display: 'block' }}>
 			<Defs palette={[mesh, NAVY, colors.orange]} />
 
-			{/* 你 ↔ Lead */}
-			<Link d="M 74 132 L 112 132" color={NAVY} delay={0.15} />
-			{/* Lead ↔ 三名成员 */}
-			<Link d="M 244 112 C 290 96, 300 52, 336 46" color={NAVY} delay={0.3} />
-			<Link d="M 244 132 L 428 132" color={NAVY} delay={0.4} />
-			<Link d="M 244 152 C 290 168, 300 212, 336 218" color={NAVY} delay={0.5} />
-			{/* 成员之间互通（这三条是 Team 的全部意义） */}
-			<Link d="M 400 68 C 452 84, 470 100, 470 112" color={mesh} delay={0.7} width={3} arrow={false} />
-			<Link d="M 470 154 C 470 172, 452 190, 400 202" color={mesh} delay={0.8} width={3} arrow={false} />
-			<Link d="M 348 68 C 322 110, 322 158, 348 198" color={mesh} delay={0.9} width={3} arrow={false} />
-			{/* 全员 ↔ 共享任务板 */}
-			<Link d="M 178 158 L 178 246" color={colors.orange} dashed delay={1.0} width={2} arrow={false} />
-			<Link d="M 368 68 L 300 246" color={colors.orange} dashed delay={1.05} width={2} arrow={false} />
-			<Link d="M 470 154 L 360 250" color={colors.orange} dashed delay={1.1} width={2} arrow={false} />
-			<Link d="M 368 198 L 330 248" color={colors.orange} dashed delay={1.15} width={2} arrow={false} />
+			{/* 成员互通：A ↔ B，A ↔ C，B ↔ C */}
+			<Link d="M 208 52 L 344 52" color={mesh} delay={0.3} width={4} both />
+			<Link d="M 190 74 L 246 122" color={mesh} delay={0.38} width={4} both />
+			<Link d="M 362 74 L 306 122" color={mesh} delay={0.44} width={4} both />
 
-			<Node x={20} y={114} w={54} h={36} fill={colors.white} textColor="#000" label="你" delay={0} />
-			<Node x={112} y={100} w={132} h={58} fill={NAVY} label="Team Lead" sub="LEAD" delay={0.2} />
-			<Node x={336} y={24} w={128} h={44} fill={colors.white} textColor="#000" label="Teammate A" delay={0.35} />
-			<Node x={428} y={110} w={128} h={44} fill={colors.white} textColor="#000" label="Teammate B" delay={0.45} />
-			<Node x={336} y={196} w={128} h={44} fill={colors.white} textColor="#000" label="Teammate C" delay={0.55} />
-			<Node x={150} y={246} w={210} h={40} fill={colors.orange} label="共享任务板 + 信箱" delay={1.0} />
+			{/* C ↕ Lead */}
+			<Link d="M 276 166 L 276 214" color={NAVY} delay={0.55} width={3} both />
 
-			{showCaption && (
-				<motion.text
-					initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.3 }}
-					x={470} y={272} textAnchor="middle"
-					fill={mesh} fontFamily={fonts.body} fontSize={13} fontWeight={800}
-				>紫线 = 成员互通</motion.text>
-			)}
+			{/* 共享任务列表 */}
+			<Link d="M 150 60 C 90 90, 84 180, 128 236" color={colors.orange} dashed delay={0.7} width={2.5} arrow={false} />
+			<Link d="M 410 60 C 470 90, 476 180, 432 236" color={colors.orange} dashed delay={0.76} width={2.5} arrow={false} />
+
+			<Node x={96} y={30} w={112} h={44} fill={colors.white} textColor="#000" label="A" delay={0.2} />
+			<Node x={344} y={30} w={112} h={44} fill={colors.white} textColor="#000" label="B" delay={0.26} />
+			<Node x={220} y={122} w={112} h={44} fill={colors.white} textColor="#000" label="C" delay={0.32} />
+			<Node x={196} y={214} w={160} h={48} fill={NAVY} label="Lead" delay={0.5} />
+			<Node x={112} y={236} w={0} h={0} fill="none" label="" />
+
+			<motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}>
+				<rect x={60} y={272} width={440} height={26} fill={colors.orange} stroke="#000" strokeWidth={2.5} />
+				<text x={280} y={286} textAnchor="middle" fill="#000" fontFamily={fonts.body} fontSize={17} fontWeight={800}>
+					shared task list
+				</text>
+			</motion.g>
+
+			<motion.text
+				initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.85 }}
+				x={280} y={196} textAnchor="middle"
+				fill={mesh} fontFamily={fonts.body} fontSize={18} fontWeight={800}
+			>紫线 = 成员直接互发消息</motion.text>
 		</svg>
 	);
 }
