@@ -1,0 +1,10 @@
+﻿{
+    "organization":  "Airbotix-AI",
+    "repository":  "plan",
+    "remote":  "https://github.com/Airbotix-AI/plan.git",
+    "branch":  "main",
+    "commit":  "721efda724eb4ed8ece280e2fa9f32ed6bb9b14b",
+    "tree":  "9f8b8411d7e36e05cc9ad943d9b9f5b5672eb4e4",
+    "downloaded_at":  "2026-07-23T15:32:57.9074382+08:00",
+    "note":  "Downloaded from official GitHub raw endpoints because local Git HTTPS transport was unavailable. This directory is a verified source snapshot without .git history."
+}

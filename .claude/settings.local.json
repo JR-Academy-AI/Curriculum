@@ -15,7 +15,13 @@
       "Bash(git -C curriculum rev-parse HEAD)",
       "Bash(echo \"curriculum HEAD:        $\\(git -C curriculum rev-parse HEAD\\)\")",
       "Bash(git ls-tree *)",
-      "Bash(echo \"curriculum recorded ptr: $\\(git ls-tree HEAD curriculum)"
+      "Bash(echo \"curriculum recorded ptr: $\\(git ls-tree HEAD curriculum)",
+      "Bash(git log *)",
+      "Read(//d/桌面/**)",
+      "Read(//c/Users/Administrator/.claude/**)",
+      "Bash(cd \"C:/Users/Administrator/.claude/projects/C--Users-Administrator-Desktop-Curriculum-jr-omni\" && rg -io \".{200}kerry.{200}\" fd4b818b-441f-4510-b1f5-c0f75c7bec71.jsonl | head -20)",
+      "Bash(gh repo *)",
+      "Bash(git fetch *)"
     ]
   },
   "enabledMcpjsonServers": [

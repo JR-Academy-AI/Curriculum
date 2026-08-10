@@ -1,0 +1,278 @@
+import { Navigate, createBrowserRouter } from 'react-router-dom';
+
+import { ProtectedRoute } from '@/auth/ProtectedRoute';
+import { SHOW_LESSONS_CATALOG } from '@/lib/features';
+import { LearnLayout } from './LearnLayout';
+import { PortalLayout } from './PortalLayout';
+import { TeacherLayout } from './TeacherLayout';
+
+import { NotFoundPage } from '@/pages/NotFoundPage';
+import { RootPage } from '@/pages/RootPage';
+
+// The Phaser game studio. `/learn/playground/:projectId` (LearnPlaygroundPage)
+// is the authed kid entry the Creative Code Studio card opens; `/learn/playground/new`
+// drives the create/landing flow. Phase 1 runs on the local scaffold (no backend
+// `game` kind yet — see LearnPlaygroundPage).
+import { LearnPlaygroundPage } from '@/pages/learn/playground/LearnPlaygroundPage';
+// DEV-only engine sandbox (2D Phaser / 3D three.js) — verification harness, gated below.
+import { EngineSandboxDevPage } from '@/pages/learn/playground/EngineSandboxDevPage';
+
+// Portal pages (parent surface — parent-portal-prd.md §2)
+import { ApprovalsPage } from '@/pages/portal/ApprovalsPage';
+import { AuditPage } from '@/pages/portal/AuditPage';
+import { AuditProjectPage } from '@/pages/portal/AuditProjectPage';
+import { BillingPage } from '@/pages/portal/BillingPage';
+import { ClassCheckoutPage } from '@/pages/portal/ClassCheckoutPage';
+import { AcademyCheckoutPage } from '@/pages/portal/AcademyCheckoutPage';
+import { AcademyOrderPage } from '@/pages/portal/AcademyOrderPage';
+import { AcademyPage } from '@/pages/portal/AcademyPage';
+import { CoursesPage } from '@/pages/portal/CoursesPage';
+import { DashboardPage } from '@/pages/portal/DashboardPage';
+import { FindClassesPage } from '@/pages/portal/FindClassesPage';
+import { GuidesPage } from '@/pages/portal/guides/GuidesPage';
+import { FamilyDetailPage } from '@/pages/portal/FamilyDetailPage';
+import { FamilyListPage } from '@/pages/portal/FamilyListPage';
+import { KidGrowthPage } from '@/pages/portal/KidGrowthPage';
+import { KidImagesPage } from '@/pages/portal/KidImagesPage';
+import { FamilyNewPage } from '@/pages/portal/FamilyNewPage';
+import { LoginPage as PortalLoginPage } from '@/pages/portal/LoginPage';
+import { RegisterPage } from '@/pages/portal/RegisterPage';
+import { SettingsPage } from '@/pages/portal/SettingsPage';
+import { TutoringPage } from '@/pages/portal/TutoringPage';
+import { TeacherDetailPage } from '@/pages/portal/teachers/TeacherDetailPage';
+import { TeachersPage } from '@/pages/portal/teachers/TeachersPage';
+import { VerifyOtpPage } from '@/pages/portal/VerifyOtpPage';
+import { WalletPage } from '@/pages/portal/WalletPage';
+import { WalletTopupPage } from '@/pages/portal/WalletTopupPage';
+import { WalletAutoTopupPage } from '@/pages/portal/WalletAutoTopupPage';
+import { UsagePage } from '@/pages/portal/UsagePage';
+import { KidUsagePage } from '@/pages/portal/KidUsagePage';
+
+// Learn pages (kid surface — airbotix-app-learn-prd.md)
+import { ClassCodePage } from '@/pages/learn/ClassCodePage';
+import { HomePage as LearnHomePage } from '@/pages/learn/HomePage';
+import { LoginPage as LearnLoginPage } from '@/pages/learn/LoginPage';
+import { LessonsCatalogPage } from '@/pages/learn/LessonsCatalogPage';
+import { PackLessonsPage } from '@/pages/learn/PackLessonsPage';
+import { ProfilePage as LearnProfilePage } from '@/pages/learn/ProfilePage';
+import { ProjectDetailPage } from '@/pages/learn/ProjectDetailPage';
+import { ProjectNewPage } from '@/pages/learn/ProjectNewPage';
+import { ProjectsListPage } from '@/pages/learn/ProjectsListPage';
+import { CreateHubPage } from '@/pages/learn/create/CreateHubPage';
+import { CodeHubPage } from '@/pages/learn/code/CodeHubPage';
+import { BlocksHubPage } from '@/pages/learn/blocks/BlocksHubPage';
+import { BlocksStudioPage } from '@/pages/learn/blocks/BlocksStudioPage';
+import { CodeStudioPage } from '@/pages/learn/code/CodeStudioPage';
+import { CodeRunPage } from '@/pages/learn/code/CodeRunPage';
+import { ClassroomListPage } from '@/pages/learn/classroom/ClassroomListPage';
+import { ClassHubPage } from '@/pages/learn/classroom/ClassHubPage';
+import { ClassGamesWallPage } from '@/pages/learn/classroom/ClassGamesWallPage';
+import { ClassPostPage } from '@/pages/learn/classroom/ClassPostPage';
+import { WorkspacePage } from '@/pages/learn/workspace/WorkspacePage';
+import { MusicStudioPage } from '@/pages/learn/music/MusicStudioPage';
+import { AcademyPracticePage } from '@/pages/learn/academy/AcademyPracticePage';
+import { AcademyProductPage } from '@/pages/learn/academy/AcademyProductPage';
+import { MyExamPrepPage } from '@/pages/learn/academy/MyExamPrepPage';
+// Teacher class-session surface (learn-game-studio-prd §17.12 J12). Teacher is a
+// `user` principal (role=teacher); the full console lives in a sibling repo —
+// this is the in-app class dashboard + live view + assessment FE.
+import { ClassDashboardPage } from '@/pages/teacher/ClassDashboardPage';
+import { LiveViewPage } from '@/pages/teacher/LiveViewPage';
+import { TeacherProjectLivePage } from '@/pages/teacher/TeacherProjectLivePage';
+import { TeacherPrepStudioPage } from '@/pages/teacher/TeacherPrepStudioPage';
+import { AssessmentPage } from '@/pages/teacher/AssessmentPage';
+import { ArtStudioPage } from '@/pages/learn/create/art/ArtStudioPage';
+import { VoiceBoothPage } from '@/pages/learn/create/VoiceBoothPage';
+import { VideoStudioPage } from '@/pages/learn/create/VideoStudioPage';
+
+// PUBLIC, no-auth play host for an external share-link (learn-game-studio-prd
+// §17.8 J8 / D-GAME10). Renders ONLY the bare game canvas (no editor/chat/console/
+// Game-Runner chrome), no auth token, no LLM — the opaque-origin sandbox only.
+import { PublicPlayPage } from '@/pages/play/PublicPlayPage';
+
+// PUBLIC, no-auth "Try it" demos (try-demo-mode-prd.md §2 D-DEMO-01). They render
+// the REAL studios wrapped in the demo provider (in-memory state, scripted AI,
+// tour overlay) — like /play/:shareId, deliberately NOT under <ProtectedRoute>.
+import { TryBlocksPage } from '@/pages/try/TryBlocksPage';
+import { TryPlaygroundPage } from '@/pages/try/TryPlaygroundPage';
+import { JourneyToWestC1PreviewPage } from '@/pages/experiments/JourneyToWestC1PreviewPage';
+
+export const router = createBrowserRouter([
+  // Root redirect based on principal kind
+  { path: '/', element: <RootPage /> },
+
+  // PUBLIC external share-link play route — NO auth, NO layout, NO studio chrome.
+  // A logged-out visitor (e.g. grandma) opens /play/:shareId and plays the kid's
+  // frozen, read-only game snapshot. Deliberately NOT under any <ProtectedRoute>.
+  { path: '/play/:shareId', element: <PublicPlayPage /> },
+
+  // PUBLIC no-signup demo experiences (try-demo-mode-prd.md §1 T1/T2) — the
+  // marketing site's "Try it free" entry points. No token, no redirect.
+  { path: '/try/playground', element: <TryPlaygroundPage /> },
+  { path: '/try/blocks', element: <TryBlocksPage /> },
+
+  // DEV-only engine sandbox — verify the real 2D/3D runtime in a browser. Excluded
+  // from the route table in production builds (learn-game-studio-3d-prd.md M3D-2).
+  ...(import.meta.env.DEV
+    ? [
+        { path: '/playground-sandbox', element: <EngineSandboxDevPage /> },
+        {
+          path: '/experiments/story-blocks/journey-to-the-west/c1',
+          element: <JourneyToWestC1PreviewPage />,
+        },
+      ]
+    : []),
+
+  // Portal — parent surface
+  { path: '/portal/login', element: <PortalLoginPage /> },
+  { path: '/portal/verify-otp', element: <VerifyOtpPage /> },
+  { path: '/portal/register', element: <RegisterPage /> },
+  {
+    path: '/portal',
+    element: (
+      <ProtectedRoute kind="user">
+        <PortalLayout />
+      </ProtectedRoute>
+    ),
+    children: [
+      // Dashboard is the default landing after login (QPCD-1 reversed 2026-07-20);
+      // Find a class lives at /portal/classes. /portal/dashboard redirects for old links.
+      { index: true, element: <DashboardPage /> },
+      { path: 'dashboard', element: <Navigate to="/portal" replace /> },
+      { path: 'classes', element: <FindClassesPage /> },
+      { path: 'courses', element: <CoursesPage /> },
+      { path: 'teachers', element: <TeachersPage /> },
+      { path: 'teachers/:slug', element: <TeacherDetailPage /> },
+      { path: 'academy', element: <AcademyPage /> },
+      { path: 'academy/checkout/:sku', element: <AcademyCheckoutPage /> },
+      { path: 'academy/orders/:intentId', element: <AcademyOrderPage /> },
+      // Pay-now seat checkout — deep-link target for marketing + Portal Courses
+      // (class-seat-checkout-prd.md D-CSC-8).
+      { path: 'checkout/class/:classId', element: <ClassCheckoutPage /> },
+      { path: 'family', element: <FamilyListPage /> },
+      { path: 'family/new', element: <FamilyNewPage /> },
+      { path: 'family/:kidId', element: <KidGrowthPage /> },
+      // Art Studio picture gallery — parent oversight (image-studio-prd.md D-IS-5).
+      { path: 'family/:kidId/images', element: <KidImagesPage /> },
+      { path: 'family/:kidId/settings', element: <FamilyDetailPage /> },
+      { path: 'wallet', element: <WalletPage /> },
+      { path: 'wallet/topup', element: <WalletTopupPage /> },
+      { path: 'wallet/auto-topup', element: <WalletAutoTopupPage /> },
+      { path: 'tutoring', element: <TutoringPage /> },
+      // Family Guides catalogue (parent-portal-family-guides-prd.md §5.1)
+      { path: 'guides', element: <GuidesPage /> },
+      { path: 'usage', element: <UsagePage /> },
+      { path: 'usage/:kidId', element: <KidUsagePage /> },
+      { path: 'approvals', element: <ApprovalsPage /> },
+      { path: 'audit', element: <AuditPage /> },
+      { path: 'audit/project/:id', element: <AuditProjectPage /> },
+      { path: 'settings', element: <SettingsPage /> },
+      { path: 'billing', element: <BillingPage /> },
+      { path: '*', element: <NotFoundPage /> },
+    ],
+  },
+
+  // Teacher — class-session surface (kind="user", role=teacher). Class dashboard
+  // + per-kid live read-only view + assessment (learn-game-studio-prd §17.12 J12).
+  {
+    path: '/teacher',
+    element: (
+      <ProtectedRoute kind="user">
+        <TeacherLayout />
+      </ProtectedRoute>
+    ),
+    children: [
+      { path: 'classes/:classId', element: <ClassDashboardPage /> },
+      { path: 'classes/:classId/kids/:kidId', element: <LiveViewPage /> },
+      { path: 'classes/:classId/kids/:kidId/assessment', element: <AssessmentPage /> },
+      // Teacher read-only LIVE project viewer (teacher-live-project-view-prd D-LV-1).
+      { path: 'projects/:projectId/live', element: <TeacherProjectLivePage /> },
+      // Teacher EDITABLE prep-project studio (teacher-prep-projects Stage 2). Mounts
+      // the real studios editable for the OWNING teacher; deep-linked from
+      // teacher-console (Stage 3). Backend (Stage 1) authorizes the prep owner.
+      { path: 'prep/:projectId', element: <TeacherPrepStudioPage /> },
+      { path: '*', element: <NotFoundPage /> },
+    ],
+  },
+
+  // Learn — kid surface
+  { path: '/learn/login', element: <LearnLoginPage /> },
+  { path: '/learn/class-code', element: <ClassCodePage /> },
+  {
+    path: '/learn',
+    element: (
+      <ProtectedRoute kind="kid">
+        <LearnLayout />
+      </ProtectedRoute>
+    ),
+    children: [
+      { index: true, element: <LearnHomePage /> },
+      { path: 'projects', element: <ProjectsListPage /> },
+      { path: 'projects/new', element: <ProjectNewPage /> },
+      { path: 'projects/:id', element: <ProjectDetailPage /> },
+      // Internal route id stays `/learn/missions` (D-LP-2); the catalog & detail
+      // pages render the pack's Lessons (课节) → each Lesson's Mission tasks.
+      // While the catalog is hidden (features.ts SHOW_LESSONS_CATALOG) the
+      // routes redirect home so old links/bookmarks land somewhere sensible.
+      ...(SHOW_LESSONS_CATALOG
+        ? [
+            { path: 'missions', element: <LessonsCatalogPage /> },
+            { path: 'missions/:id', element: <PackLessonsPage /> },
+          ]
+        : [
+            { path: 'missions', element: <Navigate to="/learn" replace /> },
+            { path: 'missions/:id', element: <Navigate to="/learn" replace /> },
+          ]),
+      // Legacy alias: the class wall is `/learn/classroom` (ClassroomListPage).
+      // The old `/learn/wall` was a "Coming soon" placeholder — redirect it.
+      { path: 'wall', element: <Navigate to="/learn/classroom" replace /> },
+      { path: 'classroom', element: <ClassroomListPage /> },
+      { path: 'classroom/:classId', element: <ClassHubPage /> },
+      { path: 'classroom/:classId/games', element: <ClassGamesWallPage /> },
+      { path: 'classroom/:classId/post/:projectId', element: <ClassPostPage /> },
+      { path: 'profile', element: <LearnProfilePage /> },
+      { path: 'create', element: <CreateHubPage /> },
+      // Image / Voice / Video are PAUSED (createTools.ts `comingSoon`, learn PRD
+      // v0.7): every visible entry (Create hub, class sheet, workspace picker)
+      // hides them, but the routes stay registered so deep links and the harness
+      // wallet journeys (kid-create-image, wallet-pause) keep working.
+      { path: 'create/image', element: <ArtStudioPage /> },
+      // Music Maker is RETIRED — the Music Stage (studio=music in the Workspace)
+      // is the single music surface (music-stage-prd §2). Kept as a redirect so
+      // old links, bookmarks and class "create for class" rows still land somewhere.
+      { path: 'create/music', element: <Navigate to="/learn/music" replace /> },
+      { path: 'create/voice', element: <VoiceBoothPage /> },
+      { path: 'create/video', element: <VideoStudioPage /> },
+      { path: 'create/code', element: <CodeHubPage /> },
+      // Blocks Studio (junior block coder, learn-blocks-studio-prd.md §2)
+      { path: 'create/blocks', element: <BlocksHubPage /> },
+      { path: 'blocks/:projectId', element: <BlocksStudioPage /> },
+      { path: 'code/:projectId', element: <CodeStudioPage /> },
+      { path: 'code/:projectId/run', element: <CodeRunPage /> },
+      // Game studio (Phaser). A /learn child so it keeps the Learn top nav; full
+      // -bleed via FLUID_ROUTES in LearnLayout. The Creative Code Studio card routes here.
+      // Phase 1: local Phaser scaffold (no backend game kind yet). This authed
+      // route is the only entry — `/learn/playground/:projectId` opens a game and
+      // `/learn/playground/new` drives the create/landing flow. (Dev/e2e testing
+      // uses a route-mocked authed harness, not a separate no-auth route.)
+      { path: 'playground/:projectId', element: <LearnPlaygroundPage /> },
+      // Music Stage: its OWN immersive surface (music-stage-prd D-MS7). Wedged
+      // inside the Workspace's chat shell it got a letterboxed strip while a
+      // session sidebar and a chat transcript took the screen — wrong shell for a
+      // band. `/learn/music` opens (or reuses) the session and redirects to the
+      // session URL so a refresh returns to the same song.
+      { path: 'music', element: <MusicStudioPage /> },
+      { path: 'music/:sessionId', element: <MusicStudioPage /> },
+      // Academy products are fixed exam/year/subject scopes. The old route now
+      // migrates into the kid's entitlement-only product library.
+      { path: 'academy', element: <Navigate to="/learn/exams" replace /> },
+      { path: 'exams', element: <MyExamPrepPage /> },
+      { path: 'exams/:productSlug', element: <AcademyProductPage /> },
+      { path: 'exams/:productSlug/practice', element: <AcademyPracticePage /> },
+      { path: 'workspace', element: <WorkspacePage /> },
+      { path: '*', element: <NotFoundPage /> },
+    ],
+  },
+
+  { path: '*', element: <NotFoundPage /> },
+]);

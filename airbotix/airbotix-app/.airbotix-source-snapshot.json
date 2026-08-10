@@ -1,0 +1,10 @@
+﻿{
+    "organization":  "Airbotix-AI",
+    "repository":  "airbotix-app",
+    "remote":  "https://github.com/Airbotix-AI/airbotix-app.git",
+    "branch":  "main",
+    "commit":  "3222341f2fa99092ee840600bc51d121e57d7165",
+    "tree":  "27092a277d8e621ddc57b97b6606f5412900848c",
+    "downloaded_at":  "2026-07-23T15:31:43.8921712+08:00",
+    "note":  "Downloaded from official GitHub raw endpoints because local Git HTTPS transport was unavailable. This directory is a verified source snapshot without .git history."
+}
