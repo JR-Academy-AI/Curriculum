@@ -23,6 +23,7 @@ interface PoolTeacher {
 // 本期正在带课的导师
 const teachers: Teacher[] = [
 	{
+		// ⚠️ 公司保密 —— 对外只写「头部 AI 公司」，不要填具体公司名
 		initials: 'XM', name: 'Xiaoxiao Ma', title: 'Senior Applied Scientist', company: '头部 AI 公司',
 		companyColor: '#64748b', accentColor: colors.p8,
 		bio: 'IT 领域 8+ 年 · 当前在头部公司做 LLM / GenAI research · PhD 期间发表 Core Ranked A* 顶会/顶刊 9 篇，其中 CCF-A 类 6 篇',
@@ -36,8 +37,10 @@ const teachers: Teacher[] = [
 		companyColor: colors.red, accentColor: colors.p7,
 	},
 	{
+		// 曾用署名 Jason Li（Future Secure AI）—— 同一人，现行署名统一用 Tianyi Li @ V2 AI
 		initials: 'TL', name: 'Tianyi Li', title: 'Lead AI Engineer', company: 'V2 AI',
 		companyColor: '#111827', accentColor: colors.p1,
+		bio: '4 年参与 15+ 商业 GenAI 项目 · 精通后端/云原生/DevOps · LangChainJS · Prompt Engineering · Tool Calling · RAG · 多模态',
 	},
 	{
 		initials: 'HZ', name: 'Huansong（Winston） Zeng', title: 'Senior Software Engineer', company: 'Canva',
