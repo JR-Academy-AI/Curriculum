@@ -11,7 +11,8 @@
 | 课程 | AI 一人创业营（`ai-solo-founder-bootcamp`） | 课程目录 |
 | 期数 | **Cohort 01（首期）** | — |
 | 开营日 | **2026-08-02（周日）** | `jr-omni:decisions/2026-07-07-opc-bootcamp-launch-date-aug2.md`（Lightman 拍板） |
-| 结构 | 4 个 Phase / W0–W11 / 60 lessons | `../public/outline.json` |
+| 结构 | **4 个 Phase / W0 Pre-work + W1–W15 / 50 节 lesson** | 生产导出大纲 → [`SYLLABUS.md`](./SYLLABUS.md) |
+| 结营 | **2026-11-01（W15 · 三城联合 Demo Day）** | 同上 |
 | 上课时间 | **每周日 14:00–17:00（悉尼时间）**，每周一次 | Ada 2026-08-13 确认 |
 | 交付形态 | **线上 + 三城线下混合**（悉尼 / 墨尔本 / 布里斯班） | `TEACHERS.md` |
 | 报名人数 | **21 人**（表单已提交，另有 1 条测试数据已剔除） | 报名表单，聚合见 [`COHORT_PROFILE.md`](./COHORT_PROFILE.md) |
@@ -25,47 +26,53 @@
 | 墨尔本 | Level 6, 350 Queen St, Melbourne, VIC 3000 |
 | 布里斯班 | Level 10b, 144 Edward Street, Brisbane CBD (Headquarter) |
 
-### Phase 结构（取自 `outline.json`，勿在此改）
+### Phase 结构（真相源：生产导出大纲 → [`SYLLABUS.md`](./SYLLABUS.md)）
 
-| Phase | 名称 | 周次 | lessons |
-|---|---|---|---|
-| 1 | Build & Sell | W0–W3 | 25 |
-| 2 | Marketing Campaign · 线上 + 线下 · AI 串起来 | W4–W6 | 15 |
-| 3 | Australia Operations | W7–W9 | 11 |
-| 4 | Scale & Demo | W10–W11 | 9 |
+| Phase | 名称 | 周次 |
+|---|---|---|
+| 1 | **AI Enable Business** | W1–W7 |
+| 2 | **Go To Market** 🎯 全部为「用 AI 做 marketing」 | W8–W11 |
+| 3 | **Australia Operations** | W12–W13 |
+| 4 | **Founder Club** | W14–W15 |
+
+共 **15 周（W0 Pre-work + W1–W15）· 50 节 lesson**（正课 15 × 180min + 自学/Lab 35 节）。
+
+> 🚩 **`../public/outline.json` 仍是旧的 11 周 / 60 lessons / 四个不同 Phase 名，与实际严重不符**——它是对外课程页与生产后端的数据源，**必须尽快对齐**。详见 [`SYLLABUS.md`](./SYLLABUS.md) 文末「口径冲突 ①」。
 
 ---
 
 ## 二、排期与状态
 
-> 每周日 14:00–17:00（悉尼时间），依次类推。W5 起授课老师**尚未通知**。
+> 每周日 14:00–17:00（悉尼时间）。日期与授课老师取自生产导出大纲（2026-08-13）。
 
-| 周次 | 日期（周日 14:00–17:00 悉尼时间） | 状态 | 课件 | 授课老师 | 运营留痕 |
+| 周次 | 日期 | 主题 | 状态 | 授课老师 | 运营留痕 |
 |---|---|---|---|---|---|
-| **W1** | 2026-08-02 | ✅ 已上 | [`lessons/ai-solo-founder-w1/`](../../lessons/ai-solo-founder-w1/) | 待补 | [`../W1_RUNSHEET.md`](../W1_RUNSHEET.md) |
-| **W2** | 2026-08-09 | ✅ 已上 · **🔴 出过教学问题** | [`lessons/ai-solo-founder-w2/`](../../lessons/ai-solo-founder-w2/) | 待补 | 见下方 §3.2 |
-| **W3** | 2026-08-16 | ⬜ 未上 | ⚠️ 待拿（**T-7 已过期**） | **Lightman** | — |
-| **W4** | 2026-08-23 | ⬜ 未上 | ⚠️ 待拿 | **Stan** | — |
-| W5 | 2026-08-30 | ⬜ 未上 | 待补 | ⚠️ **未通知** | — |
-| W6 | 2026-09-06 | ⬜ 未上 | 待补 | ⚠️ 未通知 | — |
-| W7 | 2026-09-13 | ⬜ 未上 | 待补 | ⚠️ 未通知 | — |
-| **W8** | 2026-09-20 | ⬜ 未上 | 待补 | ⚠️ 未通知 | **🎯 AI 做 marketing** |
-| **W9** | 2026-09-27 | ⬜ 未上 | 待补 | ⚠️ 未通知 | **🎯 AI 做 marketing** |
-| **W10** | 2026-10-04 | ⬜ 未上 | 待补 | ⚠️ 未通知 | **🎯 AI 做 marketing** |
-| **W11** | 2026-10-11 | ⬜ 未上 · 结营 Demo Day | 待补 | ⚠️ 未通知 | **🎯 AI 做 marketing** |
+| **W1** | 08-02 | 搭起你的 CEO AI OS | ✅ 已上 | **Lightman Wang** | [`../W1_RUNSHEET.md`](../W1_RUNSHEET.md) · [`FEEDBACK.md`](./FEEDBACK.md) |
+| **W2** | 08-09 | 你的 AI 员工上岗 | ✅ 已上 · **🔴 出过教学问题** | **Stan Luo** | 见 §3.2 |
+| **W4** | **08-16** | 做出能卖的东西 | ⬜ **下一节** · ⚠️ T-7 已过期 | ⚠️ **未指定** | — |
+| **W3** | **08-23** | 这是不是一门好生意 ⭐麦肯锡 | ⬜ 未上 | **Stan Luo** | — |
+| W5 | 08-30 | 立起你的品牌门面 | ⬜ 未上 | ⚠️ 未指定 | — |
+| W6 | 09-06 | 别让项目烂尾 ⭐微软 | ⬜ 未上 | **Ray Ma** | — |
+| **W7** | 09-13 | **收到第一笔钱**（毕业硬指标 #1） | ⬜ 未上 | ⚠️ 未指定 | — |
+| **W8** | 09-20 | AI 内容工厂 | ⬜ 未上 | ⚠️ 未指定 | 🎯 marketing |
+| **W9** | 09-27 | 主动敲开客户的门 Outbound | ⬜ 未上 | ⚠️ 未指定 | 🎯 marketing |
+| **W10** | 10-04 | 让人和 AI 都搜到你 SEO & GEO | ⬜ 未上 | ⚠️ 未指定 | 🎯 marketing |
+| **W11** | 10-11 | 用户增长 Growth Hacking | ⬜ 未上 | ⚠️ 未指定 | 🎯 marketing |
+| W12 | **10-18** | 让生意自己运转 Autopilot | ⬜ 未上 | ⚠️ 未指定 | — |
+| W13 | **10-18** ⚠️ | 把钱从税务局拿回来 ⭐CPA/Grant | ⬜ 未上 | ⚠️ 嘉宾未指名 | ⚠️ 与 W12 同日 |
+| W14 | 10-25 | 把生意讲成故事 Pitch & BP ⭐麦肯锡 | ⬜ 未上 | **Stan Luo** | — |
+| **W15** | **11-01** | **登台 Demo Day · 入会 Founder Club** | ⬜ 未上 · 结营 | ⚠️ 未指定 | — |
 
-> 🚩 **W3 距今不足 7 天，SOP 的 T-7「拿完整内容」窗口已过。** W3（Lightman）与 W4（Stan）的内容与 slide 需尽快拿到并走完判断闸。W5 起老师未定，**每晚定一周，T-7 就少一周**。
+### 🚩 排期上四个必须尽快处理的问题
 
-> 🎯 **W8–W11 全部是「用 AI 做 marketing」**（Ada 2026-08-13 确认）。**这正好回应了学员反馈里那条「可能有一些东西大家可以一起上，比如关于用 AI 来做 marketing 的」**——不分技术/非技术背景，是全班共同需求。**建议现在就在群里预告 W8–W11 的内容**，缓解「课程对我不对口」的焦虑（见 [`FEEDBACK.md`](./FEEDBACK.md) B2）。
+1. **下一节是 W4（08-16），不是 W3** —— 生产大纲里 **W4 排在 W3 之前**。距今不足 7 天，**T-7 窗口已过**，且**老师字段为空**。需立刻确认由谁上、拿到内容。
+2. **授课老师大面积未指定** —— W4、W5、W7、W8、W9、W10、W11、W12、W15 老师字段全空；W13 只写「⭐嘉宾 持牌 CPA / Grant consultant」未指名。**不知道找谁要内容 = T-7 沟通闸无法执行。**
+3. **老师口径与口述不符** —— 生产大纲 W3 = Stan Luo；Ada 8/13 口述「W3 老师 Lightman、W4 老师 Stan」。**以哪个为准需确认。**
+4. **W12 与 W13 同为 10-18** —— 两节 180 分钟正课同一天？需确认是连上还是日期录错。
 
-> ⚠️ **实际排期与 `outline.json` 的 Phase 划分对不上，需要有人拍板以哪个为准**：
-> | | outline.json | 实际（Ada 确认） |
-> |---|---|---|
-> | W4–W6 | Phase 2 · Marketing Campaign | — |
-> | W7–W9 | Phase 3 · Australia Operations | W8–W9 为 AI marketing |
-> | W10–W11 | Phase 4 · Scale & Demo | AI marketing |
->
-> **outline.json 是对外课程页与生产后端的数据源**，两者长期不一致会让学员看到的大纲和实际上的课对不上。要么改 outline，要么确认实际排期回到 outline 口径。
+> 🎯 **W8–W11 全部是「用 AI 做 marketing」**（Phase 2 Go To Market：内容工厂 / Outbound / SEO&GEO / 增长）。**这正好回应学员反馈里那条「希望有大家可以一起上的、用 AI 做 marketing 的内容」——建议现在就在群里预告**，缓解「课程对我不对口」的焦虑（见 [`FEEDBACK.md`](./FEEDBACK.md) B2、A14）。
+
+> 🔴 **W7（09-13）是毕业硬指标 #1「$1 真实付费」的落点**，不是结营周。按 [`COHORT_PROFILE.md`](./COHORT_PROFILE.md)，**15/21 学员拿不出付费证据**——这是本期最大风险点，**要在 W7 之前就介入，别等到那一周才发现**。
 
 **每周开课前必做**（照 `jr-omni:mentor-archives/jr-lecturers/TEACHING_QUALITY_SOP.md`）：T-7 拿完整内容 → T-5 约老师过思路 → T-3 判断内容（切题 / 有无互动 / PPT 质量）→ T-1 发 slide + 实操步骤清单 + 一句话当天目标。
 
@@ -155,7 +162,12 @@
 | **A12** | **明确群内答疑 SLA**（不承诺即时，承诺 24h 内）并公告；补 business 侧答疑人或固定 Office Hour —— 现有 Tutor 均为技术背景，接不住 business 提问 | 🟠 P1 | ⬜ |
 | **A13** | **评估「两个 stream」分轨方案**（business owner / IT 背景分前段、后段融合）—— 学员提出，产品结构级决策 | 🟠 P1 | ⬜ **Lightman 已看过全部反馈**（Ada 2026-08-13），待拍板 |
 | **A14** | **群内预告 W8–W11 全是「用 AI 做 marketing」** —— 直接回应学员「希望有大家能一起上的内容」，缓解「课程对我不对口」的焦虑 | 🟠 P1 | ⬜ **成本极低，可与 A9 公告一起发** |
-| **A15** | **对齐实际排期与 `outline.json` 的 Phase 划分**（W8–W11 实际为 AI marketing，outline 写的是 Australia Operations / Scale & Demo）—— outline 是对外课程页与生产后端的数据源，长期不一致会让学员看到的大纲对不上实际 | 🟠 P1 | ⬜ 需拍板以哪个为准 |
+| **A15** | 🔴 **把 `../public/outline.json` 对齐到 15 周版本** —— 现为 11 周 / 60 lessons / 四个不同 Phase 名，与实际在跑的 15 周 / 50 lessons 严重不符。outline.json 是**对外课程页与生产后端的数据源**，学员看到的大纲和实际上的课对不上。改完须跑 `python3 lineage/build_lineage.py` | 🔴 **P0** | ⬜ 详见 [`SYLLABUS.md`](./SYLLABUS.md) 冲突 ① |
+| **A16** | **确认下一节课（W4 · 08-16）由谁上并拿到内容** —— 生产大纲该周老师字段为空，且 T-7 已过期 | 🔴 **P0** | ⬜ **最急** |
+| **A17** | **补齐 9 个未指定授课老师的周次**（W4/W5/W7/W8/W9/W10/W11/W12/W15 + W13 嘉宾未指名）—— 不知道找谁要内容，T-7 闸无法执行 | 🔴 P0 | ⬜ |
+| **A18** | **确认 W3/W4 老师口径**：生产大纲 W3=Stan Luo，Ada 口述「W3 Lightman / W4 Stan」 | 🟠 P1 | ⬜ |
+| **A19** | **确认 W12 与 W13 同为 10-18** 是连上两节还是日期录错 | 🟠 P1 | ⬜ |
+| **A20** | **W7（09-13）$1 真实付费毕业硬指标前置介入** —— 15/21 学员无付费证据，需在 W7 前把「找到第一个付费用户」当独立里程碑追踪 | 🔴 P0 | ⬜ |
 | **A6** | 补学员人数 / 分组的**聚合数字**到第一节 | 🟡 P2 | ⬜ |
 | **A7** | W3 课后起，按 §3.3 口径每周留痕 | 🟠 P1 | ⬜ 持续 |
 | **A8** | `POSTER_DECISION_TREE.md` 里本课仍标「🅣 测试期·首期未开」，实际已开班到 W2，需更新周期 | 🟠 P1 | ⬜ |
