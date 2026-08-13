@@ -27,6 +27,8 @@
 | [`DESIGN.md`](./DESIGN.md) | 视觉 / 主题色规范 |
 | [`SESSION_DECK_NOTES.md`](./SESSION_DECK_NOTES.md) | 课堂 deck 讲者备注 |
 | [`W1_RUNSHEET.md`](./W1_RUNSHEET.md) | **W1 运营执行单（⚠️ W2 起无同类文件，见缺口 G1）** |
+| [`TEACHERS.md`](./TEACHERS.md) | **师资与三城线下 Tutor 名单**（2026-08-13 新增，填补原 G2 缺口） |
+| [`../lessons/ai-solo-founder-w1/`](../lessons/ai-solo-founder-w1/) ／ [`../lessons/ai-solo-founder-w2/`](../lessons/ai-solo-founder-w2/) | **W1 / W2 网页版课件 deck**（本仓库 `lessons/` 下，线上 `jiangren.com.au/curriculum/lessons/{slug}/`） |
 | [`public/outline.json`](./public/outline.json) ＋ [`outline.md`](./public/outline.md) | 🔑 课程大纲唯一数据源（改大纲改 json，再跑 lineage 重建） |
 | `public/curriculum.html`、`phase1–4.html`、`session-deck.html` | 大纲页 / 各 Phase 页 / 课堂 deck |
 
@@ -153,7 +155,7 @@
 | # | 缺口 | 优先级 | 为什么急 | 建议谁做 |
 |---|---|---|---|---|
 | **G1** | **`cohort-01/` 运营层**（STATE / 进度追踪 / 学员产出归档 / 反馈留档） | 🔴 P0 | 课已在跑、W2 已上完并出过教学问题，但 `W1_RUNSHEET.md` 之后**完全没有运营留痕**。这期跑完什么都不剩。可用 `/cohort-ops-conductor` | Ada + Beta |
-| **G2** | **`TEACHERS.md`** | 🔴 P0 | 正在三城找 tutor、已拒 11 人以上，课程目录里师资零记录。可从 `mentor-archives/jr-lecturers/README.md` 抽本课相关 | Ada |
+| ~~**G2**~~ | ~~`TEACHERS.md`~~ | ✅ **已补** | **2026-08-13 已建 [`TEACHERS.md`](./TEACHERS.md)**：三城线下 Tutor（布里斯班 江山 / 墨尔本 Alex、Ethan / 悉尼 倪99、yibo）+ 5 位授课老师简介 + W1/W2 课件索引 + 对外露出红线。**仍有 6 项待确认**（见该文件第五节，其中最要紧的是「各位老师分别带哪几周」尚无排课对应关系） | Ada |
 | **G3** | **`AUDIT_LOG.md`** | 🔴 P0 | marketing dashboard 侧边栏 4 状态点之一，缺它该课看板显示不完整 | Ada |
 | **G4** | **`COHORT_ECONOMICS.md`** | 🟠 P1 | 三城线下 + 多位 Faculty，成本结构复杂，**单位经济从未算过** | Ada + Lightman |
 | **G5** | `POSTER_DECISION_TREE.md` 本课周期状态更新（🅣 测试期 → 实际已开班） | 🟠 P1 | 状态错会导致海报打法选错 | Ada |
