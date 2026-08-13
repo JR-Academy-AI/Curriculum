@@ -25,11 +25,12 @@
 | [Mark](students/mark.md) | AI Engineer 04 期 | Senior Data & Product Engineer | savana.ai | 13W | 2025-10-09 | [savana.ai/humans](https://www.savana.ai/humans) | ✅ |
 | [Larry](students/larry.md) | — | — | — | — | — | 信息不全，待补 | 待补 |
 | [Rick（周大同）](students/rick.md) | AI Engineer 02 期 | Senior AI Engineer | Omega AI | 17W | 2026-07-14 | 详细档薪资已打码 | ✅ 已有 |
+| [Jack](students/2026-jack.md) | AI Engineer 05 期 | AI Engineer | Nine | 16W | 2026-08-11 | 沟通截图 + 内部统计截图；正式 Offer 待补；对外 consent 未确认 | ✅ 沟通截图 |
 
 ---
 
 ## 待办 / 说明
 
-- **截图待补**：以上除 Rick 外都还没有 offer 截图，之后按人补齐。
+- **截图待补**：部分学员尚无正式 Offer 截图；Jack 当前有本人沟通截图和内部统计截图，正式 Offer Letter 待补。
 - **Rick 记录**：Rick 已在 [students/rick.md](students/rick.md) 有详细记录（薪资按决定打码）；本表仅作汇总索引。
 - **薪资处理**：已定（Beta 2026-07-14）——薪资范围原样保留在本内部受控库，仅内部备查，不外发。
