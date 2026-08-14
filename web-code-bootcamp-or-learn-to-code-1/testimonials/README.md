@@ -17,6 +17,10 @@ marketing 要写文案时找不到素材，销售要举例时只能凭印象说�
 
 以后 **收到一条就存一条**，存在 `students/` 里，一个学员一个 md。
 
+2026-08-14 已将历史 Notion Offer 表迁入：原始表和导入报告保存在
+`_imports/notion-2026-08-14/`，对应素材保存在
+`students/_assets/notion-2026-08-14/`。历史记录未经逐一 consent 复核，默认不可对外使用。
+
 ---
 
 ## 放什么 / 不放什么
@@ -79,5 +83,6 @@ testimonials/
 ├── INDEX.md           # 一页汇总表（谁 / 什么 offer / 能不能对外用）
 ├── _TEMPLATE.md       # 新建学员档案从这里复制
 ├── students/          # 一个学员一个 md
+├── _imports/          # 历史数据原始导出、素材映射和导入报告
 └── _archived/         # 退费 / 学员撤回 / 信息作废（不对外用，保留备查）
 ```
