@@ -161,6 +161,13 @@ jobs:
           bun install
           bun run build
 
+      # Build lessons/ai-solo-founder-w4 (AI 一人创业营 · W4 · 把想法做出来 — 现场跑 Codex)
+      - name: Build lessons/ai-solo-founder-w4
+        working-directory: lessons/ai-solo-founder-w4
+        run: |
+          bun install
+          bun run build
+
       # Build lessons/vibe-coding — Slidev deck (跨课复用 Lesson · Lightman 120 min)
       # Slidev/Vue 在 bun 下偶有 install 问题，沿用 npm 保守
       # base 已写进 package.json: --base /curriculum/lessons/vibe-coding/
@@ -523,6 +530,12 @@ jobs:
           if [ -d lessons/vibe-coding-master-l6/dist ]; then
             mkdir -p _site/lessons/vibe-coding-master-l6
             cp -r lessons/vibe-coding-master-l6/dist/* _site/lessons/vibe-coding-master-l6/
+          fi
+
+          # lessons/ai-solo-founder-w4: AI 一人创业营 · W4 · 把想法做出来（React + Vite）
+          if [ -d lessons/ai-solo-founder-w4/dist ]; then
+            mkdir -p _site/lessons/ai-solo-founder-w4
+            cp -r lessons/ai-solo-founder-w4/dist/* _site/lessons/ai-solo-founder-w4/
           fi
 
           # ai-engineer-resume-interview · 3h 内部学员讲座（slide deck + public/ zip 下载）
