@@ -15,8 +15,7 @@ import S02 from './components/slides/S02_Takeaways';
 import S03 from './components/slides/S03_Roadmap15Weeks';
 import S04 from './components/slides/S04_TodayTarget';
 
-// CH1 · 把活动拆成 AI 能干的活（14:15–14:50）
-import S05 from './components/slides/S05_WhyEvent';
+// CH1 · 把事情拆成 AI 能干的活（14:15–14:50）
 import S06 from './components/slides/S06_FiveStages';
 import S07 from './components/slides/S07_AIvsHuman';
 import S07b from './components/slides/S07b_PlainWords';
@@ -58,7 +57,6 @@ export default function App() {
 			<S02 />
 			<S03 />
 			<S04 />
-			<S05 />
 			<S06 />
 			<S07 />
 			<S07b />
