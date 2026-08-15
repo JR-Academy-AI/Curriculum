@@ -3,11 +3,11 @@ import CodexRun from '../CodexRun';
 export default function S19_CodexRun5_Landing() {
 	return (
 		<CodexRun
-			no="⑥"
+			no="⑧"
 			tag="做出那个网页"
 			minutes="12 min"
-			title="把两份东西发过去，让它做出一个网页"
-			sub="注意我一句都没描述长什么样——因为那些前面已经写死了。这就是前两步的回报。"
+			title="最后才做网页 —— 前面的东西它全用得上"
+			sub="注意我一句都没描述长什么样，也没重写一遍活动介绍 —— 那些前面全定完了。网页放最后做，是因为它只是个架子，内容早就有了。"
 			prompt={`读 event-sot.md 和 design-system.md，做一个活动 landing page。
 
 技术要求：

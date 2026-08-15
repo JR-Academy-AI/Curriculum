@@ -17,9 +17,12 @@ import S04 from './components/slides/S04_TodayTarget';
 
 // CH1 · 把事情拆成 AI 能干的活（14:15–14:50）
 import S06 from './components/slides/S06_FiveStages';
+import S06b from './components/slides/S06b_Timeline';
 import S07 from './components/slides/S07_AIvsHuman';
 import S07b from './components/slides/S07b_PlainWords';
 import S08 from './components/slides/S08_EventSoT';
+import S08b from './components/slides/S08b_HowToAsk';
+import S08c from './components/slides/S08c_BeeropsCase';
 import S09 from './components/slides/S09_CodexRun1_SoT';
 
 // CH2 · 做品牌：规范 → logo → 吉祥物 → 周边（14:50–15:25）
@@ -34,12 +37,13 @@ import S15 from './components/slides/S15_BrandCheck';
 // 中场 · Founder Exchange 30min（15:20–15:50）
 import S16 from './components/slides/S16_FounderExchange';
 
-// CH3 · 从 SoT 到 landing page（15:50–16:35）
+// CH3 · 一步一步带着做：介绍 → 招商 → 内容 → 网页（最后）
 import S17 from './components/slides/S17_LandingHero';
 import S18 from './components/slides/S18_BannedWords';
+import S18b from './components/slides/S18b_CodexRun6_Intro';
+import S18c from './components/slides/S18c_CodexRun7_Sponsor';
 import S19 from './components/slides/S19_CodexRun5_Landing';
 import S20 from './components/slides/S20_Deploy';
-import S20b from './components/slides/S20b_Deliverables';
 import S21 from './components/slides/S21_ConsistencyCheck';
 
 // CH4 · 执行自动化（16:35–16:50）
@@ -58,9 +62,12 @@ export default function App() {
 			<S03 />
 			<S04 />
 			<S06 />
+			<S06b />
 			<S07 />
 			<S07b />
 			<S08 />
+			<S08b />
+			<S08c />
 			<S09 />
 			<S10 />
 			<S11 />
@@ -70,11 +77,12 @@ export default function App() {
 			<S14b />
 			<S15 />
 			<S16 />
+			<S18b />
+			<S18c />
 			<S17 />
 			<S18 />
 			<S19 />
 			<S20 />
-			<S20b />
 			<S21 />
 			<S22 />
 			<S23 />

@@ -16,6 +16,7 @@ export default function CodexRun({
 	accept,
 	fallback,
 	minutes,
+	context,
 }: {
 	no: string;
 	tag: string;
@@ -25,6 +26,8 @@ export default function CodexRun({
 	accept: string[];
 	fallback: string;
 	minutes: string;
+	/** 可选：右栏顶部的背景信息块（例如今天这场活动是什么模式） */
+	context?: { label: string; items: string[]; note?: string };
 }) {
 	return (
 		<Slide bg={colors.dark}>
@@ -86,6 +89,33 @@ export default function CodexRun({
 
 					{/* 验收 + fallback */}
 					<div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+						{context ? (
+							<div style={{ background: colors.yellow, border, boxShadow: shadowSm, padding: '13px 16px' }}>
+								<div style={{ fontFamily: fonts.mono, fontSize: 12.5, letterSpacing: 1.5, marginBottom: 9, fontWeight: 700 }}>
+									{context.label}
+								</div>
+								<div style={{ display: 'flex', flexWrap: 'wrap', gap: 7 }}>
+									{context.items.map((it) => (
+										<span
+											key={it}
+											style={{
+												fontSize: 16,
+												fontWeight: 800,
+												background: colors.white,
+												border: `2px solid ${colors.black}`,
+												padding: '4px 11px',
+											}}
+										>
+											{it}
+										</span>
+									))}
+								</div>
+								{context.note ? (
+									<div style={{ marginTop: 9, fontSize: 14.5, lineHeight: 1.4 }}>{context.note}</div>
+								) : null}
+							</div>
+						) : null}
+
 						<div style={{ background: colors.white, border, boxShadow: shadow, padding: '15px 17px' }}>
 							<div style={{ fontFamily: fonts.mono, fontSize: 12.5, color: '#888', letterSpacing: 1.5, marginBottom: 10 }}>
 								跑完了看这几条

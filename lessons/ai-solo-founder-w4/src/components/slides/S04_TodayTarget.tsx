@@ -2,14 +2,14 @@ import { motion } from 'framer-motion';
 import { Slide, colors, fonts, border, shadow, shadowSm } from '../ui';
 import { Body, SlideHead, Punchline } from '../DeckTable';
 
-// 今天的靶子 —— Beerops：JR 要办的新活动，今天现场从零把它做出来
-// ⚠️ 活动定位一句话由 Lightman 现场口述 / 上台前补。这里不编造活动细节。
+// 今天拿什么练手 —— 讲师用活动、学员用自己的东西
+// ⚠️ Beerops 的模式与多赢结构在断点① 之前那一页讲，这里不展开。
 const STAGES = [
-	{ k: '策划', v: '办给谁、解决什么、什么形式', done: false },
-	{ k: '管理', v: '谁干什么、什么时候交', done: false },
-	{ k: '执行', v: '报名 / 签到 / 跟进', done: false },
-	{ k: '品牌', v: '规范 · logo · 吉祥物 · 周边', done: false },
-	{ k: '门面', v: 'landing page 上线', done: false },
+	{ k: '策划', v: '办给谁、解决什么、什么形式' },
+	{ k: '管理', v: '谁干什么、什么时候交' },
+	{ k: '执行', v: '报名 / 签到 / 跟进' },
+	{ k: '品牌', v: '规范 · logo · 吉祥物 · 周边' },
+	{ k: '门面', v: '网页上线' },
 ];
 
 export default function S04_TodayTarget() {
@@ -30,63 +30,42 @@ export default function S04_TodayTarget() {
 				/>
 
 				<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, alignItems: 'stretch' }}>
-					{/* 左：活动是什么 */}
+					{/* 左：你拿什么跟着做 */}
 					<div style={{ background: colors.white, border, boxShadow: shadow, padding: '22px 24px' }}>
-						<div style={{ fontFamily: fonts.mono, fontSize: 13, fontWeight: 700, letterSpacing: 1.5, color: '#888' }}>
-							BEEROPS · 一句话
-						</div>
-						<div
-							style={{
-								marginTop: 14,
-								padding: '18px 20px',
-								background: colors.warmBg,
-								border: `2px dashed ${colors.black}`,
-								fontSize: 20,
-								lineHeight: 1.5,
-								fontWeight: 700,
-								minHeight: 120,
-								display: 'flex',
-								alignItems: 'center',
-							}}
-						>
-							<span style={{ color: '#999' }}>
-								（现场口述：办给谁 · 解决什么 · 什么形式）
-							</span>
-						</div>
-						<div style={{ marginTop: 14, fontSize: 15.5, lineHeight: 1.55, color: '#444' }}>
-							注意听这一句。<b>今天所有东西——说明、配色、logo、吉祥物、周边、网页文案——全部是从这一句长出来的。</b>
-							这一句含糊，后面每一步都会含糊。
+						<div style={{ fontFamily: fonts.mono, fontSize: 13, fontWeight: 700, letterSpacing: 1.5, color: '#888', marginBottom: 12 }}>
+							那你今天拿什么跟着做？
 						</div>
 
-						{/* 学员用自己的东西同步做 —— 活动只是讲师手上的例子 */}
-						<div style={{ marginTop: 14, paddingTop: 12, borderTop: `2px dashed ${colors.black}` }}>
-							<div style={{ fontFamily: fonts.mono, fontSize: 12, fontWeight: 700, letterSpacing: 1, color: '#888', marginBottom: 9 }}>
-								那你今天拿什么跟着做？
+						<div style={{ display: 'flex', flexDirection: 'column', gap: 11, fontSize: 17, lineHeight: 1.45 }}>
+							<div>
+								<b>有公司、有在做的生意</b>
+								<br />
+								<span style={{ fontSize: 15.5, color: '#555' }}>就用它。今天把它的品牌和网页做出来</span>
 							</div>
-							<div style={{ display: 'flex', flexDirection: 'column', gap: 7, fontSize: 15, lineHeight: 1.4 }}>
-								<div>
-									<b>有公司、有在做的生意</b> → 就用它。今天把它的品牌和网页做出来
-								</div>
-								<div>
-									<b>有个产品或服务的想法</b> → 就用它，正好逼自己说清楚
-								</div>
-								<div>
-									<b>什么都还没有</b> → 跟着这个活动走一遍，把流程记住
-								</div>
+							<div>
+								<b>有个产品或服务的想法</b>
+								<br />
+								<span style={{ fontSize: 15.5, color: '#555' }}>就用它，正好逼自己说清楚</span>
 							</div>
-							<div
-								style={{
-									marginTop: 11,
-									padding: '9px 12px',
-									background: colors.yellow,
-									border: `2px solid ${colors.black}`,
-									fontSize: 15.5,
-									lineHeight: 1.45,
-									fontWeight: 700,
-								}}
-							>
-								我在台上做这个活动，你在台下做你自己那个。<b>每一步我跑完，你跟着跑。</b>
+							<div>
+								<b>什么都还没有</b>
+								<br />
+								<span style={{ fontSize: 15.5, color: '#555' }}>跟着这个活动走一遍，把流程记住</span>
 							</div>
+						</div>
+
+						<div
+							style={{
+								marginTop: 16,
+								padding: '11px 14px',
+								background: colors.yellow,
+								border: `2px solid ${colors.black}`,
+								fontSize: 16.5,
+								lineHeight: 1.45,
+								fontWeight: 700,
+							}}
+						>
+							我在台上做这个活动，你在台下做你自己那个。<b>每一步我跑完，你跟着跑。</b>
 						</div>
 					</div>
 

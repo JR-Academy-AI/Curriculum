@@ -20,7 +20,7 @@ export default function S21_ConsistencyCheck() {
 								<b>1 ·</b> 打开那份说明，把<b>人数从 30 改成 50</b>（或者改个时间）
 							</div>
 							<div>
-								<b>2 ·</b> 让 AI 重新生成网页（和刚说的那六样里任意一样）
+								<b>2 ·</b> 让 AI 重新生成介绍、招商方案、网页
 							</div>
 							<div>
 								<b>3 ·</b> 打开页面，看那个数字变了没有
@@ -38,9 +38,9 @@ export default function S21_ConsistencyCheck() {
 							为什么这件事这么重要
 						</div>
 						<div style={{ fontSize: 16.5, lineHeight: 1.6 }}>
-							一场活动从策划到办完，信息会改<b>十几次</b>——时间变、场地变、嘉宾变、人数变。而你手上有六样物料。
+							一场活动从策划到办完，信息会改<b>十几次</b>——时间变、场地变、嘉宾变、人数变。而你今天已经做出了介绍、招商方案、海报素材、网页。
 							<div style={{ marginTop: 10 }}>
-								一样样手改的话：每改一次，你要去介绍 PDF、网页、招商方案、海报、通知信里各改一遍，
+								一样样手改的话：每改一次，你要去介绍、招商方案、网页、海报里各改一遍，
 								<b style={{ background: colors.red, padding: '0 5px' }}>漏一个就是错的信息发出去了</b>。
 							</div>
 							<div style={{ marginTop: 10 }}>
