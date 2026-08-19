@@ -29,3 +29,9 @@ cca-f-cert-pack/video-digital-teacher-pilot/.venv*/
 
 # Anthropic 官方考纲原件（4 门）= 版权材料，只做本地 ground truth，不进 git
 _cert-official-guides/
+
+# 依赖与构建产物：可重装/重建，不进 git
+.next/
+.cache/
+__pycache__/
+*.pyc
