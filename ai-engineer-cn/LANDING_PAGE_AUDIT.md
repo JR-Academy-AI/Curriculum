@@ -132,7 +132,11 @@
 
 ## 六、名字要不要改成「大模型应用开发 · 真项目训练营」
 
-### 结论：**要改，但它排第 5，别让它挤掉前面四件事。**
+> ✅ **已拍板（Ada 2026-08-19）：改。**新名「**大模型应用开发 · 真项目训练营**」，slug `ai-engineer-cn` 不动。
+> 已同步：`AI_ENGINEER_PRODUCT_CATALOG.md`、`AI_ENGINEER_FAMILY.md`、`public/outline.json` 的 `name`、内部培训页。
+> 仍待办：**线上页面标题**、`xhs-posters` 物料、`name_en` / `title_en`，以及副标是否采用。
+
+### 原结论：**要改，但它排第 5，别让它挤掉前面四件事。**
 
 现名：**AI 应用开发工程师训练营｜RAG、Agent、MCP 与私有化部署**（副标"国内版"）
 
