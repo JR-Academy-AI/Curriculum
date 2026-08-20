@@ -1237,6 +1237,20 @@ jobs:
           script: |
             # 2026-04-21 · 错的无后缀 slug，已合并进 -1/
             sudo rm -rf /var/www/static/curriculum/web-code-bootcamp-or-learn-to-code
+            # 2026-08-20 · ai-programming 六张旧海报下线（课程名/周数/班型过期；
+            # poster-v1 与 poster-v6 含「年薪 $120K」触红线）。SCP 只覆盖不删除，
+            # 本地删了线上还在，必须在这里显式清掉。现只保留 poster.html 一张主海报。
+            sudo rm -f /var/www/static/curriculum/ai-programming/poster-v1.html \
+                       /var/www/static/curriculum/ai-programming/poster-v2.html \
+                       /var/www/static/curriculum/ai-programming/poster-v3.html \
+                       /var/www/static/curriculum/ai-programming/poster-v4.html \
+                       /var/www/static/curriculum/ai-programming/poster-v5.html \
+                       /var/www/static/curriculum/ai-programming/poster-v6.html
+            # 2026-08-20 · 进阶班 P9-P12 已移除，对应 phase 页下线
+            sudo rm -f /var/www/static/curriculum/ai-programming/phase_9.html \
+                       /var/www/static/curriculum/ai-programming/phase_10.html \
+                       /var/www/static/curriculum/ai-programming/phase_11.html \
+                       /var/www/static/curriculum/ai-programming/phase_12.html
             # 列一下当前 curriculum 下还剩什么（方便日志核对）
             ls /var/www/static/curriculum/
 
