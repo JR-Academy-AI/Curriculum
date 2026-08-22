@@ -22,7 +22,7 @@
 | 1 | `ai-engineer-bootcamp/` | AI Engineer Bootcamp（在职程序员转 AI Engineer） | **主课**（旗舰直播班） | ✅ **在售**，官网第 7 期招生中 |
 | 2 | `web-code-bootcamp-or-learn-to-code-1/` | **AI Engineer 全栈项目班** / AI 全栈产品班·线下小班 | **另一条主课**（线下小班，全栈向） | ✅ **在售**，第 30 期 |
 | 3 | `ai-engineer-rag/` | AI Engineer 入门（Essentials: LLM & RAG） | **引流课**（纯录播 video） | ✅ **在售** $299（原价 $399），`/program-course/ai-engineer-rag` |
-| 4 | `ai-engineer-cn/` | AI Engineer 训练营（国内版） | **国内市场版主课** | 🔴 **半成品 / 疑似停滞**，见下方风险 |
+| 4 | `ai-engineer-cn/` | 大模型应用开发 · 真项目训练营<br><sub>原名 AI 应用开发工程师训练营（国内版），2026-08-19 改名</sub> | **国内市场版主课** | 🔴 **半成品 / 疑似停滞**，见下方风险 |
 | 5 | `ai-engineer-resume-interview/` | AI Engineer 简历 + 面试讲座 | **不是课**，是内部学员的 90min 讲座 deck | 🟢 已交付的教具，静态部署中 |
 | 6 | `video-ai-engineer/` | —— | **不是课**，是给主课做 60s 竖版短片的 Remotion 工具目录 | ⚪️ 物料工具，2026-04 后没动 |
 
@@ -32,7 +32,7 @@
 
 ## 二、对比表
 
-| | ① AI Engineer Bootcamp | ② AI Engineer 全栈项目班 | ③ AI Engineer 入门 | ④ 国内版训练营 |
+| | ① AI Engineer Bootcamp | ② AI Engineer 全栈项目班 | ③ AI Engineer 入门 | ④ 大模型应用开发 · 真项目训练营 |
 |---|---|---|---|---|
 | **slug** | `ai-engineer-bootcamp` | `web-code-bootcamp-or-learn-to-code-1` | `ai-engineer-rag` | `ai-engineer-cn` |
 | **面向谁** | 已有 Python + API 经验的在职工程师、数据/ML/DevOps 工程师 | 想线下小班带练 AI Coding 的全栈方向学员 | 有基础 Python、想转 AI Engineer 但还没入门的人 | 国内 2–5 年后端/全栈转大模型应用开发 |
@@ -63,7 +63,7 @@
       ├─ AI Agent & MCP 项目实战营 $465
       └─ + DevOps 视频课组合包 $5000（🔴 官网无页面）
    ↓
-求职  ├─ AI Engineer 简历 + 面试 $39（🔴 后台存不上，未上线）
+求职  ├─ AI Engineer 简历 + 面试 $39  ✅ 2026-08-19 上线 /program-course/ai-e
       ├─ VIP 预备计划 · Jobpin AI 8 周 $5500（🔴 无链接）
       └─ VIP 高薪 Offer 计划 $5500 + Offer Package 7%
 ```
@@ -129,7 +129,7 @@
 | G1b | **6 个在售产品在仓库里没有任何目录**（进阶 $1999 / 合集 $2180 / Dispatch AI 项目 $1980 / VIP $5500+7% / VIP 预备 $5500 / MCP 实战营 $465） | 仓库只覆盖一半产品线，AI 和新同事查不到；这些产品没有大纲 / PERSONAS / 推广方案 | 🔴 P0 | Ada 定哪些要补目录 |
 | G1c | ~~视频课三件套定价重叠~~ 🔒 **已定暂不动**（Ada 2026-08-12），除非 Lightman 改 | —— | ✅ 关闭 | —— |
 | G1d | **2 个产品在收钱但官网无页面**（DevOps 组合包 $5000、VIP 预备计划 $5500），只靠 sales 口头卖 | 无落地页 = 无法投放、无法自助转化、口径靠人传 | 🔴 P0 | Ada → Lightman 拍板补不补页面 |
-| G1e | **$39 简历+面试视频课后台存不上**（Ada 备注「新增课程保存不了」） | 已做好的课上不了线 | 🔴 P0 | 技术侧排查 |
+| G1e | ~~$39 简历+面试视频课后台存不上~~ ✅ **2026-08-19 已上线** `/program-course/ai-e` | —— | ✅ 关闭 | —— |
 | G2 | **课数/周数/期数口径五处不一致 + 期数停在第 5 期**（不含价格 —— 价格已定以 CATALOG 为准、Ada 手动处理） | 海报 / 投放 / 销售话术数字对不上 | 🔴 P0 | Ada 定口径 → 反向修 outline.json |
 | G3 | **`/learn/ai-engineer/hub` 与入门课关系没人定** | 免费内容和 299 付费课可能互相吃掉 | 🟠 P1 | Ada + Marketing |
 | G4 | **国内版 `ai-engineer-cn` 开班日已过仍挂 RECRUITING** | 页面在骗人，且课程地基（Dispatch AI 映射）未校准 | 🟠 P1 | Ada 查实 → Lightman 拍板停/重启 |

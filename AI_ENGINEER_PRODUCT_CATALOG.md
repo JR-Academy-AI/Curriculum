@@ -16,9 +16,9 @@
 | 1 | AI Engineer 入门 | $299+GST | 视频课 | [/program-course/ai-engineer-rag](https://jiangren.com.au/program-course/ai-engineer-rag) ✅活 | `ai-engineer-rag/` |
 | 2 | AI Engineer 进阶：从 RAG 到 Agent 与模型调优 | $1999+GST | 视频课 | [/program-course/ai-engineer-rag-agent](https://jiangren.com.au/program-course/ai-engineer-rag-agent) ✅活 | ❌ 无 |
 | 3 | AI Engineer 核心技术实战课（入门+进阶合集） | $2180+GST | 视频课 | [/program-course/ai-engineer](https://jiangren.com.au/program-course/ai-engineer) ✅活 | ❌ 无 |
-| 4 | AI Engineer 简历 + 面试 | $39 | 视频课 | 🔴 **还没上线官网**（课件：[/curriculum/ai-engineer-resume-interview/](https://www.jiangren.com.au/curriculum/ai-engineer-resume-interview/?page=1)） | `ai-engineer-resume-interview/`（目前是讲座 deck） |
+| 4 | AI Engineer 简历 + 面试 | $39 | 视频课 | [/program-course/ai-e](https://jiangren.com.au/program-course/ai-e) ✅活 | `ai-engineer-resume-interview/`（讲座 deck，非商品页） |
 | 5 | AI Engineer 训练营（课程 + P3 职业孵化器） | $3500+GST | 直播课 | [/program-course/ai-engineer-bootcamp](https://jiangren.com.au/program-course/ai-engineer-bootcamp) ✅活 | `ai-engineer-bootcamp/` |
-| 6 | AI 应用开发工程师训练营（国内版） | 暂定 8999 | 直播课 | [/program-course/ai-engineer-cn](https://jiangren.com.au/program-course/ai-engineer-cn) | `ai-engineer-cn/` |
+| 6 | 大模型应用开发 · 真项目训练营 | 暂定 8999 | 直播课 | [/program-course/ai-engineer-cn](https://jiangren.com.au/program-course/ai-engineer-cn) | `ai-engineer-cn/` |
 | 7 | AI Engineer 训练营 + DevOps 视频课（组合包） | $5000+GST | 直播+视频 | 🔴 **官网无页面**，只和 sales 沟通过可以这样搭配卖 | ❌ 无 |
 | 8 | AI Engineer 项目（单独报名 Dispatch AI） | $1980+GST（学员）/ $2600+GST（非学员） | 项目 | [/program-course/ai-agent](https://jiangren.com.au/program-course/ai-agent) ✅活 | ❌ 无 |
 | 9 | AI Engineer 高薪 Offer VIP 计划 | $5500 服务费 + Offer Package 的 7% | 1-on-1 | [/ai-engineer-vip](https://jiangren.com.au/ai-engineer-vip) ✅活 | ❌ 无 |
@@ -27,7 +27,7 @@
 | 12 | 数据工程 AI 项目陪跑 | $3999+GST | 数据工程视频课 + 项目陪跑 | [/program-course/data-engineer-data-analyst](https://jiangren.com.au/program-course/data-engineer-data-analyst) | `data-engineer-data-analyst/` |
 | 13 | DevOps AI 项目陪跑（Dispatch AI） | 纯视频 $999 / 视频+陪跑 $3550+GST | DevOps 视频课 + 项目陪跑 | 🟠 官网未更新（课件：[/curriculum/techscrum-devops/curriculum.html](https://jiangren.com.au/curriculum/techscrum-devops/curriculum.html)） | `techscrum-devops/` |
 | 14 | AI Agent & MCP 项目实战营 | $465+GST | 视频课 | [/program-course/mcp](https://jiangren.com.au/program-course/mcp) ✅活 | ❌ 无 |
-| 15 | 人人都能学的 AI Coding 实战课 | $960+GST（基础班 8 周）/ $2280+GST（进阶班 12 周） | 直播课 | [/program-course/ai-programming](https://jiangren.com.au/program-course/ai-programming) | `ai-programming/` |
+| 15 | 职场 AI 产出力实战营 | $960+GST（基础班 8 周）/ $2280+GST（进阶班 12 周） | 直播课 | [/program-course/ai-programming](https://jiangren.com.au/program-course/ai-programming) | `ai-programming/` |
 | 16 | Vibe Coding 提升班（for tech） | $770+GST | 直播课 | [/program-course/ai-builder](https://jiangren.com.au/program-course/ai-builder) | `ai-builder/` |
 | 17 | AI 产品经理 | $4000+GST | 视频课 + 直播课 | [/program-course/business-analyst](https://jiangren.com.au/program-course/business-analyst) | `business-analyst/` |
 | 18 | AI 一人创业营 | $2800+GST（一期）/ $3800+GST（二期起） | 线下直播课 | [/program-course/ai-solo-founder-bootcamp](https://jiangren.com.au/program-course/ai-solo-founder-bootcamp) | `ai-solo-founder-bootcamp/` |
@@ -71,8 +71,9 @@
 ---
 
 ### 4. AI Engineer 简历 + 面试 — $39 · 视频课 · 随时开课
-🔗 课件：https://www.jiangren.com.au/curriculum/ai-engineer-resume-interview/?page=1
-🔴 **状态：还没上线到官网 —— Ada 备注「新增课程保存不了」（后台问题，待技术侧解决）**
+🔗 https://jiangren.com.au/program-course/ai-e ✅ 已验证在售（官网名「AI Engineer简历+面试视频课」）
+📎 配套讲座课件（**非商品页，不要当购买链接发给客户**）：https://www.jiangren.com.au/curriculum/ai-engineer-resume-interview/?page=1
+> ✅ **2026-08-19 上线**。此前因后台「新增课程保存不了」长期未上线（Ada 8/12 记录），已由 Ada 于 8/19 解决并上架。
 
 **卖点**：专为 AI Engineer 求职者打造的简历与面试专项视频课。从 ATS 简历结构、AI 技术栈分类、项目量化改写，到 RAG、Agent、MCP 高频面试题、项目 Deep Dive 及 AI System Design，帮助你把真正做过的 AI 项目写清楚、讲专业，并经得住面试官连续追问。
 
@@ -93,8 +94,14 @@
 
 ---
 
-### 6. AI 应用开发工程师训练营（国内版） — 暂定 8999 · 直播课
-🔗 https://jiangren.com.au/program-course/ai-engineer-cn
+### 6. 大模型应用开发 · 真项目训练营 — 暂定 8999 · 直播课
+🔗 https://jiangren.com.au/program-course/ai-engineer-cn　（**slug 不动**，只改显示名）
+📛 **2026-08-19 改名**（Ada 定）：原「AI 应用开发工程师训练营（国内版）」→「**大模型应用开发 · 真项目训练营**」
+> 依据 `_research/jr-china-gtm-2026.md` §5.2：①「大模型应用开发」= BOSS 直聘岗位原词，搜索/投流/简历三处对得上；②「真项目」是唯一差异化钩子，直指竞品「项目千人一面、一追问就废」的软肋；③「训练营」避开已被占的"实战营/培养计划/高手班"；④ 删掉「国内版」这个内部口径。
+> ⚠️ `LANDING_PAGE_AUDIT.md` 强调：**技术栈副标「RAG、Agent、MCP 与私有化部署」是原名最好的部分，改名时必须保留**。推荐完整写法：
+> **大模型应用开发 · 真项目训练营**
+> RAG、Agent、MCP 与私有化部署 ｜ 12 周迭代同一套企业级 Agent 平台
+> 🔲 **副标是否采用、英文名叫什么，待 Ada 确认后再落到线上页面与 `name_en`。**
 👤 **授课老师：待定**（国内老师都说可以上，但是需要看时间忙不忙）
 📅 **开课：待定**
 
@@ -200,7 +207,7 @@
 
 ---
 
-### 15. 人人都能学的 AI Coding 实战课 — $960+GST（基础班 8 周）/ $2280+GST（进阶班 12 周）· 直播课
+### 15. 职场 AI 产出力实战营 — $960+GST（基础班 8 周）/ $2280+GST（进阶班 12 周）· 直播课
 🔗 https://jiangren.com.au/program-course/ai-programming
 👤 **老师：待定**（Hyna 可以上基础班）
 📅 **开课：待定**
@@ -301,7 +308,7 @@ AI 工作流提效营是一门面向在职人士的 **8 周** AI 落地实战课
 | 课程 | 本文件（Ada 表，**权威**） | `outline.json` 里的旧价 | 差多少 |
 |------|---------------------|----------------------|--------|
 | AI Engineer 全栈项目班 | **$3599+GST** | tuition 5900 / promo 5360 | 🔴 差 $1400+ |
-| AI 应用开发工程师训练营（国内版） | **暂定 8999** | tuition 14800 / promo 9800 | 🔴 原价差 5801 |
+| 大模型应用开发 · 真项目训练营 | **暂定 8999** | tuition 14800 / promo 9800 | 🔴 原价差 5801 |
 | AI 工作流提效营 | **$1599+GST** | tuition 1999 | 🟠 差 400 |
 | AI 产品经理 | **$4000+GST** | tuition 4800 | 🟠 差 800 |
 | AI Engineer 入门 | $299+GST | 399 / promo 299 | ✅ 一致 |
@@ -368,9 +375,9 @@ AI 工作流提效营是一门面向在职人士的 **8 周** AI 落地实战课
 ## 七、待补 / 待确认
 
 - [ ] 产品 18「AI 一人创业营」师资描述原表在「Grant」处截断，需 Ada 补完整
-- [ ] 产品 4「AI Engineer 简历 + 面试」$39 视频课**后台存不上**，需技术侧排查后上线
 - [ ] 产品 7「AI Engineer + DevOps 组合包 $5000」和产品 10「VIP 预备计划 $5500」**官网无页面**，目前只靠 sales 口头卖 —— 要不要补页面待拍板
 - [ ] 产品 6 国内版**授课老师待定、开课时间待定、价格暂定**；另 `DESIGN.md` 里主线项目的模块复用比例仍未拿源码校准
+- [ ] 产品 6 改名后**线上页面标题、`xhs-posters` 物料、`name_en` 尚未同步**（本地 `outline.json` 的 `name` 已改）；副标与英文名待 Ada 定
 - [ ] 产品 11、13 的 Curriculum 页**还没更新到官网**
 - [ ] 产品 15 需改名做 900 人民币促销（Ada 备注）
 
@@ -379,6 +386,7 @@ AI 工作流提效营是一门面向在职人士的 **8 周** AI 落地实战课
 - 🔒 **价格**：一律以本文件为准，Ada 手动处理，不自动改 `outline.json`（Ada 2026-08-12）
 - 🔒 **视频课三件套定价**（入门 $299 / 进阶 $1999 / 合集 $2180）：**暂时不动**，除非 Lightman 提出修改（Ada 2026-08-12）
 - 🔒 **「匠答 AI」= `Dispatch AI`**：同一个项目的两种叫法，不是换了项目（Ada 2026-08-12）
+- 🔒 **产品 6 课程名**：定为「**大模型应用开发 · 真项目训练营**」，删掉「国内版」；**URL slug `ai-engineer-cn` 不动**（改 slug 会丢已发链接和 SEO）（Ada 2026-08-19）
 
 ---
 
