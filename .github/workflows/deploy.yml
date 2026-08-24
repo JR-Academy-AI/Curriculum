@@ -1204,6 +1204,9 @@ jobs:
           </html>
           HTMLEOF
 
+      - name: Inject curriculum canonical metadata
+        run: node scripts/inject-curriculum-canonicals.mjs _site
+
       # Generate pages.json from outline.json for each bootcamp
       # Reads the curriculumPages field from each outline.json and writes it to
       # _site/<slug>/pages.json so the frontend iframe embed can list HTML pages.

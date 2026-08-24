@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-08-24
+
+- 修复所有已部署课程总览页缺少 self-canonical 的索引信号，并在发布流程中统一注入与校验（`scripts/inject-curriculum-canonicals.mjs`、`.github/workflows/deploy.yml`）
+
 ## 2026-08-21
 
 - 新增 `opc-offer-mvp`、`opc-shipping-review`、`opc-first-dollar`、`opc-customer-acquisition` 四个学生 Skill 与共享 Founder OS，生成中文安装包并绑定生产课程附件（`ai-solo-founder-bootcamp`）
