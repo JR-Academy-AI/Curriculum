@@ -234,6 +234,14 @@ jobs:
             cp -r ai-engineer-rag/public/* _site/ai-engineer-rag/
           fi
 
+          # ai-engineer-bootcamp-en (AI Engineer Bootcamp · English cohort):
+          # static HTML only, generated from a cost-optimized outline.json (fewer live
+          # sessions, more self-paced video) — see ai-engineer-bootcamp/public/en-cohort-cost-plan.html
+          if [ -d ai-engineer-bootcamp-en/public ]; then
+            mkdir -p _site/ai-engineer-bootcamp-en
+            cp -r ai-engineer-bootcamp-en/public/* _site/ai-engineer-bootcamp-en/
+          fi
+
           # data-engineer-data-analyst (机器学习 & 数据工程全栈项目班 · 改版 · 10 周 · 视频课 + 单一项目全程带练): static HTML only
           if [ -d data-engineer-data-analyst/public ]; then
             mkdir -p _site/data-engineer-data-analyst
@@ -571,6 +579,7 @@ jobs:
           cp ai-engineer-bootcamp/public/jd-mapping.html _site/ai-engineer-bootcamp/
           cp ai-engineer-bootcamp/public/learning-plan.html _site/ai-engineer-bootcamp/
           cp ai-engineer-bootcamp/public/landing-us.html _site/ai-engineer-bootcamp/
+          cp ai-engineer-bootcamp/public/en-cohort-cost-plan.html _site/ai-engineer-bootcamp/
           [ -f ai-engineer-bootcamp/public/pages.json ] && cp ai-engineer-bootcamp/public/pages.json _site/ai-engineer-bootcamp/ || true
           if [ -d ai-engineer-bootcamp/public/posters ]; then
             cp -r ai-engineer-bootcamp/public/posters _site/ai-engineer-bootcamp/
@@ -842,6 +851,22 @@ jobs:
                     <span class="tag" style="background:#dc2626">INTERNAL</span>
                     <div class="title">AI Engineer 内部资料</div>
                     <div class="desc">Lab 映射、老师分工、JD 对比、Marketing 素材</div>
+                  </a>
+                  <a href="./ai-engineer-bootcamp/en-cohort-cost-plan.html">
+                    <span class="tag" style="background:#92400e">COST PLAN</span>
+                    <div class="title">英文班直播/录播成本方案</div>
+                    <div class="desc">逐课分类表 — 保留直播/转录播/合并/精简/砍掉，员工审核用</div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="section">
+                <div class="section-title">AI Engineer Bootcamp · English Cohort · 12 Weeks</div>
+                <div class="cards">
+                  <a href="./ai-engineer-bootcamp-en/curriculum.html">
+                    <span class="tag" style="background:#6366f1">CURRICULUM</span>
+                    <div class="title">AI Engineer (English)</div>
+                    <div class="desc">282 lessons · 10 phases · 21 live sessions + video/self-paced</div>
                   </a>
                 </div>
               </div>
