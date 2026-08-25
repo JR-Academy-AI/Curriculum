@@ -2,8 +2,9 @@
 
 ## 2026-08-25
 
+- 新增第七期教学方式升级海报 V1–V4：V1/V2 用理论与实践双轨汇入同一 W1–W13 Agent System；V3 改用“理论蓝图 → 13 周项目建设 → Enterprise Agent System”；V4 删除单一代码库约束，改为“同一项目主线”，允许按系统边界拆分，不使用 CareKind/Aged Care 作为课程品类
 - 新增 `cohort-7.html` 可分享大纲页，由 `outline.json` 动态渲染 13 周/25 场正式 Live；新增 1242×1660 第七期主宣传海报、PNG 下载能力和无文字 production Agent 系统主视觉，并更新海报实验室与 DESIGN 期次定位
-- 强化第七期第一亮点：每周一场理论 + 一场独立实践，实践从 W1 的 CareKind starter/ADLC 开始，在同一 repository 连续完成 UI、workflow、Voice、RAG、MCP、Agent、Memory、Harness、Routing 与 production review，不再表述为附属 Lab
+- 强化第七期第一亮点：每周一场理论 + 一场独立实践，实践从 W1 的 CareKind starter/ADLC 开始，沿同一项目主线连续完成 UI、workflow、Voice、RAG、MCP、Agent、Memory、Harness、Routing 与 production review；代码库按系统边界合理拆分，不再表述为附属 Lab
 - 保存第七期最终总结与审计：新增 25 场/45 小时结构、W1–W13 依赖链、最终交付、10 项新亮点、78.1/100 通用质量评分、P0/P1/P2 缺口、Advanced Track 与权威参考；为全部正式 Live 补齐 `cohort7Week`、`cohort7Track`、`cohort7SessionOrder`、level、learns 和 confirmed status，并给 W13 增加结构化课前验收清单
 - 合并原 W13–W17 为 `L171 CareKind Production Readiness Review & Demo Day` 180 分钟最终实践：学生课前自助完成 Remote MCP/Auth、部署、CI/CD 与标准运行基础，Live 验收 production eval、tracing、AI red team、failure/kill-switch drill、release/rollback/incident decision 与最终答辩；总量更新为 25 场 Live、45 小时，旧 `L180` 降为 Legacy
 - 确认 W12：`L183 Production AI System Design & Model Routing` 理论 Live + `C7P12 Build the CareKind Model Router inside the Agent Harness` 实践 Live，覆盖 model adapters、routing policy、provider allowlist、fallback/escalation、trace 与 router eval；`L180 Demo Day` 移为延长实践线最终候选

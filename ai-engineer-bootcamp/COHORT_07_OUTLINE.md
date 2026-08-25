@@ -15,7 +15,7 @@
 - **理论 Live（90 分钟）**：讲清心智模型、架构取舍、面试重点和本阶段的技术边界。
 - **实践 Live（120 分钟）**：现场实现、调试、评审和交付，不重复理论课。
 
-第七期的核心变化不是“理论课后附带一个 Lab”，而是建立一条独立、连续的实践主线：学生从 W1 的 CareKind starter repository、ADLC、产品范围和开发规则开始，逐周完成 UI、非 AI workflow、Voice、Structured Documentation、RAG、MCP、Bounded Agent、Memory、Production Harness、Model Routing，最后完成 production readiness review。每周都在同一个项目上继续建设，不做互不相关的一次性 Demo。
+第七期的核心变化不是“理论课后附带一个 Lab”，而是建立一条独立、连续的实践主线：学生从 W1 的 CareKind starter system、ADLC、产品范围、服务边界和开发规则开始，逐周完成 UI、非 AI workflow、Voice、Structured Documentation、RAG、MCP、Bounded Agent、Memory、Production Harness、Model Routing，最后完成 production readiness review。每周都围绕同一套系统继续建设，不做互不相关的一次性 Demo；frontend、backend、Agent、MCP、eval 等代码可按合理工程边界拆分。
 
 W1–W12 每周一场理论 Live 和一场实践 Live；理论线在 W12 结束，W13 只增加一场 180 分钟最终实践。全期正式直播共 45 小时。录播、Lab、Quest 和 Office Hour 不计入 25 场正式直播。
 
@@ -23,7 +23,7 @@ W1–W12 每周一场理论 Live 和一场实践 Live；理论线在 W12 结束�
 
 - 可分享网页版：[`public/cohort-7.html`](./public/cohort-7.html)，课程卡片从 `outline.json` 动态渲染。
 - 3:4 主宣传海报：[`public/posters/poster-cohort-7.html`](./public/posters/poster-cohort-7.html)，支持下载 1242×1660 PNG。
-- 对外主张只使用已确认事实：每周理论 + 独立实践双 Live、25 场/45 小时、同一个 CareKind 项目从零搭建 production Agent；不使用薪资、Offer 或就业保证。
+- 对外主张只使用已确认事实：原有两场 Live 重组为理论 + 独立实践、25 场/45 小时、同一项目主线从标准 AI 产品底座搭到 production Agent；代码库按系统边界合理拆分，不使用薪资、Offer 或就业保证。
 
 ## 2. W1–W13 正式排课
 
@@ -263,9 +263,9 @@ W13 是一场 180 分钟最终实践，不再增加理论课。Remote MCP transp
 
 交付物：
 
-- CareKind repository scaffold
+- CareKind starter system scaffold 与 service map
 - problem frame、PRD 与 non-goals
-- repository rules / agent instructions
+- engineering rules / agent instructions
 - acceptance criteria 与 test plan
 - synthetic data boundary
 - ADLC task board
@@ -273,7 +273,7 @@ W13 是一场 180 分钟最终实践，不再增加理论课。Remote MCP transp
 
 ### W2 · Design System、UI & Animation
 
-继续使用 W1 的 CareKind 仓库，不另做一次性 UI Demo。W2 只完成 `Care Note Drafting` 主流程，不同时扩展 Dashboard、Roster、Medication、Incident 或 Care Plan。
+继续沿用 W1 的 CareKind 项目主线，不另做一次性 UI Demo。代码库可按 frontend、backend、Agent、MCP 与 evaluation 等系统边界拆分。W2 只完成 `Care Note Drafting` 主流程，不同时扩展 Dashboard、Roster、Medication、Incident 或 Care Plan。
 
 课前录播：
 
@@ -749,7 +749,7 @@ W1  AI Coding + ADLC
  → W13 Production Readiness Review & Demo Day
 ```
 
-理论和实践是独立轨道：理论可以先建立架构心智模型，实践按 CareKind repository 的真实依赖逐步落地，不为了同周对齐而提前实现尚无基础的能力。
+理论和实践是独立轨道：理论可以先建立架构心智模型，实践按 CareKind 系统的真实依赖逐步落地，不为了同周对齐而提前实现尚无基础的能力。
 
 ### 12.3 最终交付
 
@@ -777,7 +777,7 @@ CareKind 始终使用 synthetic 或 de-identified data；AI 只创建 Draft，�
 ### 13.2 已确认的新亮点
 
 1. **每周一场理论 + 一场独立实践**：理论负责模型、架构和工程判断；实践不是附属 Lab，而是一条从 0 开始搭建完整 Agent 产品的连续 Live 主线。
-2. **一个 repository 从产品底座长成 production Agent**：W1 从 CareKind starter、ADLC、scope、acceptance criteria 和 repo rules 启动，之后不换项目，持续加入 UI、workflow、Voice、RAG、MCP、Agent、Memory、Harness、Routing 和 production evidence。
+2. **一条项目主线从产品底座长成 production Agent**：W1 从 CareKind starter system、ADLC、scope、acceptance criteria、service boundaries 和 engineering rules 启动，之后不换项目主线，持续加入 UI、workflow、Voice、RAG、MCP、Agent、Memory、Harness、Routing 和 production evidence；不限定为单一 repository。
 3. **第一次 AI 接入有明确边界**：W4 只完成 Voice → Editable Transcript → Human Confirmed Transcript，避免首次调用模型就跨越到 RAG、Agent 和自动写回。
 4. **RAG 主线收束为两周**：W6 从零搭建，W7 用 RAGAS 做基础测试与 MVP 验收；GraphRAG、OpenSearch 和完整云平台不挤占主线。
 5. **Agent 工程形成连续阶梯**：MCP Tools → Bounded Agent → Long-Term Memory → Production Harness → Model Routing → Production Review。

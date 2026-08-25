@@ -68,10 +68,10 @@ const cards = (items) => `<div class="grid">${items.map(([title, text]) => `<art
 const pages = {
   'curriculum.html': shell({
     title: '第七期课程总览', eyebrow: 'THEORY × PRACTICE', active: 'curriculum.html',
-    intro: '理论线与实践线独立推进：理论建立 Applied AI Engineer 的系统判断，实践从 W1 启动 CareKind AI，并把同一个 repository 逐周做成可评估、可治理、可答辩的 production Agent 产品。',
+    intro: '理论线与实践线独立推进：理论建立 Applied AI Engineer 的系统判断，实践从 W1 启动同一项目主线，逐周建设可评估、可治理、可答辩的 production Agent 系统；代码库按系统边界合理拆分。',
     body: section('这一期的结构', cards([
       ['理论不是实践课前置录像', 'W1–W12 每周一场理论 Live。RAG、Agents、ReAct、Multi-Agent、Memory、Harness、Governance 与 Model Routing 保留现场讲解。'],
-      ['实践不是零散 Lab', 'W1–W13 使用同一个 CareKind AI 项目，从 ADLC、UI、业务底座进入 Voice AI、结构化文档、RAG、MCP、Agent、Memory、Harness、Routing 和生产评审。'],
+      ['实践不是零散 Lab', 'W1–W13 沿同一 CareKind AI 项目主线，围绕一套 Enterprise Agent System 从 ADLC、UI、业务底座进入 Voice AI、结构化文档、RAG、MCP、Agent、Memory、Harness、Routing 和生产评审；代码库按系统边界合理拆分。'],
       ['录播承担稳定知识', '不依赖课堂互动、时效性低的基础内容转为必修录播；Fine-Tuning 保留工程决策边界，深度训练工具降为选修。'],
       ['Governance 贯穿全程', '合规不是最后一周加一张安全清单。数据确认、权限、citation、memory lifecycle、evaluation threshold、release 与 incident evidence 均有明确边界。']
     ])) + section('四个交付阶段', cards([
@@ -96,9 +96,9 @@ const pages = {
     title: '第七期学习方式', eyebrow: 'WEEKLY RHYTHM', active: 'learning-plan.html',
     intro: '每周一场理论 Live 和一场独立实践 Live。两条线相关但不强行绑定：理论回答为什么与如何判断，实践负责把 CareKind AI 的一个可验收 vertical slice 做完。',
     body: section('每周闭环', cards([
-      ['课前 · 录播与阅读', '完成稳定基础知识、starter repo 准备和必要的软件工程前置；录播不替代阶段性核心 Live。'],
+      ['课前 · 录播与阅读', '完成稳定基础知识、starter system 准备和必要的软件工程前置；录播不替代阶段性核心 Live。'],
       ['理论 Live · 90 分钟', '建立概念模型、工程 trade-off、面试表达和系统设计判断。'],
-      ['实践 Live · 90 分钟', '在同一 repository 实现、调试并验收本周能力；W13 为 180 分钟最终评审。'],
+      ['实践 Live · 90 分钟', '围绕同一套系统实现、调试并验收本周能力；代码库按系统边界合理拆分，W13 为 180 分钟最终评审。'],
       ['课后 · Evidence', '提交代码、测试、trace、evaluation、decision log 或 system design artifact，不以“模型跑通一次”为完成。']
     ])) + section('三类内容怎么分', `<table><thead><tr><th>形式</th><th>放什么</th><th>不放什么</th></tr></thead><tbody><tr><td>Live 理论</td><td>RAG、Agents、ReAct、Multi-Agent、Memory、Harness、Governance、Model Routing</td><td>可稳定自学的工具点击演示</td></tr><tr><td>Live 实践</td><td>CareKind 连续工程交付、故障定位、评审与答辩</td><td>互不相干的小 demo</td></tr><tr><td>必修录播 / 选修</td><td>稳定基础、Fine-Tuning 决策、深度 LoRA/QLoRA 工具</td><td>本期阶段性核心主线</td></tr></tbody></table>`, 'tint')
   }),
@@ -112,7 +112,7 @@ const pages = {
       ['Production Runtime', '解释 Memory lifecycle、Harness、trace、budgets、checkpoint/replay、Model Routing、fallback 与 escalation。'],
       ['Governance', '解释 risk register、privacy、permission、eval threshold、vendor risk、release gate、rollback 与 incident response。'],
       ['Fine-Tuning 决策', '先证明 prompt、context、RAG、tools 或 routing 不足，再根据数据、质量、隐私、成本和维护能力决定是否训练。']
-    ])) + section('最终面试证据', `<p>一套可运行的 CareKind Agent repository；一份 system architecture；一组 production eval cases；一份 routing decision log；一套 release / rollback / incident evidence；以及能说明“为什么这样设计”的现场 defense。</p>`, 'tint')
+    ])) + section('最终面试证据', `<p>一套可运行的 CareKind Agent system；一份 system architecture；一组 production eval cases；一份 routing decision log；一套 release / rollback / incident evidence；以及能说明“为什么这样设计”的现场 defense。</p>`, 'tint')
   })
 };
 
