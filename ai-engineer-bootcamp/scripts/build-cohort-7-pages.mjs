@@ -34,19 +34,22 @@ const shell = ({ title, eyebrow, intro, active, body }) => `<!doctype html>
   <meta name="description" content="${esc(intro)}">
   <title>${esc(title)} · JR Academy AI Engineer 第七期</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
-  <link rel="stylesheet" href="cohort-7-pages.css">
+  <link rel="stylesheet" href="cohort-7-premium.css">
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="cohort-7.html">JR<span>AI ENGINEER</span></a>
+    <a class="brand" href="cohort-7.html"><img src="posters/assets/jr-academy-logo-zh.svg" alt="JR Academy 匠人学院"></a>
     <nav>${nav.map(([href, label]) => `<a href="${href}"${href === active ? ' aria-current="page"' : ''}>${label}</a>`).join('')}</nav>
   </header>
   <main>
     <section class="hero">
-      <p class="eyebrow">${esc(eyebrow)}</p>
-      <h1>${esc(title)}</h1>
-      <p class="lead">${esc(intro)}</p>
-      <div class="metrics"><span>12 场理论 Live</span><span>13 场实践 Live</span><span>45 小时</span><span>1 个连续项目</span></div>
+      <img class="hero-visual" src="posters/assets/cohort-7-stack-hero-v2.png" alt="CareKind AI production system stack">
+      <div class="hero-copy">
+        <p class="eyebrow">${esc(eyebrow)}</p>
+        <h1>${esc(title)}</h1>
+        <p class="lead">${esc(intro)}</p>
+        <div class="metrics"><span>12 场理论 Live</span><span>13 场实践 Live</span><span>45 小时</span><span>1 个连续项目</span></div>
+      </div>
     </section>
     ${body}
   </main>
@@ -170,6 +173,6 @@ await writeFile(join(root, 'outline.json'), `${JSON.stringify(outline, null, 2)}
 await writeFile(join(root, 'pages.json'), `${JSON.stringify(outline.curriculumPages, null, 2)}\n`);
 
 await mkdir(join(root, 'archive', 'cohort-5'), { recursive: true });
-await writeFile(join(root, 'archive', 'cohort-5', 'index.html'), `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Engineer 历史课程页面 Archive</title><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>"><link rel="stylesheet" href="../../cohort-7-pages.css"></head><body><main><section class="hero"><p class="eyebrow">READ-ONLY ARCHIVE</p><h1>Cohort 5 / Legacy Pages</h1><p class="lead">2026-08-25 第七期页面更新前保存的历史快照。仅用于追溯，不代表当前排课。</p></section><section class="section"><h2>归档页面</h2><div class="grid">${['curriculum','outline','architecture','learning-plan','phase1','phase2','phase3','phase4','jd-mapping','internal','landing-us','review-new-content','review-restructure'].map((name)=>`<a class="card" href="${name}.html"><h3>${name}.html</h3><p>打开只读历史页面</p></a>`).join('')}</div><p><a class="button" href="../../cohort-7.html">返回第七期大纲</a></p></section></main></body></html>`);
+await writeFile(join(root, 'archive', 'cohort-5', 'index.html'), `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Engineer 历史课程页面 Archive</title><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>"><link rel="stylesheet" href="../../cohort-7-premium.css"></head><body><main><section class="hero archive-hero"><div class="hero-copy"><p class="eyebrow">READ-ONLY ARCHIVE</p><h1>Cohort 5 / Legacy Pages</h1><p class="lead">2026-08-25 第七期页面更新前保存的历史快照。仅用于追溯，不代表当前排课。</p></div></section><section class="section"><h2>归档页面</h2><div class="grid">${['curriculum','outline','architecture','learning-plan','phase1','phase2','phase3','phase4','jd-mapping','internal','landing-us','review-new-content','review-restructure'].map((name)=>`<a class="card" href="${name}.html"><h3>${name}.html</h3><p>打开只读历史页面</p></a>`).join('')}</div><p><a class="button" href="../../cohort-7.html">返回第七期大纲</a></p></section></main></body></html>`);
 
 console.log(`Generated ${Object.keys(pages).length} Cohort 7 pages from ${live.length} live sessions.`);

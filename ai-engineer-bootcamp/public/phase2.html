@@ -6,19 +6,22 @@
   <meta name="description" content="W4 第一次接入 AI，只做可编辑、可确认的 Speech-to-Text；W5 生成结构化 care documentation；W6–W7 用两周完成 Policy RAG 与 MVP。">
   <title>Stage 2 · First AI, Documentation &amp; RAG MVP · JR Academy AI Engineer 第七期</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
-  <link rel="stylesheet" href="cohort-7-pages.css">
+  <link rel="stylesheet" href="cohort-7-premium.css">
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="cohort-7.html">JR<span>AI ENGINEER</span></a>
+    <a class="brand" href="cohort-7.html"><img src="posters/assets/jr-academy-logo-zh.svg" alt="JR Academy 匠人学院"></a>
     <nav><a href="cohort-7.html">13 周排课</a><a href="curriculum.html">课程总览</a><a href="architecture.html">系统架构</a><a href="phase1.html">Stage 1</a><a href="phase2.html" aria-current="page">Stage 2</a><a href="phase3.html">Stage 3</a><a href="phase4.html">Stage 4</a><a href="learning-plan.html">学习方式</a><a href="jd-mapping.html">面试能力</a></nav>
   </header>
   <main>
     <section class="hero">
-      <p class="eyebrow">VOICE AI · STRUCTURED OUTPUT · RAG</p>
-      <h1>Stage 2 · First AI, Documentation &amp; RAG MVP</h1>
-      <p class="lead">W4 第一次接入 AI，只做可编辑、可确认的 Speech-to-Text；W5 生成结构化 care documentation；W6–W7 用两周完成 Policy RAG 与 MVP。</p>
-      <div class="metrics"><span>12 场理论 Live</span><span>13 场实践 Live</span><span>45 小时</span><span>1 个连续项目</span></div>
+      <img class="hero-visual" src="posters/assets/cohort-7-stack-hero-v2.png" alt="CareKind AI production system stack">
+      <div class="hero-copy">
+        <p class="eyebrow">VOICE AI · STRUCTURED OUTPUT · RAG</p>
+        <h1>Stage 2 · First AI, Documentation &amp; RAG MVP</h1>
+        <p class="lead">W4 第一次接入 AI，只做可编辑、可确认的 Speech-to-Text；W5 生成结构化 care documentation；W6–W7 用两周完成 Policy RAG 与 MVP。</p>
+        <div class="metrics"><span>12 场理论 Live</span><span>13 场实践 Live</span><span>45 小时</span><span>1 个连续项目</span></div>
+      </div>
     </section>
     <section class="section "><h2>W4–W7 正式 Live</h2><div class="sessions"><article class="session theory"><div><span class="week">W4</span><span class="track">理论 LIVE</span></div><h3>L58 · RAG Fundamentals: Embeddings, Retrieval &amp; Grounding</h3><p>第七期 W4 理论课。在 W3 Context baseline 上增加 retrieved policy context，讲清 embeddings、chunking、metadata、indexing、top-k retrieval、grounding、programmatic citation 与 no-answer policy。Hybrid Search、Query Rewrite 和 Reranking只作预告，W5 再展开。</p></article><article class="session practice"><div><span class="week">W4</span><span class="track">实践 LIVE</span></div><h3>C7P04 · CareKind Voice AI：Speech-to-Text</h3><p>第七期 W4 实践课，也是 CareKind 第一次接入 AI。只完成录音、上传、Speech-to-Text、transcript 编辑与人工确认，并保留手工输入 fallback；不生成 Care Note，不做 Context Engineering 或 RAG。</p></article><article class="session theory"><div><span class="week">W5</span><span class="track">理论 LIVE</span></div><h3>C7T05 · RAG Quality, Testing &amp; Improvement</h3><p>第七期 W5 已确认理论课。承接 W4 RAG Fundamentals，讲解 RAG failure taxonomy、golden cases、RAGAS 基础指标、人工抽检和单变量优化；完整 LLM-as-a-Judge framework、dataset versioning 与 CI regression gate 留到后续 AI Evaluation 阶段。</p></article><article class="session practice"><div><span class="week">W5</span><span class="track">实践 LIVE</span></div><h3>C7P05 · CareKind Structured Care Documentation</h3><p>第七期 W5 实践课。将手工输入或 W4 已确认 transcript 与 W3 resident/shift/task 数据组合，通过最小 Context Builder、structured facts、Progress Note schema 和 runtime validation 生成 AI Draft，并保留人工 Review/Confirm。W5 不做 RAG。</p></article><article class="session theory"><div><span class="week">W6</span><span class="track">理论 LIVE</span></div><h3>L101 · Tool Calling, MCP &amp; CLI Integration</h3><p>第七期 W6 理论课。先学习确定性的 function/tool calling，再建立 MCP server/client、tools/resources/prompts 与 CLI integration 心智模型；覆盖 command、args、env、working directory、stdio、tool discovery、权限和常见启动错误。Remote MCP、OAuth、云部署与集中式 observability 留到后续 production 阶段。</p></article><article class="session practice"><div><span class="week">W6</span><span class="track">实践 LIVE</span></div><h3>L60 · CareKind Policy RAG from Scratch</h3><p>第七期 W6 实践课。不使用 RAG 框架，从 synthetic CareKind policy corpus 实现 chunking、metadata、embedding、local vector index、top-k retrieval、retrieved policy context、grounded Progress Note Draft、programmatic citation 与 no-answer fallback，并接入 W5 文书生成链路。</p></article><article class="session theory"><div><span class="week">W7</span><span class="track">理论 LIVE</span></div><h3>L112 · Agents 基础 + The ReAct Framework</h3><p>第七期 W7 理论课。在 W6 确定性 tool calling 与 MCP 之后，引入 Agent 决策、ReAct 的 Action/Observation loop、state、maximum steps、timeout/retry、side-effect boundary、human approval 与失败模式。课程不要求展示或持久化模型隐藏推理。</p></article><article class="session practice"><div><span class="week">W7</span><span class="track">实践 LIVE</span></div><h3>C7P07 · RAG Testing &amp; CareKind MVP Completion</h3><p>第七期 W7 实践课。使用老师提供的 RAGAS starter 和 10 条 golden cases 测试 W6 Policy RAG，做一次单变量改进与人工抽检，然后验收 Resident/Shift/Task → Voice/Manual Input → Confirmed Transcript → Structured Facts → Policy Retrieval → Progress Note Draft + Citation → Human Confirm → Version/Audit 的完整 MVP。</p></article></div></section><section class="section tint"><h2>阶段完成标准</h2><p>每一条 AI output 都可人工修订、确认并追溯；RAG 有 citation 和 evaluation evidence。</p></section>
   </main>
