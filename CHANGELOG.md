@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-08-25
+
+- 新增第七期数据驱动大纲网页、主宣传海报与无字 Agent 系统主视觉，登记第七期入口并保留第五/第六期历史资产（`ai-engineer-bootcamp`、`posters.html`）
+- 强化第七期定位为“每周理论 + 独立实践双 Live”，明确实践从 W1 在同一 CareKind repository 从 0 搭建完整 production Agent 产品，而非理论课附属 Lab（`ai-engineer-bootcamp`）
+- 保存第七期最终总结与质量审计，记录 78.1/100 GOOD、10 项亮点、P0/P1 缺口、Advanced Track 和外部依据，并补齐正式 Live 的 week/track/order/level/knowledge/status（`ai-engineer-bootcamp`）
+- 合并第七期延长实践为 W13 一场 180 分钟 Production Readiness Review & Demo Day，标准 Remote MCP/Auth/部署/CI/CD 由学生课前完成，正式排课更新为 25 场 Live、45 小时（`ai-engineer-bootcamp`）
+- 确认第七期 W12 Production AI System Design/Model Routing 理论与 CareKind Model Router 实践，旧 Demo Day 移为延长实践线最终候选（`ai-engineer-bootcamp`）
+- 修正第七期 W11 实践为 `Build the CareKind Production Agent Harness`，将原 8 项 production evaluation/safety 内容完整移动为 W13 延长实践候选（`ai-engineer-bootcamp`）
+- 确认第七期 W11 `Productionize the CareKind Agent` 实践，记录 8 项 production eval、tracing、red-team、threshold 与 release hardening 内容（`ai-engineer-bootcamp`）
+- 更新第七期 W10 为 production Agent Harness 理论与 CareKind 安全长期 Memory 实践，加入 write gate、scope、lifecycle、permission、audit 和 poisoning 测试；Model Routing 实践回到待排池（`ai-engineer-bootcamp`）
+- 确认第七期 W9 Agent Memory/State 理论与 bounded CareKind Agent 实践，补齐 tool loop、termination、fallback、human review 和 trace（`ai-engineer-bootcamp`）
+- 确认第七期 W8 Multi-Agent 理论与 CareKind MCP/CLI 实践，补齐 tools、权限、audit 和故障排查边界（`ai-engineer-bootcamp`）
+- 恢复第七期 W3–W7 已确认理论线，明确理论与实践独立排课，修正 W3/W4 被误标为待讨论的问题（`ai-engineer-bootcamp`）
+- 重排 AI Engineer 第七期 W1–W7 实践节奏：W3 非 AI 业务底座、W4 Voice STT 首次 AI、W5 Structured Documentation、W6 Policy RAG、W7 RAGAS 与 MVP 验收；W8 以后重新待排（`ai-engineer-bootcamp`）
+
+## 2026-08-24
+
+- 更新 AI Engineer 第七期 W5–W7：RAG 主线锁定为 W4–W5 两周，W5 必修 RAGAS 基础测试，W6 改为 Tool Calling/MCP/CLI，W7 只锁定 Agents/ReAct 理论课并保留实践课待讨论（`ai-engineer-bootcamp`）
+- 升级 AI Engineer 第七期 Phase 10，新增 AI Governance & Risk Management 直播课与 ISA Governance Pack Quest，同步课程大纲、介绍 Deck、概览页和架构页（`ai-engineer-bootcamp`）
+- 落地 AI Engineer 第七期正式大纲与 `outline.json`：12 周每周理论/实践双 Live，新增 CareKind 连续项目、Production RAG、Compliance-aware Model Routing，收束为 24 场正式直播并保留旧内容为录播/Lab/Quest/选修（`ai-engineer-bootcamp`）
+- 更新 AI Engineer 第七期 W1 理论课，聚焦 GenAI 基础、Applied AI 系统全景与 AI Engineer 岗位边界，Ops 降为生产意识预告（`ai-engineer-bootcamp`）
+- 更新 AI Engineer 第七期 W2 理论与实践排课，建立 Transformer 课前录播 + Live 工程理解，并将 CareKind Care Note Drafting 的 Design System、角色权限、业务状态与 UI 验收写入课程 SoT（`ai-engineer-bootcamp`）
+- 更新 AI Engineer 第七期 W3/W4 为 Context single-model baseline → CareKind Policy RAG 的连续递进，保留 Chain of Thought，记录 Memory/Tool Calling/完整 Prompt Injection 的后续排课边界，并移除无证据的效果百分比（`ai-engineer-bootcamp`）
+- 建立 AI Engineer 第七期 W0–W4 Required/Conditional/Pool 学习顺序，将 94 个候选条目收束为 29 个固定主线、14 个诊断补齐和 51 个待排 Pool，明确每周前置、后置、Quest 与学习时长（`ai-engineer-bootcamp`）
+
 ## 2026-08-21
 
 - 新增 `opc-offer-mvp`、`opc-shipping-review`、`opc-first-dollar`、`opc-customer-acquisition` 四个学生 Skill 与共享 Founder OS，生成中文安装包并绑定生产课程附件（`ai-solo-founder-bootcamp`）

@@ -1,6 +1,6 @@
 # AI Engineer Bootcamp — Design Spec
 
-> 12 周技术 + 12 周 P3 职业孵化·旗舰课
+> 第七期：理论 12 周 + 实践 13 周 · 每周理论与独立实践双 Live · CareKind production Agent 贯穿项目
 > 视觉系统所属：**工程 / 技术线（旗舰）**
 
 本文档定义本课程的视觉主色与海报/Slide/页面应用规范。色卡来源：`curriculum/CLAUDE.md`、`curriculum/DESIGN.md`（JR 品牌四色 + Neo-Brutalism 风格）。
@@ -13,7 +13,7 @@
 
 ```
 设计任务：为「AI Engineer Bootcamp」做配图 / 海报 / banner / 封面图。
-课程定位：12 周技术 + 12 周 P3 职业孵化·旗舰课（工程 / 技术线（旗舰））
+课程定位：第七期理论 12 周 + 实践 13 周；每周理论与独立实践双 Live，从零搭建 CareKind production Agent（工程 / 技术线旗舰课）
 
 ═══ 主题色（必须严格执行）═══
 主色：#FF5757（JR 红（品牌主色））

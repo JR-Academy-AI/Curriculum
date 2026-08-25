@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:,">
+  <title>AI Engineer Bootcamp 第七期宣传海报</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    :root { --red:#ff5757; --cream:#fff1e7; --ink:#000; --navy:#10162f; --yellow:#ffde59; --blue:#38b6ff; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 30px;
+      background: #d9d9d9;
+      font-family: Inter, "Noto Sans SC", "PingFang SC", system-ui, sans-serif;
+    }
+    .controls {
+      position: sticky;
+      top: 18px;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+    .controls a, .controls button {
+      min-height: 46px;
+      padding: 9px 18px;
+      border: 3px solid var(--ink);
+      background: white;
+      box-shadow: 4px 4px 0 var(--ink);
+      color: var(--ink);
+      font: 800 15px/1 system-ui, sans-serif;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .controls button { background: var(--red); color: white; }
+    .poster-stage { width: 1242px; margin: 0 auto; }
+    #poster {
+      position: relative;
+      width: 1242px;
+      height: 1660px;
+      overflow: hidden;
+      border: 4px solid var(--ink);
+      background: var(--cream);
+      color: var(--ink);
+    }
+    #poster::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .25;
+      background-image: linear-gradient(#ff575735 2px, transparent 2px), linear-gradient(90deg, #ff575735 2px, transparent 2px);
+      background-size: 56px 56px;
+      pointer-events: none;
+    }
+    .header {
+      position: absolute;
+      z-index: 2;
+      top: 50px;
+      left: 54px;
+      right: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand { font-size: 28px; font-weight: 1000; letter-spacing: -.04em; }
+    .brand b { color: var(--red); }
+    .cohort {
+      padding: 10px 18px;
+      border: 3px solid var(--ink);
+      background: var(--yellow);
+      box-shadow: 5px 5px 0 var(--ink);
+      font-family: ui-monospace, monospace;
+      font-size: 22px;
+      font-weight: 950;
+      letter-spacing: .08em;
+    }
+    .headline {
+      position: absolute;
+      z-index: 3;
+      top: 142px;
+      left: 54px;
+      width: 720px;
+    }
+    .kicker {
+      display: inline-block;
+      margin-bottom: 25px;
+      padding: 9px 15px;
+      border: 3px solid var(--ink);
+      background: var(--navy);
+      color: white;
+      box-shadow: 5px 5px 0 var(--ink);
+      font-size: 21px;
+      font-weight: 950;
+      letter-spacing: .1em;
+    }
+    h1 { margin: 0; font-size: 104px; line-height: .93; letter-spacing: -.075em; font-weight: 1000; }
+    h1 .agent {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 6px 22px 15px;
+      border: 4px solid var(--ink);
+      background: var(--red);
+      box-shadow: 10px 10px 0 var(--ink);
+      color: white;
+      letter-spacing: -.065em;
+    }
+    .subhead {
+      margin: 32px 0 0;
+      width: 620px;
+      font-size: 34px;
+      line-height: 1.25;
+      font-weight: 900;
+    }
+    .art {
+      position: absolute;
+      z-index: 1;
+      top: 118px;
+      right: -245px;
+      width: 805px;
+      height: 1110px;
+      border: 4px solid var(--ink);
+      background: white;
+      box-shadow: 10px 10px 0 var(--ink);
+      transform: rotate(1.5deg);
+      overflow: hidden;
+    }
+    .art img { width: 100%; height: 100%; object-fit: cover; object-position: 60% center; }
+    .live-strip {
+      position: absolute;
+      z-index: 4;
+      top: 816px;
+      left: 54px;
+      width: 690px;
+      padding: 24px 27px;
+      border: 4px solid var(--ink);
+      background: white;
+      box-shadow: 8px 8px 0 var(--ink);
+      font-size: 31px;
+      line-height: 1.25;
+      font-weight: 950;
+    }
+    .live-strip span { color: var(--red); }
+    .stats {
+      position: absolute;
+      z-index: 4;
+      top: 1010px;
+      left: 54px;
+      right: 54px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .stat {
+      min-height: 156px;
+      padding: 24px;
+      border: 4px solid var(--ink);
+      background: white;
+      box-shadow: 7px 7px 0 var(--ink);
+    }
+    .stat:nth-child(2) { background: var(--blue); }
+    .stat:nth-child(3) { background: var(--yellow); }
+    .stat strong { display: block; font-size: 62px; line-height: .9; letter-spacing: -.05em; }
+    .stat span { display: block; margin-top: 16px; font-size: 21px; font-weight: 900; }
+    .progression {
+      position: absolute;
+      z-index: 4;
+      left: 54px;
+      right: 54px;
+      bottom: 98px;
+      padding: 28px 30px 30px;
+      border: 4px solid var(--ink);
+      background: var(--navy);
+      box-shadow: 9px 9px 0 var(--red);
+      color: white;
+    }
+    .progression-label { margin-bottom: 19px; color: var(--yellow); font: 950 19px/1 ui-monospace, monospace; letter-spacing: .08em; }
+    .steps { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; font-size: 23px; font-weight: 900; }
+    .steps i { color: var(--red); font-style: normal; }
+    .footer {
+      position: absolute;
+      z-index: 5;
+      left: 54px;
+      right: 54px;
+      bottom: 32px;
+      display: flex;
+      justify-content: space-between;
+      font-family: ui-monospace, monospace;
+      font-size: 16px;
+      font-weight: 900;
+    }
+    @media (max-width: 1300px) {
+      body { padding: 18px 0; }
+      .poster-stage { transform-origin: top center; }
+    }
+    @media print {
+      body { padding: 0; background: white; }
+      .controls { display: none; }
+      #poster { border: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <a href="../cohort-7.html">查看完整大纲</a>
+    <button id="download" type="button">下载 PNG · 1242×1660</button>
+  </div>
+  <div class="poster-stage">
+    <div id="poster">
+      <div class="header">
+        <div class="brand">JR <b>ACADEMY</b> · AI ENGINEER</div>
+        <div class="cohort">COHORT 07</div>
+      </div>
+
+      <div class="headline">
+        <div class="kicker">THEORY + PRACTICE · DOUBLE LIVE</div>
+        <h1>从 0 搭建<br>一个<br><span class="agent">Production Agent</span></h1>
+        <p class="subhead">同一个 CareKind 项目贯穿 13 周，不做互不相关的一次性 Demo。</p>
+      </div>
+
+      <div class="art"><img src="./assets/cohort-7-agent-system.png" alt=""></div>
+
+      <div class="live-strip">每周一场理论 <span>+</span> 一场独立实践</div>
+
+      <div class="stats">
+        <div class="stat"><strong>25</strong><span>场正式 Live</span></div>
+        <div class="stat"><strong>45h</strong><span>Live 总时长</span></div>
+        <div class="stat"><strong>1</strong><span>个贯穿项目</span></div>
+      </div>
+
+      <div class="progression">
+        <div class="progression-label">CAREKIND BUILD PATH</div>
+        <div class="steps">ADLC <i>→</i> UI <i>→</i> Voice <i>→</i> RAG <i>→</i> MCP <i>→</i> Agent <i>→</i> Memory <i>→</i> Harness <i>→</i> Routing <i>→</i> Evals</div>
+      </div>
+
+      <div class="footer"><span>AI ENGINEER BOOTCAMP · 第七期</span><span>CAREKIND · AUSTRALIAN AGED CARE</span></div>
+    </div>
+  </div>
+
+  <script>
+    const stage = document.querySelector('.poster-stage');
+    const fitPoster = () => {
+      if (innerWidth >= 1300) {
+        stage.style.transform = '';
+        stage.style.marginBottom = '';
+        return;
+      }
+      const scale = Math.min(1, (innerWidth - 24) / 1242);
+      stage.style.transform = `scale(${scale})`;
+      stage.style.marginBottom = `${1660 * (scale - 1)}px`;
+    };
+    addEventListener('resize', fitPoster);
+    fitPoster();
+
+    document.querySelector('#download').addEventListener('click', async (event) => {
+      const button = event.currentTarget;
+      const previous = stage.style.transform;
+      button.textContent = '正在生成…';
+      stage.style.transform = 'none';
+      await document.fonts.ready;
+      const canvas = await html2canvas(document.querySelector('#poster'), {
+        width: 1242,
+        height: 1660,
+        scale: 1,
+        useCORS: true,
+        backgroundColor: '#fff1e7'
+      });
+      stage.style.transform = previous;
+      const link = document.createElement('a');
+      link.download = 'JR Academy - AI Engineer Bootcamp Cohort 07 - 3x4.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+      button.textContent = '下载 PNG · 1242×1660';
+    });
+  </script>
+</body>
+</html>
