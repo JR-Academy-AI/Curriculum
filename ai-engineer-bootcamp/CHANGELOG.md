@@ -1,5 +1,31 @@
 # Changelog — AI Engineer Bootcamp
 
+## 2026-08-25
+
+- 新增 `cohort-7.html` 可分享大纲页，由 `outline.json` 动态渲染 13 周/25 场正式 Live；新增 1242×1660 第七期主宣传海报、PNG 下载能力和无文字 production Agent 系统主视觉，并更新海报实验室与 DESIGN 期次定位
+- 强化第七期第一亮点：每周一场理论 + 一场独立实践，实践从 W1 的 CareKind starter/ADLC 开始，在同一 repository 连续完成 UI、workflow、Voice、RAG、MCP、Agent、Memory、Harness、Routing 与 production review，不再表述为附属 Lab
+- 保存第七期最终总结与审计：新增 25 场/45 小时结构、W1–W13 依赖链、最终交付、10 项新亮点、78.1/100 通用质量评分、P0/P1/P2 缺口、Advanced Track 与权威参考；为全部正式 Live 补齐 `cohort7Week`、`cohort7Track`、`cohort7SessionOrder`、level、learns 和 confirmed status，并给 W13 增加结构化课前验收清单
+- 合并原 W13–W17 为 `L171 CareKind Production Readiness Review & Demo Day` 180 分钟最终实践：学生课前自助完成 Remote MCP/Auth、部署、CI/CD 与标准运行基础，Live 验收 production eval、tracing、AI red team、failure/kill-switch drill、release/rollback/incident decision 与最终答辩；总量更新为 25 场 Live、45 小时，旧 `L180` 降为 Legacy
+- 确认 W12：`L183 Production AI System Design & Model Routing` 理论 Live + `C7P12 Build the CareKind Model Router inside the Agent Harness` 实践 Live，覆盖 model adapters、routing policy、provider allowlist、fallback/escalation、trace 与 router eval；`L180 Demo Day` 移为延长实践线最终候选
+- 修正 W11 实践为 `C7P11 Build the CareKind Production Agent Harness`：在 W10 Memory 后实现 lifecycle、adapters、hooks、budgets、checkpoint/replay、idempotency、human approval 与 trace；原 `L171` 8 项 production eval/safety 内容完整移为 W13 延长实践候选
+- 确认 W11 实践 `L171 Productionize the CareKind Agent`：完整记录 10–15 条 production eval cases、deterministic checks、LLM-as-a-Judge、Agent regression gate、Langfuse/等价 tracing、prompt injection/memory poisoning/越权/PII 测试、运行 threshold 与 release/rollback/incident runbook
+- 更新 W10：`L138 Harness Engineering for Production AI Agents` 升为理论 Live，`C7P10` 改为 CareKind 安全长期 Memory 实践，覆盖 confirmed-fact write gate、scope、TTL、冲突/更正/删除、permission、audit 与 poisoning tests；`L149` 改为 60 分钟必修录播，Model Routing 实践周次待排
+- 确认 W9：`L133 Agent Memory & State Management` 理论 Live + `L119 Build a Bounded CareKind Agent` 实践 Live；W9 占位降为 Legacy，实践仅使用 task/session state，不实现长期 resident memory
+- 确认 W8：`L122 Multi-Agent Architectures` 理论 Live + `L104 Build and Connect a CareKind MCP Server` 实践 Live；将 W8 占位降为 Legacy，MCP 实践锁定四个 tools、本地 CLI/stdio、permission、audit 与 troubleshooting
+- 恢复第七期已确认理论线：W3 `L37 Context Engineering`、W4 `L58 RAG Fundamentals`、W5 `C7T05 RAG Quality/RAGAS`、W6 `L101 Tool Calling/MCP/CLI`、W7 `L112 Agents/ReAct`，理论线不随独立实践线重排
+- 重排第七期 W1–W7 实践线：W1 只做 ADLC/starter 理解，W2 完整产品 UI，W3 非 AI Care Workflow，W4 Voice STT 首次 AI，W5 Structured Documentation，W6 Policy RAG，W7 RAGAS + CareKind MVP；原 MCP/Agents/Multi-Agent 周次撤回候选并将 W8–W9 标为待讨论
+
+## 2026-08-24
+
+- 更新第七期 W5–W7：W5 改为 `RAG Quality, Testing & Improvement` + `CareKind RAG Testing with RAGAS`，完整 eval/CI/GraphRAG 延后；W6 前移 Tool Calling、MCP 与 CLI 并构建 CareKind MCP Server；W7 锁定 Agents/ReAct 理论课，实践课以明确占位保留待讨论
+- 升级 Phase 10 为「AI Governance, Safety, Observability & Evals」，新增 AI Governance & Risk Management 直播课和 ISA Governance Pack Quest，覆盖 AI Inventory、风险分级、RACI、System Card、数据/模型/供应商治理、上线审批、审计证据、kill switch 与 Incident Runbook（课程总数 290 → 292，直播 59 → 60）
+- 同步 Phase 1–10 当前 lesson 统计到课程介绍 Deck，并更新课程概览与架构页的 Governance 展示
+- 落地 `COHORT_07_OUTLINE.md` 第七期正式大纲与课程 SoT：12 周固定 12 场理论 + 12 场实践，新增 W1 AI Coding + ADLC、W2 Design System/UI/Animation、W3 CareKind MVP、W5 Production RAG Architecture、W10 Compliance-aware Model Routing；RAG、Agents、ReAct、Multi-Agent 保持 Live，稳定理论转录播，Fine-Tuning 深度实操转选修（课程总数 292 → 297，步骤 886 → 916，正式直播 60 → 24，共 42 小时）
+- 更新第七期 W1 理论课为 `GenAI Foundations & AI Engineer Landscape`：90 分钟聚焦 AI/ML/Deep Learning/GenAI/LLM 关系、LLM 基础、Applied AI 系统全景与岗位边界；Ops 只保留生产意识预告，API 深入和 ISA Proposal 移出第一节
+- 更新第七期 W2：理论课改为 `How LLMs Work: Transformer, Tokens & API Behaviour`，Transformer/Input Embeddings 作为课前录播，Live 聚焦架构到 API behaviour 与面试表达；实践课锁定 CareKind Care Note Drafting，补齐 PCW/EN/RN 权限、Draft/Review/Confirmed/Failed/Escalated 状态、animation、accessibility、Design Review 与合规型 UI 验收
+- 更新第七期 W3/W4：W3 改为 `Context Engineering & Reasoning Patterns` + CareKind single-model baseline，保留 Chain of Thought 并建立 Context Contract、trust boundary、JSON Schema、10 条测试与 Context Blueprint Quest；W4 在同一 baseline 上加入 `RAG Fundamentals` + CareKind Policy RAG from Scratch，明确 programmatic citation、no-answer、个人数据不入 vector store及无预设提升百分比（当前 297 lessons / 908 steps / 24 Live）
+- 建立第七期 W0–W4 唯一学习顺序：94 个候选条目收束为 29 个 Required、14 个诊断后补齐和 51 个 Lesson Pool，逐周标明理论课前、理论 Live、课后 Lab、实践 Live、Quest 验收与预计学习时长；Pool 按 Infrastructure/Production、Recording/Reference、Evaluation、Replaced/Legacy 分类，后续课程只能通过“从 Pool 移入具体周”进入主线
+
 ## 2026-06-16
 
 - 新增整套推广三件套（PERSONAS / FUNNEL_PLAN / PROMOTION_PLAN）

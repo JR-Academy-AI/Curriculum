@@ -1,6 +1,7 @@
 {
   "pages": [
     "curriculum.html",
+    "cohort-7.html",
     "outline.html",
     "phase1.html",
     "phase2.html",
@@ -8,5 +9,5 @@
     "phase4.html",
     "learning-plan.html"
   ],
-  "defaultPage": "curriculum.html"
+  "defaultPage": "cohort-7.html"
 }
