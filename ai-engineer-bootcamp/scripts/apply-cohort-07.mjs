@@ -863,11 +863,16 @@ outline.highlights_en = [
 ];
 
 outline.curriculumPages = {
-  ...outline.curriculumPages,
   pages: [
-    'curriculum.html',
     'cohort-7.html',
-    ...(outline.curriculumPages?.pages ?? []).filter((page) => page !== 'curriculum.html' && page !== 'cohort-7.html'),
+    'curriculum.html',
+    'architecture.html',
+    'phase1.html',
+    'phase2.html',
+    'phase3.html',
+    'phase4.html',
+    'learning-plan.html',
+    'jd-mapping.html',
   ],
   defaultPage: 'cohort-7.html',
 };
