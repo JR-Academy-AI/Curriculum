@@ -6,19 +6,22 @@
   <meta name="description" content="先把已有能力包装成有权限和审计的 MCP tools，再构建 bounded single Agent，最后增加带 provenance、scope、TTL 和删除规则的长期 Memory。">
   <title>Stage 3 · MCP, Bounded Agent &amp; Safe Memory · JR Academy AI Engineer 第七期</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
-  <link rel="stylesheet" href="cohort-7-pages.css">
+  <link rel="stylesheet" href="cohort-7-premium.css">
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="cohort-7.html">JR<span>AI ENGINEER</span></a>
+    <a class="brand" href="cohort-7.html"><img src="posters/assets/jr-academy-logo-zh.svg" alt="JR Academy 匠人学院"></a>
     <nav><a href="cohort-7.html">13 周排课</a><a href="curriculum.html">课程总览</a><a href="architecture.html">系统架构</a><a href="phase1.html">Stage 1</a><a href="phase2.html">Stage 2</a><a href="phase3.html" aria-current="page">Stage 3</a><a href="phase4.html">Stage 4</a><a href="learning-plan.html">学习方式</a><a href="jd-mapping.html">面试能力</a></nav>
   </header>
   <main>
     <section class="hero">
-      <p class="eyebrow">MCP · AGENT · MEMORY</p>
-      <h1>Stage 3 · MCP, Bounded Agent &amp; Safe Memory</h1>
-      <p class="lead">先把已有能力包装成有权限和审计的 MCP tools，再构建 bounded single Agent，最后增加带 provenance、scope、TTL 和删除规则的长期 Memory。</p>
-      <div class="metrics"><span>12 场理论 Live</span><span>13 场实践 Live</span><span>45 小时</span><span>1 个连续项目</span></div>
+      <img class="hero-visual" src="posters/assets/cohort-7-stack-hero-v2.png" alt="CareKind AI production system stack">
+      <div class="hero-copy">
+        <p class="eyebrow">MCP · AGENT · MEMORY</p>
+        <h1>Stage 3 · MCP, Bounded Agent &amp; Safe Memory</h1>
+        <p class="lead">先把已有能力包装成有权限和审计的 MCP tools，再构建 bounded single Agent，最后增加带 provenance、scope、TTL 和删除规则的长期 Memory。</p>
+        <div class="metrics"><span>12 场理论 Live</span><span>13 场实践 Live</span><span>45 小时</span><span>1 个连续项目</span></div>
+      </div>
     </section>
     <section class="section "><h2>W8–W10 正式 Live</h2><div class="sessions"><article class="session theory"><div><span class="week">W8</span><span class="track">理论 LIVE</span></div><h3>L122 · Multi-Agent Architectures</h3><p>第七期 W8 理论课。在 W7 Agents/ReAct 之后，讲清单 Agent 与 Multi-Agent 的边界、Supervisor/Orchestrator、handoff、role-based routing、shared state、message contract、context isolation、termination、成本、人工升级与 auditability。能用 deterministic workflow 解决的问题不使用 Multi-Agent。</p></article><article class="session practice"><div><span class="week">W8</span><span class="track">实践 LIVE</span></div><h3>L104 · Build and Connect a CareKind MCP Server</h3><p>第七期 W8 实践课。把 W7 已完成的 CareKind MVP 能力包装为 get_resident_context、get_shift_tasks、search_policy 与 create_progress_note_draft MCP tools，通过本地 CLI/stdio 完成 discovery、manual call、validation、role permission、audit 与排错。本周不引入 Agent loop、自动 Confirm 或真实系统写回。</p></article><article class="session theory"><div><span class="week">W9</span><span class="track">理论 LIVE</span></div><h3>L133 · Agent Memory &amp; State Management</h3><p>第七期 W9 理论课。区分 task state、working/session memory 与 long-term episodic/semantic/preference memory，建立 read/write policy、scope、owner、TTL、retention、update/delete、consent、provenance、冲突处理、权限边界和 memory poisoning 防护。Context window 与 vector store 都不自动等于 Memory。</p></article><article class="session practice"><div><span class="week">W9</span><span class="track">实践 LIVE</span></div><h3>L119 · Build a Bounded CareKind Agent</h3><p>第七期 W9 实践课。使用 W8 MCP tools 构建受控单 Agent，完成 task state、Action/Observation schema、最小 tool loop、allowlist、maximum steps、termination、timeout/retry/fallback、human-review gate、trace 与失败测试。本周不做长期 resident memory、Multi-Agent、自动 Confirm 或真实系统写回。</p></article><article class="session theory"><div><span class="week">W10</span><span class="track">理论 LIVE</span></div><h3>L138 · Harness Engineering for Production AI Agents</h3><p>第七期 W10 理论课。讲清 Agent SDK、framework 与 harness 的边界，并设计可进入生产环境的 agent runtime：受控 tool loop、context lifecycle、hooks、permission、budget、termination、checkpoint、retry、resume、replay、idempotency、human approval、trace 与 evaluation hooks。</p></article><article class="session practice"><div><span class="week">W10</span><span class="track">实践 LIVE</span></div><h3>C7P10 · Build Safe Long-Term Memory for the CareKind Agent</h3><p>第七期 W10 实践课。为 W9 的 bounded CareKind Agent 加入安全的长期 memory：只允许经过人工确认的事实进入 memory，按 resident、user、team 与 role 控制 scope，支持 provenance、TTL、冲突处理、更正、删除、权限检查、audit 与 memory-poisoning 测试。</p></article></div></section><section class="section tint"><h2>阶段完成标准</h2><p>Tool、Agent 与 Memory 都有明确 permission、termination、human review 和 poisoning/越权测试。</p></section>
   </main>
