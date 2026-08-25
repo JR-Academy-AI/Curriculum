@@ -1,286 +1,145 @@
-# AI Engineer Bootcamp 推广方案 PROMOTION_PLAN.md
+# AI Engineer Bootcamp Cohort 7 — Marketing Plan
 
-> 单一真相文档。所有跟推广相关的决策、排期、责任、数据都在这里。
-> 目标用户画像见 [`./PERSONAS.md`](./PERSONAS.md)（2026-07-03 重写版，ground truth 覆盖率约 0.3-0.4）。
-> "ground truth"（下文简称 **GT**，意思是"这句话有没有真实来源支撑，而不是 AI 按常识编的"）覆盖率 0.3-0.4 没到 PERSONAS.md 自己定的 0.5 及格线——这直接决定了本文档第 3 节渠道矩阵目前只能用行业基线，不能说"已经按本课真实用户验证过"。
-> 漏斗机制见 [`./FUNNEL_PLAN.md`](./FUNNEL_PLAN.md)（2026-07-03 同步重写，三档定价从占位数字改锚定真实售价，但三档到底拆不拆仍未拍板）。
-> 维护人：待定 | 最近更新：2026-07-03 | 上一版：2026-06-16（AI 拍脑袋骨架版）
+> 版本：2026-08-25
+> 课程事实 SoT：[`COHORT_07_OUTLINE.md`](./COHORT_07_OUTLINE.md) 与 [`public/outline.json`](./public/outline.json)
+> 视觉 SoT：[`DESIGN.md`](./DESIGN.md)
+> 定价、开班日、席位、学员规模和就业数据：未在本计划中确认，发布前必须由课程负责人或生产系统给出证据。
 
----
+## 1. 一句话定位
 
-## 🚨 这份计划目前卡在什么地方（先说清楚，别看到后面才发现排不出具体日期）
+**不是学 13 个互不相关的 Demo，而是从第一周开始，在同一个 CareKind repository 里搭出一套可运行、可评估、可治理的 production Agent。**
 
-本轮重写想按 SKILL 要求排出一张 T-30→D+30、精确到天的任务矩阵，做下去发现有 4 件事没人拍板，其中 3 件排了也是空转；**第 3 件（招生状态）2026-07-03 当天已经用生产环境 API 核实清楚，不再是阻塞项**：
+课程的教学差异不是“多一节项目课”，而是两条独立 Live 轨道：理论课建立 AI 工程判断，实践课持续建设同一个真实产品。
 
-1. **三档定价拆不拆，FUNNEL_PLAN.md 还没定案**——现状是这门课只有一个 SKU、一个价格（$3,850 AUD 官方价 / $3,000 AUD 第 5 期促销价），打包了全部内容。三档（自学/教学/陪跑）目前只是 FUNNEL_PLAN.md 里的提案，等课程负责人拍板。这个没定，第 2 节"目标与漏斗反推"里"报名目标拆三档分别多少人"这道题就填不了。
-2. **引流课还没设计完**——FUNNEL_PLAN.md §2 的阶段状态里，"引流课方案（intro-course-design）"这一项还没打勾，主题、价格、quick win 都只是提案，没有真正可卖的引流课产品。没有产品，第 3 节渠道矩阵里"引流课独立冲刺周"这条就没法排。
-3. **~~当前招生状态没有可靠数据源确认~~ 已解决（2026-07-03 二次核实）**——本地 `public/prod-state.json` 快照确实 10 周没刷新、不含开班日期字段，这个判断没错；但当时没有进一步去查生产环境 API，只停在"不确定"就没往下走了。同一天（因为发现另一门课 web-code-bootcamp 的类似问题）直接查了生产环境 `admin-cms/programs/by-training/66e3e7641664e500126d237f`，拿到了真实答案：**当前第 5 期在跑**（2026-04-25 开课，2026-07-23 完课，约 3 周后结课，**65 人**，真实规模不小）；**第 7 期已经排好了**（2026-08-29 开课，目前 **3 人**已报名，说明招生窗口其实已经开始）。数据里没有"第 6 期"（大概率是历史编号跳过或废弃记录，不影响当前判断）。这门课**不是"要找人确认是否在招生"，而是确确实实在正常招生**，第 7 期日期已知（距今约 8 周），Type 1 标准 T-30→D+30 节奏排得下。
-4. **PERSONAS.md 渠道数据自己声明不可用**——PERSONAS.md §3"跨 persona 渠道平台汇总"原文写的是"这一整节目前不可信，不能拿去定投放渠道"，因为除了 V2EX 两条帖子外，没有任何真实的平台/时段数据。按 `course-promotion-architect` skill 自己的规则，GT 覆盖率 < 50% 应该先跑 `/target-user-persona-mapper validate` 再往下走。这次没有卡住不产出，而是**先用 `COURSE_TYPE_PLAYBOOKS.md` Type 1 行业基线搭骨架，明确标注"未经本课真实用户验证"**，等 PERSONAS.md 补完销售访谈和小红书/Boss截图后再替换。
+## 2. 六个对外宣传点
 
-**还剩 1/2/4 三件事解决之前，本文档 Status 保持 `planning`；但第 4 节时间轴现在可以用第 7 期真实开班日期（2026-08-29）排出真实日历日期了，不用再等"逻辑顺序"这种占位排法。**
+1. **每周理论 + 独立实践双 Live**：W1–W12 每周两场，W13 最终 production review；共 25 场、45 小时。
+2. **一个项目贯穿 13 周**：CareKind 从 ADLC、UI 和业务工作流开始，不从聊天框或 Agent 模板起步。
+3. **Australian aged care 合规场景**：围绕 documentation、role、permission、human confirmation、version、citation 和 audit trail 做工程设计。
+4. **完整 Applied AI 路径**：Voice → Structured Documentation → RAG → MCP → Bounded Agent → Memory → Harness → Model Routing → Evals/Governance。
+5. **Live 保留面试重点**：RAG、Agents、ReAct、Multi-Agent Architectures、Model Routing 和 production system design 不降级成纯录播。
+6. **以生产证据结束**：eval cases、deterministic checks、LLM-as-a-Judge、regression gate、tracing、red team、latency/cost/tool-failure thresholds、release/rollback/incident defense。
 
-> ⚠️ **数据源提醒（本次教训）**：这门课的本地 `public/prod-state.json` 已知 10 周未同步，涉及"当前是否在招生、开班日期、真实报名人数"这类判断，直接查生产环境 admin-cms API 比信本地缓存快也准（`tools/skills-data-manager/.env.local` 里的 `ADMIN_TOKEN` 可以直接调）。`web-code-bootcamp-or-learn-to-code-1` 那门课就是因为只信本地文件，把"31 期不存在"这个错误结论写进了文档，被用户看出来问题才发现——这门课的核实是趁着改那个错误一并做的。
+## 3. 五个内容方向
 
----
+### A. Role Upgrade · Software Engineer → AI Engineer
 
-## 0. Meta
+讲清已有软件工程能力如何迁移到 AI 系统：API、state、permissions、testing、observability 仍然重要；新增的是 context、retrieval、model behavior、tool loop、memory、eval 和 governance。
 
-| Field | Value |
-|-------|-------|
-| Course Slug | `ai-engineer-bootcamp` |
-| Course 中文名 | AI Engineer 训练营（AI 工程师班，cohort 制主推工程班） |
-| **🎯 Course Type** | Type 1 · Bootcamp 求职转型类（最重火力）|
-| **类型识别理由** | 12 周技术课 + 12 周 P3 企业项目孵化、强结果导向（买家要的是"能写进简历、对得上 JD 的能力证明"）、目标人群是在职想转 AI 方向 / 求第一份 AI offer 的开发者，客单价 $3,850/$3,000 AUD（约 1.7-1.8 万人民币）落在 Type 1 区间上沿，跟 COURSE_TYPE_PLAYBOOKS.md 速查矩阵对上 |
-| **跨类型组合** | 潜在 Type 1 + Type 6（引流课独立冲刺），但 Type 6 那部分产品还没设计完（见上方阻塞项 #2），本计划先只覆盖 Type 1 母课渠道 |
-| **🧑 PERSONAS.md 状态** | ⚠️ 存在，GT 覆盖率约 30%-40%，低于 50% 及格线——§3 渠道数据原文自称不可信 |
-| **PERSONAS.md 引用** | [./PERSONAS.md](./PERSONAS.md) — last updated 2026-07-03 |
-| **当前在跑 cohort** | **第 5 期**：2026-04-25 开课，2026-07-23 完课（约 3 周后），**65 人**——2026-07-03 生产环境 API 核实，不是本地缓存数字 |
-| **Launch Date（下一期）** | **第 7 期：2026-08-29**（已确认，生产环境 `admin-cms/programs/by-training/66e3e7641664e500126d237f` 真实记录，`_id` 可查）；目前已有 **3 人**报名，说明招生已经开始，不是"待启动" |
-| Target Enrollment | ⚠️ 未定——三档拆不拆没拍板前填不出分档人数。`COHORT_ECONOMICS.md` 给了一个参考底线：按现价 $3,850 AUD 和 59 节直播课的老师成本测算，单期至少 4 人保本、7 人才能到 50% 利润率，这不是营销目标，只是"招不到这个数字这期在经济上就亏"的参考线。第 5 期真实做到 65 人，说明这不是一个招生困难的课，第 7 期目标可以参考第 5 期的规模，不用只看保本线 |
-| Intro Course Target | ⚠️ 未定，引流课产品本身还没设计完（见阻塞项 #2） |
-| Status | `planning`（三档定价 + 引流课 2 项阻塞未解决前不进入 `in-progress`；招生状态阻塞已于 2026-07-03 解除）|
-| Created | 2026-06-16 by `/course-promotion-architect init` |
-| Last Updated | 2026-07-03（同日二次更新：核实第 7 期真实开班日期，解除招生状态阻塞）|
-| Related Docs | [PERSONAS.md](./PERSONAS.md) / [FUNNEL_PLAN.md](./FUNNEL_PLAN.md) / [COHORT_ECONOMICS.md](./COHORT_ECONOMICS.md) / [`docs/prd/AI_ENGINEER_BOOTCAMP_SALES_PAGE_PRD.md`](../../docs/prd/AI_ENGINEER_BOOTCAMP_SALES_PAGE_PRD.md) |
+适合：LinkedIn 技术长文、公开课、官网首屏、横版架构图。
 
----
+### B. Build in Public · 13 周 CareKind Build Log
 
-## 1. 课程定位摘要
+每周只展示一个真实增量和一个工程判断：W1 为什么先做 ADLC，W4 为什么 AI 只到可编辑 transcript，W7 为什么先验收 RAG MVP，W9 为什么先做 bounded agent，W10 为什么 memory 必须有 write gate。
 
-> 🧑 目标用户画像见 [./PERSONAS.md](./PERSONAS.md)。本节只抽最必要的摘要，具体 persona 措辞、异议、渠道权重的可信度标注都在 PERSONAS.md 里，不要只看这一节就动手写文案。
+适合：小红书图文、微信公众号系列、短视频、学员周报模板。
 
-12 周把"会调 LLM API"练成"能搭一套生产级 AI 系统"的能力——覆盖 Context Engineering、RAG、GraphRAG、Agent SDK（OpenAI/Claude/Google 三家对比）、Multi-Agent、微调（QLoRA）、AI Eval，外加 12 周 P3 企业真实项目孵化。课程规模是这门课的硬指标：286 节课、59 场直播（79.5 小时）、68 个互动 Lab、10 个 Phase。[数据来源：`public/outline.json`]
+### C. Architecture Breakdown · 10 层 AI 工程技术栈
 
-**主推内容角度**（从 COURSE_TYPE_PLAYBOOKS.md Type 1 的角度权重表，交叉 PERSONAS.md 里实际拿到的真实数据整理）：
+用主海报的分层视觉解释每一层解决什么问题、依赖上一层什么能力、失败时如何定位。重点不是工具清单，而是系统边界和 trade-off。
 
-1. **校友真实 offer 案例**（权重最高）——PERSONAS.md 核实到销售页上挂了 3 个具体案例：Senior Software Engineer（年薪含 Super 共 $212,800 AUD）、Macquarie Group Senior Associate、EY Senior Consultant - AI Engineer。这三个案例分量重，是因为 Type 1 买家决策靠的不是"课程功能介绍"，是"真有人靠这个拿到结果"。**但这些数字是 WebFetch 抓网页转述得到的，不是逐字核对原始 HTML**，尤其 $212,800 AUD 这种硬数字，正式写进对外文案前必须让 Aurora 找到销售页原文截图核对一遍——这类数字一旦记错，发出去很难圆，比不写还伤。
-2. **7 个 capstone 项目 + 技能点对齐 AI JD**——这条直接回应 PERSONAS.md 里 Persona A/C 反复出现的同一个焦虑："我能调 API，但 JD 要的是一整套系统能力，我手上没有能证明这件事的东西"。7 个项目就是这个焦虑的正面答案：不是"学了什么"，是"做出了什么、能不能拿去面试聊"。
-3. **Faculty 实名 + 履历（Meta/Microsoft/Amazon）**——`outline.json` 的 features 字段和销售页 FAQ 里都提到这几家公司，但履历是否属实这次调研没有权限核实（需要看 LinkedIn），销售页 FAQ 里专门有一条"导师真的来自 Meta/Microsoft？"，说明这本身就是常被质疑的点。这条内容角度权重高，但**必须等 Beta 核实完实名和 LinkedIn 之后才能正式用在文案里**，核实不完就先别在小红书/公众号里点名具体公司，避免被拆穿。
-4. **V2EX 真实痛点原话**（新增，首版没有）——PERSONAS.md 里 Persona C 有一条真实用户回复原话："你做 ai 应用学啥训练模型？bottom up 还是 top down 选好一个，别在中间折腾折磨自己"。这句话背后的意思是：这类人怕的不是"不会"，是"自己瞎摸索走错方向"。文案角度可以从"我们把路径先给你选好，不用你自己在一堆博客里拼"切入，这比 AI 编的"系统化学习"这种说法更贴近真实焦虑。
+适合：LinkedIn Document、技术社区文章、90 秒 explainer、线下讲座海报。
 
-**目标人群**（详见 PERSONAS.md，这里只列一句话）：
+### D. Compliance-aware AI · 为什么用 Aged Care
 
-- Persona A — 想转 AI 方向的在职开发者（占比 AI 推断 ~40%）：会写 API，但焦虑"这只是调用 SDK，离招聘要的系统能力差一截"
-- Persona B — 求第一份 AI offer 的留学生/转行者（占比 AI 推断 ~30%）：编程有基础，简历上缺一个拿得出手的真实项目，PERSONAS.md 明确标注这个 persona 的真实数据缺口最大（一亩三分地被反爬拦截，没拿到正文）
-- Persona C — 想系统补 LLM 工程的资深工程师（占比 AI 推断 ~20%）：唯一有真实用户原话印证的 persona，怕的是"自己瞎学走错方向"
+把差异讲成工程约束：AI 只能生成 Draft，human confirmation 才能进入后续流程；synthetic/de-identified data、role permission、citation、version 和 audit 从第一版产品开始保留。
 
-**不是目标**（详见 PERSONAS.md §4）：完全不会 Python 的纯小白（导去入门课 `ai-programming`）、只想白嫖不打算付费跟练的人。
+适合：差异化品牌内容、B2B 分享、治理专题公开课。
 
-**售价档**（锚定 FUNNEL_PLAN.md 2026-07-03 更新后的真实数据）：
+### E. Beyond the Demo · Production Agent 如何过关
 
-- 引流：⚠️ 未定，intro-course-design 未落地
-- 自学版：提案 $1,380-1,680 AUD，**无真实数据支撑，是按教学版真实价打折估的占位数字**
-- 教学版：**$3,000-3,850 AUD，这是唯一真实数据**——现在唯一在卖的那个价，来源 `jiangren.com.au/program-course/ai-engineer-bootcamp`
-- 陪跑版：提案 $5,500-6,800 AUD，**无真实数据支撑，是按教学版溢价估的占位数字**
+展示 prompt injection、memory poisoning、越权、PII 泄露、tool failure、latency/cost threshold、rollback 和 incident drill。结论是“能跑”不是上线标准。
 
-**承诺红线**（不可写进任何推广文案）：
+适合：技术短视频、Demo Day、面试 System Design 内容、转化阶段 FAQ。
 
-- ❌ 不承诺月入 X 元 / 副业收入 / 包就业 / 保 offer / 入职大厂，禁用"副业"一词
-- ✅ 只承诺：7 个作品集项目 / 跑通一套生产级系统 / 掌握全栈 AI 工程能力 / 求职准备度（简历对得上 JD + 面试能聊）
-- PERSONAS.md 里 V2EX 第二条帖子（虽然讨论的是相邻但不同的"AI 训练师"数据标注岗位）明确显示国内技术圈对"培训班"三个字本身带负面预设。任何踩红线的话术不仅违规，还会正好撞上这层警惕，效果是反的——这不是"说得好听点"能绕开的问题，是措辞本身要避开"包就业""速成""训练营包过"这类容易触发警惕的表达。
+## 4. 内容漏斗
 
----
+| 阶段 | 用户问题 | 主内容 | CTA |
+|---|---|---|---|
+| Awareness | AI Engineer 到底比 API developer 多什么？ | Role Upgrade、10 层 Stack 海报、30–45 秒短视频 | 查看完整技术栈 |
+| Consideration | 这门课是否真的会做完整产品？ | 13 周 Build Log、CareKind workflow、课程周表 | 查看 13 周大纲 |
+| Trust | 为什么这个项目算 production 级？ | RAG/MCP/Agent/Memory/Harness 架构拆解、治理边界 | 参加技术公开课 |
+| Conversion | 我是否适合、要投入多少？ | 双 Live 说明、前置能力、交付物、FAQ | 咨询或申请 |
+| Proof | 学员最后能解释和证明什么？ | Demo Day、eval evidence pack、System Design Defense | 预约下一期 |
 
-## 2. 目标与漏斗反推
+## 5. 首轮内容资产
 
-> 报名目标反推到流量目标，每一层都标基线/假设/数据来源。这一节目前**推不到具体数字**，因为最上游的 N（报名目标）本身没有——三档没拍板、引流课没落地、招生状态没确认。下面先把公式和已知的参考线摆出来，等阻塞项 #1/#2/#3 解决后再填 N。
+### 必须先完成
 
-```
-报名目标：N 人（⚠️ 未定，卡在三档拆不拆的业务决策上）
-  ↓ 主课转化率：假设 5%（行业基线，本课无实测数据）
-加微信目标：20N 人
-  ↓ 引流课 → 主课转化率：假设 15%（FUNNEL_PLAN.md 沿用平台通用假设，本课引流课尚未存在）
-引流课报名目标：3N 人
-  ↓ 引流课页面 → 报名转化：假设 30%
-引流课页面 UV 目标：10N 人
-  ↓ 各渠道分摊（Type 1 基线，未经本课验证）
-```
+- 1 张 Cohort 7 主海报：1242×1660，V5 高级柔和科技方向。
+- 1 个公开课程总览：13 周双 Live、CareKind build path、全部周课表。
+- 1 个官网销售页：删除 24 周、59 Live、7 projects 等旧期口径；所有未确认商业字段显示“待确认”或不展示。
+- 1 份 8–10 页 LinkedIn Document：《从 Demo 到 Production Agent 的 10 层差距》。
+- 3 条 30–45 秒竖版视频：Role Upgrade、CareKind Build、Beyond the Demo。
 
-**参考底线**（不是营销目标，是经济模型给出的"招不到这个数就亏"的红线）：`COHORT_ECONOMICS.md` 按现价 $3,850 AUD 测算，单期直播老师 + 项目辅导成本合计 $12,420，4 人保本、7 人才到 50% 利润率。这个数字有用的地方在于：如果课程负责人给出的报名目标低于 7 人，说明这期在经济上就站不住，推广排期和预算都要重新算。
+### 接下来两周
 
-**渠道流量分摊目标**（Type 1 基线比例，等报名目标 N 定了才能填具体数字）：
+- 13 张 Build Log 模板，每周替换一个系统层和一个交付证据。
+- 5 张技术卡：RAG、MCP、Bounded Agent、Memory Write Gate、Harness。
+- 3 场公开课题目：
+  1. 《Software Engineer 转 AI Engineer：真正缺的 8 个系统能力》
+  2. 《Live Build：一条语音如何变成可审计的 Care Note Draft》
+  3. 《Production Agent Failure Review：Demo 之后最先坏在哪里》
 
-| 渠道 | UV 目标 | 占比 | 来源假设 / 实测 |
-|------|--------|------|---------------|
-| 小红书校友案例/项目 vlog | 4N | 40% | 假设（Type 1 基线）|
-| 公众号深度长文 | 2N | 20% | 假设 |
-| 线上讲座（试听 + Faculty 答疑）| 2N | 20% | 假设 |
-| SEO + 自然流量 | 1N | 10% | 假设 |
-| 脉脉/一亩三分地求职场景 | 1N | 10% | 假设 |
+## 6. 渠道适配
 
-⚠️ 待补 ground truth：以上比例全部是行业基线，不是本课实测。第一期真实数据跑出来后要回填 FUNNEL_PLAN.md，下次 init 才不用继续猜。
+| 渠道 | 原生形式 | 执行重点 |
+|---|---|---|
+| LinkedIn | Document、技术长文、讲师 POV 视频 | 架构判断、案例、可保存的技术框架；不要写泛泛招生文案 |
+| 小红书 | 1242×1660 图文、9:16 短视频 | 第一张直接给冲突：“Agent 能跑 ≠ 能上线”；后续用 CareKind 证据展开 |
+| 抖音 / TikTok / Reels | 9:16、30–45 秒、原生字幕 | 前 3 秒给价值主张，前 6 秒完成 hook，人物/屏幕/架构动画交替 |
+| 微信公众号 | 1500–2500 字技术拆解 | 一篇只解决一个问题，链接到完整大纲和公开课 |
+| 线下 / Webinar | 45–60 分钟技术公开课 | 现场拆架构或失败案例；结尾才介绍课程结构 |
 
----
+平台规范依据：
 
-## 3. 渠道矩阵
+- Meta Reels 建议使用 9:16、音频和 safe zone，并通过 A/B test 迭代创意：<https://www.facebook.com/business/ads/facebook-instagram-reels-ads>
+- TikTok 官方建议 TikTok-first、9:16、至少 720p、前 3 秒给 proposition、前 6 秒完成 hook，并持续刷新素材：<https://ads.tiktok.com/help/article/creative-best-practices>
+- TikTok Creative Center 用于查询趋势、Top Ads、Keyword Insights 和 Creative Insights：<https://ads.tiktok.com/help/article/creative-center>
+- LinkedIn Document 适合原生分发 thought leadership、case study 和 lead-gen 内容：<https://business.linkedin.com/advertise/ads/sponsored-content/document-ads>
 
-> 每门课至少跑 5 个渠道，少于 5 个流量结构脆弱。下表按 Type 1 基线排 ROI 优先级，**每个渠道额外加一列"为什么适合这门课的人群"**——不是照抄类型模板，是结合 PERSONAS.md 里能确认的真实信号（能确认的地方标出来，不能确认的地方也标出来，不要假装都验证过）。
+## 7. 30 天发布节奏
 
-### ✅ 启用渠道
+| 周 | 主题 | 主要资产 |
+|---|---|---|
+| Week 1 | 定义新课程 | 主海报、官网/大纲页、Role Upgrade 视频、技术栈 Document |
+| Week 2 | 证明项目连续性 | W1–W5 Build Log、Voice → Draft 流程视频、公开课 1 |
+| Week 3 | 证明技术深度 | RAG/MCP/Bounded Agent 卡片、公开课 2、讲师技术 POV |
+| Week 4 | 证明 production 标准 | Memory/Harness/Eval/red-team 内容、公开课 3、FAQ 与申请 CTA |
 
-| Rank | 渠道 | 为什么适合本课人群 | 频次（Type 1 基线，⚠️ 未经 PERSONAS 验证）| 主负责 | 子 skill |
-|------|------|-------------------|------|--------|----------|
-| 1 | 销售页 + 校友案例展示 | Type 1 买家决策靠"真有人做出结果"，销售页是所有渠道流量最终汇聚的落地点，本课已有独立销售页 PRD（`docs/prd/AI_ENGINEER_BOOTCAMP_SALES_PAGE_PRD.md`），但 PRD 里明确标出三档定价、Faculty 实名、校友去向数据这三项都是"待用户拍板"的开放决策点——推广排期不能假装这些已经定案 | 1 次搭 + 季度迭代 | Beta + Dev | `/course-custom-landing`（Mode B 迭代）|
-| 2 | 公众号深度长文 | Persona A/C 决策周期长（客单价接近两万，PERSONAS.md 判断"不太可能两周内拍板"），需要长文让读者慢慢建立信任，不是靠一条小红书冲动下单；四类角度轮流：JD 技能拆解（戳 A）/ 校友转岗故事（戳 B，⚠️需真实素材）/ Faculty 专访（戳 C，⚠️需先核实履历）/ 课程技术拆解（戳 C 的"要系统不要拼凑"心态）| 2 篇/周 × 8 周 = 16 篇 | Marketing 文案 | `/blog-longform-writer` + `/wechat-article-quality` |
-| 3 | 小红书校友案例 + 项目 vlog | Type 1 基线主战场，PERSONAS.md §3 虽然自称"不可信"，但至少能确认小红书是国内技术圈常用平台之一，先用基线频次起量，等有真实数据再调 | 12 篇/周 × 8 周 = 96 篇（3 人各 4 篇/周）| Summer + Lily + KIKI | `/xhs-topic-picker` → `/xhs-draft` → `/xhs-poster` → `/xhs-review` |
-| 4 | 线上讲座（试听 + Faculty 答疑）| 客单价接近两万，买家需要"先看看这课到底怎么上"才敢下决定，试听讲座直接把"决策周期长"这个特征转成正面机会——让潜在学员在决定前先体验一次真实授课 | 3-4 场，整个周期 | Beta | `/webinar-topic-feasibility`（先审 topic 能不能爆）|
-| 5 | SEO 长尾词矩阵 | 认证/技能类关键词起效慢但是长期资产，"AI Engineer 培训""转 AI 工程师""RAG Agent 实战"这类词买家会主动搜（尤其是 Persona A/C 这种已经在职、习惯自己查资料的人群），比等他们刷到小红书更精准但更慢 | 一次性投入 5 天 + 月度迭代 | Dev | `/seo-optimizer` + `/eeat-optimizer` |
-| 6 | 脉脉 / 一亩三分地求职场景内容 | Persona B（留学生/转行者）最集中的阵地——PERSONAS.md 明确写了这是这个 persona 真实数据缺口最大的地方（一亩三分地被反爬拦截），只能靠人工低频发真实内容，不是自动化能做的事 | 低频精准，每周 1-2 帖 | Marketing | 无 skill，人工发帖 |
-| 7 | EOI 销售跟进（讲座/活动后）| 试听讲座之后必须有人接住——买家决策周期长，讲座结束不马上跟进，热度就散了。**EOI（Expression of Interest，潜在学员留资表达兴趣）** 跟进的意义是把"看了讲座心动但还没下决定"的人接住，不让 lead 冷掉 | 24h-72h-7d SOP | Amelia + Rain + Angela + Neomi | `/eoi-followup` |
-| 8 | 朋友圈 + 学员真名发声 | Type 1 基线做法，真人真名发声比销售号广告可信度高得多，尤其是在"培训班"三个字自带负面预设的语境下——一条销售号广告只会加深警惕，一条真实学员的朋友圈截图不会 | T-7 集中冲量 + D0 学员晒图 | 全员 + 学员 | 无 skill |
+建议频率：每周 2 条竖版视频、1 份可保存图文/Document、1 篇技术长文、1 次公开课或 Live Q&A。没有足够制作能力时，优先保留主海报、Build Log 和公开课，不用低质量日更填满渠道。
 
-### ❌ 本课不启用的渠道（写明原因）
+## 8. 衡量与复盘
 
-| 渠道 | 不启用原因 |
-|------|----------|
-| LinkedIn 长文（英文站）| 本课主打中文站招生，PERSONAS.md 没有做英文站受众的调研；若未来确定要双轨招生，需要先补一版 `PERSONAS.us.md` 对齐的渠道数据再启用，不是简单把中文内容翻译过去 |
-| 私域 1v1 push | Type 1 高客单价学员对群发式推销反感，且 PERSONAS.md 明确指出国内技术圈对"培训班"话术带负面预设，群发 1v1 更容易撞上这层警惕而不是消除它。仅在 rescue 期（招生大幅落后目标）才启用 |
-| 付费投放（信息流/Google Ads/朋友圈广告）| ⚠️ 默认不启动，需要 Lightman 审批预算。第一期没有真实转化数据支撑投放 ROI 判断，先靠自有渠道跑一轮再评估要不要投 |
+禁止预填目标数字。发布后按渠道记录真实值：
 
----
+- Awareness：3 秒/6 秒留存、完整播放率、Document 完读率。
+- Consideration：课程页访问、13 周大纲点击、公开课报名与到场。
+- Conversion：咨询、申请、付费；来源必须能追溯到具体内容。
+- Quality：评论中的真实问题、销售通话反复出现的异议、公开课问题类型。
 
-## 4. 时间轴 Task 矩阵
+每周只做三件事：保留有效 hook、淘汰低质量泛内容、把真实异议写回下一周选题。
 
-> **2026-07-03 更新**：第 7 期真实开班日期已确认（2026-08-29），距今约 8 周——Type 1 标准 T-30→D+30 节奏排得下，不用再等"招生状态确认"这个前提了。下面第一阶段的"确认招生状态"任务已经完成（见 §0），保留在清单里是为了留痕；剩下两件真正卡事的是三档拆分和引流课两项产品决策。
+## 9. 发布红线与当前 P0
 
-### 第一阶段：解决阻塞项（必须先做，不能跳过）
+### P0：官网旧口径冲突
 
-这个阶段不是常规意义上的"推广动作"，是让后面的推广动作有据可依的前提工作。放在最前面是因为：任何一条小红书文案、任何一场讲座策划，如果三档价格没定，做出来的内容随时可能因为"价格改了"整批作废，白费团队精力。
+当前生产销售页仍可能展示旧期的 24 周、59 Live、7 projects 等信息。第七期任何付费流量开始前，必须完成官网内容切换并做公网回读；否则广告与落地页会互相否定。
 
-- **课程负责人拍板三档拆不拆**——这是 FUNNEL_PLAN.md 标出的最大阻塞项，不是内容问题是产品定价决策。拍板结果直接决定后面第 2 节的报名目标怎么填、第 4 节引流课冲刺周排不排。
-- ~~Beta / Aurora 确认当前招生状态和开班日期~~ **已解决（2026-07-03）**——生产环境 API 直接查到第 7 期真实开班日期 2026-08-29、已有 3 人报名，不需要再单独开会确认。
-- **Aurora 核实销售页真实数字**——价格、"200+ 人验证过""30+ 校友真实 offer"这类宣传语、尤其是 $212,800 AUD 这条薪资数字，正式用进对外文案前找人截图核对一遍原始页面。
-- **Beta 核实导师实名履历**（Meta/Microsoft/Amazon）——销售页 FAQ 自己都写了"导师真的来自 Meta/Microsoft？"这条常见问题，说明这是买家会主动质疑的点，核实不完就先别在文案里点名具体公司。
-- **启动 PERSONAS.md 第 6 节列的人工调研**——两件性价比最高的事：① 拉 Amelia/Rain/Angela 开 30 分钟会，问咨询者最常见的异议和不报名理由；② Summer 花半小时去小红书搜"转 AI 工程师""AI Engineer 培训"截几张评论区截图。这两件事都不需要复杂工具，PERSONAS.md 自己判断"大概率比整个自动化调研加起来的信号量还大"。
+### 禁止未经验证对外使用
 
-### 第二阶段：内容地基（三档决策拍板后，对应 T-30 = 2026-07-31 前后）
+- 薪资、Offer、就业率、雇主名单或就业保证。
+- 第五期数据直接当第七期承诺。
+- 未确认的价格、折扣、开班日期、席位和报名人数。
+- “医疗 AI 自动判断”“自动提交 SIRS”“直接写回真实 aged-care system”等超出 CareKind 边界的描述。
 
-假设三档拆分拍板后，第一批要做的事（第 7 期开班日 2026-08-29 已确认，T-30 对应真实日期 2026-07-31）：
+## 10. Owner 分工
 
-- 启动/迭代销售页——把核实过的价格、offer 案例（如果 Aurora 核实通过）更新上去，这是所有后续渠道流量最终汇聚的落地点，必须先于其他渠道内容上线
-- SEO 长尾词矩阵先铺——起效慢（30-90 天），越早启动越好，不需要等其他内容齐备
-- 第一批小红书选题——用 PERSONAS.md 里已确认的 V2EX 真实痛点原话（"选好一个路径，别在中间折腾"）做切角测试，跟纯 AI 拍脑袋的选题对比效果，为后续判断"要不要相信这条真实数据"积累一手反馈
-- 讲座 topic 先审——用 `/webinar-topic-feasibility` 审一遍试听讲座的选题能不能爆，讲座筹备周期长（14 天起），不能等到临开班前才启动
-
-### 第三阶段到第八阶段（T-21 → D+30）
-
-这部分严重依赖上面还没解决的阻塞项，尤其是"三档拆不拆"直接决定引流课冲刺周、7 天过渡序列这些环节存不存在。等阻塞项清空后，按 `TASKS_LIBRARY.md` 的标准模板 + Type 1 完整 8 周周期展开，关键锚点仍然是：
-
-- 试听讲座 + Faculty 答疑专场，讲座后立即启动 EOI 跟进
-- 引流课上线（如果三档方案通过）→ 启动 FUNNEL_PLAN.md 第 5 节的 7 天过渡序列
-- 开班前最后一周朋友圈集中冲量 + 学员真名发声
-- 开班后（D+7/D+14）在读学员项目进展晒图，为下一期积累真实素材——这条特别重要，因为本课现在最大的内容缺口就是"没有一条真实学员素材"，每一期开班后收集到的真实进展截图都是在给下一轮推广攒弹药
-- D+30 跑 `/course-promotion-architect postmortem`，把真实转化数据回填 FUNNEL_PLAN.md，让下次不用继续猜行业基线
-
----
-
-## 5. 责任分配
-
-| 角色 | 负责 |
-|------|------|
-| Lightman | 预算审批 / 投放拍板 / 红线把关 |
-| 课程负责人 | 三档拆分决策（本计划最大阻塞项）|
-| Aurora / Seren | 渠道排期 / KPI 监控 / 跨渠道协调 / 核实销售页真实数字 |
-| Beta | 讲座主持 / Faculty 对接与履历核实 / 销售页定位 / 课程主理 |
-| Summer / Lily / KIKI | 小红书选题/写稿/配图/排期，兼 PERSONAS 缺口调研（小红书评论区截图）|
-| Marketing 文案 | 公众号长文 / 销售页文案 |
-| Amelia / Rain / Angela | EOI 1v1 跟进 24h-72h-7d，兼 PERSONAS 缺口调研（咨询者异议访谈）|
-| Neomi | EOI 派单 / SLA 监控 |
-| Designer | 海报 / 销售页视觉 |
-| Dev | 销售页 / SEO / 报名表单 / 埋点 |
-
-⚠️ 待补：以上人员配置是否真的覆盖所有岗位，需要课程负责人确认后再排具体任务。
-
----
-
-## 6. 周报
-
-> 每周一 `/course-promotion-architect weekly ai-engineer-bootcamp` 追加一段。永不删旧周，历史是判断趋势的依据。
-
-### Week of 2026-07-03（重写周，同日二次更新）
-
-- ✅ 上周完成：PERSONAS.md 完成第一次真实数据调研（GT 从 0.15 提升到 0.3-0.4）/ FUNNEL_PLAN.md 同步重写，三档定价锚定真实售价 / PROMOTION_PLAN.md 按新数据重写，明确摆出 4 项阻塞
-- ✅ 同日二次更新：查生产环境 API 确认第 7 期真实开班日期（2026-08-29，已有 3 人报名），**解除了"招生状态没确认"这项阻塞**——之前只信本地 10 周未刷新的 `prod-state.json`，没往下查生产环境，这次是因为处理另一门课（web-code-bootcamp）的类似错误顺带核实的
-- ⚠️ 仍然阻塞：三档拆不拆没拍板 / 引流课没落地 / PERSONAS 渠道数据 GT 不足 50%
-- 🎯 本周目标：
-  1. 课程负责人拍板三档拆分方案
-  2. 启动 PERSONAS.md §6 列的两件高性价比调研（销售顾问访谈 + 小红书截图）
-  3. 参考第 5 期真实规模（65 人）给第 7 期定一个招生目标
-- 🚨 风险 flag：三档 + 引流课两项阻塞任意一项拖过 2 周未解决，本计划实际上无法进入执行阶段，建议下周一如果仍无进展就升级给 Lightman
-
----
-
-## 7. 风险与决策日志
-
-| 日期 | 事件 | 决策 | 决策人 | 影响 |
-|------|------|------|--------|------|
-| 2026-06-16 | init 首版 | 识别为 Type 1，按 8 周 T-30→D+30 排骨架 | — | 当时 PERSONAS GT 仅 0.15，三档定价用占位数字¥2980-9800 |
-| 2026-07-03 | PERSONAS.md 完成首次真实数据调研，FUNNEL_PLAN.md 同步重写 | 三档定价从占位数字改锚定真实售价 $3,850/$3,000 AUD；本文档同步重写，把"三档拆不拆""招生状态未确认""引流课未落地""PERSONAS 渠道数据 GT 不足"四项阻塞摆到最前面，不再假装可以排出具体日期的时间轴 | — | 第 2/4 节的具体数字和日期全部悬空，等阻塞项解决后才能真正进入执行 |
-
----
-
-## 8. 调用子 skill 索引
-
-| Skill | 用途 | 触发频次 | 责任人 |
-|-------|------|---------|--------|
-| `/target-user-persona-mapper validate` | 补 PERSONAS.md GT 覆盖率到 50% 以上 | 阻塞项解决前优先跑 | Aurora + Summer |
-| `/course-funnel-architect`（main-course-tier-design / intro-course-design / funnel-handoff-design）| 三档定案后细化定价、引流课、过渡序列 | 课程负责人拍板后 | Beta |
-| `/course-custom-landing`（Mode B）| 销售页迭代，更新核实过的价格和 offer 案例 | 核实完数字后 | Dev + Beta |
-| `/blog-longform-writer` + `/wechat-article-quality` | 公众号长文写稿+审稿 | 每周 1 篇 | 文案 + Aurora |
-| `/xhs-topic-picker` → `/xhs-draft` → `/xhs-poster` → `/xhs-review` | 小红书选题到发布全链路 | 每周 1 轮 | Summer + Lily + KIKI |
-| `/webinar-topic-feasibility` | 讲座 topic 审能不能爆 | 每场讲座前 1 次 | Beta |
-| `/seo-optimizer` + `/eeat-optimizer` | SEO 长尾词矩阵 | 一次性 + 月度迭代 | Dev |
-| `/eoi-followup` | EOI 销售跟进 24h-72h-7d | 每个 lead | Amelia + Rain + Angela + Neomi |
-| `/course-promotion-architect audit` | 中期诊断报名是否达标 | 招生状态确认后每周一 | Lightman + Aurora |
-| `/course-promotion-architect postmortem` | 开班结束复盘，回填真实数据 | 结课后 14 天内 | Aurora |
-
-## 9. 宣发角度速查（2026-07-06 整理 · 在职转 AI 向）
-
-> 把散落在 §1/§3 的内容角度整合成一页速查，marketing 做物料时直接照抄。
-> 一句话记住：**AI Engineer 卖的是「能力深度」（生产级 AI 系统），主战场是脉脉/技术公众号/社群**，跟全栈班（卖就业结果、投小红书）彻底分开，别抢人。
-
-### 📣 宣传角度（按学生买账优先级）
-
-1. **「从会调 API → 会搭生产级 AI 系统」的能力跃迁** — RAG→Agent→微调→Eval 全链路，直击在职者「会用 API 但没真做过 AI 系统」的焦虑。
-2. **你现有的开发经验不是白费，是转 AI 的起跑优势** — 化解在职者「要不要推倒重来」的顾虑（Persona A/C 核心）。
-3. **7 个生产级项目 + 12 周 P3 企业孵化** — 能写进简历、能放 GitHub，不是课程作业。
-4. **前沿深度** — Context Engineering / Multi-Agent / GraphRAG 这些「公众号看得到、没人带你真做」的东西，资深 Persona C 最认。
-5. **大纲逐条对标大厂 AI 岗 JD** — 让在职者自己算出「学完我就够格投这些岗」，Persona A 购买触发器。
-
-🚨 **红线**：不承诺包就业 / 月入 / 保 offer。讲「求职准备度 / 简历对得上 JD / 校友真实转岗路径」。
-
-### 🤝 建立信任的作品与案例（比讲师头衔管用，必做）
-
-| 素材 | 内容 | 用在哪 |
-|------|------|--------|
-| **学员/往期项目作品** | 真实 AI 系统 demo（RAG/Agent）截图 + GitHub 仓库 | 销售页项目墙 / 小红书 / 讲座 |
-| **企业孵化项目成果** | 12 周真实商业项目产出展示 | 区别于「玩具项目」，销售页 + 公众号 |
-| **导师实名履历** | 大厂 AI 工程背景实名背书 | 销售页 Faculty 区（⚠️ 用前必须核实真名，别用泛称，见 §7）|
-| **技术深度自证** | 公开一段课程内容/大纲技术细节 | 让资深工程师看到「内容是真扎实的」|
-
-> ⚠️ 提醒：本课往期学员数据/画像仍是 AI 推断（PERSONAS GT 0.15）。引用转岗案例、就业数字、导师姓名前，务必先核实真实数据，别用旧快照。
-
-### 🎁 引流资料
-
-- ✅ **已安排制作**：《AI Engineer 技能自查清单 + 大厂 AI 岗 JD 拆解》（把 RAG/Agent/Eval 等技能对着真实 JD 列成 checklist，让在职者自测差距）—— 广撒网留资钩子。
-- 🧪 **「手搓一个能跑的 RAG demo」免费小教程** — 30 分钟出成果的 quick win，最能吸引在职开发者。
-- 📝 **公众号深度技术长文** — 如「2026 AI Engineer 到底要会什么」，投脉脉/技术社群建立专业形象。
-- 🎤 **免费技术讲座** — 如「从后端工程师到 AI 工程师：真实转岗路径拆解」，对标电子书主题，临门转化（`/webinar-topic-feasibility` 先验证）。
-- 🗺️ **AI Engineer 技能 Roadmap** — RAG/Agent/微调/Eval 学习路径可视化（`/roadmap-creator`）。
-
----
-
-## 本周 3 条必做（给用户口播）
-
-1. **课程负责人拍板三档拆不拆**——这是全文档最大的阻塞项，不定，报名目标、渠道预算、引流课全部排不下去。
-2. **Beta/Aurora 当面确认当前招生状态和开班日期**——`prod-state.json` 已经 10 周没刷新，不能拿它当"正在招生"的证据。
-3. **启动 PERSONAS.md §6 里性价比最高的两件事**——拉 Amelia/Rain/Angela 开 30 分钟访谈会 + Summer 去小红书截几张评论区截图。这两件事不需要复杂工具，PERSONAS.md 自己判断信号量可能比这次整个自动化调研加起来还大。
-
----
-
-## 维护规则
-
-- 每次跑 `/course-promotion-architect weekly ai-engineer-bootcamp` 自动追加第 6 节
-- 决策变更 → 第 7 节追加一行
-- 课程开班结束 → 跑 `/course-promotion-architect postmortem ai-engineer-bootcamp`，把真实数据回写到 `FUNNEL_PLAN.md`
-- ⚠️ 不要手工删旧周报 / 删旧决策日志——历史是 lessons learned 的来源
+| Owner | 任务 |
+|---|---|
+| 课程负责人 | 确认开班日、价格、席位、讲师和申请条件 |
+| Ada | 从前五期中核对可复用录播：优先检查 Fine-Tuning 等低时效内容的完播、反馈与清晰度；RAG 基础、Agents 基础、ReAct、Multi-Agent 仍按新大纲 Live |
+| Design | 按 `DESIGN.md` 输出 3:4、1:1、9:16 和 16:9，不再把旧 Neo 版作为 Current |
+| Content | 按五个方向建选题池，每条内容标记 funnel stage 和唯一 CTA |
+| Dev | 确保官网、课程大纲、海报和 OG 图使用同一事实口径 |
+| Sales | 回写真实咨询来源与反复异议，不自行增加课程承诺 |
