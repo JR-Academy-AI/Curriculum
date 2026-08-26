@@ -369,6 +369,12 @@ jobs:
             cp -r gp-program-workshop/public/* _site/gp-program-workshop/
           fi
 
+          # ai-property-showroom-video-workshop: static HTML only (150-minute online workshop, AI期房样板间视频)
+          if [ -d ai-property-showroom-video-workshop/public ]; then
+            mkdir -p _site/ai-property-showroom-video-workshop
+            cp -r ai-property-showroom-video-workshop/public/* _site/ai-property-showroom-video-workshop/
+          fi
+
           # china-campus-workshop: static HTML only (3-hour Zoom workshop, 留学生回国校招冲刺 · Steven Yu 主讲 · 49 元)
           if [ -d china-campus-workshop/public ]; then
             mkdir -p _site/china-campus-workshop
@@ -1112,6 +1118,22 @@ jobs:
                     <span class="tag" style="background:#38B6FF">CURRICULUM</span>
                     <div class="title">澳洲校招 GP Program 申请 3 小时 Workshop</div>
                     <div class="desc">3h Zoom 直播 · 7 个 Block · 把整条 Graduate Program 招聘漏斗一节一节拆开讲 — 找岗位 / 简历 ATS / OA / STAR 面试 / Networking / AC 终面 · 每节带走一个能直接用的模板 · 澳洲在读 / 应届留学生专属</div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="section">
+                <div class="section-title">AI期房样板间视频 · 150分钟线上直播 · 房地产垂直实战</div>
+                <div class="cards">
+                  <a href="./ai-property-showroom-video-workshop/curriculum.html">
+                    <span class="tag" style="background:#C96F3B">CURRICULUM</span>
+                    <div class="title">AI期房样板间视频实战工作坊</div>
+                    <div class="desc">户型图 / 效果图 / 毛坯照片 → 空间视觉 → 运镜 → 文案配音 → 字幕剪辑 · 现场完成15～30秒成片</div>
+                  </a>
+                  <a href="./ai-property-showroom-video-workshop/poster.html">
+                    <span class="tag" style="background:#17211c">POSTER</span>
+                    <div class="title">课程海报 (1242×1660)</div>
+                    <div class="desc">3:4竖版 · 房地产营销 / 置业顾问 / 中介 / 设计公司 · 一键PNG下载</div>
                   </a>
                 </div>
               </div>
