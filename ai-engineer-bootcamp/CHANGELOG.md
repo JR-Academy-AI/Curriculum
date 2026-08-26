@@ -2,6 +2,7 @@
 
 ## 2026-08-26
 
+- 放大第七期详细大纲封面的完整字体层级：提升 Logo、AI Engineer Bootcamp、连续三年定位、核心卖点、四项证据卡和底部结论的字号，同时收紧垂直间距并保持 A4 安全区，解决封面在实际 PDF 阅读尺寸下文字不够醒目的问题
 - 强化第七期详细大纲封面的三年教学信任证据：主叙事改为“连续 3 年、系统教 AI Engineering”，用第 7 期课程体系、25 场双 Live 和 13 周 Production 项目主线支撑“全球少有的完整体系”定位，避免只喊系统化却没有可信依据
 - 重做第七期详细大纲封面：删除“第五期 → 第七期”和内部升级叙事，改以“全球少有的系统化 AI 工程课程”为核心市场定位；Image Model 只生成无字十层系统背景，Logo、课程名、双 Live、10 层技术栈与 13 周 Production 项目主线全部改用 HTML 确定性排版，避免图片内文字和字体失控
 - 新增第七期 31 页 HTML-first 团队宣传大纲：以 `public/outline.json` 为唯一课程内容 SoT，另设面向潜在学员的 `cohort-07-public-copy.json`，逐周呈现 12 场 Theory Live、13 场 Practice Live、Video / Self-study、Interactive Labs 与 Quests；统一英文 Title Case、标准技术缩写和中英文视觉层级，加入三套课程插画、可重复构建脚本、HTML 溢出审计与 PDF 渲染流程
