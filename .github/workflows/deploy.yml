@@ -387,6 +387,12 @@ jobs:
             cp -r ai-property-showroom-video-workshop/public/* _site/ai-property-showroom-video-workshop/
           fi
 
+          # ai-job-search-workshop: static HTML only (150-minute live workshop, AI 求职自动化实战)
+          if [ -d ai-job-search-workshop/public ]; then
+            mkdir -p _site/ai-job-search-workshop
+            cp -r ai-job-search-workshop/public/* _site/ai-job-search-workshop/
+          fi
+
           # china-campus-workshop: static HTML only (3-hour Zoom workshop, 留学生回国校招冲刺 · Steven Yu 主讲 · 49 元)
           if [ -d china-campus-workshop/public ]; then
             mkdir -p _site/china-campus-workshop
@@ -1157,6 +1163,17 @@ jobs:
                     <span class="tag" style="background:#17211c">POSTER</span>
                     <div class="title">课程海报 (1242×1660)</div>
                     <div class="desc">3:4竖版 · 房地产营销 / 置业顾问 / 中介 / 设计公司 · 一键PNG下载</div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="section">
+                <div class="section-title">AI 求职自动化实战 · 150 分钟直播 Workshop</div>
+                <div class="cards">
+                  <a href="./ai-job-search-workshop/curriculum.html">
+                    <span class="tag" style="background:#6C5CE7">CURRICULUM · 150m</span>
+                    <div class="title">AI 求职自动化实战 Workshop</div>
+                    <div class="desc">应届生 / 转行者 / 求职者 · 用一个真实 JD 现场完成目标岗位筛选、JD 分析、定制简历、求职信、60 秒自我介绍、面试题库与投递追踪表 · 7 项成果下课直接带走</div>
                   </a>
                 </div>
               </div>

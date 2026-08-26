@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-08-26
+
+- 新增《AI 求职自动化实战 Workshop》独立课程：150 分钟直播完成目标岗位筛选、JD 分析、定制简历、求职信、60 秒自我介绍、面试题库与投递追踪；补齐课程大纲、响应式介绍页、可下载 1242×1660 单页海报，并登记课程中心及部署入口（`ai-job-search-workshop`、`posters.html`、`.github/workflows/deploy.yml`）
+
 ## 2026-08-25
 
 - 统一 AI Engineer 第七期总览页、主海报、设计规范与推广计划为 Editorial Premium 柔和技术栈风格，重制 1242×1660 主海报 PNG，并以 6 个宣传点、5 个内容方向、30 天节奏和渠道原生格式替换第五期旧口径（`ai-engineer-bootcamp`）
