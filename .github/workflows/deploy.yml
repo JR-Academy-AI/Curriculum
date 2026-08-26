@@ -363,6 +363,12 @@ jobs:
             cp -r omnichannel-marketing-workshop/public/* _site/omnichannel-marketing-workshop/
           fi
 
+          # ai-marketing-content-workshop: static HTML (150-min live AI content workshop)
+          if [ -d ai-marketing-content-workshop/public ]; then
+            mkdir -p _site/ai-marketing-content-workshop
+            cp -r ai-marketing-content-workshop/public/* _site/ai-marketing-content-workshop/
+          fi
+
           # ai-accounting-workshop: static HTML only (4-hour 引流课 · 协会 co-host · AI 教练主讲 · 含 AU 数据准备指南)
           if [ -d ai-accounting-workshop/public ]; then
             mkdir -p _site/ai-accounting-workshop
