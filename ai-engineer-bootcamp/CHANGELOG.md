@@ -1,5 +1,9 @@
 # Changelog — AI Engineer Bootcamp
 
+## 2026-08-26
+
+- 新增第七期 31 页 HTML-first 团队宣传大纲：以 `public/outline.json` 为唯一课程内容 SoT，另设面向潜在学员的 `cohort-07-public-copy.json`，逐周呈现 12 场 Theory Live、13 场 Practice Live、Video / Self-study、Interactive Labs 与 Quests；统一英文 Title Case、标准技术缩写和中英文视觉层级，加入三套课程插画、可重复构建脚本、HTML 溢出审计与 PDF 渲染流程
+
 ## 2026-08-25
 
 - 新增第七期教学方式升级海报 V1–V4：V1/V2 用理论与实践双轨汇入同一 W1–W13 Agent System；V3 改用“理论蓝图 → 13 周项目建设 → Enterprise Agent System”；V4 删除单一代码库约束，改为“同一项目主线”，允许按系统边界拆分，不使用 CareKind/Aged Care 作为课程品类
