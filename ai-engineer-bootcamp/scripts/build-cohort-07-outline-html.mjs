@@ -481,27 +481,38 @@ async function build() {
     fs.readFile(path.join(PUBLIC, 'posters', 'assets', 'cohort-07-pdf-production-agent-v1.png')),
   ]);
   const lessons = Object.fromEntries(outline.phases.flatMap((phase) => phase.lessons || []).filter((lesson) => lesson.code).map((lesson) => [lesson.code, lesson]));
-  const art = { product: dataUri(product, 'image/png'), knowledge: dataUri(knowledge, 'image/png'), production: dataUri(production, 'image/png') };
-  const pages = [];
-  pages.push(`<section class="page cover-page" data-page="1"><img class="cover-image" src="${dataUri(cover, 'image/png')}" alt="AI Engineer Bootcamp"/><div class="cover-card"><div><h1>第七期详细课程大纲</h1><p>31 页 · 25 场 Live · 5 次产品升级 · HTML-first Layout</p></div><strong>完整宣传版</strong></div></section>`);
-  pages.push(methodPage(2, art.product));
-  pages.push(mapPage(3, art.knowledge));
-  let pageNo = 4;
-  for (let week = 1; week <= 13; week++) {
-    const [theoryCode, practiceCode] = WEEK_LESSONS[week];
-    const artKey = WEEK_STYLE[week][2];
-    if (theoryCode) pages.push(livePage(pageNo++, week, lessons[theoryCode], 'theory', publicCopy, art[artKey], lessons));
-    pages.push(livePage(pageNo++, week, lessons[practiceCode], 'practice', publicCopy, art[artKey], lessons));
-  }
-  pages.push(modesPage(29, art.production));
-  pages.push(stackPage(30, art.production));
-  pages.push(careerPage(31, art.production));
-  if (pages.length !== 31) throw new Error(`Expected 31 pages, got ${pages.length}`);
-  const html = `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JR Academy AI Engineer 第七期详细大纲</title><style>${CSS}</style></head><body>${pages.join('\n')}</body></html>`;
+  const renderDocument = (coverSrc, art) => {
+    const pages = [];
+    pages.push(`<section class="page cover-page" data-page="1"><img class="cover-image" src="${coverSrc}" alt="AI Engineer Bootcamp"/><div class="cover-card"><div><h1>第七期详细课程大纲</h1><p>31 页 · 25 场 Live · 5 次产品升级 · HTML-first Layout</p></div><strong>完整宣传版</strong></div></section>`);
+    pages.push(methodPage(2, art.product));
+    pages.push(mapPage(3, art.knowledge));
+    let pageNo = 4;
+    for (let week = 1; week <= 13; week++) {
+      const [theoryCode, practiceCode] = WEEK_LESSONS[week];
+      const artKey = WEEK_STYLE[week][2];
+      if (theoryCode) pages.push(livePage(pageNo++, week, lessons[theoryCode], 'theory', publicCopy, art[artKey], lessons));
+      pages.push(livePage(pageNo++, week, lessons[practiceCode], 'practice', publicCopy, art[artKey], lessons));
+    }
+    pages.push(modesPage(29, art.production));
+    pages.push(stackPage(30, art.production));
+    pages.push(careerPage(31, art.production));
+    if (pages.length !== 31) throw new Error(`Expected 31 pages, got ${pages.length}`);
+    return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JR Academy AI Engineer 第七期详细大纲</title><style>${CSS}</style></head><body>${pages.join('\n')}</body></html>`;
+  };
+  const publicHtml = renderDocument('cohort-07-teaching-method-poster-v4.png', {
+    product: 'assets/cohort-07-pdf-product-foundation-v1.png',
+    knowledge: 'assets/cohort-07-pdf-voice-rag-v1.png',
+    production: 'assets/cohort-07-pdf-production-agent-v1.png',
+  });
+  const standaloneHtml = renderDocument(dataUri(cover, 'image/png'), {
+    product: dataUri(product, 'image/png'),
+    knowledge: dataUri(knowledge, 'image/png'),
+    production: dataUri(production, 'image/png'),
+  });
   await fs.mkdir(path.dirname(HTML_PATH), { recursive: true });
   await fs.mkdir(path.dirname(DOWNLOAD_PATH), { recursive: true });
-  await fs.writeFile(HTML_PATH, html);
-  await fs.copyFile(HTML_PATH, DOWNLOAD_PATH);
+  await fs.writeFile(HTML_PATH, publicHtml);
+  await fs.writeFile(DOWNLOAD_PATH, standaloneHtml);
   console.log(HTML_PATH);
   console.log(DOWNLOAD_PATH);
 }

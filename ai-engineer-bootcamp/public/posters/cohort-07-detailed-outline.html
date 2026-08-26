@@ -1,0 +1,1467 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JR Academy AI Engineer 第七期详细大纲</title><style>
+@page{size:A4;margin:0}*{box-sizing:border-box}html,body{margin:0;padding:0;background:#d9d3d0;color:#101a3a;font-family:"PingFang SC","STHeitiSC-Light","Microsoft YaHei",Arial,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}body{padding:20px 0}.page{width:210mm;height:297mm;margin:0 auto 20px;background:#fff7ef;position:relative;overflow:hidden;break-after:page;page-break-after:always}.page:last-child{break-after:auto}.page-footer{position:absolute;left:10mm;right:10mm;bottom:5mm;height:6mm;border-top:.25mm solid #ddcfc8;padding-top:2mm;display:flex;justify-content:space-between;color:#706c7b;font-size:6.7pt}.topbar{height:8mm;display:flex;justify-content:space-between;align-items:center;font-size:7pt}.topbar span{color:#7957ff;font-weight:700}.standard-page,.live-page{padding:8mm 10mm 16mm}.section-heading{margin-top:4mm}.section-heading>span{color:#ff654e;font-size:8pt;font-weight:700;letter-spacing:.08em}.section-heading h1{font-size:23pt;line-height:1.2;margin:5mm 0 2.5mm;max-width:178mm}.section-heading p{margin:0;color:#666479;font-size:9.3pt;line-height:1.55;max-width:178mm}.live-page{display:grid;grid-template-rows:8mm 50mm 29mm minmax(0,1fr) 27mm 6mm;gap:3mm}.live-page>.page-footer{position:static;height:6mm}.live-hero{min-width:0;border-radius:8mm;background:var(--accent);position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) 61mm;align-items:stretch}.live-hero:before{content:"";position:absolute;inset:0 auto 0 0;width:129mm;background:#101a3a;opacity:.96;border-radius:8mm 8mm 8mm 8mm}.hero-copy{position:relative;z-index:2;padding:6mm 7mm;color:white;min-width:0;display:flex;flex-direction:column;justify-content:center}.hero-copy .eyebrow{font-size:7.2pt;letter-spacing:.03em;color:#ddd8ff;font-weight:700;margin-bottom:3mm}.hero-copy h1{font-size:20.5pt;line-height:1.16;margin:0;max-width:113mm;overflow-wrap:anywhere}.hero-copy p{font-size:8.1pt;line-height:1.45;color:#f1edff;margin:3mm 0 0;max-width:112mm}.live-hero img{width:64mm;height:56mm;object-fit:contain;align-self:center;justify-self:center;position:relative;z-index:1;filter:drop-shadow(0 3mm 4mm rgba(16,26,58,.18))}.lesson-summary{border:.3mm solid #e3d8d2;background:#fff;border-radius:5mm;padding:3.5mm 5mm;min-width:0;overflow:hidden}.summary-head{display:flex;align-items:center;gap:8mm;margin-bottom:2.5mm}.summary-head strong{font:700 8pt Arial;color:#646276}.pill{display:inline-flex;align-items:center;justify-content:center;border-radius:99px;height:6mm;padding:0 8mm;color:white;font-size:7pt;font-weight:700;background:#7957ff}.pill.accent{background:#ff654e}.lesson-summary p{margin:0;color:#686678;font-size:8.6pt;line-height:1.42;overflow-wrap:anywhere}.agenda-block{min-height:0;display:grid;grid-template-rows:7mm minmax(0,1fr);gap:1.5mm}.agenda-block h2{font-size:8.4pt;color:var(--accent);margin:0;align-self:end;letter-spacing:.02em}.agenda-block h2 span{font-weight:500}.agenda-list{list-style:none;margin:0;padding:0;display:grid;grid-template-rows:repeat(var(--rows),minmax(0,1fr));gap:1.25mm;min-height:0}.agenda-list.rows-6{--rows:6}.agenda-list.rows-7{--rows:7}.agenda-list.rows-8{--rows:8}.agenda-list.rows-9{--rows:9}.agenda-item{position:relative;display:grid;grid-template-columns:7mm minmax(0,1fr);align-items:center;min-height:0}.agenda-item:before{content:"";position:absolute;left:3.3mm;top:-1.5mm;bottom:-1.5mm;width:.45mm;background:color-mix(in srgb,var(--accent) 32%,white);z-index:0}.agenda-item:first-child:before{top:50%}.agenda-item:last-child:before{bottom:50%}.agenda-number{position:relative;z-index:1;width:5.5mm;height:5.5mm;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;font:700 6.6pt Arial}.agenda-item p{height:100%;min-width:0;margin:0;border:.25mm solid #e7ddd7;background:#fff;border-radius:3.5mm;padding:1.5mm 3.2mm;display:flex;align-items:center;flex-wrap:wrap;align-content:center;gap:.8mm;font-size:8.4pt;line-height:1.25;overflow-wrap:anywhere}.technical{font:700 7.7pt Arial;color:var(--accent)}.divider{color:#aaa0a7}.week-meta{display:grid;grid-template-columns:1fr 1fr;gap:3mm}.week-meta article{min-width:0;border:.3mm solid #e3d8d2;background:#fff;border-radius:4mm;padding:3mm 4mm;overflow:hidden}.week-meta h3{display:inline-block;margin:0 0 1.5mm;padding:1.1mm 3.2mm;border-radius:99px;background:var(--accent,#7957ff);color:white;font-size:7pt}.week-meta article+article h3{background:#ff654e}.week-meta p{margin:0;font-size:7.5pt;line-height:1.35;color:#34364c;overflow-wrap:anywhere}.two-track{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-top:9mm}.track{height:52mm;border:.3mm solid #d9ccff;border-radius:6mm;padding:6mm;background:#f4efff;display:flex;flex-direction:column}.track.practice{background:#fff0ec;border-color:#ffd2c8}.track>span{font-size:7.5pt;color:#7957ff;font-weight:700}.track.practice>span{color:#ff654e}.track h2{font-size:16pt;line-height:1.25;margin:4mm 0 2mm}.track p{font-size:8.5pt;line-height:1.5;color:#646276;margin:0}.track strong{margin-top:auto;background:#fff;border-radius:3mm;padding:2.5mm 3mm;font-size:8pt;color:#7957ff}.track.practice strong{color:#ff654e}.why-title{font-size:15pt;margin:9mm 0 4mm}.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm}.benefit-grid article{height:31mm;background:#fff;border:.25mm solid #e3d8d2;border-radius:4mm;padding:3.5mm}.benefit-grid i{display:block;width:3mm;height:3mm;border-radius:50%;background:#7957ff;margin-bottom:2mm}.benefit-grid h3{font-size:9pt;margin:0 0 1.5mm}.benefit-grid p{font-size:7.3pt;line-height:1.4;color:#666479;margin:0}.stage-list{display:grid;gap:3mm;margin-top:8mm}.stage-list article{height:35mm;display:grid;grid-template-columns:18mm minmax(0,1fr) 56mm;gap:5mm;align-items:center;background:#fff;border:.3mm solid #e3d8d2;border-radius:5mm;padding:4mm}.stage-no{height:25mm;border-radius:4mm;background:var(--stage);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center}.stage-no b{font:700 16pt Arial}.stage-no small{font:700 6pt Arial}.stage-list h2{font-size:13pt;margin:0 0 2mm}.stage-list p{font-size:8pt;color:#666479;line-height:1.4;margin:0}.stage-list article>strong{background:#f7f3f0;border-radius:3mm;padding:3mm;font-size:8pt;line-height:1.45;color:var(--stage)}.mode-grid{margin-top:8mm;display:grid;grid-template-columns:1fr 1fr;gap:4mm}.mode{height:72mm;border:.3mm solid #e3d8d2;background:#fff;border-radius:5mm;padding:5mm}.mode h2{display:inline-block;background:#7957ff;color:#fff;border-radius:99px;padding:1.5mm 5mm;font-size:9pt;margin:0 0 3mm}.mode-2 h2{background:#ff654e}.mode-3 h2{background:#48c9d9}.mode-4 h2{background:#f3b943}.mode>strong{display:block;font-size:9.5pt;line-height:1.35;margin-bottom:3mm}.mode ul{margin:0;padding-left:5mm}.mode li{font-size:8.2pt;line-height:1.5;margin-bottom:1mm}.layer-list{list-style:none;padding:0;margin:8mm 8mm 0;display:grid;gap:2.5mm}.layer-list li{height:15mm;display:grid;grid-template-columns:12mm 1fr 45mm;align-items:center;background:#fff;border-radius:4mm;padding:0 5mm;border:.25mm solid #e8ded8}.layer-list span{font:700 8pt Arial;color:#7957ff}.layer-list strong{font-size:10.5pt}.layer-list b{font:700 7.5pt Arial;color:#69677a;text-align:right}.career-grid{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-top:7mm}.career-grid article{height:43mm;background:#fff;border:.3mm solid #e3d8d2;border-radius:5mm;padding:5mm}.career-grid h2{display:inline-block;border-radius:99px;background:#7957ff;color:#fff;padding:1.3mm 4mm;font:700 7pt Arial;margin:0 0 3mm}.career-grid p{font-size:8.6pt;line-height:1.5;margin:0}.cta{height:44mm;margin-top:5mm;background:#101a3a;border-radius:5mm;color:white;padding:6mm;display:flex;justify-content:space-between;align-items:center}.cta h2{font-size:17pt;margin:0 0 2mm}.cta p{font-size:8.5pt;color:#d7d4e7;margin:0 0 3mm}.cta strong{font:700 7.4pt Arial;color:#c9c0ff}.cta>span{font:700 13pt Arial;text-align:right;color:#ff8a75}.cover-page{padding:0;background:#101a3a}.cover-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.cover-card{position:absolute;left:10mm;right:10mm;bottom:10mm;background:rgba(16,26,58,.92);color:#fff;border-radius:6mm;padding:5mm 7mm;display:flex;justify-content:space-between;align-items:center}.cover-card h1{font-size:18pt;margin:0 0 1mm}.cover-card p{font-size:8pt;color:#d8d2f2;margin:0}.cover-card strong{background:#ff654e;border-radius:99px;padding:2mm 5mm;font-size:8pt}@media print{body{padding:0;background:#fff}.page{margin:0;box-shadow:none}}
+/* Live-page typography rhythm: compact cards, tighter leading, stronger hierarchy. */
+.live-page{grid-template-rows:8mm 50mm 25mm minmax(0,1fr) 27mm 6mm}
+.hero-copy{padding:5mm 7mm}.hero-copy .eyebrow{font-size:7pt;line-height:1.1;margin-bottom:2.4mm}.hero-copy h1{font-size:19.5pt;line-height:1.08;letter-spacing:-.012em;font-weight:700}.hero-copy p{font-size:7.9pt;line-height:1.32;margin-top:2.3mm}
+.lesson-summary{padding:2.6mm 5mm}.summary-head{margin-bottom:1.7mm}.pill{height:5.5mm;font-size:6.8pt}.lesson-summary p{font-size:8.3pt;line-height:1.3}
+.agenda-block{grid-template-rows:6mm minmax(0,1fr);gap:1mm}.agenda-block h2{font-size:8.2pt;line-height:1.1}
+.agenda-list{grid-template-rows:none;grid-auto-rows:minmax(var(--agenda-row),auto);align-content:space-between;gap:0}.agenda-list.rows-6{--agenda-row:14.5mm}.agenda-list.rows-7{--agenda-row:13.2mm}.agenda-list.rows-8{--agenda-row:12mm}.agenda-list.rows-9{--agenda-row:10.8mm}
+.agenda-item:before{top:-3mm;bottom:-3mm}.agenda-number{width:5mm;height:5mm;font-size:6.3pt}.agenda-item p{border-radius:3.2mm;padding:.9mm 3mm;gap:.7mm;font-size:8.15pt;line-height:1.16}.technical{font:700 7.55pt/1.12 Arial}
+
+/* Editorial system V2: enterprise course dossier, not oversized web cards. */
+body{background:#cbc5c1}.page{background-color:#fbf6ef;background-image:radial-gradient(circle at 91% 7%,rgba(121,87,255,.09),transparent 29%),linear-gradient(rgba(16,26,58,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(16,26,58,.025) 1px,transparent 1px);background-size:auto,8mm 8mm,8mm 8mm;box-shadow:0 8mm 22mm rgba(16,26,58,.14)}
+.topbar{border-bottom:.3mm solid rgba(16,26,58,.14);font:700 7pt/1.1 Arial;letter-spacing:.045em}.topbar span{display:flex;align-items:center;gap:2mm}.topbar span:before{content:"";width:8mm;height:.8mm;border-radius:99px;background:currentColor}
+.page-footer{font-size:6.4pt;letter-spacing:.025em}
+.live-page{grid-template-rows:8mm 44mm 20mm minmax(0,1fr) 30mm 6mm;gap:3mm}
+.live-hero{border-radius:6mm;background:#101a3a;grid-template-columns:minmax(0,1fr) 56mm;isolation:isolate;box-shadow:0 3mm 8mm rgba(16,26,58,.14)}.live-hero:before{inset:0;width:100%;border-radius:0;background:radial-gradient(circle at 83% 38%,color-mix(in srgb,var(--accent) 72%,transparent),transparent 29%),linear-gradient(110deg,#101a3a 0%,#151d43 68%,color-mix(in srgb,var(--accent) 52%,#151d43) 100%);opacity:1}.live-hero:after{content:"";position:absolute;inset:0 0 auto;height:1.2mm;background:var(--accent);z-index:3}.hero-copy{padding:5mm 7mm 4.5mm}.hero-copy .eyebrow{display:flex;align-items:center;gap:2.4mm;margin:0 0 2.2mm;color:#e9e6f7;font:600 6.6pt/1 Arial;letter-spacing:.025em}.hero-copy .eyebrow b{display:inline-flex;align-items:center;justify-content:center;min-width:11mm;height:5.2mm;padding:0 2mm;border-radius:99px;background:var(--accent);color:#fff;font:800 6.5pt/1 Arial}.hero-copy .eyebrow span{opacity:.84}.hero-copy .eyebrow em{font-style:normal;color:#fff;opacity:.72}.hero-copy h1{font-size:20pt;line-height:1.07;letter-spacing:-.018em;max-width:116mm}.hero-copy p{font-size:7.65pt;line-height:1.3;margin-top:2mm;max-width:116mm;color:#d8dbea}.live-hero img{width:55mm;height:45mm;opacity:.96;filter:drop-shadow(0 3mm 4mm rgba(0,0,0,.24))}
+.lesson-summary{display:grid;grid-template-columns:33mm minmax(0,1fr);align-items:center;border:0;border-left:1.2mm solid var(--accent);border-radius:0 3.5mm 3.5mm 0;padding:2mm 4mm;background:rgba(255,255,255,.72);box-shadow:inset 0 0 0 .25mm rgba(16,26,58,.09)}.summary-head{display:flex;flex-direction:column;align-items:flex-start;gap:1.2mm;margin:0}.summary-head strong{font-size:7pt;letter-spacing:.08em}.pill{height:5mm;padding:0 4.5mm;font-size:6.2pt;letter-spacing:.06em}.lesson-summary p{padding-left:4mm;border-left:.25mm solid #ded7d2;font-size:8.15pt;line-height:1.34;color:#34384c}
+.agenda-block{grid-template-rows:7mm minmax(0,1fr);gap:2mm}.agenda-block h2{display:flex;align-items:flex-end;margin:0;color:#101a3a;line-height:1}.agenda-block h2 span{font:800 8pt/1 Arial;color:var(--accent);letter-spacing:.08em}.agenda-block h2 b{margin-left:2.4mm;font-size:8pt}.agenda-block h2 em{margin-left:auto;font:700 6.3pt/1 Arial;color:#8c8793;font-style:normal;letter-spacing:.1em}
+.agenda-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(var(--agenda-rows),minmax(0,1fr));grid-auto-rows:unset;align-content:stretch;gap:2.4mm 2.8mm}.agenda-item{display:grid;grid-template-columns:9mm minmax(0,1fr);align-items:stretch;border:.25mm solid rgba(16,26,58,.12);border-top:.85mm solid var(--accent);border-radius:3.5mm;background:rgba(255,255,255,.88);overflow:hidden;box-shadow:0 1.5mm 4mm rgba(16,26,58,.055)}.agenda-item:before{display:none}.agenda-item:last-child:nth-child(odd){grid-column:1/-1}.agenda-number{align-self:start;width:auto;height:auto;margin:3.2mm 0 0 3mm;border-radius:0;background:none;color:var(--accent);font:800 7.2pt/1 Arial;letter-spacing:.04em}.agenda-copy{min-width:0;padding:3mm 3.4mm 2.7mm 1.2mm;display:flex;flex-direction:column;justify-content:center}.technical{display:block;margin:0 0 1.5mm;color:var(--accent);font:800 7.15pt/1.15 Arial;letter-spacing:.01em;overflow-wrap:anywhere}.agenda-copy p{height:auto;min-width:0;margin:0;border:0;border-radius:0;padding:0;display:block;background:none;color:#242940;font-size:8.1pt;line-height:1.36;overflow-wrap:anywhere}
+.week-meta{gap:2.8mm}.week-meta article{position:relative;border:0;border-radius:4mm;padding:4mm 4.5mm;background:#121b3b;color:#fff;box-shadow:0 2mm 5mm rgba(16,26,58,.12)}.week-meta article+article{background:#fff;border:.3mm solid rgba(255,101,78,.24);color:#101a3a;box-shadow:0 2mm 5mm rgba(16,26,58,.06)}.week-meta h3{display:block;margin:0 0 2mm;padding:0;background:none!important;color:var(--accent);font:800 6.5pt/1 Arial;letter-spacing:.09em}.week-meta article+article h3{color:#ff654e}.week-meta p{font-size:7.65pt;line-height:1.4;color:#edf0fb}.week-meta article+article p{color:#34384c}
+.section-heading>span{display:inline-flex;align-items:center;height:6mm;padding:0 3.5mm;border-radius:99px;background:#fff0ec;color:#e94f3c;font-size:6.8pt;letter-spacing:.06em}.section-heading h1{font-size:24pt;line-height:1.12;letter-spacing:-.018em;margin:4mm 0 2.5mm}.section-heading p{max-width:170mm;font-size:9pt;line-height:1.48;color:#55596c}
+.track,.benefit-grid article,.stage-list article,.mode,.layer-list li,.career-grid article{border-color:rgba(16,26,58,.12);box-shadow:0 2mm 6mm rgba(16,26,58,.055)}.track{position:relative;overflow:hidden;background:linear-gradient(145deg,#f4efff,#fff);border-radius:5mm}.track:before{content:"";position:absolute;inset:0 auto 0 0;width:1.2mm;background:#7957ff}.track.practice{background:linear-gradient(145deg,#fff0ec,#fff)}.track.practice:before{background:#ff654e}.benefit-grid article{background:rgba(255,255,255,.82)}.stage-list article{background:rgba(255,255,255,.84);border-radius:4mm}.mode{background:rgba(255,255,255,.84)}.layer-list li{background:rgba(255,255,255,.84);border-radius:3mm}.career-grid article{background:rgba(255,255,255,.86)}
+.standard-page{isolation:isolate}.standard-page>*:not(.page-art):not(.page-footer){position:relative;z-index:1}.standard-page>.page-footer{position:absolute;z-index:2}.page-art{position:absolute;z-index:0;right:8mm;bottom:14mm;width:90mm;height:90mm;object-fit:contain;opacity:.07;filter:saturate(.9) drop-shadow(0 4mm 8mm rgba(16,26,58,.12));pointer-events:none}.method-page .page-art{right:8mm;bottom:18mm;width:112mm;height:112mm;opacity:.13}.map-page .page-art,.modes-page .page-art,.stack-page .page-art{opacity:.045}.career-page .page-art{right:4mm;bottom:9mm;width:102mm;height:102mm;opacity:.065}
+
+/* Type scale V3: designed for real browser reading, not thumbnail viewing. */
+.topbar{font-size:7.6pt}.hero-copy .eyebrow{font-size:7.3pt}.hero-copy .eyebrow b{font-size:7pt}.hero-copy h1{font-size:22pt;line-height:1.06}.hero-copy p{font-size:8.7pt;line-height:1.34}
+.summary-head strong{font-size:7.8pt}.pill{height:5.5mm;font-size:6.9pt}.lesson-summary p{font-size:9.35pt;line-height:1.42}
+.agenda-block h2 span{font-size:9.1pt}.agenda-block h2 b{font-size:9.2pt}.agenda-block h2 em{font-size:7pt}.agenda-number{margin-top:3.4mm;font-size:9pt}.agenda-copy{padding:4.4mm 4.4mm 4mm 1.4mm}.technical{margin-bottom:2.2mm;font-size:10.2pt;line-height:1.2}.agenda-copy p{font-size:11.2pt;line-height:1.38;font-weight:500}
+.agenda-list.rows-8 .agenda-copy,.agenda-list.rows-9 .agenda-copy{padding:2.5mm 3.2mm 2.2mm 1mm}.agenda-list.rows-8 .technical,.agenda-list.rows-9 .technical{margin-bottom:1.1mm;font-size:8.45pt;line-height:1.15}.agenda-list.rows-8 .agenda-copy p,.agenda-list.rows-9 .agenda-copy p{font-size:9.4pt;line-height:1.28}.agenda-list.rows-8 .agenda-number,.agenda-list.rows-9 .agenda-number{font-size:7.6pt}
+.week-meta h3{font-size:7.4pt}.week-meta p{font-size:8.45pt;line-height:1.42}
+.section-heading h1{font-size:26pt;line-height:1.1}.section-heading p{font-size:10pt;line-height:1.5}.track>span{font-size:8.2pt}.track h2{font-size:17pt}.track p{font-size:9.2pt;line-height:1.48}.track strong{font-size:8.6pt}.why-title{font-size:16pt}.benefit-grid h3{font-size:9.8pt}.benefit-grid p{font-size:8.15pt;line-height:1.42}.stage-list h2{font-size:13.8pt}.stage-list p{font-size:8.7pt}.stage-list article>strong{font-size:8.5pt}.mode>strong{font-size:10pt}.mode li{font-size:8.85pt;line-height:1.48}.layer-list strong{font-size:11pt}.layer-list b{font-size:8pt}.career-grid p{font-size:9.2pt;line-height:1.48}
+
+/* Compact agenda V4: card height follows content; whitespace is no longer fake padding. */
+.live-page{grid-template-rows:8mm 44mm 20mm auto minmax(0,1fr) 30mm 6mm}
+.agenda-list{grid-template-rows:repeat(var(--agenda-rows),auto);align-content:start}.agenda-item{min-height:0}.agenda-copy{padding:2.8mm 3.4mm 2.6mm 1.2mm}.technical{margin-bottom:1.4mm}.agenda-list.rows-8 .agenda-copy,.agenda-list.rows-9 .agenda-copy{padding:2.1mm 3mm 1.9mm .9mm}
+.page-spacer{min-height:0;border-top:.25mm solid rgba(16,26,58,.1);display:flex;align-items:flex-end;justify-content:flex-end;overflow:hidden}.page-spacer span{color:var(--accent);opacity:.075;font:800 22pt/1 Arial;letter-spacing:.02em;white-space:nowrap}
+
+.learning-assets{align-self:start;min-width:0;border:.3mm solid color-mix(in srgb,var(--accent) 26%,#ded8d2);border-left:1.2mm solid var(--accent);border-radius:0 4mm 4mm 0;background:rgba(255,255,255,.82);padding:2.6mm 3.2mm 3mm;box-shadow:0 1.5mm 5mm rgba(16,26,58,.05)}.assets-title{display:flex;align-items:baseline;gap:2.5mm;margin-bottom:2.2mm}.assets-title strong{font-size:8.8pt;color:#101a3a}.assets-title span{font-size:7.4pt;color:#777383}.assets-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.5mm}.learning-assets.groups-2 .assets-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.assets-grid article{min-width:0;padding-right:2mm;border-right:.25mm solid rgba(16,26,58,.1)}.assets-grid article:last-child{border-right:0}.assets-grid header{display:flex;flex-direction:column;gap:.7mm;margin-bottom:1.35mm}.assets-grid header strong{font:800 7.2pt/1 Arial;color:var(--accent);letter-spacing:.055em}.assets-grid header small{font-size:6.8pt;line-height:1.2;color:#777383}.assets-grid ul{list-style:none;margin:0;padding:0;display:grid;gap:.9mm}.assets-grid li{display:grid;grid-template-columns:8.5mm minmax(0,1fr);gap:1mm;align-items:baseline;min-width:0}.assets-grid li b{font:800 6.8pt/1.15 Arial;color:#777383}.assets-grid li span{font-size:7.8pt;line-height:1.24;color:#242940;overflow-wrap:anywhere}
+.course-inventory{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5mm;margin-top:5mm}.course-inventory div{min-width:0;height:22mm;border:.25mm solid rgba(16,26,58,.12);border-radius:3.5mm;background:rgba(255,255,255,.86);padding:2.7mm 3mm;display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:2.2mm;align-content:center;box-shadow:0 1.5mm 5mm rgba(16,26,58,.05)}.course-inventory b{grid-row:1/3;color:#7957ff;font:800 18pt/1 Arial}.course-inventory strong{font:800 7.1pt/1.1 Arial;color:#101a3a}.course-inventory span{font-size:6.8pt;line-height:1.25;color:#686678}.method-page .two-track{margin-top:5mm}.method-page .why-title{margin-top:6mm}
+
+/* Sales copy V5: every support asset explains the outcome, not just the format. */
+.assets-title{display:flex;flex-direction:column;align-items:flex-start;gap:.7mm;margin-bottom:2.5mm}.assets-title strong{font-size:9.25pt;line-height:1.18;color:#101a3a}.assets-title span{font-size:7.55pt;line-height:1.3;color:#686678}.assets-grid header{display:flex;flex-direction:row;align-items:baseline;gap:1.3mm;margin-bottom:1.5mm}.assets-grid header strong{font:800 7.7pt/1 Arial;color:var(--accent);letter-spacing:0}.assets-grid header small{font:700 6.1pt/1 Arial;color:#8a8591;letter-spacing:.045em}.assets-grid ul{gap:1.25mm}.assets-grid li{grid-template-columns:7.5mm minmax(0,1fr);gap:.8mm;align-items:start}.assets-grid li b{padding-top:.3mm;font:800 5.9pt/1.2 Arial;color:#99939c}.assets-grid li>div{min-width:0;font-size:7.2pt;line-height:1.3;color:#34384c}.assets-grid li>div strong{font-size:7.65pt;color:#171d36}.assets-grid li>div span{font-size:7.05pt;line-height:1.3;color:#5d5b6b}.assets-grid li>div span:before{content:" · ";color:var(--accent);font-weight:800}
+/* Contrast V6: technical terms lead; compact type fits the richer sales content. */
+.agenda-block h2 span{color:#101a3a}.agenda-block h2 span:before{content:"";display:inline-block;width:6mm;height:.9mm;margin-right:2mm;border-radius:99px;background:var(--accent);vertical-align:middle}.technical{color:#101a3a;border-left:1mm solid var(--accent);padding-left:1.8mm;font-size:10.3pt;line-height:1.18;font-weight:800;letter-spacing:-.004em}.agenda-copy p{color:#5a5d6d;font-size:9.35pt;line-height:1.36;font-weight:500}.agenda-number{color:#101a3a;font-size:8pt}.agenda-list.rows-8 .technical,.agenda-list.rows-9 .technical{color:#101a3a;font-size:8.65pt;line-height:1.16}.agenda-list.rows-8 .agenda-copy p,.agenda-list.rows-9 .agenda-copy p{color:#5a5d6d;font-size:8.2pt;line-height:1.28}.agenda-list.rows-8 .agenda-number,.agenda-list.rows-9 .agenda-number{color:#101a3a;font-size:7.1pt}.assets-grid header strong{color:#101a3a}.assets-grid li>div span:before{color:#101a3a}.week-meta article:first-child h3{color:#fff}
+/* Typography V7: one casing system, one visual voice, denser text without oversized whitespace. */
+.topbar,.hero-copy .eyebrow,.pill,.summary-head strong,.agenda-block h2,.technical,.agenda-number,.assets-grid header,.assets-grid li b,.course-inventory strong,.track>span,.layer-list b,.career-grid h2,.cta>span{font-family:"PingFang SC","Helvetica Neue",Arial,sans-serif}
+.topbar{font-size:7.2pt;letter-spacing:.02em}.topbar span{font-weight:700}.hero-copy .eyebrow,.pill,.agenda-block h2 span,.agenda-block h2 em,.summary-head strong,.assets-grid header strong,.assets-grid header small,.course-inventory strong,.track>span,.career-grid h2{letter-spacing:0}
+.lesson-summary p{font-size:8.9pt;line-height:1.36}.agenda-copy{padding:2.5mm 3.2mm 2.3mm 1.1mm}.technical{margin-bottom:1.2mm;font-size:9.45pt;line-height:1.18;font-weight:750}.agenda-copy p{font-size:8.85pt;line-height:1.34;font-weight:500}.agenda-number{font-size:7.7pt}
+.agenda-list.rows-8 .agenda-copy,.agenda-list.rows-9 .agenda-copy{padding:1.9mm 2.8mm 1.8mm .85mm}.agenda-list.rows-8 .technical,.agenda-list.rows-9 .technical{margin-bottom:.8mm;font-size:8.15pt;line-height:1.14}.agenda-list.rows-8 .agenda-copy p,.agenda-list.rows-9 .agenda-copy p{font-size:7.85pt;line-height:1.25}.agenda-list.rows-8 .agenda-number,.agenda-list.rows-9 .agenda-number{font-size:6.9pt}
+.assets-title strong{font-size:8.8pt}.assets-title span{font-size:7.25pt}.assets-grid header strong{font-size:7.35pt}.assets-grid header small{font-size:6.15pt}.assets-grid li>div strong{font-size:7.25pt}.assets-grid li>div span{font-size:6.85pt;line-height:1.28}
+</style></head><body><section class="page cover-page" data-page="1"><img class="cover-image" src="cohort-07-teaching-method-poster-v4.png" alt="AI Engineer Bootcamp"/><div class="cover-card"><div><h1>第七期详细课程大纲</h1><p>31 页 · 25 场 Live · 5 次产品升级 · HTML-first Layout</p></div><strong>完整宣传版</strong></div></section>
+<section class="page standard-page method-page" data-page="2">
+    
+    <img class="page-art" src="assets/cohort-07-pdf-product-foundation-v1.png" alt="" />
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Teaching Model</span></div>
+    <header class="section-heading"><span>第五期 → 第七期</span><h1>每周两场 Live：一场把原理讲懂，一场把产品真正做出来</h1><p>第七期最大的变化不是多上几节课，而是改变学习方式。理论课负责讲清为什么，实践课负责把能力一步步做进同一套 Enterprise AI 系统。</p></header>
+    <section class="course-inventory">
+      <div><b>25</b><strong>正式 Live</strong><span>12 场理论 + 13 场实践</span></div>
+      <div><b>34</b><strong>Video Lessons</strong><span>稳定知识随时暂停回看</span></div>
+      <div><b>68</b><strong>Interactive Labs</strong><span>直接在环境中完成代码练习</span></div>
+      <div><b>17</b><strong>Quests</strong><span>提交架构、评测与项目证据</span></div>
+    </section>
+    <div class="two-track">
+      <article class="track theory"><span>01 · Theory Live</span><h2>12 场：把复杂概念讲成人话</h2><p>从大模型为什么会答错，到 RAG 怎样查资料、Agent 怎样使用工具、系统怎样评测和治理。保留求职面试真正会问的主干。</p><strong>你能讲清：为什么系统要这样设计</strong></article>
+      <article class="track practice"><span>02 · Practice Live</span><h2>13 场：从空项目做到可上线</h2><p>先做界面和业务流程，再加入语音、企业资料搜索、Agent、长期记忆、模型选择、质量评测和上线控制。每周都能看到产品升级。</p><strong>你能展示：一套完整、可验证的作品</strong></article>
+    </div>
+    <h2 class="why-title">为什么选择一个复杂、强监管的业务场景？</h2>
+    <div class="benefit-grid"><article><i></i><h3>同时处理文字和语音</h3><p>覆盖语音转文字、人工修改、确认和结构化文档。</p></article><article><i></i><h3>回答必须有资料依据</h3><p>从政策中找证据、标出来源；找不到时明确拒答。</p></article><article><i></i><h3>Agent 能连接真实工具</h3><p>读取任务、查询资料、生成草稿，并受权限和人工审批控制。</p></article><article><i></i><h3>记忆必须可管可删</h3><p>每条长期记忆都有来源、权限、有效期，也能更正和删除。</p></article><article><i></i><h3>强法规逼出真治理</h3><p>隐私、责任人、安全攻击和上线标准都必须真正落地。</p></article><article><i></i><h3>能力可以迁移到多行业</h3><p>这套方法同样适用于金融、法律、教育、医疗和企业软件。</p></article></div>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>02 / 31</span>
+  </footer>
+  </section>
+<section class="page standard-page map-page" data-page="3">
+    
+    <img class="page-art" src="assets/cohort-07-pdf-voice-rag-v1.png" alt="" />
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>13-Week Build Map</span></div>
+    <header class="section-heading"><span>13 场独立实践 Live</span><h1>不是 13 个零散 Demo，而是 5 次看得见的产品升级</h1><p>每一阶段都建立在上一阶段之上。你不是复制老师的片段代码，而是亲手把一个普通软件逐步升级成 Enterprise AI Agent System。</p></header>
+    <div class="stage-list"><article style="--stage:#48C9D9"><div class="stage-no"><b>01</b><small>W1-W3</small></div><div><h2>先做出可靠的软件产品</h2><p>明确需求、完成完整界面，再跑通任务、文档、审核和权限流程</p></div><strong>不用 AI 也能正常工作的产品底座</strong></article><article style="--stage:#FF654E"><div class="stage-no"><b>02</b><small>W4-W5</small></div><div><h2>第一次让 AI 参与工作</h2><p>把语音转成可修改文字，再整理成结构清楚、必须人工确认的草稿</p></div><strong>原始输入变成可审核文档</strong></article><article style="--stage:#7957FF"><div class="stage-no"><b>03</b><small>W6-W7</small></div><div><h2>让每个答案都有资料依据</h2><p>搭建 RAG，从政策中找证据、标引用，并用标准案例测试质量</p></div><strong>不是会回答，而是能证明回答可靠</strong></article><article style="--stage:#EC6AA7"><div class="stage-no"><b>04</b><small>W8-W10</small></div><div><h2>让 AI 成为可控的 Agent</h2><p>连接工具、自己决定下一步，同时限制权限、步数、失败处理和长期记忆</p></div><strong>能执行任务，也知道何时必须停下</strong></article><article style="--stage:#F3B943"><div class="stage-no"><b>05</b><small>W11-W13</small></div><div><h2>达到企业上线标准</h2><p>加入运行控制、模型选择、治理、质量评测、安全测试和发布判断</p></div><strong>一套可评估、可治理、可发布的系统</strong></article></div>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>03 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="4">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 01 · Theory Live</span></div>
+    <header class="live-hero" style="--accent:#48C9D9">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W01</b><span>01 · 产品与工程基础</span><em>Theory Live</em></div>
+        <h1>AI Engineer 全景：一套 AI 产品到底由什么组成</h1>
+        <p>先看懂 AI Engineer 真正在做什么，再学会让 AI Coding 可靠地参与开发，而不是让模型随便生成代码。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-product-foundation-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill purple">Theory Live</span><strong>L16</strong></div>
+      <p>先建立全局地图：大模型只是其中一层，真正的 AI 产品还包括资料、工具、Agent、评测和安全治理。你会知道 AI Engineer 与软件、数据和模型岗位分别负责什么。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#48C9D9"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>6 modules</em></h2>
+      <ol class="agenda-list rows-6" style="--agenda-rows:3"><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">AI · ML · Deep Learning · GenAI · LLM</strong><p>先看懂 AI、机器学习、深度学习和大模型是什么关系</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">LLM · Training · Inference · Token · Context · Hallucination</strong><p>大模型基础：它怎样学习、怎样回答、为什么会“编答案”</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">Applied AI · Model · Context · RAG · Tools · Agents · Evals · Governance</strong><p>一套 AI 产品还需要资料、工具、Agent、评测和治理</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><strong class="technical">AI Engineer · ML Engineer · Data Scientist · Software Engineer</strong><p>AI Engineer 与软件、数据、算法岗位分别负责什么</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><p>现场比较不同模型处理同一任务的真实差异</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Production Awareness</strong><p>从第一天就考虑成本、速度、隐私和稳定性</p></div>
+    </li></ol>
+    </section>
+    <section class="learning-assets groups-3" style="--accent:#48C9D9">
+    <div class="assets-title"><strong>开课前先把环境、节奏和 LLM 基本判断跑通</strong><span>不是听完概念才回家配置；第一周就拥有能持续开发的 AI Engineer 工作台。</span></div>
+    <div class="assets-grid"><article><header><strong>先建立判断</strong><small>Video / Self-study</small></header><ul><li><b>L21</b><div><strong>看懂完整学习路线</strong><span>知道 13 周怎样推进、每周交什么，以及理论、实践和项目如何配合。</span></div></li></ul></article><article><header><strong>再亲手跑通</strong><small>Interactive Lab</small></header><ul><li><b>L17</b><div><strong>第一次真实操作 LLM</strong><span>直接观察输入变化如何影响回答，不再把模型当成神秘黑盒。</span></div></li><li><b>L18</b><div><strong>把核心概念变成判断</strong><span>用交互练习理解 token、context 与模型行为之间的关系。</span></div></li></ul></article><article><header><strong>最后留下证据</strong><small>Quest / Evidence</small></header><ul><li><b>L16a</b><div><strong>搭好个人 AI Engineer 工作台</strong><span>验证 repo、terminal、runtime 与开发工具，后续每周可以直接继续构建。</span></div></li></ul></article></div>
+  </section>
+    <section class="week-meta">
+      <article><h3 style="--accent:#48C9D9">下一步能做什么</h3><p>本周先确定做什么、怎么验收；下周据此设计完整产品界面。</p></article>
+      <article><h3>面试能讲什么</h3><p>能讲清楚你如何检查 AI 生成的代码，证明它可测试、可维护，而不是“能跑就算”。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>04 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="5">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 01 · Practice Live</span></div>
+    <header class="live-hero" style="--accent:#48C9D9">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W01</b><span>01 · 产品与工程基础</span><em>Practice Live</em></div>
+        <h1>用 AI Coding 启动第一个真实工程项目</h1>
+        <p>先看懂 AI Engineer 真正在做什么，再学会让 AI Coding 可靠地参与开发，而不是让模型随便生成代码。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-product-foundation-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill accent">Practice Live</span><strong>C7P01</strong></div>
+      <p>不是让 AI 随便写代码。你会先说清用户、目标和风险，再用验收标准、测试与代码评审约束 AI，建立团队真正能复用的开发方式。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#48C9D9"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>6 modules</em></h2>
+      <ol class="agenda-list rows-6" style="--agenda-rows:3"><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">Frame · Non-Goals</strong><p>先说清楚：给谁用、解决什么、哪些事情暂时不做</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">Specify · PRD · Acceptance Criteria · Test Plan</strong><p>把需求写成可以验收和测试的具体标准</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">Ground · Repo Context · Agent Rules · Synthetic Data Boundary</strong><p>让 AI 先读懂项目代码、开发规则和数据边界</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><strong class="technical">Build · AI Coding · Starter Repo</strong><p>用 AI Coding 阅读现有项目，并完成一次受控修改</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><strong class="technical">Evaluate · Safeguard · Review</strong><p>人工评审代码、检查测试，并提前发现风险</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Operate · Workflow Map · Task Board</strong><p>留下项目流程、任务清单和可追溯的开发证据</p></div>
+    </li></ol>
+    </section>
+    <div class="page-spacer" style="--accent:#48C9D9" aria-hidden="true"><span>W01 · 01 · 产品与工程基础</span></div>
+    <section class="week-meta">
+      <article><h3 style="--accent:#48C9D9">这周真正做出来</h3><p>一份团队可以直接执行的项目说明、验收标准、开发规则和任务清单</p></article>
+      <article><h3>为什么先不做更多</h3><p>第一周先把目标和规则定清楚，暂时不追求完成整套产品功能。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>05 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="6">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 02 · Theory Live</span></div>
+    <header class="live-hero" style="--accent:#48C9D9">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W02</b><span>01 · 产品与工程基础</span><em>Theory Live</em></div>
+        <h1>大模型为什么会回答，也为什么会答错</h1>
+        <p>把产品想法变成一套完整界面，让开发前就能看见用户会怎么操作、系统有哪些状态。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-product-foundation-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill purple">Theory Live</span><strong>L28</strong></div>
+      <p>用工程师需要的深度看懂 Token、Attention 和 Context，不做复杂数学推导。重点是理解模型如何生成答案，以及为什么会遗忘、误解或编造内容。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#48C9D9"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>7 modules</em></h2>
+      <ol class="agenda-list rows-7" style="--agenda-rows:4"><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">Token · Embedding</strong><p>Token 与 Embedding：模型怎样把文字变成可计算的信息</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">Transformer · Input · Attention · Layers · Logits · Next Token</strong><p>Transformer：信息怎样经过注意力层，生成下一个词</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">Attention</strong><p>用直觉理解 Attention，不做复杂矩阵推导</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><strong class="technical">Context Window · Lost-in-the-Middle · Hallucination</strong><p>为什么长对话会遗忘重点，大模型又为什么会幻觉</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><strong class="technical">LLM API Anatomy · Model · Messages · System/User · Structured Output</strong><p>看懂一次 LLM API 请求里各个字段的作用</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Temperature · Top-p · Max Tokens</strong><p>现场调整随机性和输出长度，观察答案如何变化</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">07</span>
+      <div class="agenda-copy"><strong class="technical">Applied AI Engineer</strong><p>把模型原理转换成面试时能讲清楚的工程判断</p></div>
+    </li></ol>
+    </section>
+    <section class="learning-assets groups-2" style="--accent:#48C9D9">
+    <div class="assets-title"><strong>先看懂 Transformer，再亲手观察模型为什么会这样回答</strong><span>把“听说过 token 和 attention”升级成能解释 API 行为、参数影响和模型限制。</span></div>
+    <div class="assets-grid"><article><header><strong>先建立判断</strong><small>Video / Self-study</small></header><ul><li><b>L29</b><div><strong>拆开 Transformer 的信息流</strong><span>看懂输入如何经过 attention 与层级计算，最终形成输出。</span></div></li><li><b>L30</b><div><strong>看懂文字如何进入模型</strong><span>理解 Input Embeddings 如何把 token 转成模型可以处理的数字表示。</span></div></li></ul></article><article><header><strong>再亲手跑通</strong><small>Interactive Lab</small></header><ul><li><b>L31</b><div><strong>动手观察 Transformer 与 Attention</strong><span>用交互实验看到 token 之间如何建立关系。</span></div></li><li><b>L32</b><div><strong>比较模型参数的真实影响</strong><span>改变 temperature、输出长度等参数，记录准确性与稳定性的变化。</span></div></li></ul></article></div>
+  </section>
+    <section class="week-meta">
+      <article><h3 style="--accent:#48C9D9">下一步能做什么</h3><p>本周把产品画完整；下周把界面连接成真正可操作的软件流程。</p></article>
+      <article><h3>面试能讲什么</h3><p>能解释一个 AI 结果从生成、审核到确认的全过程，以及如何避免用户把草稿误当成正式结果。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>06 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="7">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 02 · Practice Live</span></div>
+    <header class="live-hero" style="--accent:#48C9D9">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W02</b><span>01 · 产品与工程基础</span><em>Practice Live</em></div>
+        <h1>把产品想法变成一套完整、可开发的界面</h1>
+        <p>把产品想法变成一套完整界面，让开发前就能看见用户会怎么操作、系统有哪些状态。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-product-foundation-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill accent">Practice Live</span><strong>C7P02</strong></div>
+      <p>你会完成产品结构、视觉规范和关键页面，并设计草稿、审核、确认、失败等状态。这样后续开发有统一标准，用户也不会把 AI 草稿误当成正式结果。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#48C9D9"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>7 modules</em></h2>
+      <ol class="agenda-list rows-7" style="--agenda-rows:4"><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">W1 Starter Repo · Product Workflow</strong><p>回到第一周的用户流程，确认产品到底要解决什么</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">Dashboard · Resident · Shift/Task · Documentation</strong><p>规划首页、用户、任务和文档等页面之间的关系</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">Design.md · Design Tokens</strong><p>建立统一颜色、字号、间距和组件使用规则</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><strong class="technical">Responsive Layout</strong><p>完成主要页面、导航和手机端布局</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><strong class="technical">Draft · Review · Confirmed · Failed · Escalated</strong><p>设计草稿、审核、确认、失败和人工处理状态</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Recording/Transcribing · Accessibility</strong><p>加入录音与转写状态、动画和无障碍体验</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">07</span>
+      <div class="agenda-copy"><strong class="technical">Product Design Review</strong><p>像真实产品团队一样进行设计评审和验收</p></div>
+    </li></ol>
+    </section>
+    <div class="page-spacer" style="--accent:#48C9D9" aria-hidden="true"><span>W02 · 01 · 产品与工程基础</span></div>
+    <section class="week-meta">
+      <article><h3 style="--accent:#48C9D9">这周真正做出来</h3><p>完整页面结构、视觉规范和成功、失败、等待、人工审核等关键界面状态</p></article>
+      <article><h3>为什么先不做更多</h3><p>本周专注产品设计，不急着连接数据库或大模型。先把体验设计对，后面开发才不会返工。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>07 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="8">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 03 · Theory Live</span></div>
+    <header class="live-hero" style="--accent:#48C9D9">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W03</b><span>01 · 产品与工程基础</span><em>Theory Live</em></div>
+        <h1>Context Engineering：让 AI 拿到正确的信息和规则</h1>
+        <p>先完成不用 AI 也能正常工作的业务流程，为后续语音、RAG 和 Agent 建立可靠底座。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-product-foundation-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill purple">Theory Live</span><strong>L37</strong></div>
+      <p>AI 回答好不好，不只取决于 Prompt。你会学习如何把用户身份、任务、实时数据、公司规则和输出格式组合成模型真正需要的上下文。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#48C9D9"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>7 modules</em></h2>
+      <ol class="agenda-list rows-7" style="--agenda-rows:4"><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">Prompt Engineering · Context Engineering</strong><p>Prompt 只是指令；Context 是 AI 完成任务所需的全部信息</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">Context · System Policy · User Role · Task · Runtime Data · Output Contract</strong><p>上下文包括规则、用户身份、任务、实时数据和输出格式</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">Context Assembly · Select · Structure · Order · Compress · Validate</strong><p>只选择有用信息，并按正确顺序组织、压缩和检查</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><strong class="technical">Structured Output · JSON Schema · Runtime Validation</strong><p>用固定 JSON 格式约束输出，并在程序中自动验证</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><strong class="technical">Reasoning Patterns · Chain of Thought · Task Decomposition · Plan-Then-Execute · Self-Check</strong><p>把复杂任务拆成步骤，让模型计划、执行和自检</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Context Trust Boundary · Prompt Injection</strong><p>识别不可信输入、冲突指令和过期资料</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">07</span>
+      <div class="agenda-copy"><strong class="technical">Carekind Context Blueprint</strong><p>为项目画出一份可以在面试中解释的 Context 蓝图</p></div>
+    </li></ol>
+    </section>
+    <section class="learning-assets groups-3" style="--accent:#48C9D9">
+    <div class="assets-title"><strong>把 Context Engineering 从提示词技巧升级成系统输入架构</strong><span>完成可复用的 Context Blueprint，让模型拿到正确资料、规则、工具和输出格式。</span></div>
+    <div class="assets-grid"><article><header><strong>先建立判断</strong><small>Video / Self-study</small></header><ul><li><b>L37b</b><div><strong>建立 Context Engineering 全景</strong><span>先分清 instruction、data、memory、tools 与 output contract 各自负责什么。</span></div></li></ul></article><article><header><strong>再亲手跑通</strong><small>Interactive Lab</small></header><ul><li><b>L38</b><div><strong>组装一份可靠 Context</strong><span>把任务、资料和约束放进正确位置，并比较前后输出差异。</span></div></li><li><b>L40</b><div><strong>识别推理方法的适用边界</strong><span>比较分步推理模式，不把 Chain of Thought 当成万能答案。</span></div></li><li><b>L41</b><div><strong>写出有责任边界的 System Prompt</strong><span>明确角色、权限、拒答条件和人工确认点。</span></div></li><li><b>L43</b><div><strong>让输出通过 JSON Schema 验证</strong><span>把自由文本变成后端可以接收、检查和保存的结构化数据。</span></div></li></ul></article><article><header><strong>最后留下证据</strong><small>Quest / Evidence</small></header><ul><li><b>L37a</b><div><strong>交付 Context Blueprint</strong><span>画清输入来源、信任边界、组装顺序和失败处理，成为后续 AI 功能设计依据。</span></div></li></ul></article></div>
+  </section>
+    <section class="week-meta">
+      <article><h3 style="--accent:#48C9D9">下一步能做什么</h3><p>本周完成产品底座；下周第一次接入语音 AI。</p></article>
+      <article><h3>面试能讲什么</h3><p>能说明为什么高风险 AI 产品必须先有可靠的软件流程，而不是一开始就做聊天框。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>08 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="9">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 03 · Practice Live</span></div>
+    <header class="live-hero" style="--accent:#48C9D9">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W03</b><span>01 · 产品与工程基础</span><em>Practice Live</em></div>
+        <h1>先把正常业务流程跑通，再让 AI 加入</h1>
+        <p>先完成不用 AI 也能正常工作的业务流程，为后续语音、RAG 和 Agent 建立可靠底座。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-product-foundation-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill accent">Practice Live</span><strong>C7P03</strong></div>
+      <p>先完成一个不用 AI 也能工作的产品流程：任务、记录、审核、确认、权限和操作历史全部连通。后面接入 AI 时，任何问题都能准确定位。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#48C9D9"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>7 modules</em></h2>
+      <ol class="agenda-list rows-7" style="--agenda-rows:4"><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">Starter Repo · W2 · UI</strong><p>读懂现有项目、数据结构和上一周完成的界面</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">Resident · Shift · Task · Care Activity</strong><p>连接用户、班次、任务和工作记录之间的关系</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">Assigned · In Progress · Completed</strong><p>实现任务从待处理、进行中到完成的状态变化</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><strong class="technical">Care Activity · Progress Note Draft</strong><p>从一次工作记录创建可编辑的文档草稿</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><strong class="technical">Draft · Review · Confirm</strong><p>实现草稿、审核、确认流程，并限制不同角色权限</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Document Version · Reviewer · Audit Event</strong><p>保留每个版本、审核人和关键操作记录</p></div>
+    </li><li class="agenda-item" style="--accent:#48C9D9">
+      <span class="agenda-number">07</span>
+      <div class="agenda-copy"><strong class="technical">UI/API</strong><p>跑通前端、后端和一条完整自动化测试</p></div>
+    </li></ol>
+    </section>
+    <div class="page-spacer" style="--accent:#48C9D9" aria-hidden="true"><span>W03 · 01 · 产品与工程基础</span></div>
+    <section class="week-meta">
+      <article><h3 style="--accent:#48C9D9">这周真正做出来</h3><p>一条从创建任务、记录工作、生成草稿到人工确认的可运行流程，并保留权限和操作记录</p></article>
+      <article><h3>为什么先不做更多</h3><p>本周不调用模型。先证明正常软件流程可靠，再让 AI 加入，问题会更容易定位。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>09 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="10">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 04 · Theory Live</span></div>
+    <header class="live-hero" style="--accent:#FF654E">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W04</b><span>02 · 第一次接入 AI</span><em>Theory Live</em></div>
+        <h1>RAG 入门：让 AI 根据公司资料回答，而不是瞎猜</h1>
+        <p>第一次把 AI 接进产品：用户说话，系统转成文字，但必须由用户修改和确认后才能继续。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-voice-rag-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill purple">Theory Live</span><strong>L58</strong></div>
+      <p>RAG 会先从指定资料里找证据，再把证据交给模型回答。你会看懂资料如何被切分、搜索和引用，也会知道找不到答案时为什么必须明确拒答。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#FF654E"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>7 modules</em></h2>
+      <ol class="agenda-list rows-7" style="--agenda-rows:4"><li class="agenda-item" style="--accent:#FF654E">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">RAG · Context Architecture · Memory · Fine-Tuning</strong><p>先弄清 RAG、长期记忆和模型微调分别解决什么问题</p></div>
+    </li><li class="agenda-item" style="--accent:#FF654E">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">Embedding · Vector · Semantic Similarity</strong><p>Embedding：把文字变成可比较的数字表示</p></div>
+    </li><li class="agenda-item" style="--accent:#FF654E">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">Ingestion · Chunking · Metadata · Indexing</strong><p>把资料合理切分，并保留来源、日期和权限信息</p></div>
+    </li><li class="agenda-item" style="--accent:#FF654E">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><strong class="technical">Retrieval · Top-k · Similarity Score · Access Boundary</strong><p>从大量资料中找出与问题最相关的内容</p></div>
+    </li><li class="agenda-item" style="--accent:#FF654E">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><strong class="technical">Grounding · Programmatic Citation · No-Answer Policy</strong><p>要求答案引用原文；找不到依据时明确不回答</p></div>
+    </li><li class="agenda-item" style="--accent:#FF654E">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Naive RAG Failure Modes · Hybrid · Rewrite · Reranking</strong><p>认识最常见的 RAG 失败，以及后续可以怎样改进</p></div>
+    </li><li class="agenda-item" style="--accent:#FF654E">
+      <span class="agenda-number">07</span>
+      <div class="agenda-copy"><strong class="technical">RAG · Carekind Architecture Review</strong><p>用一张架构图讲清楚 RAG 系统如何工作</p></div>
+    </li></ol>
+    </section>
+    <section class="learning-assets groups-3" style="--accent:#FF654E">
+    <div class="assets-title"><strong>从 Embeddings 入门，一步跑通有引用、会拒答的本地 RAG</strong><span>不只会调用向量数据库；你会知道资料怎样进入系统、怎样被找到、为什么能成为证据。</span></div>
+    <div class="assets-grid"><article><header><strong>先建立判断</strong><small>Video / Self-study</small></header><ul><li><b>L54</b><div><strong>理解 Embeddings 的工程作用</strong><span>看懂文字如何变成可比较的向量，以及它适合解决什么问题。</span></div></li><li><b>L57</b><div><strong>分清 Embedding Model 与 Chat Model</strong><span>避免用错模型，并能解释检索模型和生成模型如何协作。</span></div></li></ul></article><article><header><strong>再亲手跑通</strong><small>Interactive Lab</small></header><ul><li><b>L55</b><div><strong>亲手完成 RAG 基础链路</strong><span>导入资料、切分、检索并验证答案是否真正来自指定内容。</span></div></li></ul></article><article><header><strong>最后留下证据</strong><small>Quest / Evidence</small></header><ul><li><b>L60a</b><div><strong>交付第一个可运行 RAG</strong><span>在本机跑通完整流程，展示 grounded answer、citation 与 no-answer 行为。</span></div></li></ul></article></div>
+  </section>
+    <section class="week-meta">
+      <article><h3 style="--accent:#FF654E">下一步能做什么</h3><p>本周得到可信的确认文字；下周再把这些内容整理成结构化文档。</p></article>
+      <article><h3>面试能讲什么</h3><p>能解释麦克风权限、转写错误或服务超时时，产品如何保证用户仍然完成工作。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>10 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="11">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 04 · Practice Live</span></div>
+    <header class="live-hero" style="--accent:#FF654E">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W04</b><span>02 · 第一次接入 AI</span><em>Practice Live</em></div>
+        <h1>第一次接入 AI：把语音变成可确认的文字</h1>
+        <p>第一次把 AI 接进产品：用户说话，系统转成文字，但必须由用户修改和确认后才能继续。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-voice-rag-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill accent">Practice Live</span><strong>C7P04</strong></div>
+      <p>完成录音、上传、语音转文字、人工修改和确认。重点不是炫技，而是即使权限被拒绝、转写失败或网络超时，用户仍然能完成工作。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#FF654E"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>6 modules</em></h2>
+      <ol class="agenda-list rows-6" style="--agenda-rows:3"><li class="agenda-item" style="--accent:#FF654E">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">Microphone Permission · Record/Stop</strong><p>获取麦克风权限，并实现开始和停止录音</p></div>
+    </li><li class="agenda-item" style="--accent:#FF654E">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">Audio File · Upload Request</strong><p>把录音安全上传给语音识别服务</p></div>
+    </li><li class="agenda-item" style="--accent:#FF654E">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">Speech-to-Text Provider</strong><p>接入一家 Speech-to-Text 服务，把语音转换成文字</p></div>
+    </li><li class="agenda-item" style="--accent:#FF654E">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><strong class="technical">Transcript</strong><p>让用户查看、修改并确认识别结果</p></div>
+    </li><li class="agenda-item" style="--accent:#FF654E">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><strong class="technical">Permission Denied</strong><p>处理空录音、超时、失败和麦克风权限被拒绝</p></div>
+    </li><li class="agenda-item" style="--accent:#FF654E">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Manual-Entry Fallback · Synthetic Audio</strong><p>即使语音功能不可用，也能切换到手动输入</p></div>
+    </li></ol>
+    </section>
+    <div class="page-spacer" style="--accent:#FF654E" aria-hidden="true"><span>W04 · 02 · 第一次接入 AI</span></div>
+    <section class="week-meta">
+      <article><h3 style="--accent:#FF654E">这周真正做出来</h3><p>可录音、可转写、可编辑、可确认的语音输入功能，并提供失败时的手动输入方案</p></article>
+      <article><h3>为什么先不做更多</h3><p>本周只解决“语音可靠变成文字”，暂时不让 AI 自动生成正式文档。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>11 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="12">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 05 · Theory Live</span></div>
+    <header class="live-hero" style="--accent:#7957FF">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W05</b><span>02 · 第一次接入 AI</span><em>Theory Live</em></div>
+        <h1>RAG 怎么测：不是“感觉不错”，而是有数据证明</h1>
+        <p>把已经确认的文字整理成结构清楚的文档草稿，并用固定格式检查 AI 有没有漏写或写错。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-voice-rag-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill purple">Theory Live</span><strong>C7T05</strong></div>
+      <p>用一组标准问题建立基准，分别检查有没有找到正确资料、回答是否准确、引用是否可信。每次只改一个变量，才能知道优化为什么有效。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#7957FF"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>7 modules</em></h2>
+      <ol class="agenda-list rows-7" style="--agenda-rows:4"><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">W4 RAG · Baseline</strong><p>先保存当前 RAG 表现，作为后续比较基准</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">Retrieval · Answer · Citation · No-Answer Failure Taxonomy</strong><p>把失败分成没找到资料、回答错误、引用错误和该拒答却回答</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">Golden Cases · RAGAS</strong><p>用标准问题和 RAGAS（RAG 常用评测工具）建立质量报告</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><p>指标也会误判，因此必须配合人工抽查</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><strong class="technical">Chunk · Top-k · Metadata Filter</strong><p>每次只改资料切分、搜索数量或过滤条件中的一个</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Hybrid Retrieval · Reranking · Production Evaluation</strong><p>了解混合搜索和重排序如何进一步提升结果</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">07</span>
+      <div class="agenda-copy"><strong class="technical">RAG</strong><p>把优化过程整理成面试可展示的证据</p></div>
+    </li></ol>
+    </section>
+    <section class="learning-assets groups-3" style="--accent:#7957FF">
+    <div class="assets-title"><strong>把“回答看起来不错”升级成有基线、有数据的 RAG 质量报告</strong><span>你会建立测试集、比较版本并追踪失败，而不是靠几次人工试问判断系统好坏。</span></div>
+    <div class="assets-grid"><article><header><strong>先建立判断</strong><small>Video / Self-study</small></header><ul><li><b>L87</b><div><strong>看懂 RAG 质量指标</strong><span>分清 retrieval、faithfulness、answer quality 分别在测什么。</span></div></li><li><b>L90</b><div><strong>掌握 RAGAS 评测流程</strong><span>从 golden cases 到指标结果，建立可重复运行的评测方式。</span></div></li><li><b>L91</b><div><strong>让每次检索与回答可追踪</strong><span>用 Langfuse 查看输入、检索结果、模型输出、延迟和失败位置。</span></div></li></ul></article><article><header><strong>再亲手跑通</strong><small>Interactive Lab</small></header><ul><li><b>L86</b><div><strong>运行一组 LLM Evaluation</strong><span>用固定案例比较版本表现，发现平均分掩盖不了的失败类型。</span></div></li><li><b>L88</b><div><strong>比较 Prompt 版本</strong><span>只改变一个变量，判断改动到底让结果变好还是变差。</span></div></li></ul></article><article><header><strong>最后留下证据</strong><small>Quest / Evidence</small></header><ul><li><b>L85a</b><div><strong>交付一份完整 RAGAS 报告</strong><span>展示测试集、基线、指标、失败案例和下一轮优化决策。</span></div></li></ul></article></div>
+  </section>
+    <section class="week-meta">
+      <article><h3 style="--accent:#7957FF">下一步能做什么</h3><p>本周让 AI 会整理信息；下周再让它根据政策资料提供有依据的内容。</p></article>
+      <article><h3>面试能讲什么</h3><p>能说明如何用固定字段、自动检查和人工审核，阻止错误内容进入正式系统。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>12 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="13">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 05 · Practice Live</span></div>
+    <header class="live-hero" style="--accent:#7957FF">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W05</b><span>02 · 第一次接入 AI</span><em>Practice Live</em></div>
+        <h1>把口述内容变成结构清楚、可审核的文档草稿</h1>
+        <p>把已经确认的文字整理成结构清楚的文档草稿，并用固定格式检查 AI 有没有漏写或写错。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-voice-rag-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill accent">Practice Live</span><strong>C7P05</strong></div>
+      <p>系统从确认过的文字中提取事实，按固定格式生成草稿，再自动检查缺失和冲突。AI 只负责起草，最终内容必须由人审核确认。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#7957FF"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>7 modules</em></h2>
+      <ol class="agenda-list rows-7" style="--agenda-rows:4"><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">Observation/Transcript Input Contract</strong><p>先规定系统能接收哪些输入、每个字段代表什么</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">Role · Task · Resident · Shift · Confirmed Input</strong><p>组合用户角色、当前任务和已经人工确认的内容</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">Context Builder · System Policy</strong><p>建立最小 Context Builder，把正确资料交给模型</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><strong class="technical">Structured Facts · Progress Note Draft</strong><p>从文字中提取事实，再生成结构化文档草稿</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><strong class="technical">Output Schema · Runtime Validation</strong><p>用固定格式自动检查 AI 输出是否完整合法</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Missing/Conflicting Facts · Invalid Output</strong><p>处理信息缺失、内容冲突和格式错误</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">07</span>
+      <div class="agenda-copy"><strong class="technical">Draft · Human Review · Confirm</strong><p>跑通 AI 起草、人工审核、最终确认的完整流程</p></div>
+    </li></ol>
+    </section>
+    <div class="page-spacer" style="--accent:#7957FF" aria-hidden="true"><span>W05 · 02 · 第一次接入 AI</span></div>
+    <section class="week-meta">
+      <article><h3 style="--accent:#7957FF">这周真正做出来</h3><p>从确认内容提取事实、生成文档草稿、自动检查格式，再交给人工审核和确认</p></article>
+      <article><h3>为什么先不做更多</h3><p>AI 只能生成草稿，不能直接写入正式记录；本周也还不查询外部政策资料。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>13 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="14">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 06 · Theory Live</span></div>
+    <header class="live-hero" style="--accent:#7957FF">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W06</b><span>03 · 有政策依据的输出</span><em>Theory Live</em></div>
+        <h1>Tool Calling 与 MCP：让 AI 安全调用外部工具</h1>
+        <p>让 AI 不再只靠模型记忆回答，而是先查指定资料，再给出可以追溯到原文的答案。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-voice-rag-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill purple">Theory Live</span><strong>L101</strong></div>
+      <p>模型不只回答问题，还可以读取资料、查询任务或创建草稿。你会理解 Tool Calling 与 MCP 如何规定工具能做什么、需要哪些参数、谁有权限调用。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#7957FF"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>8 modules</em></h2>
+      <ol class="agenda-list rows-8" style="--agenda-rows:4"><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">Function/Tool Calling · Schema · Arguments · Structured Result</strong><p>Tool Calling：用明确参数让模型调用一个功能</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">MCP Server · Client · Tools · Resources · Prompts</strong><p>MCP：让不同 AI 客户端用统一方式发现和调用工具</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">MCP · API · Tool Calling · Agent</strong><p>分清普通 API、Tool Calling、MCP 和 Agent 的作用</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><strong class="technical">CLI Integration · Command · Args · Env · Working Directory</strong><p>看懂命令、参数、环境变量和运行目录</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><strong class="technical">Stdio Lifecycle · Stdout Protocol · Stderr Logging</strong><p>理解本地 MCP 服务怎样启动、通信和记录错误</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Tool Discovery · Manual Call</strong><p>先手动调用工具，检查输入和返回结果</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">07</span>
+      <div class="agenda-copy"><strong class="technical">Secrets · Permission · Tool Allowlist · Human Confirmation</strong><p>给工具加密钥保护、权限白名单和人工确认</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">08</span>
+      <div class="agenda-copy"><p>现场排查路径错误、环境变量缺失和启动失败</p></div>
+    </li></ol>
+    </section>
+    <section class="learning-assets groups-3" style="--accent:#7957FF">
+    <div class="assets-title"><strong>从一次 Tool Call 走到可测试、可发布的 MCP 能力</strong><span>理解 schema、权限和错误边界，能把企业能力安全地暴露给 AI 使用。</span></div>
+    <div class="assets-grid"><article><header><strong>先建立判断</strong><small>Video / Self-study</small></header><ul><li><b>L98</b><div><strong>看懂 Function Calling 与 Tool Use</strong><span>掌握模型选工具、生成参数、接收结果和处理失败的完整过程。</span></div></li><li><b>L103</b><div><strong>读懂 MCP Server / Client 连接方式</strong><span>从源码视角理解协议消息、工具发现和调用链路。</span></div></li></ul></article><article><header><strong>再亲手跑通</strong><small>Interactive Lab</small></header><ul><li><b>L99</b><div><strong>实现受校验的 Tool Call</strong><span>定义 schema、验证参数，并处理 timeout、错误和无权限情况。</span></div></li><li><b>L102</b><div><strong>构建一个 MCP Server</strong><span>把真实能力包装成 AI 可发现、可调用、可测试的 MCP Tool。</span></div></li></ul></article><article><header><strong>最后留下证据</strong><small>Quest / Evidence</small></header><ul><li><b>L102a</b><div><strong>发布第一个 MCP Server</strong><span>补齐说明、测试和失败处理，让别人可以连接并验证你的工具。</span></div></li></ul></article></div>
+  </section>
+    <section class="week-meta">
+      <article><h3 style="--accent:#7957FF">下一步能做什么</h3><p>本周做出有依据的回答；下周用真实测试证明它到底准不准。</p></article>
+      <article><h3>面试能讲什么</h3><p>能用人话解释 RAG、长期记忆和模型微调的区别，并说明如何防止 AI 编造引用。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>14 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="15">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 06 · Practice Live</span></div>
+    <header class="live-hero" style="--accent:#7957FF">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W06</b><span>03 · 有政策依据的输出</span><em>Practice Live</em></div>
+        <h1>从零搭建 Policy RAG：每个答案都能指出依据</h1>
+        <p>让 AI 不再只靠模型记忆回答，而是先查指定资料，再给出可以追溯到原文的答案。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-voice-rag-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill accent">Practice Live</span><strong>L60</strong></div>
+      <p>不用现成 RAG 框架，亲手完成资料切分、向量搜索、引用和拒答。做完后，你不只会调用工具，还能解释整条检索链为什么可靠。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#7957FF"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>8 modules</em></h2>
+      <ol class="agenda-list rows-8" style="--agenda-rows:4"><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">Synthetic Carekind Policy Corpus</strong><p>准备一套不含真实隐私信息的政策资料</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">Chunking · Metadata Schema</strong><p>把长文档切成适合搜索的小段，并保留来源信息</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">Embeddings · Local Vector Index</strong><p>生成向量表示，建立可以在本地搜索的资料库</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><strong class="technical">Top-k Similarity Retrieval</strong><p>根据问题找出最相关的政策段落</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><strong class="technical">Retrieved Chunks · W3 Context Builder</strong><p>把找到的政策内容交给前面完成的 Context Builder</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Grounded Answer · Document/Chunk Citation</strong><p>生成有依据的答案，并绑定到具体文档和段落</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">07</span>
+      <div class="agenda-copy"><strong class="technical">No-Answer Fallback · Retrieval Failure Log</strong><p>找不到资料时拒绝编造，并记录失败原因</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">08</span>
+      <div class="agenda-copy"><strong class="technical">W5 Baseline Cases · RAG</strong><p>用同一组案例比较加入 RAG 前后的真实变化</p></div>
+    </li></ol>
+    </section>
+    <div class="page-spacer" style="--accent:#7957FF" aria-hidden="true"><span>W06 · 03 · 有政策依据的输出</span></div>
+    <section class="week-meta">
+      <article><h3 style="--accent:#7957FF">这周真正做出来</h3><p>一套从资料整理、搜索、引用到“找不到就不回答”的完整 RAG 功能</p></article>
+      <article><h3>为什么先不做更多</h3><p>本周先把 RAG 基础链路做对，不急着上复杂框架、云部署或高级搜索。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>15 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="16">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 07 · Theory Live</span></div>
+    <header class="live-hero" style="--accent:#7957FF">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W07</b><span>03 · 有政策依据的输出</span><em>Theory Live</em></div>
+        <h1>Agent 与 ReAct：让 AI 判断下一步该做什么</h1>
+        <p>用一组标准问题测试 RAG，找出失败原因，只改一个变量，再证明质量真的提升。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-voice-rag-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill purple">Theory Live</span><strong>L112</strong></div>
+      <p>普通工作流按固定步骤执行，Agent 会根据结果决定下一步。你会学习如何限制它的工具、步数和权限，并在失败或高风险操作前交给人工。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#7957FF"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>7 modules</em></h2>
+      <ol class="agenda-list rows-7" style="--agenda-rows:4"><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">Workflow · Tool-Using Application · Agent</strong><p>分清固定流程、会调用工具的应用和 Agent</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">ReAct · Action · Observation</strong><p>ReAct：执行一个动作、观察结果，再决定下一步</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">Agent State · Task State · Tool Result</strong><p>记录 Agent 当前任务、已做动作和工具返回结果</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><strong class="technical">Maximum Steps</strong><p>设置最大步骤和停止条件，避免无限循环</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><strong class="technical">Timeout · Retry · Fallback · Partial Failure</strong><p>处理超时、重试、备用方案和部分失败</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Side Effects · Human Approval</strong><p>重要操作必须经过人工批准，并限制影响范围</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">07</span>
+      <div class="agenda-copy"><strong class="technical">Agent Failure Modes</strong><p>分析 Agent 常见失败，并练习系统设计面试表达</p></div>
+    </li></ol>
+    </section>
+    <section class="learning-assets groups-2" style="--accent:#7957FF">
+    <div class="assets-title"><strong>把 Agent 从循环 Demo 做成能规划、调用工具并在失败时停下的系统</strong><span>你会比较框架、实现 ReAct，并知道哪些任务应该使用 workflow，哪些才值得使用 Agent。</span></div>
+    <div class="assets-grid"><article><header><strong>先建立判断</strong><small>Video / Self-study</small></header><ul><li><b>L111</b><div><strong>建立 Agent 基础判断</strong><span>分清 workflow、tool-using assistant 与 autonomous agent 的边界。</span></div></li><li><b>L115</b><div><strong>比较主流 Agent SDK</strong><span>从 state、tools、approval、observability 和 lock-in 选择合适框架。</span></div></li></ul></article><article><header><strong>再亲手跑通</strong><small>Interactive Lab</small></header><ul><li><b>L113</b><div><strong>实现一个 ReAct Agent</strong><span>让模型在观察、决策、调用工具和读取结果之间形成受控循环。</span></div></li><li><b>L114</b><div><strong>比较 Agent 设计模式</strong><span>针对不同任务选择 router、planner、worker 或 reviewer。</span></div></li><li><b>L117</b><div><strong>用同一任务比较 Agent SDK</strong><span>用运行结果而不是宣传文档判断框架差异。</span></div></li></ul></article></div>
+  </section>
+    <section class="week-meta">
+      <article><h3 style="--accent:#7957FF">下一步能做什么</h3><p>本周完成可演示的 AI 产品；下周把这些能力变成 Agent 可以安全调用的工具。</p></article>
+      <article><h3>面试能讲什么</h3><p>能展示你如何用数据和人工检查判断质量，而不是只说“我感觉效果不错”。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>16 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="17">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 07 · Practice Live</span></div>
+    <header class="live-hero" style="--accent:#7957FF">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W07</b><span>03 · 有政策依据的输出</span><em>Practice Live</em></div>
+        <h1>完成第一个可演示、可测试的 AI 产品版本</h1>
+        <p>用一组标准问题测试 RAG，找出失败原因，只改一个变量，再证明质量真的提升。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-voice-rag-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill accent">Practice Live</span><strong>C7P07</strong></div>
+      <p>把语音输入、事实提取、政策搜索、引用、文档草稿、人工确认和审计记录全部连起来，再用标准案例证明完整流程能够工作。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#7957FF"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>8 modules</em></h2>
+      <ol class="agenda-list rows-8" style="--agenda-rows:4"><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">Golden Cases · RAGAS Baseline</strong><p>导入标准测试问题，运行第一次 RAG 质量评估</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">Retrieval · Answer · Citation Failure</strong><p>定位问题出在资料搜索、答案生成还是引用</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">Retrieval · Prompt</strong><p>只修改一个搜索或 Prompt 参数，避免盲目调参</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><p>重新测试，并由人工确认指标提升是否真实</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><strong class="technical">Manual Input · Voice Input</strong><p>同时跑通手动输入和语音输入两种使用方式</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Role · Review/Confirm · Version · Audit</strong><p>检查权限、人工审核、版本和操作记录</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">07</span>
+      <div class="agenda-copy"><strong class="technical">Transcription · Retrieval · Model</strong><p>主动测试语音、检索、模型和权限失败时的表现</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">08</span>
+      <div class="agenda-copy"><strong class="technical">Carekind Mvp Demo</strong><p>完成第一个端到端 AI 产品演示和验收</p></div>
+    </li></ol>
+    </section>
+    <div class="page-spacer" style="--accent:#7957FF" aria-hidden="true"><span>W07 · 03 · 有政策依据的输出</span></div>
+    <section class="week-meta">
+      <article><h3 style="--accent:#7957FF">这周真正做出来</h3><p>测试结果、失败案例、改进前后对比，以及从语音输入到政策引用文档的第一个可用版本</p></article>
+      <article><h3>为什么先不做更多</h3><p>本周完成第一个可靠版本，不一次塞入所有高级评测、监控和部署工具。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>17 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="18">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 08 · Theory Live</span></div>
+    <header class="live-hero" style="--accent:#EC6AA7">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W08</b><span>04 · 从功能进化为 Agent</span><em>Theory Live</em></div>
+        <h1>Multi-Agent：什么时候需要多个 AI 分工</h1>
+        <p>把搜索资料、读取任务、生成草稿等功能包装成标准工具，让不同 AI 客户端都能调用。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-production-agent-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill purple">Theory Live</span><strong>L122</strong></div>
+      <p>多个 Agent 并不一定更高级。你会判断何时值得拆分角色，如何交接任务、隔离信息、控制成本，以及什么时候一个普通流程反而更可靠。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#EC6AA7"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>8 modules</em></h2>
+      <ol class="agenda-list rows-8" style="--agenda-rows:4"><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">Agent · Multi-Agent</strong><p>先判断一个 Agent 是否已经足够解决问题</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">Multi-Agent</strong><p>识别不该使用 Multi-Agent 的场景，避免无效复杂度</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">Supervisor · Orchestrator</strong><p>用一个协调者分配任务并汇总结果</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><strong class="technical">Handoff · Role-Based Routing</strong><p>设计 Agent 之间如何交接任务和选择角色</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><strong class="technical">Shared State · Message Contract · Context Isolation</strong><p>规定共享信息格式，同时隔离不该互相看到的数据</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Token Cost</strong><p>控制重复工作、相互冲突、死循环和模型成本</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">07</span>
+      <div class="agenda-copy"><strong class="technical">Human Escalation · Termination · Auditability</strong><p>无法继续时转交人工，并保证过程可追溯</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">08</span>
+      <div class="agenda-copy"><strong class="technical">Carekind Pcw · En · Rn</strong><p>用真实岗位分工判断项目是否值得采用多个 Agent</p></div>
+    </li></ol>
+    </section>
+    <section class="learning-assets groups-3" style="--accent:#EC6AA7">
+    <div class="assets-title"><strong>让多个 Agent 有明确分工，而不是把同一模型复制很多份</strong><span>完成角色、共享状态、路由和冲突处理，能解释 Multi-Agent 什么时候值得增加复杂度。</span></div>
+    <div class="assets-grid"><article><header><strong>先建立判断</strong><small>Video / Self-study</small></header><ul><li><b>L126</b><div><strong>理解 A2A 与 Agent 互操作</strong><span>看懂两个独立 Agent 如何发现能力、交换任务并返回结果。</span></div></li></ul></article><article><header><strong>再亲手跑通</strong><small>Interactive Lab</small></header><ul><li><b>L123</b><div><strong>搭建多 Agent 协作流程</strong><span>为不同角色划分输入、工具、输出和责任边界。</span></div></li><li><b>L125</b><div><strong>用 LangGraph 编排状态流转</strong><span>实现可观察、可暂停、可恢复的多节点工作流。</span></div></li></ul></article><article><header><strong>最后留下证据</strong><small>Quest / Evidence</small></header><ul><li><b>L125a</b><div><strong>交付一套 Multi-Agent Workflow</strong><span>展示图结构、共享状态、失败路径和人工接管点。</span></div></li></ul></article></div>
+  </section>
+    <section class="week-meta">
+      <article><h3 style="--accent:#EC6AA7">下一步能做什么</h3><p>本周先准备可靠工具；下周再让 Agent 在明确边界内选择和调用它们。</p></article>
+      <article><h3>面试能讲什么</h3><p>能解释 MCP、普通 API、Tool Calling 和 Agent 各自解决什么问题，以及为什么 CLI 排错很重要。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>18 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="19">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 08 · Practice Live</span></div>
+    <header class="live-hero" style="--accent:#EC6AA7">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W08</b><span>04 · 从功能进化为 Agent</span><em>Practice Live</em></div>
+        <h1>把现有功能变成 AI 可以安全调用的 MCP 工具</h1>
+        <p>把搜索资料、读取任务、生成草稿等功能包装成标准工具，让不同 AI 客户端都能调用。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-production-agent-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill accent">Practice Live</span><strong>L104</strong></div>
+      <p>把查询资料、读取任务和生成草稿等能力包装成标准工具，并通过命令行逐个验证权限、参数和结果，为下一周构建 Agent 做准备。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#EC6AA7"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>8 modules</em></h2>
+      <ol class="agenda-list rows-8" style="--agenda-rows:4"><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">Mvp · Tool Schema</strong><p>从现有产品中挑出四个最值得开放给 AI 的功能</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">Carekind MCP Server</strong><p>建立可以在本地运行的 MCP 工具服务</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">Resident · Shift · Policy RAG · Draft Services · Tools</strong><p>把用户资料、任务、政策搜索和文档草稿接成工具</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><strong class="technical">CLI Client · Stdio · Command · Args · Env</strong><p>配置命令行客户端、启动命令和环境变量</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><strong class="technical">Tool Discovery · Manual Calls</strong><p>让客户端自动发现工具，并逐个手动验证</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Validation · Role Permission · Audit Log</strong><p>检查参数、角色权限，并记录每次调用</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">07</span>
+      <div class="agenda-copy"><strong class="technical">Path · Env · Protocol Output</strong><p>修复路径、环境和错误输出造成的启动问题</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">08</span>
+      <div class="agenda-copy"><strong class="technical">MCP Demo · Permission Matrix · Troubleshooting Notes</strong><p>完成工具演示、权限表和故障排查说明</p></div>
+    </li></ol>
+    </section>
+    <div class="page-spacer" style="--accent:#EC6AA7" aria-hidden="true"><span>W08 · 04 · 从功能进化为 Agent</span></div>
+    <section class="week-meta">
+      <article><h3 style="--accent:#EC6AA7">这周真正做出来</h3><p>一个可运行的 MCP 工具服务、权限表、调用示例和常见故障排查记录</p></article>
+      <article><h3>为什么先不做更多</h3><p>本周先确保每个工具单独安全可用，还不让 Agent 自己连续做决定。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>19 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="20">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 09 · Theory Live</span></div>
+    <header class="live-hero" style="--accent:#7957FF">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W09</b><span>04 · 从功能进化为 Agent</span><em>Theory Live</em></div>
+        <h1>Agent Memory：哪些信息该记住，哪些必须忘掉</h1>
+        <p>做出一个有明确权限、步数上限、失败恢复和人工确认的 Agent，避免它无限循环或乱操作。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-production-agent-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill purple">Theory Live</span><strong>L133</strong></div>
+      <p>长期记忆不是把所有对话丢进向量数据库。你会学习什么可以保存、谁能读取、多久过期、如何更正删除，以及怎样防止错误信息污染未来结果。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#7957FF"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>8 modules</em></h2>
+      <ol class="agenda-list rows-8" style="--agenda-rows:4"><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">Agent State · Memory</strong><p>分清 Agent 当前运行状态与跨会话长期记忆</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">Task State · Working Memory · Session Memory</strong><p>区分当前任务信息、临时工作记忆和本次会话记录</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">Episodic · Semantic · Preference Memory</strong><p>理解事件记忆、事实记忆和用户偏好分别是什么</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><strong class="technical">Memory Read/Write Policy</strong><p>规定什么可以写入记忆、什么时候可以读取</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><strong class="technical">User · Resident · Team · Organisation Scope</strong><p>按用户、对象、团队和机构隔离信息权限</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">TTL · Retention · Update · Delete · Consent</strong><p>规定保存多久，以及如何更新、删除和取得同意</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">07</span>
+      <div class="agenda-copy"><strong class="technical">Provenance · Memory Poisoning</strong><p>处理冲突、过期、信息来源和恶意记忆污染</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">08</span>
+      <div class="agenda-copy"><strong class="technical">Carekind Memory Architecture</strong><p>画出一套能在面试中讲清楚的安全记忆架构</p></div>
+    </li></ol>
+    </section>
+    <section class="learning-assets groups-3" style="--accent:#7957FF">
+    <div class="assets-title"><strong>让 Agent 记得有用事实，同时防止错误、越权和过期信息长期污染系统</strong><span>实现 memory write gate、scope、TTL、更正和删除，留下完整可审计记录。</span></div>
+    <div class="assets-grid"><article><header><strong>先建立判断</strong><small>Video / Self-study</small></header><ul><li><b>L130</b><div><strong>看懂 Agent Ops 与运行追踪</strong><span>用 trace 找到 Agent 在哪一步读取、写入或误用了信息。</span></div></li><li><b>L135a</b><div><strong>分清 Context 与 Memory</strong><span>理解短期上下文、长期记忆和外部知识库各自应该保存什么。</span></div></li></ul></article><article><header><strong>再亲手跑通</strong><small>Interactive Lab</small></header><ul><li><b>L134</b><div><strong>实现安全的 Agent Memory</strong><span>写入 confirmed facts，并验证检索范围、冲突处理与删除。</span></div></li></ul></article><article><header><strong>最后留下证据</strong><small>Quest / Evidence</small></header><ul><li><b>L134a</b><div><strong>给 Agent 装上长期记忆</strong><span>提交 memory schema、write policy、测试记录和 poisoning 防护证据。</span></div></li></ul></article></div>
+  </section>
+    <section class="week-meta">
+      <article><h3 style="--accent:#7957FF">下一步能做什么</h3><p>本周先让 Agent 安全执行任务；下周再决定哪些信息值得长期记住。</p></article>
+      <article><h3>面试能讲什么</h3><p>能说明怎样限制 Agent 的工具、步骤和副作用，避免重复调用、死循环和越权操作。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>20 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="21">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 09 · Practice Live</span></div>
+    <header class="live-hero" style="--accent:#7957FF">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W09</b><span>04 · 从功能进化为 Agent</span><em>Practice Live</em></div>
+        <h1>做一个不会失控、不会无限循环的 Agent</h1>
+        <p>做出一个有明确权限、步数上限、失败恢复和人工确认的 Agent，避免它无限循环或乱操作。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-production-agent-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill accent">Practice Live</span><strong>L119</strong></div>
+      <p>Agent 可以自己选择工具，但必须有工具白名单、步数上限、超时处理和人工批准。你会做出一个能执行任务，也知道什么时候应该停下来的 Agent。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#7957FF"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>8 modules</em></h2>
+      <ol class="agenda-list rows-8" style="--agenda-rows:4"><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">W8 MCP Tools</strong><p>先确认上一周的工具和权限边界都正确</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">Agent State · Action · Observation Schema</strong><p>定义 Agent 需要记录的任务、动作和结果</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">ReAct/Tool Loop</strong><p>实现最小循环：选择工具、执行、观察、再决定</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><strong class="technical">Tool Allowlist · Validation</strong><p>限制 Agent 只能使用批准过的工具和参数</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><strong class="technical">Maximum Steps · Termination</strong><p>加入最大步数、停止条件和死循环检测</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Timeout · Retry · Fallback</strong><p>加入超时、重试和备用方案</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">07</span>
+      <div class="agenda-copy"><strong class="technical">Human Review</strong><p>高风险操作必须暂停并等待人工审核</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">08</span>
+      <div class="agenda-copy"><strong class="technical">Trace</strong><p>主动制造失败，检查整条运行记录是否完整</p></div>
+    </li></ol>
+    </section>
+    <div class="page-spacer" style="--accent:#7957FF" aria-hidden="true"><span>W09 · 04 · 从功能进化为 Agent</span></div>
+    <section class="week-meta">
+      <article><h3 style="--accent:#7957FF">这周真正做出来</h3><p>一个能选择工具、记录过程、遇到失败会停下来或降级、重要操作会等待人工批准的 Agent</p></article>
+      <article><h3>为什么先不做更多</h3><p>本周不加入长期记忆，也不让 Agent 自动确认或直接修改真实业务数据。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>21 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="22">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 10 · Theory Live</span></div>
+    <header class="live-hero" style="--accent:#EC6AA7">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W10</b><span>04 · 从功能进化为 Agent</span><em>Theory Live</em></div>
+        <h1>Agent Harness：给 Agent 加上生产级运行框架</h1>
+        <p>让 Agent 跨会话记住经过确认的事实，同时支持权限隔离、过期、更正和删除。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-production-agent-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill purple">Theory Live</span><strong>L138</strong></div>
+      <p>Harness 就像 Agent 的运行控制中心：统一管理工具、权限、预算、暂停恢复、失败重试和运行记录。它把“能演示的 Agent”变成“能长期运行的系统”。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#EC6AA7"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>9 modules</em></h2>
+      <ol class="agenda-list rows-9" style="--agenda-rows:5"><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">Agent · Agent SDK · Framework · Harness</strong><p>分清 Agent SDK、开发框架和生产 Harness</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">Model/Tool Loop · Runtime Lifecycle</strong><p>设计模型与工具循环从开始到结束的完整生命周期</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">Context Assembly · Truncation · Compaction · Result Injection</strong><p>控制上下文过长，并把工具结果安全放回模型</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><strong class="technical">Tool Registry · Schema Validation · Pre/Post Hooks</strong><p>统一管理工具、参数检查和运行前后控制点</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><strong class="technical">Permission · Sandbox · Side-Effect Boundary · Human Approval</strong><p>控制权限、运行环境和高风险操作的人工批准</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Token · Cost · Time · Step Budget · Termination</strong><p>限制模型用量、成本、运行时间和最大步骤</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">07</span>
+      <div class="agenda-copy"><strong class="technical">Checkpoint · Retry · Resume · Replay · Idempotency</strong><p>支持断点保存、重试、恢复和重放</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">08</span>
+      <div class="agenda-copy"><strong class="technical">Structured Trace · Metrics · Evaluation Hooks · Model-Routing Insertion Point</strong><p>记录完整运行轨迹，并预留评测与模型选择接口</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">09</span>
+      <div class="agenda-copy"><strong class="technical">Production Agent Architecture Review</strong><p>评审一套真正能进入生产环境的 Agent 架构</p></div>
+    </li></ol>
+    </section>
+    <section class="learning-assets groups-3" style="--accent:#EC6AA7">
+    <div class="assets-title"><strong>把 Agent 核心循环装进 Production Harness，获得真正的运行控制权</strong><span>工具、预算、checkpoint、hooks、approval 和 trace 不再散落在业务代码里。</span></div>
+    <div class="assets-grid"><article><header><strong>先建立判断</strong><small>Video / Self-study</small></header><ul><li><b>L142</b><div><strong>拆解 Harness 工程化结构</strong><span>看懂 runtime、tool registry、state、policy 与 observability 怎样组合。</span></div></li><li><b>L146</b><div><strong>把能力封装成可复用 Skill</strong><span>让同一能力可以被发现、版本管理、测试和复用。</span></div></li><li><b>L147</b><div><strong>学习 Claude Code Skills 实践</strong><span>从真实案例理解指令、资源、边界和验证方式。</span></div></li></ul></article><article><header><strong>再亲手跑通</strong><small>Interactive Lab</small></header><ul><li><b>L141</b><div><strong>实现 Tool Loop</strong><span>完成工具选择、参数校验、结果回传、预算和终止条件。</span></div></li><li><b>L143</b><div><strong>实现 Harness Hooks</strong><span>在调用前后加入权限、日志、评测和失败处理。</span></div></li></ul></article><article><header><strong>最后留下证据</strong><small>Quest / Evidence</small></header><ul><li><b>L148</b><div><strong>交付个人 Agent Harness</strong><span>用可运行代码展示 lifecycle、checkpoint、approval、trace 与恢复能力。</span></div></li></ul></article></div>
+  </section>
+    <section class="week-meta">
+      <article><h3 style="--accent:#EC6AA7">下一步能做什么</h3><p>本周完成安全记忆；下周把 Agent 和记忆放进可稳定运行、可恢复的生产框架。</p></article>
+      <article><h3>面试能讲什么</h3><p>能解释谁拥有记忆、谁能读取、保存多久、信息冲突怎么办，以及如何防止记忆被污染。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>22 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="23">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 10 · Practice Live</span></div>
+    <header class="live-hero" style="--accent:#EC6AA7">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W10</b><span>04 · 从功能进化为 Agent</span><em>Practice Live</em></div>
+        <h1>给 Agent 加入安全、可更正的长期记忆</h1>
+        <p>让 Agent 跨会话记住经过确认的事实，同时支持权限隔离、过期、更正和删除。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-production-agent-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill accent">Practice Live</span><strong>C7P10</strong></div>
+      <p>只有人工确认过的事实才能写入记忆，并按用户、团队和角色隔离。系统支持过期、更正和删除，也会测试越权读取与记忆污染。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#EC6AA7"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>7 modules</em></h2>
+      <ol class="agenda-list rows-7" style="--agenda-rows:4"><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">W9 Task/Session State · Session</strong><p>检查现有 Agent 信息，决定哪些值得跨会话保存</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">Memory Contract · Type · Source · Scope · Owner · Status · TTL · Provenance</strong><p>为每条记忆定义类型、来源、所有者、范围和有效期</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">Write Gate · Human-Confirmed Facts · Transcript · Draft</strong><p>只保存人工确认事实，拒绝原始录音、AI 草稿和模型猜测</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><strong class="technical">Resident · User · Team · Role · Scoped Retrieval</strong><p>按用户、对象、团队和角色隔离记忆查询</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><p>支持过期、冲突、更正和删除，禁止静默覆盖</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Permission · Consent · Audit Log · Memory-Poisoning</strong><p>加入权限、用户同意、操作记录和污染防护</p></div>
+    </li><li class="agenda-item" style="--accent:#EC6AA7">
+      <span class="agenda-number">07</span>
+      <div class="agenda-copy"><strong class="technical">Carekind Agent · Session Recall</strong><p>测试跨会话记忆、越权读取、过期和冲突场景</p></div>
+    </li></ol>
+    </section>
+    <div class="page-spacer" style="--accent:#EC6AA7" aria-hidden="true"><span>W10 · 04 · 从功能进化为 Agent</span></div>
+    <section class="week-meta">
+      <article><h3 style="--accent:#EC6AA7">这周真正做出来</h3><p>一套可追溯、可更正、可删除、不会把 AI 猜测当事实的长期记忆系统</p></article>
+      <article><h3>为什么先不做更多</h3><p>原始录音、AI 草稿和模型推测不能直接写入记忆；向量数据库本身也不等于记忆系统。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>23 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="24">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 11 · Theory Live</span></div>
+    <header class="live-hero" style="--accent:#7957FF">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W11</b><span>05 · Production 标准</span><em>Theory Live</em></div>
+        <h1>AI Governance：谁负责、什么能上线、出事怎么办</h1>
+        <p>把能运行的 Agent 升级成能暂停、恢复、追踪、限额和人工接管的生产级系统。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-production-agent-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill purple">Theory Live</span><strong>L171a</strong></div>
+      <p>Governance 不是写一份合规文档，而是明确风险等级、负责人、上线标准和事故处理方式。你会把这些控制真正接入开发与发布流程。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#7957FF"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>8 modules</em></h2>
+      <ol class="agenda-list rows-8" style="--agenda-rows:4"><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">Governance · Safety · Compliance</strong><p>分清治理、AI 安全和法规合规之间的关系</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">AI Inventory · Risk Classification</strong><p>列出所有 AI 功能，并按影响和风险分类</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">RACI</strong><p>明确谁负责系统、谁审批上线、谁接受剩余风险</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><strong class="technical">Data · Model · Vendor Governance</strong><p>管理数据、模型和第三方供应商带来的风险</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><strong class="technical">Release Gates · Evidence</strong><p>把上线标准变成必须提供证据的发布闸门</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Incident · Change · Retirement</strong><p>规定事故、重大变更和系统下线如何处理</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">07</span>
+      <div class="agenda-copy"><strong class="technical">Isa · Governance Operating Model</strong><p>为一个真实 AI 系统画出完整治理责任图</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">08</span>
+      <div class="agenda-copy"><strong class="technical">Governance</strong><p>用实际案例检查治理决策是否站得住</p></div>
+    </li></ol>
+    </section>
+    <section class="learning-assets groups-3" style="--accent:#7957FF">
+    <div class="assets-title"><strong>把 Governance 和 Safety 做成上线门槛，而不是写在 PPT 里的原则</strong><span>建立 eval baseline、攻击测试、风险责任和发布证据，能回答企业面试中的治理问题。</span></div>
+    <div class="assets-grid"><article><header><strong>先建立判断</strong><small>Video / Self-study</small></header><ul><li><b>L168</b><div><strong>建立 AI Evaluation Engineering 全景</strong><span>把 eval set、baseline、自动检查、人工评分和 regression gate 串成系统。</span></div></li></ul></article><article><header><strong>再亲手跑通</strong><small>Interactive Lab</small></header><ul><li><b>L169</b><div><strong>运行 LLM Evaluation</strong><span>检查准确性、引用、schema、权限和高风险失败。</span></div></li><li><b>L170</b><div><strong>运行 Prompt Regression</strong><span>防止新提示词修好一个案例，却破坏其他关键场景。</span></div></li><li><b>L172</b><div><strong>测试 Prompt Injection 防御</strong><span>验证外部资料和用户输入无法绕过系统权限。</span></div></li><li><b>L173</b><div><strong>测试幻觉与拒答行为</strong><span>检查缺少证据时系统是否拒答、升级人工并保留记录。</span></div></li></ul></article><article><header><strong>最后留下证据</strong><small>Quest / Evidence</small></header><ul><li><b>L171b</b><div><strong>交付 AI Governance Pack</strong><span>完成 risk tier、RACI、system card、上线审批和 incident evidence。</span></div></li></ul></article></div>
+  </section>
+    <section class="week-meta">
+      <article><h3 style="--accent:#7957FF">下一步能做什么</h3><p>本周建立稳定的 Agent 运行底座；下周在这个位置加入模型自动选择。</p></article>
+      <article><h3>面试能讲什么</h3><p>能解释普通 Agent 框架与生产 Harness 的区别，并证明系统重试后不会重复执行重要操作。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>24 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="25">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 11 · Practice Live</span></div>
+    <header class="live-hero" style="--accent:#7957FF">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W11</b><span>05 · Production 标准</span><em>Practice Live</em></div>
+        <h1>把 Agent 升级为可暂停、可恢复、可追踪的系统</h1>
+        <p>把能运行的 Agent 升级成能暂停、恢复、追踪、限额和人工接管的生产级系统。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-production-agent-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill accent">Practice Live</span><strong>C7P11</strong></div>
+      <p>把前面的 Agent 和记忆接入统一 Harness。即使运行中断，系统也能从断点恢复；即使重试，也不会重复执行付款、写入等重要操作。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#7957FF"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>8 modules</em></h2>
+      <ol class="agenda-list rows-8" style="--agenda-rows:4"><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">W9 Agent Loop · Run Lifecycle</strong><p>把现有 Agent 重构成开始、运行、结束都清楚的流程</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">Model · Tool · Memory · Policy Adapter</strong><p>把模型、工具、记忆和安全规则拆成可替换模块</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">Pre-Model · Pre-Tool · Post-Tool · Post-Output Hooks</strong><p>在调用模型、工具和输出前后加入控制点</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><strong class="technical">Step · Token · Cost · Time Budget · Termination · Cancellation</strong><p>限制步骤、用量、成本和运行时间，并允许取消</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><strong class="technical">Durable Checkpoint · Resume · Replay</strong><p>运行中断时保存进度，并支持恢复和重放</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Retry · Idempotency Key</strong><p>重试也不会重复付款、发送或写入重要数据</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">07</span>
+      <div class="agenda-copy"><strong class="technical">Permission Policy · Human Approval · Escalation</strong><p>加入权限规则、人工批准和人工接管</p></div>
+    </li><li class="agenda-item" style="--accent:#7957FF">
+      <span class="agenda-number">08</span>
+      <div class="agenda-copy"><strong class="technical">Structured Trace · Crash · Replay · Duplicate-Call</strong><p>输出完整运行记录，并测试崩溃和重复调用</p></div>
+    </li></ol>
+    </section>
+    <div class="page-spacer" style="--accent:#7957FF" aria-hidden="true"><span>W11 · 05 · Production 标准</span></div>
+    <section class="week-meta">
+      <article><h3 style="--accent:#7957FF">这周真正做出来</h3><p>统一运行框架、权限检查、成本与步骤限制、断点恢复、重复操作保护和完整运行记录</p></article>
+      <article><h3>为什么先不做更多</h3><p>本周先解决 Agent 如何稳定运行；模型自动选择和最终上线验收放在后面。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>25 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="26">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 12 · Theory Live</span></div>
+    <header class="live-hero" style="--accent:#F3B943">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W12</b><span>05 · Production 标准</span><em>Theory Live</em></div>
+        <h1>Production AI 架构：不同任务该怎么选模型</h1>
+        <p>让系统根据任务难度、成本、速度、隐私和风险，自动选择合适模型，并在失败时切换方案。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-production-agent-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill purple">Theory Live</span><strong>L183</strong></div>
+      <p>最强模型不一定最适合所有任务。你会学习如何在准确度、速度、成本、隐私和数据所在地之间做选择，并设计备用模型与人工接管。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#F3B943"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>8 modules</em></h2>
+      <ol class="agenda-list rows-8" style="--agenda-rows:4"><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">Carekind Production Architecture</strong><p>把模型、资料、工具、Agent、记忆和治理画成完整架构</p></div>
+    </li><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">Model Router · Agent Harness</strong><p>找到 Model Router 在 Agent 运行框架中的位置</p></div>
+    </li><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">Task Taxonomy · Model Capability Matrix</strong><p>先按任务类型分类，再判断每类任务需要什么模型能力</p></div>
+    </li><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><strong class="technical">Quality · Cost · Latency · Privacy · Data Residency</strong><p>在准确度、成本、速度、隐私和数据所在地之间取舍</p></div>
+    </li><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><strong class="technical">Timeout · Fallback · Refusal · Provider Failure · Human Escalation</strong><p>设计超时、拒答、供应商故障和人工接管方案</p></div>
+    </li><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Router Evaluation · Routing Decision Evidence</strong><p>用评测证明路由是否选对，并保存选择依据</p></div>
+    </li><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">07</span>
+      <div class="agenda-copy"><strong class="technical">Prompt · RAG · Tools · Memory · Routing · Fine-Tuning</strong><p>判断一个问题应使用 Prompt、RAG、工具、记忆、路由还是微调</p></div>
+    </li><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">08</span>
+      <div class="agenda-copy"><strong class="technical">Production AI System Design</strong><p>完成 Production AI 系统设计答辩</p></div>
+    </li></ol>
+    </section>
+    <section class="learning-assets groups-3" style="--accent:#F3B943">
+    <div class="assets-title"><strong>学会选择模型，而不是把所有任务都交给最贵、最大的一个模型</strong><span>根据质量、成本、延迟、隐私和 fallback 设计 Model Router，并判断何时才值得 Fine-Tuning。</span></div>
+    <div class="assets-grid"><article><header><strong>先建立判断</strong><small>Video / Self-study</small></header><ul><li><b>L149</b><div><strong>建立 Model Selection 决策框架</strong><span>比较 closed、open-weight 与 fine-tuned models 的工程取舍。</span></div></li><li><b>L164</b><div><strong>判断 Fine-Tuning 的真正角色</strong><span>分清 Prompt、RAG、Tools 与 Fine-Tuning 分别解决什么问题。</span></div></li><li><b>L165</b><div><strong>看懂 PEFT、LoRA 与 QLoRA</strong><span>理解低成本微调的机制、数据要求和维护代价。</span></div></li></ul></article><article><header><strong>再亲手跑通</strong><small>Interactive Lab</small></header><ul><li><b>L162</b><div><strong>完成一次 SFT 实验</strong><span>建立 baseline、训练数据和评测结果，不用单个示例宣称有效。</span></div></li><li><b>L166</b><div><strong>体验偏好对齐</strong><span>理解 RLHF / DPO 如何改变模型偏好，以及它不能解决什么。</span></div></li></ul></article><article><header><strong>最后留下证据</strong><small>Quest / Evidence</small></header><ul><li><b>L149a</b><div><strong>在本机运行 Open-Weight Model</strong><span>用 Ollama 跑通模型，记录硬件、延迟、质量和隐私取舍。</span></div></li></ul></article></div>
+  </section>
+    <section class="week-meta">
+      <article><h3 style="--accent:#F3B943">下一步能做什么</h3><p>本周完成最后一项核心能力；下周用评测、安全演练和发布判断做总验收。</p></article>
+      <article><h3>面试能讲什么</h3><p>能用实际数据解释为什么某类任务用便宜模型、某类任务必须用更强或更安全的模型。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>26 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="27">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 12 · Practice Live</span></div>
+    <header class="live-hero" style="--accent:#F3B943">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W12</b><span>05 · Production 标准</span><em>Practice Live</em></div>
+        <h1>让系统按任务自动选择最合适的模型</h1>
+        <p>让系统根据任务难度、成本、速度、隐私和风险，自动选择合适模型，并在失败时切换方案。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-production-agent-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill accent">Practice Live</span><strong>C7P12</strong></div>
+      <p>实现一个 Model Router：简单任务走更快更便宜的模型，高风险任务使用更可靠的模型；失败时自动切换，并记录每次选择的原因。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#F3B943"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>8 modules</em></h2>
+      <ol class="agenda-list rows-8" style="--agenda-rows:4"><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">Carekind Task Taxonomy · Model Capability Matrix</strong><p>把系统任务分类，并列出不同模型的能力和限制</p></div>
+    </li><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">Risk · Privacy · Data Residency · Provider Allowlist</strong><p>规定高风险、隐私数据和特定地区可使用哪些模型</p></div>
+    </li><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">Model Adapter Contract</strong><p>建立统一接口，让不同模型可以被安全替换</p></div>
+    </li><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><strong class="technical">Rule-Based Router · Routing Policy</strong><p>实现一套可解释的模型选择规则</p></div>
+    </li><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><strong class="technical">Timeout · Fallback · Refusal · Human Escalation</strong><p>加入超时、备用模型、拒答和人工接管</p></div>
+    </li><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Router · W11 Harness · Hooks · Budgets · Trace</strong><p>把模型选择接入 Harness 的权限、预算和运行记录</p></div>
+    </li><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">07</span>
+      <div class="agenda-copy"><strong class="technical">Router Eval Cases · Provider Failure</strong><p>用标准案例测试选错模型和供应商故障</p></div>
+    </li><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">08</span>
+      <div class="agenda-copy"><strong class="technical">Quality · Cost · Latency · Routing Decision Report</strong><p>输出准确度、成本、速度和每次选择原因的报告</p></div>
+    </li></ol>
+    </section>
+    <div class="page-spacer" style="--accent:#F3B943" aria-hidden="true"><span>W12 · 05 · Production 标准</span></div>
+    <section class="week-meta">
+      <article><h3 style="--accent:#F3B943">这周真正做出来</h3><p>统一模型接口、选择规则、备用模型、人工升级机制，以及每次选择的原因和结果报告</p></article>
+      <article><h3>为什么先不做更多</h3><p>本周专注模型选择，不把 Remote MCP、云部署和日常运维挤进同一堂课。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>27 / 31</span>
+  </footer>
+  </section>
+<section class="page live-page" data-page="28">
+    
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Week 13 · Final Practice Live</span></div>
+    <header class="live-hero" style="--accent:#F3B943">
+      <div class="hero-copy">
+        <div class="eyebrow"><b>W13</b><span>05 · Production 标准</span><em>Final Practice Live</em></div>
+        <h1>上线前总验收：证明系统真的可靠、可治理</h1>
+        <p>像真实团队上线前一样，对完整系统做质量、安全、故障和回滚检查，并完成最终答辩。</p>
+      </div>
+      <img src="assets/cohort-07-pdf-production-agent-v1.png" alt="" />
+    </header>
+    <section class="lesson-summary">
+      <div class="summary-head"><span class="pill accent">Final Practice Live</span><strong>L171</strong></div>
+      <p>像真实团队发布前一样，集中测试质量、安全、权限、成本和故障恢复。最后基于证据决定是否上线，并现场完成产品演示与系统设计答辩。</p>
+    </section>
+    <section class="agenda-block">
+      <h2 style="--accent:#F3B943"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>8 modules</em></h2>
+      <ol class="agenda-list rows-8" style="--agenda-rows:4"><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">01</span>
+      <div class="agenda-copy"><strong class="technical">Remote MCP/Auth · CI/CD · Health Check</strong><p>检查部署、登录、自动发布流程和系统健康证明</p></div>
+    </li><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">02</span>
+      <div class="agenda-copy"><strong class="technical">Production Eval Cases · Deterministic Checks · LLM-As-A-Judge</strong><p>运行正式质量测试，并校准 AI 评分与人工判断</p></div>
+    </li><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">03</span>
+      <div class="agenda-copy"><strong class="technical">Agent Regression Gate · Langfuse · Trace · Latency/Cost/Tool-Failure Thresholds</strong><p>检查回归测试、运行追踪、速度、成本和工具失败标准</p></div>
+    </li><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">04</span>
+      <div class="agenda-copy"><strong class="technical">Prompt Injection · Memory Poisoning · PII</strong><p>测试恶意指令、记忆污染、越权访问和隐私泄露</p></div>
+    </li><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">05</span>
+      <div class="agenda-copy"><strong class="technical">Model/Provider/Tool/Memory Failure · Human Escalation · Kill Switch</strong><p>演练模型、供应商、工具和记忆故障，以及紧急停止</p></div>
+    </li><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">06</span>
+      <div class="agenda-copy"><strong class="technical">Release Go/No-Go · Rollback · Incident Response Tabletop</strong><p>根据证据决定是否上线，并演练回滚和事故响应</p></div>
+    </li><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">07</span>
+      <div class="agenda-copy"><strong class="technical">Carekind Production Demo · System Design Defense</strong><p>完成完整产品演示和系统设计答辩</p></div>
+    </li><li class="agenda-item" style="--accent:#F3B943">
+      <span class="agenda-number">08</span>
+      <div class="agenda-copy"><strong class="technical">Eval · Trace · Red-Team · Release · Architecture Evidence Pack</strong><p>提交质量、安全、运行、发布和架构证据包</p></div>
+    </li></ol>
+    </section>
+    <div class="page-spacer" style="--accent:#F3B943" aria-hidden="true"><span>W13 · 05 · Production 标准</span></div>
+    <section class="week-meta">
+      <article><h3 style="--accent:#F3B943">这周真正做出来</h3><p>可演示系统、评测结果、安全测试、运行记录、发布决定、回滚方案和架构说明</p></article>
+      <article><h3>为什么先不做更多</h3><p>常规部署和 CI/CD 由学生课前完成；Live 时间集中检查最有价值的 AI 风险和上线证据。</p></article>
+    </section>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>28 / 31</span>
+  </footer>
+  </section>
+<section class="page standard-page modes-page" data-page="29">
+    
+    <img class="page-art" src="assets/cohort-07-pdf-production-agent-v1.png" alt="" />
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Live / Video / Lab / Quest</span></div>
+    <header class="section-heading"><span>完整课程体系</span><h1>Live 用来解决难判断的问题；稳定知识随时复习；动手任务必须真正完成</h1><p>以前五期的课程内容不会消失。第七期把内容放到最合适的位置：需要老师带着判断和讨论的内容继续 Live，稳定知识做成录播，代码练习和项目证据进入 Lab / Quest。</p></header>
+    <div class="mode-grid"><article class="mode mode-1"><h2>必须 Live</h2><strong>需要老师现场解释取舍、纠正误区和回答问题</strong><ul><li>大模型、Context 与 RAG 的关键判断</li><li>MCP、Agent 与 ReAct 如何真正工作</li><li>Multi-Agent 什么时候值得使用</li><li>长期记忆与 Agent 运行控制</li><li>AI 治理、模型选择和每周项目实践</li></ul></article><article class="mode mode-2"><h2>录播候选</h2><strong>可以暂停、回看，并且不需要每期重复占用 Live 的知识</strong><ul><li>Embedding 等稳定原理</li><li>API 限流、重试和常见操作</li><li>RAG 质量评测工具与运行追踪基础</li><li>常见 Agent SDK 与 Memory 基础</li><li>Fine-Tuning 与 LoRA 类方法原理</li></ul></article><article class="mode mode-3"><h2>Lab + Quest</h2><strong>把“我听懂了”变成真正跑得通的代码和作品</strong><ul><li>Lab：练习一个具体工具或代码能力</li><li>Quest：提交方案、架构图和质量报告</li><li>治理证据和阶段作品也必须提交</li><li>Office Hour 用来答疑，不挤占正式课程</li></ul></article><article class="mode mode-4"><h2>Routing + Fine-Tuning</h2><strong>保留企业面试重点，不把时间浪费在短期工具版本上</strong><ul><li>W12 完成模型自动选择的理论与实践</li><li>必须有备用模型、质量测试和人工接管</li><li>判断 Prompt、RAG、Tools 或 Fine-Tuning 应该选哪个</li><li>更深的 LoRA / QLoRA 实操作为选修</li></ul></article></div>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>29 / 31</span>
+  </footer>
+  </section>
+<section class="page standard-page stack-page" data-page="30">
+    
+    <img class="page-art" src="assets/cohort-07-pdf-production-agent-v1.png" alt="" />
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>10-Layer Stack</span></div>
+    <header class="section-heading"><span>能力地图</span><h1>10 层能力最后汇合成一套真正能工作的 AI 系统</h1><p>你不会只学 10 组名词。每一层都会在项目里出现：从模型和资料，到工具、Agent、记忆、安全治理和上线后的质量监控。</p></header>
+    <ol class="layer-list"><li style="--i:0"><span>01</span><strong>基座层</strong><b>Foundation</b></li><li style="--i:1"><span>02</span><strong>给 AI 正确信息</strong><b>Context</b></li><li style="--i:2"><span>03</span><strong>从资料中找依据</strong><b>RAG</b></li><li style="--i:3"><span>04</span><strong>连接外部工具</strong><b>Capability</b></li><li style="--i:4"><span>05</span><strong>Agent 核心</strong><b>Agent Core</b></li><li style="--i:5"><span>06</span><strong>多个 Agent 分工</strong><b>Multi-Agent</b></li><li style="--i:6"><span>07</span><strong>安全长期记忆</strong><b>Memory</b></li><li style="--i:7"><span>08</span><strong>治理与运行控制</strong><b>Governance</b></li><li style="--i:8"><span>09</span><strong>模型选择</strong><b>Model</b></li><li style="--i:9"><span>10</span><strong>质量评测与监控</strong><b>Observability</b></li></ol>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>30 / 31</span>
+  </footer>
+  </section>
+<section class="page standard-page career-page" data-page="31">
+    
+    <img class="page-art" src="assets/cohort-07-pdf-production-agent-v1.png" alt="" />
+    <div class="topbar"><strong>JR ACADEMY&nbsp; / &nbsp;AI ENGINEER BOOTCAMP</strong><span>Career &amp; Interview</span></div>
+    <header class="section-heading"><span>最终成果</span><h1>你带走的不是课堂 Demo，而是一套能讲、能演示、能答辩的作品</h1><p>面试时不再只背 RAG、Agent、Governance 的定义。你可以打开系统，展示它怎样工作、怎样失败、怎样恢复，以及为什么达到标准后才允许上线。</p></header>
+    <div class="career-grid"><article><h2>System Design</h2><p>能画出模型、企业资料、工具、Agent、记忆、人工审核和安全控制怎样配合。</p></article><article><h2>Production Agent</h2><p>能解释 Agent 怎样限制步骤、暂停恢复、避免重复操作，并在失败时交给人工。</p></article><article><h2>Governance</h2><p>能把隐私、权限、责任人、操作记录和事故处理真正做进产品。</p></article><article><h2>Evaluation</h2><p>能用固定规则、AI 评分和人工抽查判断质量，并阻止不合格版本上线。</p></article><article><h2>Model Routing</h2><p>能根据准确度、成本、速度和隐私，为不同任务选择不同模型。</p></article><article><h2>Engineering Evidence</h2><p>能展示运行记录、质量报告、安全测试、回滚方案和完整系统设计答辩。</p></article></div>
+    <div class="cta"><div><h2>查看完整课程</h2><p>第七期完整大纲、逐周交付、10 层技术栈与课程申请信息</p><strong>jiangren.com.au/program-course/ai-engineer-bootcamp</strong></div><span>AI Engineer<br/>Cohort 07</span></div>
+  
+    <footer class="page-footer">
+    <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
+    <span>31 / 31</span>
+  </footer>
+  </section></body></html>
