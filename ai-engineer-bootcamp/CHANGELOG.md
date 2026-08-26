@@ -2,6 +2,7 @@
 
 ## 2026-08-26
 
+- 新增适合 LinkedIn Document Post 的第七期英文精简版：8 页 HTML-first 英文画册集中呈现三年系统教学、Theory + Practice 双 Live、13 周五次能力升级、10 层 AI Engineering 技术栈、Production Agent 交付和面试能力，并提供独立 PDF 构建与溢出审计脚本
 - 优化第七期详细大纲封面字体：英文课程名改用 Avenir Next，中文使用 PingFang SC，并在 AI Engineer Bootcamp 下增加“AI 工程师训练营”中文副标题，建立清晰的中英文课程品牌层级
 - 放大第七期详细大纲封面的完整字体层级：提升 Logo、AI Engineer Bootcamp、连续三年定位、核心卖点、四项证据卡和底部结论的字号，同时收紧垂直间距并保持 A4 安全区，解决封面在实际 PDF 阅读尺寸下文字不够醒目的问题
 - 强化第七期详细大纲封面的三年教学信任证据：主叙事改为“连续 3 年、系统教 AI Engineering”，用第 7 期课程体系、25 场双 Live 和 13 周 Production 项目主线支撑“全球少有的完整体系”定位，避免只喊系统化却没有可信依据
