@@ -1,0 +1,5 @@
+import { Slide, Inner, Title, Card, Tag, colors, fonts } from '../ui';
+
+export default function S50_CasePrompt() {
+	return <Slide bg={colors.white}><Inner style={{ flexDirection: 'column', justifyContent: 'center' }}><Tag bg={colors.blue}>COPY · PASTE · EDIT</Tag><Title size="48px" style={{ margin: '14px 0 20px' }}>最终实操 Prompt</Title><Card bg={colors.warmBg} style={{ padding: 22 }}><p style={{ fontFamily: fonts.mono, fontSize: 15, lineHeight: 1.6 }}>你是我的一人公司 PM。先问最多 3 个澄清问题，再帮助我：<br />1. 把目标改写成 7 天内可观察的结果；<br />2. 将以下最多 10 条待办分层，并依次通过 Goal、Risk、RICE、Capacity 四道门；<br />3. 给出 Keep / Later / Delete，挑战我砍掉后 50%；<br />4. 将 Keep 前 5 项写成 Deliverable、DoD、Calendar Block、First Action、Dependency、Fallback；<br />5. 生成周日 18:00 review 的五问。<br /><br />不得编造 deadline、effort 或用户数据；未知项标记“待确认”；解释排序理由，最终决定由我确认。</p></Card></Inner></Slide>;
+}
