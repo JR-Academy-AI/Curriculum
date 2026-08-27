@@ -1,0 +1,5 @@
+import { Slide, Inner, Title, Grid, Card, Tag, colors } from '../ui';
+
+export default function S44_HumanAIBoundary() {
+	return <Slide bg={colors.white}><Inner style={{ flexDirection: 'column', justifyContent: 'center' }}><Tag bg={colors.dark}>责任边界</Tag><Title size="56px" style={{ margin: '15px 0 28px' }}>AI 管秩序，人承担后果</Title><Grid cols={2} gap={28}><Card bg={colors.blue}><h3 style={{ fontSize: 29 }}>AI OS</h3>{['整理与去重', '提醒 deadline', '暴露阻塞', '挑战排序理由', '生成 review 草案'].map(item => <p key={item} style={{ fontSize: 20, margin: '12px 0' }}>→ {item}</p>)}</Card><Card bg={colors.yellow}><h3 style={{ fontSize: 29 }}>你</h3>{['选择唯一结果', '决定 Later / Delete', '承诺时间块', '接受风险', '确认什么算 Done'].map(item => <p key={item} style={{ fontSize: 20, margin: '12px 0' }}>→ {item}</p>)}</Card></Grid></Inner></Slide>;
+}

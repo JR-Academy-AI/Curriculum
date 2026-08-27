@@ -1,0 +1,5 @@
+import { Slide, Inner, Title, Grid, Card, Tag, colors } from '../ui';
+
+export default function S52_FinalChecklist() {
+	return <Slide bg={colors.darkBg}><Inner style={{ flexDirection: 'column', justifyContent: 'center' }}><Tag bg={colors.green} color={colors.black}>EXIT CHECK</Tag><Title white size="62px" style={{ margin: '18px 0 30px' }}>项目不靠热情，靠闭环</Title><Grid cols={3} gap={22}><Card bg={colors.yellow}><h3 style={{ fontSize: 27 }}>Backlog</h3><p style={{ fontSize: 19, marginTop: 16 }}>已排序，后 50% 已移出执行区</p></Card><Card bg={colors.blue}><h3 style={{ fontSize: 27 }}>5 项计划</h3><p style={{ fontSize: 19, marginTop: 16 }}>每项都有 DoD 与时间块</p></Card><Card bg={colors.green}><h3 style={{ fontSize: 27 }}>Sunday Review</h3><p style={{ fontSize: 19, marginTop: 16 }}>每周日 18:00 固定发生</p></Card></Grid><p style={{ color: colors.white, fontSize: 22, marginTop: 30 }}>下周第一动作：先完成 Doing 里的唯一一项。</p></Inner></Slide>;
+}
