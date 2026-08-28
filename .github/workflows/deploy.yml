@@ -168,6 +168,13 @@ jobs:
           bun install
           bun run build
 
+      # Build lessons/ai-solo-founder-w6 (AI 一人创业营 · W6 · React + Vite deck)
+      - name: Build lessons/ai-solo-founder-w6
+        working-directory: lessons/ai-solo-founder-w6
+        run: |
+          bun install
+          bun run build
+
       # Build lessons/ai-solo-founder-w3 (AI 一人创业营 · W3 · 这是不是一门好生意 — 麦肯锡式商业验证)
       - name: Build lessons/ai-solo-founder-w3
         working-directory: lessons/ai-solo-founder-w3
@@ -575,6 +582,12 @@ jobs:
           if [ -d lessons/ai-solo-founder-w4/dist ]; then
             mkdir -p _site/lessons/ai-solo-founder-w4
             cp -r lessons/ai-solo-founder-w4/dist/* _site/lessons/ai-solo-founder-w4/
+          fi
+
+          # lessons/ai-solo-founder-w6: AI 一人创业营 · W6（React + Vite）
+          if [ -d lessons/ai-solo-founder-w6/dist ]; then
+            mkdir -p _site/lessons/ai-solo-founder-w6
+            cp -r lessons/ai-solo-founder-w6/dist/* _site/lessons/ai-solo-founder-w6/
           fi
 
           # lessons/ai-solo-founder-w3: AI 一人创业营 · W3 · 这是不是一门好生意（React + Vite）
