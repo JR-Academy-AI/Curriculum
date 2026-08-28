@@ -2,8 +2,8 @@
   "themeColor": "#6D5EF7",
   "course": {
     "slug": "ai-workplace-docs-workshop",
-    "name_zh": "AI 职场文档提效课",
-    "name_en": "AI Workplace Documents Workshop",
+    "name_zh": "AI职场提效课",
+    "name_en": "AI Workplace Productivity Workshop",
     "subtitle_zh": "从原始会议记录到纪要、日报、周报和工作总结，一次现场跑通",
     "format": "直播实操 Workshop",
     "duration_minutes": 120,
