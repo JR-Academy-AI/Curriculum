@@ -1,5 +1,14 @@
-import { Slide, Inner, Title, Grid, Card, Tag, colors } from '../ui';
+import { motion } from 'framer-motion';
+import { Slide, Inner, Title, Grid, CardSm, Tag, colors } from '../ui';
+
+const tools = [
+	['方向', 'OKR / Outcome：为什么现在做', colors.red],
+	['边界', 'Shape Up：投入多少、什么不做', colors.yellow],
+	['验证', 'Lean Startup：关键假设是否成立', colors.green],
+	['交付', 'Scrum / Kanban：如何让工作流动', colors.blue],
+	['学习', 'Review / Retro：证据如何改变下一轮', colors.purple],
+];
 
 export default function S44_HumanAIBoundary() {
-	return <Slide bg={colors.white}><Inner style={{ flexDirection: 'column', justifyContent: 'center' }}><Tag bg={colors.dark}>责任边界</Tag><Title size="56px" style={{ margin: '15px 0 28px' }}>AI 管秩序，人承担后果</Title><Grid cols={2} gap={28}><Card bg={colors.blue}><h3 style={{ fontSize: 29 }}>AI OS</h3>{['整理与去重', '提醒 deadline', '暴露阻塞', '挑战排序理由', '生成 review 草案'].map(item => <p key={item} style={{ fontSize: 20, margin: '12px 0' }}>→ {item}</p>)}</Card><Card bg={colors.yellow}><h3 style={{ fontSize: 29 }}>你</h3>{['选择唯一结果', '决定 Later / Delete', '承诺时间块', '接受风险', '确认什么算 Done'].map(item => <p key={item} style={{ fontSize: 20, margin: '12px 0' }}>→ {item}</p>)}</Card></Grid></Inner></Slide>;
+	return <Slide bg={colors.white}><Inner style={{ flexDirection: 'column', justifyContent: 'center' }}><Tag bg={colors.dark}>METHOD SELECTION MAP</Tag><Title size="51px" style={{ margin: '15px 0 24px' }}>不要用一个框架解决所有管理问题</Title><Grid cols={5} gap={13}>{tools.map(([title, body, color], index) => <motion.div key={title} initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12 + index * 0.12 }}><CardSm bg={color} style={{ minHeight: 175 }}><h3 style={{ fontSize: 22 }}>{title}</h3><p style={{ fontSize: 16, lineHeight: 1.5, marginTop: 18 }}>{body}</p></CardSm></motion.div>)}</Grid><p style={{ fontSize: 19, fontWeight: 900, marginTop: 25 }}>方法可以组合，但每一层必须回答不同的问题。</p></Inner></Slide>;
 }

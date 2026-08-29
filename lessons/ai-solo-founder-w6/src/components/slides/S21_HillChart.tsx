@@ -1,11 +1,14 @@
 import { motion } from 'framer-motion';
-import { Slide, Inner, Title, Tag, colors, border } from '../ui';
+import { Slide, Inner, Title, Grid, CardSm, Tag, colors } from '../ui';
+
+const streams = [
+	['云基础', '网络 · 身份 · 环境', colors.red],
+	['应用改造', '接口 · 配置 · 性能', colors.yellow],
+	['数据迁移', '映射 · 清洗 · 切换', colors.blue],
+	['安全合规', '控制 · 审计 · 签核', colors.green],
+	['业务验证', 'UAT · 演练 · 验收', colors.purple],
+];
 
 export default function S21_HillChart() {
-	return <Slide bg={colors.warmBg}><Inner style={{ flexDirection: 'column', justifyContent: 'center' }}><Tag bg={colors.purple}>SHAPE UP · HILL CHART</Tag><Title size="54px" style={{ margin: '15px 0 20px' }}>进度不是百分比，是未知变成已知</Title>
-		<div style={{ position: 'relative', width: '100%', height: 300, borderBottom: border }}>
-			<div style={{ position: 'absolute', left: '8%', right: '8%', bottom: 0, height: 250, borderRadius: '50% 50% 0 0', background: colors.yellow, border }} />
-			{[['收款流程', '30%', colors.red], ['服务说明', '54%', colors.blue], ['交付模板', '78%', colors.green]].map(([label, left, color], index) => <motion.div key={label} initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: index * 0.2 }} style={{ position: 'absolute', left, bottom: index === 0 ? 72 : index === 1 ? 205 : 105, transform: 'translateX(-50%)', textAlign: 'center' }}><div style={{ width: 26, height: 26, borderRadius: '50%', background: color, border, margin: '0 auto 8px' }} /><strong>{label}</strong></motion.div>)}
-			<div style={{ position: 'absolute', bottom: -35, left: '10%', fontWeight: 900 }}>上坡：还在找解法</div><div style={{ position: 'absolute', bottom: -35, right: '10%', fontWeight: 900 }}>下坡：知道怎么做</div>
-		</div></Inner></Slide>;
+	return <Slide bg={colors.warmBg}><Inner style={{ flexDirection: 'column', justifyContent: 'center' }}><Tag bg={colors.purple}>WORK BREAKDOWN STRUCTURE</Tag><Title size="49px" style={{ margin: '14px 0 22px' }}>先按可验收交付流拆，不按部门罗列</Title><motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} style={{ alignSelf: 'center', padding: '13px 32px', background: colors.dark, color: colors.white, fontSize: 22, fontWeight: 900 }}>目标：首批分支机构安全切换，核心业务不中断</motion.div><div style={{ fontSize: 32, fontWeight: 900, alignSelf: 'center', height: 40 }}>↓</div><Grid cols={5} gap={13}>{streams.map(([title, body, color], index) => <motion.div key={title} initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 + index * 0.12 }}><CardSm bg={color} style={{ minHeight: 155 }}><h3 style={{ fontSize: 21 }}>{title}</h3><p style={{ fontSize: 17, marginTop: 16, lineHeight: 1.5 }}>{body}</p></CardSm></motion.div>)}</Grid><p style={{ marginTop: 25, fontSize: 19, fontWeight: 900 }}>培训与变更管理横跨所有交付流，不是最后才做的一张清单。</p></Inner></Slide>;
 }
