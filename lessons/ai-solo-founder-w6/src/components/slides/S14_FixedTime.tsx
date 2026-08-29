@@ -1,6 +1,6 @@
 import { Slide, Inner, Title, Grid, CardSm, Tag, colors } from '../ui';
 
-const scopes = [['必须有', '服务说明、预约路径、交付模板'], ['可以粗糙', '视觉、自动邮件、文案润色'], ['明确不做', '官网、内容矩阵、多平台']];
+const scopes = [['必须有', '核心流程、反馈入口、基础数据保护'], ['可以人工', '通知、客服、首次交付'], ['明确不做', '复杂自动化、高级报表、多语言']];
 
 export default function S14_FixedTime() {
 	return <Slide bg={colors.warmBg}><Inner style={{ flexDirection: 'column', justifyContent: 'center' }}>

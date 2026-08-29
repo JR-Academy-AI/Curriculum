@@ -16,7 +16,7 @@ export default function S01_Cover() {
 							fontFamily: fonts.mono, fontSize: 14, fontWeight: 700,
 							letterSpacing: 3, marginBottom: 32,
 						}}>
-						OPC · WEEK 6
+						STARTUP BOOTCAMP · AGILE PROJECT MANAGEMENT
 					</motion.div>
 
 					<Title size="96px" style={{ lineHeight: 1.05, marginBottom: 24 }}>
@@ -26,13 +26,13 @@ export default function S01_Cover() {
 							transition={{ duration: 0.5, delay: 0.15 }}
 							style={{ display: 'block' }}
 						>
-							别让项目{' '}
+							Agile 项目管理{' '}
 							<motion.span
 								initial={{ opacity: 0, scale: 0.9 }}
 								animate={{ opacity: 1, scale: 1 }}
 								transition={{ duration: 0.4, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
 								style={{ display: 'inline-block', background: colors.red, color: colors.white, padding: '0 24px' }}
-							>烂尾</motion.span>
+							>从战略到执行</motion.span>
 						</motion.span>
 					</Title>
 
@@ -46,7 +46,7 @@ export default function S01_Cover() {
 							background: colors.white, border, boxShadow: shadow,
 						}}>
 						<span style={{ fontFamily: fonts.mono, fontSize: 14, color: colors.dark, letterSpacing: 2 }}>JR ACADEMY</span>
-						<span style={{ fontSize: 18, fontWeight: 700 }}>让 AI OS 当 PM，把碎片时间排明白</span>
+						<span style={{ fontSize: 18, fontWeight: 700 }}>为什么有效 · 如何操作 · 如何把大项目拆到能做</span>
 					</motion.div>
 
 					<motion.p

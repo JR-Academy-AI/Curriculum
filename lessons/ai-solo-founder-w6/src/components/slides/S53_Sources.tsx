@@ -1,14 +1,17 @@
 import { Slide, Inner, Title, Grid, CardSm, Tag, colors } from '../ui';
 
 const sources = [
-	['Scrum Guide 2020', '透明、检查、调整；ordered backlog；Sprint Goal；DoD'],
-	['Basecamp · Shape Up', 'Appetite；fixed time, variable scope；Hill Chart'],
-	['Atlassian · WIP Limits', '限制进行中工作；暴露瓶颈；停止不断开新任务'],
-	['Intercom · RICE', 'Reach × Impact × Confidence ÷ Effort'],
-	['NCI · Implementation Intentions', '用精确 If–Then 计划连接情境与行动'],
-	['Gary Klein · Premortem', '假设项目已经失败，提前识别风险'],
+	['Microsoft Learn · What is Agile?', '增量交付、团队协作、持续规划与持续学习'],
+	['Azure Boards · Work Items', 'Epic → Feature → Story / Requirement → Task 工作层级'],
+	['Scrum Guide · Scrum Guides', '透明、检查、调整；Sprint Goal；Review / Retro；DoD'],
+	['Basecamp · Shape Up', 'Appetite、Fixed Time / Variable Scope 与 Hill Chart'],
+	['Eric Ries · Lean Startup', 'Build–Measure–Learn 与可验证学习'],
+	['Gary Klein · Premortem', '假设项目已失败，提前暴露风险'],
+	['Kanban Guide · Intercom RICE', '限制 WIP；同层候选的相对优先级'],
+	['NCI · Implementation Intentions', 'If–Then 规则把触发情景连接到行动'],
+	['Microsoft Learn · AI agents', 'Agent 编排、工具边界、人工监督与责任治理'],
 ];
 
 export default function S53_Sources() {
-	return <Slide bg={colors.warmBg}><Inner style={{ flexDirection: 'column', justifyContent: 'center' }}><Tag bg={colors.dark}>APPENDIX · RESEARCH BASIS</Tag><Title size="49px" style={{ margin: '14px 0 22px' }}>方法有出处，OPC 译法由本课程负责</Title><Grid cols={2} gap={14}>{sources.map(([title, body], index) => <CardSm key={title} bg={index % 2 ? colors.white : colors.yellow} style={{ minHeight: 88 }}><h3 style={{ fontSize: 20 }}>{title}</h3><p style={{ fontSize: 16, marginTop: 8 }}>{body}</p></CardSm>)}</Grid><p style={{ fontSize: 17, marginTop: 20 }}>原始资料：scrumguides.org · basecamp.com/shapeup · atlassian.com/agile · intercom.com · cancercontrol.cancer.gov · hbr.org</p></Inner></Slide>;
+	return <Slide bg={colors.warmBg}><Inner style={{ flexDirection: 'column', justifyContent: 'center' }}><Tag bg={colors.dark}>APPENDIX · RESEARCH BASIS</Tag><Title size="46px" style={{ margin: '14px 0 18px' }}>方法有出处，组合与案例由本课程负责</Title><Grid cols={2} gap={11}>{sources.map(([title, body], index) => <CardSm key={title} bg={index % 2 ? colors.white : colors.yellow} style={{ minHeight: 76 }}><h3 style={{ fontSize: 17 }}>{title}</h3><p style={{ fontSize: 14, marginTop: 6 }}>{body}</p></CardSm>)}</Grid><p style={{ fontSize: 14, marginTop: 14 }}>learn.microsoft.com · scrumguides.org · basecamp.com/shapeup · theleanstartup.com · hbr.org · kanbanguides.org · intercom.com · cancercontrol.cancer.gov</p></Inner></Slide>;
 }

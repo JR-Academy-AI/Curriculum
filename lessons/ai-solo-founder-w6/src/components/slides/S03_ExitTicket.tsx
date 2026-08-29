@@ -2,17 +2,17 @@ import { motion } from 'framer-motion';
 import { Slide, Inner, Title, Grid, Card, Tag, colors, fonts } from '../ui';
 
 const outputs = [
-	{ tag: '01', title: '已排序 backlog', body: '顶部直接服务本周结果；后 50% 明确 Later 或 Delete。', color: colors.yellow },
-	{ tag: '02', title: '下周 5 项计划', body: '每项有时间块、第一动作和一句可验证的 DoD。', color: colors.blue },
-	{ tag: '03', title: '周日 review', body: '每周日 18:00 自动提醒，AI 生成复盘草案并回写 backlog。', color: colors.green },
+	{ tag: '01', title: '增量交付', body: '不等所有东西完美，先交付一小块可用结果。', color: colors.yellow },
+	{ tag: '02', title: '持续协作', body: '业务、团队和用户不断校准，不靠层层转述。', color: colors.blue },
+	{ tag: '03', title: '持续学习', body: '用真实反馈修正计划，而不是捍卫最初猜想。', color: colors.green },
 ];
 
 export default function S03_ExitTicket() {
 	return (
 		<Slide bg={colors.darkBg}>
 			<Inner style={{ flexDirection: 'column', justifyContent: 'center' }}>
-				<Tag bg={colors.red}>今天不是来记笔记</Tag>
-				<Title white size="64px" style={{ margin: '18px 0 36px' }}>离场前，交出这三件套</Title>
+				<Tag bg={colors.red}>WHAT IS AGILE?</Tag>
+				<Title white size="60px" style={{ margin: '18px 0 36px' }}>Agile 是一组应对不确定性的工作方法</Title>
 				<Grid cols={3} gap={24}>
 					{outputs.map((item, index) => (
 						<motion.div key={item.title} initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 + index * 0.15 }}>

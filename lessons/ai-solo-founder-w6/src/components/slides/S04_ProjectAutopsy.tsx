@@ -2,18 +2,18 @@ import { motion } from 'framer-motion';
 import { Slide, Inner, Title, Grid, CardSm, Tag, colors } from '../ui';
 
 const causes = [
-	['A', '没时间', '日历没有真实容量'],
-	['B', '没下一步', '任务仍是一团大词'],
-	['C', '开太多', 'Doing 里挤满半成品'],
-	['D', '没人追', '没有固定检查节奏'],
+	['A', '人与互动', '重于流程与工具'],
+	['B', '可用结果', '重于完备文档'],
+	['C', '客户协作', '重于合同博弈'],
+	['D', '响应变化', '重于遵循原计划'],
 ];
 
 export default function S04_ProjectAutopsy() {
 	return (
 		<Slide bg={colors.white}>
 			<Inner style={{ flexDirection: 'column', justifyContent: 'center' }}>
-				<Tag bg={colors.dark}>ONLINE FIRST · CHAT A/B/C/D</Tag>
-				<Title size="58px" style={{ margin: '18px 0 30px' }}>你的项目，最可能死在哪？</Title>
+				<Tag bg={colors.dark}>AGILE MANIFESTO · 四组价值取向</Tag>
+				<Title size="56px" style={{ margin: '18px 0 30px' }}>不是不要右边，而是更重视左边</Title>
 				<Grid cols={4} gap={18}>
 					{causes.map(([key, title, body], index) => (
 						<motion.div key={key} initial={{ opacity: 0, scale: 0.92 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: index * 0.12 }}>
@@ -25,7 +25,7 @@ export default function S04_ProjectAutopsy() {
 						</motion.div>
 					))}
 				</Grid>
-				<p style={{ marginTop: 34, fontSize: 20, fontWeight: 700 }}>线上先选，不解释；线下再讲一个真实瞬间。</p>
+				<p style={{ marginTop: 34, fontSize: 20, fontWeight: 700 }}>敏捷不是一套固定仪式，而是一套做判断时的优先顺序。</p>
 			</Inner>
 		</Slide>
 	);

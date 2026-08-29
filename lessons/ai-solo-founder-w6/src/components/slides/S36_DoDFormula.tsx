@@ -1,5 +1,5 @@
 import { Slide, Inner, Title, Card, Tag, colors, fonts } from '../ui';
 
 export default function S36_DoDFormula() {
-	return <Slide bg={colors.green}><Inner center><Tag bg={colors.dark}>DEFINITION OF DONE</Tag><Title size="56px" style={{ margin: '18px 0 26px' }}>一句话，让“完成”不再靠感觉</Title><Card bg={colors.white} style={{ maxWidth: 1100, textAlign: 'left' }}><p style={{ fontFamily: fonts.mono, fontSize: 17, fontWeight: 900 }}>DOD FORMULA</p><p style={{ fontSize: 35, lineHeight: 1.45, fontWeight: 900, marginTop: 18 }}>当［可观察证据］出现，并由［人或系统］验证，即完成。</p><p style={{ fontSize: 21, marginTop: 20 }}>例：当预约链接可打开，且由一位朋友完整提交测试预约，即完成。</p></Card></Inner></Slide>;
+	return <Slide bg={colors.green}><Inner center><Tag bg={colors.dark}>微软产品组 · DAILY STAND-UP</Tag><Title size="56px" style={{ margin: '18px 0 26px' }}>今天先解除数据权限阻塞</Title><Card bg={colors.white} style={{ maxWidth: 1160, textAlign: 'left' }}><p style={{ fontFamily: fonts.mono, fontSize: 16, fontWeight: 900 }}>三问</p><p style={{ fontSize: 31, lineHeight: 1.55, fontWeight: 900, marginTop: 16 }}>完成了什么？今天交付什么？被什么阻塞？</p><p style={{ fontSize: 20, marginTop: 18 }}>工程等待安全确认数据权限：先解阻塞，不新增功能。</p></Card></Inner></Slide>;
 }
