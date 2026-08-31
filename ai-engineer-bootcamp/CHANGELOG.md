@@ -1,5 +1,47 @@
 # Changelog — AI Engineer Bootcamp
 
+## 2026-08-31
+
+- 把每周 Tag 面板改成 Theory + Practice 合并的完整 AI Engineering Stack：以 AI Mechanisms、AI Libraries & OSS 为主，W2 展开 Tokenization、Context Window、KV Cache、Token Budget、Prefill/Decode、vLLM、llama.cpp、FlashAttention、PagedAttention 与多类 Cache，通用全栈工具降级为 Build 辅助
+
+- 将全部 Practice 页的每周技术栈从 8 张 Logo 卡升级为 20–25 个独立胶囊 Tag，按 Core、AI-native、Platform & Cloud 分组；Langfuse 及 AWS EC2、S3、IAM、RDS、CloudWatch 等服务均单独呈现
+
+- 将 Skills Tower 的 50+ 技术项统一为胶囊 Tag，并为有正式标识的技术加入左侧 Logo；概念类术语不强配品牌图标，避免错误暗示
+
+- 重做详细大纲 10-Layer Stack 页面：从官网互动 Skills Tower 复用 Foundation 到 Observability & Evals 的 10 层、配色和 50+ 技术标签；PDF 版以英文层名为主标题、中文为副标题，并保留由底向上的系统构建关系
+
+- 重构 13 场 Practice 课程页：统一改成“实践课 Live / 老师现场带做”，Agenda 明确现场搭建、调试与验收；每周加入从输入到交付的四节点 System Design 关系图，并保留完整实践工具 Logo
+
+- 将 W03 Context Engineering Theory 拆成两页：Part 1 展开 Inventory、Selection、Assembly 与 Token Budget，Part 2 展开 Lifecycle、Trust Boundary、Observability 与 Blueprint；W03 Practice 保持独立一页，详细大纲扩展为 32 页
+
+- 将每场 Theory / Practice 的 Weekly Stack 从 4 个扩展到 8 个 Core + Popular OSS 标识，实践页使用两排大型 Logo 卡呈现完整技术生态，同时把“全部都实际使用”的旧口径修正为核心工具实作、扩展生态比较与选型
+
+- 重做第七期详细课程大纲的逐周技术视觉：对外移除 `L16`、`C7P01` 等内部 Lesson Code，在全部 Theory / Practice 页面加入真实技术 Logo，并为 13 场实践课增加 Weekly Build Stack 工具面板；重新生成 HTML-first、Mac Preview 兼容且保留可点击官网链接的 PDF
+
+## 2026-08-29
+
+- 扩展第七期 `PROMOTION_PLAN.md`：新增全球华人市场分区、IANA 时区发布规则、区域本地化、六条并行 Campaign、T-42 至 D+14 短期推广、90 天至 12 个月长期增长、Owned/Social/Earned/Community/Paid 组合、实验矩阵、数据维度与 14 天执行清单
+- 新增 `Seedance Cinematic Shorts`：定义生成视频与确定性技术标注边界，规划 12 个 Cohort 7 Campaign 角度、三波发布顺序、中文/英文独立版本和 QA/发布状态管线，并与日常 `ai-engineer-45s` P01–P50 顺序隔离
+- 将 12 个 Seedance 角度和三波顺序明确为可协商候选；每次只确认当期 1–2 条的 claim、受众和 Design Spec 后进入制作
+
+## 2026-08-27
+
+- 将 A2A 从 W8 Multi-Agent Orchestration 移到 W11 Governance：`L126` 改为 W11 必修录播，覆盖 Agent Card、identity、trust、authorization、delegation、data sharing、audit、revocation 与 accountability；W8 只保留单一系统内部编排
+- 重构 W8 `L104` 为 `Extract the Data Layer, then Connect MCP & CLI`：先完成 data inventory、repository contracts、Domain Services、canonical schemas、permission/audit 和直接测试，再以 thin MCP adapter 暴露 tools 并连接 CLI
+- 增强 W8 `L122 Multi-Agent Architectures`：对齐 CCAR-F Agentic Architecture & Orchestration 27% domain，加入 Claude Agent SDK、Managed Agents coordinator/roster/threads、parallelization、specialization、advisor、delegation contract、version pinning、single-agent baseline 和 production failure/cost 判断
+- 调换 W6/W7 Practice：W6 `Build the Evaluation Pipeline First` 先冻结 golden dataset、candidate interface、checks、RAGAS、人工 rubric、baseline 与 threshold；W7 `Build and Prove Policy RAG from Scratch` 再按同一 pipeline 实现并验收 MVP
+- 增强 W7 `L112 Agents 基础 + ReAct Framework`：将 Claude Agent SDK 纳入 Core Stack，加入 query/client、tools/MCP、session/resume、permission mode、hooks、streaming、interrupt，并与 OpenAI Agents SDK、PydanticAI、LangGraph 做工程选型比较
+- 新增第七期 W1–W13 Library Map：每场 Theory/Practice Live 分别登记课堂 Core Stack 与热门开源生态；W6 将 FastMCP 提升为课堂 Core，并将 Pi Agent Harness 登记为 CLI/runtime 生态比较而非 MCP SDK；补齐用途、类型、官方链接、版本锁定和面试 trade-off 规则，并同步到 `public/outline.json`
+- 重构第七期 W5 Practice 为 `AI-Native Engineering Workspace`：从 feature spec 生成 dependency-aware work plan，建立 docs-as-code Wiki、Mermaid/C4 Architecture Diagram、ADR、docs-drift Hooks，并创建 `/spec-to-work` 与 `/update-docs` Project Skills；W6 改为直接衔接 W3 workflow 与 W4 confirmed transcript
+- 重写第七期 W3 Context Engineering 与 Blueprint：从 CareKind 字段模板和模型 baseline，升级为可复用的 inventory、selection、assembly、validation、observability、compaction/eviction 全生命周期架构；CareKind 仅保留为未来场景映射
+- 修正第七期 W3 Practice 定位为 Rapid MVP Build：使用 Claude Code 从 W2 UI 快速交付可运行的非 AI MVP、E2E test 和 demo；Context Engineering 保持为独立 Theory，W4 才第一次接入 Voice AI
+- 加入第七期 W2 Claude Code frontend design 实践：从 Design Brief、方向比较、DESIGN.md 和 design tokens，到分页面实现、截图反馈、人工评审与 iteration evidence
+- 补强第七期 W2 LLM Efficiency：加入 Prefill/Decode、KV Cache、Prompt/Prefix Cache、Response/Semantic Cache，以及 cache key、TTL、invalidation、tenant/permission boundary 和效果指标
+- 重构第七期 W2 理论 Live：将 Transformer/Embedding 原理下沉到录播与互动 Lab，课堂重点改为 Token Budget、Context Window 内容选择与排除、截断、lost-in-the-middle，以及质量、延迟、成本和权限边界
+- 修正第七期 A4 详细大纲 W1 定位：将“一套 AI 产品到底由什么组成”改为“一套 AI 系统到底由什么组成”，同步补入数据与知识、可观测性等系统组成
+- 新增 macOS Preview / PDFKit 兼容输出：保留 HTML-first 矢量 PDF，同时用 160 DPI 高清扁平化页面生成 Mac 兼容版，规避 Chrome Type 3 中文字体在部分 Preview 版本中的显示问题
+- 扩展 W1 AI Engineer Landscape：在 ML Engineer、Data Scientist 与 Software Engineer 职责边界之外，加入 Applied AI Engineer、FDE、AI Builder 和 AI Solutions Engineer 等市场 title，并明确 title 并无全球统一定义，求职需回到 JD 判断
+
 ## 2026-08-26
 
 - 新增适合 LinkedIn Document Post 的第七期英文精简版：8 页 HTML-first 英文画册集中呈现三年系统教学、Theory + Practice 双 Live、13 周五次能力升级、10 层 AI Engineering 技术栈、Production Agent 交付和面试能力，并提供独立 PDF 构建与溢出审计脚本

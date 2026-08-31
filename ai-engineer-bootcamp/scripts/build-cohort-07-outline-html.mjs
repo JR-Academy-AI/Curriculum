@@ -13,11 +13,12 @@ const DOWNLOAD_PATH = path.join(
   'Downloads',
   'JR Academy - AI Engineer 第七期详细大纲.html',
 );
+const TOTAL_PAGES = 32;
 
 const WEEK_LESSONS = {
   1: ['L16', 'C7P01'], 2: ['L28', 'C7P02'], 3: ['L37', 'C7P03'],
-  4: ['L58', 'C7P04'], 5: ['C7T05', 'C7P05'], 6: ['L101', 'L60'],
-  7: ['L112', 'C7P07'], 8: ['L122', 'L104'], 9: ['L133', 'L119'],
+  4: ['L58', 'C7P04'], 5: ['C7T05', 'C7P05'], 6: ['L101', 'C7P07'],
+  7: ['L112', 'L60'], 8: ['L122', 'L104'], 9: ['L133', 'L119'],
   10: ['L138', 'C7P10'], 11: ['L171a', 'C7P11'], 12: ['L183', 'C7P12'],
   13: [null, 'L171'],
 };
@@ -27,7 +28,7 @@ const WEEK_STYLE = {
   2: ['01 · 产品与工程基础', '#48C9D9', 'product'],
   3: ['01 · 产品与工程基础', '#48C9D9', 'product'],
   4: ['02 · 第一次接入 AI', '#FF654E', 'knowledge'],
-  5: ['02 · 第一次接入 AI', '#7957FF', 'knowledge'],
+  5: ['02 · AI 接入与工程系统', '#7957FF', 'knowledge'],
   6: ['03 · 有政策依据的输出', '#7957FF', 'knowledge'],
   7: ['03 · 有政策依据的输出', '#7957FF', 'knowledge'],
   8: ['04 · 从功能进化为 Agent', '#EC6AA7', 'production'],
@@ -36,6 +37,230 @@ const WEEK_STYLE = {
   11: ['05 · Production 标准', '#7957FF', 'production'],
   12: ['05 · Production 标准', '#F3B943', 'production'],
   13: ['05 · Production 标准', '#F3B943', 'production'],
+};
+
+const iconify = (name, collection = 'logos') => `https://api.iconify.design/${collection}:${name}.svg`;
+
+const TECH_LOGOS = {
+  OpenAI: iconify('openai-icon'),
+  Claude: iconify('claude-icon'),
+  Google: iconify('google'),
+  Python: iconify('python'),
+  GitHub: iconify('github-icon'),
+  Playwright: iconify('playwright'),
+  Docker: iconify('docker-icon'),
+  HuggingFace: iconify('hugging-face-icon'),
+  NVIDIA: iconify('nvidia'),
+  Redis: iconify('redis'),
+  React: iconify('react'),
+  'Next.js': iconify('nextjs-icon'),
+  Tailwind: iconify('tailwindcss-icon'),
+  PostgreSQL: iconify('postgresql'),
+  Pydantic: iconify('pydantic', 'simple-icons'),
+  Qdrant: iconify('qdrant-icon'),
+  LangChain: iconify('langchain', 'simple-icons'),
+  LangSmith: iconify('langchain', 'simple-icons'),
+  'W&B': iconify('weightsandbiases', 'simple-icons'),
+  Pytest: iconify('pytest', 'simple-icons'),
+  OpenTelemetry: iconify('opentelemetry'),
+  Mermaid: iconify('mermaid'),
+  'GitHub Actions': iconify('githubactions', 'simple-icons'),
+  MCP: iconify('modelcontextprotocol', 'simple-icons'),
+  FastAPI: iconify('fastapi-icon'),
+  OWASP: iconify('owasp', 'simple-icons'),
+  Ollama: iconify('ollama', 'simple-icons'),
+  TypeScript: iconify('typescript-icon'),
+  'Node.js': iconify('nodejs-icon'),
+  Vite: iconify('vitejs'),
+  Zod: iconify('zod'),
+  Storybook: iconify('storybook-icon'),
+  Figma: iconify('figma'),
+  Jupyter: iconify('jupyter'),
+  PyTorch: iconify('pytorch-icon'),
+  TensorFlow: iconify('tensorflow'),
+  Chroma: iconify('chroma'),
+  Pinecone: iconify('pinecone'),
+  Deepgram: iconify('deepgram', 'simple-icons'),
+  Supabase: iconify('supabase-icon'),
+  Prisma: iconify('prisma'),
+  SQLite: iconify('sqlite'),
+  Prometheus: iconify('prometheus'),
+  Grafana: iconify('grafana'),
+  Kubernetes: iconify('kubernetes'),
+  AWS: iconify('aws'),
+  Git: iconify('git-icon'),
+  'VS Code': iconify('visual-studio-code'),
+  'shadcn/ui': iconify('shadcnui', 'simple-icons'),
+  Motion: iconify('framer', 'simple-icons'),
+  Vitest: iconify('vitest'),
+  Temporal: iconify('temporal', 'simple-icons'),
+};
+
+const WEEK_TECH = {
+  '1-theory': ['OpenAI', 'Claude', 'Python', 'GitHub', 'HuggingFace', 'Jupyter', 'Docker', 'TypeScript'],
+  '1-practice': ['Claude', 'GitHub', 'Playwright', 'Docker', 'TypeScript', 'Node.js', 'Pytest', 'GitHub Actions'],
+  '2-theory': ['HuggingFace', 'NVIDIA', 'Redis', 'OpenAI', 'PyTorch', 'TensorFlow', 'Jupyter', 'Python'],
+  '2-practice': ['Claude', 'React', 'Next.js', 'Tailwind', 'TypeScript', 'Node.js', 'Storybook', 'Figma'],
+  '3-theory': ['Claude', 'OpenAI', 'Pydantic', 'Python', 'GitHub', 'Mermaid', 'TypeScript', 'Jupyter'],
+  '3-practice': ['Claude', 'Next.js', 'PostgreSQL', 'Playwright', 'TypeScript', 'Node.js', 'Prisma', 'Docker'],
+  '4-theory': ['HuggingFace', 'Qdrant', 'LangChain', 'Python', 'Chroma', 'Pinecone', 'PostgreSQL', 'OpenAI'],
+  '4-practice': ['OpenAI', 'React', 'FastAPI', 'Pydantic', 'Deepgram', 'Python', 'Docker', 'PostgreSQL'],
+  '5-theory': ['Qdrant', 'LangChain', 'Pytest', 'OpenTelemetry', 'Chroma', 'Pinecone', 'Prometheus', 'Grafana'],
+  '5-practice': ['Claude', 'Mermaid', 'GitHub', 'GitHub Actions', 'TypeScript', 'Node.js', 'Docker', 'Pytest'],
+  '6-theory': ['MCP', 'FastAPI', 'Pydantic', 'Python', 'Node.js', 'TypeScript', 'Docker', 'GitHub'],
+  '6-practice': ['Pytest', 'Qdrant', 'OpenTelemetry', 'GitHub Actions', 'LangChain', 'Chroma', 'Prometheus', 'Docker'],
+  '7-theory': ['Claude', 'MCP', 'OpenAI', 'Pydantic', 'LangChain', 'OpenTelemetry', 'Python', 'GitHub'],
+  '7-practice': ['Qdrant', 'HuggingFace', 'LangChain', 'Python', 'Chroma', 'Pinecone', 'Pytest', 'OpenTelemetry'],
+  '8-theory': ['Claude', 'OpenAI', 'GitHub', 'OpenTelemetry', 'LangChain', 'Pydantic', 'Python', 'GitHub Actions'],
+  '8-practice': ['PostgreSQL', 'FastAPI', 'MCP', 'Docker', 'Prisma', 'Redis', 'Python', 'Pytest'],
+  '9-theory': ['Redis', 'PostgreSQL', 'Qdrant', 'Python', 'Chroma', 'Pydantic', 'OpenTelemetry', 'Prometheus'],
+  '9-practice': ['Claude', 'MCP', 'Pydantic', 'OpenTelemetry', 'LangChain', 'FastAPI', 'Python', 'Docker'],
+  '10-theory': ['Claude', 'Pydantic', 'OpenTelemetry', 'Docker', 'MCP', 'GitHub', 'Prometheus', 'Grafana'],
+  '10-practice': ['Redis', 'PostgreSQL', 'Qdrant', 'Python', 'Chroma', 'Pydantic', 'Pytest', 'OpenTelemetry'],
+  '11-theory': ['OWASP', 'MCP', 'OpenTelemetry', 'GitHub Actions', 'Prometheus', 'Grafana', 'Docker', 'GitHub'],
+  '11-practice': ['Claude', 'Pydantic', 'OpenTelemetry', 'Docker', 'MCP', 'GitHub', 'Prometheus', 'Pytest'],
+  '12-theory': ['Ollama', 'HuggingFace', 'OpenAI', 'Claude', 'PyTorch', 'TensorFlow', 'NVIDIA', 'Python'],
+  '12-practice': ['OpenAI', 'Claude', 'Ollama', 'OpenTelemetry', 'Redis', 'Prometheus', 'Grafana', 'Docker'],
+  '13-practice': ['OWASP', 'Pytest', 'OpenTelemetry', 'GitHub Actions', 'Prometheus', 'Grafana', 'Docker', 'Kubernetes'],
+};
+
+// Marketing-facing weekly stack. Unlike WEEK_TECH (the compact hero dock), this
+// deliberately exposes each named library, protocol and cloud service as its own
+// tag. Groups make it clear what is built in class versus compared or used as
+// engineering infrastructure.
+const PRACTICE_TECH_STACK = {
+  1: {
+    mechanisms: ['AI System Layers', 'LLM API', 'Model / Provider', 'Prompt Contract', 'Structured Output', 'Tool Boundary', 'Human-in-the-Loop', 'AI Engineer', 'FDE', 'AI Builder'],
+    oss: ['OpenAI SDK', 'Anthropic SDK', 'Google GenAI SDK', 'tiktoken', 'Hugging Face Transformers', 'LiteLLM', 'Pydantic', 'Zod'],
+    build: ['Claude Code', 'OpenAI Codex CLI', 'GitHub Spec Kit', 'Aider', 'GitHub', 'Docker', 'Playwright'],
+  },
+  2: {
+    mechanisms: ['Tokenization', 'Token IDs', 'Input Embeddings', 'Transformer', 'Attention', 'Context Window', 'Lost-in-the-Middle', 'Prefill', 'Decode', 'KV Cache', 'Token Budget', 'TTFT'],
+    oss: ['tiktoken', 'Hugging Face Tokenizers', 'Hugging Face Transformers', 'vLLM', 'llama.cpp', 'FlashAttention', 'PagedAttention', 'Prompt Cache', 'Prefix Cache', 'Response Cache', 'Semantic Cache'],
+    build: ['Claude Code', 'Claude Design', 'React', 'Next.js', 'shadcn/ui', 'Storybook', 'Playwright'],
+  },
+  3: {
+    mechanisms: ['Context Inventory', 'Selection Policy', 'Instruction Hierarchy', 'Context Assembly', 'Token Allocation', 'Compaction', 'Eviction', 'Provenance', 'Trust Boundary', 'JSON Schema', 'Structured Output', 'Context Observability'],
+    oss: ['tiktoken', 'Pydantic', 'Zod', 'Instructor', 'Outlines', 'Guardrails AI', 'LangChain', 'LlamaIndex'],
+    build: ['Claude Code', 'Next.js', 'Prisma ORM', 'PostgreSQL', 'OpenAPI', 'Playwright', 'Mermaid'],
+  },
+  4: {
+    mechanisms: ['Embeddings', 'Vector Similarity', 'Chunking', 'Top-k Retrieval', 'Metadata Filter', 'Grounding', 'Citation', 'No-Answer', 'Speech-to-Text', 'Voice Activity Detection', 'Human Confirmation'],
+    oss: ['Sentence Transformers', 'FAISS', 'Qdrant', 'pgvector', 'Chroma', 'Pinecone', 'whisper.cpp', 'faster-whisper', 'Silero VAD', 'OpenAI Whisper', 'Deepgram'],
+    build: ['MediaRecorder API', 'Web Audio API', 'FastAPI', 'Pydantic', 'PostgreSQL', 'AWS S3'],
+  },
+  5: {
+    mechanisms: ['Golden Dataset', 'Retrieval Metrics', 'Context Precision', 'Context Recall', 'Faithfulness', 'Answer Relevance', 'LLM-as-a-Judge', 'Human Rubric', 'Baseline', 'Regression Test', 'Trace'],
+    oss: ['RAGAS', 'DeepEval', 'Langfuse', 'Arize Phoenix', 'Promptfoo', 'OpenTelemetry', 'Mermaid', 'C4 Model', 'MkDocs Material'],
+    build: ['Claude Skills', 'Claude Hooks', 'GitHub Spec Kit', 'Pytest', 'GitHub Actions', 'markdownlint-cli2', 'Lychee'],
+  },
+  6: {
+    mechanisms: ['Function Calling', 'Tool Schema', 'Tool Discovery', 'JSON-RPC', 'MCP Server', 'MCP Client', 'Transport', 'Authentication', 'Permission Boundary', 'Deterministic Eval', 'Regression Gate'],
+    oss: ['MCP TypeScript SDK', 'MCP Python SDK', 'FastMCP', 'MCP Inspector', 'Pi Agent', 'RAGAS', 'DeepEval', 'Langfuse', 'Arize Phoenix', 'Promptfoo', 'Pydantic', 'Zod'],
+    build: ['CLI / stdio', 'Pytest', 'OpenTelemetry', 'Docker', 'GitHub Actions', 'AWS CloudWatch'],
+  },
+  7: {
+    mechanisms: ['Agent Loop', 'ReAct', 'Plan-Act-Observe', 'Tool Calling', 'Agent State', 'Stop Condition', 'Human Approval', 'Failure Recovery', 'Hybrid Retrieval', 'Reranking', 'Citation Grounding'],
+    oss: ['Claude Agent SDK', 'OpenAI Agents SDK', 'PydanticAI', 'LangGraph', 'CrewAI', 'AutoGen', 'Sentence Transformers', 'FAISS', 'Qdrant', 'pgvector', 'RAGAS', 'Langfuse'],
+    build: ['FastAPI', 'Pydantic', 'OpenTelemetry', 'Docker', 'AWS OpenSearch', 'AWS S3'],
+  },
+  8: {
+    mechanisms: ['Multi-Agent', 'Orchestrator', 'Supervisor', 'Router', 'Hand-off', 'Delegation Contract', 'Shared State', 'Conflict Resolution', 'Data Layer', 'Repository Pattern', 'Domain Service', 'MCP Adapter'],
+    oss: ['Claude Agent SDK', 'Claude Managed Agents', 'LangGraph', 'OpenAI Agents SDK', 'AutoGen', 'CrewAI', 'PydanticAI', 'MCP SDK', 'FastMCP', 'MCP Inspector'],
+    build: ['Prisma ORM', 'SQLAlchemy', 'PostgreSQL', 'Redis', 'OpenTelemetry', 'Docker', 'AWS IAM'],
+  },
+  9: {
+    mechanisms: ['Agent State', 'Bounded Loop', 'ReAct', 'Tool Budget', 'Approval Gate', 'Checkpoint', 'Short-Term Memory', 'Long-Term Memory', 'Episodic Memory', 'Semantic Memory', 'Memory Scope'],
+    oss: ['Claude Agent SDK', 'OpenAI Agents SDK', 'PydanticAI', 'LangGraph', 'LangGraph Checkpointer', 'LangGraph Store', 'Mem0', 'Letta', 'LangMem', 'Langfuse'],
+    build: ['Pydantic', 'Zod', 'OpenTelemetry', 'Redis', 'PostgreSQL', 'pgvector'],
+  },
+  10: {
+    mechanisms: ['Memory Write Gate', 'Confirmed Facts', 'Provenance', 'TTL', 'Scoped Retrieval', 'Conflict Handling', 'Correction', 'Deletion', 'Memory Poisoning', 'Agent Lifecycle', 'Checkpoint / Resume'],
+    oss: ['Mem0', 'Letta', 'LangMem', 'LangGraph Store', 'LangGraph', 'Temporal', 'pgvector', 'Qdrant', 'Langfuse', 'OpenTelemetry'],
+    build: ['PostgreSQL', 'Redis', 'Pydantic', 'Zod', 'AWS RDS', 'AWS KMS'],
+  },
+  11: {
+    mechanisms: ['Production Harness', 'Run Lifecycle', 'Policy Hooks', 'Budget', 'Termination', 'Checkpoint / Resume', 'Idempotency', 'A2A Governance', 'Identity', 'Delegation', 'PII Defense', 'Prompt Injection'],
+    oss: ['Claude Agent SDK', 'LangGraph', 'Temporal', 'Open Policy Agent', 'Microsoft Presidio', 'A2A SDK', 'Guardrails AI', 'Promptfoo', 'PyRIT', 'Langfuse', 'OpenTelemetry'],
+    build: ['MCP', 'GitHub Actions', 'Prometheus', 'Grafana', 'AWS ECS', 'AWS CloudWatch'],
+  },
+  12: {
+    mechanisms: ['Task Taxonomy', 'Capability Matrix', 'Model Routing', 'Provider Allowlist', 'Risk Policy', 'Data Residency', 'Fallback', 'Refusal', 'Human Escalation', 'Cost Budget', 'Latency SLO', 'Router Evaluation'],
+    oss: ['LiteLLM', 'vLLM', 'Ollama', 'RouteLLM', 'OpenAI', 'Claude', 'Gemini', 'Hugging Face', 'Promptfoo', 'Langfuse', 'OpenTelemetry'],
+    build: ['Redis', 'Docker', 'NVIDIA', 'Prometheus', 'Grafana', 'AWS EC2'],
+  },
+  13: {
+    mechanisms: ['Production Evals', 'Deterministic Checks', 'LLM-as-a-Judge', 'Regression Gate', 'Red Team', 'Prompt Injection', 'Memory Poisoning', 'PII Leakage', 'Permission Test', 'Latency / Cost', 'Release Gate', 'Rollback'],
+    oss: ['RAGAS', 'DeepEval', 'Promptfoo', 'Langfuse', 'OpenTelemetry', 'PyRIT', 'garak', 'Microsoft Presidio', 'Open Policy Agent', 'OWASP'],
+    build: ['GitHub Actions', 'Prometheus', 'Grafana', 'Docker', 'Kubernetes', 'AWS EC2', 'AWS S3', 'AWS IAM', 'AWS Secrets Manager', 'AWS CloudWatch'],
+  },
+};
+
+const PRACTICE_TECH_LOGO_KEY = {
+  'Claude Code': 'Claude', 'Claude Design': 'Claude', 'Claude Skills': 'Claude', 'Claude Hooks': 'Claude',
+  'Claude Agent SDK': 'Claude', 'Claude Managed Agents': 'Claude', 'Anthropic SDK': 'Claude', Claude: 'Claude',
+  'OpenAI Codex CLI': 'OpenAI', 'OpenAI Agents SDK': 'OpenAI', 'OpenAI SDK': 'OpenAI', 'OpenAI Whisper': 'OpenAI', OpenAI: 'OpenAI',
+  'Google GenAI SDK': 'Google', Gemini: 'Google',
+  Git: 'Git', GitHub: 'GitHub', 'GitHub Spec Kit': 'GitHub', 'GitHub Actions': 'GitHub Actions', 'VS Code': 'VS Code',
+  React: 'React', 'Next.js': 'Next.js', TypeScript: 'TypeScript', 'Node.js': 'Node.js', 'Tailwind CSS': 'Tailwind',
+  'shadcn/ui': 'shadcn/ui', Storybook: 'Storybook', Figma: 'Figma', Motion: 'Motion', Vitest: 'Vitest',
+  Playwright: 'Playwright', Pytest: 'Pytest', Python: 'Python', Docker: 'Docker', PostgreSQL: 'PostgreSQL',
+  'Prisma ORM': 'Prisma', Zod: 'Zod', Pydantic: 'Pydantic', FastAPI: 'FastAPI', Redis: 'Redis',
+  Qdrant: 'Qdrant', Chroma: 'Chroma', Pinecone: 'Pinecone', 'Hugging Face': 'HuggingFace',
+  'Hugging Face Transformers': 'HuggingFace', 'Hugging Face Tokenizers': 'HuggingFace', OpenTelemetry: 'OpenTelemetry', Langfuse: 'Langfuse',
+  Mermaid: 'Mermaid', Prometheus: 'Prometheus', Grafana: 'Grafana', Kubernetes: 'Kubernetes', OWASP: 'OWASP',
+  Ollama: 'Ollama', NVIDIA: 'NVIDIA', Temporal: 'Temporal', MCP: 'MCP', FastMCP: 'MCP',
+  'MCP TypeScript SDK': 'MCP', 'MCP Python SDK': 'MCP', 'MCP Inspector': 'MCP', 'MCP SDK': 'MCP', 'A2A SDK': 'Google',
+  LangChain: 'LangChain', LangGraph: 'LangChain', 'LangGraph Checkpointer': 'LangChain', 'LangGraph Store': 'LangChain', LangMem: 'LangChain', LangSmith: 'LangSmith',
+  PydanticAI: 'Pydantic', 'Microsoft Presidio': 'Microsoft',
+  'AWS IAM': 'AWS', 'AWS EC2': 'AWS', 'AWS S3': 'AWS', 'AWS RDS': 'AWS', 'AWS KMS': 'AWS',
+  'AWS ECS': 'AWS', 'AWS CloudWatch': 'AWS', 'AWS OpenSearch': 'AWS', 'AWS Secrets Manager': 'AWS',
+};
+
+const PRACTICE_SYSTEM_FLOW = {
+  1: ['PRD 与验收标准', 'Repo Context', 'AI Coding', 'Review 与工程证据'],
+  2: ['Design Brief', 'Design System', '完整产品 UI', 'Product Design Review'],
+  3: ['Product UI', 'API 与权限', 'Database', 'E2E Test 与 MVP'],
+  4: ['Voice Input', 'Speech-to-Text', 'Editable Transcript', 'Human Confirm'],
+  5: ['Feature Spec', 'Work Plan', 'Docs / ADR', 'Hooks 与 Skills'],
+  6: ['Golden Dataset', 'Checks 与 RAGAS', 'Baseline Run', 'Stop / Go Gate'],
+  7: ['Policy Corpus', 'Chunk 与 Index', 'Retrieve 与 Cite', 'Eval Evidence'],
+  8: ['Data Sources', 'Repository', 'Domain Service', 'MCP 与 CLI'],
+  9: ['Agent State', 'Plan / ReAct', 'MCP Tools', 'Approval 与 Trace'],
+  10: ['Confirmed Facts', 'Memory Write Gate', 'Scoped Retrieval', 'Correct / Delete'],
+  11: ['Agent Run', 'Hooks 与 Policy', 'Checkpoint / Resume', 'Trace 与 Escalation'],
+  12: ['Task 与 Risk', 'Router Policy', 'Model Adapters', 'Eval 与 Fallback'],
+  13: ['Eval 与 Red Team', 'Release Gate', 'Demo 与 Defense', 'Evidence Pack'],
+};
+
+// Mirrors the public website Skills Tower in:
+// jr-academy-web-zh/src/app/[locale]/program-course/ai-engineer-bootcamp/content.ts
+const WEBSITE_SKILLS_TOWER = [
+  ['L01', 'Foundation Layer', '基座层', '#46D9E6', ['Python', 'LLM API', 'Transformer', 'ML/DL Basics', 'Model Selection', 'Tokenization']],
+  ['L02', 'Context Engineering', '上下文工程', '#7AD7E8', ['Prompt Strategy', 'Context Window', 'Token Budget', 'Multi-Turn State', 'System Design']],
+  ['L03', 'RAG', '检索增强生成 · 知识检索层', '#9D7CFF', ['Vector Search', 'Hybrid Retrieval', 'Re-ranking', 'GraphRAG', 'Knowledge Graph', 'Chunk Strategy']],
+  ['L04', 'Capability Layer', '能力层', '#B99AFF', ['Function Calling', 'Structured Output', 'Tool Use', 'MCP Protocol', 'JSON Schema']],
+  ['L05', 'Agent Core', 'Agent 核心', '#E979A8', ['OpenAI Agents SDK', 'Claude Agent SDK', 'Google ADK', 'Agent Loop', 'Tool Decision']],
+  ['L06', 'Multi-Agent & Orchestration', '多 Agent 编排', '#FF746B', ['A2A Protocol', 'Orchestration', 'Hand-off', 'Specialist Agents', 'Coordination']],
+  ['L07', 'Memory System', '记忆系统', '#F59E5B', ['Short-term', 'Long-term', 'Episodic', 'Semantic', 'Memory Decay']],
+  ['L08', 'Harness Engineering', '运行控制与治理', '#F6C75A', ['Claude Code', 'SubAgent', 'Custom Hooks', 'MCP Tools', 'CLI Architecture']],
+  ['L09', 'Model Layer', '模型层', '#98D76B', ['Cost Optimization', 'Self-hosting', 'QLoRA', 'Unsloth', 'HuggingFace', 'Open-source LLM']],
+  ['L10', 'Observability & Evals', '评测与监控', '#63D88D', ['LangSmith', 'W&B', 'Custom Evals', 'Regression Test', 'Token Cost Monitor', 'Latency P95']],
+];
+
+const SKILLS_TOWER_LOGO_KEY = {
+  Python: 'Python',
+  'LLM API': 'OpenAI',
+  Transformer: 'HuggingFace',
+  'MCP Protocol': 'MCP',
+  'OpenAI Agents SDK': 'OpenAI',
+  'Claude Agent SDK': 'Claude',
+  'Google ADK': 'Google',
+  'Claude Code': 'Claude',
+  'MCP Tools': 'MCP',
+  HuggingFace: 'HuggingFace',
+  LangSmith: 'LangSmith',
+  'W&B': 'W&B',
 };
 
 const THEORY_SUPPORT = {
@@ -50,21 +275,21 @@ const THEORY_SUPPORT = {
     quest: [['L16a', '搭好个人 AI Engineer 工作台', '验证 repo、terminal、runtime 与开发工具，后续每周可以直接继续构建。']],
   },
   2: {
-    heading: '先看懂 Transformer，再亲手观察模型为什么会这样回答',
-    promise: '把“听说过 token 和 attention”升级成能解释 API 行为、参数影响和模型限制。',
+    heading: '从 Token 与 Context Window，继续看懂 KV Cache 和生产缓存策略',
+    promise: '判断模型该看什么、哪些计算可以复用，并用 TTFT、Cache Hit Rate、Tokens Saved、成本和权限边界验证优化。',
     video: [
       ['L29', '拆开 Transformer 的信息流', '看懂输入如何经过 attention 与层级计算，最终形成输出。'],
       ['L30', '看懂文字如何进入模型', '理解 Input Embeddings 如何把 token 转成模型可以处理的数字表示。'],
     ],
     lab: [
-      ['L31', '动手观察 Transformer 与 Attention', '用交互实验看到 token 之间如何建立关系。'],
-      ['L32', '比较模型参数的真实影响', '改变 temperature、输出长度等参数，记录准确性与稳定性的变化。'],
+      ['L31', '动手观察 Token 与 Attention', '比较 tokenizer、内容位置和长度如何影响模型处理。'],
+      ['L32', '完成一次 Context 与 Cache 实验', '比较重复前缀的 cache hit/miss，并记录 TTFT、tokens saved、延迟与成本。'],
     ],
     quest: [],
   },
   3: {
-    heading: '把 Context Engineering 从提示词技巧升级成系统输入架构',
-    promise: '完成可复用的 Context Blueprint，让模型拿到正确资料、规则、工具和输出格式。',
+    heading: '把 Context Engineering 从 Prompt Template 升级成完整信息生命周期',
+    promise: '完成可复用的 Context Architecture Blueprint，解释信息从哪里来、为何被选择、如何验证，以及何时压缩或清除。',
     video: [['L37b', '建立 Context Engineering 全景', '先分清 instruction、data、memory、tools 与 output contract 各自负责什么。']],
     lab: [
       ['L38', '组装一份可靠 Context', '把任务、资料和约束放进正确位置，并比较前后输出差异。'],
@@ -72,7 +297,7 @@ const THEORY_SUPPORT = {
       ['L41', '写出有责任边界的 System Prompt', '明确角色、权限、拒答条件和人工确认点。'],
       ['L43', '让输出通过 JSON Schema 验证', '把自由文本变成后端可以接收、检查和保存的结构化数据。'],
     ],
-    quest: [['L37a', '交付 Context Blueprint', '画清输入来源、信任边界、组装顺序和失败处理，成为后续 AI 功能设计依据。']],
+    quest: [['L37a', '交付 Context Architecture Blueprint', '覆盖 inventory、selection、assembly、validation、observability 与 lifecycle，并映射三个未来 AI 场景。']],
   },
   4: {
     heading: '从 Embeddings 入门，一步跑通有引用、会拒答的本地 RAG',
@@ -128,7 +353,7 @@ const THEORY_SUPPORT = {
   8: {
     heading: '让多个 Agent 有明确分工，而不是把同一模型复制很多份',
     promise: '完成角色、共享状态、路由和冲突处理，能解释 Multi-Agent 什么时候值得增加复杂度。',
-    video: [['L126', '理解 A2A 与 Agent 互操作', '看懂两个独立 Agent 如何发现能力、交换任务并返回结果。']],
+    video: [],
     lab: [
       ['L123', '搭建多 Agent 协作流程', '为不同角色划分输入、工具、输出和责任边界。'],
       ['L125', '用 LangGraph 编排状态流转', '实现可观察、可暂停、可恢复的多节点工作流。'],
@@ -162,7 +387,10 @@ const THEORY_SUPPORT = {
   11: {
     heading: '把 Governance 和 Safety 做成上线门槛，而不是写在 PPT 里的原则',
     promise: '建立 eval baseline、攻击测试、风险责任和发布证据，能回答企业面试中的治理问题。',
-    video: [['L168', '建立 AI Evaluation Engineering 全景', '把 eval set、baseline、自动检查、人工评分和 regression gate 串成系统。']],
+    video: [
+      ['L126', 'A2A Governance：身份、信任与委派边界', '区分 MCP 的 Agent-to-Tool 与 A2A 的 Agent-to-Agent，并治理身份、授权、数据共享、审计和责任。'],
+      ['L168', '建立 AI Evaluation Engineering 全景', '把 eval set、baseline、自动检查、人工评分和 regression gate 串成系统。'],
+    ],
     lab: [
       ['L169', '运行 LLM Evaluation', '检查准确性、引用、schema、权限和高风险失败。'],
       ['L170', '运行 Prompt Regression', '防止新提示词修好一个案例，却破坏其他关键场景。'],
@@ -203,7 +431,12 @@ function technicalTerms(title) {
 const CANONICAL_TECH_TERMS = new Map(Object.entries({
   ai: 'AI', ml: 'ML', llm: 'LLM', genai: 'GenAI', api: 'API', rag: 'RAG', ragas: 'RAGAS',
   mcp: 'MCP', cli: 'CLI', sdk: 'SDK', json: 'JSON', ui: 'UI', prd: 'PRD', adlc: 'ADLC',
-  sql: 'SQL', aws: 'AWS', gpu: 'GPU', pii: 'PII', raci: 'RACI', a2a: 'A2A', sft: 'SFT',
+  sql: 'SQL', aws: 'AWS', gpu: 'GPU', pii: 'PII', raci: 'RACI', a2a: 'A2A', sft: 'SFT', fde: 'FDE',
+  kv: 'KV', ttft: 'TTFT', tpot: 'TPOT', mvp: 'MVP',
+  'design.md': 'DESIGN.md', 'readme': 'README', 'claude.md': 'CLAUDE.md', 'skill.md': 'SKILL.md',
+  adr: 'ADR', posttooluse: 'PostToolUse', 'docs-as-code': 'Docs-as-Code', 'docs-drift': 'Docs-Drift',
+  'spec-to-work': 'Spec-to-Work', 'update-docs': 'Update-Docs', 'non-goals': 'Non-Goals',
+  'dependency-aware': 'Dependency-Aware', 'ai-native': 'AI-Native', 'mermaid/c4': 'Mermaid/C4',
   peft: 'PEFT', lora: 'LoRA', qlora: 'QLoRA', rlhf: 'RLHF', dpo: 'DPO', mteb: 'MTEB',
   ttl: 'TTL', qa: 'QA', 'ci/cd': 'CI/CD', 'top-k': 'Top-k', top_p: 'Top-p', react: 'ReAct',
   langgraph: 'LangGraph', langfuse: 'Langfuse', langsmith: 'LangSmith', mem0: 'Mem0',
@@ -231,16 +464,63 @@ function dataUri(buffer, mime) {
   return `data:${mime};base64,${buffer.toString('base64')}`;
 }
 
+async function loadTechLogos() {
+  return Object.fromEntries(await Promise.all(Object.entries(TECH_LOGOS).map(async ([name, url]) => {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`Unable to load ${name} logo: ${response.status}`);
+    return [name, dataUri(Buffer.from(await response.arrayBuffer()), 'image/svg+xml')];
+  })));
+}
+
+function techLogos(week, kind, assets, showNames = false) {
+  const stack = WEEK_TECH[`${week}-${kind}`] || [];
+  return stack.map((name) => `<span class="tech-logo" title="${esc(name)}"><img src="${assets[name]}" alt="${esc(name)} logo"/>${showNames ? `<b>${esc(name)}</b>` : ''}</span>`).join('');
+}
+
+function techDock(week, kind, assets) {
+  return `<div class="tech-dock"><small>WEEKLY STACK</small><div>${techLogos(week, kind, assets)}</div></div>`;
+}
+
+function practiceTechTags(week, assets) {
+  const stack = PRACTICE_TECH_STACK[week];
+  if (!stack) return '';
+  const groups = [
+    ['mechanisms', 'AI MECHANISMS / 原理'],
+    ['oss', 'AI LIBRARIES & OSS'],
+    ['build', 'BUILD / 工程实现'],
+  ];
+  return groups.map(([key, label]) => `<section class="practice-tag-group ${key}">
+    <strong>${label}</strong>
+    <div>${stack[key].map((name) => {
+      const logoKey = PRACTICE_TECH_LOGO_KEY[name];
+      const logo = logoKey ? assets[logoKey] : null;
+      return `<b class="practice-tech-tag${logo ? ' has-logo' : ''}" title="${esc(name)}">${logo ? `<img src="${logo}" alt=""/>` : ''}<span>${esc(name)}</span></b>`;
+    }).join('')}</div>
+  </section>`).join('');
+}
+
+function practiceStack(week, assets, accent) {
+  const flow = PRACTICE_SYSTEM_FLOW[week];
+  const toolCount = Object.values(PRACTICE_TECH_STACK[week] || {}).flat().length;
+  return `<section class="practice-stack" style="--accent:${accent}">
+    <div class="practice-system-flow">
+      <header><small>本周系统关系图</small><strong>课堂上会把这些组件真正连接起来</strong></header>
+      <div class="flow-nodes">${flow.map((node, index) => `<span><b>${String(index + 1).padStart(2, '0')}</b>${esc(node)}</span>`).join('')}</div>
+    </div>
+    <div class="practice-tools"><header><small>本周完整 AI Engineering Stack · ${toolCount} 个技术点</small><strong>合并 Theory + Practice；AI 原理与开源生态优先，通用全栈工具降为辅助</strong></header><div class="practice-tag-groups">${practiceTechTags(week, assets)}</div></div>
+  </section>`;
+}
+
 function pageFooter(pageNo) {
   return `<footer class="page-footer">
     <span>第七期 · Theory + Practice 双 Live · Enterprise AI Engineering</span>
-    <span>${String(pageNo).padStart(2, '0')} / 31</span>
+    <span>${String(pageNo).padStart(2, '0')} / ${TOTAL_PAGES}</span>
   </footer>`;
 }
 
 function pageShell(pageNo, className, body) {
   return `<section class="page ${className}" data-page="${pageNo}">
-    ${body}
+    ${body.trim()}
     ${pageFooter(pageNo)}
   </section>`;
 }
@@ -266,7 +546,7 @@ function learningAssets(week, lessonIndex, accent) {
     const items = entries.map(([code, title, benefit]) => {
       const item = lessonIndex[code];
       if (!item) throw new Error(`Missing support lesson: ${code}`);
-      return `<li><b>${esc(code)}</b><div><strong>${esc(title)}</strong><span>${esc(benefit)}</span></div></li>`;
+      return `<li><div><strong>${esc(title)}</strong><span>${esc(benefit)}</span></div></li>`;
     }).join('');
     return `<article><header><strong>${label}</strong><small>${format}</small></header><ul>${items}</ul></article>`;
   }).filter(Boolean);
@@ -276,16 +556,31 @@ function learningAssets(week, lessonIndex, accent) {
   </section>`;
 }
 
-function livePage(pageNo, week, lesson, kind, publicCopy, art, lessonIndex) {
+function contextBlueprintPanel(accent) {
+  const stages = [
+    ['01', 'Inventory', '盘点 Instructions、Data、History、Knowledge、Tools 与 Output Contract'],
+    ['02', 'Selection', '按相关性、权威性、时效、权限和来源决定 Include / Exclude'],
+    ['03', 'Assembly', '确定结构、顺序、Token Allocation、冲突处理与 Validation'],
+    ['04', 'Lifecycle', '管理 Just-in-time Loading、Compaction、Refresh 与 Eviction'],
+    ['05', 'Trust', '建立权限边界、来源证据、Context Version 与可追踪记录'],
+    ['06', 'Blueprint', '把同一架构复用到 Structured Output、RAG 与 Agent 场景'],
+  ];
+  return `<section class="context-blueprint" style="--accent:${accent}"><header><small>W03 CONTEXT ARCHITECTURE</small><strong>不是把 Prompt 写长，而是控制信息进入、使用、更新和清除的完整系统</strong></header><div>${stages.map(([no, title, text]) => `<article><b>${no}</b><span><strong>${title}</strong><small>${text}</small></span></article>`).join('')}</div></section>`;
+}
+
+function livePage(pageNo, week, lesson, kind, publicCopy, art, lessonIndex, techAssets, options = {}) {
   const [stage, accent] = WEEK_STYLE[week];
   const isTheory = kind === 'theory';
-  const label = isTheory ? 'Theory Live' : week === 13 ? 'Final Practice Live' : 'Practice Live';
+  const label = isTheory ? '理论课 Live' : week === 13 ? '毕业项目实践课 Live' : '实践课 Live';
   const lessonCopy = publicCopy.lessons[lesson.code];
   const agendaCopy = publicCopy.stepCopy[lesson.code];
   if (!lessonCopy || !agendaCopy || agendaCopy.length !== lesson.steps.length) {
     throw new Error(`Public copy mismatch: ${lesson.code}`);
   }
-  const agenda = lesson.steps.map((step, index) => {
+  const stepStart = options.stepStart ?? 0;
+  const stepEnd = options.stepEnd ?? lesson.steps.length;
+  const selectedSteps = lesson.steps.map((step, index) => ({ step, index })).slice(stepStart, stepEnd);
+  const agenda = selectedSteps.map(({ step, index }) => {
     const terms = technicalTerms(step.title).map(formatTechnicalTerm);
     const termHtml = terms.length ? `<strong class="technical">${esc(terms.join(' · '))}</strong>` : '';
     return `<li class="agenda-item" style="--accent:${accent}">
@@ -294,30 +589,33 @@ function livePage(pageNo, week, lesson, kind, publicCopy, art, lessonIndex) {
     </li>`;
   }).join('');
   const meta = publicCopy.weekMeta[String(week)];
-  const leftLabel = isTheory ? '下一步能做什么' : '这周真正做出来';
-  const rightLabel = isTheory ? '面试能讲什么' : '为什么先不做更多';
-  const leftText = isTheory ? meta.dependency : meta.delivery;
-  const rightText = isTheory ? meta.interview : meta.boundary;
-  const support = isTheory
+  const leftLabel = options.leftLabel ?? (isTheory ? '下一步能做什么' : '这周真正做出来');
+  const rightLabel = options.rightLabel ?? (isTheory ? '面试能讲什么' : '为什么先不做更多');
+  const leftText = options.leftText ?? (isTheory ? meta.dependency : meta.delivery);
+  const rightText = options.rightText ?? (isTheory ? meta.interview : meta.boundary);
+  const support = options.supportHtml ?? (isTheory
     ? learningAssets(week, lessonIndex, accent)
-    : `<div class="page-spacer" style="--accent:${accent}" aria-hidden="true"><span>W${String(week).padStart(2, '0')} · ${esc(stage)}</span></div>`;
-  return pageShell(pageNo, 'live-page', `
-    ${topBar(`Week ${String(week).padStart(2, '0')} · ${label}`)}
+    : practiceStack(week, techAssets, accent));
+  const displayLabel = options.part ? `${label} · ${options.part}` : label;
+  const title = options.title ?? lessonCopy.title;
+  const description = options.description ?? lessonCopy.description;
+  return pageShell(pageNo, `live-page ${isTheory ? 'theory-page' : 'practice-page'} lesson-rows-${selectedSteps.length}`, `
+    ${topBar(`Week ${String(week).padStart(2, '0')} · ${displayLabel}`)}
     <header class="live-hero" style="--accent:${accent}">
       <div class="hero-copy">
-        <div class="eyebrow"><b>W${String(week).padStart(2, '0')}</b><span>${esc(stage)}</span><em>${label}</em></div>
-        <h1>${esc(lessonCopy.title)}</h1>
+        <div class="eyebrow"><b>W${String(week).padStart(2, '0')}</b><span>${esc(stage)}</span><em>${displayLabel}</em></div>
+        <h1>${esc(title)}</h1>
         <p>${esc(meta.outcome)}</p>
       </div>
-      <img src="${art}" alt="" />
+      <div class="hero-visual"><img src="${art}" alt="" />${techDock(week, kind, techAssets)}</div>
     </header>
     <section class="lesson-summary">
-      <div class="summary-head">${pill(label, isTheory ? 'purple' : 'accent')}<strong>${esc(lesson.code)}</strong></div>
-      <p>${esc(lessonCopy.description)}</p>
+      <div class="summary-head">${pill(displayLabel, isTheory ? 'purple' : 'accent')}<strong>${isTheory ? '核心理论课 · 原理与工程判断' : '本周独立实践课 · 老师现场带做'}</strong></div>
+      <p>${esc(description)}</p>
     </section>
     <section class="agenda-block">
-      <h2 style="--accent:${accent}"><span>Live Agenda</span><b>课堂内容与工程判断</b><em>${lesson.steps.length} modules</em></h2>
-      <ol class="agenda-list rows-${lesson.steps.length}" style="--agenda-rows:${Math.ceil(lesson.steps.length / 2)}">${agenda}</ol>
+      <h2 style="--accent:${accent}"><span>${isTheory ? '理论课内容' : '实践课怎么推进'}</span><b>${isTheory ? '原理 · 判断 · 面试表达' : '现场搭建 · 调试 · 验收'}</b><em>${selectedSteps.length} 个课堂环节</em></h2>
+      <ol class="agenda-list rows-${selectedSteps.length}" style="--agenda-rows:${Math.ceil(selectedSteps.length / 2)}">${agenda}</ol>
     </section>
     ${support}
     <section class="week-meta">
@@ -347,8 +645,8 @@ function methodPage(pageNo, art) {
       <div><b>17</b><strong>Quests</strong><span>提交架构、评测与项目证据</span></div>
     </section>
     <div class="two-track">
-      <article class="track theory"><span>01 · Theory Live</span><h2>12 场：把复杂概念讲成人话</h2><p>从大模型为什么会答错，到 RAG 怎样查资料、Agent 怎样使用工具、系统怎样评测和治理。保留求职面试真正会问的主干。</p><strong>你能讲清：为什么系统要这样设计</strong></article>
-      <article class="track practice"><span>02 · Practice Live</span><h2>13 场：从空项目做到可上线</h2><p>先做界面和业务流程，再加入语音、企业资料搜索、Agent、长期记忆、模型选择、质量评测和上线控制。每周都能看到产品升级。</p><strong>你能展示：一套完整、可验证的作品</strong></article>
+      <article class="track theory"><span>01 · 理论课 Live</span><h2>12 场：把复杂概念讲成人话</h2><p>从大模型为什么会答错，到 RAG 怎样查资料、Agent 怎样使用工具、系统怎样评测和治理。保留求职面试真正会问的主干。</p><strong>你能讲清：为什么系统要这样设计</strong></article>
+      <article class="track practice"><span>02 · 实践课 Live</span><h2>13 场：老师现场带你从空项目做到可上线</h2><p>每周独立一堂实践课，现场完成设计、编码、调试和验收；再逐步加入语音、RAG、Agent、长期记忆、模型选择与上线控制。</p><strong>你能展示：一套完整、可验证的作品</strong></article>
     </div>
     <h2 class="why-title">为什么选择一个复杂、强监管的业务场景？</h2>
     <div class="benefit-grid">${benefits.map(([title, text]) => `<article><i></i><h3>${title}</h3><p>${text}</p></article>`).join('')}</div>
@@ -358,7 +656,7 @@ function methodPage(pageNo, art) {
 function mapPage(pageNo, art) {
   const stages = [
     ['01', 'W1-W3', '先做出可靠的软件产品', '明确需求、完成完整界面，再跑通任务、文档、审核和权限流程', '不用 AI 也能正常工作的产品底座', '#48C9D9'],
-    ['02', 'W4-W5', '第一次让 AI 参与工作', '把语音转成可修改文字，再整理成结构清楚、必须人工确认的草稿', '原始输入变成可审核文档', '#FF654E'],
+    ['02', 'W4-W5', '第一次接入 AI，并建立工程工作区', '先完成可确认的语音输入，再把 Spec、Work Plan、Wiki、Architecture、Hooks 与 Skills 连成持续交付系统', 'AI 功能和工程知识都开始可追踪', '#FF654E'],
     ['03', 'W6-W7', '让每个答案都有资料依据', '搭建 RAG，从政策中找证据、标引用，并用标准案例测试质量', '不是会回答，而是能证明回答可靠', '#7957FF'],
     ['04', 'W8-W10', '让 AI 成为可控的 Agent', '连接工具、自己决定下一步，同时限制权限、步数、失败处理和长期记忆', '能执行任务，也知道何时必须停下', '#EC6AA7'],
     ['05', 'W11-W13', '达到企业上线标准', '加入运行控制、模型选择、治理、质量评测、安全测试和发布判断', '一套可评估、可治理、可发布的系统', '#F3B943'],
@@ -386,18 +684,23 @@ function modesPage(pageNo, art) {
   `);
 }
 
-function stackPage(pageNo, art) {
-  const layers = [
-    ['01', '基座层', 'Foundation'], ['02', '给 AI 正确信息', 'Context'], ['03', '从资料中找依据', 'RAG'],
-    ['04', '连接外部工具', 'Capability'], ['05', 'Agent 核心', 'Agent Core'], ['06', '多个 Agent 分工', 'Multi-Agent'],
-    ['07', '安全长期记忆', 'Memory'], ['08', '治理与运行控制', 'Governance'], ['09', '模型选择', 'Model'],
-    ['10', '质量评测与监控', 'Observability'],
-  ];
+function stackPage(pageNo, art, techAssets) {
+  const layers = [...WEBSITE_SKILLS_TOWER].reverse();
   return pageShell(pageNo, 'standard-page stack-page', `
     <img class="page-art" src="${art}" alt="" />
     ${topBar('10-Layer Stack')}
-    <header class="section-heading"><span>能力地图</span><h1>10 层能力最后汇合成一套真正能工作的 AI 系统</h1><p>你不会只学 10 组名词。每一层都会在项目里出现：从模型和资料，到工具、Agent、记忆、安全治理和上线后的质量监控。</p></header>
-    <ol class="layer-list">${layers.map(([no, zh, en], i) => `<li style="--i:${i}"><span>${no}</span><strong>${zh}</strong><b>${en}</b></li>`).join('')}</ol>
+    <header class="section-heading stack-heading"><span>AI Engineer Skills Tower · 10-Layer Stack</span><h1>One Architecture. Ten Engineering Layers.</h1><p><strong>一套架构，十层工程能力。</strong>完整保留官网 Skills Tower 的 50+ 个技术点；英文是主标题，中文只负责快速解释。阅读顺序从底部 L01 Foundation 一路向上到 L10 Observability & Evals。</p></header>
+    <section class="skills-tower" aria-label="AI Engineer 10-layer skills tower">
+      ${layers.map(([layer, en, zh, color, skills]) => `<article class="skills-layer" style="--layer:${color}">
+        <div class="skills-layer-head"><span>${layer}</span><div><strong>${esc(en)}</strong><small>${esc(zh)}</small></div></div>
+        <div class="skills-layer-tags">${skills.map((skill) => {
+          const logoKey = SKILLS_TOWER_LOGO_KEY[skill];
+          const logo = logoKey ? techAssets[logoKey] : null;
+          return `<b class="${logo ? 'has-logo' : ''}">${logo ? `<img src="${logo}" alt="" />` : ''}<span>${esc(skill)}</span></b>`;
+        }).join('')}</div>
+      </article>`).join('')}
+    </section>
+    <div class="tower-result"><span>STACK.COMPILE()</span><strong>Production-ready AI Engineer</strong><small>Ship RAG · Build Agents · Run Evals</small></div>
   `);
 }
 
@@ -415,7 +718,7 @@ function careerPage(pageNo, art) {
     ${topBar('Career & Interview')}
     <header class="section-heading"><span>最终成果</span><h1>你带走的不是课堂 Demo，而是一套能讲、能演示、能答辩的作品</h1><p>面试时不再只背 RAG、Agent、Governance 的定义。你可以打开系统，展示它怎样工作、怎样失败、怎样恢复，以及为什么达到标准后才允许上线。</p></header>
     <div class="career-grid">${items.map(([title, text]) => `<article><h2>${title}</h2><p>${text}</p></article>`).join('')}</div>
-    <div class="cta"><div><h2>查看完整课程</h2><p>第七期完整大纲、逐周交付、10 层技术栈与课程申请信息</p><strong>jiangren.com.au/program-course/ai-engineer-bootcamp</strong></div><span>AI Engineer<br/>Cohort 07</span></div>
+    <a class="cta" href="https://jiangren.com.au/program-course/ai-engineer-bootcamp" target="_blank" rel="noopener"><div><h2>查看完整课程与申请信息</h2><p>课程安排、逐周交付、10 层技术栈与最新开课信息</p><strong>jiangren.com.au/program-course/ai-engineer-bootcamp</strong></div><span>OPEN COURSE<br/>PAGE →</span></a>
   `);
 }
 
@@ -475,10 +778,43 @@ body{background:#cbc5c1}.page{background-color:#fbf6ef;background-image:radial-g
 .cover-rarity{display:inline-flex;margin-top:11mm;color:#7957ff;font-size:8.2pt;font-weight:750;letter-spacing:.025em}.cover-page .cover-logo{width:61mm;height:21mm}.cover-page .cover-kicker{margin-top:11.5mm;font-size:8.25pt}.cover-page .cover-title{margin-top:4.5mm;font-size:39pt;line-height:.93}.cover-page .cover-cohort{margin-top:4.5mm;font-size:9pt;padding:2.2mm 5mm}.cover-page .cover-positioning{margin-top:4mm;max-width:118mm}.cover-page .cover-positioning span{display:block;color:#101a3a;font-size:21pt;line-height:1}.cover-page .cover-positioning em{margin-top:2mm;font-size:25.5pt}.cover-page .cover-subtitle{max-width:108mm;font-size:9.55pt;line-height:1.44}.cover-page .cover-proof{width:108mm;margin-top:7mm;gap:2.6mm}.cover-page .cover-proof span{min-height:11mm;font-size:8.25pt;padding:2.2mm 3.2mm}.cover-page .cover-system strong{font-size:11.5pt}.cover-page .cover-system p{max-width:150mm;font-size:6.8pt;line-height:1.35}.cover-page .cover-edition{font-size:7.4pt}
 /* Cover V8: deterministic typography over a text-free systematic-engineering visual. */
 .cover-page{padding:0;background:#fff5ed;color:#101a3a;isolation:isolate}.cover-image{z-index:0}.cover-page:after{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,rgba(255,248,240,.98) 0%,rgba(255,248,240,.93) 34%,rgba(255,248,240,.48) 53%,rgba(255,248,240,0) 72%),linear-gradient(0deg,rgba(255,248,240,.84),transparent 30%)}.cover-content{position:absolute;z-index:2;inset:0;padding:14mm 12mm 12mm;display:flex;flex-direction:column;align-items:flex-start}.cover-logo{width:56mm;height:19mm;object-fit:contain;object-position:left center}.cover-kicker{margin-top:13mm;display:inline-flex;align-items:center;gap:2.5mm;color:#7957ff;font:800 7.5pt/1 "PingFang SC","Helvetica Neue",Arial,sans-serif;letter-spacing:.055em}.cover-kicker:before{content:"";width:9mm;height:1mm;border-radius:99px;background:#ff654e}.cover-title{margin:5mm 0 0;font:800 34pt/.94 "PingFang SC","Helvetica Neue",Arial,sans-serif;letter-spacing:-.04em;color:#101a3a}.cover-cohort{display:inline-flex;margin-top:5mm;padding:2mm 4.5mm;border-radius:99px;background:linear-gradient(90deg,#7957ff,#ff654e);color:#fff;font:750 8.2pt/1 "PingFang SC","Helvetica Neue",Arial,sans-serif}.cover-positioning{margin:15mm 0 0;max-width:112mm;font:750 23pt/1.18 "PingFang SC","Helvetica Neue",Arial,sans-serif;letter-spacing:-.025em}.cover-positioning em{display:block;color:#ff654e;font-style:normal}.cover-subtitle{max-width:104mm;margin:4mm 0 0;color:#4e5266;font-size:9.4pt;line-height:1.48}.cover-proof{margin-top:8mm;width:103mm;display:grid;grid-template-columns:1fr 1fr;gap:2.4mm}.cover-proof span{min-height:10mm;display:flex;align-items:center;padding:2mm 3mm;border:.25mm solid rgba(16,26,58,.14);border-radius:3mm;background:rgba(255,255,255,.8);font-size:7.7pt;font-weight:650;box-shadow:0 1.3mm 4mm rgba(16,26,58,.05)}.cover-proof span:before{content:"";flex:0 0 auto;width:2mm;height:2mm;margin-right:2mm;border-radius:50%;background:#48c9d9;box-shadow:0 0 0 1.1mm rgba(72,201,217,.16)}.cover-system{margin-top:auto;width:100%;padding:5mm 6mm;border-radius:5mm;background:rgba(16,26,58,.95);color:#fff;box-shadow:0 3mm 10mm rgba(16,26,58,.17)}.cover-system strong{display:block;font-size:10.5pt;margin-bottom:2mm}.cover-system p{margin:0;color:#d9dced;font:650 7pt/1.45 "PingFang SC","Helvetica Neue",Arial,sans-serif;letter-spacing:.015em}.cover-edition{position:absolute;right:12mm;bottom:13mm;z-index:3;padding:1.8mm 4mm;border-radius:99px;background:#ff654e;color:#fff;font-size:7pt;font-weight:750}
+.cover-logo-link{display:block;line-height:0}.cover-system a{display:inline-block;margin-top:2.2mm;color:#ffad9e;font:750 7.2pt/1.3 "PingFang SC","Helvetica Neue",Arial,sans-serif;text-decoration:none}.cta{text-decoration:none}.cta>span{font-size:11pt;line-height:1.35}
+/* Weekly stack V11: real technology marks replace internal lesson codes. */
+.hero-visual{position:relative;z-index:2;width:58mm;height:44mm;align-self:stretch;justify-self:end}.hero-visual>img{position:absolute;inset:-1mm 0 auto auto;width:55mm;height:42mm;object-fit:contain;opacity:.72}.tech-dock{position:absolute;right:2.5mm;bottom:2mm;display:flex;align-items:center;gap:1.5mm;padding:1.3mm 1.5mm;border:.25mm solid rgba(255,255,255,.3);border-radius:3mm;background:rgba(255,255,255,.95);box-shadow:0 1.5mm 5mm rgba(0,0,0,.2);backdrop-filter:blur(4px)}.tech-dock small{color:#56586a;font:800 4.8pt/1 Arial;letter-spacing:.045em;writing-mode:vertical-rl;transform:rotate(180deg)}.tech-dock>div{display:grid;grid-template-columns:repeat(4,6mm);gap:1mm}.tech-logo{display:flex;align-items:center;justify-content:center;background:#fff}.tech-dock .tech-logo{width:6mm;height:6mm;border-radius:1.6mm;box-shadow:inset 0 0 0 .2mm rgba(16,26,58,.1)}.live-hero .tech-logo img{position:static;width:4mm;height:4mm;object-fit:contain;opacity:1;filter:none}.summary-head strong{font-size:7.1pt;letter-spacing:0;color:#777383}.practice-stack{position:relative;isolation:isolate;min-width:0;display:grid;grid-template-columns:48mm minmax(0,1fr);align-items:center;gap:4mm;overflow:hidden;border:.3mm solid color-mix(in srgb,var(--accent) 42%,#ddd5cf);border-left:1.4mm solid var(--accent);border-radius:0 6mm 6mm 0;padding:4.5mm 5mm;background:radial-gradient(circle at 82% 18%,color-mix(in srgb,var(--accent) 23%,transparent),transparent 37%),linear-gradient(120deg,#fff 0%,color-mix(in srgb,var(--accent) 10%,white) 100%);box-shadow:0 2.5mm 9mm rgba(16,26,58,.09)}.practice-stack:after{content:"BUILD STACK";position:absolute;z-index:-1;left:5mm;bottom:-3mm;color:color-mix(in srgb,var(--accent) 9%,transparent);font:900 29pt/1 Arial;letter-spacing:-.06em;white-space:nowrap}.practice-stack>div:first-child small{display:block;margin-bottom:2mm;color:var(--accent);font:850 7.6pt/1 Arial;letter-spacing:.045em}.practice-stack>div:first-child strong{display:block;color:#20253d;font-size:8.5pt;line-height:1.42}.practice-stack-logos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2mm}.practice-stack-logos .tech-logo{min-width:0;height:28.5mm;flex-direction:column;gap:2mm;border:.25mm solid rgba(16,26,58,.12);border-top:.8mm solid var(--accent);border-radius:3.5mm;background:linear-gradient(150deg,#fff 20%,color-mix(in srgb,var(--accent) 7%,white));box-shadow:0 1.6mm 4mm rgba(16,26,58,.09)}.practice-stack-logos .tech-logo img{width:9.5mm;height:9.5mm;object-fit:contain;filter:drop-shadow(0 .8mm 1.2mm rgba(16,26,58,.13))}.practice-stack-logos .tech-logo b{max-width:100%;padding:0 .7mm;color:#20253d;font:800 5.8pt/1.1 "PingFang SC","Helvetica Neue",Arial,sans-serif;text-align:center;overflow-wrap:anywhere}
+.assets-grid li{display:block}.assets-grid li>div strong{display:inline}.assets-grid li>div span{display:inline}
+.context-blueprint{position:relative;min-width:0;display:grid;grid-template-columns:49mm minmax(0,1fr);align-items:center;gap:4mm;overflow:hidden;border:.3mm solid color-mix(in srgb,var(--accent) 40%,#ddd5cf);border-left:1.4mm solid var(--accent);border-radius:0 5mm 5mm 0;padding:4mm 4.5mm;background:linear-gradient(120deg,#fff,color-mix(in srgb,var(--accent) 9%,white));box-shadow:0 2mm 7mm rgba(16,26,58,.07)}.context-blueprint:after{content:"CONTEXT";position:absolute;left:4mm;bottom:-3mm;color:color-mix(in srgb,var(--accent) 8%,transparent);font:900 28pt/1 Arial;letter-spacing:-.055em}.context-blueprint header{position:relative;z-index:1}.context-blueprint header small{display:block;margin-bottom:1.7mm;color:var(--accent);font:850 7pt/1 Arial;letter-spacing:.045em}.context-blueprint header strong{display:block;color:#20253d;font-size:8.2pt;line-height:1.38}.context-blueprint>div{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.7mm}.context-blueprint article{min-width:0;display:grid;grid-template-columns:6mm minmax(0,1fr);gap:1.2mm;align-items:start;padding:2mm;border:.25mm solid rgba(16,26,58,.1);border-radius:2.5mm;background:rgba(255,255,255,.9)}.context-blueprint article>b{color:var(--accent);font:850 5.8pt/1 Arial}.context-blueprint article span>strong{display:block;margin-bottom:.7mm;color:#161d38;font:800 6.4pt/1 Arial}.context-blueprint article span>small{display:block;color:#5b5e70;font-size:5.7pt;line-height:1.26}
+.practice-page.lesson-rows-7 .practice-stack,.practice-page.lesson-rows-8 .practice-stack,.practice-page.lesson-rows-9 .practice-stack{padding:3mm 4mm}.practice-page.lesson-rows-7 .practice-stack-logos,.practice-page.lesson-rows-8 .practice-stack-logos,.practice-page.lesson-rows-9 .practice-stack-logos{gap:1.4mm}.practice-page.lesson-rows-7 .practice-stack-logos .tech-logo,.practice-page.lesson-rows-8 .practice-stack-logos .tech-logo,.practice-page.lesson-rows-9 .practice-stack-logos .tech-logo{height:18mm;gap:1mm;border-radius:2.7mm}.practice-page.lesson-rows-7 .practice-stack-logos .tech-logo img,.practice-page.lesson-rows-8 .practice-stack-logos .tech-logo img,.practice-page.lesson-rows-9 .practice-stack-logos .tech-logo img{width:6.6mm;height:6.6mm}.practice-page.lesson-rows-7 .practice-stack-logos .tech-logo b,.practice-page.lesson-rows-8 .practice-stack-logos .tech-logo b,.practice-page.lesson-rows-9 .practice-stack-logos .tech-logo b{font-size:5pt}
+/* Page 30 V13: static export of the website's interactive 10-layer Skills Tower. */
+.stack-page .stack-heading{margin-top:2mm}.stack-page .stack-heading>span{color:#7957ff;font:800 7.3pt/1 "Avenir Next","Helvetica Neue",Arial,sans-serif;letter-spacing:.07em}.stack-page .stack-heading h1{margin:3.5mm 0 2mm;font:750 25pt/1.04 "Avenir Next","Helvetica Neue",Arial,sans-serif;letter-spacing:-.035em}.stack-page .stack-heading p{max-width:180mm;font-size:8.25pt;line-height:1.42}.stack-page .stack-heading p strong{color:#101a3a;font-weight:750}.skills-tower{position:relative;margin-top:4.5mm;display:grid;gap:1.25mm}.skills-tower:before{content:"BUILD UP";position:absolute;left:-7mm;top:2mm;bottom:2mm;display:flex;align-items:center;color:#8b8490;font:800 5.2pt/1 Arial;letter-spacing:.09em;writing-mode:vertical-rl;transform:rotate(180deg)}.skills-layer{height:15.2mm;display:grid;grid-template-columns:57mm minmax(0,1fr);align-items:center;gap:3mm;padding:1.7mm 3mm;border:.25mm solid color-mix(in srgb,var(--layer) 48%,#d9d2cd);border-left:1.3mm solid var(--layer);border-radius:3mm;background:linear-gradient(90deg,#fff 0%,color-mix(in srgb,var(--layer) 8%,white) 100%);box-shadow:0 1.3mm 3.5mm rgba(16,26,58,.055)}.skills-layer-head{min-width:0;display:grid;grid-template-columns:10mm minmax(0,1fr);align-items:center;gap:2mm}.skills-layer-head>span{display:flex;align-items:center;justify-content:center;width:9mm;height:7mm;border-radius:2mm;background:color-mix(in srgb,var(--layer) 20%,white);color:color-mix(in srgb,var(--layer) 78%,#101a3a);font:850 6.2pt/1 "Avenir Next",Arial,sans-serif}.skills-layer-head div{min-width:0}.skills-layer-head strong{display:block;color:#101a3a;font:750 8.6pt/1.08 "Avenir Next","Helvetica Neue",Arial,sans-serif;letter-spacing:-.012em;white-space:nowrap}.skills-layer-head small{display:block;margin-top:.9mm;color:#6d6875;font-size:6.1pt;line-height:1}.skills-layer-tags{min-width:0;display:flex;align-items:center;flex-wrap:wrap;gap:1mm}.skills-layer-tags b{display:inline-flex;align-items:center;gap:1mm;min-height:4.5mm;padding:.65mm 1.7mm;border:.2mm solid color-mix(in srgb,var(--layer) 42%,#ddd6d0);border-radius:99px;background:rgba(255,255,255,.86);color:#444758;font:700 5.25pt/1 "Avenir Next","Helvetica Neue",Arial,sans-serif;white-space:nowrap}.skills-layer-tags b.has-logo{padding-left:1.1mm;background:#fff;box-shadow:0 .65mm 1.7mm rgba(16,26,58,.08);color:#20243a;font-weight:800}.skills-layer-tags b img{display:block;width:3.1mm;height:3.1mm;object-fit:contain}.skills-layer-tags b span{display:block}.tower-result{height:14mm;margin-top:3mm;display:grid;grid-template-columns:31mm minmax(0,1fr) auto;align-items:center;gap:3mm;padding:0 4mm;border-radius:4mm;background:#101a3a;color:#fff;box-shadow:0 2mm 6mm rgba(16,26,58,.14)}.tower-result span{color:#63d88d;font:800 6.1pt/1 "Avenir Next",Arial,sans-serif;letter-spacing:.055em}.tower-result strong{font:750 10pt/1 "Avenir Next","Helvetica Neue",Arial,sans-serif}.tower-result small{color:#d9dced;font:650 6.2pt/1 "Avenir Next","Helvetica Neue",Arial,sans-serif}
+/* Practice clarity V12: Chinese-first classroom labels plus a real system relationship view. */
+.practice-stack{grid-template-columns:70mm minmax(0,1fr);align-items:stretch;gap:3.5mm;padding:3mm 4mm}.practice-stack:after{content:"SYSTEM BUILD";font-size:24pt}.practice-system-flow,.practice-tools{position:relative;z-index:1;min-width:0}.practice-system-flow header,.practice-tools header{margin-bottom:2mm}.practice-system-flow header small,.practice-tools header small{display:block;margin-bottom:.7mm;color:var(--accent);font:850 6.7pt/1 "PingFang SC","Helvetica Neue",Arial,sans-serif;letter-spacing:.02em}.practice-system-flow header strong,.practice-tools header strong{display:block;color:#20253d;font-size:6.8pt;line-height:1.25}.flow-nodes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2.3mm;align-items:stretch}.flow-nodes span{position:relative;min-width:0;min-height:17mm;padding:2.2mm 1.4mm;border:.25mm solid color-mix(in srgb,var(--accent) 35%,#d8d3d0);border-top:.8mm solid var(--accent);border-radius:2.5mm;background:rgba(255,255,255,.94);color:#242940;font-size:6.05pt;line-height:1.22;font-weight:700;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow-wrap:anywhere}.flow-nodes span+span:before{content:"";position:absolute;left:-2.55mm;top:50%;width:2.3mm;height:.45mm;background:var(--accent)}.flow-nodes span+span:after{content:"";position:absolute;left:-.8mm;top:calc(50% - .8mm);border-left:1.2mm solid var(--accent);border-top:.8mm solid transparent;border-bottom:.8mm solid transparent}.flow-nodes b{display:block;margin-bottom:1mm;color:var(--accent);font:850 5.6pt/1 Arial}.practice-tools{padding-left:3.5mm;border-left:.25mm solid color-mix(in srgb,var(--accent) 30%,#d8d3d0)}.practice-stack-logos{gap:1.4mm}.practice-stack-logos .tech-logo{height:17.5mm;gap:.9mm;border-radius:2.7mm}.practice-stack-logos .tech-logo img{width:6.8mm;height:6.8mm}.practice-stack-logos .tech-logo b{font-size:5pt;line-height:1.05}.practice-page.lesson-rows-7 .practice-stack,.practice-page.lesson-rows-8 .practice-stack,.practice-page.lesson-rows-9 .practice-stack{padding:2.6mm 3.5mm}.practice-page.lesson-rows-7 .practice-system-flow header,.practice-page.lesson-rows-8 .practice-system-flow header,.practice-page.lesson-rows-9 .practice-system-flow header,.practice-page.lesson-rows-7 .practice-tools header,.practice-page.lesson-rows-8 .practice-tools header,.practice-page.lesson-rows-9 .practice-tools header{margin-bottom:1.3mm}.practice-page.lesson-rows-7 .flow-nodes span,.practice-page.lesson-rows-8 .flow-nodes span,.practice-page.lesson-rows-9 .flow-nodes span{min-height:14.5mm;padding:1.6mm 1.1mm;font-size:5.45pt}.practice-page.lesson-rows-7 .practice-stack-logos .tech-logo,.practice-page.lesson-rows-8 .practice-stack-logos .tech-logo,.practice-page.lesson-rows-9 .practice-stack-logos .tech-logo{height:14.5mm}
+/* Weekly practice stack V14: every important tool/service is an individual,
+   readable tag. Groups separate hands-on tools from comparisons and platform. */
+.practice-page{grid-template-rows:8mm 44mm 20mm auto minmax(0,1fr) 38mm 6mm}
+.practice-stack{grid-template-columns:67mm minmax(0,1fr);gap:3mm;padding:2.7mm 3.5mm}
+.practice-system-flow header,.practice-tools header{margin-bottom:1.5mm}
+.practice-tools{padding-left:3mm}
+.practice-tools header small{font-size:6.55pt;font-weight:850;color:#101a3a}
+.practice-tools header strong{font-size:5.8pt;color:#686b7a}
+.practice-tag-groups{display:grid;gap:1.15mm}
+.practice-tag-group{min-width:0;display:grid;grid-template-columns:27mm minmax(0,1fr);align-items:start;gap:1.4mm}
+.practice-tag-group>strong{padding-top:1.15mm;color:#5f6070;font:850 4.35pt/1.05 "Avenir Next","Helvetica Neue",Arial,sans-serif;letter-spacing:.018em;white-space:nowrap}
+.practice-tag-group.mechanisms>strong,.practice-tag-group.oss>strong{color:var(--accent)}
+.practice-tag-group>div{min-width:0;display:flex;flex-wrap:wrap;gap:.75mm}
+.practice-tech-tag{display:inline-flex;align-items:center;gap:.75mm;min-height:4.15mm;padding:.55mm 1.25mm;border:.2mm solid rgba(16,26,58,.15);border-radius:99px;background:rgba(255,255,255,.92);color:#252940;font:750 5.05pt/1 "Avenir Next","PingFang SC","Helvetica Neue",Arial,sans-serif;white-space:nowrap;box-shadow:0 .45mm 1.2mm rgba(16,26,58,.055)}
+.practice-tag-group.mechanisms .practice-tech-tag{border-color:color-mix(in srgb,var(--accent) 52%,#d9d3ce);background:color-mix(in srgb,var(--accent) 9%,white);color:#101a3a}
+.practice-tag-group.oss .practice-tech-tag{border-color:color-mix(in srgb,var(--accent) 38%,#d9d3ce);color:#101a3a}
+.practice-tag-group.build .practice-tech-tag{background:rgba(247,247,249,.96);color:#4c4e5d}
+.practice-tech-tag img{display:block;width:2.85mm;height:2.85mm;object-fit:contain;flex:0 0 auto}
+.practice-tech-tag span{display:block}
+.practice-page.lesson-rows-7 .practice-stack,.practice-page.lesson-rows-8 .practice-stack,.practice-page.lesson-rows-9 .practice-stack{padding:2.4mm 3.2mm}
+.practice-page.lesson-rows-7 .practice-tag-groups,.practice-page.lesson-rows-8 .practice-tag-groups,.practice-page.lesson-rows-9 .practice-tag-groups{gap:.9mm}
+.practice-page.lesson-rows-7 .practice-tech-tag,.practice-page.lesson-rows-8 .practice-tech-tag,.practice-page.lesson-rows-9 .practice-tech-tag{min-height:3.75mm;padding:.42mm 1.05mm;font-size:4.65pt}
+.practice-page.lesson-rows-7 .practice-tech-tag img,.practice-page.lesson-rows-8 .practice-tech-tag img,.practice-page.lesson-rows-9 .practice-tech-tag img{width:2.55mm;height:2.55mm}
 `;
 
 async function build() {
-  const [outline, publicCopy, cover, logo, product, knowledge, production] = await Promise.all([
+  const [outline, publicCopy, cover, logo, product, knowledge, production, techAssets] = await Promise.all([
     fs.readFile(OUTLINE_PATH, 'utf8').then(JSON.parse),
     fs.readFile(COPY_PATH, 'utf8').then(JSON.parse),
     fs.readFile(path.join(PUBLIC, 'posters', 'assets', 'cohort-07-systematic-engineering-cover-bg-v1.png')),
@@ -486,6 +822,7 @@ async function build() {
     fs.readFile(path.join(PUBLIC, 'posters', 'assets', 'cohort-07-pdf-product-foundation-v1.png')),
     fs.readFile(path.join(PUBLIC, 'posters', 'assets', 'cohort-07-pdf-voice-rag-v1.png')),
     fs.readFile(path.join(PUBLIC, 'posters', 'assets', 'cohort-07-pdf-production-agent-v1.png')),
+    loadTechLogos(),
   ]);
   const lessons = Object.fromEntries(outline.phases.flatMap((phase) => phase.lessons || []).filter((lesson) => lesson.code).map((lesson) => [lesson.code, lesson]));
   const renderDocument = (coverSrc, logoSrc, art) => {
@@ -493,7 +830,7 @@ async function build() {
     pages.push(`<section class="page cover-page" data-page="1">
       <img class="cover-image" src="${coverSrc}" alt="十层 Enterprise AI Engineering System"/>
       <div class="cover-content">
-        <img class="cover-logo" src="${logoSrc}" alt="JR Academy 匠人学院"/>
+        <a class="cover-logo-link" href="https://jiangren.com.au" target="_blank" rel="noopener"><img class="cover-logo" src="${logoSrc}" alt="JR Academy 匠人学院"/></a>
         <span class="cover-kicker">3 YEARS · SYSTEMATIC AI ENGINEERING</span>
         <h1 class="cover-title">AI ENGINEER<br/>BOOTCAMP</h1>
         <div class="cover-title-zh">AI 工程师训练营</div>
@@ -502,7 +839,7 @@ async function build() {
         <h2 class="cover-positioning"><span>连续 3 年</span><em>系统教 AI Engineering</em></h2>
         <p class="cover-subtitle">历经 7 期课程迭代，从 LLM 原理、Context、RAG 到 Agent、Memory、Harness、Governance、Model Routing 与 Evaluation，持续构建完整的 AI 工程能力体系。</p>
         <div class="cover-proof"><span>3 年持续迭代</span><span>第 7 期课程体系</span><span>25 场双 Live</span><span>13 周 Production 项目主线</span></div>
-        <div class="cover-system"><strong>系统教学，不是工具速成</strong><p>10-LAYER STACK · LLM · CONTEXT · RAG · AGENTS · MEMORY · HARNESS · GOVERNANCE · ROUTING · EVALUATION</p></div>
+        <div class="cover-system"><strong>系统教学，不是工具速成</strong><p>10-LAYER STACK · LLM · CONTEXT · RAG · AGENTS · MEMORY · HARNESS · GOVERNANCE · ROUTING · EVALUATION</p><a href="https://jiangren.com.au/program-course/ai-engineer-bootcamp" target="_blank" rel="noopener">查看完整课程与申请信息 → jiangren.com.au/program-course/ai-engineer-bootcamp</a></div>
       </div>
       <span class="cover-edition">第七期详细课程大纲</span>
     </section>`);
@@ -512,13 +849,35 @@ async function build() {
     for (let week = 1; week <= 13; week++) {
       const [theoryCode, practiceCode] = WEEK_LESSONS[week];
       const artKey = WEEK_STYLE[week][2];
-      if (theoryCode) pages.push(livePage(pageNo++, week, lessons[theoryCode], 'theory', publicCopy, art[artKey], lessons));
-      pages.push(livePage(pageNo++, week, lessons[practiceCode], 'practice', publicCopy, art[artKey], lessons));
+      if (theoryCode && week === 3) {
+        pages.push(livePage(pageNo++, week, lessons[theoryCode], 'theory', publicCopy, art[artKey], lessons, techAssets, {
+          part: '1 / 2',
+          title: 'Context Engineering：决定哪些信息进入模型',
+          description: '先把 Context 拆成可管理的工程对象：盘点来源、决定 Include / Exclude，再设计结构、顺序和 Token Budget。',
+          stepStart: 0,
+          stepEnd: 4,
+          supportHtml: contextBlueprintPanel(WEEK_STYLE[week][1]),
+          leftLabel: '这一页先完成',
+          leftText: 'Context Inventory、Selection Policy、Assembly Plan 与 Token Allocation。',
+          rightLabel: '下一页继续',
+          rightText: 'Lifecycle、Trust Boundary、Observability，以及最终可复用的 Context Architecture Blueprint。',
+        }));
+        pages.push(livePage(pageNo++, week, lessons[theoryCode], 'theory', publicCopy, art[artKey], lessons, techAssets, {
+          part: '2 / 2',
+          title: 'Context Engineering：管理生命周期、信任与验证',
+          description: '再处理 Context 怎样按需加载、压缩、刷新和清除，并留下来源、版本、权限与选择证据。',
+          stepStart: 4,
+          stepEnd: 7,
+        }));
+      } else if (theoryCode) {
+        pages.push(livePage(pageNo++, week, lessons[theoryCode], 'theory', publicCopy, art[artKey], lessons, techAssets));
+      }
+      pages.push(livePage(pageNo++, week, lessons[practiceCode], 'practice', publicCopy, art[artKey], lessons, techAssets));
     }
-    pages.push(modesPage(29, art.production));
-    pages.push(stackPage(30, art.production));
-    pages.push(careerPage(31, art.production));
-    if (pages.length !== 31) throw new Error(`Expected 31 pages, got ${pages.length}`);
+    pages.push(modesPage(pageNo++, art.production));
+    pages.push(stackPage(pageNo++, art.production, techAssets));
+    pages.push(careerPage(pageNo++, art.production));
+    if (pages.length !== TOTAL_PAGES) throw new Error(`Expected ${TOTAL_PAGES} pages, got ${pages.length}`);
     return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JR Academy AI Engineer 第七期详细大纲</title><style>${CSS}</style></head><body>${pages.join('\n')}</body></html>`;
   };
   const publicHtml = renderDocument('assets/cohort-07-systematic-engineering-cover-bg-v1.png', 'assets/jr-academy-logo-zh.svg', {

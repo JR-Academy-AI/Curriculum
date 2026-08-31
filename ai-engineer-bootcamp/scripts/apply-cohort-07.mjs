@@ -20,8 +20,8 @@ const cohort7Schedule = [
   ['L37', 3, 'theory'], ['C7P03', 3, 'practice'],
   ['L58', 4, 'theory'], ['C7P04', 4, 'practice'],
   ['C7T05', 5, 'theory'], ['C7P05', 5, 'practice'],
-  ['L101', 6, 'theory'], ['L60', 6, 'practice'],
-  ['L112', 7, 'theory'], ['C7P07', 7, 'practice'],
+  ['L101', 6, 'theory'], ['C7P07', 6, 'practice'],
+  ['L112', 7, 'theory'], ['L60', 7, 'practice'],
   ['L122', 8, 'theory'], ['L104', 8, 'practice'],
   ['L133', 9, 'theory'], ['L119', 9, 'practice'],
   ['L138', 10, 'theory'], ['C7P10', 10, 'practice'],
@@ -29,6 +29,252 @@ const cohort7Schedule = [
   ['L183', 12, 'theory'], ['C7P12', 12, 'practice'],
   ['L171', 13, 'practice'],
 ];
+
+const library = (name, type, role, url) => ({ name, type, role, url });
+
+// Core Stack is used or demonstrated in the lesson. Popular Ecosystem is for
+// interview recognition and trade-off comparison; it is not an install list.
+const cohort7LibraryMap = {
+  L16: {
+    core: [
+      library('OpenAI SDK / Anthropic SDK', 'provider-sdk', 'Inspect the messages, tools, streaming, usage, and error contracts behind an AI system.', 'https://platform.openai.com/docs/libraries'),
+      library('tiktoken', 'oss', 'Count tokens and make context-cost behaviour visible.', 'https://github.com/openai/tiktoken'),
+    ],
+    ecosystem: [library('Hugging Face Transformers', 'oss', 'Recognise the standard open-model library and its model/tokenizer pipeline.', 'https://huggingface.co/docs/transformers/')],
+  },
+  C7P01: {
+    core: [
+      library('Claude Code', 'provider-tool', 'Run the course AI Coding workflow against the starter project.', 'https://docs.anthropic.com/en/docs/claude-code/overview'),
+      library('GitHub Spec Kit', 'oss', 'Turn product intent into specification, plan, tasks, and implementation evidence.', 'https://github.github.com/spec-kit/'),
+    ],
+    ecosystem: [
+      library('OpenAI Codex CLI', 'oss', 'Compare another repository-aware coding agent workflow.', 'https://github.com/openai/codex'),
+      library('Aider', 'oss', 'Recognise a popular terminal-based pair-programming workflow.', 'https://github.com/Aider-AI/aider'),
+    ],
+  },
+  L28: {
+    core: [
+      library('tiktoken', 'oss', 'Measure tokens, context-window pressure, and cacheable prompt prefixes.', 'https://github.com/openai/tiktoken'),
+      library('Hugging Face Transformers', 'oss', 'Inspect tokenizers, attention inputs, generation parameters, and KV-cache behaviour.', 'https://huggingface.co/docs/transformers/'),
+    ],
+    ecosystem: [
+      library('vLLM', 'oss', 'Connect PagedAttention, continuous batching, and production inference efficiency.', 'https://github.com/vllm-project/vllm'),
+      library('llama.cpp', 'oss', 'Understand local inference, quantisation, and constrained-device trade-offs.', 'https://github.com/ggml-org/llama.cpp'),
+    ],
+  },
+  C7P02: {
+    core: [
+      library('shadcn/ui', 'oss', 'Build editable application components instead of importing an opaque component package.', 'https://ui.shadcn.com/'),
+      library('Tailwind CSS', 'oss', 'Implement design tokens, responsive states, and consistent visual rules.', 'https://tailwindcss.com/'),
+      library('Storybook', 'oss', 'Review components and business states independently from full pages.', 'https://storybook.js.org/'),
+      library('Motion', 'oss', 'Add purposeful UI transitions and interaction feedback.', 'https://motion.dev/'),
+    ],
+    ecosystem: [],
+  },
+  L37: {
+    core: [
+      library('Zod / Pydantic', 'oss', 'Define context and structured-output contracts at the TypeScript or Python boundary.', 'https://zod.dev/'),
+      library('tiktoken', 'oss', 'Budget context deliberately instead of guessing prompt size.', 'https://github.com/openai/tiktoken'),
+    ],
+    ecosystem: [library('Instructor', 'oss', 'Compare schema-first structured output, validation, and retry patterns.', 'https://python.useinstructor.com/')],
+  },
+  C7P03: {
+    core: [
+      library('Next.js', 'oss', 'Build the application shell and server/client boundaries used by the starter.', 'https://nextjs.org/'),
+      library('Zod', 'oss', 'Keep UI, API, and workflow state contracts executable.', 'https://zod.dev/'),
+      library('Prisma ORM', 'oss', 'Model persistent workflow data and migrations.', 'https://www.prisma.io/orm'),
+      library('Playwright', 'oss', 'Prove the non-AI vertical slice through browser-level acceptance tests.', 'https://playwright.dev/'),
+    ],
+    ecosystem: [],
+  },
+  L58: {
+    core: [
+      library('Sentence Transformers', 'oss', 'Create embeddings and implement semantic retrieval.', 'https://www.sbert.net/'),
+      library('FAISS', 'oss', 'Build and inspect a local vector index without hiding retrieval fundamentals.', 'https://github.com/facebookresearch/faiss'),
+    ],
+    ecosystem: [
+      library('Qdrant', 'oss', 'Compare a production vector database with filters and operational APIs.', 'https://qdrant.tech/'),
+      library('pgvector', 'oss', 'Compare vector search inside an existing PostgreSQL data platform.', 'https://github.com/pgvector/pgvector'),
+    ],
+  },
+  C7P04: {
+    core: [
+      library('whisper.cpp / faster-whisper', 'oss', 'Implement local or server-side speech-to-text and compare deployment trade-offs.', 'https://github.com/ggml-org/whisper.cpp'),
+      library('Silero VAD', 'oss', 'Detect speech boundaries before transcription and reduce empty/noisy segments.', 'https://github.com/snakers4/silero-vad'),
+      library('MediaRecorder API', 'web-platform', 'Capture audio in the browser with explicit permission and fallback states.', 'https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder'),
+    ],
+    ecosystem: [],
+  },
+  C7T05: {
+    core: [library('Ragas', 'oss', 'Evaluate retrieval and grounded generation with repeatable metrics and test cases.', 'https://docs.ragas.io/')],
+    ecosystem: [
+      library('DeepEval', 'oss', 'Compare a test-runner-style LLM evaluation framework.', 'https://deepeval.com/'),
+      library('Arize Phoenix', 'oss', 'Compare open-source tracing, datasets, and evaluation workflows.', 'https://phoenix.arize.com/'),
+      library('Langfuse', 'oss', 'Recognise a popular tracing, prompt, dataset, and evaluation platform.', 'https://langfuse.com/'),
+    ],
+  },
+  C7P05: {
+    core: [
+      library('GitHub Spec Kit', 'oss', 'Convert a feature specification into a plan, tasks, and reviewable implementation workflow.', 'https://github.github.com/spec-kit/'),
+      library('Mermaid', 'oss', 'Keep architecture and workflow diagrams versioned beside the code.', 'https://mermaid.js.org/'),
+      library('MkDocs Material', 'oss', 'Publish a searchable docs-as-code project wiki.', 'https://squidfunk.github.io/mkdocs-material/'),
+      library('markdownlint-cli2 + Lychee', 'oss', 'Automate Markdown quality and broken-link checks.', 'https://github.com/DavidAnson/markdownlint-cli2'),
+    ],
+    ecosystem: [library('Claude Code Skills + Hooks', 'provider-tool', 'Create reusable project workflows and detect documentation drift after code changes.', 'https://docs.anthropic.com/en/docs/claude-code/hooks')],
+  },
+  L101: {
+    core: [
+      library('MCP TypeScript SDK', 'oss', 'Build typed MCP clients and servers with Zod schemas.', 'https://ts.sdk.modelcontextprotocol.io/v2/'),
+      library('MCP Python SDK', 'oss', 'Build the same protocol boundary in Python with typed tools and resources.', 'https://py.sdk.modelcontextprotocol.io/'),
+      library('FastMCP', 'oss', 'Implement a typed Python MCP server quickly after the underlying protocol contract is clear.', 'https://gofastmcp.com/'),
+      library('MCP Inspector', 'oss', 'Inspect schemas, capabilities, tool results, and protocol errors interactively.', 'https://github.com/modelcontextprotocol/inspector'),
+    ],
+    ecosystem: [library('Pi Agent Harness (pi-mono)', 'oss', 'Recognise a popular unified LLM API, agent runtime, and coding-agent CLI; do not misrepresent Pi core as a native MCP SDK.', 'https://github.com/earendil-works/pi')],
+  },
+  L60: {
+    core: [
+      library('Sentence Transformers', 'oss', 'Embed the policy corpus with an explicit, inspectable pipeline.', 'https://www.sbert.net/'),
+      library('FAISS', 'oss', 'Implement local retrieval, metadata mapping, and evidence inspection from scratch.', 'https://github.com/facebookresearch/faiss'),
+    ],
+    ecosystem: [
+      library('Qdrant', 'oss', 'Plan the evolution from a local index to a production vector service.', 'https://qdrant.tech/'),
+      library('pgvector', 'oss', 'Plan the alternative evolution inside PostgreSQL.', 'https://github.com/pgvector/pgvector'),
+    ],
+  },
+  L112: {
+    core: [
+      library('Claude Agent SDK', 'oss', 'Build and inspect agent sessions, tools, MCP servers, permissions, hooks, streaming, and resume behaviour.', 'https://github.com/anthropics/claude-agent-sdk-python'),
+      library('OpenAI Agents SDK', 'oss', 'Inspect a minimal agent loop, tools, handoffs, guardrails, and tracing.', 'https://openai.github.io/openai-agents-python/'),
+    ],
+    ecosystem: [
+      library('PydanticAI', 'oss', 'Compare typed dependencies, tools, outputs, and validation in Python.', 'https://ai.pydantic.dev/'),
+      library('LangGraph', 'oss', 'Recognise graph state, persistence, interrupts, and controlled agent workflows.', 'https://langchain-ai.github.io/langgraph/'),
+      library('CrewAI', 'oss', 'Compare role-oriented agent orchestration.', 'https://docs.crewai.com/'),
+      library('AutoGen', 'oss-ecosystem', 'Compare event-driven multi-agent patterns and their operational cost.', 'https://microsoft.github.io/autogen/'),
+    ],
+  },
+  C7P07: {
+    core: [
+      library('Ragas', 'oss', 'Run the first reproducible retrieval and answer-quality test set.', 'https://docs.ragas.io/'),
+      library('pytest', 'oss', 'Turn evaluation cases into repeatable engineering tests.', 'https://docs.pytest.org/'),
+    ],
+    ecosystem: [
+      library('DeepEval', 'oss', 'Compare evaluation assertions and test reporting.', 'https://deepeval.com/'),
+      library('Phoenix / Langfuse', 'oss', 'Compare trace-driven diagnosis and dataset workflows.', 'https://phoenix.arize.com/'),
+      library('Promptfoo', 'oss', 'Compare prompt and model matrix evaluation from the CLI.', 'https://www.promptfoo.dev/'),
+    ],
+  },
+  L122: {
+    core: [
+      library('Claude Agent SDK', 'oss', 'Implement subagents, scoped tools, hooks, sessions, and programmable orchestration patterns.', 'https://code.claude.com/docs/en/agent-sdk/overview'),
+      library('Claude Managed Agents API', 'provider-api', 'Study coordinator rosters, context-isolated threads, persistent delegation, advisor escalation, and version pinning.', 'https://platform.claude.com/docs/en/managed-agents/multi-agent'),
+    ],
+    ecosystem: [
+      library('LangGraph', 'oss', 'Compare graph state, checkpoints, interrupts, and explicit workflow orchestration.', 'https://langchain-ai.github.io/langgraph/'),
+      library('OpenAI Agents SDK', 'oss', 'Compare a smaller primitives-first agent runtime.', 'https://openai.github.io/openai-agents-python/'),
+      library('AutoGen', 'oss-ecosystem', 'Evaluate message-driven multi-agent architecture trade-offs.', 'https://microsoft.github.io/autogen/'),
+      library('CrewAI', 'oss', 'Evaluate role and crew abstractions against explicit workflow control.', 'https://docs.crewai.com/'),
+    ],
+  },
+  L104: {
+    core: [
+      library('Prisma ORM / repository adapter', 'oss', 'Extract persistence behind repository interfaces before exposing any transport.', 'https://www.prisma.io/orm'),
+      library('MCP TypeScript/Python SDK', 'oss', 'Expose bounded tools through the official protocol SDK.', 'https://modelcontextprotocol.io/docs/sdk'),
+      library('Zod / Pydantic', 'oss', 'Validate tool inputs, outputs, permissions, and error shapes.', 'https://zod.dev/'),
+      library('MCP Inspector', 'oss', 'Test tool contracts before an agent is allowed to call them.', 'https://github.com/modelcontextprotocol/inspector'),
+    ],
+    ecosystem: [library('FastMCP', 'oss', 'Compare faster server authoring after security boundaries are explicit.', 'https://gofastmcp.com/')],
+  },
+  L133: {
+    core: [library('LangGraph Checkpointer + Store', 'oss', 'Study thread state, cross-thread memory, replay, and lifecycle boundaries.', 'https://langchain-ai.github.io/langgraph/concepts/persistence/')],
+    ecosystem: [
+      library('Mem0', 'oss', 'Compare an extraction-and-retrieval memory layer.', 'https://docs.mem0.ai/'),
+      library('Letta', 'oss', 'Compare stateful agent memory and archival memory concepts.', 'https://docs.letta.com/'),
+      library('LangMem', 'oss', 'Compare background memory extraction and consolidation.', 'https://langchain-ai.github.io/langmem/'),
+    ],
+  },
+  L119: {
+    core: [
+      library('Zod / Pydantic', 'oss', 'Keep agent state, tool contracts, and stop conditions explicit.', 'https://zod.dev/'),
+      library('OpenTelemetry', 'oss', 'Trace each bounded loop step, tool call, latency, and failure.', 'https://opentelemetry.io/docs/languages/js/'),
+    ],
+    ecosystem: [
+      library('LangGraph', 'oss', 'Compare the hand-built bounded loop with a graph runtime.', 'https://langchain-ai.github.io/langgraph/'),
+      library('PydanticAI', 'oss', 'Compare the same contracts in a typed agent framework.', 'https://ai.pydantic.dev/'),
+    ],
+  },
+  L138: {
+    core: [
+      library('LangGraph', 'oss', 'Study checkpoint, resume, interrupt, and replay patterns for production agents.', 'https://langchain-ai.github.io/langgraph/'),
+      library('OpenTelemetry', 'oss', 'Define portable traces, metrics, and correlation across agent components.', 'https://opentelemetry.io/'),
+    ],
+    ecosystem: [library('Temporal', 'oss', 'Compare a durable workflow engine for long-running, failure-prone processes.', 'https://temporal.io/')],
+  },
+  C7P10: {
+    core: [
+      library('PostgreSQL + pgvector', 'oss', 'Persist governed memory records, embeddings, provenance, and deletion state.', 'https://github.com/pgvector/pgvector'),
+      library('Zod / Pydantic', 'oss', 'Validate memory write, read, update, consent, and deletion contracts.', 'https://zod.dev/'),
+      library('OpenTelemetry', 'oss', 'Trace memory decisions and prove who wrote or retrieved each record.', 'https://opentelemetry.io/'),
+    ],
+    ecosystem: [
+      library('Mem0', 'oss', 'Compare a packaged memory layer after implementing the governed contract.', 'https://docs.mem0.ai/'),
+      library('Letta', 'oss', 'Compare stateful agent memory architecture.', 'https://docs.letta.com/'),
+      library('LangMem', 'oss', 'Compare memory extraction and consolidation workflows.', 'https://langchain-ai.github.io/langmem/'),
+    ],
+  },
+  L171a: {
+    core: [
+      library('Open Policy Agent', 'oss', 'Express permission and release policies as testable policy-as-code.', 'https://www.openpolicyagent.org/'),
+      library('Microsoft Presidio', 'oss', 'Detect and redact PII before sensitive data crosses model or logging boundaries.', 'https://microsoft.github.io/presidio/'),
+      library('A2A Protocol + Official SDK', 'oss', 'Govern agent identity, capability discovery, delegation, task exchange, and audit across independent agents.', 'https://github.com/a2aproject/A2A'),
+    ],
+    ecosystem: [
+      library('Guardrails AI', 'oss', 'Compare reusable validators and structured guardrails.', 'https://www.guardrailsai.com/'),
+      library('Promptfoo', 'oss', 'Automate prompt-injection and policy regression tests.', 'https://www.promptfoo.dev/'),
+      library('PyRIT', 'oss', 'Recognise an extensible AI red-team orchestration framework.', 'https://azure.github.io/PyRIT/'),
+    ],
+  },
+  C7P11: {
+    core: [
+      library('OpenTelemetry', 'oss', 'Instrument lifecycle hooks, model calls, tools, approvals, budgets, and failures.', 'https://opentelemetry.io/'),
+      library('Temporal or project-native state store', 'oss', 'Persist checkpoints and resume long-running work without repeating side effects.', 'https://temporal.io/'),
+      library('Zod / Pydantic', 'oss', 'Enforce schemas at every harness boundary.', 'https://zod.dev/'),
+    ],
+    ecosystem: [library('LangGraph', 'oss', 'Compare framework-native durability and human interrupts with the explicit harness.', 'https://langchain-ai.github.io/langgraph/')],
+  },
+  L183: {
+    core: [
+      library('LiteLLM', 'oss', 'Normalise provider calls, fallbacks, budgets, and routing policies behind one gateway.', 'https://docs.litellm.ai/'),
+      library('vLLM', 'oss', 'Understand the open-weight serving path and inference economics.', 'https://github.com/vllm-project/vllm'),
+      library('Ollama', 'oss', 'Compare local model execution for privacy, development, and offline constraints.', 'https://github.com/ollama/ollama'),
+    ],
+    ecosystem: [library('RouteLLM', 'research-reference', 'Read the routing research and benchmark design; do not treat the 2024 repository as the default production router.', 'https://github.com/lm-sys/RouteLLM')],
+  },
+  C7P12: {
+    core: [
+      library('LiteLLM', 'oss', 'Implement provider abstraction, routing, fallback, budget, and usage telemetry.', 'https://docs.litellm.ai/'),
+      library('OpenTelemetry', 'oss', 'Compare quality, latency, cost, fallback, and failure by route.', 'https://opentelemetry.io/'),
+      library('Promptfoo', 'oss', 'Run the same evaluation matrix across router policies and models.', 'https://www.promptfoo.dev/'),
+    ],
+    ecosystem: [
+      library('vLLM', 'oss', 'Add an open-weight production serving option.', 'https://github.com/vllm-project/vllm'),
+      library('Ollama', 'oss', 'Add a local or privacy-sensitive development route.', 'https://github.com/ollama/ollama'),
+    ],
+  },
+  L171: {
+    core: [
+      library('Ragas / DeepEval', 'oss', 'Run production evaluation cases and calibrated LLM-as-a-Judge checks.', 'https://docs.ragas.io/'),
+      library('Promptfoo', 'oss', 'Run regression, injection, leakage, and provider/model matrices.', 'https://www.promptfoo.dev/'),
+      library('OpenTelemetry / Langfuse', 'oss', 'Review traces, latency, cost, tool failures, and escalation evidence.', 'https://opentelemetry.io/'),
+      library('PyRIT', 'oss', 'Orchestrate repeatable adversarial security scenarios.', 'https://azure.github.io/PyRIT/'),
+    ],
+    ecosystem: [
+      library('garak', 'oss', 'Compare an automated LLM vulnerability scanner.', 'https://github.com/NVIDIA/garak'),
+      library('Microsoft Presidio', 'oss', 'Validate PII detection and redaction controls.', 'https://microsoft.github.io/presidio/'),
+      library('Open Policy Agent', 'oss', 'Validate permission and release policy decisions.', 'https://www.openpolicyagent.org/'),
+    ],
+  },
+};
 
 const videoCodes = new Set([
   'L21', 'L34', 'L54', 'L57', 'L66', 'L75', 'L77', 'L79',
@@ -45,7 +291,7 @@ const step = (order, type, title, duration) => ({
   duration,
 });
 
-const lesson = ({ code, title, titleEn, description, descriptionEn, duration, steps }) => ({
+const lesson = ({ code, title, titleEn, description, descriptionEn, duration, steps, learningMaterial }) => ({
   code,
   title,
   description,
@@ -55,7 +301,7 @@ const lesson = ({ code, title, titleEn, description, descriptionEn, duration, st
   steps,
   labs: [],
   learns: [],
-  learningMaterial: `<h2>${title}</h2><p>${description}</p>`,
+  learningMaterial: learningMaterial ?? `<h2>${title}</h2><p>${description}</p>`,
   title_en: titleEn,
   description_en: descriptionEn,
 });
@@ -86,37 +332,38 @@ const additions = new Map([
       code: 'C7P02',
       title: 'CareKind Product UI & Design System',
       titleEn: 'CareKind Product UI and Design System',
-      description: '第七期 W2 实践课。为完整 CareKind 产品建立 design system、information architecture 与关键页面：Dashboard、Resident、Shift/Task、Care Activity、Documentation、Review/Confirm 和 Audit。Voice recording/transcribing 只是 Documentation 中的一组输入状态，不是整周主线。',
-      descriptionEn: 'Cohort 7 Week 2 practice. Establish the design system, information architecture, and key pages for the complete CareKind product: dashboard, resident, shift and task, care activity, documentation, review and confirmation, and audit. Voice recording and transcription are one set of documentation input states, not the whole week.',
+      description: '第七期 W2 实践课。先把 W1 PRD、workflow、用户角色、参考风格与 non-goals 整理成 Claude 可执行的 Design Brief，再使用 Claude Code + frontend design workflow 生成并比较设计方向、建立 DESIGN.md、design tokens、组件规则与完整关键页面。学生必须通过视觉评审、响应式、accessibility 和业务状态检查修正 AI 结果，不能把一次生成当成交付。',
+      descriptionEn: 'Cohort 7 Week 2 practice. Turn the Week 1 PRD, workflow, user roles, visual references, and non-goals into a Claude-ready design brief, then use Claude Code with a frontend-design workflow to compare visual directions and build DESIGN.md, design tokens, component rules, and key pages. Students must review and correct the AI output for visual quality, responsiveness, accessibility, and business states.',
       duration: 120,
       steps: [
-        step(1, 'REVIEW', '打开 W1 starter repo 与 product workflow', 10),
-        step(2, 'WORKSHOP', '定义 Dashboard、Resident、Shift/Task、Documentation 信息架构', 15),
-        step(3, 'LAB', '建立 DESIGN.md、design tokens 与组件规则', 20),
-        step(4, 'LAB', '实现核心页面、导航与 responsive layout', 30),
+        step(1, 'REVIEW', '把 W1 PRD、workflow、用户角色与 non-goals 整理成 Design Brief', 10),
+        step(2, 'WORKSHOP', '定义信息架构、关键页面、参考风格与视觉约束', 15),
+        step(3, 'LAB', 'Claude Code + frontend design：生成并比较设计方向，建立 DESIGN.md 与 design tokens', 20),
+        step(4, 'LAB', '用 Claude 迭代核心页面、组件、导航与 responsive layout', 30),
         step(5, 'LAB', '设计 Draft、Review、Confirmed、Failed、Escalated 状态', 20),
         step(6, 'LAB', '加入 recording/transcribing 输入状态、动画和 accessibility', 15),
         step(7, 'DELIVERABLE', '现场 Product Design Review 与界面验收', 10),
       ],
+      learningMaterial: '<h2>CareKind Product UI & Design System</h2><p>W2 Practice 把 Claude 作为产品设计与前端实现协作者，而不是一键页面生成器。学生先将 W1 的 PRD、workflow、用户角色、acceptance criteria、visual references 和 non-goals 整理成 <strong>Design Brief</strong>，再让 Claude Code 在明确技术栈与现有 repo context 下工作。</p><h3>Claude frontend design workflow</h3><ol><li><strong>Ground</strong>：提供现有代码、Design Brief、目标用户、信息架构、参考风格和禁止事项。</li><li><strong>Explore</strong>：要求 Claude 给出两个有明确差异的设计方向，比较 information density、hierarchy、interaction 与 implementation cost。</li><li><strong>Systemize</strong>：把选定方向固化为 DESIGN.md、color/type/spacing tokens、component variants 和 responsive rules。</li><li><strong>Build</strong>：分页面实现 navigation、Dashboard、Resident、Shift/Task、Care Activity、Documentation、Review/Confirm 与 Audit UI。</li><li><strong>Critique</strong>：用截图和真实状态回看，让 Claude 按具体问题迭代，而不是反复要求“更好看”。</li></ol><h3>Human review gates</h3><p>学生必须人工检查视觉层级、组件一致性、mobile layout、keyboard navigation、contrast、reduced motion、loading/empty/error states，以及 Draft、Review、Confirmed、Failed、Escalated 等业务状态。Claude 生成的 UI 只有通过这些检查才算完成。</p><h3>交付证据</h3><p>提交 Design Brief、DESIGN.md、design tokens、选型比较、关键 prompt/iteration 记录、before/after screenshots 和 Product Design Review。Voice recording/transcribing 只是 Documentation 中的一组输入状态，不是整周主线。</p>',
     }),
   }],
   ['C7P03', {
     phase: 7,
     value: lesson({
       code: 'C7P03',
-      title: 'CareKind Application & Care Workflow Foundation',
-      titleEn: 'CareKind Application and Care Workflow Foundation',
-      description: '第七期 W3 实践课。基于老师提供的 auth、database、API、routing 和 test starter，用 AI Coding 完成 Resident → Shift → Task → Care Activity → Progress Note → Review → Confirm 的非 AI vertical slice，并加入角色权限、版本与 audit event。W3 不调用任何 AI 模型。',
-      descriptionEn: 'Cohort 7 Week 3 practice. Starting from provided authentication, database, API, routing, and test scaffolding, use AI coding to complete a non-AI Resident-to-Shift-to-Task-to-Care-Activity-to-Progress-Note-to-Review-to-Confirm vertical slice with roles, versions, and audit events. No AI model is called in Week 3.',
+      title: 'Rapid CareKind MVP Build with Claude Code',
+      titleEn: 'Rapid CareKind MVP Build with Claude Code',
+      description: '第七期 W3 实践课。基于老师提供的 auth、database、API、routing 和 test starter，使用 Claude Code 快速完成第一个可运行 MVP：Resident → Shift → Task → Care Activity → Progress Note → Review → Confirm，并补齐角色权限、版本、audit event、错误状态和端到端测试。Claude 是开发工具，但 W3 产品本身不调用任何 AI 模型；W4 才第一次接入 Voice AI。',
+      descriptionEn: 'Cohort 7 Week 3 practice. Starting from provided authentication, database, API, routing, and test scaffolding, use Claude Code to rapidly complete the first runnable MVP: resident, shift, task, care activity, progress note, review, and confirmation, with roles, versions, audit events, failure states, and an end-to-end test. Claude is the development tool, but the Week 3 product does not call an AI model; Voice AI is introduced in Week 4.',
       duration: 120,
       steps: [
-        step(1, 'REVIEW', '阅读 starter repo、数据模型与 W2 产品 UI', 10),
-        step(2, 'LAB', '建立 Resident、Shift、Task 与 Care Activity 关联', 25),
-        step(3, 'LAB', '实现 Assigned → In Progress → Completed 状态流', 15),
-        step(4, 'LAB', '从 Care Activity 创建 Progress Note Draft', 20),
-        step(5, 'LAB', '实现 Draft → Review → Confirm 与角色权限', 20),
-        step(6, 'LAB', '加入 document version、reviewer 与 audit event', 15),
-        step(7, 'EVALUATION', '跑通 UI/API 和一个端到端测试', 15),
+        step(1, 'REVIEW', '锁定 MVP scope：从 W2 UI 选择唯一 vertical slice 与验收标准', 10),
+        step(2, 'AI_CODING', '让 Claude Code 阅读 starter、数据模型与界面，生成实施计划', 15),
+        step(3, 'LAB', '连接 Resident → Shift → Task → Care Activity 与状态流', 25),
+        step(4, 'LAB', '实现 Progress Note Draft → Review → Confirm 与角色权限', 25),
+        step(5, 'LAB', '补齐 document version、reviewer、audit event 和 failure states', 20),
+        step(6, 'EVALUATION', '用 Claude 协助修复 integration issues，跑通 UI、API 与 database', 10),
+        step(7, 'DELIVERABLE', '完成端到端测试、MVP demo 与已知限制清单', 15),
       ],
     }),
   }],
@@ -124,10 +371,10 @@ const additions = new Map([
     phase: 7,
     value: lesson({
       code: 'C7T03',
-      title: 'W3 Theory Live — 待讨论',
-      titleEn: 'Week 3 Theory Live — To Be Decided',
-      description: '第七期 W3 理论课占位。实践课已确认是非 AI 的 CareKind Application & Care Workflow Foundation；理论内容需要单独讨论，不能继续把 Context Engineering 当成已确认 W3 理论。',
-      descriptionEn: 'Cohort 7 Week 3 theory placeholder. The confirmed practice is the non-AI CareKind application and care workflow foundation; theory remains to be discussed and Context Engineering is no longer treated as a confirmed Week 3 theory.',
+      title: 'Legacy W3 Theory Placeholder — Superseded by L37',
+      titleEn: 'Legacy Week 3 Theory Placeholder — Superseded by L37',
+      description: 'Legacy 占位记录，不进入第七期正式排课。W3 Theory 已由 L37 Context Engineering: Selection, Assembly & Lifecycle 确认；W3 Practice 是 C7P03 Rapid CareKind MVP Build with Claude Code。',
+      descriptionEn: 'Legacy placeholder excluded from the formal Cohort 7 schedule. Week 3 theory is L37 Context Engineering and Reasoning Patterns; Week 3 practice is C7P03 Rapid CareKind MVP Build with Claude Code.',
       duration: 90,
       steps: [step(1, 'PLANNING', '理论内容待逐周讨论后确认', 90)],
     }),
@@ -167,20 +414,21 @@ const additions = new Map([
     phase: 7,
     value: lesson({
       code: 'C7P05',
-      title: 'CareKind Structured Care Documentation',
-      titleEn: 'CareKind Structured Care Documentation',
-      description: '第七期 W5 实践课。将手工输入或 W4 已确认 transcript 与 W3 resident/shift/task 数据组合，通过最小 Context Builder、structured facts、Progress Note schema 和 runtime validation 生成 AI Draft，并保留人工 Review/Confirm。W5 不做 RAG。',
-      descriptionEn: 'Cohort 7 Week 5 practice. Combine manual input or a confirmed Week 4 transcript with Week 3 resident, shift, and task data, then use a minimal context builder, structured facts, a Progress Note schema, and runtime validation to generate an AI draft with human review and confirmation. No RAG is introduced in Week 5.',
+      title: 'AI-Native Engineering Workspace：Spec-to-Work、Living Docs、Hooks 与 Skills',
+      titleEn: 'AI-Native Engineering Workspace: Spec-to-Work, Living Docs, Hooks and Skills',
+      description: '第七期 W5 实践课。把前四周已经运行的项目升级为可持续交付的 AI-Native Engineering Workspace：把 feature spec 转成 dependency-aware work plan 与 acceptance evidence，建立 docs-as-code Wiki、Architecture Diagram 和 ADR，再配置 Hooks 检查文档漂移，并创建可复用的 /spec-to-work 与 /update-docs Skills。Hook 负责确定性检查和触发更新流程，不无监督改写 Architecture SoT；文档变更必须经过人工 Review。',
+      descriptionEn: 'Cohort 7 Week 5 practice. Turn the runnable project from Weeks 1-4 into a sustainable AI-native engineering workspace: translate a feature spec into a dependency-aware work plan and acceptance evidence, establish a docs-as-code wiki, architecture diagrams and ADRs, configure hooks to detect documentation drift, and create reusable /spec-to-work and /update-docs skills. Hooks perform deterministic checks and trigger the update workflow rather than silently rewriting the architecture source of truth; document changes require human review.',
       duration: 120,
       steps: [
-        step(1, 'WORKSHOP', '定义 observation/transcript input contract', 15),
-        step(2, 'LAB', '组合 role、task、resident、shift 与 confirmed input', 20),
-        step(3, 'LAB', '实现最小 Context Builder 与 system policy', 20),
-        step(4, 'LAB', '提取 structured facts 并生成 Progress Note Draft', 25),
-        step(5, 'LAB', '加入 output schema 与 runtime validation', 15),
-        step(6, 'LAB', '处理 missing/conflicting facts 与 invalid output', 15),
-        step(7, 'EVALUATION', '跑通 Draft → Human Review → Confirm', 10),
+        step(1, 'REVIEW', '盘点 PRD、DESIGN.md、README、API contract、tests 与现有 knowledge gaps', 10),
+        step(2, 'WORKSHOP', '把一个 feature spec 转成 scope、non-goals、acceptance criteria 与 dependency-aware work plan', 20),
+        step(3, 'LAB', '建立 docs-as-code Wiki：docs index、feature specs、runbook、decision log 与 ownership', 20),
+        step(4, 'LAB', '用 Mermaid/C4 绘制 System Context、Container 与 AI request/data flow diagram', 20),
+        step(5, 'LAB', '创建 ADR，记录关键架构选择、trade-off、status 与 superseded 关系', 15),
+        step(6, 'LAB', '配置 PostToolUse/Stop Hooks：格式、链接、diagram 与 docs-drift check', 20),
+        step(7, 'DELIVERABLE', '创建并测试 /spec-to-work 与 /update-docs Skills，提交一次从 spec 到文档更新的证据', 15),
       ],
+      learningMaterial: '<h2>AI-Native Engineering Workspace</h2><p>W5 Practice 不增加新的业务功能，而是解决 AI Coding 项目最容易失控的问题：spec、task、code、test、architecture 和 documentation 各自变化，最后没有人知道哪一份仍然有效。学生要把前四周已经运行的项目升级为一套可持续交付、可交接、可审计的工程工作区。</p><h3>Spec-to-Work contract</h3><p>一个 feature spec 至少包含 problem、user/workflow、scope、non-goals、constraints、acceptance criteria、data/API impact、risk、test evidence 和 documentation impact。Work plan 必须从 spec 推导，按依赖关系拆成可验证任务；不能把模型生成的 task list 直接当成事实。</p><h3>Living documentation</h3><p>在 repository 内建立 docs-as-code Wiki，包括 docs/index、feature specs、architecture、ADR、runbook、glossary、ownership 和 superseded 状态。Architecture Diagram 使用 Mermaid/C4 或等价 diagram-as-code，至少表达 System Context、Container boundary 与 AI request/data flow；README 只负责入口，不复制所有细节。</p><h3>Hooks 的正确边界</h3><p>CLAUDE.md 保存每次会话都应知道的项目约定；Skills 封装按需调用的可复用工作流；Hooks 在生命周期事件上执行必须发生的确定性检查。课堂配置 PostToolUse/Stop Hooks 检查 formatting、broken links、diagram syntax、changed paths 与 documentation impact。Hook 可以生成 drift report 或阻止“完成”，但不无监督重写 Architecture SoT；由 /update-docs Skill提出 patch，再经过 Human Review。</p><h3>Project Skills</h3><ul><li><strong>/spec-to-work</strong>：读取 feature spec 与 repo context，输出 dependency-aware implementation plan、acceptance evidence 和 docs impact。</li><li><strong>/update-docs</strong>：读取 verified diff、tests 与 drift report，只更新受影响的 Wiki、diagram、ADR 或 runbook，并明确未能验证的内容。</li></ul><h3>交付证据</h3><p>提交 feature spec、work plan、docs index、至少两张 architecture diagrams、一条 ADR、Hook config、drift report、两个 SKILL.md，以及一次 code change → docs check → reviewed documentation patch 的完整记录。</p>',
     }),
   }],
   ['C7T05', {
@@ -189,11 +437,11 @@ const additions = new Map([
       code: 'C7T05',
       title: 'RAG Quality, Testing & Improvement',
       titleEn: 'RAG Quality, Testing & Improvement',
-      description: '第七期 W5 理论课。在 W4 RAG baseline 上识别 retrieval 与 answer failure，使用 golden cases 和 RAGAS 读懂基础指标，并通过 chunk、top-k、metadata filter、citation 与 no-answer 改善结果。完整 evaluation framework、CI gate、GraphRAG、Langfuse 和云部署留到后续阶段。',
-      descriptionEn: 'Cohort 7 Week 5 theory. Diagnose retrieval and answer failures in the Week 4 baseline, interpret core RAGAS metrics, and improve results through chunking, top-k, metadata filters, citations, and no-answer behaviour. Full evaluation frameworks, CI gates, GraphRAG, Langfuse, and cloud deployment are deferred.',
+      description: '第七期 W5 理论课。使用老师提供的 reference RAG baseline 识别 retrieval 与 answer failure，使用 golden cases 和 RAGAS 读懂基础指标，并通过 chunk、top-k、metadata filter、citation 与 no-answer 改善结果。完整 evaluation framework、CI gate、GraphRAG、Langfuse 和云部署留到后续阶段。',
+      descriptionEn: 'Cohort 7 Week 5 theory. Diagnose retrieval and answer failures in an instructor-provided reference RAG baseline, interpret core RAGAS metrics, and improve results through chunking, top-k, metadata filters, citations, and no-answer behaviour. Full evaluation frameworks, CI gates, GraphRAG, Langfuse, and cloud deployment are deferred.',
       duration: 90,
       steps: [
-        step(1, 'REVIEW', '回顾 W4 RAG 数据流与 baseline', 10),
+        step(1, 'REVIEW', '回顾 W4 RAG 数据流并运行老师提供的 reference baseline', 10),
         step(2, 'CONCEPT', 'Retrieval、answer、citation 与 no-answer failure taxonomy', 15),
         step(3, 'EVALUATION', 'Golden cases 与 RAGAS 四项基础指标', 20),
         step(4, 'EVALUATION', '读懂指标、识别误判并进行人工抽检', 15),
@@ -207,21 +455,22 @@ const additions = new Map([
     phase: 2,
     value: lesson({
       code: 'C7P07',
-      title: 'RAG Testing & CareKind MVP Completion',
-      titleEn: 'RAG Testing and CareKind MVP Completion',
-      description: '第七期 W7 实践课。使用老师提供的 RAGAS starter 和 10 条 golden cases 测试 W6 Policy RAG，做一次单变量改进与人工抽检，然后验收 Resident/Shift/Task → Voice/Manual Input → Confirmed Transcript → Structured Facts → Policy Retrieval → Progress Note Draft + Citation → Human Confirm → Version/Audit 的完整 MVP。',
-      descriptionEn: 'Cohort 7 Week 7 practice. Use a provided RAGAS starter and ten golden cases to test the Week 6 policy RAG, make one controlled improvement, manually inspect results, and validate the full CareKind MVP from care workflow and voice/manual input through grounded drafting, human confirmation, versioning, and audit.',
+      title: 'Build the Evaluation Pipeline First',
+      titleEn: 'Build the Evaluation Pipeline First',
+      description: '第七期 W6 实践课。在实现自己的 Policy RAG 之前，先建立 evaluation contract：定义成功标准和 failure taxonomy，制作 versioned golden dataset，约定 candidate interface，加入 schema、citation、no-answer 等 deterministic checks，接入 RAGAS 与人工评分 rubric，并运行老师提供的 naive reference baseline。最终冻结 eval command、baseline report 与最低验收 threshold，W7 的 RAG 实现必须持续通过同一条 pipeline。',
+      descriptionEn: 'Cohort 7 Week 6 practice. Before implementing the policy RAG, establish the evaluation contract: define success criteria and a failure taxonomy, create a versioned golden dataset, specify the candidate interface, add deterministic schema, citation, and no-answer checks, connect RAGAS and a human-review rubric, and run an instructor-provided naive reference baseline. Freeze the evaluation command, baseline report, and minimum acceptance thresholds so the Week 7 RAG implementation must improve against the same pipeline.',
       duration: 120,
       steps: [
-        step(1, 'EVALUATION', '导入 golden cases 并运行 RAGAS baseline', 20),
-        step(2, 'EVALUATION', '定位 retrieval、answer 与 citation failure', 15),
-        step(3, 'LAB', '只修改一个 retrieval 或 prompt 变量', 15),
-        step(4, 'EVALUATION', '复测并人工抽检指标与实际质量', 15),
-        step(5, 'INTEGRATION', '跑通 manual input 与 voice input 两条路径', 20),
-        step(6, 'INTEGRATION', '验收 role、Review/Confirm、version 与 audit', 15),
-        step(7, 'EVALUATION', '验证 transcription、retrieval、model 与权限失败路径', 10),
-        step(8, 'DELIVERABLE', 'CareKind MVP demo 与验收', 10),
+        step(1, 'EVALUATION', '定义 success criteria、failure taxonomy 与不可接受行为', 15),
+        step(2, 'DATASET', '建立 10–15 条 versioned golden cases：input、expected source、expected behaviour', 20),
+        step(3, 'SYSTEM_DESIGN', '定义统一 candidate interface、run ID 与 result schema', 15),
+        step(4, 'EVALUATION', '加入 schema、citation、no-answer 与 permission deterministic checks', 15),
+        step(5, 'EVALUATION', '接入 RAGAS，并建立人工评分 rubric 与抽检规则', 20),
+        step(6, 'EVALUATION', '运行 naive reference baseline，保存指标、失败样本与 trace', 15),
+        step(7, 'DECISION', '设定最低 threshold、known gaps 与 stop/go 判定', 10),
+        step(8, 'DELIVERABLE', '冻结 eval command、dataset version 与 W7 implementation contract', 10),
       ],
+      learningMaterial: '<h2>Build the Evaluation Pipeline First</h2><p>Production AI 团队不会等功能全部写完才问“怎么测”。W6 先把需求转成 versioned golden cases、deterministic checks、RAGAS metrics、人工评分 rubric 和 acceptance threshold，再让 W7 的 Policy RAG 按同一个 candidate interface 接入。这样每次修改 chunking、embedding、top-k、metadata filter 或 prompt，都能与固定 baseline 比较。</p><h3>Evaluation contract</h3><p>每条 case 记录 input、expected source、expected behaviour、forbidden behaviour、risk level 和 review notes。Pipeline 输出 run ID、dataset version、candidate version、deterministic results、RAGAS metrics、latency、cost 与 failure taxonomy。</p><h3>正确边界</h3><p>W6 使用老师提供的 naive reference adapter 验证 pipeline 可运行，不要求学生先拥有自己的 RAG。W7 才实现检索系统，并持续运行同一条 evaluation pipeline。完整 LLM-as-a-Judge 校准、CI regression gate、production tracing 与 release gate 留到 W13。</p>',
     }),
   }],
   ['C7T07', {
@@ -409,81 +658,81 @@ for (const code of liveCodes) {
 update('L16', {
   title: 'GenAI Foundations & AI Engineer Landscape',
   title_en: 'GenAI Foundations & AI Engineer Landscape',
-  description: '第七期 W1 理论课。建立 AI、ML、Deep Learning、GenAI 与 LLM 的关系图，理解 training、inference、token、context 和 hallucination，并看清 Applied AI 系统全景与 AI Engineer 的职责边界。Ops 只预告成本、延迟、隐私和可靠性，不在第一节展开。',
+  description: '第七期 W1 理论课。建立 AI、ML、Deep Learning、GenAI 与 LLM 的关系图，理解 training、inference、token、context 和 hallucination，看清 Applied AI 系统全景，并识别 Applied AI Engineer、FDE、AI Builder 与 AI Solutions Engineer 等 AI Engineer 岗位变体。Ops 只预告成本、延迟、隐私和可靠性，不在第一节展开。',
   description_en: 'Cohort 7 Week 1 theory. Map AI, ML, deep learning, GenAI, and LLMs; understand training, inference, tokens, context, and hallucinations; and locate the AI Engineer within the applied AI stack. Operations is limited to an awareness preview.',
   steps: [
     step(1, 'CONCEPT', 'AI → ML → Deep Learning → GenAI → LLM 的关系', 15),
     step(2, 'CONCEPT', 'LLM 基础：training、inference、token、context、hallucination', 15),
     step(3, 'SYSTEM_DESIGN', 'Applied AI 系统全景：Model、Context、RAG、Tools、Agents、Evals、Governance', 20),
-    step(4, 'LIVE', 'AI Engineer 与 ML Engineer、Data Scientist、Software Engineer 的职责边界', 15),
+    step(4, 'LIVE', 'AI Engineer 岗位地图：Applied AI Engineer、FDE、AI Builder、AI Solutions Engineer', 15),
     step(5, 'DEMO', '同一任务在当期主流模型上的能力差异现场对比', 15),
     step(6, 'LIVE', 'Production awareness：成本、延迟、隐私、可靠性', 10),
   ],
-  learningMaterial: '<h2>GenAI Foundations & AI Engineer Landscape</h2><p>第一节先建立全课程地图，不深入某一家 API 或某个 Ops 工具。学生需要能解释 AI、ML、Deep Learning、GenAI 与 LLM 的包含关系，并理解 training 与 inference、token 与 context、能力与 hallucination 的基本边界。</p><h3>Applied AI 系统全景</h3><ol><li><strong>Model</strong>：生成与推理能力。</li><li><strong>Context</strong>：把任务需要的信息组织给模型。</li><li><strong>RAG</strong>：检索外部知识并提供证据。</li><li><strong>Tools</strong>：让模型调用确定性能力和外部系统。</li><li><strong>Agents</strong>：在边界内规划、调用工具并管理状态。</li><li><strong>Evals</strong>：用数据证明系统是否达到发布标准。</li><li><strong>Governance</strong>：明确风险、责任、审批与审计证据。</li></ol><h3>角色边界</h3><p>AI Engineer 的主要工作不是训练 foundation model，而是把模型、上下文、数据、工具、评估与治理接成可靠产品。ML Engineer 更侧重模型训练和 serving；Data Scientist 更侧重数据分析与实验；Software Engineer 更侧重通用软件系统。真实团队会重叠，但面试时要能说清自己的工程责任。</p><h3>模型现场对比</h3><p>现场选择当期主流模型，用同一个任务比较输出质量、结构遵循、延迟和成本。课程材料不写死具体型号，避免下一期被过时的产品名称绑住。</p><h3>Production awareness</h3><p>第一节只建立四个问题：一次调用多少钱、用户要等多久、数据能否发给供应商、模型或供应商失败时系统怎么办。Rate limit、retry、observability、deployment 和 rollback 留到后续 production 课程。</p>',
+  learningMaterial: '<h2>GenAI Foundations & AI Engineer Landscape</h2><p>第一节先建立全课程地图，不深入某一家 API 或某个 Ops 工具。学生需要能解释 AI、ML、Deep Learning、GenAI 与 LLM 的包含关系，并理解 training 与 inference、token 与 context、能力与 hallucination 的基本边界。</p><h3>Applied AI 系统全景</h3><ol><li><strong>Model</strong>：生成与推理能力。</li><li><strong>Context</strong>：把任务需要的信息组织给模型。</li><li><strong>RAG</strong>：检索外部知识并提供证据。</li><li><strong>Tools</strong>：让模型调用确定性能力和外部系统。</li><li><strong>Agents</strong>：在边界内规划、调用工具并管理状态。</li><li><strong>Evals</strong>：用数据证明系统是否达到发布标准。</li><li><strong>Governance</strong>：明确风险、责任、审批与审计证据。</li></ol><h3>岗位地图与 title 变体</h3><p><strong>AI Engineer / Applied AI Engineer</strong> 通常负责把模型、Context、RAG、Tools、Agent、Evals 与 Governance 组成可靠系统；<strong>FDE (Forward Deployed Engineer)</strong> 更靠近客户现场，负责需求澄清、集成与交付；<strong>AI Builder</strong> 强调快速把 AI 工作流或产品做出来，但 title 标准化程度较低；<strong>AI Solutions Engineer</strong> 常覆盖方案设计、技术演示、集成和客户协作。课堂会再与 ML Engineer、Data Scientist 和 Software Engineer 比较。这些 title 没有全球统一定义，求职时必须回到 JD 的交付物、技术栈和客户责任判断。</p><h3>模型现场对比</h3><p>现场选择当期主流模型，用同一个任务比较输出质量、结构遵循、延迟和成本。课程材料不写死具体型号，避免下一期被过时的产品名称绑住。</p><h3>Production awareness</h3><p>第一节只建立四个问题：一次调用多少钱、用户要等多久、数据能否发给供应商、模型或供应商失败时系统怎么办。Rate limit、retry、observability、deployment 和 rollback 留到后续 production 课程。</p>',
 });
 
 update('L28', {
-  title: 'How LLMs Work: Transformer, Tokens & API Behaviour',
-  title_en: 'How LLMs Work: Transformer, Tokens & API Behaviour',
-  description: '第七期 W2 理论课。课前完成 Transformer Architecture 与 Input Embeddings 录播；Live 追踪 token、embedding、attention、layers、logits 到 next-token prediction，并把架构连接到 context、hallucination、API request、structured output 和 decoding parameters。Provider SDK、rate limit、retry 与 observability 留给后续课程。',
-  description_en: 'Cohort 7 Week 2 theory. Complete the Transformer Architecture and Input Embeddings recordings before class, then trace tokens through attention, layers, logits, and next-token prediction and connect the architecture to context, hallucinations, API requests, structured output, and decoding parameters.',
+  title: 'Tokens, Context Windows & Cache Efficiency',
+  title_en: 'Tokens, Context Windows & Cache Efficiency',
+  description: '第七期 W2 理论课。Transformer Architecture 与 Input Embeddings 放在课前录播和互动 Lab；Live 聚焦 Token Budget、Context Window 内容治理、Prefill/Decode、KV Cache、Prompt/Prefix Cache、Response/Semantic Cache，以及 TTFT、cache hit rate、tokens saved、成本和安全边界。W2 建立“模型看到什么、哪些计算可以复用”的判断，W3 再进入完整 Context Engineering assembly。',
+  description_en: 'Cohort 7 Week 2 theory. Transformer architecture and embeddings move to pre-class recordings and interactive labs. The live session focuses on token budgets, context-window governance, prefill and decode, KV cache, prompt and prefix caching, response and semantic caching, TTFT, cache hit rate, tokens saved, cost, and security boundaries.',
   steps: [
-    step(1, 'CONCEPT', '文本如何变成 token 与 embedding', 10),
-    step(2, 'SYSTEM_DESIGN', 'Transformer 数据流：input → attention → layers → logits → next token', 20),
-    step(3, 'CONCEPT', 'Attention 的工程直觉，不做矩阵推导', 15),
-    step(4, 'SCENARIO', 'Context window、lost-in-the-middle 与 hallucination', 15),
-    step(5, 'DEMO', 'LLM API anatomy：model、messages、system/user、structured output', 15),
-    step(6, 'DEMO', 'temperature、top_p、max tokens 现场实验', 10),
-    step(7, 'INTERVIEW', 'Applied AI Engineer 面试表达与总结', 5),
+    step(1, 'CONCEPT', 'Token Budget：tokenizer、input/output tokens、输出预留与成本', 15),
+    step(2, 'SYSTEM_DESIGN', 'Context Window Governance：Instructions、History、Examples、RAG、Tools 的 Selection/Exclusion', 15),
+    step(3, 'CONCEPT', 'Prefill 与 Decode：TTFT、TPOT，以及长 Prompt 为什么更慢', 10),
+    step(4, 'SYSTEM_DESIGN', 'KV Cache：生成过程中的 Key/Value 复用与显存 trade-off', 15),
+    step(5, 'SYSTEM_DESIGN', 'Prompt/Prefix Cache：稳定前缀复用与 prompt ordering', 15),
+    step(6, 'SECURITY', 'Response/Semantic Cache：cache key、TTL、invalidation、tenant、permission 与 PII', 10),
+    step(7, 'DEMO', 'Cache hit/miss：Tokens Saved、延迟、成本、lost-in-the-middle 与 stale cache', 10),
   ],
-  learningMaterial: '<h2>How LLMs Work: Transformer, Tokens & API Behaviour</h2><p>课前先完成 The Transformer Architecture 与 Input Embeddings 两段录播。Live 不重复播放架构视频，而是追踪一次请求如何从文本进入模型、经过 attention 与 layers、产生 logits，并通过 decoding 生成下一个 token。</p><h3>必须掌握的链路</h3><p><strong>Text → Tokens → Embeddings → Attention → Transformer Layers → Logits → Sampling → Next Token</strong></p><p>学生需要能用工程语言解释每一段做什么，以及它如何影响 context 使用、输出稳定性、延迟和成本，不要求现场推导 attention 矩阵。</p><h3>API behaviour</h3><ul><li><strong>model</strong>：决定能力、价格、延迟和可用特性。</li><li><strong>messages</strong>：组织 system、user 与历史上下文。</li><li><strong>structured output</strong>：约束形状，但应用仍必须 validation。</li><li><strong>temperature / top_p</strong>：控制 sampling，不代表事实准确度。</li><li><strong>max tokens</strong>：限制输出长度，也影响成本和截断风险。</li></ul><h3>课堂边界</h3><p>课堂只演示最小 API request，不做完整 provider SDK 封装。Rate limit、retry、observability、deployment 和 fallback 留到 production engineering。课后完成 Transformer & Attention Lab，用实验验证课堂心智模型。</p><h3>面试完成标准</h3><p>学生应能回答 Transformer 为什么适合语言任务，token、embedding、attention 分别做什么，context window 为什么不等于答案质量，以及 structured output 为什么仍需 schema validation。</p>',
+  learningMaterial: '<h2>Tokens, Context Windows & Cache Efficiency</h2><p>W2 回答两个问题：<strong>这次模型调用看到了什么？哪些计算没有必要重复做？</strong>课前完成 Transformer Architecture 与 Input Embeddings 录播；Live 把原理转换成 Token Budget、Context Governance 和 Cache Strategy。</p><h3>Token、Context Window 与推理阶段</h3><p>一次请求需要同时容纳 system/developer instructions、user input、conversation history、few-shot examples、retrieved documents、tool results、多模态表示和 reserved output tokens。模型先在 <strong>Prefill</strong> 阶段处理输入，再在 <strong>Decode</strong> 阶段逐 token 生成输出。长输入主要推高 prefill 与 TTFT；输出长度影响 decode、TPOT 和总成本。</p><h3>KV Cache 是什么</h3><p>自回归生成每增加一个 token，如果重新计算此前所有 token 的 attention 会非常浪费。<strong>KV Cache</strong> 保存既有 token 在每层 attention 中的 Key/Value，使下一步只计算新 token。它主要优化同一次生成和连续上下文的重复计算，但会占用 GPU memory；更长 context、更大 batch 和更多并发都会增加 KV memory pressure。KV Cache 不会让错误 Context 变正确，也不等于长期 Memory。</p><h3>三类缓存不要混淆</h3><ul><li><strong>KV Cache</strong>：模型推理内部复用既有 token 的 attention state。</li><li><strong>Prompt/Prefix Cache</strong>：跨请求复用相同或可缓存的稳定前缀，减少重复 prefill。System Policy、Tool Definitions、Output Schema 和稳定 Few-shot Examples 放前面，动态用户输入与 RAG 结果放后面。</li><li><strong>Response/Semantic Cache</strong>：应用层复用完整答案或语义相近问题的答案，速度最快，但必须处理 freshness、permission、PII 和错误结果扩散。</li><li><strong>Memory</strong>：经过规则选择、允许跨 session 再读取的信息，不是缓存命中机制。</li></ul><h3>Production Cache Strategy</h3><p>Cache key 至少考虑 model/version、prompt/template version、tool/schema version、tenant、role/permission、language 与关键参数。任何数据、政策、权限或 prompt 版本改变都可能触发 invalidation；TTL 必须由业务 freshness 决定。不得跨 tenant 或跨权限复用敏感结果，也不能缓存 Secrets 或不必要的 PII。</p><h3>如何证明真的提效</h3><p>比较 cold/warm request 的 <strong>TTFT、TPOT、cache hit rate、cache read/write tokens、tokens saved、latency、cost 与 memory usage</strong>。同时检查 stale cache、cache poisoning、错误响应复用、低命中率和 cache stampede。Context 仍按 relevance、recency、authority、permission、provenance 与 information density 选择，避免 lost-in-the-middle 和 attention dilution。</p><h3>课堂边界与面试标准</h3><p>W2 使用最小实验比较 cache hit/miss 和 stable-prefix ordering；W3 再完成 Context Builder、trust boundary 与 structured output assembly。学生应能区分 KV Cache、Prefix Cache、Response Cache 与 Memory，解释各自优化哪段延迟、引入什么代价，以及如何安全失效。</p>',
 });
 
 update('L37', {
-  title: 'Context Engineering & Reasoning Patterns',
-  title_en: 'Context Engineering & Reasoning Patterns',
-  description: '第七期 W3 理论课。在 RAG 前建立 Context 基础：区分 Prompt 与 Context Engineering，设计 System Policy、User Role、Task、Runtime Data 与 Output Contract，完成 context assembly、structured output、reasoning patterns 和 trust boundary。Chain of Thought 保留，但不要求向用户展示或持久化模型的隐藏推理。',
-  description_en: 'Cohort 7 Week 3 theory. Establish context engineering before RAG: distinguish prompts from context systems, design system policy, user role, task, runtime data, and output contracts, and cover assembly, structured output, reasoning patterns, and trust boundaries without requiring hidden reasoning traces.',
+  title: 'Context Engineering: Selection, Assembly & Lifecycle',
+  title_en: 'Context Engineering: Selection, Assembly & Lifecycle',
+  description: '第七期 W3 理论课。Context Engineering 不是写一份更长的 Prompt，而是管理模型在每次调用中可见信息的完整生命周期：inventory、source ownership、selection/exclusion、trust/permission、freshness、assembly order、token allocation、validation、observability、refresh、compaction 与 eviction。CareKind 只用于映射未来场景，不作为 Context Engineering 的定义。',
+  description_en: 'Cohort 7 Week 3 theory. Context engineering is not a longer prompt; it manages the full lifecycle of what the model can see on each call: inventory, source ownership, selection and exclusion, trust and permissions, freshness, assembly order, token allocation, validation, observability, refresh, compaction, and eviction. CareKind is a mapping case, not the definition.',
   steps: [
     step(1, 'CONCEPT', 'Prompt Engineering 与 Context Engineering 的区别', 10),
-    step(2, 'SYSTEM_DESIGN', 'Context 组成：System Policy、User Role、Task、Runtime Data、Output Contract', 15),
-    step(3, 'SYSTEM_DESIGN', 'Context Assembly：select → structure → order → compress → validate', 15),
-    step(4, 'DEMO', 'Structured Output、JSON Schema 与 runtime validation', 15),
-    step(5, 'CONCEPT', 'Reasoning Patterns：Chain of Thought、task decomposition、plan-then-execute、self-check', 15),
-    step(6, 'SECURITY', 'Context trust boundary：不可信输入、冲突指令、过期信息与 prompt injection 预告', 10),
-    step(7, 'WORKSHOP', 'CareKind Context Blueprint 与面试表达', 10),
+    step(2, 'SYSTEM_DESIGN', 'Context Inventory：Instructions、User Input、State/History、Knowledge、Examples、Tools 与 Output Contract', 15),
+    step(3, 'SYSTEM_DESIGN', 'Selection Policy：relevance、authority、freshness、permission、provenance 与 include/exclude rules', 15),
+    step(4, 'SYSTEM_DESIGN', 'Assembly Plan：priority、structure、order、token allocation、conflict resolution 与 validation', 15),
+    step(5, 'LIFECYCLE', 'Context Lifecycle：just-in-time loading、progressive disclosure、compaction、refresh 与 eviction', 15),
+    step(6, 'SECURITY', 'Trust Boundary 与 Observability：untrusted data、injection、context version、selected/excluded evidence', 10),
+    step(7, 'WORKSHOP', 'Context Architecture Blueprint：source → policy → assembly → validation → lifecycle', 10),
   ],
-  learningMaterial: '<h2>Context Engineering & Reasoning Patterns</h2><p>W3 先建立 single-model Context baseline，W4 才加入 retrieval。Context Engineering 不是把 prompt 写长，而是为每次模型调用选择、组织、验证并版本化正确的信息。</p><h3>CareKind Context Contract</h3><p><strong>System Policy + Current User Role + Synthetic Resident Snapshot + Current Observation Facts + Task Instruction + Output Schema</strong></p><p>每一层要有来源、用途和信任级别。Resident snapshot 与 observation facts 使用 synthetic data；系统必须区分事实、规则和用户指令。</p><h3>Context Assembly</h3><ol><li>Select：只取本次任务需要的信息。</li><li>Structure：按 policy、role、facts、task、schema 分区。</li><li>Order：让高优先级约束明确且稳定。</li><li>Compress：删除重复或无关内容，避免 overflow。</li><li>Validate：在调用前检查字段、权限与数据边界。</li></ol><h3>Reasoning Patterns</h3><p>保留 Chain of Thought、task decomposition、plan-then-execute 与 self-check 的概念和适用场景。课程不把“要求模型展示完整隐藏思维过程”作为生产方法；产品应记录输入、输出、decision、evidence 和 human action，ReAct 在 Agent 周继续展开。</p><h3>Trust Boundary</h3><p>W3 识别不可信输入、冲突指令、过期信息与 prompt injection 风险，建立 trust label 和 validation。完整 indirect injection、tool poisoning、data exfiltration 与 red team 放到 W11。</p>',
+  learningMaterial: '<h2>Context Engineering: Selection, Assembly & Lifecycle</h2><p>Context Engineering 管理的是模型每次推理时可见的完整信息状态，不是把 System Prompt 写得更长。目标是在有限 attention budget 中选择最小、最相关、可信且获授权的高信号信息，并持续维护它。</p><h3>1. Context Inventory</h3><p>先列出所有候选来源：system/developer instructions、current user input、identity and permissions、runtime state、conversation history、examples、external knowledge、tool definitions/results、memory references 与 output contract。Blueprint 不直接把这些内容全部塞给模型，而是记录它们的 owner、purpose、trust level、freshness、permission 和 provenance。</p><h3>2. Selection Policy</h3><p>为每类任务定义 include、exclude、priority 与 fallback rules。相关但过期、可信但越权、最新但来源不明的信息都不能自动进入 Context。缺失、冲突或不确定时要明确 fail、ask、retrieve 或 escalate。</p><h3>3. Assembly Plan</h3><p>定义 authority hierarchy、section structure、ordering、token allocation、deduplication、normalization、compression 和 output contract。Assembly 是运行时决策，不是一份固定 Prompt Template；同一系统面对不同任务会选择不同 Context。</p><h3>4. Lifecycle</h3><p>Context 会变化，因此需要 just-in-time loading、progressive disclosure、tool-result cleanup、structured notes、compaction、refresh、invalidation 和 eviction。Context Window、Cache、RAG、Memory 和 Tool Results 都是生命周期中的不同机制，不能互相替代。</p><h3>5. Validation and Observability</h3><p>每次 assembly 应留下 context version、source IDs、selected/excluded reasons、token allocation、permission decision、freshness check、validation result 和 conflict handling。这样才能解释一次输出为什么看到了这些信息，以及问题出在哪里。</p><h3>Blueprint 交付</h3><p>学生交付一份可跨场景复用的 Context Architecture Blueprint，再把 CareKind 的未来 Structured Documentation、Policy RAG 和 Agent Tool Use 映射进去。W3 MVP Practice 仍不把模型接进产品；Reasoning Patterns 留在独立 Lab，ReAct 留到 Agent 周。</p>',
   cohort7Status: 'CONFIRMED_THEORY',
 });
 
 update('L37a', {
-  title: 'Quest: CareKind Context Blueprint',
-  description: 'Quest：把 W3 Context Engineering 落到 CareKind。完成 System Policy、User Role、Synthetic Resident Snapshot、Observation Facts、Task 与 Output Schema，运行同一组 10 条 synthetic cases，记录 single-model baseline 和 failure log，为 W4 加入 RAG 提供可比较基线。',
-  description_en: 'Quest: apply Week 3 context engineering to CareKind. Complete system policy, user role, a synthetic resident snapshot, observation facts, task, and output schema, then run ten synthetic cases and record the single-model baseline and failure log for comparison with Week 4 RAG.',
+  title: 'Quest: CareKind Context Architecture Blueprint',
+  description: 'Quest：先完成一份通用 Context Architecture Blueprint，再用 CareKind 的未来 Structured Documentation、Policy RAG 和 Agent Tool Use 三个场景验证它是否可复用。交付 Context Inventory、source ownership、selection/exclusion policy、trust/permission/freshness、assembly order、token allocation、conflict rules、validation、observability 和 lifecycle。Quest 不调用模型，也不把 Context Engine 接进 W3 MVP。',
+  description_en: 'Quest: create a reusable context architecture blueprint, then validate its applicability to three future CareKind scenarios: structured documentation, policy RAG, and agent tool use. Deliver the context inventory, source ownership, selection and exclusion policy, trust, permissions, freshness, assembly order, token allocation, conflict rules, validation, observability, and lifecycle. The quest does not call a model or integrate a context engine into the Week 3 MVP.',
   quest: {
-    title: '构建 CareKind Context Blueprint 与 W3 Baseline',
-    learningGoal: '产出 versioned context blueprint、JSON Schema、10 条 synthetic baseline cases 与 failure log',
-    successCriteria: '10 条 cases 可重复运行，每条记录 context version、schema validation、输出结果与 failure mode',
+    title: '构建可复用的 Context Architecture Blueprint',
+    learningGoal: '产出覆盖 inventory、selection、assembly、validation、observability 与 lifecycle 的 Context Architecture Blueprint',
+    successCriteria: '每个候选来源都有 owner、trust、permission、freshness 和 provenance；三个未来场景都有 include/exclude、assembly、conflict、validation 与 eviction 规则',
     difficulty: 'intermediate',
     estimatedMinutes: 45,
     uiMode: 'chat',
-    context: '学员已完成 W3 理论与 CareKind Context Engine 实践。AI Tutor 逐项检查 System Policy、User Role、Synthetic Resident Snapshot、Observation Facts、Task Instruction 与 Output Schema，禁止提前加入 retrieval、long-term memory 或 tool calling。学员运行 10 条 synthetic cases，按事实正确性、schema validity、边界遵守和 human-review readiness 记录结果，不预设任何提升百分比。',
+    context: '学员已完成 W3 Context Engineering Theory；W3 MVP Practice 与本 Quest 分离，产品运行时仍不调用模型。AI Tutor 检查 Blueprint 是否覆盖 Context Inventory、source ownership、purpose、trust、permission、freshness、provenance、selection/exclusion、priority、token allocation、conflict resolution、validation、observability、refresh、compaction 和 eviction。CareKind 只作为 Structured Documentation、Policy RAG 与 Agent Tool Use 的未来场景映射，不能把具体 resident fields 当成 Context Engineering 的定义。',
     stepSkeleton: [
-      { title: '完成 Context Contract 与信任边界', verificationType: 'text-evidence' },
-      { title: '完成 versioned system policy 与 JSON Schema', verificationType: 'text-evidence' },
-      { title: '准备并运行 10 条 synthetic baseline cases', verificationType: 'text-evidence' },
-      { title: '记录 baseline 与 failure log', verificationType: 'text-evidence', expectedEvidence: '仓库中包含 context blueprint、10 条结果与 failure log' },
+      { title: '完成 Context Inventory、source ownership 与 trust/permission/freshness 分类', verificationType: 'text-evidence' },
+      { title: '定义 selection/exclusion、priority、token allocation 与 conflict rules', verificationType: 'text-evidence' },
+      { title: '定义 assembly、validation、observability、refresh、compaction 与 eviction', verificationType: 'text-evidence' },
+      { title: '映射三个未来场景并检查 Blueprint 可复用性', verificationType: 'text-evidence', expectedEvidence: '仓库中包含通用 Context Architecture Blueprint 与三个 CareKind future-scenario mappings' },
     ],
-    prerequisites: ['完成 W2 Care Note Drafting UI', '完成 L37 Context Engineering & Reasoning Patterns'],
+    prerequisites: ['完成 L37 Context Engineering: Selection, Assembly & Lifecycle'],
     targetPlatform: 'local-terminal',
-    tags: ['context-engineering', 'carekind', 'baseline'],
+    tags: ['context-engineering', 'context-architecture', 'carekind'],
   },
   steps: [
-    step(1, 'LAB', '完成 Context Contract 与 trust labels', 10),
-    step(2, 'LAB', '版本化 system policy 与 JSON Schema', 10),
-    step(3, 'EVALUATION', '运行 10 条 synthetic baseline cases', 15),
-    step(4, 'DELIVERABLE', '记录结果与 failure log', 10),
+    step(1, 'LAB', '完成 Context Inventory、source ownership 与 trust/permission/freshness 分类', 10),
+    step(2, 'LAB', '定义 selection/exclusion、priority、token allocation 与 conflict rules', 10),
+    step(3, 'LAB', '定义 assembly、validation、observability、refresh、compaction 与 eviction', 15),
+    step(4, 'DELIVERABLE', '映射 Structured Documentation、Policy RAG 与 Agent Tool Use 三个未来场景', 10),
   ],
 });
 
@@ -505,21 +754,21 @@ update('L58', {
   cohort7Status: 'CONFIRMED_THEORY',
 });
 update('L60', {
-  title: 'CareKind Policy RAG from Scratch',
-  title_en: 'CareKind Policy RAG from Scratch',
-  description: '第七期 W6 实践课。不使用 RAG 框架，从 synthetic CareKind policy corpus 实现 chunking、metadata、embedding、local vector index、top-k retrieval、retrieved policy context、grounded Progress Note Draft、programmatic citation 与 no-answer fallback，并接入 W5 文书生成链路。',
-  description_en: 'Cohort 7 Week 6 practice. Without a RAG framework, implement chunking, metadata, embeddings, a local vector index, top-k retrieval, retrieved policy context, grounded Progress Note drafts, programmatic citations, and no-answer fallbacks over a synthetic CareKind policy corpus, then connect them to the Week 5 documentation workflow.',
+  title: 'Build and Prove Policy RAG from Scratch',
+  title_en: 'Build and Prove Policy RAG from Scratch',
+  description: '第七期 W7 实践课。按照 W6 已冻结的 evaluation contract，不使用 RAG framework，从 synthetic policy corpus 实现 chunking、metadata、embedding、local vector index、top-k retrieval、retrieved context、grounded Draft、programmatic citation 与 no-answer fallback。每完成一个关键能力就运行同一条 eval pipeline，与 naive baseline 比较，最后接入 W3 workflow 与 W4 human-confirmed transcript并完成可测量的 MVP。',
+  description_en: 'Cohort 7 Week 7 practice. Against the frozen Week 6 evaluation contract and without a RAG framework, implement chunking, metadata, embeddings, a local vector index, top-k retrieval, retrieved context, grounded drafts, programmatic citations, and no-answer fallbacks over a synthetic policy corpus. Run the same evaluation pipeline after each major capability, compare against the naive baseline, and then connect the system to the Week 3 workflow and Week 4 human-confirmed transcript to complete a measurable MVP.',
   steps: [
     step(1, 'WORKSHOP', '准备 synthetic CareKind policy corpus 与数据边界', 10),
     step(2, 'LAB', '实现 chunking 与 metadata schema', 20),
     step(3, 'LAB', '生成 embeddings 并建立 local vector index', 20),
     step(4, 'LAB', '实现 top-k similarity retrieval', 20),
-    step(5, 'LAB', '把 retrieved chunks 接入 W3 context builder', 15),
+    step(5, 'LAB', '组装 W3 workflow data、W4 confirmed transcript 与 retrieved chunks', 15),
     step(6, 'LAB', '生成 grounded answer 并绑定 document/chunk citation', 15),
     step(7, 'LAB', '实现 no-answer fallback 与 retrieval failure log', 10),
-    step(8, 'EVALUATION', '复用 W5 baseline cases，记录加入 RAG 后的实际结果', 10),
+    step(8, 'EVALUATION', '运行 W6 eval pipeline，对比 naive baseline 并提交 MVP evidence', 10),
   ],
-  learningMaterial: '<h2>CareKind Policy RAG from Scratch</h2><p>本实践不使用 LangChain 等 RAG framework。学生要亲手实现每个接口，理解 policy document 如何成为可检索、可引用的 context。</p><h3>实现范围</h3><ol><li>准备 synthetic policy corpus。</li><li>切分文本并保存 document ID、chunk ID、section 与版本 metadata。</li><li>生成 embeddings 并建立 local vector index。</li><li>实现 top-k retrieval。</li><li>把 retrieved chunks 注入 W5 context builder。</li><li>生成 grounded Progress Note Draft，并由程序绑定 citation。</li><li>没有足够证据时走 no-answer fallback。</li></ol><h3>评估</h3><p>复用 W5 的 synthetic baseline cases，记录 retrieval 命中的 chunk、最终输出和 failure mode。课程不预设提升百分比，只报告学生实际运行结果。</p><h3>禁止范围</h3><p>Vector store 不保存 resident personal data；不做真实 production write-back；不自动作诊断、用药或 SIRS 决策。W7 才使用 RAGAS 做基础评估与单变量优化。</p>',
+  learningMaterial: '<h2>Build and Prove Policy RAG from Scratch</h2><p>本实践不使用 LangChain 等 RAG framework。学生要亲手实现每个接口，理解 policy document 如何成为可检索、可引用的 context，并从第一步开始连接 W6 已冻结的 evaluation pipeline。</p><h3>实现范围</h3><ol><li>准备 synthetic policy corpus。</li><li>切分文本并保存 document ID、chunk ID、section 与版本 metadata。</li><li>生成 embeddings 并建立 local vector index。</li><li>实现 top-k retrieval。</li><li>把 retrieved chunks 与 W3 workflow data、W4 human-confirmed transcript 组装为 task context。</li><li>生成 grounded Draft，并由程序绑定 citation。</li><li>没有足够证据时走 no-answer fallback。</li></ol><h3>Eval-driven implementation</h3><p>每完成 chunking/index、retrieval、grounding/citation 和 no-answer 中一个阶段，就运行同一个 versioned dataset 与 eval command，保存 candidate version、指标、失败案例、latency 和 cost，并与 W6 naive baseline 比较。课程不预设提升百分比，只报告实际结果。</p><h3>禁止范围</h3><p>Vector store 不保存 personal data；不做真实 production write-back；不自动作诊断、用药或 SIRS 决策。</p>',
 });
 update('L69', {
   title: 'CareKind RAG Testing with RAGAS（旧提案候选）',
@@ -540,15 +789,15 @@ update('L69', {
   cohort7Status: 'PREVIOUS_PRACTICE_CANDIDATE',
 });
 update('C7T05', {
-  description: '第七期 W5 已确认理论课。承接 W4 RAG Fundamentals，讲解 RAG failure taxonomy、golden cases、RAGAS 基础指标、人工抽检和单变量优化；完整 LLM-as-a-Judge framework、dataset versioning 与 CI regression gate 留到后续 AI Evaluation 阶段。',
-  description_en: 'Confirmed Cohort 7 Week 5 theory. Continue from Week 4 RAG fundamentals with failure taxonomy, golden cases, core RAGAS metrics, human review, and controlled improvement; full LLM-as-a-judge frameworks, dataset versioning, and CI gates are deferred.',
+  description: '第七期 W5 已确认理论课。承接 W4 RAG Fundamentals，使用老师提供的 reference implementation 讲解 RAG failure taxonomy、golden cases、RAGAS 基础指标、人工抽检和单变量优化；完整 LLM-as-a-Judge framework、dataset versioning 与 CI regression gate 留到后续 AI Evaluation 阶段。',
+  description_en: 'Confirmed Cohort 7 Week 5 theory. Continue from Week 4 RAG fundamentals using an instructor-provided reference implementation to teach failure taxonomy, golden cases, core RAGAS metrics, human review, and controlled improvement; full LLM-as-a-judge frameworks, dataset versioning, and CI gates are deferred.',
   cohort7Status: 'CONFIRMED_THEORY',
 });
 update('C7T03', {
   isLive: false,
   title: 'Legacy Placeholder：W3 Theory（已由 L37 替代）',
   title_en: 'Legacy Placeholder: Week 3 Theory (Replaced by L37)',
-  description: '错误重排时产生的占位记录，已由正式 W3 理论课 `L37 Context Engineering & Reasoning Patterns` 替代，不进入第七期排课。',
+  description: '错误重排时产生的占位记录，已由正式 W3 理论课 `L37 Context Engineering: Selection, Assembly & Lifecycle` 替代，不进入第七期排课。',
   cohort7Status: 'REPLACED_PLACEHOLDER',
 });
 update('C7T04', {
@@ -614,50 +863,52 @@ update('L85', {
 update('L101', {
   title: 'Tool Calling, MCP & CLI Integration',
   title_en: 'Tool Calling, MCP & CLI Integration',
-  description: '第七期 W6 理论课。先学习确定性的 function/tool calling，再建立 MCP server/client、tools/resources/prompts 与 CLI integration 心智模型；覆盖 command、args、env、working directory、stdio、tool discovery、权限和常见启动错误。Remote MCP、OAuth、云部署与集中式 observability 留到后续 production 阶段。',
-  description_en: 'Cohort 7 Week 6 theory. Start with deterministic function and tool calling, then cover MCP servers, clients, tools, resources, prompts, and CLI integration through commands, arguments, environment variables, working directories, stdio, tool discovery, permissions, and common startup failures. Remote MCP, OAuth, cloud deployment, and centralised observability are deferred.',
+  description: '第七期 W6 理论课。先学习确定性的 function/tool calling 与 MCP protocol contract，再用 FastMCP 快速实现 typed Python server，并建立 server/client、tools/resources/prompts 与 CLI integration 心智模型；Pi Agent Harness 用于比较统一模型接口、Agent runtime 与 coding CLI 的边界，不把 Pi core 误写为 MCP SDK。覆盖 command、args、env、working directory、stdio、tool discovery、权限和常见启动错误。Remote MCP、OAuth、云部署与集中式 observability 留到后续 production 阶段。',
+  description_en: 'Cohort 7 Week 6 theory. Start with deterministic function and tool calling and the MCP protocol contract, then use FastMCP to implement a typed Python server quickly. Build a clear model of servers, clients, tools, resources, prompts, and CLI integration. Use Pi Agent Harness to compare a unified model API, agent runtime, and coding CLI without misrepresenting Pi core as an MCP SDK. Cover commands, arguments, environment variables, working directories, stdio, tool discovery, permissions, and common startup failures. Remote MCP, OAuth, cloud deployment, and centralised observability are deferred.',
   steps: [
     step(1, 'CONCEPT', 'Function/tool calling：schema、arguments 与 structured result', 15),
-    step(2, 'SYSTEM_DESIGN', 'MCP server、client、tools、resources 与 prompts', 15),
+    step(2, 'SYSTEM_DESIGN', 'MCP protocol contract：server、client、tools、resources 与 prompts', 15),
     step(3, 'CONCEPT', 'MCP 与普通 API、tool calling、Agent 的边界', 10),
-    step(4, 'DEMO', 'CLI integration：command、args、env 与 working directory', 15),
+    step(4, 'DEMO', 'FastMCP typed server + CLI integration：command、args、env 与 working directory', 15),
     step(5, 'DEMO', 'stdio lifecycle、stdout protocol 与 stderr logging', 10),
-    step(6, 'DEMO', 'Tool discovery、manual call 与结构化结果检查', 10),
+    step(6, 'DEMO', 'Tool discovery、manual call；比较 Pi Agent Harness 的 CLI/runtime 边界', 10),
     step(7, 'SECURITY', 'Secrets、permission、tool allowlist 与 human confirmation', 10),
     step(8, 'TROUBLESHOOTING', '路径、环境变量、启动和协议输出故障', 5),
   ],
   cohort7Status: 'CONFIRMED_THEORY',
 });
 update('L104', {
-  title: 'Build and Connect a CareKind MCP Server',
-  title_en: 'Build and Connect a CareKind MCP Server',
-  description: '第七期 W8 实践课。把 W7 已完成的 CareKind MVP 能力包装为 get_resident_context、get_shift_tasks、search_policy 与 create_progress_note_draft MCP tools，通过本地 CLI/stdio 完成 discovery、manual call、validation、role permission、audit 与排错。本周不引入 Agent loop、自动 Confirm 或真实系统写回。',
-  description_en: 'Cohort 7 Week 8 practice. Package the completed CareKind MVP as four MCP tools and connect them to a local CLI over stdio with discovery, manual calls, validation, role permissions, audit, and troubleshooting. Do not introduce agent loops, automatic confirmation, or real system write-back.',
+  title: 'Extract the Data Layer, then Connect MCP & CLI',
+  title_en: 'Extract the Data Layer, then Connect MCP and CLI',
+  description: '第七期 W8 实践课。先把 W7 MVP 中分散的 resident、shift/task、policy retrieval 与 Draft persistence 提取成可测试的 Repository/Data Layer，再建立不依赖 transport 的 Domain Service、canonical schema、permission scope 与 audit boundary。底层能力通过直接 service tests 后，才用薄 MCP adapter 暴露 get_resident_context、get_shift_tasks、search_policy 与 create_progress_note_draft，并连接本地 CLI/stdio。MCP tool 不包含数据库查询细节或业务规则；未来换成 REST、GraphQL、Agent SDK 或 background job 时继续复用同一 service layer。',
+  description_en: 'Cohort 7 Week 8 practice. First extract the scattered resident, shift and task, policy retrieval, and draft persistence code from the Week 7 MVP into a testable repository and data layer. Build transport-independent domain services, canonical schemas, permission scopes, and audit boundaries. Only after direct service tests pass should a thin MCP adapter expose get_resident_context, get_shift_tasks, search_policy, and create_progress_note_draft over local CLI and stdio. MCP tools must not contain database query details or business rules, allowing the same service layer to support REST, GraphQL, an Agent SDK, or background jobs later.',
   steps: [
-    step(1, 'WORKSHOP', '从 MVP 选择能力并定义四个 tool schema', 20),
-    step(2, 'LAB', '构建本地 CareKind MCP server', 20),
-    step(3, 'LAB', '将 resident、shift、policy RAG 与 Draft services 接入 tools', 20),
-    step(4, 'LAB', '配置 CLI client、stdio、command、args 与 env', 15),
-    step(5, 'LAB', '完成 tool discovery 与 manual calls', 10),
-    step(6, 'SECURITY', '加入 validation、role permission 与 audit log', 15),
-    step(7, 'TROUBLESHOOTING', '修复 path、env 与 protocol output 三类错误', 10),
-    step(8, 'DELIVERABLE', 'MCP demo、permission matrix 与 troubleshooting notes', 10),
+    step(1, 'DATA_ARCHITECTURE', '盘点 data sources、owner、schema、sensitivity、freshness 与 system-of-record boundary', 15),
+    step(2, 'REFACTOR', '提取 Repository/Data Layer：resident、shift/task、policy 与 Draft persistence adapters', 20),
+    step(3, 'SYSTEM_DESIGN', '提取 transport-independent Domain Services 与 canonical input/output schema', 20),
+    step(4, 'SECURITY', '在 service boundary 加入 role scope、validation、audit 与 human-confirmation rule', 15),
+    step(5, 'TEST', '不经过 MCP，直接运行 repository contract 与 service integration tests', 15),
+    step(6, 'LAB', '建立 thin MCP adapter，映射四个 tools，不复制 data/business logic', 15),
+    step(7, 'LAB', '连接 CLI/stdio，完成 discovery、manual calls 与 structured error checks', 10),
+    step(8, 'DELIVERABLE', '提交 Data/Service/MCP boundary diagram、tests、permission matrix 与 CLI evidence', 10),
   ],
+  learningMaterial: '<h2>Extract the Data Layer, then Connect MCP & CLI</h2><p>MCP 是 transport adapter，不是业务架构。若 tool handler 直接拼数据库查询、权限判断和业务状态，未来 REST API、Agent SDK、background job 与测试都会复制同一套逻辑。W8 先把 W7 MVP 整理为稳定的数据与服务边界，再接 MCP。</p><h3>Target architecture</h3><p><strong>Data Sources → Repository/Data Layer → Domain Service → Permission/Audit Policy → MCP Adapter → CLI or Agent</strong></p><h3>Repository/Data Layer</h3><p>盘点 resident、shift/task、policy corpus/index 与 Draft/version/audit 数据的 owner、schema、sensitivity、freshness 和 system-of-record status。Repository interface 隐藏 Prisma、local index、file 或 API 的具体实现；domain service 只依赖 interface。</p><h3>Domain Service</h3><p>服务层提供 getResidentContext、getShiftTasks、searchPolicy 与 createProgressNoteDraft 等能力，负责 canonical schema、workflow state、validation、role scope、human-confirmation rule 和 audit event。它不读取 MCP request，也不输出 MCP-specific content blocks。</p><h3>Thin MCP adapter</h3><p>MCP handler 只完成 protocol schema → service input、service result → MCP result 和 error mapping。每个 tool 必须能通过直接 service test 验证，也必须能从 CLI 经 stdio 做 discovery 和 manual call。课堂用 architecture boundary test 检查 MCP 层没有 ORM query 或核心业务规则。</p><h3>交付</h3><p>提交 data inventory、repository contracts、domain services、direct tests、thin MCP adapters、CLI configuration、permission matrix、audit evidence 与 Data/Service/MCP boundary diagram。W8 不引入 Agent loop、Remote MCP、OAuth、自动 Confirm 或真实 system write-back。</p>',
   cohort7Status: 'CONFIRMED_PRACTICE',
 });
 update('L112', {
   title: 'Agents 基础 + The ReAct Framework',
   title_en: 'Agent Fundamentals + The ReAct Framework',
-  description: '第七期 W7 理论课。在 W6 确定性 tool calling 与 MCP 之后，引入 Agent 决策、ReAct 的 Action/Observation loop、state、maximum steps、timeout/retry、side-effect boundary、human approval 与失败模式。课程不要求展示或持久化模型隐藏推理。',
-  description_en: 'Cohort 7 Week 7 theory. After deterministic tool calling and MCP in Week 6, introduce agent decisions, the ReAct action-observation loop, state, maximum steps, timeouts, retries, side-effect boundaries, human approval, and failure modes without exposing or persisting hidden reasoning.',
+  description: '第七期 W7 理论课。在 W6 确定性 tool calling 与 MCP 之后，引入 Agent 决策和 ReAct Action/Observation loop，并用 Claude Agent SDK 讲解 query 与 interactive client、tools/MCP、session/resume、permission mode、hooks、streaming 与 interrupt。随后把 SDK 能力还原为 state、maximum steps、timeout/retry、side-effect boundary、human approval 与失败模式，并与 OpenAI Agents SDK、PydanticAI 和 LangGraph 比较。课程不要求展示或持久化模型隐藏推理。',
+  description_en: 'Cohort 7 Week 7 theory. After deterministic tool calling and MCP in Week 6, introduce agent decisions and the ReAct action-observation loop. Use the Claude Agent SDK to examine one-shot queries versus interactive clients, tools and MCP, sessions and resume, permission modes, hooks, streaming, and interrupts. Map those SDK features back to state, maximum steps, timeouts, retries, side-effect boundaries, human approval, and failure modes, then compare with the OpenAI Agents SDK, PydanticAI, and LangGraph. Do not expose or persist hidden reasoning.',
   steps: [
     step(1, 'CONCEPT', 'Workflow、tool-using application 与 Agent 的区别', 10),
     step(2, 'CONCEPT', 'ReAct：Action、Observation 与下一步决策', 15),
-    step(3, 'SYSTEM_DESIGN', 'Agent state、task state 与 tool result', 15),
-    step(4, 'SYSTEM_DESIGN', 'Maximum steps、停止条件与循环检测', 15),
-    step(5, 'RELIABILITY', 'Timeout、retry、fallback 与 partial failure', 15),
-    step(6, 'SECURITY', 'Side effects、human approval 与权限边界', 10),
-    step(7, 'INTERVIEW', 'Agent failure modes 与系统设计面试表达', 10),
+    step(3, 'DEMO', 'Claude Agent SDK：query/client、tools/MCP、session、permissions、hooks 与 streaming', 15),
+    step(4, 'SYSTEM_DESIGN', 'Agent state、task state、tool result 与 session resume', 10),
+    step(5, 'SYSTEM_DESIGN', 'Maximum steps、停止条件与循环检测', 10),
+    step(6, 'RELIABILITY', 'Timeout、retry、fallback、interrupt 与 partial failure', 10),
+    step(7, 'SECURITY', 'Side effects、permission mode、human approval 与 hook boundary', 10),
+    step(8, 'INTERVIEW', 'Claude Agent SDK、OpenAI Agents SDK、PydanticAI、LangGraph 的选型与失败模式', 10),
   ],
   cohort7Status: 'CONFIRMED_THEORY',
 });
@@ -681,18 +932,19 @@ update('L119', {
 update('L122', {
   title: 'Multi-Agent Architectures',
   title_en: 'Multi-Agent Architectures',
-  description: '第七期 W8 理论课。在 W7 Agents/ReAct 之后，讲清单 Agent 与 Multi-Agent 的边界、Supervisor/Orchestrator、handoff、role-based routing、shared state、message contract、context isolation、termination、成本、人工升级与 auditability。能用 deterministic workflow 解决的问题不使用 Multi-Agent。',
-  description_en: 'Cohort 7 Week 8 theory. After agents and ReAct, cover the boundary between single and multi-agent systems, supervisors and orchestrators, handoffs, role-based routing, shared state, message contracts, context isolation, termination, cost, human escalation, and auditability.',
+  description: '第七期 W8 理论课，对齐 Claude Certified Architect – Foundations（CCAR-F）的 Agentic Architecture & Orchestration 能力。在 W7 Agents/ReAct 之后，判断何时使用 deterministic workflow、single Agent 或 Multi-Agent；使用 Claude Agent SDK 与 Managed Agents 的 coordinator、version-pinned roster、context-isolated threads、parallelization、specialization、escalation/advisor、handoff、message contract 与 synthesis 解释 orchestration。最后用 termination、budget、partial failure、human escalation、auditability，以及 single-agent baseline 对比质量、延迟和成本。Managed Agents 属于供应商 beta surface，不包装成通用开源标准。',
+  description_en: 'Cohort 7 Week 8 theory aligned with the Agentic Architecture and Orchestration domain of Claude Certified Architect – Foundations. After Week 7 agents and ReAct, decide between deterministic workflows, a single agent, and multi-agent systems. Use the Claude Agent SDK and Managed Agents concepts—coordinators, version-pinned rosters, context-isolated threads, parallelisation, specialisation, escalation and advisors, handoffs, message contracts, and synthesis—to explain orchestration. Evaluate termination, budgets, partial failure, human escalation, auditability, quality, latency, and cost against a single-agent baseline. Managed Agents remains a provider beta surface rather than a portable open-source standard.',
   steps: [
-    step(1, 'CONCEPT', '单 Agent 与 Multi-Agent 的边界', 10),
-    step(2, 'DECISION', '什么时候不应该使用 Multi-Agent', 10),
-    step(3, 'SYSTEM_DESIGN', 'Supervisor / Orchestrator 模式', 15),
-    step(4, 'SYSTEM_DESIGN', 'Handoff 与 role-based routing', 15),
-    step(5, 'SYSTEM_DESIGN', 'Shared state、message contract 与 context isolation', 15),
-    step(6, 'RELIABILITY', '循环、重复工作、冲突与 token cost', 10),
-    step(7, 'GOVERNANCE', 'Human escalation、termination 与 auditability', 10),
-    step(8, 'CASE_STUDY', 'CareKind PCW / EN / RN 架构判断', 5),
+    step(1, 'CCAR_F', 'Agentic vs single-shot：什么时候仍应使用 deterministic workflow', 10),
+    step(2, 'DECISION', 'Single Agent vs Multi-Agent：复杂度、并行性与专业化判断', 10),
+    step(3, 'SYSTEM_DESIGN', 'Orchestration patterns：sequential、parallel fan-out/synthesis、specialization、escalation/advisor', 15),
+    step(4, 'DEMO', 'Claude Agent SDK 与 Managed Agents：coordinator、roster、subagent/thread 与 version pinning', 15),
+    step(5, 'SYSTEM_DESIGN', 'Context isolation：每个 Agent 的 model、system、tools、MCP、skills 与 permission scope', 10),
+    step(6, 'SYSTEM_DESIGN', 'Delegation contract、thread messaging、artifact reference、handoff 与 synthesis', 10),
+    step(7, 'RELIABILITY', 'Termination、concurrency/budget、partial failure、retry、human escalation 与 single-agent baseline', 15),
+    step(8, 'INTERVIEW', 'CCAR-F / System Design：为场景选择 orchestration，并解释质量、延迟、成本与治理', 5),
   ],
+  learningMaterial: '<h2>Multi-Agent Architectures · CCAR-F Alignment</h2><p>CCAR-F 的 Agentic Architecture & Orchestration 不考“用了几个 Agent”，而是要求架构师能说明为什么任务需要 agentic behaviour、何时一个 deterministic workflow 或 single Agent 更可靠，以及增加 orchestration 后如何控制成本、失败和责任边界。</p><h3>Architecture decision</h3><p>先建立 single-agent baseline。只有任务能够拆成相对独立的工作、需要不同工具/权限/专业上下文、可以并行，或需要更高能力 advisor 处理少数困难步骤时，才考虑 Multi-Agent。不要为角色名称而拆 Agent。</p><h3>Claude orchestration model</h3><p>课堂比较两条 Anthropic surface：Claude Agent SDK 用于可编程的 subagent、hooks、tools 和 sessions；Managed Agents 使用 coordinator 和 version-pinned roster，在同一 session 中生成 context-isolated threads。每个 Agent 拥有自己的 model、system、tools、MCP servers 与 skills；结果通过 thread events 返回 coordinator，再由 coordinator synthesis。Managed Agents 是 beta provider API，不是跨供应商标准。</p><h3>Patterns</h3><ul><li><strong>Sequential</strong>：有明确依赖的 plan → execute → verify。</li><li><strong>Parallel fan-out / synthesis</strong>：独立任务并行，coordinator 汇总。</li><li><strong>Specialization</strong>：不同 Agent 使用不同 instructions、tools、permissions 与 context。</li><li><strong>Escalation / advisor</strong>：只把困难子任务交给更强模型或人工。</li><li><strong>Dynamic workflow</strong>：运行时生成 DAG 或动态 subagents，但必须有 budget 与 termination。</li></ul><h3>Production contract</h3><p>每次 delegation 必须包含 task、input/artifact references、allowed tools、output schema、deadline/budget、completion condition 和 failure semantics。系统需要处理 partial failure、duplicate work、conflicting results、stalled threads、retry/idempotency、human escalation 与 audit trail。</p><h3>Evaluation</h3><p>使用同一组 tasks 比较 single-agent 与 multi-agent：quality、completion rate、wall-clock latency、tokens/cost、tool calls、failure rate 和 human intervention。Multi-Agent 只有在收益覆盖复杂度和成本时才成立。</p>',
   cohort7Status: 'CONFIRMED_THEORY',
 });
 update('L129', {
@@ -767,11 +1019,42 @@ update('L149', {
   learningMaterial: '<h2>Model Selection, Open-Weight Models & Fine-Tuning Decisions</h2><p>先判断问题是否可以通过 context、RAG 或 tools 解决，再判断是否需要 model routing、open-weight deployment 或 Fine-Tuning。任何选择都必须以任务数据、质量门槛、延迟、成本、隐私与维护能力为依据。</p><p>本节是 W10 必修录播。Model Routing 仍是 Applied AI Engineer 的面试重点和后续实践候选；LoRA、QLoRA 与具体训练工具放入选修 Lab，不占正式 Live。</p>',
   cohort7Status: 'REQUIRED_RECORDING',
 });
+update('L126', {
+  title: 'A2A Governance: Identity, Trust & Delegation',
+  title_en: 'A2A Governance: Identity, Trust and Delegation',
+  description: '第七期 W11 必修录播。区分 MCP 的 Agent-to-Tool 连接与 A2A 的独立 Agent-to-Agent 协作，并把 Agent Card、身份认证、能力声明、授权委派、数据共享、任务与产物协议、审计、撤销和责任归属放进 Governance 边界。',
+  description_en: 'Required Cohort 7 Week 11 recording. Distinguish MCP agent-to-tool connectivity from A2A collaboration between independent agents, then govern agent identity, capability claims, authorization, delegation, data sharing, task and artifact contracts, auditability, revocation, and accountability.',
+  duration: 60,
+  steps: [
+    step(1, 'BOUNDARY', 'MCP Agent-to-Tool 与 A2A Agent-to-Agent 的边界', 10),
+    step(2, 'IDENTITY', 'Agent Card、能力发现、身份认证与能力声明', 10),
+    step(3, 'AUTHORIZATION', '授权、委派范围、最小权限与 human approval', 10),
+    step(4, 'DATA_GOVERNANCE', '消息、任务、artifact 的数据分类、最小化与共享边界', 10),
+    step(5, 'AUDIT', 'provenance、decision log、责任归属与跨 Agent trace', 10),
+    step(6, 'INCIDENT', '权限撤销、信任失效、故障隔离与 incident ownership', 10),
+  ],
+  learningMaterial: '<h2>A2A Governance: Identity, Trust & Delegation</h2><p>MCP 解决 Agent 如何调用工具；A2A 解决独立 Agent 如何发现彼此能力、委派任务并交换结果。只会连接协议还不够：跨 Agent、跨团队或跨组织协作时，必须先回答谁在调用、代表谁、可以委派什么、可以共享哪些数据，以及出错后谁负责。</p><h3>Governance controls</h3><ul><li><strong>Identity and discovery</strong>：验证 Agent Card、身份、能力声明与版本。</li><li><strong>Trust and authorization</strong>：限制 delegation scope、权限、有效期与 human approval。</li><li><strong>Data boundary</strong>：对 message、task、artifact 做分类、最小化、consent 与 retention 控制。</li><li><strong>Evidence</strong>：记录 provenance、decision、handoff、policy version 与跨 Agent trace。</li><li><strong>Failure governance</strong>：支持 revoke、quarantine、incident owner 与责任追踪。</li></ul><p>本节移到 W11 Governance，不作为 W8 Multi-Agent orchestration 的前置。W8 关注单一系统内部如何编排多个角色；W11 才处理独立 Agent 之间的信任和责任边界。</p>',
+  cohort7Status: 'REQUIRED_W11_RECORDING',
+  cohort7SupportWeek: 11,
+  cohort7SupportTrack: 'theory',
+});
 update('L171a', {
   title: 'AI Governance, Evals & Risk Management',
   title_en: 'AI Governance, Evals & Risk Management',
-  description: '第七期 W11 理论课。把 risk register、privacy、accountability、eval threshold、release gate、vendor risk 与 incident response 接入 ADLC。',
-  description_en: 'Cohort 7 Week 11 theory. Integrate risk registers, privacy, accountability, evaluation thresholds, release gates, vendor risk, and incident response into ADLC.',
+  description: '第七期 W11 理论课。把 risk register、privacy、accountability、A2A identity/trust/delegation、eval threshold、release gate、vendor risk、权限撤销与 incident response 接入 ADLC。',
+  description_en: 'Cohort 7 Week 11 theory. Integrate risk registers, privacy, accountability, A2A identity, trust and delegation, evaluation thresholds, release gates, vendor risk, revocation, and incident response into ADLC.',
+  duration: 90,
+  steps: [
+    step(1, 'GOVERNANCE', 'Governance、AI Safety 与 Compliance 的关系', 10),
+    step(2, 'RISK', 'AI inventory、impact assessment 与 risk classification', 10),
+    step(3, 'ACCOUNTABILITY', 'RACI、system owner、release approver 与 residual-risk owner', 10),
+    step(4, 'DATA_GOVERNANCE', 'Data、model、vendor、privacy 与 retention governance', 12),
+    step(5, 'A2A_GOVERNANCE', 'Agent identity、trust、delegation、data sharing 与 accountability', 12),
+    step(6, 'RELEASE_GATE', 'Eval threshold、policy evidence 与 release gate', 12),
+    step(7, 'INCIDENT', 'Incident、material change、permission revocation 与 retirement', 12),
+    step(8, 'OPERATING_MODEL', 'Governance operating model 与真实案例决策检查', 12),
+  ],
+  learningMaterial: '<h2>AI Governance, Evals & Risk Management</h2><p>Governance 不是上线前补一份合规文档，而是把风险负责人、数据和模型边界、评估门槛、发布审批、事故处理与系统退出机制接入 ADLC。</p><h3>A2A governance</h3><p>当一个独立 Agent 把任务委派给另一个 Agent，治理范围会从单一 runtime 扩展到跨身份、跨权限和跨数据边界。必须验证 Agent Card 与能力声明，限定 delegation scope 和有效期，对 message、task 与 artifact 执行数据分类和最小化，并保留 provenance、handoff、decision log 和责任归属。信任失效时必须能够 revoke、quarantine 和升级给明确的 incident owner。</p><h3>Release evidence</h3><ul><li>AI inventory、impact assessment、risk register 与 RACI。</li><li>data/model/vendor controls、privacy、retention 与 permission policy。</li><li>A2A identity、trust、delegation、data-sharing 与 audit controls。</li><li>eval threshold、release gate、exception approval 与 residual-risk acceptance。</li><li>incident、material change、revocation、retirement 与 evidence retention。</li></ul>',
 });
 update('L171', {
   title: 'CareKind Production Readiness Review & Demo Day',
@@ -841,14 +1124,14 @@ outline.features = [
   '25 场正式直播：12 场理论 + 13 场实践',
   '每周理论 + 独立实践双 Live；实践从 W1 开始在同一个 CareKind repository 从 0 搭建 production Agent 产品',
   '理论 W12 结束，实践 W13 用 180 分钟 Production Readiness Review & Demo Day 收口',
-  'W3 完成业务底座，W4 第一次接 AI，W6–W7 完成两周 RAG 主线',
+  'W3 完成业务底座，W4 第一次接 AI，W6 先写 Evaluation Pipeline，W7 再构建并证明 Policy RAG',
   'Agent Memory + Production Harness + W12 Model Routing 实践',
   'Governance、Evals、Safety 与 ADLC 全程联动',
 ];
 outline.highlights = [
   '每周一场理论 + 一场独立实践；实践不是附属 Lab，而是从 W1 开始搭建完整 Agent 产品',
   '同一个 CareKind repository 从 ADLC、UI 和非 AI workflow，逐周长成 RAG、MCP、Agent、Memory、Harness 与 Routing 系统',
-  'RAG 主线限定 W6–W7 两周：从零搭建、RAGAS 测试并完成 CareKind MVP',
+  'RAG 主线限定 W6–W7 两周：先冻结 evaluation contract 与 baseline，再构建 Policy RAG 并完成可测量的 CareKind MVP',
   'MCP Tools → Bounded Agent → Long-Term Memory → Production Harness → Model Routing',
   'Governance 从 trust boundary、Memory lifecycle 贯穿到 eval threshold、release 与 incident evidence',
   'W13 只验收标准软件工程前置，把 Live 留给 AI eval、安全/故障演练和 System Design Defense',
@@ -856,7 +1139,7 @@ outline.highlights = [
 outline.highlights_en = [
   'One theory live and one independent practice live each week; practice is a continuous build-from-zero agent product track, not an attached lab',
   'Grow one CareKind repository from ADLC, UI, and a non-AI workflow into RAG, MCP, agents, memory, a production harness, and model routing',
-  'Limit the RAG core to Weeks 6-7: build from scratch, test with RAGAS, and complete the CareKind MVP',
+  'Limit the RAG core to Weeks 6-7: define the evaluation contract and baseline first, then build and prove the policy RAG against the same pipeline',
   'Progress from MCP tools to a bounded agent, long-term memory, a production harness, and model routing',
   'Carry governance from trust boundaries and memory lifecycle into evaluation thresholds, release decisions, and incident evidence',
   'Use Week 13 for AI-specific evaluations, security and failure drills, release judgement, and system-design defense',
@@ -875,6 +1158,22 @@ outline.curriculumPages = {
     'jd-mapping.html',
   ],
   defaultPage: 'cohort-7.html',
+};
+
+outline.cohort7LibraryLegend = {
+  verifiedAt: '2026-08-27',
+  core: 'Core Stack：课堂会实际使用、演示或由 starter project 预置；每节课只保留完成交付所需的最小集合。',
+  ecosystem: 'Popular OSS Ecosystem：面试需要认识并能解释 trade-off 的热门开源生态，不代表本节课全部安装。',
+  types: {
+    oss: '开源软件或开源 SDK',
+    'oss-ecosystem': '开源生态；采用前需再次核查具体 package/version 的许可',
+    'provider-sdk': '模型供应商 SDK，不作为开源卖点',
+    'provider-api': '供应商托管 API 或 beta platform capability，不作为开源卖点',
+    'provider-tool': '供应商开发工具，不作为开源卖点',
+    'web-platform': '浏览器或 Web 标准能力',
+    'research-reference': '研究或历史参考，不作为默认 production 选型',
+  },
+  versionPolicy: '课程大纲不冻结易过期的版本号；开课前在 starter repository 的 lockfile 中固定并完成兼容性、安全与 license 复查。',
 };
 
 outline.cohort7Audit = {
@@ -904,16 +1203,19 @@ outline.cohort7Audit = {
     'Multi-Agent implementation',
     'GraphRAG and AWS/OpenSearch',
     'Open-weight and vLLM self-hosting',
-    'Fine-Tuning, LoRA, QLoRA, and A2A',
+    'Fine-Tuning, LoRA, and QLoRA',
   ],
 };
 
 for (const [code, week, track] of cohort7Schedule) {
   const item = byCode.get(code);
   if (!item) throw new Error(`Missing Cohort 7 scheduled lesson: ${code}`);
+  const libraries = cohort7LibraryMap[code];
+  if (!libraries) throw new Error(`Missing Cohort 7 library map: ${code}`);
   item.cohort7Week = week;
   item.cohort7Track = track;
   item.cohort7SessionOrder = cohort7Schedule.findIndex(([scheduledCode]) => scheduledCode === code) + 1;
+  item.cohort7Libraries = libraries;
   item.level = week <= 2 ? '初级' : week <= 7 ? '中级' : '高级';
   item.learns = item.steps.slice(0, 8).map(({ title }) => title);
   if (!item.cohort7Status) {
