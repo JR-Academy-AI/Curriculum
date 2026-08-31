@@ -1,5 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -8,6 +10,10 @@ const ROOT = path.resolve(BOOTCAMP, '..', '..');
 const HTML_PATH = path.join(BOOTCAMP, 'public', 'posters', 'cohort-07-detailed-outline.html');
 const PDF_PATH = path.join(ROOT, 'output', 'pdf', 'JR-Academy-AI-Engineer-Cohort-07-Detailed-Outline.pdf');
 const DOWNLOAD_PATH = path.join(process.env.HOME, 'Downloads', 'JR Academy - AI Engineer 第七期详细大纲.pdf');
+const MAC_DOWNLOAD_PATH = path.join(process.env.HOME, 'Downloads', 'JR Academy - AI Engineer 第七期详细大纲 - Mac兼容版.pdf');
+const MAC_RENDERER = path.join(HERE, 'render-mac-compatible-pdf.py');
+const PYTHON_EXECUTABLE = process.env.PYTHON_EXECUTABLE || 'python3';
+const execFileAsync = promisify(execFile);
 const CHROME_CANDIDATES = [
   process.env.CHROME_EXECUTABLE_PATH,
   '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
@@ -70,7 +76,7 @@ async function main() {
       return { pageCount: pages.length, overflows, escaped };
     });
 
-    if (audit.pageCount !== 31) throw new Error(`Expected 31 HTML pages, got ${audit.pageCount}`);
+    if (audit.pageCount !== 32) throw new Error(`Expected 32 HTML pages, got ${audit.pageCount}`);
     if (audit.overflows.length || audit.escaped.length) {
       throw new Error(`HTML layout audit failed:\n${JSON.stringify(audit, null, 2)}`);
     }
@@ -85,10 +91,12 @@ async function main() {
       margin: { top: 0, right: 0, bottom: 0, left: 0 },
     });
     await fs.copyFile(PDF_PATH, DOWNLOAD_PATH);
+    const { stdout: macPdfPath } = await execFileAsync(PYTHON_EXECUTABLE, [MAC_RENDERER, PDF_PATH, MAC_DOWNLOAD_PATH]);
     const stat = await fs.stat(PDF_PATH);
     console.log(`HTML audit: ${audit.pageCount} pages, 0 overflow, 0 escaped elements`);
     console.log(`${PDF_PATH} (${Math.round(stat.size / 1024)} KB)`);
     console.log(DOWNLOAD_PATH);
+    console.log(`Mac Preview compatible: ${macPdfPath.trim()}`);
   } finally {
     await page.close();
     await browser.close();

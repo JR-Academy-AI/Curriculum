@@ -1,5 +1,47 @@
 # Changelog
 
+## 2026-08-31
+
+- 将逐周技术栈从 Practice 工具表升级为 Theory + Practice 的完整 AI Engineering Stack，增加模型机制、Token/Context/Cache、AI OSS、RAG/Eval/Agent/Memory/Governance，并降低通用全栈技术的视觉权重（`ai-engineer-bootcamp`）
+
+- 将 13 场 Practice 的“本周实践工具”扩展为 20–25 个独立技术 Tag，区分课堂实作、AI-native 新能力与 Platform/Cloud，并将 Langfuse 和各项 AWS 服务分别列出（`ai-engineer-bootcamp`）
+
+- 优化 10-Layer Skills Tower 的技术栈视觉：全部技术点改为胶囊 Tag，有正式 Logo 的品牌或工具在 Tag 左侧显示 Logo，概念类能力保持纯文字（`ai-engineer-bootcamp`）
+
+- 将详细大纲 10-Layer Stack 重做为官网 Skills Tower 的 PDF 静态版：英文层名为主、中文为副，并展开 10 层的 50+ 具体技术标签（`ai-engineer-bootcamp`）
+
+- 将第七期全部 Practice 页面改为中文优先的“实践课 Live”，强调老师现场带做、调试和验收，并逐周增加四节点 System Design 关系图与实践技术栈（`ai-engineer-bootcamp`）
+
+- 将 W03 Context Engineering Theory 从一页拆为两页，分别呈现 Context 选择与组装、Lifecycle 与 Trust/Observability/Blueprint，避免压缩字号；详细大纲调整为 32 页（`ai-engineer-bootcamp`）
+
+- 将 AI Engineer 第七期每场课的技术视觉扩展为 8 个 Core + Popular OSS 标识，实践周页改成两排大型 Logo 卡，覆盖模型、AI Coding、UI、RAG、MCP、Agent、Memory、Observability 与 Production 生态（`ai-engineer-bootcamp`）
+
+- 优化 AI Engineer 第七期详细大纲营销版：隐藏内部 Lesson Code，逐周展示真实技术 Logo 与实践 Build Stack，并重新生成可点击、Mac 兼容的电子书 PDF（`ai-engineer-bootcamp`）
+
+## 2026-08-29
+
+- 扩展 AI Engineer 第七期推广计划为全球分区执行体系，加入澳洲、中国大陆、港澳台/新加坡、北美、英国/欧洲的时区与本地化策略，以及短期冲刺、长期品牌、五类增长、实验矩阵和衡量框架（`ai-engineer-bootcamp`）
+- 新增 AI Engineer 第七期 Seedance 短视频 Campaign：用 12 个连续机制与事故叙事覆盖教学方式、13 周 Build、RAG、Memory、Harness、A2A Governance、Model Routing 与面试证据（`ai-engineer-bootcamp`）
+- 明确 Seedance 短视频矩阵是可协商候选池，不锁制作数量、顺序、语言、片长、视觉隐喻或 CTA（`ai-engineer-bootcamp`）
+
+## 2026-08-27
+
+- 调整第七期 A2A 排课，从 W8 编排内容移到 W11 Governance，补齐身份、信任、授权委派、数据共享、审计、撤销和责任边界（`ai-engineer-bootcamp`）
+- 重构第七期 W8 Practice 为 Data Sources → Repository/Data Layer → Domain Services → Permission/Audit → MCP Adapter → CLI，禁止在 MCP handler 内堆 ORM 与业务规则（`ai-engineer-bootcamp`）
+- 增强第七期 W8 Multi-Agent Theory，对齐 CCAR-F orchestration domain，并加入 Claude Agent SDK 与 Managed Agents 架构模式、隔离、委派、失败和成本判断（`ai-engineer-bootcamp`）
+- 调换第七期 W6/W7 Practice，改为 Evaluation Pipeline First → Build and Prove Policy RAG 的市场主流 Eval-Driven Development 顺序（`ai-engineer-bootcamp`）
+- 增强第七期 W7 Agents/ReAct Theory Live，加入 Claude Agent SDK 的 sessions、tools/MCP、permissions、hooks、streaming、interrupt 与跨框架选型（`ai-engineer-bootcamp`）
+- 新增 AI Engineer 第七期 25 场 Live 的 Core Stack / Popular OSS Ecosystem 选型表，W6 Core 加入 FastMCP 并补充 Pi Agent Harness 的 CLI/runtime 定位，覆盖 AI Coding、UI、RAG、MCP、Agent、Memory、Harness、Governance、Routing 与 Evals（`ai-engineer-bootcamp`）
+- 重构 AI Engineer 第七期 W5 Practice 为 Spec-to-Work 与 Living Documentation 工程工作区，加入 Wiki、Architecture Diagram、ADR、Hooks 和 Project Skills 交付（`ai-engineer-bootcamp`）
+- 重写 AI Engineer 第七期 W3 Context Architecture Blueprint，删除把 Context Engineering 等同于固定 Prompt Template 与 CareKind 字段的旧定义（`ai-engineer-bootcamp`）
+- 修正 AI Engineer 第七期 W3 Practice 为 Claude Code Rapid MVP Build，删除 W3 实践接入模型的旧口径，明确 W4 才第一次接入 Voice AI（`ai-engineer-bootcamp`）
+- 加入 AI Engineer 第七期 W2 Claude Code frontend design workflow、Design Brief、方向比较、截图反馈和人工 Product Design Review（`ai-engineer-bootcamp`）
+- 补强 AI Engineer 第七期 W2 的 LLM Efficiency 内容，加入 KV Cache、Prefix Cache、Response Cache、安全失效策略及 TTFT/命中率/Tokens Saved 验证（`ai-engineer-bootcamp`）
+- 重构 AI Engineer 第七期 W2 理论侧重点：以 Token Budget 与 Context Window 工程判断为主线，补齐可进入/应排除的上下文内容及长上下文质量、延迟、成本边界（`ai-engineer-bootcamp`）
+- 修正 AI Engineer 第七期 A4 大纲 W1 的课程定位，由“AI 产品”改为“AI 系统”，并补齐系统组成表达（`ai-engineer-bootcamp`）
+- 新增 AI Engineer 第七期 A4 大纲的 macOS Preview 兼容渲染流程，从已验证 HTML/PDF 生成高清扁平版，规避 Type 3 中文字体显示差异（`ai-engineer-bootcamp`）
+- 扩展 AI Engineer 第七期 W1 岗位地图，加入 Applied AI Engineer、FDE、AI Builder、AI Solutions Engineer 等 title 变体及与 ML/Data/Software 岗位的职责边界（`ai-engineer-bootcamp`）
+
 ## 2026-08-25
 
 - 统一 AI Engineer 第七期总览页、主海报、设计规范与推广计划为 Editorial Premium 柔和技术栈风格，重制 1242×1660 主海报 PNG，并以 6 个宣传点、5 个内容方向、30 天节奏和渠道原生格式替换第五期旧口径（`ai-engineer-bootcamp`）

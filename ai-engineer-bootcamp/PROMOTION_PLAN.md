@@ -1,6 +1,6 @@
 # AI Engineer Bootcamp Cohort 7 — 新角度推广方案
 
-> 版本：2026-08-25
+> 版本：2026-08-29
 > 课程事实 SoT：[`COHORT_07_OUTLINE.md`](./COHORT_07_OUTLINE.md) 与 [`public/outline.json`](./public/outline.json)
 > 视觉 SoT：[`DESIGN.md`](./DESIGN.md)
 > 未确认字段：价格、开班日期、席位、学员规模、就业与薪资数据。没有负责人或生产系统证据前不得发布。
@@ -161,11 +161,11 @@
 
 **五次升级**：
 
-1. W1–W3：标准 AI 产品底座——ADLC、Design System、核心业务流程、权限、状态和 audit。
-2. W4–W5：多模态与结构化生成——Voice/Text Input、Editable Transcript、Human Confirmation、Structured Draft。
-3. W6–W7：可信知识与工具连接——Policy RAG、citations、MCP tools、permission boundary。
-4. W8–W10：可执行 Agent——planning、tool calling、failure recovery、approval、state、long-term memory。
-5. W11–W13：Production 标准——Harness、tracing、model routing、governance、evals、regression gate、rollback。
+1. W1–W3：AI System Foundation——ADLC、Design System、可运行 MVP、权限、状态和 audit。
+2. W4–W5：First AI + AI-Native Workspace——Voice → Editable Transcript → Human Confirmation，再建立 Spec-to-Work、Wiki、Architecture、Hooks 与 Skills。
+3. W6–W7：Evaluation-Driven RAG——先冻结 golden dataset、checks、RAGAS 与 threshold，再实现 Policy RAG、citations 和 no-answer。
+4. W8–W10：Tools、Agent 与 Memory——先提取 Data/Service Layer 并连接 MCP/CLI，再构建 bounded Agent、Harness 心智模型和安全 long-term memory。
+5. W11–W13：Governed Production——Production Harness、A2A Governance、model routing、evals、tracing、regression gate、rollback 与 release decision。
 
 **内容题目**：
 
@@ -282,11 +282,11 @@
 
 用统一视觉连续发布五集，不以每周课程清单开场：
 
-1. Product Foundation：为什么 Agent 之前必须先有标准产品底座。
-2. Multimodal Workflow：Voice/Text 如何进入可人工确认的结构化流程。
-3. Grounded Knowledge：系统如何检索、引用并承认不知道。
-4. Agent + Memory：系统如何执行、暂停、恢复、记住与纠正。
-5. Governed Production：如何用 Harness、Evals 和 Release Controls 决定是否上线。
+1. AI System Foundation：为什么 Agent 之前必须先有 ADLC、Design System 和可运行 MVP。
+2. First AI + Engineering Workspace：Voice AI 如何进入人工确认流程，Spec、Architecture、Wiki、Hooks 和 Skills 如何让工程持续演进。
+3. Evaluation-Driven RAG：为什么先写 golden cases 和 threshold，再实现 retrieval、citation 与 no-answer。
+4. Tools、Agent & Memory：Data Layer、MCP、bounded loop、Harness 与 long-term memory 如何按依赖顺序连接。
+5. Governed Production：如何用 Production Harness、A2A Governance、Model Routing、Evals 和 Release Controls 决定是否上线。
 
 ### 系列 B：你的 Agent 为什么敢上线？
 
@@ -310,6 +310,66 @@
 - Production 答案：说明边界、控制、测试、失败恢复和负责人。
 
 适合 LinkedIn Document、微信公众号长文、公开课切片与 60–90 秒技术视频。
+
+### 系列 D：Seedance Cinematic Shorts · 让工程关系变成可见动作
+
+Seedance 不用来生成“会动的课程海报”，也不负责画准确代码、UI、架构箭头、Logo 或技术文字。它负责生成空间、材质、人物动作、系统物体和连续状态变化；课程名、技术术语、数字、流程箭头、字幕与 CTA 在后期用 Remotion 确定性合成。
+
+每条视频遵守四个原则：
+
+1. 一个视频只讲一个工程判断，不塞完整课程大纲。
+2. 0–2 秒直接出现事故、冲突或反常识画面，不放品牌片头。
+3. 全片只有一个视觉主角和一条可见因果链，不做六张卡片轮播。
+4. 结尾展示一个能执行的判断或课程证据，不用“快来报名”代替内容价值。
+
+#### Seedance 最适合的四种叙事
+
+| 叙事类型 | Seedance 负责什么 | 最适合表达 |
+|---|---|---|
+| Continuous Transformation | 同一个核心物体穿过多个空间并逐层获得能力 | 13 周、同一系统、五次能力升级 |
+| Incident Story | 一次越权、污染、错误引用或重复执行造成可见后果 | Governance、Memory、RAG、Harness、Evals |
+| X-Ray System | 摄像机进入透明系统内部，看到数据、工具、权限和 trace 如何流动 | Enterprise Agent 与普通 Demo 的差别 |
+| Role Transformation | 工程师原有工具链保留，新的 AI 层围绕它组装 | Software Engineer → AI Engineer |
+
+#### 第一批 12 个短视频角度
+
+以下是创意候选池，不是锁定制作清单。选题、Hook、视觉隐喻、片长、语言、发布顺序和 CTA 都可以在每次制作前协商；只有当期选中的 1–2 条完成 claim、受众和 Design Spec 确认后，才进入 Seedance 生成与后期制作。
+
+| ID | 0–2 秒 Hook | Seedance 连续视觉机制 | 工程结论 | CTA |
+|---|---|---|---|---|
+| C7V01 | “第七期不是多上一节课。” | 同一件工程 artifact 在 Theory Studio 获得蓝图，再进入 Practice Lab 变成可运行模块；两个空间由同一条轨道连接 | 一周两节仍然不变，改变的是一节建立判断、一节完成交付 | 查看 Theory + Practice 双 Live 课表 |
+| C7V02 | “13 周，不是 13 个 Demo。” | 一个发光系统核心连续穿过五个环境，依次获得 UI、Voice、RAG、Tools、Agent、Memory、Harness 与 Governance；核心始终不更换 | 学员持续开发同一套系统，能力按真实依赖累积 | 查看 13 周 Build Path |
+| C7V03 | “这个 Agent 会跑，但不准上线。” | 一个高速运行的 Agent 冲向 Production Gate，被 permission、eval、trace、rollback 四道物理闸门拦下 | 能执行不等于 Enterprise-ready；上线需要控制与证据 | 领取 Enterprise Agent Checklist |
+| C7V04 | “转 AI Engineer，不是把过去全部清零。” | 工程师身边的 API、database、testing、cloud、observability 模块没有消失；Context、RAG、Agent、Memory、Evals 新层围绕它们组装 | Software Engineering 是底座，AI Engineering 增加新的不确定性控制 | 查看 Role Upgrade Map |
+| C7V05 | “如果 Memory 记住了错误事实呢？” | 一滴黑色错误信息试图进入透明 Memory Vault；write gate 将它隔离，人工确认后只有绿色事实被写入，旧事实可撤回 | Long-term memory 必须有 provenance、scope、TTL、correction 和 delete | 查看 Memory Safety 模块 |
+| C7V06 | “RAG 找到了资料，也可能答错。” | 检索臂抓到正确政策片段，但生成路径试图脱离证据；citation tether 将回答拉回原文，证据不足时出口关闭 | Retrieval 与 grounded answer 必须分开评估，并支持 no-answer | 查看 Evaluation-Driven RAG 路线 |
+| C7V07 | “Agent 调错工具，谁来踩刹车？” | Agent 手臂伸向高风险工具；permission boundary、human approval 和 idempotency lock 逐级限制动作 | Tool calling 需要最小权限、批准、重复执行保护和审计 | 查看 Production Harness Checklist |
+| C7V08 | “Harness 不是又一个 Agent Framework。” | 一个裸露、抖动的 Agent loop 被装进透明运行舱；预算、checkpoint、retry、approval 和 trace 仪表开始接管 | Framework 组织行为，Harness 控制一次运行的生命周期和失败恢复 | 查看 W10–W11 Harness 架构 |
+| C7V09 | “两个 Agent 能对话，不代表它们可以互相信任。” | 两个独立 Agent 隔着组织边界交换密封 artifact；identity、delegation scope、data policy 和 audit seal 逐个验证 | A2A 是 Agent-to-Agent；跨 Agent 协作必须治理身份、授权、数据共享与责任 | 查看 A2A Governance 模块 |
+| C7V10 | “最强模型，不该处理每一个请求。” | 不同重量和风险的任务进入路由中枢，被送往快、强、私有或人工通道；高风险任务拒绝自动通过 | Model Routing 是 quality、latency、cost、privacy 与 data residency 的政策决定 | 查看 Model Routing 架构 |
+| C7V11 | “面试官不缺你的聊天框截图。” | 漂亮 Demo 屏幕熄灭后，architecture decision、eval report、trace、failure test、release decision 仍悬浮在桌面上 | 面试需要可解释的 Production Evidence，而不只是功能展示 | 下载 System Design 自检表 |
+| C7V12 | “为什么不用一个普通 Todo Agent 教这门课？” | Voice、document、policy、multiple roles、memory 和 regulation 六股压力同时压向系统；普通 Demo 外壳破裂，受治理的系统保持稳定 | 高约束案例能同时暴露多模态、RAG、Agent、Memory 与 Governance 问题，能力可迁移到其他行业 | 查看案例覆盖的 10 层技术栈 |
+
+#### 三波发布顺序
+
+以下 Wave 只作为默认建议，可根据开班节奏、素材状态、区域需求和真实表现调整；不得把建议顺序当成自动生产授权。
+
+- Wave 1 · 先讲课程为什么不同：`C7V01`、`C7V02`、`C7V04`、`C7V03`。
+- Wave 2 · 再证明技术深度：`C7V06`、`C7V05`、`C7V08`、`C7V07`。
+- Wave 3 · 最后建立企业与面试价值：`C7V09`、`C7V10`、`C7V11`、`C7V12`。
+
+每波先做一条 Hero Short 和一条 Failure Short。前两条通过视觉、技术与受众测试后，再批量制作同波剩余内容，避免一次生成 12 条但方向不成立。
+
+#### Seedance 制作管线
+
+`Verified Claim → Episode SOURCE → Design Spec → 2–3 Styleframes → Seedance Shots → Remotion Technical Overlay → ElevenLabs Narration → Captions/BGM/SFX → Technical QA → Independent Review → Platform Variants`
+
+- Seedance shot 建议控制在 3–6 秒，每个镜头只承担一个状态变化；通过前后物体、光线、运动方向和 camera continuity 保持连续。
+- 中文 `zh-CN` 与英文 `en-AU` 分别写口播、生成 ElevenLabs 声音并听审，不使用自动翻译配音。
+- Facebook / YouTube 使用独立中文版本；Instagram / TikTok / LinkedIn 使用独立英文版本。事实 claim 相同，Hook、节奏、屏幕文字和 CTA 按平台重写。
+- 只有 YouTube 版本允许视频内链接。其他平台的画面、字幕、口播、封面、片尾和二维码保持零 URL。
+- Course Campaign 与日常 `series=ai-engineer-45s` 分开登记；Campaign 视频不得插入或重排该栏目的 P01–P50 生产顺序。
+- 生成视频通过技术 QA 和独立审查后，才进入视频登记与社媒发布流程；本地 MP4、已排程和已公开是三个不同状态。
 
 ## 7. 首轮宣传资产
 
@@ -345,18 +405,194 @@
 | 微信公众号 | Governance、Harness、项目深度 | 技术拆解、课程解读 | 一篇只解决一个问题，结尾链接大纲或公开课 |
 | Webinar / 线下 | System Design、Live failure review | 45–60 分钟公开课 | 先拆系统或事故，最后再介绍课程结构 |
 
-## 9. 30 天 Campaign
+## 9. 全球市场分区：同一课程，不同购买理由
 
-| 周次 | 核心问题 | 发布内容 | 目标动作 |
+第七期是澳洲课程，但潜在用户分布在多个中文市场。不能把一条中文招生文案按时差机械转发，也不能把美区签证焦虑套到澳洲用户身上。每个区域使用同一课程事实，但入口问题、案例顺序、CTA 和发布时间独立设计。
+
+| 市场组 | IANA 时区 | 主要人群 | 首要购买理由 | 主语言 | 优先渠道 | 主要 CTA |
+|---|---|---|---|---|---|---|
+| 澳洲东岸 | `Australia/Brisbane`、`Australia/Sydney`、`Australia/Melbourne` | 在职开发者、Cloud/Data Engineer、留学生与毕业生 | 从现有软件能力升级到 Applied AI Engineering；能参加本地 Live 和项目协作 | 中文为主，技术词保留英文 | LinkedIn、Facebook、Instagram、小红书、微信、线下活动 | 查看大纲 → 参加说明会 → 咨询适配度 |
+| 中国大陆 | `Asia/Shanghai` | 国内开发者、计划出海或补 AI 工程体系的人 | 不是再学一个工具，而是补齐 Production Agent、RAG、Evals、Governance 的系统能力 | 中文 | 小红书、微信公众号、视频号、技术社区 | 领取技术栈图 → 观看公开课 → 咨询课程 |
+| 港澳台与新加坡 | `Asia/Hong_Kong`、`Asia/Singapore` | 双语技术从业者、区域企业工程师 | 英文技术栈 + 中文讲解；Enterprise AI 与跨团队交付能力 | 中英双语，按平台分稿 | LinkedIn、Instagram、Facebook、微信社群 | 查看中英文大纲 → 参加区域场 Q&A |
+| 北美华人 | `America/New_York`、`America/Los_Angeles` | 在职 SWE、CS/Data 留学生、求职者 | 对齐当地 AI Engineer / FDE / Applied AI JD；项目和 System Design Evidence | 英文职业内容 + 中文解释 | LinkedIn、北美小红书、微信群、技术社区 | 查看 JD 能力映射 → 参加美区说明会 |
+| 英国与欧洲华人 | `Europe/London`、`Europe/Berlin` | 在职工程师、留学生、跨国团队成员 | Production AI 能力、异步参与方式和跨国作品展示 | 英文资产优先，中文说明 | LinkedIn、YouTube、华人社群、合作组织 | 查看英文课程简版 → 预约 Q&A |
+
+第一阶段以澳洲东岸为核心转化市场，中国大陆负责规模化认知，北美负责英文职业内容验证；港澳台、新加坡、英国和欧洲先做低成本内容分发与活动合作，只有出现真实咨询和转化证据后再增加投入。
+
+北美独立 cohort 的签证、退款、导师与美区渠道口径仍以 [`PROMOTION_PLAN.us.md`](./PROMOTION_PLAN.us.md) 为准。本文件中的北美部分只负责第七期全球内容分发，不能覆盖或默认为美区独立班的招生承诺。
+
+### 9.1 区域内容不能直接翻译
+
+- 澳洲：先讲 Software Engineer 能力升级、Theory + Practice 双 Live 和本地项目协作。
+- 中国大陆：先讲 10 层知识体系和 13 周连续完成 Production Agent System，避免把海外身份当主卖点。
+- 北美：先讲 JD、System Design、FDE/Applied AI Engineer title 和工程证据；签证内容只进入美区独立材料。
+- 港澳台、新加坡、英国和欧洲：先讲双语技术沟通、Enterprise Architecture 和跨时区参与方式。
+- CareKind 在所有区域都只作为高约束压力测试案例出现，不能成为课程品类或职业方向。
+
+## 10. 时区发布与活动编排
+
+### 10.1 统一规则
+
+- 内部排程基准使用 `Australia/Brisbane`，每条内容同时登记目标地区的 IANA 时区和当地日期。
+- 不保存固定时差换算。Sydney、Melbourne、New York、Los Angeles、London 和 Berlin 都受夏令时影响，必须按实际发布日期转换。
+- 同一主题可以共用事实 SOURCE，但不同区域必须生成独立 caption、visual copy、CTA 与发布时间。
+- 公开课至少提供两个时区版本：澳洲/亚洲友好场与北美友好场。没有真实报名需求时不单独增加欧洲场，可先提供回放和区域 Q&A。
+
+### 10.2 第一轮测试窗口
+
+| 市场 | 当地测试窗口 | 适合内容 | 证据状态 |
 |---|---|---|---|
-| Week 1 | AI Engineer 到底交付什么？ | 主海报、Role Upgrade 视频、10 层技术栈 Document | 查看能力地图 |
-| Week 2 | 这是不是又一门 Demo 课？ | 五阶段动画、Continuous System Build Log、双 Live 解释 | 查看完整大纲 |
-| Week 3 | Agent 为什么能进入企业？ | Governance、Memory、Harness failure 系列与公开课 | 报名公开课 |
-| Week 4 | 这些能力如何转成求职证据？ | 面试自检表、System Design Defense、Demo Day proof | 咨询或申请 |
+| 澳洲东岸 | 工作日 10:00–12:00；LinkedIn 11:00；Instagram 21:00 | 技术图、课程证据、短视频、活动提醒 | 来自 JR 当前渠道 cadence；继续用真实表现复盘 |
+| 中国大陆 | 工作日 12:00–14:00 与 20:00–22:00 分组测试 | 小红书图文、公众号长文、视频号短视频 | Campaign 初始测试，不声称为最佳时间 |
+| 新加坡 / 香港 | 工作日 12:00–14:00 或 19:00–21:00 | LinkedIn 技术图、双语 Carousel、区域 Q&A | Campaign 初始测试 |
+| 北美东岸 | 工作日 08:00–10:00 或 12:00–14:00；活动测试 19:00–21:00 | LinkedIn、JD 拆解、Webinar | Campaign 初始测试；按平台真实数据校准 |
+| 北美西岸 | 工作日 08:00–10:00 或 12:00–14:00；活动测试 19:00–21:00 | LinkedIn、项目证据、Webinar | 必须单独换算，不用美东排程直接覆盖 |
+| 英国 / 欧洲 | 工作日 08:00–10:00 或 12:00–14:00 | LinkedIn、YouTube、合作社群 | 低频验证，出现真实需求后再提高产能 |
 
-建议基准频率：每周 2 条竖版视频、1 份可保存图文或 Document、1 篇技术长文、1 场公开课或 Live Q&A。产能不足时优先保留五阶段主资产、Governance/Interview Checklist 和公开课，不用低质量日更填满渠道。
+“午休”“晚间”在执行单中必须换成具体日期、当地时间和 Brisbane 时间。没有足够样本时，时段标记为 `test`；只有连续真实数据支持后才能升级为长期默认。
 
-## 10. 文案用词规则
+### 10.3 一份主题的跨区发布顺序
+
+1. 先发布澳洲主版本，验证 Hook、评论问题和落地页行为。
+2. 24–72 小时内重写为中国大陆版本，强调课程体系和学习方式。
+3. 将适合职业叙事的主题重写成英文 LinkedIn 架构图或 Document，面向北美、新加坡、英国和欧洲。
+4. 对表现强的主题制作公开课、长文或 45 秒视频，不因一次低播放立即否定主题。
+5. 每个区域分别记录触达、深度互动、CTA 和咨询，禁止用一个平台的表现替代其他市场。
+
+## 11. 多维 Campaign 组合
+
+推广不按“今天发海报、明天发视频”排内容，而是给每一条资产同时标记：
+
+`Region × Persona × Funnel Stage × Proof Type × Format`
+
+### 11.1 Persona × 购买触发器
+
+| Persona | 最容易被什么触发 | 最需要什么证明 | 不应先讲什么 |
+|---|---|---|---|
+| 在职 Software / Full-stack Engineer | 现有工程能力如何迁移；不需要从算法研究重学 | Architecture mapping、Build Path、真实代码与系统边界 | 零基础转行、高薪速成 |
+| Cloud / Data / DevOps Engineer | 如何把数据、部署、可观测性变成 AI 系统优势 | RAG、MCP、Harness、Evals、Reliability 架构 | 只展示 UI 或 Prompt 技巧 |
+| 求第一份 AI 岗位的学生与毕业生 | 项目如何变成简历和面试证据 | Portfolio rubric、System Design Defense、JD mapping | 包就业、虚构薪资和大厂保证 |
+| 已做过 Chatbot / RAG Demo 的开发者 | 为什么 Demo 仍不能进入生产环境 | Failure cases、Governance、Regression Gate、Rollback | 重复讲“什么是 ChatGPT” |
+| Tech Lead / Solution Architect | 如何设计跨团队可治理的 Agent System | A2A Governance、permission、owner、incident 与 release controls | 单一框架教程和工具排名 |
+
+### 11.2 六条可并行 Campaign
+
+| Campaign | 核心问题 | 主要资产 | Funnel 位置 | 适合市场 |
+|---|---|---|---|---|
+| Teaching Method Upgrade | 为什么第七期要把一周两节拆成 Theory + Practice？ | 对比海报、双 Live 课表、45 秒解释视频 | Awareness / Consideration | 全市场 |
+| 13-Week Production Build | 13 周怎样把系统一步步做出来？ | 五次升级动画、Build Path、每周 Build Log | Consideration | 全市场 |
+| Enterprise Agent Standard | Agent 能跑之后还缺什么？ | Harness、Memory、Governance、Evals Checklist | Awareness / Trust | 澳洲、北美、新加坡、欧洲 |
+| AI Engineer Interview Evidence | 项目如何转成面试回答？ | System Design 自检表、Architecture Defense、JD mapping | Interview Intent | 澳洲、北美、中国大陆 |
+| Governance as Engineering | 强法规和责任边界怎样变成代码与发布闸门？ | Policy → Control → Evidence → Owner 图、A2A Governance 案例 | Trust | 企业工程师、Tech Lead、B2B |
+| From Software Engineer to AI Engineer | 已有开发经验哪些保留，哪些必须新增？ | Role map、技能差距测试、学习路线 | Awareness / Conversion | 澳洲、中国大陆、北美 |
+
+同一周最多主推两个 Campaign：一个扩大认知，一个建立信任或转化。六条线同时日更会稀释主张，也无法判断哪个角度真正有效。
+
+## 12. 短期推广：开班前 6 周到开班后 2 周
+
+所有日期使用相对时间。课程负责人确认开班日后，再把 `T-42` 等节点转换成各地区当地日期。
+
+| 阶段 | 目标 | 核心内容 | 关键动作 | CTA |
+|---|---|---|---|---|
+| T-42～T-29 · 建立认知 | 让市场知道第七期改变的是教学方式 | 一周两节，一节学，一节做；10 层技术栈；Role Upgrade | 更新官网、主海报、双 Live 解释页；准备中英文主资产 | 查看能力地图 |
+| T-28～T-22 · 证明不是 Demo 课 | 让用户理解连续 13 周工程主线 | 五次能力升级、W1–W13 Build Path、项目依赖关系 | 发布五阶段动画、详细大纲、Build Log 样例 | 查看完整大纲 |
+| T-21～T-15 · 建立技术信任 | 证明 Enterprise Agent 不是营销词 | RAG、Memory、Harness、A2A Governance、Evals failure cases | 发布 Checklist；举行“你的 Agent 为什么敢上线”公开课 | 报名公开课 |
+| T-14～T-8 · 建立职业相关性 | 把课程能力连接到岗位与面试 | AI Engineer title map、JD 能力、System Design Evidence | 发布面试自检表、LinkedIn Document、导师技术 Q&A | 完成自检 / 参加 Q&A |
+| T-7～T-1 · 转化 | 回答是否适合、时间投入、交付物和支持方式 | FAQ、样例周、Theory/Practice 区别、项目边界 | 两场跨时区说明会；销售只跟进主动留资和已授权名单 | 咨询适配度 / 申请 |
+| D0～D+14 · 交付即营销 | 用真实教学过程建立下一期证据 | 开课、W1 PRD/ADLC、W2 UI、W3 MVP 的脱敏过程 | 经学员授权收集 Build Log、课堂片段、常见问题和教师复盘 | 关注 Build in Public |
+
+### 12.1 短期最低可执行资产包
+
+如果团队产能有限，只做下面 8 项，不做低质量日更：
+
+1. “10 层 AI 工程技术栈”主海报。
+2. “第五期 → 第七期：教学方式重构”对比图。
+3. “五次能力升级”动画或 Carousel。
+4. 13 周详细课程大纲 HTML/PDF。
+5. Enterprise Agent Production Checklist。
+6. AI Engineer System Design 面试自检表。
+7. “你的 Agent 为什么敢上线？”公开课。
+8. “Software Engineer 如何升级为 AI Engineer？”说明会。
+
+### 12.2 每周内容配比
+
+- 40% 技术价值：架构、failure case、checklist、开源库与工程判断。
+- 25% 教学证据：课堂结构、Build Path、录播/Lab/Quest 如何配合。
+- 20% 职业相关性：岗位 title、JD、System Design、Portfolio Evidence。
+- 10% 信任资产：讲师判断、课程迭代、学员授权后的真实过程。
+- 5% 直接招生：开班、说明会、FAQ、申请提醒。
+
+直接招生内容不能成为账号主体。用户连续看到的应该是有用的 AI Engineering 内容，招生 CTA 只是下一步。
+
+## 13. 长期推广：90 天、180 天与 12 个月
+
+### 13.1 0–90 天：建立可持续内容引擎
+
+- 将 13 周项目拆成 30–40 个 evergreen 工程问题，例如“Memory 为什么需要 write gate”“MCP handler 为什么不能直接写 ORM query”。
+- 建立三条长期栏目：`Enterprise Agent Build`、`你的 Agent 为什么敢上线`、`AI Engineer 面试证据库`。
+- 每周从真实课堂问题中选择一个主题，形成 SOURCE → 中文短帖 → 英文架构图 → 长文/视频的复用链。
+- 建立真实异议库：用户为什么不理解、为什么犹豫、哪些术语看不懂，并回写官网 FAQ 和下一轮 Campaign。
+- 所有表现数据按地区、渠道和资产记录；没有数据写 `unavailable`，不补零、不估算。
+
+### 13.2 3–6 个月：把教学过程变成品牌证据
+
+- 经明确授权后发布脱敏 Build Logs、架构演进、eval 变化和 failure review。
+- Demo Day 内容不只剪最终 UI；必须同时展示 architecture、trace、eval、permission、rollback 或 release decision。
+- 将优质学生问题与导师回答整理成技术文章、公开课和 FAQ，不公开学员 PII。
+- 建立 Alumni / Builder Spotlight，但不把个别 Offer、薪资或雇主结果泛化为课程承诺。
+- 与开发者社区、大学社团、云厂商社区和技术 Meetup 合作做主题分享，先提供技术价值再介绍课程。
+
+### 13.3 6–12 个月：形成品类与搜索资产
+
+- 建立 AI Engineer 中文知识集群：Context Engineering、RAG Evaluation、MCP、Agent Memory、Harness、Governance、Model Routing、Production Evals。
+- 每个主题形成“免费解释页 → Checklist/Lab → 公开课 → Bootcamp”的自然路径。
+- 每期课程更新都发布 Engineering Change Log：哪些内容保留、哪些转录播、哪些因市场变化进入 Live。
+- 形成年度 `State of Applied AI Engineering` 内容，基于真实课程问题、公开技术变化和岗位证据，不编市场数字。
+- 建立企业向内容：Agent Governance Workshop、Production Readiness Review、Team Capability Assessment，为 B2B 培训和企业合作提供入口。
+
+## 14. Owned、Social、Earned、Community 与 Paid
+
+| 增长面 | 做什么 | 第七期适用动作 | 边界 |
+|---|---|---|---|
+| Owned | 官网、Learn Hub、邮件、公众号、社群、公开课 | 课程页、详细大纲、Checklist、说明会、Build Log | 所有事实与课程 SoT 一致 |
+| Social | 官方与讲师账号的原生内容 | LinkedIn 架构图、小红书 Carousel、短视频、长文 | 一份 SOURCE，多平台独立 variant |
+| Earned | 社区分享、嘉宾合作、播客、技术媒体 | 以 Governance、Agent Harness、RAG Eval 做技术主题 | 先提供内容价值，不伪装软文 |
+| Community | 校友、开发者社区、大学社团、Meetup | Office Hour、公开 Review、学生授权作品展示 | 不公开 PII，不诱导虚假评价 |
+| Paid | 对已验证资产做小范围放大 | 只放大已有自然互动、落地页与转化证据的内容 | Google Ads `manual_only`；预算和启动需另行批准 |
+
+付费投放不是第一步。先证明 Hook、落地页、公开课和咨询路径能在自然流量下工作，再选择已有证据的资产扩大；不能用预算掩盖定位不清或页面不转化。
+
+## 15. 90 天实验矩阵
+
+每轮只改变一个主要变量，避免同时换 Hook、形式、渠道、时段和 CTA 后无法解释结果。
+
+| 实验 | A | B | 只观察什么 |
+|---|---|---|---|
+| 教学方式 Hook | 一周两节，一节学，一节做 | 13 周做完一套 Production Agent System | 哪个更能带来大纲查看与深度评论 |
+| 角色 Hook | Software Engineer → AI Engineer | Demo Builder → Production AI Engineer | 哪个带来更多目标岗位咨询 |
+| 技术 Hook | Agent 为什么敢上线 | Memory 写错了怎么撤回 | 哪个 failure case 更能产生收藏与公开课报名 |
+| 证据形式 | 五阶段动画 | 静态 Build Path Carousel | 哪种形式带来更高完读与课程页访问 |
+| CTA | 查看完整大纲 | 完成 System Design 自检 | 哪个产生更高质量的下一步动作 |
+| 活动时区 | 澳洲/亚洲友好场 | 北美友好场 | 各区域报名、到场与有效咨询，不比较绝对规模 |
+
+实验结果只改变下一轮尚未创建的内容，不回改已发布素材。单次结果只能生成下一轮假设，不能直接成为长期渠道规则。
+
+## 16. 衡量框架与看板
+
+| 层级 | 指标 | 判断问题 |
+|---|---|---|
+| Attention | 3 秒/6 秒留存、停留、Document 打开 | Hook 是否让目标用户停下来？ |
+| Depth | 完播、完读、保存、有效评论 | 内容是否值得认真看，而不是只获得曝光？ |
+| Intent | 大纲查看、Checklist 下载、公开课报名 | 用户是否愿意进一步理解课程？ |
+| Qualified Lead | 参加说明会、完成适配度咨询、明确地区/背景/目标 | 来的人是否属于课程目标用户？ |
+| Conversion | 申请、付费、来源资产 | 哪个市场、渠道和资产真正产生结果？ |
+| Proof Loop | Build Log 授权、Demo Day 证据、真实异议 | 这一期教学是否为下一期积累了可信资产？ |
+
+每条数据至少保留：`market_region`、`timezone`、`platform`、`account`、`persona`、`campaign`、`funnel_stage`、`asset_id`、`cta`、`published_at` 和 `source_revision`。缺失平台指标写 `unavailable`；不同平台定义不一致的指标不直接相加。
+
+复盘节奏：每周调整 Hook；每两周比较区域、Persona、Campaign 与 CTA；每月决定哪些主题升级为长文、公开课或 SEO 资产；每期结束后用真实报名来源、咨询、转化和教学证据重写下一期计划。
+
+## 17. 文案用词规则
 
 ### 必须使用
 
@@ -380,7 +616,7 @@
 
 CareKind 只能作为案例名出现。必须同时说明它是用于覆盖复杂 Enterprise AI 问题的工程压力测试，不能让用户误以为课程培养目标是进入 Aged Care 行业。
 
-## 11. 发布红线
+## 18. 发布红线
 
 - 不发布没有证据的薪资、Offer、就业率、雇主名单或就业保证。
 - 不把第五期表现直接写成第七期承诺。
@@ -390,19 +626,21 @@ CareKind 只能作为案例名出现。必须同时说明它是用于覆盖复�
 - 不用“production-ready”替代证据；必须展示 eval、trace、permission、rollback 或 release review。
 - 官网、课程大纲、海报、销售话术和公开课必须使用同一课程事实口径。
 
-## 12. 衡量与复盘
+## 19. Campaign 执行状态规则
 
-禁止预填目标数字。发布后记录真实值，缺失项标记 `unavailable`：
+禁止预填目标数字。候选、草稿、批准、排程、发布和测量必须分开记录：
 
-- Awareness：3 秒/6 秒留存、完整播放率、Document 完读率。
-- Consideration：五阶段动画互动、课程页访问、周课表点击、公开课报名与到场。
-- Interview Intent：Checklist 下载、System Design 内容收藏、面试相关咨询。
-- Conversion：咨询、申请、付费，并追溯到具体资产与渠道。
-- Quality：评论中的真实问题、销售反复遇到的异议、公开课提问类型。
+- `candidate`：只是选题，不得自动进入发布。
+- `draft`：平台版本已生成，尚未批准。
+- `approved`：内容、媒体、CTA 和地区版本通过人工审核。
+- `scheduled`：已在发布系统创建排程，但尚未公开。
+- `published`：平台返回公开状态并获得公开 URL。
+- `measured`：到达观察窗口并回填真实表现。
+- `blocked`：缺素材、语言、权限、证据或平台能力；不得自动降级或盲目重试。
 
-每周复盘只做三件事：保留有效 hook、停止低质量泛内容、把真实异议写进下一周选题。
+Campaign 文件只负责策略，不形成第二套发布状态。正式社媒内容必须进入 `jr-omni/new-media/publishing/` 的 SOURCE、平台 variant、Metricool 和公开回读流程。
 
-## 13. Owner 分工
+## 20. Owner 分工
 
 | Owner | 任务 |
 |---|---|
@@ -412,3 +650,15 @@ CareKind 只能作为案例名出现。必须同时说明它是用于覆盖复�
 | Content | 按六个角度建立选题池，每条标记 funnel stage、proof 和唯一 CTA |
 | Dev | 保证官网、课程大纲、海报、OG 图和动画使用同一事实口径 |
 | Sales | 使用“Enterprise AI Engineering”定位，回写真实咨询来源与异议，不自行增加承诺 |
+
+## 21. 立即执行的 14 天清单
+
+1. 课程负责人确认开班日、授课时区、价格、席位、讲师和申请条件；未确认前保持占位，不对外发布。
+2. Content 从六条 Campaign 中选择两条作为首轮主线：建议 Teaching Method Upgrade + Enterprise Agent Standard。
+3. Design 完成中英文主海报、五阶段动画、Production Checklist 和 System Design 自检表的多尺寸版本。
+4. Dev 核对官网、详细大纲、OG 图、课程 CTA 和移动端阅读，不改变现有 URL。
+5. Marketing 建立澳洲、中国大陆、北美三个地区的独立内容清单和 IANA 时区字段。
+6. 公开课分别建立澳洲/亚洲友好场和北美友好场；先收报名需求再决定是否增加欧洲场。
+7. Sales 使用统一资格问题记录咨询来源、地区、技术背景、目标岗位、主要异议和下一步，不补写用户没有说过的信息。
+8. 每条社媒内容进入统一 SOURCE 和平台 variant；没有批准、平台回读和公开 URL，不写“已发布”。
+9. 第 7 天做第一次 Hook/CTA 复盘，第 14 天决定下一轮放大、停止和重写项。
