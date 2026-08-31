@@ -645,6 +645,12 @@ jobs:
           # Top-level posters aggregate page (internal marketing asset index)
           [ -f posters.html ] && cp posters.html _site/posters.html || true
           [ -f quest-posters.html ] && cp quest-posters.html _site/quest-posters.html || true
+          # Course thumbnails referenced by posters.html
+          if [ -d assets/course-thumbnails ]; then
+            mkdir -p _site/assets
+            cp -r assets/course-thumbnails _site/assets/
+            test "$(find _site/assets/course-thumbnails -type f -name '*.webp' | wc -l | tr -d ' ')" -eq 9
+          fi
 
           # Marketing 文档总览 dashboard — 渲染各课 PERSONAS / FUNNEL / PROMOTION / AUDIT markdown
           [ -f marketing-dashboard.html ] && cp marketing-dashboard.html _site/marketing-dashboard.html || true

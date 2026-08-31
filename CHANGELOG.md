@@ -2,7 +2,7 @@
 
 ## 2026-08-31
 
-- 更新课程中心 9 门已匹配销售课程的缩略图，并为 AI Engineer 主课与美国班共 10 张课程卡接入同课程视觉资产（`posters.html`、`assets/course-thumbnails`）
+- 更新课程中心 9 门已匹配销售课程的缩略图，为 AI Engineer 主课与美国班共 10 张课程卡接入同课程视觉资产，并将图片目录纳入 production 部署产物校验（`posters.html`、`assets/course-thumbnails`、`.github/workflows/deploy.yml`）
 
 - 将逐周技术栈从 Practice 工具表升级为 Theory + Practice 的完整 AI Engineering Stack，增加模型机制、Token/Context/Cache、AI OSS、RAG/Eval/Agent/Memory/Governance，并降低通用全栈技术的视觉权重（`ai-engineer-bootcamp`）
 
