@@ -1,6 +1,6 @@
 # AI Engineer Bootcamp Cohort 7 — 新角度推广方案
 
-> 版本：2026-08-29
+> 版本：2026-09-01（新增往期学员调研画像与分人群宣传方向）
 > 课程事实 SoT：[`COHORT_07_OUTLINE.md`](./COHORT_07_OUTLINE.md) 与 [`public/outline.json`](./public/outline.json)
 > 视觉 SoT：[`DESIGN.md`](./DESIGN.md)
 > 未确认字段：价格、开班日期、席位、学员规模、就业与薪资数据。没有负责人或生产系统证据前不得发布。
@@ -418,6 +418,108 @@ Seedance 不用来生成“会动的课程海报”，也不负责画准确代�
 建立信任优先使用：往期项目的已授权截图或 demo、可核验的讲师实名履历、公开课真实片段、详细大纲、技术栈图、System Design 自检表与 Enterprise Agent Checklist。没有来源的转岗率、薪资、项目数量或“包就业”表述一律不发布。
 
 推荐引流资料：`AI Engineer 技能自查清单 + JD 拆解`、`Enterprise Agent Production Checklist`、`Applied AI Engineer System Design 面试自检表`，以及用固定测试集验证 RAG 的免费小教程。
+
+### 8.2 第三至第五期学员调研画像（2026-09-01）
+
+> 数据来源：Beta 对往期学员的岗位、所在地、当前薪资和目标薪资调研，以第五期为主，补充第三期与第四期样本。原始表共 34 条；按重复微信号与重复姓名合并后约 32 位。以下只保留聚合结论，不在推广文档中展开微信号、个人薪资等明细。
+
+#### 样本边界
+
+- 岗位信息并非每人都填写；已填写岗位的样本约 24 位。
+- 薪资有效样本约 16 位，且混合了 base、package、是否含 super、区间值与不同国家市场，不能直接计算或对外发布“平均薪资”。
+- 样本来自已报名学员，存在自选择偏差；适合判断现有付费人群和内容方向，不代表整个 AI Engineer 市场。
+- 任何高薪、涨薪与转岗个案都只能作为经授权的个人案例，不能扩写成课程普遍结果或收入承诺。
+
+#### 总体特征
+
+1. **主体是在职技术人员，不是纯零基础转行者。** 已填写岗位的人群中，Software、Full-stack、Backend、Frontend 与 Integration 开发者超过一半；其余主要来自 Data、Cloud、DevOps、Platform、Security 与 Cyber。
+2. **Mid-level 与 Senior 占比较高。** 样本中出现 Senior Software Engineer、Senior Platform Engineer、Senior Data Engineer、Senior Data Scientist、Senior Full-stack 等角色。宣传不能默认所有人都要从 Junior AI Engineer 重新开始。
+3. **澳洲东岸是核心市场。** 已填写城市的样本高度集中在 Sydney 与 Melbourne，其次是 Brisbane 与 Geelong；另有新加坡和北美样本。
+4. **职业目标不等于“找一份纯 AI Engineer 工作”。** 有 Data Engineer 明确希望寻找 Data Agent 相关岗位；Cloud、DevOps、Platform 与 Security 背景也更可能进入 AI Platform、AI Infrastructure、Governance 或 Production AI 等相邻岗位。
+5. **薪资诉求以能力升级和岗位上限为主。** 去除极端高薪个案后，已披露目标多集中在约 AUD 140k–200k，常见期望是比当前水平提高约 AUD 20k–45k；但也有高薪 Senior 明确表示短期并不以涨薪为主要目标。
+
+#### 四类主要购买动机
+
+| 动机 | 典型状态 | 真正关心的问题 |
+|---|---|---|
+| 原岗位升级 | 已有稳定工作，希望提高薪资与岗位上限 | 原来的工程经验能否复用？是否必须降级从 Junior 重来？ |
+| 风险应对 | 遇到裁员、求职或担心传统岗位收缩 | 怎样尽快补齐市场正在要求的 AI 工程能力？ |
+| 技术进阶 | 已是 Mid-level / Senior，短期不一定换工作 | 如何从会用模型升级到能设计、评估和治理 AI System？ |
+| 相邻岗位迁移 | Full-stack、Data、Cloud、DevOps、Platform、Security | 我的岗位如何与 Agent、RAG、AI Platform 或 Production AI 结合？ |
+
+**画像结论：**第七期不应只宣传“转行 AI Engineer”，而应主推“保留已有工程经验，完成 AI Native 能力升级”。课程的统一价值不是承诺某个职位名称，而是帮助不同技术背景的人交付一套可运行、可评测、可追踪、可治理的 Enterprise Agent System。
+
+### 8.3 分人群宣传方向
+
+| 人群 | 首要痛点 | 主传播命题 | 优先展示的课程证据 | 推荐 CTA |
+|---|---|---|---|---|
+| Full-stack / Backend / Frontend / Software Engineer | 会开发传统系统、会调 API，但缺少完整 AI System 经验 | **不用推倒重来：把已有软件工程能力升级为 Applied AI Engineering** | Architecture、RAG、MCP、Agent Loop、Human Approval、Evals 与 Production Release | 参加《Software Engineer 如何升级为 AI Engineer》解读会 |
+| Data Engineer / Data Analyst / Data Scientist | 不一定想投纯 AI Engineer，不清楚数据经验怎样进入 Agent 场景 | **从 Data Pipeline 到 Data Agent：让 AI 有依据地理解、调用并处理企业数据** | Context Engineering、RAG、Citations、Data Contract、Evaluation 与 Data Agent 场景 | 参加《Data Engineer 的下一站：Data Agent》解读会 |
+| Cloud / DevOps / Platform / Security | 不想转算法，但希望进入 AI 增长岗位 | **AI 项目不只缺模型，更缺能部署、监控、治理和保护系统的人** | Harness、Model Routing、Tracing、Governance、Observability、Rollback 与 Permission Boundary | 参加《Cloud / DevOps 如何进入 Production AI》解读会 |
+| Senior Engineer / 高薪在职者 | 担心课程太基础，也不愿为转 AI 降级 | **不是从 Junior 重来，而是在原有 Seniority 上补齐 AI Native 系统判断** | System Design、Agent Orchestration、Failure Drill、Eval Regression 与 Release Decision | 参加 Senior Engineer 专场课程说明会 |
+| 求职 / 转岗 / 中低薪开发者 | 简历缺 AI 项目证据，面试只能讲 Demo | **13 周做出一套能展示、能解释、能验证的 Agent System** | 代码、架构图、trace、eval report、failure test、governance pack 与项目复盘 | 参加能力诊断或项目作品解读会 |
+
+宣传执行时，同一个课程事实要针对不同起点换入口问题，不能只替换职位名称。每条内容至少回答三个问题：**你已有的能力怎样复用、还缺哪一层、课程中的哪份工程证据能补上。**
+
+### 8.4 线上活动与课程发布方式
+
+#### A. AI Engineer 第七期课程发布会
+
+作用：统一解释课程全面升级，适合承接所有人群。
+
+- 主标题：**AI Engineer 第 07 期课程发布会：从 Demo 到 Enterprise Agent System**
+- 必讲内容：Theory + Practice 双 Live、同一项目连续 13 周、五次系统升级、最终工程证据。
+- 避免：逐页念大纲、堆技术名词、把直播数量本身当卖点。
+
+#### B. 分岗位线上路径解读会
+
+每场只服务一个起点岗位，控制在 45–60 分钟：
+
+1. 当前岗位正在发生什么变化；
+2. 哪些已有能力可以直接迁移；
+3. 要补齐哪些 AI Engineering 能力；
+4. 对应的岗位方向与项目证据；
+5. 第七期课程如何承接这条路径。
+
+第一轮优先开三场：
+
+- 《Full-stack / Backend 如何升级到 AI Engineer》；
+- 《Data Engineer 的下一站：Data Agent》；
+- 《Cloud / DevOps 如何进入 AI Platform 与 Production AI》。
+
+#### C. Lightman 现场项目公开课
+
+作用：用真实搭建过程证明课程技术深度，解决“你们到底教到什么程度”。
+
+- 选题示例：**现场搭建一个可控的 AI Agent**。
+- 演示结构：RAG 与 Citation → MCP Tools → Agent Loop → Human Approval → Failure Handling 与 Tracing。
+- 固定要求：现场 Coding，不用录屏替代；既展示成功路径，也展示错误处理和工程边界。
+
+#### D. AI Engineer 能力自测解读会
+
+作用：先提供诊断价值，再承接咨询；避免一上来就推课。
+
+- 先让用户完成五维能力自测，再解释不同岗位的优势、短板与学习起点。
+- 输出岗位版路径：Software、Data、Cloud / DevOps、Senior Engineer 分别先补什么。
+- CTA 使用“查看个人能力缺口 / 咨询课程适配度”，不使用制造虚假紧迫感的薪资承诺。
+
+#### E. 往期学员职业路径分享会
+
+案例不只选择“成功转成 AI Engineer”的学员，也应覆盖：
+
+- Full-stack 在原岗位加入 AI System；
+- Data Engineer 进入 Data Agent；
+- DevOps / Platform 承担 Production AI；
+- Senior Engineer 在不降级的情况下完成 AI Native 升级；
+- 求职者如何用完整项目改善简历与面试表达。
+
+每个案例固定讲“原岗位 → 原有优势 → 能力缺口 → 做出的系统证据 → 职业变化”，薪资和 Offer 仅在本人授权且证据核验后使用。
+
+#### 推荐转化顺序
+
+`能力自测 → 分岗位路径解读会 → 现场项目公开课 → 课程发布会 → 学员案例 / Q&A → 课程咨询`
+
+这条路径依次解决六个问题：**我差在哪里、我的经验能否复用、课程有没有技术深度、第七期升级了什么、别人如何走、我是否适合报名。**
 
 ## 9. 全球市场分区：同一课程，不同购买理由
 
