@@ -7,7 +7,7 @@ status: draft
 
 # 2026 美国 AI Engineer 学习与项目 Roadmap
 
-![AI Engineer Roadmap 2026 3:4信息图](public/ai-engineer-roadmap-2026-3x4.png)
+![AI Engineer Roadmap 2026 3:4分支路线图](public/ai-engineer-roadmap-2026-3x4-v4.png)
 
 > 课程结合版｜AI Engineer Bootcamp Cohort 07 工作稿
 >
