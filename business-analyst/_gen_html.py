@@ -291,7 +291,7 @@ def gen_phase_page(data: dict, idx: int) -> str:
 
 
 def main():
-    with OUTLINE.open() as f:
+    with OUTLINE.open(encoding="utf-8") as f:
         data = json.load(f)
 
     # curriculum.html
