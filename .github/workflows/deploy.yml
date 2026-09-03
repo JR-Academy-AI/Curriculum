@@ -412,6 +412,12 @@ jobs:
             cp -r china-career/* _site/china-career/
           fi
 
+          # vip-career-service: 12 个月 VIP 就业陪跑服务销售页
+          if [ -d vip-career-service ]; then
+            mkdir -p _site/vip-career-service
+            cp -r vip-career-service/* _site/vip-career-service/
+          fi
+
           # ai-accounting-pro: static HTML only (12-hour 主课 · 6 周 cohort · 10-12 人小班 · $1,799-$2,299 AUD · 引流课的转化主课)
           if [ -d ai-accounting-pro/public ]; then
             mkdir -p _site/ai-accounting-pro
