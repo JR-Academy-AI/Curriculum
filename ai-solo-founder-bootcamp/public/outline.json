@@ -8,17 +8,17 @@
   "type": "training",
   "targetAudience": "澳洲华人专业人士（35-50 岁、150-250k+ 工资、有 5-15 年职业积累）—— senior 程序员、PM、设计师、咨询、律师、会计、医生、小公司老板/1-5 人团队创始人、准备申请 YC/Antler/Startmate 的 founder。想用 AI 做一人公司收第一笔钱、拿澳洲 Grant 退税、建立第二条收入腿、把现有业务 AI 化、或为 accelerator 申请攒 traction。",
   "totalLessons": 53,
-  "totalSteps": 188,
+  "totalSteps": 189,
   "liveClasses": 15,
   "estimatedHours": 94,
   "totalInteractiveLabs": 9,
   "timeLength": "15 周（W0 Pre-work 自学 + W1-W15 三城线下 hub-and-spoke：墨尔本主场 + 悉尼 / 布里斯班卫星教室）。固定节奏：每周日 3h 线下 office + 同步直播 = 一节现场课（15 周 = 15 节现场课）—— 开场 15min 看 AI OS 这周替你跑了什么 → 中段 30min 1-2 人上台讲进展 + networking → 下课给 OS 派下周的活并定「下周你要撞的真实动作」。另每周 5-8h 自学与项目实操（MVP coding 全部自学）。不录播。",
-  "courseObjective": "15 周里把 AI 部署进创业的每一个环节，每周日一节 3 小时线下现场课，周中自学与真实动作：W1-W7 搭 CEO AI OS、让 agent 上岗干活、锁死方向、做完商业验证、做出能卖的东西、立起品牌门面、用项目管理防烂尾，并靠人脉刷脸收到第一笔钱；W8-W11 把这一单变成不靠刷脸的获客机器（内容工厂 / 主动获客 / SEO+GEO / 增长循环）；W12-W13 财务与客服自动流转 + AI 读经营数据 + 澳洲公司结构、税务合规与 RDTI 43.5% 退税；W14-W15 把 13 周真实产出做成 pitch deck + BP + 一页纸，Demo Day 三城联合路演上台，毕业加入 Founder Club。毕业硬指标不变：$1+ 真实付费、ABN 注册、Grant 申请提交、10+ 内容产出、产品 URL Live、Demo Day 出席。",
-  "courseObjective_en": "Deploy AI into every part of your business in 15 weeks, one 3-hour in-person session every Sunday plus midweek self-study and real-world actions: build a CEO AI OS, put agents to work, lock your direction, validate the business, ship something sellable, stand up your brand and website, run it like a PM so it does not stall, and land your first paying customer through your own network (W1-W7); turn that first sale into a compounding acquisition machine — content factory, outbound, SEO+GEO, growth loops (W8-W11); automate finance and customer ops, let AI read your numbers, and get Australian structure, tax and the 43.5% R&D Tax Incentive right (W12-W13); package 13 weeks of real output into a pitch deck, BP and one-pager, present at the three-city Demo Day and join the Founder Club (W14-W15).",
+  "courseObjective": "15 周里把 AI 部署进创业的每一个环节，每周日一节 3 小时线下现场课，周中自学与真实动作：W1-W7 搭 CEO AI OS、让 agent 上岗干活、锁死方向、做完商业验证、做出能卖的东西、立起品牌门面、用项目管理防烂尾，补齐产品结构、分析、收费支付、交付与 CRM 经营闭环，并推进真实首单；W8-W11 把这一单变成不靠刷脸的获客机器（内容工厂 / 主动获客 / SEO+GEO / 增长循环）；W12-W13 财务与客服自动流转 + AI 读经营数据 + 澳洲公司结构、税务合规与 RDTI 43.5% 退税；W14-W15 把 13 周真实产出做成 pitch deck + BP + 一页纸，Demo Day 三城联合路演上台，毕业加入 Founder Club。毕业硬指标不变：$1+ 真实付费、ABN 注册、Grant 申请提交、10+ 内容产出、产品 URL Live、Demo Day 出席。",
+  "courseObjective_en": "Deploy AI into every part of your business in 15 weeks, one 3-hour in-person session every Sunday plus midweek self-study and real-world actions: build a CEO AI OS, put agents to work, lock your direction, validate the business, ship something sellable, stand up your brand and website, run it like a PM so it does not stall, understand product operations, analytics, payments and CRM, and pursue a first real sale (W1-W7); turn that first sale into a compounding acquisition machine — content factory, outbound, SEO+GEO, growth loops (W8-W11); automate finance and customer ops, let AI read your numbers, and get Australian structure, tax and the 43.5% R&D Tax Incentive right (W12-W13); package 13 weeks of real output into a pitch deck, BP and one-pager, present at the three-city Demo Day and join the Founder Club (W14-W15).",
   "suitable": "🧑‍💻 焦虑型 senior 程序员 — 在 Atlassian/Canva/Telstra/银行 拿 150-250k 工资，看到 Cursor/Claude Code 替代趋势，想做点自己的事\n🎨 高薪 PM/Designer/咨询 — 看完 Lovable + Cursor 演示想绕过工程团队自己 ship 产品\n⚖️ 副业冲动 professional — 律师/会计/医生/咨询，不想辞职但想用 AI 做行业 niche SaaS\n🏢 小公司老板 / 1-5 人团队创始人 — 已有 ABN + 现金流，自己想懂 AI 把现有业务升级，不想全丢给员工\n🚀 YC / Antler / Startmate 申请准备者 — 用 15 周做出 traction（产品 + MRR + 流水）作为 accelerator 申请材料\n🇦🇺 必须澳洲身份或长期在澳 — Grant/会计模块绑定澳洲，海外学员能学但 W12-W13 与你无关",
   "suitable_en": "Australian Chinese professionals 35-50 with 5-15 years experience and 150-250k+ income who want to build a solo AI business. Senior devs, PMs, designers, consultants, lawyers, accountants, doctors.",
   "cardDescription": "15 周三城线下 · 收第一笔钱 + ABN + Grant · 申请制 · 首期墨尔本主场",
-  "promoDescription": "全球独家：用中文教澳洲华人专业人士做 AI 一人创业 + 拿澳洲 Grant 退税。15 周三城线下（墨尔本主场 + 悉尼/布里斯班卫星教室），每周日 3h 一节线下现场课，四段路径：AI Enable Business（搭 AI OS → AI 员工上岗 → 锁方向与商业验证 → 做出能卖的东西 → 立起品牌门面 → 项目不烂尾 → 刷脸收第一笔钱）→ Go To Market（内容引擎 / 主动获客 / SEO+GEO / 增长循环）→ 澳洲运营（财务自动化 + AI 数据分析 + 会计师专场：结构 / 税务 / RDTI 退税）→ Founder Club（Pitch + BP + 融资入门 + 三城 Demo Day 入会）。毕业硬指标 6 项含 $1+ 真实付费，不发结业 demo 玩具。申请制 · LinkedIn 必填 · 首期 case study 价 $3.8k 起（首期门槛较低，无视频面试；第二期起严筛）。",
+  "promoDescription": "全球独家：用中文教澳洲华人专业人士做 AI 一人创业 + 拿澳洲 Grant 退税。15 周三城线下（墨尔本主场 + 悉尼/布里斯班卫星教室），每周日 3h 一节线下现场课，四段路径：AI Enable Business（搭 AI OS → AI 员工上岗 → 锁方向与商业验证 → 做出能卖的东西 → 立起品牌门面 → 项目不烂尾 → 补齐产品经营闭环并推进真实首单）→ Go To Market（内容引擎 / 主动获客 / SEO+GEO / 增长循环）→ 澳洲运营（财务自动化 + AI 数据分析 + 会计师专场：结构 / 税务 / RDTI 退税）→ Founder Club（Pitch + BP + 融资入门 + 三城 Demo Day 入会）。毕业硬指标 6 项含 $1+ 真实付费，不发结业 demo 玩具。申请制 · LinkedIn 必填 · 首期 case study 价 $3.8k 起（首期门槛较低，无视频面试；第二期起严筛）。",
   "prerequisiteknowledge": "① 用过 ChatGPT / Claude / Cursor 至少 3 个月；② 自带笔记本（macOS 12+ / Win 10+ with WSL2）；③ 有 6-12 个月生活费储蓄（敢辞职/兼职过渡）；④ 能稳定 15 周内每周 8-11h（周日 3h 线下 office / 直播 + 5-8h 自学与项目）；⑤ 通过申请单审核（LinkedIn 必填 · 首期无视频面试 · 第二期起加面试）；⑥ 强烈推荐先上过 AI Engineer Bootcamp 或 OpenClaw Bootcamp；⑦ 在澳洲身份合法（PR / 公民 / 长期签证），W12-W13 模块绑定澳洲税务/Grant；⑧ W1 起需自备 LLM API Key（Claude / OpenAI / Gemini 任一，月预算 $30-100）。",
   "highlights": [
     "🎯 毕业硬指标 6 项 — $1+ 真实付费、ABN 注册、Grant 提交、10+ 内容、产品 URL、Demo Day 出席。不达标不发证。",
@@ -1159,8 +1159,8 @@
         },
         {
           "code": "L26",
-          "title": "[W7] 收到第一笔钱 · First Dollar",
-          "description": "<p><strong>【W7 · 收到第一笔钱】</strong>本周真实动作：不建任何获客系统，就用已有人脉一对一把第一单卖出去，同时把收款和法律文件接上 ｜ 本周产出：第一笔真实付费（后台截图）+ Stripe / Lemonsqueezy 接入 + 5 份法律文件挂 footer ｜ 卧槽点：有人真的付钱了——你从「想创业的上班族」变成「在跑项目的人」</p><h3>🎬 现场 3 小时怎么走</h3><ul><li><strong>① 人脉盘点</strong> — AI 把通讯录 / 微信 / LinkedIn 盘成 30-50 人排序名单。</li><li><strong>② 一对一 pitch</strong> — 不建系统，就是去卖：三句话结构 + 三种拒绝的应对，现场真发 10 条。</li><li><strong>③ Stripe / Lemonsqueezy 澳洲版</strong> — 现场跑通 test mode 第一笔交易。</li><li><strong>④ AI 生成法律文件 + AI 律师审核</strong> — Privacy / TOS / Refund / Cookie / Disclaimer 五份，澳洲版。</li></ul><h3>📋 现场过关</h3><p>现场至少发出 10 条一对一消息、跑通一笔 test mode 交易、拿到 5 份法律文件初稿和一份 AI 律师风险清单。真实付费本周内拿到（毕业硬指标 #1）。</p>",
+          "title": "[W7] 创业者的互联网产品 · Product Operations",
+          "description": "<p>从网站上线到收款、交付与客户经营。创业者需要知道每个模块做什么、工具如何选择、结果如何验收。</p><ul><li><strong>网站与公司产品结构</strong>（15 分钟）：官网、产品应用、用户中心、Admin、Super Admin 与外部服务的关系；分清使用、运营与系统配置权限。</li><li><strong>分析工具与产品漏斗</strong>（15 分钟）：认识 Google Analytics、GSC、Clarity、PostHog 能回答的问题；看访问、注册、首次价值与付款漏斗，先查原因再改产品。</li><li><strong>收费、支付与常用法律文件</strong>（20 分钟）：一次性、订阅、会员与按结果付费；认识 Stripe、Airwallex、PayPal、Square 的用途、手续费与 payout。理解付款、订单和权益，认识 T&C、隐私、退款取消及服务外包保密文件。是否适用按业务确认，AI 初稿不代表已经合规。</li><li><strong>销售 Pipeline、CRM 与经营成本</strong>（10 分钟）：Leads、合格线索与商机，销售阶段、负责人和跟进日期；CRM 客户档案、沟通与成交后维护。认识 Xero、成本边界、公司账号归属和邮件、数据库、托管 Free Tier。</li><li><strong>付款与交付流程演示</strong>（45 分钟）：观察注册、首次使用、付款确认、权益开通与交付；测试重复通知、取消续费、失败和退款。课堂模拟与真实支付环境分开标注。</li><li><strong>填写经营地图并补一个产品缺口</strong>（60 分钟）：完成自己的产品经营地图，从数据、收款、权限与交付中选一个缺口实操。记录负责人、下一步、期限与验证证据；受账号或环境限制时写明阻断。</li><li><strong>销售跟进记录与真实首单计划</strong>（15 分钟）：写一条可跟进的销售记录，明确阶段和下次动作；整理验证证据、真实首单计划并导出经营地图。</li></ul><p>课堂产出：产品经营地图、一条销售跟进记录、一个改善的验证证据或明确阻断。课后继续真实首单挑战。</p><p><a href=\"https://jiangren.com.au/curriculum/lessons/ai-solo-founder-w7/\">打开 W7 课件（51 页）</a></p>",
           "type": "Lesson",
           "isLive": true,
           "duration": 180,
@@ -1168,44 +1168,51 @@
             {
               "order": 1,
               "type": "CONCEPT",
-              "title": "为什么第一单必须靠刷脸，不靠系统",
-              "description": "0→1 和 1→100 是两件事：0→1 验证的是「有没有人愿意付钱」，用最短路径（熟人一对一）验证最快；1→100 才是渠道问题。反面案例：花三个月做 SEO 和内容，第一笔钱还没收到就先耗光了热情和预算。这一周刻意不建任何获客系统——内容、outbound、SEO 全部留到 Phase 2。",
-              "duration": 20
+              "title": "网站与公司产品结构",
+              "description": "官网、产品应用、用户中心、Admin、Super Admin 与外部服务的关系；分清使用、运营与系统配置权限。",
+              "duration": 15
             },
             {
               "order": 2,
-              "type": "SCENARIO",
-              "title": "AI 盘点人脉 → 30-50 人排序名单",
-              "description": "导出微信标签 / LinkedIn 一度联系人 / 通讯录 / 行业群成员，喂给 AI 按「可能是买家 / 可能引荐买家 / 无关」三桶分类，再按关系强度 × 需求匹配度排序。人工复核前 50 名，剔掉明显不合适的，补上 AI 抓不到的（线下认识的、微信没备注的）。",
-              "duration": 30
+              "type": "CONCEPT",
+              "title": "分析工具与产品漏斗",
+              "description": "认识 Google Analytics、GSC、Clarity、PostHog 能回答的问题；看访问、注册、首次价值与付款漏斗，先查原因再改产品。",
+              "duration": 15
             },
             {
               "order": 3,
-              "type": "LIVE",
-              "title": "一对一 pitch 三句话结构 + 三种拒绝的应对",
-              "description": "讲三句话结构并现场改写学员写的原稿。重点挑两个病：求人味（「能不能麻烦您帮我看一下」）和群发味（第二句里没有对方的具体事）。第二句必须写一件真实发生过的事，写不出来说明这个人不该在名单前列。然后过三种拒绝的标准应对——要免费 / 让你做好再说 / 嫌贵，练到不假思索。",
-              "duration": 30
+              "type": "CONCEPT",
+              "title": "收费、支付与常用法律文件",
+              "description": "一次性、订阅、会员与按结果付费；认识 Stripe、Airwallex、PayPal、Square 的用途、手续费与 payout。理解付款、订单和权益，认识 T&C、隐私、退款取消及服务外包保密文件。是否适用按业务确认，AI 初稿不代表已经合规。",
+              "duration": 20
             },
             {
               "order": 4,
-              "type": "SCENARIO",
-              "title": "现场真发 10 条一对一消息",
-              "description": "全场安静 30 分钟，每人真的发出至少 10 条一对一消息，发完在群里报数。讲师和 TA 现场帮改临门一脚的措辞。这是整门课最不舒服的 30 分钟，也是转化率最高的 30 分钟。",
-              "duration": 30
+              "type": "CONCEPT",
+              "title": "销售 Pipeline、CRM 与经营成本",
+              "description": "Leads、合格线索与商机，销售阶段、负责人和跟进日期；CRM 客户档案、沟通与成交后维护。认识 Xero、成本边界、公司账号归属和邮件、数据库、托管 Free Tier。",
+              "duration": 10
             },
             {
               "order": 5,
               "type": "LIVE",
-              "title": "Stripe / Lemonsqueezy 澳洲版接入 + 跑通 test mode 第一笔",
-              "description": "先讲两者在澳洲的关键差异：Lemonsqueezy 是 MoR（它当卖方，帮你处理全球税务和 GST），Stripe 是你自己承担合规但费率低、控制强；提现速度、退款流程、订阅管理各有差别。然后现场接：API Key → Checkout / Storefront → Webhook → 退款测试。每人跑通一笔 test mode 交易，AI Tutor 1:1 排错。接入方式对应 W3 定的定价模型：一次性走 Checkout、订阅走 Subscriptions、B2B 走 custom invoicing、混合走多产品组合。",
-              "duration": 35
+              "title": "付款与交付流程演示",
+              "description": "观察注册、首次使用、付款确认、权益开通与交付；测试重复通知、取消续费、失败和退款。课堂模拟与真实支付环境分开标注。",
+              "duration": 45
             },
             {
               "order": 6,
-              "type": "LIVE",
-              "title": "AI 生成 5 份法律文件 + AI 律师角色审核（澳洲版）",
-              "description": "第一笔付费前必须挂：Privacy Policy（澳洲 APP + GDPR 双合规）、Terms of Service、Refund Policy、Cookie Policy、Disclaimer。雇澳洲律师起草这套 $3-8k，两层 AI 流程 $0 + 2 小时。第一层用模板 + Claude / GPT 按产品类型、收款方式、数据处理位置、用户地区个性化填充；第二层把文件喂回去，用「澳洲科技律师」角色 review，检查 ACL 条款、ATO 税务表述、GDPR 跨境数据传输、消费者保障漏洞、SaaS 退款合规，输出高 / 中 / 低三档风险清单。现场每人跑出 5 份初稿 + 一份风险清单。",
-              "duration": 35
+              "type": "SCENARIO",
+              "title": "填写经营地图并补一个产品缺口",
+              "description": "完成自己的产品经营地图，从数据、收款、权限与交付中选一个缺口实操。记录负责人、下一步、期限与验证证据；受账号或环境限制时写明阻断。",
+              "duration": 60
+            },
+            {
+              "order": 7,
+              "type": "SCENARIO",
+              "title": "销售跟进记录与真实首单计划",
+              "description": "写一条可跟进的销售记录，明确阶段和下次动作；整理验证证据、真实首单计划并导出经营地图。",
+              "duration": 15
             }
           ],
           "labs": [],
@@ -1213,8 +1220,8 @@
         },
         {
           "code": "L27",
-          "title": "[W7·自学] 收款与合规收尾：Stripe / Lemonsqueezy 深度配置 + 5 份法律文件挂上线",
-          "description": "<p><strong>【W7 · 收到第一笔钱】</strong>本周真实动作：不建任何获客系统，就用已有人脉一对一把第一单卖出去，同时把收款和法律文件接上 ｜ 本周产出：第一笔真实付费（后台截图）+ Stripe / Lemonsqueezy 接入 + 5 份法律文件挂 footer ｜ 卧槽点：有人真的付钱了——你从「想创业的上班族」变成「在跑项目的人」</p><h3>🎯 现场跑通了 test mode，本周要真的能收到钱</h3><p>现场只够把主链路打通。真实收款还差几步澳洲特有的东西，而且每一步都可能卡几天——这也是 W0 就让你先动 ABN 和银行验证的原因。</p><h4>收款侧要补完的</h4><ul><li>从 test mode 切 live mode：Stripe 澳洲账号需要 ABN + 银行账户验证，首次提现有等待期</li><li>GST 处理：营业额到 $75k 才强制注册，但收款前就要想清楚价格含不含 GST、发票怎么开</li><li>Webhook 落库：付款成功后要触发什么（发交付物 / 建客户记录 / 通知你），失败重试怎么办</li><li>退款与争议：退款政策写进产品页，chargeback 来了怎么应对</li><li>对账：每笔收入要能对回一个客户和一份交付物，为 W12 的 Xero 同步和 W13 的 BAS 打底</li></ul><h4>合规侧要补完的</h4><ul><li>把 AI 律师列出的高风险条款逐条改掉，中风险的记录理由，低风险的可以先放</li><li>5 份文件挂到产品 footer，每份都要有真实生效日期和联系方式</li><li>什么时候必须找真人律师：投资协议 / SAFE / 股权、首位员工劳动合同（澳洲 Fair Work 很复杂）、单笔 $20k+ 的 B2B 合同、跨境结构（美国 Delaware C-corp / 中国数据出境）、被人 sue。这五种 AI 顶不住，课程发澳洲华人科技律师 fixed-fee 推荐名单。</li></ul><h3>📋 验收</h3><p>产品 footer 挂上 5 份文件 + 一份 AI 律师审核报告作附件；收款账号处于 live 状态（或卡在哪一步写清楚，带到下周现场问）。</p>",
+          "title": "[W7·自学] 补齐产品经营闭环：数据、收款交付与客户跟进",
+          "description": "<p>完成经营地图后补齐一个实际缺口，保存验证证据；不要求同时开通所有工具，也不要求每个业务发布相同的五份文件。</p><ul><li>选择工具并确认额度：按自己的经营问题选择分析、邮件、数据库或托管工具，记录账号负责人、免费额度与升级条件。</li><li>验证收款与交付：在提供商支持的测试环境验证付款、权益、取消及退款，核对费用与结算条件。真实业务开通需满足账户要求；测试交易不能当作真实收入。</li><li>整理客户跟进与适用文件：完善一条 CRM 记录与下次跟进日期；核对业务适用的服务条款、隐私和退款取消说明，重要或不确定条款交专业人士核对。</li></ul>",
           "type": "Information",
           "isLive": false,
           "duration": 120,
@@ -1222,22 +1229,22 @@
             {
               "order": 1,
               "type": "SCENARIO",
-              "title": "Stripe / Lemonsqueezy 切 live mode",
-              "description": "补齐 ABN、银行账户、身份验证材料，把账号从 test 切到 live。卡在验证的记下卡在哪一项和预计等待时间——这类行政等待不算你偷懒，但要提前排进计划。",
+              "title": "选择工具并确认额度",
+              "description": "按自己的经营问题选择分析、邮件、数据库或托管工具，记录账号负责人、免费额度与升级条件。",
               "duration": 40
             },
             {
               "order": 2,
               "type": "SCENARIO",
-              "title": "Webhook + 对账 + 退款流程跑一遍",
-              "description": "配好付款成功的 webhook 并真的触发一次（可以用自己的卡付 $1 再退），确认交付动作真的发生、客户记录真的建了。写一份两段的退款 SOP：什么情况全退、什么情况不退、多久内处理完。",
+              "title": "验证收款与交付",
+              "description": "在提供商支持的测试环境验证付款、权益、取消及退款，核对费用与结算条件。真实业务开通需满足账户要求；测试交易不能当作真实收入。",
               "duration": 40
             },
             {
               "order": 3,
               "type": "SCENARIO",
-              "title": "改完高风险条款 + 5 份文件挂 footer",
-              "description": "按 AI 律师的高 / 中 / 低三档清单逐条处理：高风险必改，中风险改或写明为什么不改，低风险登记。改完挂到产品 footer，用手机打开确认能点开、能读、没有占位符残留。",
+              "title": "整理客户跟进与适用文件",
+              "description": "完善一条 CRM 记录与下次跟进日期；核对业务适用的服务条款、隐私和退款取消说明，重要或不确定条款交专业人士核对。",
               "duration": 40
             }
           ],
@@ -1247,7 +1254,7 @@
         {
           "code": "L28",
           "title": "[W7·自学] $1 真实付费挑战（毕业硬指标 #1）",
-          "description": "<p><strong>【W7 · 收到第一笔钱】</strong>本周真实动作：不建任何获客系统，就用已有人脉一对一把第一单卖出去，同时把收款和法律文件接上 ｜ 本周产出：第一笔真实付费（后台截图）+ Stripe / Lemonsqueezy 接入 + 5 份法律文件挂 footer ｜ 卧槽点：有人真的付钱了——你从「想创业的上班族」变成「在跑项目的人」</p><h3>⭐ W7 末的核心 deliverable：拿到第一笔真金白银 ⭐</h3><p>$1 也算（很多 indie hacker 第一笔就是朋友 PayPal 转的 $5）。这个挑战的目的不是钱，是验证『你做的东西有人愿意为它付一次费用』。这一步是 OPC 路上最难的——从 0 到 1 比从 1 到 100 难得多。</p><h3>📋 验收</h3><p>Stripe / Lemonsqueezy / PayPal 后台截图，含交易时间、金额、买家。不接受朋友亲属『友情付费』——必须是不认识你的人。</p>",
+          "description": "<p>课后验证真实客户愿意为产品或服务付费。保留原有 $1+ 真实付费毕业目标；不把测试交易、自付退款或友情支持算作市场验证。</p><p>记录支付服务商交易证据、客户需求与交付结果，展示时隐藏个人信息。已有客户购买新服务也可记录；尚未成交的提交 Pipeline 阶段与下一次跟进动作。</p>",
           "type": "Information",
           "isLive": false,
           "duration": 0,
@@ -1256,7 +1263,7 @@
               "order": 1,
               "type": "SCENARIO",
               "title": "$1 真实付费挑战:拿到第一笔真金白银",
-              "description": "W7 末核心 deliverable。$1 也算(很多 indie hacker 第一笔就是陌生人 PayPal 转的 $5),目的不是钱,是验证「你做的东西有人愿意为它付一次费」。从 0 到 1 比从 1 到 100 难。验收:Stripe/Lemonsqueezy/PayPal 后台截图,含交易时间、金额、买家——必须是不认识你的人,不接受亲友友情付费。",
+              "description": "向真实客户销售产品或服务，记录付费及交付证据；测试交易、自付退款和友情付费不计入。尚未成交则写明线索阶段与下一步。",
               "duration": 0
             }
           ]

@@ -125,3 +125,11 @@ W7 首单证据沿用 `../../ai-solo-founder-bootcamp/skills/opc-first-dollar/SK
 https://jiangren.com.au/curriculum/lessons/ai-solo-founder-w7/
 
 由 Curriculum main 的 Deploy Curriculum to Server 工作流发布；不涉及生产课程数据库关联。
+
+### 大纲与动画更新 · 2026-09-06
+
+W7 大纲同步为 Product Operations；主课仍为 180 分钟，课后保留真实首单挑战。新增背景光晕缓慢流动、标题与卡片入场动画；固定 16:9 不变，支持 prefers-reduced-motion，打印关闭动画。本次更新随静态发布流程上线，部署结果以 GitHub Actions 为准。
+
+### 装饰插图 · 2026-09-06
+
+22 页新增邮件、火箭、沟通、钱包、图表、数据库、钥匙与客户档案主题的内嵌 SVG 装饰。第 29 页使用欢迎、激活、挽回三幅较大插图。装饰对辅助技术隐藏，不增加课件页数。
